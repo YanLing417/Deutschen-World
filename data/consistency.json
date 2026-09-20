@@ -1,0 +1,890 @@
+{
+  "meta": {
+    "project": "泛德意志的欧洲 · 历史设定集知识工程",
+    "phase": "阶段一：解析与结构化",
+    "generated_by": "历史设定集知识工程 Agent",
+    "source_documents": [
+      {
+        "id": "S0",
+        "file": "source/设定集.docx",
+        "title": "泛德意志世界设定总集（纯文本整合版）",
+        "role": "主干：总纲、时间纵轴、横轴指标、语言与地名系统、地图工程、修正与注意"
+      },
+      {
+        "id": "S1",
+        "file": "source/设定集补充.docx",
+        "title": "泛德意志世界设定 · 本轮扩充整理稿",
+        "role": "总纲重述与理论核心；亚洲宗教史新扩展；六极文明定位；世界史母表"
+      },
+      {
+        "id": "S2",
+        "file": "source/设定集补充2.docx",
+        "title": "五国行政·政党·大洲划分",
+        "role": "法兰克/德意志/伊比利亚/英国/美国行政与政党体系；四大洲文明划分；🟢🟡状态清单"
+      },
+      {
+        "id": "S3",
+        "file": "source/设定集补充3.docx",
+        "title": "设定集3：英国线（盎格鲁-罗曼世界）",
+        "role": "英国完整设定；R1-R7 修订清单；法兰克-不列颠对偶表"
+      },
+      {
+        "id": "S4",
+        "file": "source/设定集补充4.docx",
+        "title": "罗斯兀鲁思：蒙古王朝与后基辅罗斯国家传统",
+        "role": "莫斯科国/基辅王国分流；金帐汗国继承线；欧亚文明梯度"
+      }
+    ],
+    "status_vocab": [
+      "已确定",
+      "待定",
+      "修正"
+    ],
+    "task": "一致性检查",
+    "total_findings": 72
+  },
+  "summary": {
+    "by_severity": {
+      "中": 35,
+      "低": 21,
+      "信息": 16
+    },
+    "by_category": {
+      "地理不一致（已记录）": 1,
+      "数量矛盾": 1,
+      "日期矛盾": 8,
+      "日期说明": 6,
+      "时间线矛盾": 19,
+      "地理缺口": 8,
+      "数量缺口": 2,
+      "日期缺口": 11,
+      "命名核对": 2,
+      "地理重叠（已处理）": 1,
+      "宗教张力（已解释）": 4,
+      "数量核对": 6,
+      "时间线核对": 3
+    }
+  },
+  "findings": [
+    {
+      "id": "G-FR-STATES",
+      "category": "地理不一致（已记录）",
+      "severity": "中",
+      "title": "法兰克州名用词",
+      "detail": "S0 的州名清单中「卢瓦尔-奥尔良州」「加来-皮卡第州」「香槟-阿登州」「勃艮第-弗朗什孔泰州」等使用现实地名，而同表其他州用德语读音译名（弗兰登、诺德曼兰、弗兰肯岛、布里滕兰、利格-奥尔伦、罗登-阿尔卑斯）。",
+      "recommendation": "州名作为设定集本文的固有名称保留原写法；但每一州的首府均按 S0 第四节「中文译名采用德语发音」的规则写作德语译名（奥尔良州→首府奥尔伦、加来-皮卡第州→首府卡莱斯、香槟-阿登州→首府雷姆斯、勃艮第-弗朗什孔泰州→首府迪根）。此不一致已记录，是否统一州名待用户裁定（待定项 P29）。",
+      "refs": [
+        "SB_FRANKEN"
+      ]
+    },
+    {
+      "id": "N-FR-STATES",
+      "category": "数量矛盾",
+      "severity": "中",
+      "title": "法兰克本土州数量：文本称「12个」，实际列出 11 个",
+      "detail": "S0/S2 明写「原设定写12个法兰克本土州，但实际列出的只有11个，这个数字矛盾只是统计错误」（S2 第五节）。本库实测：SB_FRANKEN 共 12 个单元，其中本土州 11 个、南部奥克省 1 个。",
+      "recommendation": "已被设定集自身认定为统计错误（非设定冲突），本库按 11 个本土州 + 1 个南部奥克省记录。若后续确定最终州数，见待定项 P6。",
+      "refs": [
+        "SB_FRANKEN"
+      ]
+    },
+    {
+      "id": "D-E_1100_WESTERN_BUDDHISM",
+      "category": "日期矛盾",
+      "severity": "中",
+      "title": "事件 E_1100_WESTERN_BUDDHISM 的 year 字段与 year_text 距离过远",
+      "detail": "year=800，year_text=「公元前后 — 8世纪 / 8—12世纪」解析出 [8]",
+      "recommendation": "统一为区间起年，或调整 year 字段。",
+      "refs": [
+        "E_1100_WESTERN_BUDDHISM"
+      ]
+    },
+    {
+      "id": "D-E_1272_ABSOLUTISM",
+      "category": "日期矛盾",
+      "severity": "中",
+      "title": "事件 E_1272_ABSOLUTISM 的 year 字段与 year_text 距离过远",
+      "detail": "year=1272，year_text=「1272后 / 13—15世纪」解析出 [13]",
+      "recommendation": "统一为区间起年，或调整 year 字段。",
+      "refs": [
+        "E_1272_ABSOLUTISM"
+      ]
+    },
+    {
+      "id": "D-E_1400_15C_GERMANISATION",
+      "category": "日期矛盾",
+      "severity": "中",
+      "title": "事件 E_1400_15C_GERMANISATION 的 year 字段与 year_text 距离过远",
+      "detail": "year=1400，year_text=「14—15世纪」解析出 [14]",
+      "recommendation": "统一为区间起年，或调整 year 字段。",
+      "refs": [
+        "E_1400_15C_GERMANISATION"
+      ]
+    },
+    {
+      "id": "D-E_1500_REFORMATION",
+      "category": "日期矛盾",
+      "severity": "中",
+      "title": "事件 E_1500_REFORMATION 的 year 字段与 year_text 距离过远",
+      "detail": "year=1520，year_text=「1450—1600 / 16世纪」解析出 [1450, 1600]",
+      "recommendation": "统一为区间起年，或调整 year 字段。",
+      "refs": [
+        "E_1500_REFORMATION"
+      ]
+    },
+    {
+      "id": "D-E_CRUSADES",
+      "category": "日期矛盾",
+      "severity": "中",
+      "title": "事件 E_CRUSADES 的 year 字段与 year_text 距离过远",
+      "detail": "year=1096，year_text=「11—13世纪」解析出 [11]",
+      "recommendation": "统一为区间起年，或调整 year 字段。",
+      "refs": [
+        "E_CRUSADES"
+      ]
+    },
+    {
+      "id": "D-E_IBERIAN_UNIFICATION",
+      "category": "日期矛盾",
+      "severity": "中",
+      "title": "事件 E_IBERIAN_UNIFICATION 的 year 字段与 year_text 距离过远",
+      "detail": "year=1500，year_text=「15—16世纪（推定）」解析出 [15]",
+      "recommendation": "统一为区间起年，或调整 year 字段。",
+      "refs": [
+        "E_IBERIAN_UNIFICATION"
+      ]
+    },
+    {
+      "id": "D-E_MAGHREB_CHRISTIANISATION",
+      "category": "日期矛盾",
+      "severity": "中",
+      "title": "事件 E_MAGHREB_CHRISTIANISATION 的 year 字段与 year_text 距离过远",
+      "detail": "year=1550，year_text=「16—20世纪（长期过程）」解析出 [16]",
+      "recommendation": "统一为区间起年，或调整 year 字段。",
+      "refs": [
+        "E_MAGHREB_CHRISTIANISATION"
+      ]
+    },
+    {
+      "id": "D-E_RECONQUISTA",
+      "category": "日期矛盾",
+      "severity": "中",
+      "title": "事件 E_RECONQUISTA 的 year 字段与 year_text 距离过远",
+      "detail": "year=1300，year_text=「8—15世纪（决定性阶段1212—1492）」解析出 [8, 1492]",
+      "recommendation": "统一为区间起年，或调整 year 字段。",
+      "refs": [
+        "E_RECONQUISTA"
+      ]
+    },
+    {
+      "id": "D-W_CRUSADES-C_AYYUBID-PRE2",
+      "category": "日期说明",
+      "severity": "中",
+      "title": "十字军东征（11—13世纪） 早于 阿尤布苏丹国（埃及—叙利亚） 的存续起点，该国以「前身形态」参战",
+      "detail": "战争 1096—1291，阿尤布苏丹国（埃及—叙利亚） 存续起点 1171（1171 — 1250（马穆鲁克取而代之））",
+      "recommendation": "无需改动；建议显式标注前身名称。",
+      "refs": [
+        "W_CRUSADES",
+        "C_AYYUBID"
+      ]
+    },
+    {
+      "id": "D-W_CRUSADES-C_MAMLUK-PRE2",
+      "category": "日期说明",
+      "severity": "中",
+      "title": "十字军东征（11—13世纪） 早于 马穆鲁克苏丹国（埃及—叙利亚） 的存续起点，该国以「前身形态」参战",
+      "detail": "战争 1096—1291，马穆鲁克苏丹国（埃及—叙利亚） 存续起点 1250（1250 — 1517（被安纳托利亚突厥帝国取代））",
+      "recommendation": "无需改动；建议显式标注前身名称。",
+      "refs": [
+        "W_CRUSADES",
+        "C_MAMLUK"
+      ]
+    },
+    {
+      "id": "D-W_PEASANT_1524-C_DEUTSCHLAND-PRE",
+      "category": "日期说明",
+      "severity": "中",
+      "title": "农民战争（1524—1527） 早于 德意志联邦共和国 的存续起点，该国以「前身形态」参战",
+      "detail": "战争 1524—1527，德意志联邦共和国 存续起点 1871（1945 — 至今（1945 年重建为联邦制民主共和国；1871—1918 为德意志帝国，1918—1945 为德意志共和国））",
+      "recommendation": "无需改动；建议在该国 time_span 或战争成员标注中显式写出前身名称，以免后续扩写时误判。",
+      "refs": [
+        "W_PEASANT_1524",
+        "C_DEUTSCHLAND"
+      ]
+    },
+    {
+      "id": "D-W_RELIGION-C_DEUTSCHLAND-PRE",
+      "category": "日期说明",
+      "severity": "中",
+      "title": "宗教战争 / 三十年战争（1618—1648） 早于 德意志联邦共和国 的存续起点，该国以「前身形态」参战",
+      "detail": "战争 1618—1648，德意志联邦共和国 存续起点 1871（1945 — 至今（1945 年重建为联邦制民主共和国；1871—1918 为德意志帝国，1918—1945 为德意志共和国））",
+      "recommendation": "无需改动；建议在该国 time_span 或战争成员标注中显式写出前身名称，以免后续扩写时误判。",
+      "refs": [
+        "W_RELIGION",
+        "C_DEUTSCHLAND"
+      ]
+    },
+    {
+      "id": "D-W_RELIGION-C_LOWLANDS-PRE",
+      "category": "日期说明",
+      "severity": "中",
+      "title": "宗教战争 / 三十年战争（1618—1648） 早于 低地联合省 的存续起点，该国以「前身形态」参战",
+      "detail": "战争 1618—1648，低地联合省 存续起点 1871（1625 — 至今（1871后作为尼德兰州、阿姆斯特丹城市州并入德意志；二战后低地重新并入德意志联邦））",
+      "recommendation": "无需改动；建议在该国 time_span 或战争成员标注中显式写出前身名称，以免后续扩写时误判。",
+      "refs": [
+        "W_RELIGION",
+        "C_LOWLANDS"
+      ]
+    },
+    {
+      "id": "D-W_REV_IBERIA-C_DEUTSCHLAND-PRE",
+      "category": "日期说明",
+      "severity": "中",
+      "title": "伊比利亚大革命与反伊比利亚战争（1789—1815） 早于 德意志联邦共和国 的存续起点，该国以「前身形态」参战",
+      "detail": "战争 1789—1815，德意志联邦共和国 存续起点 1871（1945 — 至今（1945 年重建为联邦制民主共和国；1871—1918 为德意志帝国，1918—1945 为德意志共和国））",
+      "recommendation": "无需改动；建议在该国 time_span 或战争成员标注中显式写出前身名称，以免后续扩写时误判。",
+      "refs": [
+        "W_REV_IBERIA",
+        "C_DEUTSCHLAND"
+      ]
+    },
+    {
+      "id": "T-E_0929_CORDOBA-C_CORDOBA",
+      "category": "时间线矛盾",
+      "severity": "中",
+      "title": "事件 E_0929_CORDOBA（929）早于 科尔多瓦哈里发国 的存续期起点（1031）",
+      "detail": "time_span=「929 — 1031（分裂为诸泰法）」",
+      "recommendation": "确认是该国的前身形态，或调整事件的 country_ids。",
+      "refs": [
+        "E_0929_CORDOBA",
+        "C_CORDOBA"
+      ]
+    },
+    {
+      "id": "T-E_1273_OTTOKAR-C_DEUTSCHLAND",
+      "category": "时间线矛盾",
+      "severity": "中",
+      "title": "事件 E_1273_OTTOKAR（1273）早于 德意志联邦共和国 的存续期起点（1871）",
+      "detail": "time_span=「1945 — 至今（1945 年重建为联邦制民主共和国；1871—1918 为德意志帝国，1918—1945 为德意志共和国）」",
+      "recommendation": "确认是该国的前身形态，或调整事件的 country_ids。",
+      "refs": [
+        "E_1273_OTTOKAR",
+        "C_DEUTSCHLAND"
+      ]
+    },
+    {
+      "id": "T-E_1300_DUAL_SOURCE-C_DEUTSCHLAND",
+      "category": "时间线矛盾",
+      "severity": "中",
+      "title": "事件 E_1300_DUAL_SOURCE（1300）早于 德意志联邦共和国 的存续期起点（1871）",
+      "detail": "time_span=「1945 — 至今（1945 年重建为联邦制民主共和国；1871—1918 为德意志帝国，1918—1945 为德意志共和国）」",
+      "recommendation": "确认是该国的前身形态，或调整事件的 country_ids。",
+      "refs": [
+        "E_1300_DUAL_SOURCE",
+        "C_DEUTSCHLAND"
+      ]
+    },
+    {
+      "id": "T-E_1356_CHARTER-C_DEUTSCHLAND",
+      "category": "时间线矛盾",
+      "severity": "中",
+      "title": "事件 E_1356_CHARTER（1356）早于 德意志联邦共和国 的存续期起点（1871）",
+      "detail": "time_span=「1945 — 至今（1945 年重建为联邦制民主共和国；1871—1918 为德意志帝国，1918—1945 为德意志共和国）」",
+      "recommendation": "确认是该国的前身形态，或调整事件的 country_ids。",
+      "refs": [
+        "E_1356_CHARTER",
+        "C_DEUTSCHLAND"
+      ]
+    },
+    {
+      "id": "T-E_1400_15C_GERMANISATION-C_DEUTSCHLAND",
+      "category": "时间线矛盾",
+      "severity": "中",
+      "title": "事件 E_1400_15C_GERMANISATION（1400）早于 德意志联邦共和国 的存续期起点（1871）",
+      "detail": "time_span=「1945 — 至今（1945 年重建为联邦制民主共和国；1871—1918 为德意志帝国，1918—1945 为德意志共和国）」",
+      "recommendation": "确认是该国的前身形态，或调整事件的 country_ids。",
+      "refs": [
+        "E_1400_15C_GERMANISATION",
+        "C_DEUTSCHLAND"
+      ]
+    },
+    {
+      "id": "T-E_1400_DUAL_EMPIRE-C_DEUTSCHLAND",
+      "category": "时间线矛盾",
+      "severity": "中",
+      "title": "事件 E_1400_DUAL_EMPIRE（1400）早于 德意志联邦共和国 的存续期起点（1871）",
+      "detail": "time_span=「1945 — 至今（1945 年重建为联邦制民主共和国；1871—1918 为德意志帝国，1918—1945 为德意志共和国）」",
+      "recommendation": "确认是该国的前身形态，或调整事件的 country_ids。",
+      "refs": [
+        "E_1400_DUAL_EMPIRE",
+        "C_DEUTSCHLAND"
+      ]
+    },
+    {
+      "id": "T-E_1500_REFORMATION-C_DEUTSCHLAND",
+      "category": "时间线矛盾",
+      "severity": "中",
+      "title": "事件 E_1500_REFORMATION（1520）早于 德意志联邦共和国 的存续期起点（1871）",
+      "detail": "time_span=「1945 — 至今（1945 年重建为联邦制民主共和国；1871—1918 为德意志帝国，1918—1945 为德意志共和国）」",
+      "recommendation": "确认是该国的前身形态，或调整事件的 country_ids。",
+      "refs": [
+        "E_1500_REFORMATION",
+        "C_DEUTSCHLAND"
+      ]
+    },
+    {
+      "id": "T-E_1500_REFORMATION-C_LOWLANDS",
+      "category": "时间线矛盾",
+      "severity": "中",
+      "title": "事件 E_1500_REFORMATION（1520）早于 低地联合省 的存续期起点（1625）",
+      "detail": "time_span=「1625 — 至今（1871后作为尼德兰州、阿姆斯特丹城市州并入德意志；二战后低地重新并入德意志联邦）」",
+      "recommendation": "确认是该国的前身形态，或调整事件的 country_ids。",
+      "refs": [
+        "E_1500_REFORMATION",
+        "C_LOWLANDS"
+      ]
+    },
+    {
+      "id": "T-E_1524_PEASANTS-C_DEUTSCHLAND",
+      "category": "时间线矛盾",
+      "severity": "中",
+      "title": "事件 E_1524_PEASANTS（1524）早于 德意志联邦共和国 的存续期起点（1871）",
+      "detail": "time_span=「1945 — 至今（1945 年重建为联邦制民主共和国；1871—1918 为德意志帝国，1918—1945 为德意志共和国）」",
+      "recommendation": "确认是该国的前身形态，或调整事件的 country_ids。",
+      "refs": [
+        "E_1524_PEASANTS",
+        "C_DEUTSCHLAND"
+      ]
+    },
+    {
+      "id": "T-E_1618_RELIGION-C_DEUTSCHLAND",
+      "category": "时间线矛盾",
+      "severity": "中",
+      "title": "事件 E_1618_RELIGION（1618）早于 德意志联邦共和国 的存续期起点（1871）",
+      "detail": "time_span=「1945 — 至今（1945 年重建为联邦制民主共和国；1871—1918 为德意志帝国，1918—1945 为德意志共和国）」",
+      "recommendation": "确认是该国的前身形态，或调整事件的 country_ids。",
+      "refs": [
+        "E_1618_RELIGION",
+        "C_DEUTSCHLAND"
+      ]
+    },
+    {
+      "id": "T-E_1648_VIENNA-C_DEUTSCHLAND",
+      "category": "时间线矛盾",
+      "severity": "中",
+      "title": "事件 E_1648_VIENNA（1648）早于 德意志联邦共和国 的存续期起点（1871）",
+      "detail": "time_span=「1945 — 至今（1945 年重建为联邦制民主共和国；1871—1918 为德意志帝国，1918—1945 为德意志共和国）」",
+      "recommendation": "确认是该国的前身形态，或调整事件的 country_ids。",
+      "refs": [
+        "E_1648_VIENNA",
+        "C_DEUTSCHLAND"
+      ]
+    },
+    {
+      "id": "T-E_1700_DUAL_CROWN-C_DEUTSCHLAND",
+      "category": "时间线矛盾",
+      "severity": "中",
+      "title": "事件 E_1700_DUAL_CROWN（1700）早于 德意志联邦共和国 的存续期起点（1871）",
+      "detail": "time_span=「1945 — 至今（1945 年重建为联邦制民主共和国；1871—1918 为德意志帝国，1918—1945 为德意志共和国）」",
+      "recommendation": "确认是该国的前身形态，或调整事件的 country_ids。",
+      "refs": [
+        "E_1700_DUAL_CROWN",
+        "C_DEUTSCHLAND"
+      ]
+    },
+    {
+      "id": "T-E_1789_REVOLUTION-C_DEUTSCHLAND",
+      "category": "时间线矛盾",
+      "severity": "中",
+      "title": "事件 E_1789_REVOLUTION（1789）早于 德意志联邦共和国 的存续期起点（1871）",
+      "detail": "time_span=「1945 — 至今（1945 年重建为联邦制民主共和国；1871—1918 为德意志帝国，1918—1945 为德意志共和国）」",
+      "recommendation": "确认是该国的前身形态，或调整事件的 country_ids。",
+      "refs": [
+        "E_1789_REVOLUTION",
+        "C_DEUTSCHLAND"
+      ]
+    },
+    {
+      "id": "T-E_1815_RESTORATION-C_DEUTSCHLAND",
+      "category": "时间线矛盾",
+      "severity": "中",
+      "title": "事件 E_1815_RESTORATION（1815）早于 德意志联邦共和国 的存续期起点（1871）",
+      "detail": "time_span=「1945 — 至今（1945 年重建为联邦制民主共和国；1871—1918 为德意志帝国，1918—1945 为德意志共和国）」",
+      "recommendation": "确认是该国的前身形态，或调整事件的 country_ids。",
+      "refs": [
+        "E_1815_RESTORATION",
+        "C_DEUTSCHLAND"
+      ]
+    },
+    {
+      "id": "T-E_CRUSADES-C_AYYUBID",
+      "category": "时间线矛盾",
+      "severity": "中",
+      "title": "事件 E_CRUSADES（1096）早于 阿尤布苏丹国（埃及—叙利亚） 的存续期起点（1171）",
+      "detail": "time_span=「1171 — 1250（马穆鲁克取而代之）」",
+      "recommendation": "确认是该国的前身形态，或调整事件的 country_ids。",
+      "refs": [
+        "E_CRUSADES",
+        "C_AYYUBID"
+      ]
+    },
+    {
+      "id": "T-E_CRUSADES-C_FATIMID",
+      "category": "时间线矛盾",
+      "severity": "中",
+      "title": "事件 E_CRUSADES（1096）早于 法蒂玛哈里发国（埃及） 的存续期起点（1171）",
+      "detail": "time_span=「909 — 1171」",
+      "recommendation": "确认是该国的前身形态，或调整事件的 country_ids。",
+      "refs": [
+        "E_CRUSADES",
+        "C_FATIMID"
+      ]
+    },
+    {
+      "id": "T-E_CRUSADES-C_FRANKISH_ROMANCE",
+      "category": "时间线矛盾",
+      "severity": "中",
+      "title": "事件 E_CRUSADES（1096）早于 法兰西罗曼王国 的存续期起点（1270）",
+      "detail": "time_span=「987 — 1270（卡佩直系绝嗣）」",
+      "recommendation": "确认是该国的前身形态，或调整事件的 country_ids。",
+      "refs": [
+        "E_CRUSADES",
+        "C_FRANKISH_ROMANCE"
+      ]
+    },
+    {
+      "id": "T-E_IBERIAN_UNIFICATION-C_IBERIAN_KINGDOM",
+      "category": "时间线矛盾",
+      "severity": "中",
+      "title": "事件 E_IBERIAN_UNIFICATION（1500）早于 伊比利亚王国 的存续期起点（1789）",
+      "detail": "time_span=「— 1789（伊比利亚-奥克大革命中推翻）」",
+      "recommendation": "确认是该国的前身形态，或调整事件的 country_ids。",
+      "refs": [
+        "E_IBERIAN_UNIFICATION",
+        "C_IBERIAN_KINGDOM"
+      ]
+    },
+    {
+      "id": "T-E_MAGHREB_CHRISTIANISATION-C_IBERIAN_KINGDOM",
+      "category": "时间线矛盾",
+      "severity": "中",
+      "title": "事件 E_MAGHREB_CHRISTIANISATION（1550）早于 伊比利亚王国 的存续期起点（1789）",
+      "detail": "time_span=「— 1789（伊比利亚-奥克大革命中推翻）」",
+      "recommendation": "确认是该国的前身形态，或调整事件的 country_ids。",
+      "refs": [
+        "E_MAGHREB_CHRISTIANISATION",
+        "C_IBERIAN_KINGDOM"
+      ]
+    },
+    {
+      "id": "G-CAP-SB_FRANKEN-加来",
+      "category": "地理缺口",
+      "severity": "低",
+      "title": "行政区首府「加来」未在地点表中登记",
+      "detail": "所属：法兰克立宪君主国行政区划（11 本土州；1975 年后含奥克五州共 16 州）",
+      "recommendation": "如需完整地名库，可补入地点表。",
+      "refs": [
+        "SB_FRANKEN"
+      ]
+    },
+    {
+      "id": "G-CAP-SB_FRANKEN-布鲁日",
+      "category": "地理缺口",
+      "severity": "低",
+      "title": "行政区首府「布鲁日」未在地点表中登记",
+      "detail": "所属：法兰克立宪君主国行政区划（11 本土州；1975 年后含奥克五州共 16 州）",
+      "recommendation": "如需完整地名库，可补入地点表。",
+      "refs": [
+        "SB_FRANKEN"
+      ]
+    },
+    {
+      "id": "G-CAP-SB_FRANKEN-曼恩/勒芒",
+      "category": "地理缺口",
+      "severity": "低",
+      "title": "行政区首府「曼恩/勒芒」未在地点表中登记",
+      "detail": "所属：法兰克立宪君主国行政区划（11 本土州；1975 年后含奥克五州共 16 州）",
+      "recommendation": "如需完整地名库，可补入地点表。",
+      "refs": [
+        "SB_FRANKEN"
+      ]
+    },
+    {
+      "id": "G-CAP-SB_IBERIA-圣地亚哥-德孔波斯特拉",
+      "category": "地理缺口",
+      "severity": "低",
+      "title": "行政区首府「圣地亚哥-德孔波斯特拉」未在地点表中登记",
+      "detail": "所属：伊比利亚大区体系（大型一级行政区）",
+      "recommendation": "如需完整地名库，可补入地点表。",
+      "refs": [
+        "SB_IBERIA"
+      ]
+    },
+    {
+      "id": "G-CAP-SB_IBERIA-塞维利亚",
+      "category": "地理缺口",
+      "severity": "低",
+      "title": "行政区首府「塞维利亚」未在地点表中登记",
+      "detail": "所属：伊比利亚大区体系（大型一级行政区）",
+      "recommendation": "如需完整地名库，可补入地点表。",
+      "refs": [
+        "SB_IBERIA"
+      ]
+    },
+    {
+      "id": "G-CAP-SB_IBERIA-巴利亚多利德",
+      "category": "地理缺口",
+      "severity": "低",
+      "title": "行政区首府「巴利亚多利德」未在地点表中登记",
+      "detail": "所属：伊比利亚大区体系（大型一级行政区）",
+      "recommendation": "如需完整地名库，可补入地点表。",
+      "refs": [
+        "SB_IBERIA"
+      ]
+    },
+    {
+      "id": "G-CAP-SB_IBERIA-直布罗陀",
+      "category": "地理缺口",
+      "severity": "低",
+      "title": "行政区首府「直布罗陀」未在地点表中登记",
+      "detail": "所属：伊比利亚大区体系（大型一级行政区）",
+      "recommendation": "如需完整地名库，可补入地点表。",
+      "refs": [
+        "SB_IBERIA"
+      ]
+    },
+    {
+      "id": "G-CAP-SB_UK_PREWAR-高地",
+      "category": "地理缺口",
+      "severity": "低",
+      "title": "行政区首府「高地」未在地点表中登记",
+      "detail": "所属：不列颠王国战前行政区划（军政合一三级制）",
+      "recommendation": "如需完整地名库，可补入地点表。",
+      "refs": [
+        "SB_UK_PREWAR"
+      ]
+    },
+    {
+      "id": "N-SB_FRANKEN-CAP",
+      "category": "数量缺口",
+      "severity": "低",
+      "title": "法兰克立宪君主国行政区划（11 本土州；1975 年后含奥克五州共 16 州） 有 1 个单位未给首府",
+      "detail": "南部奥克省（特殊建制，1945-1975）",
+      "recommendation": "如需要可补齐首府。",
+      "refs": [
+        "SB_FRANKEN"
+      ]
+    },
+    {
+      "id": "N-SB_UK_PREWAR-CAP",
+      "category": "数量缺口",
+      "severity": "低",
+      "title": "不列颠王国战前行政区划（军政合一三级制） 有 3 个单位未给首府",
+      "detail": "芒斯特省；康诺特省；乌尔斯特省",
+      "recommendation": "如需要可补齐首府。",
+      "refs": [
+        "SB_UK_PREWAR"
+      ]
+    },
+    {
+      "id": "D-PE_ALBRECHT_II-LIFE2",
+      "category": "日期缺口",
+      "severity": "低",
+      "title": "阿尔布雷希特二世 事迹含具体年份但生卒为「文档未载」",
+      "detail": "birth=文档未载, death=文档未载（1356年时已年老）",
+      "recommendation": "若需精确时间轴，可补推生卒年；否则维持留空（原设定确实未载）。",
+      "refs": [
+        "PE_ALBRECHT_II"
+      ]
+    },
+    {
+      "id": "D-PE_ALBRECHT_II_DAUGHTER-LIFE2",
+      "category": "日期缺口",
+      "severity": "低",
+      "title": "阿尔布雷希特二世之女（未具名） 事迹含具体年份但生卒为「文档未载」",
+      "detail": "birth=文档未载, death=文档未载",
+      "recommendation": "若需精确时间轴，可补推生卒年；否则维持留空（原设定确实未载）。",
+      "refs": [
+        "PE_ALBRECHT_II_DAUGHTER"
+      ]
+    },
+    {
+      "id": "D-PE_CHARLES_VALOIS-LIFE2",
+      "category": "日期缺口",
+      "severity": "低",
+      "title": "瓦卢瓦的查理 事迹含具体年份但生卒为「文档未载」",
+      "detail": "birth=文档未载, death=文档未载",
+      "recommendation": "若需精确时间轴，可补推生卒年；否则维持留空（原设定确实未载）。",
+      "refs": [
+        "PE_CHARLES_VALOIS"
+      ]
+    },
+    {
+      "id": "D-PE_EDWARD_I-LIFE2",
+      "category": "日期缺口",
+      "severity": "低",
+      "title": "爱德华一世 事迹含具体年份但生卒为「文档未载」",
+      "detail": "birth=文档未载, death=文档未载",
+      "recommendation": "若需精确时间轴，可补推生卒年；否则维持留空（原设定确实未载）。",
+      "refs": [
+        "PE_EDWARD_I"
+      ]
+    },
+    {
+      "id": "D-PE_LOUIS_IX-LIFE2",
+      "category": "日期缺口",
+      "severity": "低",
+      "title": "路易九世 事迹含具体年份但生卒为「文档未载」",
+      "detail": "birth=文档未载, death=文档未载（1270年前后其裔连续死亡）",
+      "recommendation": "若需精确时间轴，可补推生卒年；否则维持留空（原设定确实未载）。",
+      "refs": [
+        "PE_LOUIS_IX"
+      ]
+    },
+    {
+      "id": "D-PE_MARTIN_LUTHER-LIFE2",
+      "category": "日期缺口",
+      "severity": "低",
+      "title": "马丁·路德 事迹含具体年份但生卒为「文档未载」",
+      "detail": "birth=文档未载, death=文档未载",
+      "recommendation": "若需精确时间轴，可补推生卒年；否则维持留空（原设定确实未载）。",
+      "refs": [
+        "PE_MARTIN_LUTHER"
+      ]
+    },
+    {
+      "id": "D-PE_OTTOKAR_II-LIFE2",
+      "category": "日期缺口",
+      "severity": "低",
+      "title": "奥托卡二世 事迹含具体年份但生卒为「文档未载」",
+      "detail": "birth=文档未载, death=文档未载",
+      "recommendation": "若需精确时间轴，可补推生卒年；否则维持留空（原设定确实未载）。",
+      "refs": [
+        "PE_OTTOKAR_II"
+      ]
+    },
+    {
+      "id": "D-PE_PHILIP_EVREUX-LIFE2",
+      "category": "日期缺口",
+      "severity": "低",
+      "title": "埃夫勒的腓力 事迹含具体年份但生卒为「文档未载」",
+      "detail": "birth=文档未载, death=文档未载",
+      "recommendation": "若需精确时间轴，可补推生卒年；否则维持留空（原设定确实未载）。",
+      "refs": [
+        "PE_PHILIP_EVREUX"
+      ]
+    },
+    {
+      "id": "D-PE_RUDOLF-LIFE2",
+      "category": "日期缺口",
+      "severity": "低",
+      "title": "鲁道夫 事迹含具体年份但生卒为「文档未载」",
+      "detail": "birth=文档未载, death=文档未载",
+      "recommendation": "若需精确时间轴，可补推生卒年；否则维持留空（原设定确实未载）。",
+      "refs": [
+        "PE_RUDOLF"
+      ]
+    },
+    {
+      "id": "T-D_AYYUBID-END",
+      "category": "日期缺口",
+      "severity": "低",
+      "title": "阿尤布 的终结年份（1250）附近没有对应事件节点",
+      "detail": "ends=「1250」",
+      "recommendation": "为该王朝终结补一个事件节点，或说明其为渐进而非事件性终结。",
+      "refs": [
+        "D_AYYUBID"
+      ]
+    },
+    {
+      "id": "T-D_FATIMID-END",
+      "category": "日期缺口",
+      "severity": "低",
+      "title": "法蒂玛 的终结年份（1171）附近没有对应事件节点",
+      "detail": "ends=「1171」",
+      "recommendation": "为该王朝终结补一个事件节点，或说明其为渐进而非事件性终结。",
+      "refs": [
+        "D_FATIMID"
+      ]
+    },
+    {
+      "id": "N-FR-PLACE-OK",
+      "category": "命名核对",
+      "severity": "信息",
+      "title": "法兰克地名译名统一",
+      "detail": "正典中文列已统一为德语读音译名（帕里斯/雷姆斯/劳格登/鲁安/马西利恩/蒙斯佩勒/迪根）。",
+      "recommendation": "无需修正。",
+      "refs": []
+    },
+    {
+      "id": "N-RU-OK",
+      "category": "命名核对",
+      "severity": "信息",
+      "title": "已无「俄罗斯」残留",
+      "detail": "S4 要求废弃「俄罗斯」；本库已统一为「罗斯兀鲁思」（工作别名「莫斯科国」）。",
+      "recommendation": "无需修正。",
+      "refs": []
+    },
+    {
+      "id": "G-OCC",
+      "category": "地理重叠（已处理）",
+      "severity": "信息",
+      "title": "奥克相关实体存在三重表述",
+      "detail": "C_FRANKEN 的南部奥克省（行政区划）、C_OCCITAN_KINGDOM（政治体）、C_OCCITAN_REVOLT（地理—文化区域）分别从三个角度描述同一地区。",
+      "recommendation": "已在各条目 notes 中注明彼此关系；建议后续统一为「奥克地区」为上位概念，「奥克王国」为其历史政治体形态，「南部奥克省」为其在法兰克的一级建制。",
+      "refs": [
+        "C_FRANKEN",
+        "C_OCCITAN_KINGDOM"
+      ]
+    },
+    {
+      "id": "R-ELSASS",
+      "category": "宗教张力（已解释）",
+      "severity": "信息",
+      "title": "「德意志全境（含维也纳）信奉新教」与阿尔萨斯-萨尔州的跨宗教地位",
+      "detail": "S0 第六节明写「德意志全境（含维也纳）信奉新教。法兰克天主教。北意大利官方天主教」；同时 S0 第三节把「阿尔萨斯-萨尔州斯特拉斯堡」列为「跨宗教」圣地。",
+      "recommendation": "两者并不冲突：阿尔萨斯-萨尔为德意志联邦内的跨宗教接触地带（法兰克天主教与德意志新教交界），非官方宗教的例外。建议在后续设定中明确该州的宗教构成比例。",
+      "refs": [
+        "C_DEUTSCHLAND",
+        "SB_DEUTSCHLAND"
+      ]
+    },
+    {
+      "id": "R-IBERIA",
+      "category": "宗教张力（已解释）",
+      "severity": "信息",
+      "title": "伊比利亚「外交新教、内政天主教」的矛盾立场",
+      "detail": "S0/S1 明写西班牙-阿拉贡与伊比利亚「虽在国内压制新教徒，但出于反哈布斯堡法兰克地缘利益，后期加入新教联盟，形成『外交新教、内政天主教』矛盾立场」。",
+      "recommendation": "设定集自身已把它作为关键变量解释，不是矛盾。",
+      "refs": [
+        "C_IBERIA",
+        "C_SPAIN_ARAGON"
+      ]
+    },
+    {
+      "id": "R-NORDITALIEN",
+      "category": "宗教张力（已解释）",
+      "severity": "信息",
+      "title": "北意大利「政治天主教、文化新教」的双重身份",
+      "detail": "S0 明写「北意大利官方天主教，文化受南德意志新教影响」「北意大利形成『政治天主教、文化新教』独特身份」，并在领土上属德意志联邦（伦巴底州、威尼托州等）。",
+      "recommendation": "这是设定集的有意设计，不是矛盾。已在 C_FRANKEN 与 R_CATHOLIC 的 political_role 中双向标注。",
+      "refs": [
+        "C_FRANKEN",
+        "C_DEUTSCHLAND"
+      ]
+    },
+    {
+      "id": "R-ROS",
+      "category": "宗教张力（已解释）",
+      "severity": "信息",
+      "title": "罗斯兀鲁思的复合宗教结构",
+      "detail": "S4 明写「东正教斯拉夫人口 + 蒙古佛教王朝」，「莫斯科国不会因此变成佛教国家。东斯拉夫人口仍然主要保持自己的东正教传统」。",
+      "recommendation": "设定集自身已解释。已在 C_ROS_UHLUS.religions_detail 中保留原文口径。",
+      "refs": [
+        "C_ROS_UHLUS"
+      ]
+    },
+    {
+      "id": "N-CONTINENTS",
+      "category": "数量核对",
+      "severity": "信息",
+      "title": "四大洲文明划分齐备",
+      "detail": "S2 第29节：欧洲（含撒哈拉以北非洲西部）、亚洲（含撒哈拉以北非洲东部与俄罗斯）、新大洲（未命名，含中国/蒙古/西藏/西域/印度）、非洲（撒哈拉以南）。",
+      "recommendation": "无需修正。新大洲正式名称仍待定（见待定项 P11/P12）。",
+      "refs": [
+        "C_EUROPE_CONTINENT",
+        "C_ASIA_CONTINENT",
+        "C_NEW_CONTINENT",
+        "C_AFRICA_CONTINENT"
+      ]
+    },
+    {
+      "id": "N-DE-STATES",
+      "category": "数量核对",
+      "severity": "信息",
+      "title": "德意志联邦州数：清单 31 个",
+      "detail": "S0 第十九节逐条列出 31 项；S2 表述为「德意志30余州结构」。两者相容。",
+      "recommendation": "无需修正。若最终确定州数，请更新 SB_DEUTSCHLAND.units。",
+      "refs": [
+        "SB_DEUTSCHLAND"
+      ]
+    },
+    {
+      "id": "N-ELECTORS-OK",
+      "category": "数量核对",
+      "severity": "信息",
+      "title": "七位选侯清单数目正确（7 项）",
+      "detail": "美因茨、科隆、特里尔三大主教 + 波西米亚国王、莱茵普法尔茨伯爵、萨克森公爵、勃兰登堡藩侯。",
+      "recommendation": "无需修正。",
+      "refs": [
+        "T_FRANKFURT_1356"
+      ]
+    },
+    {
+      "id": "N-MAP",
+      "category": "数量核对",
+      "severity": "信息",
+      "title": "地图工程基础矩阵 16 × 12 = 192 张，与清单一致",
+      "detail": "S0 纵轴 16 个节点 × 横轴 12 项指标。",
+      "recommendation": "无需修正。",
+      "refs": []
+    },
+    {
+      "id": "N-POLES",
+      "category": "数量核对",
+      "severity": "信息",
+      "title": "六极结构齐备",
+      "detail": "S1/S3：德意志（文明核心）、法兰克（文明边界）、伊比利亚（秩序挑战者）、罗斯兀鲁思（欧亚大陆平衡者）、不列颠（海洋平衡者）、美国（海外工业—科学强国）。",
+      "recommendation": "无需修正。注意 S3 已把英国的「议会制度」改为「绝对主义文明」，但「海洋平衡者」的国际定位保留。",
+      "refs": [
+        "C_DEUTSCHLAND",
+        "C_FRANKEN",
+        "C_IBERIA",
+        "C_ROS_UHLUS",
+        "C_UK",
+        "C_USA"
+      ]
+    },
+    {
+      "id": "N-PROT4",
+      "category": "数量核对",
+      "severity": "信息",
+      "title": "新教四大派别齐备",
+      "detail": "S0/S1 明列：北德意志路德宗、低地-瑞士加尔文宗、波西米亚胡斯派-路德宗混合、南德意志阿尔卑斯福音派。",
+      "recommendation": "无需修正。",
+      "refs": [
+        "R_LUTHERAN",
+        "R_CALVIN",
+        "R_HUSSITE",
+        "R_ALPEN"
+      ]
+    },
+    {
+      "id": "T-CYCLE-OK",
+      "category": "时间线核对",
+      "severity": "信息",
+      "title": "事件因果图无环",
+      "detail": "检查 58 个事件、157 条因果边。",
+      "recommendation": "无需修正。",
+      "refs": []
+    },
+    {
+      "id": "T-DIR-OK",
+      "category": "时间线核对",
+      "severity": "信息",
+      "title": "因果边方向与年份一致",
+      "detail": "宽容度 ±60 年。",
+      "recommendation": "无需修正。",
+      "refs": []
+    },
+    {
+      "id": "T-RANGE",
+      "category": "时间线核对",
+      "severity": "信息",
+      "title": "时间线覆盖 800 — 1975，共 58 个事件节点",
+      "detail": "S0 地图工程纵轴 16 节点全部有事件对应（见 table_timeline.json 的 axis_nodes）。",
+      "recommendation": "无需修正。",
+      "refs": []
+    }
+  ]
+}

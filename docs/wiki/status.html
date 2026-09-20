@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>三态清单 · 泛德意志的欧洲</title>
+<style>
+:root{
+  --bg:#14110d; --fg:#e8e2d4; --dim:#a89e8a; --accent:#c9a227; --line:#3a332a;
+  --card:#1d1913; --card2:#231e17; --link:#d8b64a; --ok:#7fa650; --warn:#d0913c; --bad:#c25b45;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+     font-family:"Segoe UI","Microsoft YaHei",system-ui,sans-serif;line-height:1.7}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+header{position:sticky;top:0;z-index:20;background:rgba(20,17,13,.97);
+       border-bottom:1px solid var(--line);backdrop-filter:blur(6px);padding:12px 20px}
+.hdr{max-width:1180px;margin:0 auto}
+h1{margin:0;font-size:19px;letter-spacing:.03em}
+h1 .sub{color:var(--dim);font-size:12px;font-weight:400;margin-left:10px;letter-spacing:0}
+nav.crumbs{font-size:12px;color:var(--dim);margin-top:5px}
+nav.crumbs a{color:var(--dim)}
+nav.crumbs a:hover{color:var(--link)}
+main{max-width:1180px;margin:0 auto;padding:18px 20px 70px}
+h2{font-size:17px;border-bottom:1px solid var(--line);padding-bottom:6px;margin:28px 0 12px}
+h3{font-size:15px;margin:20px 0 8px}
+h4{font-size:13.5px;margin:14px 0 6px;color:#cfc6b2}
+p{margin:8px 0}
+ul,ol{margin:8px 0;padding-left:22px}
+li{margin:3px 0}
+code,.mono{font-family:Consolas,"Cascadia Mono",monospace;font-size:12.5px}
+code{background:#0e0c09;border:1px solid var(--line);border-radius:4px;padding:1px 5px;color:var(--accent)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:14px 17px;margin:12px 0}
+.grid{display:grid;gap:10px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+table{border-collapse:collapse;width:100%;font-size:13px;margin:10px 0}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}
+th{background:#0e0c09;color:#cfc6b2;font-weight:600;white-space:nowrap}
+tr:nth-child(even) td{background:#191510}
+.tag{display:inline-block;font-size:11px;padding:1px 8px;border-radius:20px;
+     border:1px solid var(--line);background:#0e0c09;color:var(--dim);margin:1px 3px 1px 0}
+.tag.ok{color:var(--ok);border-color:#3d4d28}
+.tag.warn{color:var(--warn);border-color:#4d3d22}
+.tag.bad{color:var(--bad);border-color:#4d2a22}
+.tag.s5{color:#8fb6d8;border-color:#2a3d4d;background:#0e1419}
+.tag.sstar{color:#c9a2d8;border-color:#432a4d;background:#180e19}
+/* 文献页 */
+.doc{background:#f6f0e2;color:#241d12;border-radius:10px;padding:30px 38px;margin:16px 0;
+     border:1px solid #c9b98f;box-shadow:0 3px 20px #0006;line-height:1.95;
+     font-family:Georgia,"Times New Roman","Songti SC","SimSun",serif;max-width:820px}
+.doc h3{font-size:21px;margin:0 0 4px;color:#3a2c15;letter-spacing:.02em;font-weight:700}
+.doc .dsub{font-size:12.5px;color:#6d5c3a;margin-bottom:14px;border-bottom:1px solid #d6c9a4;padding-bottom:10px}
+.doc h4{font-size:15px;margin:20px 0 6px;color:#5a4318;font-weight:700}
+.doc p{margin:10px 0}
+.doc ol,.doc ul{margin:10px 0 10px 4px;padding-left:24px}
+.doc li{margin:5px 0}
+.doc b{color:#3a2c15}
+/* 正文中的词条交叉引用标记：浅色下划线点线，不打断阅读，不参与链接嵌套 */
+.xr{border-bottom:1px dotted #a08a52;cursor:help}
+.doc .xr{border-bottom-color:#b09a62;color:#3f3016}
+.doc-preamble{font-style:italic;color:#6d5c3a;border-left:3px solid #c9b98f;padding-left:12px;margin-bottom:16px}
+.doc-seal{text-align:right;font-size:13px;color:#7a6841;font-style:italic;margin-top:22px;
+          border-top:1px solid #d6c9a4;padding-top:10px}
+.docmeta{display:grid;grid-template-columns:120px 1fr;gap:6px 14px;font-size:13.5px;margin:12px 0}
+.docmeta dt{color:var(--dim);font-size:12.5px}
+.docmeta dd{margin:0}
+.doclist li{margin:7px 0}
+.kindbadge{font-size:11.5px;padding:2px 9px;border-radius:20px;background:#2a2218;
+           border:1px solid #4a3d22;color:#d8b64a;margin-right:6px}
+.kv{display:grid;grid-template-columns:132px 1fr;gap:5px 12px;font-size:13.5px;margin:10px 0}
+.kv dt{color:var(--dim);font-size:12.5px}
+.kv dd{margin:0}
+.q{position:sticky;top:56px;z-index:15;background:var(--bg);padding:10px 0}
+input[type=search],input[type=text],select{
+  background:#0e0c09;border:1px solid var(--line);color:var(--fg);border-radius:7px;
+  padding:9px 12px;font-size:14px;font-family:inherit}
+input[type=search]{width:100%}
+input:focus,select:focus{outline:none;border-color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.chip{font-size:12px;padding:3px 10px;border-radius:20px;border:1px solid var(--line);
+      background:#0e0c09;color:var(--dim);cursor:pointer;user-select:none}
+.chip:hover{border-color:var(--accent);color:var(--fg)}
+.chip.on{background:var(--accent);color:#14110d;border-color:var(--accent);font-weight:600}
+.item{border:1px solid var(--line);border-radius:9px;background:var(--card);padding:11px 14px;margin-bottom:9px}
+.item h3{margin:0 0 4px;font-size:15px}
+.item .meta{font-size:11.5px;color:var(--dim);margin-bottom:4px}
+.item .sm{font-size:13px;color:#d6cebc}
+mark{background:var(--accent);color:#14110d;border-radius:2px;padding:0 1px}
+.count{color:var(--dim);font-size:12px;margin:10px 0}
+.empty{color:var(--dim);padding:30px 0;text-align:center}
+.rid{font-family:Consolas,monospace;font-size:11px;color:var(--accent);
+     border:1px solid var(--line);border-radius:4px;padding:1px 5px;margin-left:7px}
+footer{max-width:1180px;margin:0 auto;padding:0 20px 40px;color:var(--dim);font-size:11.5px}
+.pill{display:inline-block;min-width:22px;text-align:center}
+.legend{font-size:12px;color:var(--dim)}
+/* 时间轴 */
+.tl-wrap{position:relative;margin:14px 0 0}
+.tl-axis{position:relative;height:34px;border-bottom:2px solid var(--line);margin-bottom:6px}
+.tl-tick{position:absolute;top:0;height:34px;width:1px;background:var(--line)}
+.tl-tick span{position:absolute;top:8px;left:4px;font-size:10.5px;color:var(--dim);white-space:nowrap}
+.tl-lane{position:relative;height:26px;margin:5px 0;background:#191510;border-radius:4px;
+         border:1px solid #2a251d}
+.tl-ev{position:absolute;top:3px;height:19px;border-radius:4px;cursor:pointer;
+       background:#4a3f22;border:1px solid var(--accent);overflow:hidden}
+.tl-ev:hover{background:var(--accent);z-index:6}
+.tl-ev span{font-size:10px;color:#f3ecd8;padding:0 4px;white-space:nowrap;line-height:19px}
+.tl-ev:hover span{color:#14110d}
+.tl-lane-label{position:absolute;left:0;top:3px;height:19px;line-height:19px;font-size:10.5px;
+               color:#a89e8a;transform:translateX(-100%);padding-right:9px;white-space:nowrap;
+               text-align:right;box-sizing:border-box;pointer-events:none}
+.tl-holder{padding-left:138px}
+#tip{position:fixed;z-index:50;max-width:380px;background:var(--card2);border:1px solid var(--accent);
+     border-radius:8px;padding:10px 13px;font-size:12.5px;display:none;box-shadow:0 6px 24px #000a}
+#tip h4{margin:0 0 4px;color:var(--accent);font-size:13.5px}
+.scrub{width:100%;margin:8px 0 4px}
+/* 主页 */
+.hero{padding:54px 20px 36px;text-align:center;
+      background:radial-gradient(ellipse at 50% -10%,#2c2418 0%,#14110d 64%);
+      border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(24px,4.4vw,36px);letter-spacing:.06em;margin:0 0 8px;font-weight:700}
+.hero h1 b{color:var(--accent)}
+.hero .tagline{color:#bdb4a1;font-size:14px;max-width:820px;margin:12px auto 0;line-height:1.9}
+.hero .realms{margin-top:22px;display:flex;gap:9px;justify-content:center;flex-wrap:wrap}
+.realm{font-size:12.5px;padding:5px 14px;border-radius:22px;border:1px solid var(--line);
+       background:#0e0c09;color:#cfc6b2}
+.realm i{font-style:normal;color:var(--accent);font-weight:600}
+.entries{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:24px 0}
+.entry{display:block;border:1px solid var(--line);border-radius:11px;background:var(--card);
+       padding:18px 20px;transition:transform .16s,border-color .16s,box-shadow .16s;
+       position:relative;overflow:hidden}
+.entry:hover{border-color:var(--accent);background:var(--card2);transform:translateY(-2px);
+             text-decoration:none;box-shadow:0 9px 28px #0007}
+.entry .ico{font-size:22px;margin-bottom:8px;display:block}
+.entry h3{margin:0 0 6px;font-size:16px;color:var(--fg)}
+.entry p{margin:0;font-size:12.5px;color:var(--dim);line-height:1.74}
+.entry .n{position:absolute;right:15px;top:14px;font-size:11px;color:var(--accent);
+          border:1px solid var(--line);border-radius:20px;padding:1px 9px;background:#0e0c09}
+.entry.wide{grid-column:span 2}
+@media(max-width:700px){.entry.wide{grid-column:span 1}}
+.stats{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));margin:18px 0}
+.stat{border:1px solid var(--line);border-radius:9px;background:#191510;padding:14px 10px;text-align:center}
+.stat b{display:block;font-size:23px;color:var(--accent);font-weight:700;line-height:1.3}
+.stat span{font-size:11.5px;color:var(--dim)}
+.quote{border-left:3px solid var(--accent);padding:3px 0 3px 17px;margin:22px 0;
+       color:#cfc6b2;font-size:13.5px;line-height:1.88}
+.quote cite{display:block;color:var(--dim);font-size:12px;font-style:normal;margin-top:7px}
+.twocol{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(318px,1fr))}
+.pill-row{display:flex;flex-wrap:wrap;gap:6px;margin:9px 0}
+a.pill{font-size:12px;padding:3px 11px;border-radius:20px;border:1px solid var(--line);
+       background:#0e0c09;color:#cfc6b2;display:inline-block}
+a.pill:hover{border-color:var(--accent);color:var(--fg);text-decoration:none}
+a.pill.gold{border-color:#5a4a22;color:var(--accent)}
+.tl-mini{position:relative;height:158px;margin:14px 0 4px;border:1px solid var(--line);
+         border-radius:9px;background:#191510;overflow:hidden}
+.tl-mini .dot{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--accent);
+              border:1px solid #0e0c09;transform:translate(-50%,-50%);cursor:pointer;
+              transition:width .14s,height .14s,box-shadow .14s}
+.tl-mini .dot:hover{width:15px;height:15px;box-shadow:0 0 0 3px #c9a22744}
+.tl-mini .dot.rel{background:#c25b45}
+.tl-mini .dot.cul{background:#7fa650}
+.tl-mini .dot.pol{background:#8fb6d8}
+.tl-mini .axl{position:absolute;bottom:6px;width:1px;height:8px;background:#3a332a}
+.tl-mini .axt{position:absolute;bottom:17px;font-size:9.5px;color:#6f6656;transform:translateX(-50%)}
+.tl-mini .lgd{position:absolute;right:9px;top:7px;font-size:10px;color:var(--dim)}
+/* 主页迷你时间轴：泳道 + 密度柱 + 锚点 */
+.tlmini-grid{position:absolute;left:0;right:0;top:0;bottom:26px;pointer-events:none}
+.tlmini-line{position:absolute;top:0;bottom:0;width:1px;background:#221e18}
+.tlmini-lane{position:relative;height:44px;background:#1c1813;border-bottom:1px solid #221e18}
+.tlmini-lane span{position:absolute;left:9px;top:6px;font-size:10.5px;color:#7d7462;
+                  letter-spacing:.04em;z-index:3;pointer-events:none}
+.tlmini-bars{position:absolute;left:0;right:0;top:0;bottom:26px;z-index:1}
+.tl-mini .bar{position:absolute;bottom:0;width:8px;border-radius:2px 2px 0 0;
+              opacity:.92;transition:opacity .14s,filter .14s}
+.tl-mini .bar:hover{opacity:1;filter:brightness(1.4)}
+.tl-mini .bar i{position:absolute;top:-13px;left:50%;transform:translateX(-50%);font-size:9px;
+                font-style:normal;color:#cfc6b2}
+.tl-mini .bar.rel{background:linear-gradient(#c25b45,#8e4033)}
+.tl-mini .bar.cul{background:linear-gradient(#7fa650,#5a7a38)}
+.tl-mini .bar.pol{background:linear-gradient(#8fb6d8,#5a7fa3)}
+.tlmini-anchor{position:absolute;bottom:0;height:100%;width:1px;background:#3a332a;
+               transform:translateX(-0.5px);pointer-events:none;z-index:2}
+.tlmini-anchor i{position:absolute;bottom:28px;left:-2px;width:5px;height:5px;border-radius:50%;
+                 background:#c9a227}
+.tlmini-anchor b{position:absolute;bottom:8px;left:0;transform:translateX(-50%);
+                 font-size:9.5px;font-weight:400;color:#8a8170;white-space:nowrap}
+.tlmini-foot{display:flex;justify-content:space-between;font-size:11.5px;color:var(--dim);
+             margin-top:7px}
+/* Hero 分叉图 */
+.fork{display:block;width:100%;max-width:900px;margin:28px auto 0;height:auto}
+.fork .fkl{fill:#c9a227;font-size:12px;font-weight:600}
+.fork .fkt{fill:#e2dbcb;font-size:12.5px}
+.fork .fks{fill:#8f8674;font-size:11px}
+.fork .fkm{fill:#8f8674;font-size:10.5px}
+/* Markdown 转换页 */
+.mdbody{font-size:13.5px;line-height:1.85}
+.mdbody h1{font-size:23px;margin:26px 0 12px;color:var(--accent);font-weight:700}
+.mdbody h2{font-size:18px;margin:30px 0 12px;border-bottom:1px solid var(--line);padding-bottom:7px}
+.mdbody h3{font-size:15.5px;margin:22px 0 9px;color:#e6dfcd}
+.mdbody h4{font-size:14px;margin:16px 0 7px;color:#cfc6b2}
+.mdbody p{margin:9px 0}
+.mdbody ul.mdul,.mdbody ol{margin:9px 0;padding-left:24px}
+.mdbody li{margin:4px 0}
+.mdbody code{background:#0e0c09;border:1px solid var(--line);border-radius:4px;
+             padding:1px 5px;color:var(--accent);font-size:12.5px}
+.mdbody a{color:var(--link)}
+.mdbody blockquote.mdq{border-left:3px solid var(--accent);background:#191510;
+                       margin:12px 0;padding:8px 15px;border-radius:0 7px 7px 0}
+.mdbody blockquote.mdq p{margin:5px 0;color:#cfc6b2}
+.mdbody hr.mdhr{border:none;border-top:1px solid var(--line);margin:26px 0}
+.mdbody .tw{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:8px}
+.mdbody table{margin:0;font-size:12.5px;border-collapse:collapse;width:100%}
+.mdbody th{position:sticky;top:0;background:#14110d;z-index:1}
+.mdbody td,.mdbody th{border:none;border-bottom:1px solid #241f19;border-right:1px solid #241f19;
+                      padding:6px 10px;vertical-align:top}
+.mdbody tr:last-child td{border-bottom:none}
+.mdbody tr:nth-child(even) td{background:#1a1611}
+.mdbody strong{color:#f0e9d8}
+/* 全局顶栏 */
+.topbar{position:sticky;top:0;z-index:30;background:rgba(16,13,10,.97);
+        border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+.topbar-in{max-width:1180px;margin:0 auto;padding:9px 20px;display:flex;align-items:center;
+           gap:14px;flex-wrap:nowrap;min-width:0}
+.brand{font-size:14.5px;font-weight:600;color:var(--accent);letter-spacing:.05em;
+       white-space:nowrap;flex-shrink:0}
+.brand:hover{text-decoration:none;color:#e0bc45}
+.gnav{display:flex;gap:4px;margin-left:auto;flex-shrink:0}
+.gnav-i{font-size:13px;color:var(--dim);padding:5px 12px;border-radius:7px;white-space:nowrap;
+        border:1px solid transparent}
+.gnav-i:hover{color:var(--fg);background:#211c16;text-decoration:none}
+.gnav-i.on{color:#14110d;background:var(--accent);border-color:var(--accent);font-weight:600}
+.gnav-t{display:none;background:#211c16;border:1px solid var(--line);color:var(--fg);
+        border-radius:7px;font-size:15px;padding:3px 10px;cursor:pointer}
+/* 左上角返回导航 */
+.backnav{display:flex;gap:6px;flex-shrink:0}
+.bkn{font-size:12.5px;color:#cfc6b2;background:#211c16;border:1px solid var(--line);
+     border-radius:7px;padding:5px 11px;white-space:nowrap;cursor:pointer;
+     font-family:inherit;line-height:1.35;transition:border-color .14s,color .14s,background .14s}
+.bkn:hover{border-color:var(--accent);color:var(--accent);background:#2a2218;text-decoration:none}
+/* 页脚署名 */
+.madeby{margin:30px 0 0;padding:22px 24px;text-align:center;border-radius:11px;
+        background:linear-gradient(135deg,rgba(201,162,39,.10),rgba(201,162,39,.03) 45%,transparent);
+        border:1px solid #3d3527;font-size:14px;color:#ddd5c3;letter-spacing:.04em}
+.madeby .mk{display:block;font-size:11.5px;color:var(--dim);letter-spacing:.22em;
+            text-transform:uppercase;margin-bottom:7px}
+.madeby b{color:var(--accent);font-weight:700;font-size:16px;letter-spacing:.06em;
+          padding:0 3px}
+.madeby .fl{display:block;margin-top:9px;font-size:11.5px;color:#7d7462;letter-spacing:.02em}
+.footmeta{font-size:11.5px;color:var(--dim);line-height:1.9;margin-top:20px;
+          padding-top:16px;border-top:1px solid var(--line)}
+.footmeta a{color:#a89e8a}
+.footmeta a:hover{color:var(--link)}
+@media(max-width:760px){
+  .backnav{order:3;width:100%}
+  .bkn{flex:1;text-align:center}
+}
+@media(max-width:760px){
+  .topbar-in{flex-wrap:wrap;gap:10px}
+  .gnav-t{display:block;margin-left:auto}
+  .gnav{display:none;width:100%;flex-direction:column;gap:2px}
+  .gnav.open{display:flex}
+  .gnav-i{padding:8px 12px}
+}
+</style>
+
+</head>
+<body>
+<div class="topbar"><div class="topbar-in"><div class="backnav"><a class="bkn" href="../home.html" title="回到主页">⌂ 回到主页</a><button class="bkn" id="bkPrev" type="button" title="返回上一页">← 返回上一页</button></div><a class="brand" href="../home.html">泛德意志的欧洲</a><nav class="gnav"><a class="gnav-i" href="../home.html">主页</a><a class="gnav-i" href="../index.html">索引</a><a class="gnav-i on" href="../wiki/index.html">文献</a><a class="gnav-i" href="../wiki/docs-index.html">文档</a><a class="gnav-i" href="../timeline.html">时间轴</a></nav><button class="gnav-t" id="gnavToggle" aria-label="切换导航">☰</button></div></div>
+
+<header><div class="hdr">
+<h1>📌 三态清单<span class="sub">已确定 36 ／ 待定 34 ／ 修正 15</span></h1>
+<nav class="crumbs"><a href="../home.html">主页</a> ／ <a href="../index.html">索引</a> ／
+<a href="index.html">文档</a> ／ 一致性与决策</nav></div></header>
+<main>
+<div class="card">
+<span class="kindbadge">一致性与决策</span>
+本页由 <code>docs/status_confirmed_pending_revisions.md</code> 自动转换生成，
+数据源为 <code>tools/kb_data.py</code> 等设定数据层；源 Markdown 保留在 <code>docs/</code> 下。
+<div class="pill-row" style="margin-top:10px"><a class="chip" href="consistency.html">✅ 一致性检查报告</a><a class="chip" href="pending.html">🗳 待定项决策报告</a><a class="chip" href="checklist.html">☑ 待定项裁定清单</a><a class="chip" href="graph.html">🕸 关系网总览</a></div>
+</div>
+<div class="card"><div class="legend">本页目录</div><div class="pill-row"><a class="pill" href="#一-已确定项-36-条">一、已确定项（36 条）</a><a class="pill" href="#二-待定项-35-条">二、待定项（35 条）</a><a class="pill" href="#三-修正项与冲突记录-15-条冲突-12-条修订">三、修正项与冲突记录（15 条冲突 + 12 条修订）</a><a class="pill" href="#出处代号">出处代号</a></div></div>
+<div class="mdbody">
+<h1 id="设定集三态清单-已确定项-待定项-修正项">设定集三态清单：已确定项 / 待定项 / 修正项</h1>
+<blockquote class="mdq">
+<p>三态定义：<strong>已确定</strong> = 可直接当正典使用；<strong>待定</strong> = 文档明确标注未定；<strong>修正</strong> = 后续文档明确覆盖/改写先前条款。</p>
+</blockquote>
+<h2 id="一-已确定项-36-条">一、已确定项（36 条）</h2>
+<p>来源以《设定集补充2》第三十一节 🟢 清单为主，并补入 S3、S4 明确敲定的条款。</p>
+<ol>
+<li>法兰克联邦化单一制</li>
+<li>法兰克奥克省1945—1975临时存在、之后废除</li>
+<li>奥克普通州化</li>
+<li>多菲内/普罗旺斯作为南方枢纽</li>
+<li>法兰克早期宪政、内阁制</li>
+<li>一战废王</li>
+<li>二战复辟</li>
+<li>战后哈布斯堡国王完全礼仪化</li>
+<li>FVP/FSP两大党 + FKP</li>
+<li>德意志联邦制</li>
+<li>德意志30余州结构</li>
+<li>德国多党制</li>
+<li>伊比利亚高度中央集权</li>
+<li>伊比利亚总统制</li>
+<li>伊比利亚大区必须“大而少”</li>
+<li>北非不具有特殊宪制地位</li>
+<li>从PNI到PSI大党 + 小党</li>
+<li>美国社会主义党成为主要政党</li>
+<li>四大洲文明划分原则</li>
+<li>英语与盎格鲁语合流为同一语言的高、低语域</li>
+<li>罗曼化程度梯度</li>
+<li>金雀花延续至伊比利亚革命前后，蒙福尔家族接替</li>
+<li>不主张法兰西王冠</li>
+<li>战前绝对君主制</li>
+<li>等级会议非立法机关</li>
+<li>1945年战败后民主化</li>
+<li>战后为共和国</li>
+<li>多党制与联邦化分权为被监督强加</li>
+<li>苏格兰与威尔士无独立法统</li>
+<li>爱尔兰1945年全岛独立为共和国</li>
+<li>英联邦存在但规模远小于现实，殖民地战后纷纷独立</li>
+<li>罗斯兀鲁思为后基辅罗斯国家（蒙古-金帐继承线）</li>
+<li>金帐汗国未在14世纪伊斯兰化</li>
+<li>莫斯科王朝蒙古化、蒙古王族直接成为莫斯科统治王朝</li>
+<li>基辅王国采用自称、继承基辅罗斯传统</li>
+<li>一战罗斯兀鲁思重新夺取基辅、二战后再次分离</li>
+</ol>
+<h2 id="二-待定项-35-条">二、待定项（35 条）</h2>
+<blockquote class="mdq">
+<p>优先级与方案详见 <code>docs/pending_decisions.md</code>；勾选裁定见 <code>docs/pending_checklist.md</code>。</p>
+</blockquote>
+<div class="tw"><table>
+<thead><tr><th>#</th><th>优先级</th><th>待定项</th><th>出处</th><th>方案数</th><th>推荐方案 / 已被后续文档部分解决</th></tr></thead><tbody>
+<tr><td>1</td><td>P0</td><td>宗教—文明边界线：伊斯兰文明止于哪里、西域佛教覆盖到哪里、蒙古长生天世界向西延伸到哪里、罗斯兀鲁思何时以何方式进入非伊斯兰化的中亚</td><td>S1、S4</td><td>3</td><td>方案B：以天山—帕米尔为界，河中为双影响过渡带</td></tr>
+<tr><td>2</td><td>P0</td><td>“罗斯兀鲁思/莫斯科国”的正式别名（“俄罗斯”已废弃）</td><td>S4</td><td>3</td><td>方案B：国号「罗斯兀鲁思」，通称「罗斯」</td></tr>
+<tr><td>3</td><td>P1</td><td>新设定的大洲正式名称</td><td>S2</td><td>3</td><td>方案A：正式名「东洲」，历史故称「奥洲」</td></tr>
+<tr><td>4</td><td>P1</td><td>伊比利亚的王朝名与建国年份（用户本轮补充：前身为西班牙-阿拉贡及奥克王国 → 统一伊比利亚 + 南下北非 → 伊比利亚王国 → 1789 被推翻）</td><td>S0、S2</td><td>3</td><td>方案A：沿用西班牙-阿拉贡的王朝名，统一后改称「伊比利亚王朝」</td></tr>
+<tr><td>5</td><td>P1</td><td>波斯诸王朝的具体王朝名（本轮已确定「波斯逐步形成什叶派国家传统」这一结构性方向）</td><td>S1</td><td>3</td><td>方案C：新造一个符合本世界线的突厥—波斯王朝名（或用户指定）</td></tr>
+<tr><td>6</td><td>P1</td><td>安纳托利亚突厥帝国的正式王朝名与 20 世纪政体</td><td>S1</td><td>3</td><td>方案A：使用「奥斯曼」（但明确其未取得君士坦丁堡）</td></tr>
+<tr><td>7</td><td>P1</td><td>法兰克各州最终数量</td><td>S2</td><td>2</td><td>方案A：11 个本土州；1975 年后奥克五州升为普通州 ⇒ 共 16 州</td></tr>
+<tr><td>8</td><td>P2</td><td>伊比利亚最终大区数量及边界</td><td>S2</td><td>3</td><td>方案C：保留八区框架但以山系/水系重新命名</td></tr>
+<tr><td>9</td><td>P2</td><td>奥克正常化法案的确切年份</td><td>S2</td><td>2</td><td>方案B：定为 1972—1978 年的渐进过程，1975 年为关键节点</td></tr>
+<tr><td>10</td><td>P2</td><td>不列颠监督过渡期确切年限</td><td>S3</td><td>3</td><td>方案B：1945 年即公决废王，1945—1955 为制度移交期</td></tr>
+<tr><td>11</td><td>P2</td><td>英联邦成员名单与共同防务条款</td><td>S3</td><td>2</td><td>方案B：列 5—8 个具名成员，明确「无共同防务条款」</td></tr>
+<tr><td>12</td><td>P2</td><td>爱尔兰：凯尔特语官方地位、总统与总理职权、与英联邦的关系</td><td>S3</td><td>2</td><td>方案B：凯尔特语为区域文化语言（西部）；爱尔兰为英联邦联系成员</td></tr>
+<tr><td>13</td><td>P2</td><td>不列颠政党正式英文名称与组织史</td><td>S3</td><td>2</td><td>方案A + 后续按需补 B</td></tr>
+<tr><td>14</td><td>P2</td><td>战前蒙福尔王朝的完整王室谱系</td><td>S3</td><td>2</td><td>方案A：补 3—5 代具名君主</td></tr>
+<tr><td>15</td><td>P2</td><td>法兰克州名的用词统一（现实旧称 vs 德语读音译名）</td><td>S0</td><td>2</td><td>方案A：全部统一为德语读音译名</td></tr>
+<tr><td>16</td><td>P2</td><td>伊比利亚王国与奥克王国的政体细节、首都、建国确切年份</td><td>S2</td><td>3</td><td>方案A：首都定为托莱多</td></tr>
+<tr><td>17</td><td>P2</td><td>不列颠政教分离的具体安排</td><td>S3</td><td>2</td><td>方案A：原国教整体转为自治教会，国家不再设国教</td></tr>
+<tr><td>18</td><td>P2</td><td>君士坦丁堡/海峡政治体的具体形态</td><td>S1</td><td>3</td><td>方案A：希腊人主导的基督教城邦—海峡政治体，控制海峡通行权</td></tr>
+<tr><td>19</td><td>P2</td><td>伦敦与帕里斯之间的“罗曼正统之争”（可继续深挖的接口）</td><td>S3</td><td>2</td><td>方案A：正式立为第二条文化张力线</td></tr>
+<tr><td>20</td><td>P2</td><td>美国新版州界</td><td>S2</td><td>3</td><td>方案B：只改「移民结构」相关的区域性设置，不动州界</td></tr>
+<tr><td>21</td><td>P3</td><td>新设定的大洲内部国家行政制度及其历史</td><td>S2</td><td>2</td><td>方案A：暂不设定，等 P1 裁定后再展开</td></tr>
+<tr><td>22</td><td>P3</td><td>不列颠一级单位是否最终定为八个</td><td>S3</td><td>2</td><td>方案A：确定为八个</td></tr>
+<tr><td>23</td><td>P3</td><td>伦敦与帕里斯之间的「罗曼正统之争」（S3 提出的可深挖接口）</td><td>S3</td><td>2</td><td>方案A：正式立为第二条文化张力线</td></tr>
+<tr><td>24</td><td>P3</td><td>白罗斯是否与基辅王国组成联邦</td><td>S4</td><td>2</td><td>方案A：组成联邦（基辅王国—白罗斯联邦）</td></tr>
+<tr><td>25</td><td>P3</td><td>不列颠战后总统职权细节</td><td>S3</td><td>2</td><td>方案A</td></tr>
+<tr><td>26</td><td>P3</td><td>不列颠政教分离的具体安排</td><td>S3</td><td>2</td><td>方案A</td></tr>
+<tr><td>27</td><td>P3</td><td>罗斯兀鲁思与安纳托利亚突厥帝国在黑海—高加索方向的关系</td><td>S2、S4</td><td>2</td><td>方案B：以贸易与朝贡为主，军事对峙为辅</td></tr>
+<tr><td>28</td><td>P3</td><td>本轮新增推定人物（约翰娜·冯·阿尔孔、黎塞留、伊莎贝拉·冯·卡斯蒂利亚、沙阿伊斯玛仪、奥斯曼一世、伊比利亚开国君主）的姓名、生卒年与事迹是否采纳</td><td>S0、S1、S2</td><td>3</td><td>方案C：采纳但显式标注来源性质</td></tr>
+<tr><td>29</td><td>P3</td><td>法兰克南部的奥克王国在 1648 年之前的完整历史（本库仅有起点与终点）</td><td>S0、S2</td><td>2</td><td>方案B：补一段简史（约 5—8 句）</td></tr>
+<tr><td>30</td><td>P3</td><td>埃及、叙利亚、阿拉伯、波斯诸政权在 20 世纪的形态（本库只写到 16—19 世纪格局）</td><td>S1、S2</td><td>2</td><td>方案A：暂不展开</td></tr>
+<tr><td>31</td><td>P3</td><td>伊比利亚王国首都（本库推定为托莱多）与奥克王国首都</td><td>S2</td><td>2</td><td>方案A</td></tr>
+<tr><td>32</td><td>P3</td><td>法兰克南部奥克省在 1945 年之前的行政归属细节（普罗旺斯、多菲内在奥克省建立前的地位）</td><td>S2</td><td>2</td><td>方案A（采用 S2 原文）</td></tr>
+<tr><td>33</td><td>P3</td><td>爱尔兰凯尔特语官方地位、总统与总理职权、与英联邦关系</td><td>S3</td><td>2</td><td>方案B：凯尔特语为区域文化语言（西部）；爱尔兰为英联邦联系成员</td></tr>
+<tr><td>34</td><td>P3</td><td>美国具体州界及行政层级</td><td>S2</td><td>3</td><td>方案A：只改「移民结构」相关设置，不动州界</td></tr>
+<tr><td>35</td><td>P3</td><td>美国社会主义党的正式名称/组织历史</td><td>S2</td><td>3</td><td>方案C：分两阶段——早期称 Socialist Party，后改组为 Social Democratic Party</td></tr>
+</tbody></table></div>
+<h3 id="待定项按优先级分布">待定项按优先级分布</h3>
+<div class="tw"><table>
+<thead><tr><th>优先级</th><th>条数</th><th>待定项</th></tr></thead><tbody>
+<tr><td>P0</td><td>2</td><td>宗教—文明边界线：伊斯兰文明止于哪里、西域佛教覆盖到哪里、蒙古长生天世界向西…；“罗斯兀鲁思/莫斯科国”的正式别名（“俄罗斯”已废弃）</td></tr>
+<tr><td>P1</td><td>5</td><td>新设定的大洲正式名称；伊比利亚的王朝名与建国年份（用户本轮补充：前身为西班牙-阿拉贡及奥克王国 →…；波斯诸王朝的具体王朝名（本轮已确定「波斯逐步形成什叶派国家传统」这一结构性方…；安纳托利亚突厥帝国的正式王朝名与 20 世纪政体；法兰克各州最终数量</td></tr>
+<tr><td>P2</td><td>13</td><td>伊比利亚最终大区数量及边界；奥克正常化法案的确切年份；不列颠监督过渡期确切年限；英联邦成员名单与共同防务条款；爱尔兰：凯尔特语官方地位、总统与总理职权、与英联邦的关系；不列颠政党正式英文名称与组织史；战前蒙福尔王朝的完整王室谱系；法兰克州名的用词统一（现实旧称 vs 德语读音译名）；伊比利亚王国与奥克王国的政体细节、首都、建国确切年份；不列颠政教分离的具体安排；君士坦丁堡/海峡政治体的具体形态；伦敦与帕里斯之间的“罗曼正统之争”（可继续深挖的接口）；美国新版州界</td></tr>
+<tr><td>P3</td><td>15</td><td>新设定的大洲内部国家行政制度及其历史；不列颠一级单位是否最终定为八个；伦敦与帕里斯之间的「罗曼正统之争」（S3 提出的可深挖接口）；白罗斯是否与基辅王国组成联邦；不列颠战后总统职权细节；不列颠政教分离的具体安排；罗斯兀鲁思与安纳托利亚突厥帝国在黑海—高加索方向的关系；本轮新增推定人物（约翰娜·冯·阿尔孔、黎塞留、伊莎贝拉·冯·卡斯蒂利亚、沙阿…；法兰克南部的奥克王国在 1648 年之前的完整历史（本库仅有起点与终点）；埃及、叙利亚、阿拉伯、波斯诸政权在 20 世纪的形态（本库只写到 16—19…；伊比利亚王国首都（本库推定为托莱多）与奥克王国首都；法兰克南部奥克省在 1945 年之前的行政归属细节（普罗旺斯、多菲内在奥克省…；爱尔兰凯尔特语官方地位、总统与总理职权、与英联邦关系；美国具体州界及行政层级；美国社会主义党的正式名称/组织历史</td></tr>
+</tbody></table></div>
+<h3 id="待定项按来源分布">待定项按来源分布</h3>
+<div class="tw"><table>
+<thead><tr><th>来源</th><th>条数</th><th>待定项</th></tr></thead><tbody>
+<tr><td>S0</td><td>4</td><td>伊比利亚的王朝名与建国年份（用户本轮补充：前身为西班牙-阿拉贡及奥克王国 → 统一伊比利亚 + 南下北非 → 伊比利亚王国 → 1789 被推翻）；法兰克州名的用词统一（现实旧称 vs 德语读音译名）；本轮新增推定人物（约翰娜·冯·阿尔孔、黎塞留、伊莎贝拉·冯·卡斯蒂利亚、沙阿伊斯玛仪、奥斯曼一世、伊比利亚开国君主）的姓名、生卒年与事迹是否采纳；法兰克南部的奥克王国在 1648 年之前的完整历史（本库仅有起点与终点）</td></tr>
+<tr><td>S1</td><td>6</td><td>宗教—文明边界线：伊斯兰文明止于哪里、西域佛教覆盖到哪里、蒙古长生天世界向西延伸到哪里、罗斯兀鲁思何时以何方式进入非伊斯兰化的中亚；波斯诸王朝的具体王朝名（本轮已确定「波斯逐步形成什叶派国家传统」这一结构性方向）；安纳托利亚突厥帝国的正式王朝名与 20 世纪政体；君士坦丁堡/海峡政治体的具体形态；本轮新增推定人物（约翰娜·冯·阿尔孔、黎塞留、伊莎贝拉·冯·卡斯蒂利亚、沙阿伊斯玛仪、奥斯曼一世、伊比利亚开国君主）的姓名、生卒年与事迹是否采纳；埃及、叙利亚、阿拉伯、波斯诸政权在 20 世纪的形态（本库只写到 16—19 世纪格局）</td></tr>
+<tr><td>S2</td><td>16</td><td>新设定的大洲正式名称；伊比利亚的王朝名与建国年份（用户本轮补充：前身为西班牙-阿拉贡及奥克王国 → 统一伊比利亚 + 南下北非 → 伊比利亚王国 → 1789 被推翻）；法兰克各州最终数量；伊比利亚最终大区数量及边界；奥克正常化法案的确切年份；伊比利亚王国与奥克王国的政体细节、首都、建国确切年份；美国新版州界；新设定的大洲内部国家行政制度及其历史；罗斯兀鲁思与安纳托利亚突厥帝国在黑海—高加索方向的关系；本轮新增推定人物（约翰娜·冯·阿尔孔、黎塞留、伊莎贝拉·冯·卡斯蒂利亚、沙阿伊斯玛仪、奥斯曼一世、伊比利亚开国君主）的姓名、生卒年与事迹是否采纳；法兰克南部的奥克王国在 1648 年之前的完整历史（本库仅有起点与终点）；埃及、叙利亚、阿拉伯、波斯诸政权在 20 世纪的形态（本库只写到 16—19 世纪格局）；伊比利亚王国首都（本库推定为托莱多）与奥克王国首都；法兰克南部奥克省在 1945 年之前的行政归属细节（普罗旺斯、多菲内在奥克省建立前的地位）；美国具体州界及行政层级；美国社会主义党的正式名称/组织历史</td></tr>
+<tr><td>S3</td><td>12</td><td>不列颠监督过渡期确切年限；英联邦成员名单与共同防务条款；爱尔兰：凯尔特语官方地位、总统与总理职权、与英联邦的关系；不列颠政党正式英文名称与组织史；战前蒙福尔王朝的完整王室谱系；不列颠政教分离的具体安排；伦敦与帕里斯之间的“罗曼正统之争”（可继续深挖的接口）；不列颠一级单位是否最终定为八个；伦敦与帕里斯之间的「罗曼正统之争」（S3 提出的可深挖接口）；不列颠战后总统职权细节；不列颠政教分离的具体安排；爱尔兰凯尔特语官方地位、总统与总理职权、与英联邦关系</td></tr>
+<tr><td>S4</td><td>4</td><td>宗教—文明边界线：伊斯兰文明止于哪里、西域佛教覆盖到哪里、蒙古长生天世界向西延伸到哪里、罗斯兀鲁思何时以何方式进入非伊斯兰化的中亚；“罗斯兀鲁思/莫斯科国”的正式别名（“俄罗斯”已废弃）；白罗斯是否与基辅王国组成联邦；罗斯兀鲁思与安纳托利亚突厥帝国在黑海—高加索方向的关系</td></tr>
+</tbody></table></div>
+<h2 id="三-修正项与冲突记录-15-条冲突-12-条修订">三、修正项与冲突记录（15 条冲突 + 12 条修订）</h2>
+<h3 id="3-1-条款冲突与覆盖">3.1 条款冲突与覆盖</h3>
+<h4 id="X01-奥克省行政地位-状态-修正"><code>X01</code>　奥克省行政地位　（状态：修正）</h4>
+<ul class="mdul">
+<li>- <strong>原条款</strong>：S0：南部奥克省“不是联邦制下普通州，而是特殊建制”，下辖朗格多克、普罗旺斯、多菲内、奥克海岸、罗讷河口五州；省总督由巴黎直接任命。</li>
+<li>- <strong>改后条款</strong>：S2：重新定义为“1945—1975年的临时性省级行政层”，而不是永久性的第一级联邦单位；并进一步确定“约1975年以后南部奥克省废除”，原奥克州全部直接成为普通联邦州。</li>
+<li>- <strong>裁定</strong>：以 S2 为准（后被文档覆盖）。当前正典：1945-1975为临时中间管理层，1975年后废除，奥克各州为普通联邦州。</li>
+<li>- <strong>出处</strong>：S0、S1、S2</li>
+</ul>
+<h4 id="X02-英国政体与议会制度-状态-修正"><code>X02</code>　英国政体与议会制度　（状态：修正）</h4>
+<ul class="mdul">
+<li>- <strong>原条款</strong>：S0/S1/S2：英国保留“议会制度”、“日耳曼＋诺曼法兰克＋新教宪政文明”、“海洋君主（君权强化，由于法国传统）国”。</li>
+<li>- <strong>改后条款</strong>：S3 R2：删除议会制度，改为“新教绝对主义文明。宪政与议会不是中世纪遗产，而是1945年战败后的产物”。S3 R3：战前为绝对君主国，1945后为共和国；“海洋君主国”表述仅适用于战前。</li>
+<li>- <strong>裁定</strong>：以 S3 为准。宪政与议会为1945年后被监督强加的产物。</li>
+<li>- <strong>出处</strong>：S0、S1、S2、S3</li>
+</ul>
+<h4 id="X03-英国战后国体-状态-修正"><code>X03</code>　英国战后国体　（状态：修正）</h4>
+<ul class="mdul">
+<li>- <strong>原条款</strong>：S2：英国为“海洋君主国（君权强化）”。</li>
+<li>- <strong>改后条款</strong>：S3 R3/R4：1945年经制宪会议决议并辅以全民公决正式废除王位，确立共和制；国名为不列颠联邦共和国。</li>
+<li>- <strong>裁定</strong>：以 S3 为准。1945年后为共和国，不保留王室。</li>
+<li>- <strong>出处</strong>：S2、S3</li>
+</ul>
+<h4 id="X04-法语人口不存在-条款-状态-修正"><code>X04</code>　“法语人口不存在”条款　（状态：修正）</h4>
+<ul class="mdul">
+<li>- <strong>原条款</strong>：S0：法语人口不存在，只有德意志法兰克语和伊比利亚奥克语。</li>
+<li>- <strong>改后条款</strong>：S3 R1：改为“大陆北部不存在独立的罗曼语政治民族。罗曼语族存续两处——英语（罗曼化的日耳曼语，其最高语域为古 langue d'oïl 的直系继承）与伊比利亚-奥克语”。</li>
+<li>- <strong>裁定</strong>：以 S3 R1 为准。仍无“法语政治民族”，但罗曼语族存续于英语与伊比利亚-奥克语两处。</li>
+<li>- <strong>出处</strong>：S0、S3</li>
+</ul>
+<h4 id="X05-法兰克宪政起源-状态-修正"><code>X05</code>　法兰克宪政起源　（状态：修正）</h4>
+<ul class="mdul">
+<li>- <strong>原条款</strong>：S2 原错误方向：长期王权专制 → 19世纪革命/改革 → 1871建立宪政君主制。</li>
+<li>- <strong>改后条款</strong>：S2 正式方向：哈布斯堡很早就逐渐“渗透”旧法兰克政治体系，并通过不断妥协把代表制和君主制结合起来；法兰克是最早的宪政君主制之一。1871不是“第一次建立宪政君主制”，而是成熟宪政君主制的制度化/现代化阶段。</li>
+<li>- <strong>裁定</strong>：以 S2 正式方向为准。文档明确“后来你明确否定了这一逻辑”。</li>
+<li>- <strong>出处</strong>：S2</li>
+</ul>
+<h4 id="X06-法兰克本土州数量-状态-修正"><code>X06</code>　法兰克本土州数量　（状态：修正）</h4>
+<ul class="mdul">
+<li>- <strong>原条款</strong>：S0/S2：原设定写“12个法兰克本土州”，但实际列出的只有11个。</li>
+<li>- <strong>改后条款</strong>：S2：明确“这个数字矛盾只是统计错误”。</li>
+<li>- <strong>裁定</strong>：认定为笔误/统计错误，非设定冲突。且“法兰克各州最终数量”仍列为 🟡 待定。</li>
+<li>- <strong>出处</strong>：S0、S2</li>
+</ul>
+<h4 id="X07-俄罗斯-莫斯科国的正式名称-状态-待定"><code>X07</code>　俄罗斯/莫斯科国的正式名称　（状态：待定）</h4>
+<ul class="mdul">
+<li>- <strong>原条款</strong>：S0/S1/S2：使用“俄罗斯”。</li>
+<li>- <strong>改后条款</strong>：S4：明确“为避免继续使用你要求废弃的‘俄罗斯’名称，以下暂以‘莫斯科国’作为这个国家的工作别名”；“如果你之后决定正式别名不是‘莫斯科国’，我们可以再全局替换”。</li>
+<li>- <strong>裁定</strong>：待定。本知识库以 S4 设定的国号“罗斯兀鲁思”为正式名，“莫斯科国”为工作别名；“俄罗斯”为已废弃旧称。正式别名待用户决定。</li>
+<li>- <strong>出处</strong>：S0、S1、S2、S4</li>
+</ul>
+<h4 id="X08-乌克兰-基辅王国的正式名称-状态-修正"><code>X08</code>　乌克兰/基辅王国的正式名称　（状态：修正）</h4>
+<ul class="mdul">
+<li>- <strong>原条款</strong>：S0-S3：未涉及（乌克兰仅在欧洲东部列表中隐含）。</li>
+<li>- <strong>改后条款</strong>：S4：“‘乌克兰’则统一采用其自称‘基辅王国’”。</li>
+<li>- <strong>裁定</strong>：以 S4 为准：正式采用“基辅王国”。</li>
+<li>- <strong>出处</strong>：S4</li>
+</ul>
+<h4 id="X09-英国是否属于六极-状态-已确定"><code>X09</code>　英国是否属于六极　（状态：已确定）</h4>
+<ul class="mdul">
+<li>- <strong>原条款</strong>：S1：六极为德意志、法兰克、伊比利亚、俄罗斯、英国、美国。</li>
+<li>- <strong>改后条款</strong>：S3 R5：保留“英国／英联邦是六极之一”，并明确“战败不等于解体，与中欧输掉一战仍能恢复的结构性资产论同构”。</li>
+<li>- <strong>裁定</strong>：无冲突，S3 确认保留。</li>
+<li>- <strong>出处</strong>：S1、S3</li>
+</ul>
+<h4 id="X10-伊比利亚一级行政区方案-状态-修正"><code>X10</code>　伊比利亚一级行政区方案　（状态：修正）</h4>
+<ul class="mdul">
+<li>- <strong>原条款</strong>：伊比利亚早期方案：Galicia、Catalonia、Portugal、Andalusia 等直接成为最高一级行政区。</li>
+<li>- <strong>改后条款</strong>：S2：否定该方案，这些传统区域下沉到省/次级行政区；改为“大型一级行政区”方案（大区很大、数量少）。北非西部不单独作为特殊行政类别。</li>
+<li>- <strong>裁定</strong>：以 S2 为准。大区数量与边界仍列为 🟡 待定。</li>
+<li>- <strong>出处</strong>：S2</li>
+</ul>
+<h4 id="X11-不列颠战前地方官制名称-状态-已确定"><code>X11</code>　不列颠战前地方官制名称　（状态：已确定）</h4>
+<ul class="mdul">
+<li>- <strong>原条款</strong>：—（无旧条款）</li>
+<li>- <strong>改后条款</strong>：S3：一级为省（Lieutenancy），长官为“总督（Lord Lieutenant）”。</li>
+<li>- <strong>裁定</strong>：提示：与法兰克“省总督”（南部奥克省）用词相同但制度不同，检索时需区分。</li>
+<li>- <strong>出处</strong>：S3、S0</li>
+</ul>
+<h4 id="X12-法兰克首都-加冕地名中文译名-状态-修正"><code>X12</code>　法兰克首都/加冕地名中文译名　（状态：修正）</h4>
+<ul class="mdul">
+<li>- <strong>原条款</strong>：S0：中文译名采用德语发音，如“帕里斯”而非“巴黎”，“劳格登”而非“里昂”。</li>
+<li>- <strong>改后条款</strong>：S0 同节内亦出现“首都帕里斯/巴黎”、“兰斯/雷姆斯”等并列写法；S3 明确“大陆法兰克地名沿用既定的德语读音译名（如帕里斯）”。</li>
+<li>- <strong>裁定</strong>：正典采用德语读音译名（帕里斯、雷姆斯、劳格登）。S0 中的“巴黎/兰斯”视为对现实地名的对照说明。</li>
+<li>- <strong>出处</strong>：S0、S3</li>
+</ul>
+<h4 id="X13-德意志州数-状态-已确定"><code>X13</code>　德意志州数　（状态：已确定）</h4>
+<ul class="mdul">
+<li>- <strong>原条款</strong>：S0：列出31个州/邦。</li>
+<li>- <strong>改后条款</strong>：S2：表述为“德意志30余州结构”。</li>
+<li>- <strong>裁定</strong>：31 为具体清单数，S2 的“30余州”为概括表述，两者相容。</li>
+<li>- <strong>出处</strong>：S0、S2</li>
+</ul>
+<h4 id="X14-奥地利民族身份-状态-已确定"><code>X14</code>　奥地利民族身份　（状态：已确定）</h4>
+<ul class="mdul">
+<li>- <strong>原条款</strong>：现实历史：奥地利形成独立民族身份。</li>
+<li>- <strong>改后条款</strong>：S1：本世界线“奥地利并没有形成‘奥地利人≠德国人’的现代民族身份”，奥地利成为德意志世界内部核心区域。该矛盾转移给法兰克。</li>
+<li>- <strong>裁定</strong>：本世界线有意反转，非冲突。</li>
+<li>- <strong>出处</strong>：S1</li>
+</ul>
+<h4 id="X15-新大洲命名-状态-待定"><code>X15</code>　新大洲命名　（状态：待定）</h4>
+<ul class="mdul">
+<li>- <strong>原条款</strong>：S2：第三洲“新大洲——未命名”。</li>
+<li>- <strong>改后条款</strong>：S4：“奥洲（Orient）作为故称，东洲作为20世纪后的现代称呼”。</li>
+<li>- <strong>裁定</strong>：正式名称仍待定；采用故称“奥洲/Orient”，现代称呼“东洲”。</li>
+<li>- <strong>出处</strong>：S2、S4</li>
+</ul>
+<h3 id="3-2-修订条目汇总">3.2 修订条目汇总</h3>
+<div class="tw"><table>
+<thead><tr><th>编号</th><th>修订对象</th><th>出处</th></tr></thead><tbody>
+<tr><td>X01</td><td>奥克省行政地位</td><td>S0、S1、S2</td></tr>
+<tr><td>X02</td><td>英国政体与议会制度（S3 R2）</td><td>S0、S1、S2、S3</td></tr>
+<tr><td>X03</td><td>英国战后国体（S3 R3）</td><td>S2、S3</td></tr>
+<tr><td>X04</td><td>“法语人口不存在”条款（S3 R1）</td><td>S0、S3</td></tr>
+<tr><td>X05</td><td>法兰克宪政起源（否定王权专制→革命逻辑）</td><td>S2</td></tr>
+<tr><td>X06</td><td>法兰克本土州数量（12 vs 11，认定为统计错误）</td><td>S0、S2</td></tr>
+<tr><td>X08</td><td>乌克兰 → 基辅王国（统一采用自称）</td><td>S4</td></tr>
+<tr><td>X10</td><td>伊比利亚一级行政区方案（否定民族邦方案）</td><td>S2</td></tr>
+<tr><td>X12</td><td>法兰克地名中文译名统一为德语读音译名</td><td>S0、S3</td></tr>
+<tr><td>X16</td><td>英国国际定位：删除“议会制度”后为“新教绝对主义文明”</td><td>S1、S3</td></tr>
+<tr><td>X17</td><td>S1“俄罗斯的亚洲经验”整节被 S4 替换</td><td>S1、S4</td></tr>
+<tr><td>X18</td><td>伦敦/帕里斯“罗曼正统之争”作为新增张力线（替代/补充奥克问题）</td><td>S3</td></tr>
+</tbody></table></div>
+<h3 id="3-3-设定集补充3-R1-R7-修订清单-原文照录">3.3 《设定集补充3》R1–R7 修订清单（原文照录）</h3>
+<div class="tw"><table>
+<thead><tr><th>编号</th><th>覆盖对象</th><th>原条款</th><th>修订后</th></tr></thead><tbody>
+<tr><td>R1</td><td>设定集（S0）</td><td>语言分布：法语人口不存在</td><td>改为：大陆北部不存在独立的罗曼语政治民族。罗曼语族存续两处——英语（罗曼化的日耳曼语，其最高语域为古 langue d'oïl 的直系继承）与伊比利亚-奥克语</td></tr>
+<tr><td>R2</td><td>设定集补充（S1）</td><td>英国保留……议会制度；日耳曼＋诺曼法兰克＋新教宪政文明</td><td>删除议会制度。改为新教绝对主义文明。宪政与议会不是中世纪遗产，而是1945年战败后的产物</td></tr>
+<tr><td>R3</td><td>设定集补充2（S2）</td><td>英国……海洋君主（君权强化，由于法国传统）国</td><td>战前为绝对君主国（君权强化源于诺曼-罗曼王权法统与语言断层）；1945后为共和国。海洋君主国表述仅适用于战前</td></tr>
+<tr><td>R4</td><td>设定集补充2（S2）</td><td>待定项：英国现代行政区划、政治体系、苏格兰威尔士制度、爱尔兰独立</td><td>本册全部敲定，升为已定</td></tr>
+<tr><td>R5</td><td>设定集补充（S1）</td><td>英国／英联邦是六极之一</td><td>保留。战败不等于解体，与中欧输掉一战仍能恢复的结构性资产论同构</td></tr>
+<tr><td>R6</td><td>本册新增</td><td>爱尔兰地位未定</td><td>1945年全岛独立，成立爱尔兰共和国，不分治</td></tr>
+<tr><td>R7</td><td>本册新增</td><td>英联邦规模未定</td><td>英联邦存在但远不如现实庞大；战后殖民地纷纷瓦解独立</td></tr>
+</tbody></table></div>
+<hr class="mdhr">
+<h2 id="出处代号">出处代号</h2>
+<ul class="mdul">
+<li>- <strong>S0</strong> = <code>source/设定集.docx</code>（泛德意志世界设定总集（纯文本整合版））</li>
+<li>- <strong>S1</strong> = <code>source/设定集补充.docx</code>（泛德意志世界设定 · 本轮扩充整理稿）</li>
+<li>- <strong>S2</strong> = <code>source/设定集补充2.docx</code>（五国行政·政党·大洲划分）</li>
+<li>- <strong>S3</strong> = <code>source/设定集补充3.docx</code>（设定集3：英国线（盎格鲁-罗曼世界））</li>
+<li>- <strong>S4</strong> = <code>source/设定集补充4.docx</code>（罗斯兀鲁思：蒙古王朝与后基辅罗斯国家传统）</li>
+</ul>
+</div>
+</main>
+
+<footer>
+<div class="madeby"><span class="mk">Created with</span>本页面由 <b>DeepSeek Harness</b> 创作<span class="fl">设定集解析 · 知识图谱构建 · 一致性审计 · 站点生成，全流程由 DeepSeek Harness 完成</span></div><div class="footmeta">出处代号：<a href="../index.html#sources">S0</a> 设定集.docx ｜ S1 设定集补充.docx ｜ S2 设定集补充2.docx ｜ S3 设定集补充3.docx ｜ S4 设定集补充4.docx ｜ <b>S5</b> 整合层（S0–S4 去重合并 + 用户裁定）｜ <b>S*</b> 仿真文献层（基于设定生成，不新增设定）<br><a href="../home.html">主页</a> ／ <a href="../index.html">设定集索引</a> ／ <a href="../wiki/index.html">历史文献</a> ／ <a href="../wiki/docs-index.html">文档中心</a> ／ <a href="../timeline.html">交互式时间轴</a></div>
+</footer>
+<script>(function(){var b=document.getElementById('gnavToggle'),n=document.querySelector('.gnav');if(b&&n){b.onclick=function(){n.classList.toggle('open')};}var p=document.getElementById('bkPrev');if(p){p.onclick=function(){if(history.length>1){history.back();}else{location.href='../home.html';}};}}())</script>
+
+</body>
+</html>

@@ -1,0 +1,2392 @@
+{
+  "glossary": [
+    {
+      "id": "G001",
+      "category": "国名与民族",
+      "zh": "法兰克立宪君主国",
+      "de": "Fränkisch-Konstitutionelle Monarchie",
+      "en": "Frankish Constitutional Monarchy",
+      "note": "通称法兰克王国（Frankenreich）",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G002",
+      "category": "国名与民族",
+      "zh": "法兰克王国",
+      "de": "Frankenreich",
+      "en": "Frankish Kingdom / Francia",
+      "note": "通称",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G003",
+      "category": "国名与民族",
+      "zh": "法兰克人",
+      "de": "Franken",
+      "en": "Franks",
+      "note": null,
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G004",
+      "category": "国名与民族",
+      "zh": "德意志联邦共和国",
+      "de": "Deutsche Bundesrepublik",
+      "en": "German Federal Republic",
+      "note": null,
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G005",
+      "category": "国名与民族",
+      "zh": "德意志帝国",
+      "de": "Deutsches Kaiserreich",
+      "en": "German Empire",
+      "note": "1871年罗马加冕成立；1918年瓦解",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G006",
+      "category": "国名与民族",
+      "zh": "维也纳德意志共和国",
+      "de": "Wiener Deutsche Republik",
+      "en": "Viennese German Republic",
+      "note": "1918年成立",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G007",
+      "category": "国名与民族",
+      "zh": "不列颠王国",
+      "de": "Königreich Britannien",
+      "en": "Kingdom of Britain",
+      "note": "战前国名（1272定型至1945）",
+      "src": [
+        "S3"
+      ]
+    },
+    {
+      "id": "G008",
+      "category": "国名与民族",
+      "zh": "不列颠联邦共和国",
+      "de": "Bundesrepublik Britannien",
+      "en": "Federal Republic of Britain",
+      "note": "1945年后的共和国",
+      "src": [
+        "S3"
+      ]
+    },
+    {
+      "id": "G009",
+      "category": "国名与民族",
+      "zh": "爱尔兰共和国",
+      "de": "Republik Irland",
+      "en": "Republic of Ireland",
+      "note": "1945年全岛独立",
+      "src": [
+        "S3"
+      ]
+    },
+    {
+      "id": "G010",
+      "category": "国名与民族",
+      "zh": "伊比利亚共和国",
+      "de": "Iberische Republik",
+      "en": "Iberian Republic",
+      "note": "第一至第五共和国、第一至第二帝国反复更替",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G011",
+      "category": "国名与民族",
+      "zh": "伊比利亚革命帝国",
+      "de": "Iberisches Revolutionskaiserreich",
+      "en": "Iberian Revolutionary Empire",
+      "note": "1789年建立",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G012",
+      "category": "国名与民族",
+      "zh": "罗斯兀鲁思",
+      "de": "Ross-Ulus",
+      "en": "Ros Ulus",
+      "note": "工作别名“莫斯科国”；“罗斯兀鲁思”为已废弃旧称",
+      "src": [
+        "S4"
+      ]
+    },
+    {
+      "id": "G013",
+      "category": "国名与民族",
+      "zh": "基辅王国",
+      "de": "Königreich Kyiw",
+      "en": "Kingdom of Kyiv",
+      "note": "替代“乌克兰”",
+      "src": [
+        "S4"
+      ]
+    },
+    {
+      "id": "G014",
+      "category": "国名与民族",
+      "zh": "白罗斯",
+      "de": "Weißrussland",
+      "en": "White Rus",
+      "note": null,
+      "src": [
+        "S4"
+      ]
+    },
+    {
+      "id": "G015",
+      "category": "国名与民族",
+      "zh": "瑞士永久联邦",
+      "de": "Ewiger Bund der Schweiz",
+      "en": "Perpetual Swiss Confederation",
+      "note": "永久中立",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G016",
+      "category": "国名与民族",
+      "zh": "低地联合省",
+      "de": "Vereinigte Provinzen der Niederlande",
+      "en": "United Provinces of the Low Countries",
+      "note": "加尔文宗共和国",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G017",
+      "category": "国名与民族",
+      "zh": "金帐汗国",
+      "de": "Goldene Horde",
+      "en": "Golden Horde",
+      "note": null,
+      "src": [
+        "S4"
+      ]
+    },
+    {
+      "id": "G018",
+      "category": "国名与民族",
+      "zh": "教皇国",
+      "de": "Kirchenstaat",
+      "en": "Papal States",
+      "note": null,
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G020",
+      "category": "王朝与家族",
+      "zh": "哈布斯堡",
+      "de": "Habsburg",
+      "en": "Habsburg",
+      "note": "须区分王室分支（Habsburg Royal House）与广义哈布斯堡家族",
+      "src": [
+        "S0",
+        "S2"
+      ]
+    },
+    {
+      "id": "G021",
+      "category": "王朝与家族",
+      "zh": "普热米斯尔",
+      "de": "Přemysliden",
+      "en": "Přemyslid",
+      "note": null,
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G022",
+      "category": "王朝与家族",
+      "zh": "卡佩",
+      "de": "Kapetinger",
+      "en": "Capetian",
+      "note": "1270年前后直系绝嗣",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G023",
+      "category": "王朝与家族",
+      "zh": "瓦卢瓦",
+      "de": "Valois",
+      "en": "Valois",
+      "note": null,
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G024",
+      "category": "王朝与家族",
+      "zh": "埃夫勒",
+      "de": "Évreux",
+      "en": "Evreux",
+      "note": null,
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G025",
+      "category": "王朝与家族",
+      "zh": "金雀花",
+      "de": "Plantagenet",
+      "en": "Plantagenet",
+      "note": "延续至约1789-1815",
+      "src": [
+        "S0",
+        "S3"
+      ]
+    },
+    {
+      "id": "G026",
+      "category": "王朝与家族",
+      "zh": "蒙福尔",
+      "de": "Haus Montfort",
+      "en": "House of Mountfort",
+      "note": "备选名：阿库尔 Harcourt、德鲁 Drew、库西 Cousy",
+      "src": [
+        "S3"
+      ]
+    },
+    {
+      "id": "G027",
+      "category": "王朝与家族",
+      "zh": "莫斯科蒙古王朝",
+      "de": "Moskauer Mongolendynastie",
+      "en": "Muscovite Mongol dynasty",
+      "note": null,
+      "src": [
+        "S4"
+      ]
+    },
+    {
+      "id": "G028",
+      "category": "王朝与家族",
+      "zh": "诺曼-法兰西贵族集团",
+      "de": "Normannisch-französischer Adel",
+      "en": "Norman-French nobility",
+      "note": null,
+      "src": [
+        "S3"
+      ]
+    },
+    {
+      "id": "G040",
+      "category": "制度与政体",
+      "zh": "双重王冠不可分割",
+      "de": "Unteilbarkeit der Doppelkrone",
+      "en": "Indivisibility of the dual crown",
+      "note": "1356《法兰克福宪章》核心条款",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G041",
+      "category": "制度与政体",
+      "zh": "选举与继承双轨制",
+      "de": "Duales System von Wahl und Erbfolge",
+      "en": "Dual track of election and inheritance",
+      "note": "德意志王冠选举、法兰克王冠父系继承",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G042",
+      "category": "制度与政体",
+      "zh": "三重加冕",
+      "de": "Dreifache Krönung",
+      "en": "Triple coronation",
+      "note": "雷姆斯→法兰克福→罗马",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G043",
+      "category": "制度与政体",
+      "zh": "帝国议会",
+      "de": "Reichstag",
+      "en": "Imperial Diet",
+      "note": "法兰克贵族、德意志诸侯、自由汉萨城市代表组成",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G044",
+      "category": "制度与政体",
+      "zh": "七位选侯",
+      "de": "Sieben Kurfürsten",
+      "en": "Seven Electors",
+      "note": "美因茨、科隆、特里尔三大主教＋波西米亚国王、莱茵普法尔茨伯爵、萨克森公爵、勃兰登堡藩侯",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G045",
+      "category": "制度与政体",
+      "zh": "联邦化单一制",
+      "de": "Föderalisierter Einheitsstaat",
+      "en": "Federated unitary state",
+      "note": "法兰克政体",
+      "src": [
+        "S2"
+      ]
+    },
+    {
+      "id": "G046",
+      "category": "制度与政体",
+      "zh": "南部奥克省（特殊建制）",
+      "de": "Südmark Ok / Okkitanien",
+      "en": "Southern Occitan Province",
+      "note": "1945-1975临时省级行政层，1975年废除",
+      "src": [
+        "S0",
+        "S2"
+      ]
+    },
+    {
+      "id": "G047",
+      "category": "制度与政体",
+      "zh": "奥克正常化",
+      "de": "Okzitanische Normalisierung",
+      "en": "Occitan normalisation",
+      "note": "约1975年后；文化承认＋普通联邦州地位",
+      "src": [
+        "S2"
+      ]
+    },
+    {
+      "id": "G048",
+      "category": "制度与政体",
+      "zh": "国王会同枢密院",
+      "de": "König im Rat",
+      "en": "King-in-Council",
+      "note": "战前不列颠最高决策机构",
+      "src": [
+        "S3"
+      ]
+    },
+    {
+      "id": "G049",
+      "category": "制度与政体",
+      "zh": "枢密院法庭（星室式）",
+      "de": "Sternkammerartiges Hofgericht",
+      "en": "Star Chamber-style court",
+      "note": "政治案件与出版审查，1945年废除",
+      "src": [
+        "S3"
+      ]
+    },
+    {
+      "id": "G050",
+      "category": "制度与政体",
+      "zh": "省（不列颠，军政合一）",
+      "de": "Lieutenancy",
+      "en": "Lieutenancy",
+      "note": "战前不列颠一级行政区；长官为总督 Lord Lieutenant",
+      "src": [
+        "S3"
+      ]
+    },
+    {
+      "id": "G051",
+      "category": "制度与政体",
+      "zh": "郡",
+      "de": "Shire / County",
+      "en": "Shire / County",
+      "note": "不列颠二级行政区",
+      "src": [
+        "S3"
+      ]
+    },
+    {
+      "id": "G052",
+      "category": "制度与政体",
+      "zh": "《权利宪章》",
+      "de": "Charta der Rechte",
+      "en": "Charter of Rights",
+      "note": "1945/1947，不列颠成文宪法",
+      "src": [
+        "S3"
+      ]
+    },
+    {
+      "id": "G053",
+      "category": "制度与政体",
+      "zh": "大区（伊比利亚）",
+      "de": "Großregion",
+      "en": "Large region",
+      "note": "大型一级行政区；大区很大、数量少；省份承载传统民族/历史地区",
+      "src": [
+        "S2"
+      ]
+    },
+    {
+      "id": "G054",
+      "category": "制度与政体",
+      "zh": "总统制共和国（伊比利亚）",
+      "de": "Präsidialrepublik",
+      "en": "Presidential republic",
+      "note": "高度中央集权",
+      "src": [
+        "S2"
+      ]
+    },
+    {
+      "id": "G055",
+      "category": "制度与政体",
+      "zh": "长生天",
+      "de": "Tengri / Ewiger Himmel",
+      "en": "Tengri / Eternal Sky",
+      "note": "蒙古国家与王权合法性的最高来源",
+      "src": [
+        "S1"
+      ]
+    },
+    {
+      "id": "G056",
+      "category": "制度与政体",
+      "zh": "兀鲁思",
+      "de": "Ulus",
+      "en": "Ulus",
+      "note": "蒙古政治体单位；见于国号“罗斯兀鲁思”",
+      "src": [
+        "S4"
+      ]
+    },
+    {
+      "id": "G057",
+      "category": "制度与政体",
+      "zh": "驿站体系",
+      "de": "Poststationssystem (Jam)",
+      "en": "Yam relay system",
+      "note": "金帐汗国制度，被莫斯科继承",
+      "src": [
+        "S4"
+      ]
+    },
+    {
+      "id": "G060",
+      "category": "宗教",
+      "zh": "天主教",
+      "de": "Katholizismus",
+      "en": "Catholicism",
+      "note": null,
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G061",
+      "category": "宗教",
+      "zh": "路德宗",
+      "de": "Luthertum",
+      "en": "Lutheranism",
+      "note": "北德意志",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G062",
+      "category": "宗教",
+      "zh": "加尔文宗",
+      "de": "Calvinismus",
+      "en": "Calvinism",
+      "note": "低地、瑞士德语区、莱茵兰部分地区",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G063",
+      "category": "宗教",
+      "zh": "胡斯派-路德宗混合",
+      "de": "Hussitisch-lutherisches Bekenntnis",
+      "en": "Hussite-Lutheran blend",
+      "note": "波西米亚、摩拉维亚、西里西亚",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G064",
+      "category": "宗教",
+      "zh": "阿尔卑斯福音派",
+      "de": "Alpines Evangelium",
+      "en": "Alpine Evangelical",
+      "note": "奥地利、巴伐利亚、施蒂利亚、蒂罗尔、北意大利",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G065",
+      "category": "宗教",
+      "zh": "十字架下的喜悦",
+      "de": "Freude unter dem Kreuz",
+      "en": "Joy under the Cross",
+      "note": "阿尔卑斯福音派核心观念概括",
+      "src": [
+        "S0",
+        "S1"
+      ]
+    },
+    {
+      "id": "G066",
+      "category": "宗教",
+      "zh": "有节制的喜乐",
+      "de": "Gemäßigte Freude",
+      "en": "Tempered joy",
+      "note": "阿尔卑斯福音派核心观念",
+      "src": [
+        "S0",
+        "S1"
+      ]
+    },
+    {
+      "id": "G067",
+      "category": "宗教",
+      "zh": "王室新教（高教会式）",
+      "de": "Königliches Hochkirchentum",
+      "en": "Royal High Church Protestantism",
+      "note": "不列颠；国王兼任教会最高元首",
+      "src": [
+        "S3"
+      ]
+    },
+    {
+      "id": "G068",
+      "category": "宗教",
+      "zh": "东正教",
+      "de": "Orthodoxie",
+      "en": "Orthodoxy",
+      "note": null,
+      "src": [
+        "S4"
+      ]
+    },
+    {
+      "id": "G069",
+      "category": "宗教",
+      "zh": "萨满传统",
+      "de": "Schamanismus",
+      "en": "Shamanism",
+      "note": "蒙古三层宗教结构第三层",
+      "src": [
+        "S1"
+      ]
+    },
+    {
+      "id": "G070",
+      "category": "宗教",
+      "zh": "西域佛教",
+      "de": "Westländischer Buddhismus",
+      "en": "Western Regions Buddhism",
+      "note": "独立佛教文明圈",
+      "src": [
+        "S1"
+      ]
+    },
+    {
+      "id": "G071",
+      "category": "宗教",
+      "zh": "外交新教、内政天主教",
+      "de": "Außenpolitisch protestantisch, innenpolitisch katholisch",
+      "en": "Protestant abroad, Catholic at home",
+      "note": "描述伊比利亚/西班牙-阿拉贡的矛盾立场",
+      "src": [
+        "S0",
+        "S1"
+      ]
+    },
+    {
+      "id": "G072",
+      "category": "宗教",
+      "zh": "政治天主教、文化新教",
+      "de": "Politisch katholisch, kulturell protestantisch",
+      "en": "Politically Catholic, culturally Protestant",
+      "note": "北意大利的独特身份",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G080",
+      "category": "语言与正字法",
+      "zh": "共同体德语 / 泛德意志标准语 / 帝国德语",
+      "de": "Gemeindeutsch / Pandeutsche Standardsprache / Reichsdeutsch",
+      "en": "Common German / Pan-German Standard / Imperial German",
+      "note": "三国统一正字法产物",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G081",
+      "category": "语言与正字法",
+      "zh": "法兰克语 / 西法兰克语",
+      "de": "Fränkisch / Westfränkisch",
+      "en": "Frankish / West Frankish",
+      "note": "西日耳曼语支；保留古法兰克军事法律词汇",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G082",
+      "category": "语言与正字法",
+      "zh": "高地德语",
+      "de": "Hochdeutsch",
+      "en": "High German",
+      "note": "含瑞士",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G083",
+      "category": "语言与正字法",
+      "zh": "低地德语（含荷兰语）",
+      "de": "Niederdeutsch (mit Niederländisch)",
+      "en": "Low German (incl. Dutch)",
+      "note": "荷兰语被视为低地德语一部分",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G084",
+      "category": "语言与正字法",
+      "zh": "伊比利亚-奥克语",
+      "de": "Iberisch-okzitanisch",
+      "en": "Iberian-Occitan",
+      "note": "罗曼语族",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G085",
+      "category": "语言与正字法",
+      "zh": "盎格鲁-法兰西语",
+      "de": "Anglois",
+      "en": "Anglo-Norman French / Anglois",
+      "note": "英语的最高语域；古 langue d'oïl 的直系继承",
+      "src": [
+        "S3"
+      ]
+    },
+    {
+      "id": "G086",
+      "category": "语言与正字法",
+      "zh": "泛德意志语言会议",
+      "de": "Pandeutsche Sprachkonferenz",
+      "en": "Pan-German Language Conference",
+      "note": "制定统一正字法",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G087",
+      "category": "语言与正字法",
+      "zh": "罗曼化程度梯度",
+      "de": "Romanisierungsgefälle",
+      "en": "Gradient of Romance influence",
+      "note": "英格兰宫廷-法务语域 ＞ 伦敦及东南 ＞ 英格兰北部与西南 ＞ 苏格兰、威尔士方言 ＞ 爱尔兰英语",
+      "src": [
+        "S3"
+      ]
+    },
+    {
+      "id": "G088",
+      "category": "语言与正字法",
+      "zh": "Volkheit（替代 Nation）",
+      "de": "Volkheit",
+      "en": "Volkheit (replacing Nation)",
+      "note": "统一正字法复古化替换例",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G089",
+      "category": "语言与正字法",
+      "zh": "Glaubenslehre（替代 Religion）",
+      "de": "Glaubenslehre",
+      "en": "Glaubenslehre (replacing Religion)",
+      "note": "统一正字法复古化替换例",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G100",
+      "category": "文明与地理",
+      "zh": "泛德意志世界",
+      "de": "Pandeutsche Welt",
+      "en": "Pan-German world",
+      "note": "法兰克-德意志王冠几乎融为一体的文明共同体",
+      "src": [
+        "S0",
+        "S1"
+      ]
+    },
+    {
+      "id": "G101",
+      "category": "文明与地理",
+      "zh": "法兰克问题",
+      "de": "Fränkische Frage",
+      "en": "The Frankish Question",
+      "note": "对应现实历史的“奥地利问题”：属于德意志文明却最终没有成为德国人",
+      "src": [
+        "S1"
+      ]
+    },
+    {
+      "id": "G102",
+      "category": "文明与地理",
+      "zh": "英格兰问题",
+      "de": "Englische Frage",
+      "en": "The English Question",
+      "note": "罗曼语世界的对称另一半：属于罗曼-法兰西文明却最终没有成为法兰西人",
+      "src": [
+        "S3"
+      ]
+    },
+    {
+      "id": "G103",
+      "category": "文明与地理",
+      "zh": "奥克问题",
+      "de": "Okzitanische Frage",
+      "en": "The Occitan Question",
+      "note": "法兰克最大内部挑战",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G104",
+      "category": "文明与地理",
+      "zh": "后基辅罗斯国家",
+      "de": "Post-Kyiver-Rus-Staat",
+      "en": "Post-Kyivan Rus state",
+      "note": "罗斯兀鲁思的国家性质",
+      "src": [
+        "S4"
+      ]
+    },
+    {
+      "id": "G105",
+      "category": "文明与地理",
+      "zh": "奥洲（故称）/ 东洲（现代称呼）",
+      "de": "Orient / Ostland",
+      "en": "Orient / Eastland",
+      "note": "第三大洲的暂用名，正式名称待定",
+      "src": [
+        "S4"
+      ]
+    },
+    {
+      "id": "G106",
+      "category": "文明与地理",
+      "zh": "泛中华文明圈—印度文明圈",
+      "de": "Pan-sinischer und indischer Zivilisationskreis",
+      "en": "Pan-Sinic and Indic civilisational sphere",
+      "note": "新大洲的核心概念",
+      "src": [
+        "S2"
+      ]
+    },
+    {
+      "id": "G107",
+      "category": "文明与地理",
+      "zh": "西域佛教文明带",
+      "de": "Buddhistischer Gürtel des Westlandes",
+      "en": "Western Regions Buddhist belt",
+      "note": null,
+      "src": [
+        "S1"
+      ]
+    },
+    {
+      "id": "G108",
+      "category": "文明与地理",
+      "zh": "莱茵-低地工业带",
+      "de": "Rheinisch-niederländischer Industriegürtel",
+      "en": "Rhine-Low Countries industrial belt",
+      "note": "钢铁、化工、机械",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G109",
+      "category": "文明与地理",
+      "zh": "多瑙河-波西米亚工业带",
+      "de": "Donau-böhmischer Industriegürtel",
+      "en": "Danube-Bohemian industrial belt",
+      "note": "电气、汽车、军火",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G110",
+      "category": "文明与地理",
+      "zh": "波河-阿尔卑斯工业带",
+      "de": "Po-alpiner Industriegürtel",
+      "en": "Po-Alpine industrial belt",
+      "note": "纺织、金融、精密仪器",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G111",
+      "category": "文明与地理",
+      "zh": "法兰克中部工业带",
+      "de": "Mittelfränkischer Industriegürtel",
+      "en": "Central Frankish industrial belt",
+      "note": "洛林、勃艮第北部、香槟-阿登——军工、食品、奢侈品",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G112",
+      "category": "文明与地理",
+      "zh": "自由汉萨城市",
+      "de": "Freie Hansestädte",
+      "en": "Free Hanseatic Cities",
+      "note": "汉堡、不来梅、阿姆斯特丹",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G113",
+      "category": "文明与地理",
+      "zh": "海洋平衡者",
+      "de": "Maritimer Balancer",
+      "en": "Maritime balancer",
+      "note": "不列颠的国际定位",
+      "src": [
+        "S1",
+        "S3"
+      ]
+    },
+    {
+      "id": "G114",
+      "category": "文明与地理",
+      "zh": "文明核心 / 文明边界 / 秩序挑战者",
+      "de": "Zivilisationskern / Zivilisationsgrenze / Ordnungsherausforderer",
+      "en": "Civilisational core / frontier / challenger of order",
+      "note": "德意志 / 法兰克 / 伊比利亚的角色定位",
+      "src": [
+        "S1"
+      ]
+    },
+    {
+      "id": "G120",
+      "category": "条约与事件",
+      "zh": "《法兰克福宪章》",
+      "de": "Frankfurter Verfassung / Frankfurter Vertrag",
+      "en": "Charter of Frankfurt",
+      "note": "1356；双王冠制度",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G121",
+      "category": "条约与事件",
+      "zh": "《维也纳和约》",
+      "de": "Frieden von Wien",
+      "en": "Peace of Vienna",
+      "note": "1648；宗教战争结束",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G122",
+      "category": "条约与事件",
+      "zh": "《十二条款》",
+      "de": "Zwölf Artikel",
+      "en": "Twelve Articles",
+      "note": "1524-1525农民战争纲领",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G123",
+      "category": "条约与事件",
+      "zh": "《反对杀人越货的农民暴徒》",
+      "de": "Wider die mörderischen und räuberischen Rotten der Bauern",
+      "en": "Against the Murderous, Thieving Hordes of Peasants",
+      "note": "马丁·路德，1525",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G124",
+      "category": "条约与事件",
+      "zh": "农民战争",
+      "de": "Bauernkrieg",
+      "en": "Peasants' War",
+      "note": "1524—1527",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G125",
+      "category": "条约与事件",
+      "zh": "宗教战争 / 三十年战争",
+      "de": "Religionskrieg / Dreißigjähriger Krieg",
+      "en": "War of Religion / Thirty Years' War",
+      "note": "1618—1648",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G126",
+      "category": "条约与事件",
+      "zh": "伊比利亚-奥克大革命",
+      "de": "Iberisch-okzitanische Revolution",
+      "en": "Iberian-Occitan Revolution",
+      "note": "1789",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G127",
+      "category": "条约与事件",
+      "zh": "大德意志方案",
+      "de": "Großdeutsche Lösung",
+      "en": "Greater German solution",
+      "note": "1848年失败",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G128",
+      "category": "条约与事件",
+      "zh": "小德意志方案",
+      "de": "Kleindeutsche Lösung",
+      "en": "Lesser German solution",
+      "note": "1866年确立",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G129",
+      "category": "条约与事件",
+      "zh": "罗马加冕",
+      "de": "Kaiserkrönung in Rom",
+      "en": "Coronation in Rome",
+      "note": "1871",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G130",
+      "category": "条约与事件",
+      "zh": "中欧协定",
+      "de": "Mitteleuropäisches Abkommen",
+      "en": "Central European Agreement",
+      "note": "二战中欧阵营，惨胜",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G131",
+      "category": "条约与事件",
+      "zh": "中欧同盟",
+      "de": "Mitteleuropäischer Bund",
+      "en": "Central European Alliance",
+      "note": "一战中欧阵营",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G132",
+      "category": "条约与事件",
+      "zh": "奥克正常化",
+      "de": "Okzitanische Normalisierung",
+      "en": "Occitan normalisation",
+      "note": "约1975年以后",
+      "src": [
+        "S2"
+      ]
+    },
+    {
+      "id": "G140",
+      "category": "机构与圣地",
+      "zh": "帕里斯王家学院",
+      "de": "Königliche Akademie zu Paris",
+      "en": "Royal Academy of Paris",
+      "note": "神学、教会法、古典语文学、历史编纂学、美术史",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G141",
+      "category": "机构与圣地",
+      "zh": "雷姆斯神学院",
+      "de": "Priesterseminar Reims",
+      "en": "Reims Seminary",
+      "note": "加冕礼、政治神学、君主制理论",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G142",
+      "category": "机构与圣地",
+      "zh": "维也纳大学",
+      "de": "Universität Wien",
+      "en": "University of Vienna",
+      "note": "神学、法学、医学、哲学、经济学、工程科学",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G143",
+      "category": "机构与圣地",
+      "zh": "布拉格卡尔大学",
+      "de": "Karlsuniversität Prag",
+      "en": "Charles University Prague",
+      "note": "胡斯派传统、斯拉夫语文献、矿物学、机械工程",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G144",
+      "category": "机构与圣地",
+      "zh": "日内瓦学院",
+      "de": "Genfer Akademie",
+      "en": "Geneva Academy",
+      "note": "改革宗国际神学、自然法、国际法、人道法",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G145",
+      "category": "机构与圣地",
+      "zh": "圣斯特凡大教堂",
+      "de": "Stephansdom",
+      "en": "St. Stephen's Cathedral",
+      "note": "维也纳；新教大教堂，联邦重大国事与全德意志福音教会会议",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G146",
+      "category": "机构与圣地",
+      "zh": "雷姆斯圣母大教堂",
+      "de": "Kathedrale Notre-Dame de Reims",
+      "en": "Reims Cathedral",
+      "note": "加冕地，圣油瓶",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G147",
+      "category": "机构与圣地",
+      "zh": "维滕堡城堡教堂",
+      "de": "Schlosskirche Wittenberg",
+      "en": "Wittenberg Castle Church",
+      "note": "路德张贴九十五条论纲，新教母教会",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G148",
+      "category": "机构与圣地",
+      "zh": "马格德堡大教堂",
+      "de": "Dom zu Magdeburg",
+      "en": "Magdeburg Cathedral",
+      "note": "福音殉道者纪念堂",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "G149",
+      "category": "机构与圣地",
+      "zh": "英联邦",
+      "de": "Commonwealth",
+      "en": "The Commonwealth",
+      "note": "语言、文化与商业共同体",
+      "src": [
+        "S3"
+      ]
+    },
+    {
+      "id": "G150",
+      "category": "机构与圣地",
+      "zh": "欧盟",
+      "de": "Europäische Union",
+      "en": "European Union",
+      "note": "欧洲文明洲的共同框架",
+      "src": [
+        "S2"
+      ]
+    }
+  ],
+  "by_category": {
+    "国名与民族": [
+      {
+        "id": "G001",
+        "category": "国名与民族",
+        "zh": "法兰克立宪君主国",
+        "de": "Fränkisch-Konstitutionelle Monarchie",
+        "en": "Frankish Constitutional Monarchy",
+        "note": "通称法兰克王国（Frankenreich）",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G002",
+        "category": "国名与民族",
+        "zh": "法兰克王国",
+        "de": "Frankenreich",
+        "en": "Frankish Kingdom / Francia",
+        "note": "通称",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G003",
+        "category": "国名与民族",
+        "zh": "法兰克人",
+        "de": "Franken",
+        "en": "Franks",
+        "note": null,
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G004",
+        "category": "国名与民族",
+        "zh": "德意志联邦共和国",
+        "de": "Deutsche Bundesrepublik",
+        "en": "German Federal Republic",
+        "note": null,
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G005",
+        "category": "国名与民族",
+        "zh": "德意志帝国",
+        "de": "Deutsches Kaiserreich",
+        "en": "German Empire",
+        "note": "1871年罗马加冕成立；1918年瓦解",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G006",
+        "category": "国名与民族",
+        "zh": "维也纳德意志共和国",
+        "de": "Wiener Deutsche Republik",
+        "en": "Viennese German Republic",
+        "note": "1918年成立",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G007",
+        "category": "国名与民族",
+        "zh": "不列颠王国",
+        "de": "Königreich Britannien",
+        "en": "Kingdom of Britain",
+        "note": "战前国名（1272定型至1945）",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "id": "G008",
+        "category": "国名与民族",
+        "zh": "不列颠联邦共和国",
+        "de": "Bundesrepublik Britannien",
+        "en": "Federal Republic of Britain",
+        "note": "1945年后的共和国",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "id": "G009",
+        "category": "国名与民族",
+        "zh": "爱尔兰共和国",
+        "de": "Republik Irland",
+        "en": "Republic of Ireland",
+        "note": "1945年全岛独立",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "id": "G010",
+        "category": "国名与民族",
+        "zh": "伊比利亚共和国",
+        "de": "Iberische Republik",
+        "en": "Iberian Republic",
+        "note": "第一至第五共和国、第一至第二帝国反复更替",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G011",
+        "category": "国名与民族",
+        "zh": "伊比利亚革命帝国",
+        "de": "Iberisches Revolutionskaiserreich",
+        "en": "Iberian Revolutionary Empire",
+        "note": "1789年建立",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G012",
+        "category": "国名与民族",
+        "zh": "罗斯兀鲁思",
+        "de": "Ross-Ulus",
+        "en": "Ros Ulus",
+        "note": "工作别名“莫斯科国”；“罗斯兀鲁思”为已废弃旧称",
+        "src": [
+          "S4"
+        ]
+      },
+      {
+        "id": "G013",
+        "category": "国名与民族",
+        "zh": "基辅王国",
+        "de": "Königreich Kyiw",
+        "en": "Kingdom of Kyiv",
+        "note": "替代“乌克兰”",
+        "src": [
+          "S4"
+        ]
+      },
+      {
+        "id": "G014",
+        "category": "国名与民族",
+        "zh": "白罗斯",
+        "de": "Weißrussland",
+        "en": "White Rus",
+        "note": null,
+        "src": [
+          "S4"
+        ]
+      },
+      {
+        "id": "G015",
+        "category": "国名与民族",
+        "zh": "瑞士永久联邦",
+        "de": "Ewiger Bund der Schweiz",
+        "en": "Perpetual Swiss Confederation",
+        "note": "永久中立",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G016",
+        "category": "国名与民族",
+        "zh": "低地联合省",
+        "de": "Vereinigte Provinzen der Niederlande",
+        "en": "United Provinces of the Low Countries",
+        "note": "加尔文宗共和国",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G017",
+        "category": "国名与民族",
+        "zh": "金帐汗国",
+        "de": "Goldene Horde",
+        "en": "Golden Horde",
+        "note": null,
+        "src": [
+          "S4"
+        ]
+      },
+      {
+        "id": "G018",
+        "category": "国名与民族",
+        "zh": "教皇国",
+        "de": "Kirchenstaat",
+        "en": "Papal States",
+        "note": null,
+        "src": [
+          "S0"
+        ]
+      }
+    ],
+    "王朝与家族": [
+      {
+        "id": "G020",
+        "category": "王朝与家族",
+        "zh": "哈布斯堡",
+        "de": "Habsburg",
+        "en": "Habsburg",
+        "note": "须区分王室分支（Habsburg Royal House）与广义哈布斯堡家族",
+        "src": [
+          "S0",
+          "S2"
+        ]
+      },
+      {
+        "id": "G021",
+        "category": "王朝与家族",
+        "zh": "普热米斯尔",
+        "de": "Přemysliden",
+        "en": "Přemyslid",
+        "note": null,
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G022",
+        "category": "王朝与家族",
+        "zh": "卡佩",
+        "de": "Kapetinger",
+        "en": "Capetian",
+        "note": "1270年前后直系绝嗣",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G023",
+        "category": "王朝与家族",
+        "zh": "瓦卢瓦",
+        "de": "Valois",
+        "en": "Valois",
+        "note": null,
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G024",
+        "category": "王朝与家族",
+        "zh": "埃夫勒",
+        "de": "Évreux",
+        "en": "Evreux",
+        "note": null,
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G025",
+        "category": "王朝与家族",
+        "zh": "金雀花",
+        "de": "Plantagenet",
+        "en": "Plantagenet",
+        "note": "延续至约1789-1815",
+        "src": [
+          "S0",
+          "S3"
+        ]
+      },
+      {
+        "id": "G026",
+        "category": "王朝与家族",
+        "zh": "蒙福尔",
+        "de": "Haus Montfort",
+        "en": "House of Mountfort",
+        "note": "备选名：阿库尔 Harcourt、德鲁 Drew、库西 Cousy",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "id": "G027",
+        "category": "王朝与家族",
+        "zh": "莫斯科蒙古王朝",
+        "de": "Moskauer Mongolendynastie",
+        "en": "Muscovite Mongol dynasty",
+        "note": null,
+        "src": [
+          "S4"
+        ]
+      },
+      {
+        "id": "G028",
+        "category": "王朝与家族",
+        "zh": "诺曼-法兰西贵族集团",
+        "de": "Normannisch-französischer Adel",
+        "en": "Norman-French nobility",
+        "note": null,
+        "src": [
+          "S3"
+        ]
+      }
+    ],
+    "制度与政体": [
+      {
+        "id": "G040",
+        "category": "制度与政体",
+        "zh": "双重王冠不可分割",
+        "de": "Unteilbarkeit der Doppelkrone",
+        "en": "Indivisibility of the dual crown",
+        "note": "1356《法兰克福宪章》核心条款",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G041",
+        "category": "制度与政体",
+        "zh": "选举与继承双轨制",
+        "de": "Duales System von Wahl und Erbfolge",
+        "en": "Dual track of election and inheritance",
+        "note": "德意志王冠选举、法兰克王冠父系继承",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G042",
+        "category": "制度与政体",
+        "zh": "三重加冕",
+        "de": "Dreifache Krönung",
+        "en": "Triple coronation",
+        "note": "雷姆斯→法兰克福→罗马",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G043",
+        "category": "制度与政体",
+        "zh": "帝国议会",
+        "de": "Reichstag",
+        "en": "Imperial Diet",
+        "note": "法兰克贵族、德意志诸侯、自由汉萨城市代表组成",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G044",
+        "category": "制度与政体",
+        "zh": "七位选侯",
+        "de": "Sieben Kurfürsten",
+        "en": "Seven Electors",
+        "note": "美因茨、科隆、特里尔三大主教＋波西米亚国王、莱茵普法尔茨伯爵、萨克森公爵、勃兰登堡藩侯",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G045",
+        "category": "制度与政体",
+        "zh": "联邦化单一制",
+        "de": "Föderalisierter Einheitsstaat",
+        "en": "Federated unitary state",
+        "note": "法兰克政体",
+        "src": [
+          "S2"
+        ]
+      },
+      {
+        "id": "G046",
+        "category": "制度与政体",
+        "zh": "南部奥克省（特殊建制）",
+        "de": "Südmark Ok / Okkitanien",
+        "en": "Southern Occitan Province",
+        "note": "1945-1975临时省级行政层，1975年废除",
+        "src": [
+          "S0",
+          "S2"
+        ]
+      },
+      {
+        "id": "G047",
+        "category": "制度与政体",
+        "zh": "奥克正常化",
+        "de": "Okzitanische Normalisierung",
+        "en": "Occitan normalisation",
+        "note": "约1975年后；文化承认＋普通联邦州地位",
+        "src": [
+          "S2"
+        ]
+      },
+      {
+        "id": "G048",
+        "category": "制度与政体",
+        "zh": "国王会同枢密院",
+        "de": "König im Rat",
+        "en": "King-in-Council",
+        "note": "战前不列颠最高决策机构",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "id": "G049",
+        "category": "制度与政体",
+        "zh": "枢密院法庭（星室式）",
+        "de": "Sternkammerartiges Hofgericht",
+        "en": "Star Chamber-style court",
+        "note": "政治案件与出版审查，1945年废除",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "id": "G050",
+        "category": "制度与政体",
+        "zh": "省（不列颠，军政合一）",
+        "de": "Lieutenancy",
+        "en": "Lieutenancy",
+        "note": "战前不列颠一级行政区；长官为总督 Lord Lieutenant",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "id": "G051",
+        "category": "制度与政体",
+        "zh": "郡",
+        "de": "Shire / County",
+        "en": "Shire / County",
+        "note": "不列颠二级行政区",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "id": "G052",
+        "category": "制度与政体",
+        "zh": "《权利宪章》",
+        "de": "Charta der Rechte",
+        "en": "Charter of Rights",
+        "note": "1945/1947，不列颠成文宪法",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "id": "G053",
+        "category": "制度与政体",
+        "zh": "大区（伊比利亚）",
+        "de": "Großregion",
+        "en": "Large region",
+        "note": "大型一级行政区；大区很大、数量少；省份承载传统民族/历史地区",
+        "src": [
+          "S2"
+        ]
+      },
+      {
+        "id": "G054",
+        "category": "制度与政体",
+        "zh": "总统制共和国（伊比利亚）",
+        "de": "Präsidialrepublik",
+        "en": "Presidential republic",
+        "note": "高度中央集权",
+        "src": [
+          "S2"
+        ]
+      },
+      {
+        "id": "G055",
+        "category": "制度与政体",
+        "zh": "长生天",
+        "de": "Tengri / Ewiger Himmel",
+        "en": "Tengri / Eternal Sky",
+        "note": "蒙古国家与王权合法性的最高来源",
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "id": "G056",
+        "category": "制度与政体",
+        "zh": "兀鲁思",
+        "de": "Ulus",
+        "en": "Ulus",
+        "note": "蒙古政治体单位；见于国号“罗斯兀鲁思”",
+        "src": [
+          "S4"
+        ]
+      },
+      {
+        "id": "G057",
+        "category": "制度与政体",
+        "zh": "驿站体系",
+        "de": "Poststationssystem (Jam)",
+        "en": "Yam relay system",
+        "note": "金帐汗国制度，被莫斯科继承",
+        "src": [
+          "S4"
+        ]
+      }
+    ],
+    "宗教": [
+      {
+        "id": "G060",
+        "category": "宗教",
+        "zh": "天主教",
+        "de": "Katholizismus",
+        "en": "Catholicism",
+        "note": null,
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G061",
+        "category": "宗教",
+        "zh": "路德宗",
+        "de": "Luthertum",
+        "en": "Lutheranism",
+        "note": "北德意志",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G062",
+        "category": "宗教",
+        "zh": "加尔文宗",
+        "de": "Calvinismus",
+        "en": "Calvinism",
+        "note": "低地、瑞士德语区、莱茵兰部分地区",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G063",
+        "category": "宗教",
+        "zh": "胡斯派-路德宗混合",
+        "de": "Hussitisch-lutherisches Bekenntnis",
+        "en": "Hussite-Lutheran blend",
+        "note": "波西米亚、摩拉维亚、西里西亚",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G064",
+        "category": "宗教",
+        "zh": "阿尔卑斯福音派",
+        "de": "Alpines Evangelium",
+        "en": "Alpine Evangelical",
+        "note": "奥地利、巴伐利亚、施蒂利亚、蒂罗尔、北意大利",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G065",
+        "category": "宗教",
+        "zh": "十字架下的喜悦",
+        "de": "Freude unter dem Kreuz",
+        "en": "Joy under the Cross",
+        "note": "阿尔卑斯福音派核心观念概括",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "id": "G066",
+        "category": "宗教",
+        "zh": "有节制的喜乐",
+        "de": "Gemäßigte Freude",
+        "en": "Tempered joy",
+        "note": "阿尔卑斯福音派核心观念",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "id": "G067",
+        "category": "宗教",
+        "zh": "王室新教（高教会式）",
+        "de": "Königliches Hochkirchentum",
+        "en": "Royal High Church Protestantism",
+        "note": "不列颠；国王兼任教会最高元首",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "id": "G068",
+        "category": "宗教",
+        "zh": "东正教",
+        "de": "Orthodoxie",
+        "en": "Orthodoxy",
+        "note": null,
+        "src": [
+          "S4"
+        ]
+      },
+      {
+        "id": "G069",
+        "category": "宗教",
+        "zh": "萨满传统",
+        "de": "Schamanismus",
+        "en": "Shamanism",
+        "note": "蒙古三层宗教结构第三层",
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "id": "G070",
+        "category": "宗教",
+        "zh": "西域佛教",
+        "de": "Westländischer Buddhismus",
+        "en": "Western Regions Buddhism",
+        "note": "独立佛教文明圈",
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "id": "G071",
+        "category": "宗教",
+        "zh": "外交新教、内政天主教",
+        "de": "Außenpolitisch protestantisch, innenpolitisch katholisch",
+        "en": "Protestant abroad, Catholic at home",
+        "note": "描述伊比利亚/西班牙-阿拉贡的矛盾立场",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "id": "G072",
+        "category": "宗教",
+        "zh": "政治天主教、文化新教",
+        "de": "Politisch katholisch, kulturell protestantisch",
+        "en": "Politically Catholic, culturally Protestant",
+        "note": "北意大利的独特身份",
+        "src": [
+          "S0"
+        ]
+      }
+    ],
+    "语言与正字法": [
+      {
+        "id": "G080",
+        "category": "语言与正字法",
+        "zh": "共同体德语 / 泛德意志标准语 / 帝国德语",
+        "de": "Gemeindeutsch / Pandeutsche Standardsprache / Reichsdeutsch",
+        "en": "Common German / Pan-German Standard / Imperial German",
+        "note": "三国统一正字法产物",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G081",
+        "category": "语言与正字法",
+        "zh": "法兰克语 / 西法兰克语",
+        "de": "Fränkisch / Westfränkisch",
+        "en": "Frankish / West Frankish",
+        "note": "西日耳曼语支；保留古法兰克军事法律词汇",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G082",
+        "category": "语言与正字法",
+        "zh": "高地德语",
+        "de": "Hochdeutsch",
+        "en": "High German",
+        "note": "含瑞士",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G083",
+        "category": "语言与正字法",
+        "zh": "低地德语（含荷兰语）",
+        "de": "Niederdeutsch (mit Niederländisch)",
+        "en": "Low German (incl. Dutch)",
+        "note": "荷兰语被视为低地德语一部分",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G084",
+        "category": "语言与正字法",
+        "zh": "伊比利亚-奥克语",
+        "de": "Iberisch-okzitanisch",
+        "en": "Iberian-Occitan",
+        "note": "罗曼语族",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G085",
+        "category": "语言与正字法",
+        "zh": "盎格鲁-法兰西语",
+        "de": "Anglois",
+        "en": "Anglo-Norman French / Anglois",
+        "note": "英语的最高语域；古 langue d'oïl 的直系继承",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "id": "G086",
+        "category": "语言与正字法",
+        "zh": "泛德意志语言会议",
+        "de": "Pandeutsche Sprachkonferenz",
+        "en": "Pan-German Language Conference",
+        "note": "制定统一正字法",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G087",
+        "category": "语言与正字法",
+        "zh": "罗曼化程度梯度",
+        "de": "Romanisierungsgefälle",
+        "en": "Gradient of Romance influence",
+        "note": "英格兰宫廷-法务语域 ＞ 伦敦及东南 ＞ 英格兰北部与西南 ＞ 苏格兰、威尔士方言 ＞ 爱尔兰英语",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "id": "G088",
+        "category": "语言与正字法",
+        "zh": "Volkheit（替代 Nation）",
+        "de": "Volkheit",
+        "en": "Volkheit (replacing Nation)",
+        "note": "统一正字法复古化替换例",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G089",
+        "category": "语言与正字法",
+        "zh": "Glaubenslehre（替代 Religion）",
+        "de": "Glaubenslehre",
+        "en": "Glaubenslehre (replacing Religion)",
+        "note": "统一正字法复古化替换例",
+        "src": [
+          "S0"
+        ]
+      }
+    ],
+    "文明与地理": [
+      {
+        "id": "G100",
+        "category": "文明与地理",
+        "zh": "泛德意志世界",
+        "de": "Pandeutsche Welt",
+        "en": "Pan-German world",
+        "note": "法兰克-德意志王冠几乎融为一体的文明共同体",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "id": "G101",
+        "category": "文明与地理",
+        "zh": "法兰克问题",
+        "de": "Fränkische Frage",
+        "en": "The Frankish Question",
+        "note": "对应现实历史的“奥地利问题”：属于德意志文明却最终没有成为德国人",
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "id": "G102",
+        "category": "文明与地理",
+        "zh": "英格兰问题",
+        "de": "Englische Frage",
+        "en": "The English Question",
+        "note": "罗曼语世界的对称另一半：属于罗曼-法兰西文明却最终没有成为法兰西人",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "id": "G103",
+        "category": "文明与地理",
+        "zh": "奥克问题",
+        "de": "Okzitanische Frage",
+        "en": "The Occitan Question",
+        "note": "法兰克最大内部挑战",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G104",
+        "category": "文明与地理",
+        "zh": "后基辅罗斯国家",
+        "de": "Post-Kyiver-Rus-Staat",
+        "en": "Post-Kyivan Rus state",
+        "note": "罗斯兀鲁思的国家性质",
+        "src": [
+          "S4"
+        ]
+      },
+      {
+        "id": "G105",
+        "category": "文明与地理",
+        "zh": "奥洲（故称）/ 东洲（现代称呼）",
+        "de": "Orient / Ostland",
+        "en": "Orient / Eastland",
+        "note": "第三大洲的暂用名，正式名称待定",
+        "src": [
+          "S4"
+        ]
+      },
+      {
+        "id": "G106",
+        "category": "文明与地理",
+        "zh": "泛中华文明圈—印度文明圈",
+        "de": "Pan-sinischer und indischer Zivilisationskreis",
+        "en": "Pan-Sinic and Indic civilisational sphere",
+        "note": "新大洲的核心概念",
+        "src": [
+          "S2"
+        ]
+      },
+      {
+        "id": "G107",
+        "category": "文明与地理",
+        "zh": "西域佛教文明带",
+        "de": "Buddhistischer Gürtel des Westlandes",
+        "en": "Western Regions Buddhist belt",
+        "note": null,
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "id": "G108",
+        "category": "文明与地理",
+        "zh": "莱茵-低地工业带",
+        "de": "Rheinisch-niederländischer Industriegürtel",
+        "en": "Rhine-Low Countries industrial belt",
+        "note": "钢铁、化工、机械",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G109",
+        "category": "文明与地理",
+        "zh": "多瑙河-波西米亚工业带",
+        "de": "Donau-böhmischer Industriegürtel",
+        "en": "Danube-Bohemian industrial belt",
+        "note": "电气、汽车、军火",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G110",
+        "category": "文明与地理",
+        "zh": "波河-阿尔卑斯工业带",
+        "de": "Po-alpiner Industriegürtel",
+        "en": "Po-Alpine industrial belt",
+        "note": "纺织、金融、精密仪器",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G111",
+        "category": "文明与地理",
+        "zh": "法兰克中部工业带",
+        "de": "Mittelfränkischer Industriegürtel",
+        "en": "Central Frankish industrial belt",
+        "note": "洛林、勃艮第北部、香槟-阿登——军工、食品、奢侈品",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G112",
+        "category": "文明与地理",
+        "zh": "自由汉萨城市",
+        "de": "Freie Hansestädte",
+        "en": "Free Hanseatic Cities",
+        "note": "汉堡、不来梅、阿姆斯特丹",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G113",
+        "category": "文明与地理",
+        "zh": "海洋平衡者",
+        "de": "Maritimer Balancer",
+        "en": "Maritime balancer",
+        "note": "不列颠的国际定位",
+        "src": [
+          "S1",
+          "S3"
+        ]
+      },
+      {
+        "id": "G114",
+        "category": "文明与地理",
+        "zh": "文明核心 / 文明边界 / 秩序挑战者",
+        "de": "Zivilisationskern / Zivilisationsgrenze / Ordnungsherausforderer",
+        "en": "Civilisational core / frontier / challenger of order",
+        "note": "德意志 / 法兰克 / 伊比利亚的角色定位",
+        "src": [
+          "S1"
+        ]
+      }
+    ],
+    "条约与事件": [
+      {
+        "id": "G120",
+        "category": "条约与事件",
+        "zh": "《法兰克福宪章》",
+        "de": "Frankfurter Verfassung / Frankfurter Vertrag",
+        "en": "Charter of Frankfurt",
+        "note": "1356；双王冠制度",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G121",
+        "category": "条约与事件",
+        "zh": "《维也纳和约》",
+        "de": "Frieden von Wien",
+        "en": "Peace of Vienna",
+        "note": "1648；宗教战争结束",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G122",
+        "category": "条约与事件",
+        "zh": "《十二条款》",
+        "de": "Zwölf Artikel",
+        "en": "Twelve Articles",
+        "note": "1524-1525农民战争纲领",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G123",
+        "category": "条约与事件",
+        "zh": "《反对杀人越货的农民暴徒》",
+        "de": "Wider die mörderischen und räuberischen Rotten der Bauern",
+        "en": "Against the Murderous, Thieving Hordes of Peasants",
+        "note": "马丁·路德，1525",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G124",
+        "category": "条约与事件",
+        "zh": "农民战争",
+        "de": "Bauernkrieg",
+        "en": "Peasants' War",
+        "note": "1524—1527",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G125",
+        "category": "条约与事件",
+        "zh": "宗教战争 / 三十年战争",
+        "de": "Religionskrieg / Dreißigjähriger Krieg",
+        "en": "War of Religion / Thirty Years' War",
+        "note": "1618—1648",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G126",
+        "category": "条约与事件",
+        "zh": "伊比利亚-奥克大革命",
+        "de": "Iberisch-okzitanische Revolution",
+        "en": "Iberian-Occitan Revolution",
+        "note": "1789",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G127",
+        "category": "条约与事件",
+        "zh": "大德意志方案",
+        "de": "Großdeutsche Lösung",
+        "en": "Greater German solution",
+        "note": "1848年失败",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G128",
+        "category": "条约与事件",
+        "zh": "小德意志方案",
+        "de": "Kleindeutsche Lösung",
+        "en": "Lesser German solution",
+        "note": "1866年确立",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G129",
+        "category": "条约与事件",
+        "zh": "罗马加冕",
+        "de": "Kaiserkrönung in Rom",
+        "en": "Coronation in Rome",
+        "note": "1871",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G130",
+        "category": "条约与事件",
+        "zh": "中欧协定",
+        "de": "Mitteleuropäisches Abkommen",
+        "en": "Central European Agreement",
+        "note": "二战中欧阵营，惨胜",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G131",
+        "category": "条约与事件",
+        "zh": "中欧同盟",
+        "de": "Mitteleuropäischer Bund",
+        "en": "Central European Alliance",
+        "note": "一战中欧阵营",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G132",
+        "category": "条约与事件",
+        "zh": "奥克正常化",
+        "de": "Okzitanische Normalisierung",
+        "en": "Occitan normalisation",
+        "note": "约1975年以后",
+        "src": [
+          "S2"
+        ]
+      }
+    ],
+    "机构与圣地": [
+      {
+        "id": "G140",
+        "category": "机构与圣地",
+        "zh": "帕里斯王家学院",
+        "de": "Königliche Akademie zu Paris",
+        "en": "Royal Academy of Paris",
+        "note": "神学、教会法、古典语文学、历史编纂学、美术史",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G141",
+        "category": "机构与圣地",
+        "zh": "雷姆斯神学院",
+        "de": "Priesterseminar Reims",
+        "en": "Reims Seminary",
+        "note": "加冕礼、政治神学、君主制理论",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G142",
+        "category": "机构与圣地",
+        "zh": "维也纳大学",
+        "de": "Universität Wien",
+        "en": "University of Vienna",
+        "note": "神学、法学、医学、哲学、经济学、工程科学",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G143",
+        "category": "机构与圣地",
+        "zh": "布拉格卡尔大学",
+        "de": "Karlsuniversität Prag",
+        "en": "Charles University Prague",
+        "note": "胡斯派传统、斯拉夫语文献、矿物学、机械工程",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G144",
+        "category": "机构与圣地",
+        "zh": "日内瓦学院",
+        "de": "Genfer Akademie",
+        "en": "Geneva Academy",
+        "note": "改革宗国际神学、自然法、国际法、人道法",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G145",
+        "category": "机构与圣地",
+        "zh": "圣斯特凡大教堂",
+        "de": "Stephansdom",
+        "en": "St. Stephen's Cathedral",
+        "note": "维也纳；新教大教堂，联邦重大国事与全德意志福音教会会议",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G146",
+        "category": "机构与圣地",
+        "zh": "雷姆斯圣母大教堂",
+        "de": "Kathedrale Notre-Dame de Reims",
+        "en": "Reims Cathedral",
+        "note": "加冕地，圣油瓶",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G147",
+        "category": "机构与圣地",
+        "zh": "维滕堡城堡教堂",
+        "de": "Schlosskirche Wittenberg",
+        "en": "Wittenberg Castle Church",
+        "note": "路德张贴九十五条论纲，新教母教会",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G148",
+        "category": "机构与圣地",
+        "zh": "马格德堡大教堂",
+        "de": "Dom zu Magdeburg",
+        "en": "Magdeburg Cathedral",
+        "note": "福音殉道者纪念堂",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "G149",
+        "category": "机构与圣地",
+        "zh": "英联邦",
+        "de": "Commonwealth",
+        "en": "The Commonwealth",
+        "note": "语言、文化与商业共同体",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "id": "G150",
+        "category": "机构与圣地",
+        "zh": "欧盟",
+        "de": "Europäische Union",
+        "en": "European Union",
+        "note": "欧洲文明洲的共同框架",
+        "src": [
+          "S2"
+        ]
+      }
+    ]
+  }
+}

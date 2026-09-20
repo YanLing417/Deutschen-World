@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>关系网总览 · 泛德意志的欧洲</title>
+<style>
+:root{
+  --bg:#14110d; --fg:#e8e2d4; --dim:#a89e8a; --accent:#c9a227; --line:#3a332a;
+  --card:#1d1913; --card2:#231e17; --link:#d8b64a; --ok:#7fa650; --warn:#d0913c; --bad:#c25b45;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+     font-family:"Segoe UI","Microsoft YaHei",system-ui,sans-serif;line-height:1.7}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+header{position:sticky;top:0;z-index:20;background:rgba(20,17,13,.97);
+       border-bottom:1px solid var(--line);backdrop-filter:blur(6px);padding:12px 20px}
+.hdr{max-width:1180px;margin:0 auto}
+h1{margin:0;font-size:19px;letter-spacing:.03em}
+h1 .sub{color:var(--dim);font-size:12px;font-weight:400;margin-left:10px;letter-spacing:0}
+nav.crumbs{font-size:12px;color:var(--dim);margin-top:5px}
+nav.crumbs a{color:var(--dim)}
+nav.crumbs a:hover{color:var(--link)}
+main{max-width:1180px;margin:0 auto;padding:18px 20px 70px}
+h2{font-size:17px;border-bottom:1px solid var(--line);padding-bottom:6px;margin:28px 0 12px}
+h3{font-size:15px;margin:20px 0 8px}
+h4{font-size:13.5px;margin:14px 0 6px;color:#cfc6b2}
+p{margin:8px 0}
+ul,ol{margin:8px 0;padding-left:22px}
+li{margin:3px 0}
+code,.mono{font-family:Consolas,"Cascadia Mono",monospace;font-size:12.5px}
+code{background:#0e0c09;border:1px solid var(--line);border-radius:4px;padding:1px 5px;color:var(--accent)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:14px 17px;margin:12px 0}
+.grid{display:grid;gap:10px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+table{border-collapse:collapse;width:100%;font-size:13px;margin:10px 0}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}
+th{background:#0e0c09;color:#cfc6b2;font-weight:600;white-space:nowrap}
+tr:nth-child(even) td{background:#191510}
+.tag{display:inline-block;font-size:11px;padding:1px 8px;border-radius:20px;
+     border:1px solid var(--line);background:#0e0c09;color:var(--dim);margin:1px 3px 1px 0}
+.tag.ok{color:var(--ok);border-color:#3d4d28}
+.tag.warn{color:var(--warn);border-color:#4d3d22}
+.tag.bad{color:var(--bad);border-color:#4d2a22}
+.tag.s5{color:#8fb6d8;border-color:#2a3d4d;background:#0e1419}
+.tag.sstar{color:#c9a2d8;border-color:#432a4d;background:#180e19}
+/* 文献页 */
+.doc{background:#f6f0e2;color:#241d12;border-radius:10px;padding:30px 38px;margin:16px 0;
+     border:1px solid #c9b98f;box-shadow:0 3px 20px #0006;line-height:1.95;
+     font-family:Georgia,"Times New Roman","Songti SC","SimSun",serif;max-width:820px}
+.doc h3{font-size:21px;margin:0 0 4px;color:#3a2c15;letter-spacing:.02em;font-weight:700}
+.doc .dsub{font-size:12.5px;color:#6d5c3a;margin-bottom:14px;border-bottom:1px solid #d6c9a4;padding-bottom:10px}
+.doc h4{font-size:15px;margin:20px 0 6px;color:#5a4318;font-weight:700}
+.doc p{margin:10px 0}
+.doc ol,.doc ul{margin:10px 0 10px 4px;padding-left:24px}
+.doc li{margin:5px 0}
+.doc b{color:#3a2c15}
+/* 正文中的词条交叉引用标记：浅色下划线点线，不打断阅读，不参与链接嵌套 */
+.xr{border-bottom:1px dotted #a08a52;cursor:help}
+.doc .xr{border-bottom-color:#b09a62;color:#3f3016}
+.doc-preamble{font-style:italic;color:#6d5c3a;border-left:3px solid #c9b98f;padding-left:12px;margin-bottom:16px}
+.doc-seal{text-align:right;font-size:13px;color:#7a6841;font-style:italic;margin-top:22px;
+          border-top:1px solid #d6c9a4;padding-top:10px}
+.docmeta{display:grid;grid-template-columns:120px 1fr;gap:6px 14px;font-size:13.5px;margin:12px 0}
+.docmeta dt{color:var(--dim);font-size:12.5px}
+.docmeta dd{margin:0}
+.doclist li{margin:7px 0}
+.kindbadge{font-size:11.5px;padding:2px 9px;border-radius:20px;background:#2a2218;
+           border:1px solid #4a3d22;color:#d8b64a;margin-right:6px}
+.kv{display:grid;grid-template-columns:132px 1fr;gap:5px 12px;font-size:13.5px;margin:10px 0}
+.kv dt{color:var(--dim);font-size:12.5px}
+.kv dd{margin:0}
+.q{position:sticky;top:56px;z-index:15;background:var(--bg);padding:10px 0}
+input[type=search],input[type=text],select{
+  background:#0e0c09;border:1px solid var(--line);color:var(--fg);border-radius:7px;
+  padding:9px 12px;font-size:14px;font-family:inherit}
+input[type=search]{width:100%}
+input:focus,select:focus{outline:none;border-color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.chip{font-size:12px;padding:3px 10px;border-radius:20px;border:1px solid var(--line);
+      background:#0e0c09;color:var(--dim);cursor:pointer;user-select:none}
+.chip:hover{border-color:var(--accent);color:var(--fg)}
+.chip.on{background:var(--accent);color:#14110d;border-color:var(--accent);font-weight:600}
+.item{border:1px solid var(--line);border-radius:9px;background:var(--card);padding:11px 14px;margin-bottom:9px}
+.item h3{margin:0 0 4px;font-size:15px}
+.item .meta{font-size:11.5px;color:var(--dim);margin-bottom:4px}
+.item .sm{font-size:13px;color:#d6cebc}
+mark{background:var(--accent);color:#14110d;border-radius:2px;padding:0 1px}
+.count{color:var(--dim);font-size:12px;margin:10px 0}
+.empty{color:var(--dim);padding:30px 0;text-align:center}
+.rid{font-family:Consolas,monospace;font-size:11px;color:var(--accent);
+     border:1px solid var(--line);border-radius:4px;padding:1px 5px;margin-left:7px}
+footer{max-width:1180px;margin:0 auto;padding:0 20px 40px;color:var(--dim);font-size:11.5px}
+.pill{display:inline-block;min-width:22px;text-align:center}
+.legend{font-size:12px;color:var(--dim)}
+/* 时间轴 */
+.tl-wrap{position:relative;margin:14px 0 0}
+.tl-axis{position:relative;height:34px;border-bottom:2px solid var(--line);margin-bottom:6px}
+.tl-tick{position:absolute;top:0;height:34px;width:1px;background:var(--line)}
+.tl-tick span{position:absolute;top:8px;left:4px;font-size:10.5px;color:var(--dim);white-space:nowrap}
+.tl-lane{position:relative;height:26px;margin:5px 0;background:#191510;border-radius:4px;
+         border:1px solid #2a251d}
+.tl-ev{position:absolute;top:3px;height:19px;border-radius:4px;cursor:pointer;
+       background:#4a3f22;border:1px solid var(--accent);overflow:hidden}
+.tl-ev:hover{background:var(--accent);z-index:6}
+.tl-ev span{font-size:10px;color:#f3ecd8;padding:0 4px;white-space:nowrap;line-height:19px}
+.tl-ev:hover span{color:#14110d}
+.tl-lane-label{position:absolute;left:0;top:3px;height:19px;line-height:19px;font-size:10.5px;
+               color:#a89e8a;transform:translateX(-100%);padding-right:9px;white-space:nowrap;
+               text-align:right;box-sizing:border-box;pointer-events:none}
+.tl-holder{padding-left:138px}
+#tip{position:fixed;z-index:50;max-width:380px;background:var(--card2);border:1px solid var(--accent);
+     border-radius:8px;padding:10px 13px;font-size:12.5px;display:none;box-shadow:0 6px 24px #000a}
+#tip h4{margin:0 0 4px;color:var(--accent);font-size:13.5px}
+.scrub{width:100%;margin:8px 0 4px}
+/* 主页 */
+.hero{padding:54px 20px 36px;text-align:center;
+      background:radial-gradient(ellipse at 50% -10%,#2c2418 0%,#14110d 64%);
+      border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(24px,4.4vw,36px);letter-spacing:.06em;margin:0 0 8px;font-weight:700}
+.hero h1 b{color:var(--accent)}
+.hero .tagline{color:#bdb4a1;font-size:14px;max-width:820px;margin:12px auto 0;line-height:1.9}
+.hero .realms{margin-top:22px;display:flex;gap:9px;justify-content:center;flex-wrap:wrap}
+.realm{font-size:12.5px;padding:5px 14px;border-radius:22px;border:1px solid var(--line);
+       background:#0e0c09;color:#cfc6b2}
+.realm i{font-style:normal;color:var(--accent);font-weight:600}
+.entries{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:24px 0}
+.entry{display:block;border:1px solid var(--line);border-radius:11px;background:var(--card);
+       padding:18px 20px;transition:transform .16s,border-color .16s,box-shadow .16s;
+       position:relative;overflow:hidden}
+.entry:hover{border-color:var(--accent);background:var(--card2);transform:translateY(-2px);
+             text-decoration:none;box-shadow:0 9px 28px #0007}
+.entry .ico{font-size:22px;margin-bottom:8px;display:block}
+.entry h3{margin:0 0 6px;font-size:16px;color:var(--fg)}
+.entry p{margin:0;font-size:12.5px;color:var(--dim);line-height:1.74}
+.entry .n{position:absolute;right:15px;top:14px;font-size:11px;color:var(--accent);
+          border:1px solid var(--line);border-radius:20px;padding:1px 9px;background:#0e0c09}
+.entry.wide{grid-column:span 2}
+@media(max-width:700px){.entry.wide{grid-column:span 1}}
+.stats{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));margin:18px 0}
+.stat{border:1px solid var(--line);border-radius:9px;background:#191510;padding:14px 10px;text-align:center}
+.stat b{display:block;font-size:23px;color:var(--accent);font-weight:700;line-height:1.3}
+.stat span{font-size:11.5px;color:var(--dim)}
+.quote{border-left:3px solid var(--accent);padding:3px 0 3px 17px;margin:22px 0;
+       color:#cfc6b2;font-size:13.5px;line-height:1.88}
+.quote cite{display:block;color:var(--dim);font-size:12px;font-style:normal;margin-top:7px}
+.twocol{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(318px,1fr))}
+.pill-row{display:flex;flex-wrap:wrap;gap:6px;margin:9px 0}
+a.pill{font-size:12px;padding:3px 11px;border-radius:20px;border:1px solid var(--line);
+       background:#0e0c09;color:#cfc6b2;display:inline-block}
+a.pill:hover{border-color:var(--accent);color:var(--fg);text-decoration:none}
+a.pill.gold{border-color:#5a4a22;color:var(--accent)}
+.tl-mini{position:relative;height:158px;margin:14px 0 4px;border:1px solid var(--line);
+         border-radius:9px;background:#191510;overflow:hidden}
+.tl-mini .dot{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--accent);
+              border:1px solid #0e0c09;transform:translate(-50%,-50%);cursor:pointer;
+              transition:width .14s,height .14s,box-shadow .14s}
+.tl-mini .dot:hover{width:15px;height:15px;box-shadow:0 0 0 3px #c9a22744}
+.tl-mini .dot.rel{background:#c25b45}
+.tl-mini .dot.cul{background:#7fa650}
+.tl-mini .dot.pol{background:#8fb6d8}
+.tl-mini .axl{position:absolute;bottom:6px;width:1px;height:8px;background:#3a332a}
+.tl-mini .axt{position:absolute;bottom:17px;font-size:9.5px;color:#6f6656;transform:translateX(-50%)}
+.tl-mini .lgd{position:absolute;right:9px;top:7px;font-size:10px;color:var(--dim)}
+/* 主页迷你时间轴：泳道 + 密度柱 + 锚点 */
+.tlmini-grid{position:absolute;left:0;right:0;top:0;bottom:26px;pointer-events:none}
+.tlmini-line{position:absolute;top:0;bottom:0;width:1px;background:#221e18}
+.tlmini-lane{position:relative;height:44px;background:#1c1813;border-bottom:1px solid #221e18}
+.tlmini-lane span{position:absolute;left:9px;top:6px;font-size:10.5px;color:#7d7462;
+                  letter-spacing:.04em;z-index:3;pointer-events:none}
+.tlmini-bars{position:absolute;left:0;right:0;top:0;bottom:26px;z-index:1}
+.tl-mini .bar{position:absolute;bottom:0;width:8px;border-radius:2px 2px 0 0;
+              opacity:.92;transition:opacity .14s,filter .14s}
+.tl-mini .bar:hover{opacity:1;filter:brightness(1.4)}
+.tl-mini .bar i{position:absolute;top:-13px;left:50%;transform:translateX(-50%);font-size:9px;
+                font-style:normal;color:#cfc6b2}
+.tl-mini .bar.rel{background:linear-gradient(#c25b45,#8e4033)}
+.tl-mini .bar.cul{background:linear-gradient(#7fa650,#5a7a38)}
+.tl-mini .bar.pol{background:linear-gradient(#8fb6d8,#5a7fa3)}
+.tlmini-anchor{position:absolute;bottom:0;height:100%;width:1px;background:#3a332a;
+               transform:translateX(-0.5px);pointer-events:none;z-index:2}
+.tlmini-anchor i{position:absolute;bottom:28px;left:-2px;width:5px;height:5px;border-radius:50%;
+                 background:#c9a227}
+.tlmini-anchor b{position:absolute;bottom:8px;left:0;transform:translateX(-50%);
+                 font-size:9.5px;font-weight:400;color:#8a8170;white-space:nowrap}
+.tlmini-foot{display:flex;justify-content:space-between;font-size:11.5px;color:var(--dim);
+             margin-top:7px}
+/* Hero 分叉图 */
+.fork{display:block;width:100%;max-width:900px;margin:28px auto 0;height:auto}
+.fork .fkl{fill:#c9a227;font-size:12px;font-weight:600}
+.fork .fkt{fill:#e2dbcb;font-size:12.5px}
+.fork .fks{fill:#8f8674;font-size:11px}
+.fork .fkm{fill:#8f8674;font-size:10.5px}
+/* Markdown 转换页 */
+.mdbody{font-size:13.5px;line-height:1.85}
+.mdbody h1{font-size:23px;margin:26px 0 12px;color:var(--accent);font-weight:700}
+.mdbody h2{font-size:18px;margin:30px 0 12px;border-bottom:1px solid var(--line);padding-bottom:7px}
+.mdbody h3{font-size:15.5px;margin:22px 0 9px;color:#e6dfcd}
+.mdbody h4{font-size:14px;margin:16px 0 7px;color:#cfc6b2}
+.mdbody p{margin:9px 0}
+.mdbody ul.mdul,.mdbody ol{margin:9px 0;padding-left:24px}
+.mdbody li{margin:4px 0}
+.mdbody code{background:#0e0c09;border:1px solid var(--line);border-radius:4px;
+             padding:1px 5px;color:var(--accent);font-size:12.5px}
+.mdbody a{color:var(--link)}
+.mdbody blockquote.mdq{border-left:3px solid var(--accent);background:#191510;
+                       margin:12px 0;padding:8px 15px;border-radius:0 7px 7px 0}
+.mdbody blockquote.mdq p{margin:5px 0;color:#cfc6b2}
+.mdbody hr.mdhr{border:none;border-top:1px solid var(--line);margin:26px 0}
+.mdbody .tw{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:8px}
+.mdbody table{margin:0;font-size:12.5px;border-collapse:collapse;width:100%}
+.mdbody th{position:sticky;top:0;background:#14110d;z-index:1}
+.mdbody td,.mdbody th{border:none;border-bottom:1px solid #241f19;border-right:1px solid #241f19;
+                      padding:6px 10px;vertical-align:top}
+.mdbody tr:last-child td{border-bottom:none}
+.mdbody tr:nth-child(even) td{background:#1a1611}
+.mdbody strong{color:#f0e9d8}
+/* 全局顶栏 */
+.topbar{position:sticky;top:0;z-index:30;background:rgba(16,13,10,.97);
+        border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+.topbar-in{max-width:1180px;margin:0 auto;padding:9px 20px;display:flex;align-items:center;
+           gap:14px;flex-wrap:nowrap;min-width:0}
+.brand{font-size:14.5px;font-weight:600;color:var(--accent);letter-spacing:.05em;
+       white-space:nowrap;flex-shrink:0}
+.brand:hover{text-decoration:none;color:#e0bc45}
+.gnav{display:flex;gap:4px;margin-left:auto;flex-shrink:0}
+.gnav-i{font-size:13px;color:var(--dim);padding:5px 12px;border-radius:7px;white-space:nowrap;
+        border:1px solid transparent}
+.gnav-i:hover{color:var(--fg);background:#211c16;text-decoration:none}
+.gnav-i.on{color:#14110d;background:var(--accent);border-color:var(--accent);font-weight:600}
+.gnav-t{display:none;background:#211c16;border:1px solid var(--line);color:var(--fg);
+        border-radius:7px;font-size:15px;padding:3px 10px;cursor:pointer}
+/* 左上角返回导航 */
+.backnav{display:flex;gap:6px;flex-shrink:0}
+.bkn{font-size:12.5px;color:#cfc6b2;background:#211c16;border:1px solid var(--line);
+     border-radius:7px;padding:5px 11px;white-space:nowrap;cursor:pointer;
+     font-family:inherit;line-height:1.35;transition:border-color .14s,color .14s,background .14s}
+.bkn:hover{border-color:var(--accent);color:var(--accent);background:#2a2218;text-decoration:none}
+/* 页脚署名 */
+.madeby{margin:30px 0 0;padding:22px 24px;text-align:center;border-radius:11px;
+        background:linear-gradient(135deg,rgba(201,162,39,.10),rgba(201,162,39,.03) 45%,transparent);
+        border:1px solid #3d3527;font-size:14px;color:#ddd5c3;letter-spacing:.04em}
+.madeby .mk{display:block;font-size:11.5px;color:var(--dim);letter-spacing:.22em;
+            text-transform:uppercase;margin-bottom:7px}
+.madeby b{color:var(--accent);font-weight:700;font-size:16px;letter-spacing:.06em;
+          padding:0 3px}
+.madeby .fl{display:block;margin-top:9px;font-size:11.5px;color:#7d7462;letter-spacing:.02em}
+.footmeta{font-size:11.5px;color:var(--dim);line-height:1.9;margin-top:20px;
+          padding-top:16px;border-top:1px solid var(--line)}
+.footmeta a{color:#a89e8a}
+.footmeta a:hover{color:var(--link)}
+@media(max-width:760px){
+  .backnav{order:3;width:100%}
+  .bkn{flex:1;text-align:center}
+}
+@media(max-width:760px){
+  .topbar-in{flex-wrap:wrap;gap:10px}
+  .gnav-t{display:block;margin-left:auto}
+  .gnav{display:none;width:100%;flex-direction:column;gap:2px}
+  .gnav.open{display:flex}
+  .gnav-i{padding:8px 12px}
+}
+</style>
+
+</head>
+<body>
+<div class="topbar"><div class="topbar-in"><div class="backnav"><a class="bkn" href="../home.html" title="回到主页">⌂ 回到主页</a><button class="bkn" id="bkPrev" type="button" title="返回上一页">← 返回上一页</button></div><a class="brand" href="../home.html">泛德意志的欧洲</a><nav class="gnav"><a class="gnav-i" href="../home.html">主页</a><a class="gnav-i" href="../index.html">索引</a><a class="gnav-i on" href="../wiki/index.html">文献</a><a class="gnav-i" href="../wiki/docs-index.html">文档</a><a class="gnav-i" href="../timeline.html">时间轴</a></nav><button class="gnav-t" id="gnavToggle" aria-label="切换导航">☰</button></div></div>
+
+<header><div class="hdr">
+<h1>🕸 关系网总览<span class="sub">1025 条边全表 + 五张 ASCII 谱系图</span></h1>
+<nav class="crumbs"><a href="../home.html">主页</a> ／ <a href="../index.html">索引</a> ／
+<a href="index.html">文档</a> ／ 一致性与决策</nav></div></header>
+<main>
+<div class="card">
+<span class="kindbadge">一致性与决策</span>
+本页由 <code>docs/graph_relations.md</code> 自动转换生成，
+数据源为 <code>tools/kb_data.py</code> 等设定数据层；源 Markdown 保留在 <code>docs/</code> 下。
+<div class="pill-row" style="margin-top:10px"><a class="chip" href="consistency.html">✅ 一致性检查报告</a><a class="chip" href="pending.html">🗳 待定项决策报告</a><a class="chip" href="checklist.html">☑ 待定项裁定清单</a><a class="chip" href="status.html">📌 三态清单</a></div>
+</div>
+<div class="card"><div class="legend">本页目录</div><div class="pill-row"><a class="pill" href="#人物与家族关系网">人物与家族关系网</a><a class="pill" href="#国家关系网">国家关系网</a><a class="pill" href="#事件因果关系链">事件因果关系链</a><a class="pill" href="#历史物品留存网">历史物品留存网</a><a class="pill" href="#人物与家族关系网-结构化视图">人物与家族关系网 · 结构化视图</a><a class="pill" href="#出处代号">出处代号</a></div></div>
+<div class="mdbody">
+<h1 id="图数据库关系总览">图数据库关系总览</h1>
+<blockquote class="mdq">
+<p>节点 481 个，边 1286 条。</p>
+<p>四个子图：人物与家族关系网、国家关系网、事件因果关系链、历史物品留存网。</p>
+</blockquote>
+<h2 id="人物与家族关系网">人物与家族关系网</h2>
+<p>人物之间的血缘、婚姻、王朝归属、继承与竞争关系</p>
+<p>边数：<strong>125</strong></p>
+<div class="tw"><table>
+<thead><tr><th>边ID</th><th>关系类型</th><th>起点</th><th>终点</th><th>说明</th><th>时期</th><th>状态</th></tr></thead><tbody>
+<tr><td>REL001</td><td>PARENT_OF</td><td>鲁道夫之母（卡佩旁系公主）</td><td>鲁道夫</td><td>生母（卡佩旁系公主，血统构成继承合法性）</td><td></td><td>已确定</td></tr>
+<tr><td>REL002</td><td>PARENT_OF</td><td>鲁道夫</td><td>阿尔布雷希特</td><td>父子</td><td></td><td>已确定</td></tr>
+<tr><td>REL003</td><td>SPOUSE_OF</td><td>鲁道夫</td><td>鲁道夫之妻（勃艮第伯爵之女）</td><td>夫妻（勃艮第伯爵之女，提供东部军事资源）</td><td></td><td>已确定</td></tr>
+<tr><td>REL004</td><td>SPOUSE_OF</td><td>阿尔布雷希特</td><td>让娜</td><td>夫妻；使哈布斯堡合法吞并香槟</td><td></td><td>已确定</td></tr>
+<tr><td>REL005</td><td>DYNASTY_MEMBER</td><td>鲁道夫</td><td>哈布斯堡</td><td>哈布斯堡伯爵</td><td></td><td>已确定</td></tr>
+<tr><td>REL006</td><td>DYNASTY_MEMBER</td><td>阿尔布雷希特</td><td>哈布斯堡</td><td>哈布斯堡家族成员</td><td></td><td>已确定</td></tr>
+<tr><td>REL007</td><td>DYNASTY_MEMBER</td><td>阿尔布雷希特二世</td><td>哈布斯堡</td><td>哈布斯堡皇帝</td><td></td><td>已确定</td></tr>
+<tr><td>REL008</td><td>PARENT_OF</td><td>阿尔布雷希特二世</td><td>阿尔布雷希特二世之女（未具名）</td><td>父女（仅有一女，未具名）</td><td></td><td>已确定</td></tr>
+<tr><td>REL009</td><td>DYNASTY_MEMBER</td><td>奥托卡二世</td><td>普热米斯尔</td><td>普热米斯尔家族</td><td></td><td>已确定</td></tr>
+<tr><td>REL010</td><td>DYNASTY_MEMBER</td><td>路易九世</td><td>卡佩</td><td>卡佩王朝</td><td></td><td>已确定</td></tr>
+<tr><td>REL011</td><td>PARENT_OF</td><td>路易九世</td><td>腓力三世</td><td>父子（文档表述为“路易九世后裔”）</td><td></td><td>已确定</td></tr>
+<tr><td>REL012</td><td>PARENT_OF</td><td>腓力三世</td><td>腓力四世</td><td>父子</td><td></td><td>已确定</td></tr>
+<tr><td>REL013</td><td>DYNASTY_MEMBER</td><td>腓力三世</td><td>卡佩</td><td>卡佩王朝</td><td></td><td>已确定</td></tr>
+<tr><td>REL014</td><td>DYNASTY_MEMBER</td><td>腓力四世</td><td>卡佩</td><td>卡佩王朝</td><td></td><td>已确定</td></tr>
+<tr><td>REL015</td><td>DYNASTY_MEMBER</td><td>瓦卢瓦的查理</td><td>瓦卢瓦</td><td>瓦卢瓦家族</td><td></td><td>已确定</td></tr>
+<tr><td>REL016</td><td>DYNASTY_MEMBER</td><td>埃夫勒的腓力</td><td>埃夫勒</td><td>埃夫勒家族</td><td></td><td>已确定</td></tr>
+<tr><td>REL017</td><td>DYNASTY_MEMBER</td><td>爱德华一世</td><td>金雀花</td><td>金雀花王朝</td><td></td><td>已确定</td></tr>
+<tr><td>REL018</td><td>CLAIMANT_TO</td><td>爱德华一世</td><td>法兰克立宪君主国</td><td>主张法兰克王位（1270年前后继承争夺者）</td><td></td><td>已确定</td></tr>
+<tr><td>REL019</td><td>CLAIMANT_TO</td><td>鲁道夫</td><td>法兰克立宪君主国</td><td>继承争夺胜出者，1272年加冕为法兰克人的国王</td><td></td><td>已确定</td></tr>
+<tr><td>REL020</td><td>CLAIMANT_TO</td><td>瓦卢瓦的查理</td><td>法兰克立宪君主国</td><td>法兰克王位继承争夺者（失败）</td><td></td><td>已确定</td></tr>
+<tr><td>REL021</td><td>CLAIMANT_TO</td><td>埃夫勒的腓力</td><td>法兰克立宪君主国</td><td>法兰克王位继承争夺者（失败）</td><td></td><td>已确定</td></tr>
+<tr><td>REL022</td><td>DYNASTY_MEMBER</td><td>鲁道夫之妻（勃艮第伯爵之女）</td><td>勃艮第家族</td><td>勃艮第伯爵之女</td><td></td><td>已确定</td></tr>
+<tr><td>REL023</td><td>DYNASTY_MEMBER</td><td>鲁道夫之母（卡佩旁系公主）</td><td>卡佩</td><td>卡佩旁系公主</td><td></td><td>已确定</td></tr>
+<tr><td>REL024</td><td>RIVAL_OF</td><td>鲁道夫</td><td>奥托卡二世</td><td>东西双源的对位：1273年鲁道夫不可再被选，奥托卡成为最强势候选人</td><td></td><td>已确定</td></tr>
+<tr><td>REL025</td><td>SUCCEEDED_BY</td><td>金雀花</td><td>蒙福尔</td><td>约1789-1815政治动荡中金雀花倾覆，蒙福尔家族上位</td><td></td><td>已确定</td></tr>
+<tr><td>REL026</td><td>OFFICE_HOLD</td><td>阿尔布雷希特二世</td><td>《法兰克福宪章》（法兰克福条约）</td><td>召集法兰克福会议并促成宪章</td><td></td><td>已确定</td></tr>
+<tr><td>REL027</td><td>RIVAL_OF</td><td>哈布斯堡</td><td>普热米斯尔</td><td>两大家族在帝国议会中既合作又竞争；双元格局的对位</td><td></td><td>已确定</td></tr>
+<tr><td>REL028</td><td>DYNASTY_MEMBER</td><td>马丁·路德</td><td>北德意志路德宗</td><td>路德宗传统开创者（维滕堡城堡教堂）</td><td></td><td>已确定</td></tr>
+<tr><td>REL029</td><td>DYNASTY_MEMBER</td><td>加尔文</td><td>低地-瑞士加尔文宗</td><td>加尔文宗传统（日内瓦圣彼得大教堂与加尔文学院）</td><td></td><td>已确定</td></tr>
+<tr><td>REL127</td><td>SUCCEEDED_BY</td><td>金帐汗国</td><td>罗斯兀鲁思</td><td>金帐汗国政治覆灭但文明传统被莫斯科继承；罗斯兀鲁思把金帐汗国视为自己的前身王朝</td><td></td><td>已确定</td></tr>
+<tr><td>REL320</td><td>DYNASTY_ENDS</td><td>普热米斯尔</td><td>德意志帝国瓦解与法兰克共和化</td><td>普热米斯尔王朝结束</td><td></td><td>已确定</td></tr>
+<tr><td>REL321</td><td>DYNASTY_ENDS</td><td>蒙福尔</td><td>不列颠战败与被监督的民主化</td><td>1945年正式废除王位</td><td></td><td>已确定</td></tr>
+<tr><td>REL322</td><td>DYNASTY_RESTORED</td><td>哈布斯堡</td><td>第二次世界大战</td><td>二战中哈布斯堡王室复辟</td><td></td><td>已确定</td></tr>
+<tr><td>REL403</td><td>SUCCEEDED_BY</td><td>伊比利亚王国</td><td>伊比利亚共和国（第五共和国后体制）</td><td>1789年伊比利亚-奥克大革命推翻伊比利亚王国，此后进入共和国/帝国反复更替（第一至第五共和国、第一至第二帝国）</td><td>1789</td><td>已确定</td></tr>
+<tr><td>REL420</td><td>RIVAL_OF</td><td>科尔多瓦哈里发国</td><td>阿拔斯哈里发国（两河）</td><td>929年科尔多瓦自立哈里发，伊斯兰世界形成三哈里发并立格局</td><td></td><td>已确定</td></tr>
+<tr><td>REL421</td><td>RIVAL_OF</td><td>法蒂玛哈里发国（埃及）</td><td>阿拔斯哈里发国（两河）</td><td>什叶派法蒂玛哈里发国与逊尼派阿拔斯哈里发国对立</td><td></td><td>已确定</td></tr>
+<tr><td>REL422</td><td>SUCCEEDED_BY</td><td>法蒂玛哈里发国（埃及）</td><td>阿尤布苏丹国（埃及—叙利亚）</td><td>1171年萨拉丁推翻法蒂玛王朝，埃及转入逊尼派阿尤布王朝</td><td>1171</td><td>已确定</td></tr>
+<tr><td>REL423</td><td>SUCCEEDED_BY</td><td>阿尤布苏丹国（埃及—叙利亚）</td><td>马穆鲁克苏丹国（埃及—叙利亚）</td><td>1250年马穆鲁克取代阿尤布王朝</td><td>1250</td><td>已确定</td></tr>
+<tr><td>REL424</td><td>SUCCEEDED_BY</td><td>马穆鲁克苏丹国（埃及—叙利亚）</td><td>奥斯曼帝国（安纳托利亚突厥帝国）</td><td>1517年安纳托利亚突厥帝国吞并马穆鲁克统治的埃及与叙利亚，并取得汉志宗主权</td><td>1517</td><td>已确定</td></tr>
+<tr><td>REL426</td><td>RIVAL_OF</td><td>伊朗（伊斯兰什叶派波斯）</td><td>奥斯曼帝国（安纳托利亚突厥帝国）</td><td>什叶派波斯与逊尼派安纳托利亚突厥帝国长期并立，构成伊斯兰世界的双极结构</td><td></td><td>已确定</td></tr>
+<tr><td>REL460</td><td>PARENT_OF</td><td>腓力三世</td><td>查理、路易（腓力三世之子，文档未具名）</td><td>父子（查理、路易，文档未具名者合并）</td><td></td><td>已确定</td></tr>
+<tr><td>REL461</td><td>SPOUSE_OF</td><td>腓力三世</td><td>腓力三世之妻（文档未具名）</td><td>夫妻（文档未具名）</td><td></td><td>已确定</td></tr>
+<tr><td>REL462</td><td>PARENT_OF</td><td>勃艮第伯爵（鲁道夫之岳父，文档未具名）</td><td>鲁道夫之妻（勃艮第伯爵之女）</td><td>父女（文档未具名）</td><td></td><td>已确定</td></tr>
+<tr><td>REL463</td><td>SPOUSE_OF</td><td>阿尔布雷希特二世之女婿（法兰克贵族推举对象，文档未具名）</td><td>阿尔布雷希特二世之女（未具名）</td><td>夫妻（文档未具名）</td><td></td><td>已确定</td></tr>
+<tr><td>REL464</td><td>CLAIMANT_TO</td><td>布列塔尼公爵（1270年继承争夺者，文档未具名）</td><td>法兰克立宪君主国</td><td>法兰克王位继承争夺者（1270年前后，失败）</td><td></td><td>已确定</td></tr>
+<tr><td>REL465</td><td>RIVAL_OF</td><td>诺曼底公爵（1272年决战失败者，文档未具名）</td><td>鲁道夫</td><td>1272年决战：诺曼底公爵败于鲁道夫</td><td></td><td>已确定</td></tr>
+<tr><td>REL466</td><td>OFFICE_HOLD</td><td>雷姆斯大主教（1272年为鲁道夫加冕者，文档未具名）</td><td>鲁道夫</td><td>1272年为鲁道夫加冕为“法兰克人的国王”</td><td></td><td>已确定</td></tr>
+<tr><td>REL467</td><td>DYNASTY_MEMBER</td><td>阿卜杜勒·拉赫曼三世</td><td>伍麦叶（西班牙支系）</td><td>伍麦叶西班牙支系</td><td></td><td>已确定</td></tr>
+<tr><td>REL468</td><td>DYNASTY_MEMBER</td><td>萨拉丁</td><td>阿尤布</td><td>阿尤布王朝创立者</td><td></td><td>已确定</td></tr>
+<tr><td>REL469</td><td>DYNASTY_MEMBER</td><td>拜巴尔斯</td><td>马穆鲁克</td><td>马穆鲁克苏丹</td><td></td><td>已确定</td></tr>
+<tr><td>REL470</td><td>DYNASTY_MEMBER</td><td>沙阿伊斯玛仪</td><td>波斯诸王朝序列</td><td>波斯什叶派国家传统的奠基者（推定）</td><td></td><td>待定</td></tr>
+<tr><td>REL471</td><td>DYNASTY_MEMBER</td><td>奥斯曼一世</td><td>安纳托利亚突厥王朝</td><td>安纳托利亚突厥王朝奠基者</td><td></td><td>待定</td></tr>
+<tr><td>REL472</td><td>DYNASTY_MEMBER</td><td>伊比利亚王国开国君主（本轮新增，姓名待定）</td><td>伊比利亚非哈布斯堡王朝</td><td>伊比利亚王国开国君主（占位，姓名待定）</td><td></td><td>待定</td></tr>
+<tr><td>REL504</td><td>SUCCEEDED_BY</td><td>西班牙-阿拉贡</td><td>伊比利亚王国</td><td>西班牙-阿拉贡及奥克王国完成伊比利亚各基督教王国的统一，建立伊比利亚王国</td><td>16世纪</td><td>已确定</td></tr>
+<tr><td>REL505</td><td>SUCCEEDED_BY</td><td>伊比利亚王国</td><td>伊比利亚第一共和国</td><td>1789 年伊比利亚-奥克大革命推翻伊比利亚王国，建立第一共和国</td><td>1789</td><td>已确定</td></tr>
+<tr><td>REL506</td><td>SUCCEEDED_BY</td><td>伊比利亚第一共和国</td><td>伊比利亚第一帝国</td><td>第一共和国转为伊比利亚第一帝国</td><td>约1804</td><td>已确定</td></tr>
+<tr><td>REL507</td><td>SUCCEEDED_BY</td><td>伊比利亚第一帝国</td><td>伊比利亚第二共和国</td><td>第一帝国被反伊比利亚同盟击败；1815 年后重建为第二共和国</td><td>1815</td><td>已确定</td></tr>
+<tr><td>REL508</td><td>SUCCEEDED_BY</td><td>伊比利亚第二帝国</td><td>伊比利亚第三共和国（1871—1940）</td><td>第二共和国后转入第二帝国，继而第三、第四、第五共和国反复更替；1871 年伊比利亚第二帝国被德意志帝国击败，转入第三共和国</td><td></td><td>已确定</td></tr>
+<tr><td>REL509</td><td>DYNASTY_RULES</td><td>特拉斯塔马拉系（西班牙）</td><td>西班牙王国</td><td>特拉斯塔马拉系为卡斯蒂利亚—莱昂方向的王统</td><td></td><td>已确定</td></tr>
+<tr><td>REL510</td><td>DYNASTY_RULES</td><td>特拉斯塔马拉系（西班牙）</td><td>阿拉贡王国</td><td>特拉斯塔马拉系另一支为阿拉贡方向的王统</td><td></td><td>已确定</td></tr>
+<tr><td>REL520</td><td>SUCCEEDED_BY</td><td>西法兰克王国</td><td>法兰西罗曼王国</td><td>加洛林西法兰克王国由卡佩家族接续，成为法兰西罗曼王国</td><td>987</td><td>已确定</td></tr>
+<tr><td>REL521</td><td>SUCCEEDED_BY</td><td>法兰西罗曼王国</td><td>法兰克立宪君主国</td><td>1270 年卡佩直系绝嗣；1272 年哈布斯堡的鲁道夫入主，罗曼语政治体被日耳曼的法兰克取代</td><td>1270 / 1272</td><td>已确定</td></tr>
+<tr><td>REL522</td><td>SUCCEEDED_BY</td><td>法兰克立宪君主国</td><td>法兰克共和国</td><td>一战战败后哈布斯堡失去统治地位，法兰克立宪君主国转为法兰克共和国</td><td>1918</td><td>已确定</td></tr>
+<tr><td>REL523</td><td>SUCCEEDED_BY</td><td>法兰克共和国</td><td>法兰克立宪君主国</td><td>二战中哈布斯堡复辟，法兰克共和国回到君主立宪政体（国王彻底礼仪化）</td><td>1945</td><td>已确定</td></tr>
+<tr><td>REL524</td><td>SUCCEEDED_BY</td><td>德意志联邦共和国</td><td>德意志共和国（1918—1945）</td><td>一战战败后德意志帝国瓦解、普热米斯尔王朝结束，转为德意志共和国</td><td>1918</td><td>已确定</td></tr>
+<tr><td>REL525</td><td>SUCCEEDED_BY</td><td>德意志共和国（1918—1945）</td><td>德意志联邦共和国</td><td>二战后重建为统一联邦制民主共和国（德意志联邦共和国）</td><td>1945</td><td>已确定</td></tr>
+<tr><td>REL540</td><td>SUCCEEDED_BY</td><td>伊比利亚第二共和国</td><td>伊比利亚第二帝国</td><td>第二共和国后转入第二帝国</td><td></td><td>已确定</td></tr>
+<tr><td>REL542</td><td>SUCCEEDED_BY</td><td>伊比利亚第三共和国（1871—1940）</td><td>伊比利亚被占领与过渡期（1940—1945）</td><td>1940 年第三共和国被法兰克与德意志击败，进入被占领与过渡期</td><td>1940</td><td>已确定</td></tr>
+<tr><td>REL543</td><td>SUCCEEDED_BY</td><td>伊比利亚被占领与过渡期（1940—1945）</td><td>伊比利亚第四共和国（1945—1954）</td><td>1945 年战后由胜利方推动民主化，建立高度议会化的第四共和国</td><td>1945</td><td>已确定</td></tr>
+<tr><td>REL544</td><td>SUCCEEDED_BY</td><td>伊比利亚第四共和国（1945—1954）</td><td>伊比利亚第五共和国（1960— ）</td><td>1954 年前后非洲殖民地危机导致第四共和国覆灭，1960 年重建为第五共和国</td><td>1954 / 1960</td><td>已确定</td></tr>
+<tr><td>AUTO0016</td><td>RULED_BY</td><td>法兰克立宪君主国</td><td>哈布斯堡</td><td>统治王朝</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0039</td><td>RULED_BY</td><td>德意志联邦共和国</td><td>普热米斯尔</td><td>统治王朝</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0058</td><td>RULED_BY</td><td>不列颠联邦共和国</td><td>金雀花</td><td>统治王朝</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0072</td><td>RULED_BY</td><td>罗斯兀鲁思</td><td>莫斯科蒙古王朝</td><td>统治王朝</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0111</td><td>RULED_BY</td><td>英格兰-诺曼底</td><td>金雀花</td><td>统治王朝</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0114</td><td>RULED_BY</td><td>蒙古帝国</td><td>蒙古诸王朝</td><td>统治王朝</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0117</td><td>RULED_BY</td><td>金帐汗国</td><td>蒙古诸王朝</td><td>统治王朝</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0141</td><td>RULED_BY</td><td>伊比利亚王国</td><td>伊比利亚非哈布斯堡王朝</td><td>统治王朝</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0144</td><td>RULED_BY</td><td>科尔多瓦哈里发国</td><td>伍麦叶（西班牙支系）</td><td>统治王朝</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0147</td><td>RULED_BY</td><td>穆瓦希德哈里发国（及穆拉比特）</td><td>穆瓦希德（及穆拉比特）</td><td>统治王朝</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0150</td><td>RULED_BY</td><td>法蒂玛哈里发国（埃及）</td><td>法蒂玛</td><td>统治王朝</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0153</td><td>RULED_BY</td><td>阿尤布苏丹国（埃及—叙利亚）</td><td>阿尤布</td><td>统治王朝</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0156</td><td>RULED_BY</td><td>马穆鲁克苏丹国（埃及—叙利亚）</td><td>马穆鲁克</td><td>统治王朝</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0159</td><td>RULED_BY</td><td>阿拔斯哈里发国（两河）</td><td>阿拔斯</td><td>统治王朝</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0162</td><td>RULED_BY</td><td>伊朗（伊斯兰什叶派波斯）</td><td>波斯诸王朝序列</td><td>统治王朝</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0165</td><td>RULED_BY</td><td>奥斯曼帝国（安纳托利亚突厥帝国）</td><td>安纳托利亚突厥王朝</td><td>统治王朝</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0168</td><td>RULED_BY</td><td>马格里布（北非西部）</td><td>穆瓦希德（及穆拉比特）</td><td>统治王朝</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0191</td><td>RULED_BY</td><td>法兰西罗曼王国</td><td>卡佩</td><td>统治王朝</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0609</td><td>DYNASTY_MEMBER</td><td>阿尔布雷希特二世之女（未具名）</td><td>哈布斯堡</td><td>所属王朝</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0620</td><td>DYNASTY_MEMBER</td><td>查理、路易（腓力三世之子，文档未具名）</td><td>卡佩</td><td>所属王朝</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0625</td><td>DYNASTY_MEMBER</td><td>勃艮第伯爵（鲁道夫之岳父，文档未具名）</td><td>勃艮第家族</td><td>所属王朝</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0636</td><td>DYNASTY_MEMBER</td><td>蒙福尔一世</td><td>蒙福尔</td><td>所属王朝</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0638</td><td>DYNASTY_MEMBER</td><td>蒙福尔二世</td><td>蒙福尔</td><td>所属王朝</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0640</td><td>DYNASTY_MEMBER</td><td>蒙福尔三世</td><td>蒙福尔</td><td>所属王朝</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0642</td><td>DYNASTY_MEMBER</td><td>蒙福尔四世</td><td>蒙福尔</td><td>所属王朝</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0644</td><td>DYNASTY_MEMBER</td><td>蒙福尔五世</td><td>蒙福尔</td><td>所属王朝</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0646</td><td>DYNASTY_RULES</td><td>哈布斯堡</td><td>法兰克立宪君主国</td><td>统治</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0647</td><td>DYNASTY_RULES</td><td>哈布斯堡</td><td>英格兰-诺曼底</td><td>统治</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0648</td><td>DYNASTY_RULES</td><td>普热米斯尔</td><td>德意志联邦共和国</td><td>统治</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0649</td><td>DYNASTY_RULES</td><td>卡佩</td><td>法兰克立宪君主国</td><td>统治</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0650</td><td>DYNASTY_RULES</td><td>金雀花</td><td>英格兰-诺曼底</td><td>统治</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0651</td><td>DYNASTY_RULES</td><td>金雀花</td><td>不列颠联邦共和国</td><td>统治</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0652</td><td>DYNASTY_RULES</td><td>蒙福尔</td><td>不列颠联邦共和国</td><td>统治</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0653</td><td>DYNASTY_RULES</td><td>蒙古诸王朝</td><td>蒙古帝国</td><td>统治</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0654</td><td>DYNASTY_RULES</td><td>蒙古诸王朝</td><td>金帐汗国</td><td>统治</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0655</td><td>DYNASTY_RULES</td><td>莫斯科蒙古王朝</td><td>罗斯兀鲁思</td><td>统治</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0656</td><td>DYNASTY_RULES</td><td>伊比利亚非哈布斯堡王朝</td><td>伊比利亚共和国（第五共和国后体制）</td><td>统治</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0657</td><td>DYNASTY_RULES</td><td>诺曼-法兰西贵族集团</td><td>英格兰-诺曼底</td><td>统治</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0658</td><td>DYNASTY_RULES</td><td>诺曼-法兰西贵族集团</td><td>不列颠联邦共和国</td><td>统治</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0659</td><td>DYNASTY_RULES</td><td>伍麦叶（西班牙支系）</td><td>科尔多瓦哈里发国</td><td>统治</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0660</td><td>DYNASTY_RULES</td><td>穆瓦希德（及穆拉比特）</td><td>穆瓦希德哈里发国（及穆拉比特）</td><td>统治</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0661</td><td>DYNASTY_RULES</td><td>穆瓦希德（及穆拉比特）</td><td>马格里布（北非西部）</td><td>统治</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0662</td><td>DYNASTY_RULES</td><td>法蒂玛</td><td>法蒂玛哈里发国（埃及）</td><td>统治</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0663</td><td>DYNASTY_RULES</td><td>法蒂玛</td><td>埃及地区</td><td>统治</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0664</td><td>DYNASTY_RULES</td><td>阿尤布</td><td>阿尤布苏丹国（埃及—叙利亚）</td><td>统治</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0665</td><td>DYNASTY_RULES</td><td>阿尤布</td><td>埃及地区</td><td>统治</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0666</td><td>DYNASTY_RULES</td><td>阿尤布</td><td>叙利亚地区</td><td>统治</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0667</td><td>DYNASTY_RULES</td><td>马穆鲁克</td><td>马穆鲁克苏丹国（埃及—叙利亚）</td><td>统治</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0668</td><td>DYNASTY_RULES</td><td>马穆鲁克</td><td>埃及地区</td><td>统治</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0669</td><td>DYNASTY_RULES</td><td>马穆鲁克</td><td>叙利亚地区</td><td>统治</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0670</td><td>DYNASTY_RULES</td><td>阿拔斯</td><td>阿拔斯哈里发国（两河）</td><td>统治</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0671</td><td>DYNASTY_RULES</td><td>波斯诸王朝序列</td><td>伊朗（伊斯兰什叶派波斯）</td><td>统治</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0672</td><td>DYNASTY_RULES</td><td>安纳托利亚突厥王朝</td><td>奥斯曼帝国（安纳托利亚突厥帝国）</td><td>统治</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0673</td><td>DYNASTY_RULES</td><td>特拉斯塔马拉系（西班牙）</td><td>伊比利亚王国</td><td>统治</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0674</td><td>DYNASTY_MEMBER</td><td>伊莎贝拉·冯·卡斯蒂利亚</td><td>特拉斯塔马拉系（西班牙）</td><td>家族成员</td><td></td><td>已确定</td></tr>
+</tbody></table></div>
+<h2 id="国家关系网">国家关系网</h2>
+<p>国家之间的同盟、敌对、王朝联合、宗教归属、语言共同体、领土转移与边缘张力</p>
+<p>边数：<strong>521</strong></p>
+<div class="tw"><table>
+<thead><tr><th>边ID</th><th>关系类型</th><th>起点</th><th>终点</th><th>说明</th><th>时期</th><th>状态</th></tr></thead><tbody>
+<tr><td>REL101</td><td>DYNASTIC_UNION</td><td>法兰克立宪君主国</td><td>德意志联邦共和国</td><td>1356《法兰克福宪章》：法兰克王冠与德意志王冠永久联合于同一君主之身（双重王冠不可分割）</td><td>1356 — 1871</td><td>已确定</td></tr>
+<tr><td>REL102</td><td>SPLIT_FROM</td><td>德意志联邦共和国</td><td>法兰克立宪君主国</td><td>1871罗马加冕后，法兰克成为独立立宪君主国，不再与德意志王冠共戴</td><td>1871</td><td>已确定</td></tr>
+<tr><td>REL103</td><td>ALLY_OF</td><td>法兰克立宪君主国</td><td>德意志联邦共和国</td><td>一战、二战中欧同盟/中欧协定；战后语言、文化、经济合作但政治独立</td><td>1914-1918, 1939-1945, 1945-</td><td>已确定</td></tr>
+<tr><td>REL104</td><td>ENEMY_OF</td><td>法兰克立宪君主国</td><td>伊比利亚共和国（第五共和国后体制）</td><td>长期对立；伊比利亚在奥克地区与法兰克纠缠，战后法兰克获南部奥克省</td><td></td><td>已确定</td></tr>
+<tr><td>REL105</td><td>ENEMY_OF</td><td>德意志联邦共和国</td><td>伊比利亚共和国（第五共和国后体制）</td><td>宗教战争中伊比利亚加入新教联盟（名义同阵营）但1789后成为秩序挑战者；一战二战对立</td><td></td><td>已确定</td></tr>
+<tr><td>REL106</td><td>ALLY_OF</td><td>西班牙-阿拉贡</td><td>德意志联邦共和国</td><td>宗教战争后期加入新教联盟，形成“外交新教、内政天主教”矛盾立场</td><td>1635后</td><td>已确定</td></tr>
+<tr><td>REL107</td><td>ENEMY_OF</td><td>西班牙-阿拉贡</td><td>法兰克立宪君主国</td><td>出于反哈布斯堡法兰克地缘利益由天主教联盟转向新教联盟</td><td></td><td>已确定</td></tr>
+<tr><td>REL108</td><td>SUZERAIN_OF</td><td>法兰克立宪君主国</td><td>低地联合省</td><td>宗教战争中哈布斯堡皇帝联合法兰克镇压低地；1648年低地正式独立</td><td>1625-1648</td><td>修正</td></tr>
+<tr><td>REL109</td><td>SPLIT_FROM</td><td>低地联合省</td><td>德意志联邦共和国</td><td>1648年低地联合省正式独立，成为加尔文宗共和国；后并入德意志联邦（尼德兰州、阿姆斯特丹城市州）</td><td>1648 / 1871后</td><td>已确定</td></tr>
+<tr><td>REL110</td><td>BORDER_TENSION</td><td>法兰克立宪君主国</td><td>瑞士永久联邦</td><td>瑞士同时是法兰克和普热米斯尔-德意志的角力之地</td><td></td><td>已确定</td></tr>
+<tr><td>REL111</td><td>SUZERAIN_OF</td><td>法兰克立宪君主国</td><td>瑞士永久联邦</td><td>1356年哈布斯堡放弃对瑞士祖地的宗主权要求；瑞士被承认为帝国内特殊自治体</td><td>1356</td><td>已确定</td></tr>
+<tr><td>REL112</td><td>SHARED_LANGUAGE</td><td>德意志联邦共和国</td><td>法兰克立宪君主国</td><td>共享日耳曼语连续体；三国推行统一正字法（共同体德语/泛德意志标准语/帝国德语）</td><td></td><td>已确定</td></tr>
+<tr><td>REL113</td><td>SHARED_LANGUAGE</td><td>德意志联邦共和国</td><td>瑞士永久联邦</td><td>瑞士为语言共同体成员，发挥桥梁作用；高地德语（含瑞士）纳入统一正字法</td><td></td><td>已确定</td></tr>
+<tr><td>REL114</td><td>ENEMY_OF</td><td>法兰克立宪君主国</td><td>英格兰-诺曼底</td><td>1272年鲁道夫击败诺曼底公爵、夺取法兰西岛与香槟，英格兰被逐出大陆；英-法兰克竞争长期化</td><td>1272-</td><td>已确定</td></tr>
+<tr><td>REL115</td><td>CULTURAL_HEGEMONY</td><td>不列颠联邦共和国</td><td>法兰克立宪君主国</td><td>伦敦与帕里斯之间的罗曼正统之争：不列颠是罗曼-法兰西世俗高文化的正宗保存者，法兰克是被日耳曼化的领土继承者</td><td></td><td>待定</td></tr>
+<tr><td>REL116</td><td>ALLY_OF</td><td>不列颠联邦共和国</td><td>伊比利亚共和国（第五共和国后体制）</td><td>罗曼语族亲缘，且长期同处反哈布斯堡阵营（一战、二战均在协约国一侧），但海上互为对手</td><td></td><td>已确定</td></tr>
+<tr><td>REL117</td><td>SHARED_LANGUAGE</td><td>不列颠联邦共和国</td><td>德意志联邦共和国</td><td>制度上无亲缘（一个绝对主义、一个联邦制），但语言与宗教上同属日耳曼-新教世界</td><td></td><td>已确定</td></tr>
+<tr><td>REL118</td><td>ENEMY_OF</td><td>不列颠联邦共和国</td><td>德意志联邦共和国</td><td>二战作为协约国成员对中欧协定作战并战败；一战胜负相反</td><td>1939-1945</td><td>已确定</td></tr>
+<tr><td>REL119</td><td>RELIGIOUS_AFFILIATION</td><td>法兰克立宪君主国</td><td>天主教</td><td>官方天主教</td><td></td><td>已确定</td></tr>
+<tr><td>REL120</td><td>RELIGIOUS_AFFILIATION</td><td>德意志联邦共和国</td><td>南德意志阿尔卑斯福音派</td><td>新教（阿尔卑斯福音派为主流）；德意志全境（含维也纳）信奉新教</td><td></td><td>已确定</td></tr>
+<tr><td>REL121</td><td>RELIGIOUS_AFFILIATION</td><td>瑞士永久联邦</td><td>低地-瑞士加尔文宗</td><td>改革宗</td><td></td><td>已确定</td></tr>
+<tr><td>REL122</td><td>RELIGIOUS_AFFILIATION</td><td>不列颠联邦共和国</td><td>王室新教（高教会式）</td><td>王室新教（高教会式），国王兼任教会最高元首</td><td></td><td>已确定</td></tr>
+<tr><td>REL123</td><td>RELIGIOUS_AFFILIATION</td><td>罗斯兀鲁思</td><td>东正教</td><td>东正教斯拉夫人口 + 蒙古佛教王朝的复合结构</td><td></td><td>已确定</td></tr>
+<tr><td>REL124</td><td>RELIGIOUS_AFFILIATION</td><td>伊比利亚共和国（第五共和国后体制）</td><td>天主教</td><td>天主教（国内压制新教徒）</td><td></td><td>已确定</td></tr>
+<tr><td>REL125</td><td>CULTURAL_HEGEMONY</td><td>法兰克立宪君主国</td><td>天主教</td><td>北意大利留在哈布斯堡法兰克统治下呈官方天主教，但宗教文化受普热米斯尔南德意志新教影响，形成“政治天主教、文化新教”独特身份</td><td></td><td>已确定</td></tr>
+<tr><td>REL126</td><td>SUZERAIN_OF</td><td>金帐汗国</td><td>罗斯兀鲁思</td><td>金帐汗国对东斯拉夫诸公国的制度化宗主权；莫斯科成为最重要的斯拉夫代理政权</td><td></td><td>已确定</td></tr>
+<tr><td>REL128</td><td>SPLIT_FROM</td><td>基辅王国</td><td>罗斯兀鲁思</td><td>同一个古罗斯世界在蒙古时代以后走上两条完全不同的道路；一战的重新征服、二战后的再次分离形成现代国际边界</td><td>1918 / 1945</td><td>已确定</td></tr>
+<tr><td>REL129</td><td>ALLY_OF</td><td>白罗斯</td><td>基辅王国</td><td>合理方案：二战后与基辅王国同时脱离莫斯科国，并与基辅王国组成联邦</td><td></td><td>待定</td></tr>
+<tr><td>REL130</td><td>BORDER_TENSION</td><td>基辅王国</td><td>罗斯兀鲁思</td><td>欧洲—亚洲之间的政治文明边界之一</td><td></td><td>已确定</td></tr>
+<tr><td>REL131</td><td>SUZERAIN_OF</td><td>蒙古帝国</td><td>金帐汗国</td><td>蒙古帝国 → 金帐汗国 的历史连续性</td><td></td><td>已确定</td></tr>
+<tr><td>REL132</td><td>CULTURAL_HEGEMONY</td><td>西域佛教文明带</td><td>东洲（新大洲，正式名称待定）</td><td>西域佛教是新大洲文明连续性的关键历史桥梁：印度佛教 → 犍陀罗 → 西域 → 中亚 → 中国 → 蒙古/西藏 → 东亚</td><td></td><td>已确定</td></tr>
+<tr><td>REL133</td><td>SHARED_LANGUAGE</td><td>法兰克立宪君主国</td><td>瑞士永久联邦</td><td>瑞士作为中立国和语言共同体成员在德意志联邦与法兰克之间发挥桥梁作用</td><td></td><td>已确定</td></tr>
+<tr><td>REL134</td><td>TERRITORY_TRANSFER</td><td>法兰克立宪君主国</td><td>德意志联邦共和国</td><td>1866年奥法战争后，北意大利从哈布斯堡法兰克转归普热米斯尔</td><td>1866</td><td>已确定</td></tr>
+<tr><td>REL135</td><td>TERRITORY_TRANSFER</td><td>伊比利亚共和国（第五共和国后体制）</td><td>法兰克立宪君主国</td><td>二战后法兰克获取南部奥克省（1945-1975特殊建制，后废除并入普通州）；1648年维也纳和约：法兰克在奥克地区占领后撤，伊比利亚获得部分奥克领土</td><td>1945</td><td>修正</td></tr>
+<tr><td>REL137</td><td>PERSONAL_UNION</td><td>法兰克立宪君主国</td><td>德意志联邦共和国</td><td>哈布斯堡双元君主国：法兰克王冠为实际权力核心，德意志王冠为帝国法理基础（皇帝冠冕需三重加冕）</td><td>14世纪后期 — 1871</td><td>已确定</td></tr>
+<tr><td>REL138</td><td>ALLY_OF</td><td>低地联合省</td><td>德意志联邦共和国</td><td>二战后期低地志愿军团加入中欧协定；战后低地重新并入德意志</td><td>1939-1945</td><td>已确定</td></tr>
+<tr><td>REL139</td><td>CULTURAL_HEGEMONY</td><td>法兰克立宪君主国</td><td>不列颠联邦共和国</td><td>同为罗曼-法兰克遗产继承者，形成伦敦与帕里斯之间的正统之争</td><td></td><td>待定</td></tr>
+<tr><td>REL140</td><td>TRADE_PARTNER</td><td>法兰克立宪君主国</td><td>伊比利亚共和国（第五共和国后体制）</td><td>法兰克依赖北非和黎凡特商业联系、南部奥克省资源与港口（同时与伊比利亚长期对立）</td><td></td><td>已确定</td></tr>
+<tr><td>REL141</td><td>BORDER_TENSION</td><td>德意志联邦共和国</td><td>法兰克立宪君主国</td><td>南部奥克省作为与德意志共和国北意大利的重要边境地区；普罗旺斯州与多菲内州为南方枢纽缓冲带</td><td></td><td>已确定</td></tr>
+<tr><td>REL142</td><td>ALLY_OF</td><td>丹麦-挪威</td><td>德意志联邦共和国</td><td>宗教战争丹麦-低地阶段介入，属新教联盟一侧</td><td>1625-1629</td><td>已确定</td></tr>
+<tr><td>REL143</td><td>ALLY_OF</td><td>瑞典</td><td>德意志联邦共和国</td><td>宗教战争瑞典-南德阶段介入，与普热米斯尔结盟</td><td>1630-1635</td><td>已确定</td></tr>
+<tr><td>REL144</td><td>RELIGIOUS_AFFILIATION</td><td>教皇国</td><td>天主教</td><td>天主教宗座；教皇承认皇帝对法兰克教会的提名权</td><td></td><td>已确定</td></tr>
+<tr><td>REL145</td><td>BORDER_TENSION</td><td>德意志联邦共和国</td><td>罗斯兀鲁思</td><td>罗斯兀鲁思横跨蒙古-北亚-东斯拉夫三个文明传统，与德意志/欧洲文明梯度相邻</td><td></td><td>已确定</td></tr>
+<tr><td>REL146</td><td>ENEMY_OF</td><td>德意志联邦共和国</td><td>不列颠联邦共和国</td><td>一战中欧同盟对英帝国（中欧战败）；二战中欧协定对协约国（中欧惨胜）</td><td></td><td>已确定</td></tr>
+<tr><td>REL147</td><td>ENEMY_OF</td><td>美利坚合众国</td><td>德意志联邦共和国</td><td>一战、二战均在协约国一侧；一战后美国退回美洲、专注太平洋事务</td><td></td><td>已确定</td></tr>
+<tr><td>REL148</td><td>CULTURAL_HEGEMONY</td><td>美利坚合众国</td><td>欧洲（文明大洲）</td><td>吸收欧洲移民带来的德意志科学、英国政治、法兰克/罗马法律思想</td><td></td><td>已确定</td></tr>
+<tr><td>REL314</td><td>WAR_INVOLVES</td><td>宗教战争 / 三十年战争（1618—1648）</td><td>法兰克立宪君主国</td><td>天主教联盟领导方</td><td></td><td>已确定</td></tr>
+<tr><td>REL315</td><td>WAR_INVOLVES</td><td>宗教战争 / 三十年战争（1618—1648）</td><td>德意志联邦共和国</td><td>新教联盟领导方</td><td></td><td>已确定</td></tr>
+<tr><td>REL316</td><td>WAR_INVOLVES</td><td>第一次世界大战（1914—1918）</td><td>法兰克立宪君主国</td><td>中欧同盟</td><td></td><td>已确定</td></tr>
+<tr><td>REL317</td><td>WAR_INVOLVES</td><td>第一次世界大战（1914—1918）</td><td>德意志联邦共和国</td><td>中欧同盟</td><td></td><td>已确定</td></tr>
+<tr><td>REL318</td><td>WAR_INVOLVES</td><td>第二次世界大战（1939—1945）</td><td>伊比利亚共和国（第五共和国后体制）</td><td>协约国集团</td><td></td><td>已确定</td></tr>
+<tr><td>REL319</td><td>WAR_INVOLVES</td><td>第二次世界大战（1939—1945）</td><td>不列颠联邦共和国</td><td>协约国集团</td><td></td><td>已确定</td></tr>
+<tr><td>REL401</td><td>SPLIT_FROM</td><td>伊比利亚王国</td><td>西班牙-阿拉贡</td><td>伊比利亚王国由西班牙-阿拉贡（及奥克王国）逐步统一伊比利亚各基督教王国而成</td><td></td><td>已确定</td></tr>
+<tr><td>REL402</td><td>SPLIT_FROM</td><td>伊比利亚王国</td><td>奥克王国</td><td>奥克王国为伊比利亚的前身之一（用户本轮补充）</td><td></td><td>已确定</td></tr>
+<tr><td>REL404</td><td>ENEMY_OF</td><td>伊比利亚王国</td><td>科尔多瓦哈里发国</td><td>收复失地运动：伊比利亚基督教诸王国逐出安达卢斯的穆斯林政权</td><td>8—15世纪</td><td>已确定</td></tr>
+<tr><td>REL405</td><td>ENEMY_OF</td><td>伊比利亚王国</td><td>穆瓦希德哈里发国（及穆拉比特）</td><td>1212年穆瓦希德在伊比利亚战败，北非柏柏尔王朝的统治崩溃</td><td>1212</td><td>已确定</td></tr>
+<tr><td>REL406</td><td>TERRITORY_TRANSFER</td><td>穆瓦希德哈里发国（及穆拉比特）</td><td>马格里布（北非西部）</td><td>北非西部由柏柏尔王朝转归伊比利亚统治，此后长期基督教化、欧洲化</td><td>16世纪后</td><td>已确定</td></tr>
+<tr><td>REL407</td><td>SUZERAIN_OF</td><td>伊比利亚王国</td><td>马格里布（北非西部）</td><td>伊比利亚南下北非驱逐穆斯林后长期统治马格里布；该地区无特殊宪制地位，与半岛同属一个国家行政体系</td><td></td><td>已确定</td></tr>
+<tr><td>REL408</td><td>BORDER_TENSION</td><td>伊比利亚共和国（第五共和国后体制）</td><td>马格里布（北非西部）</td><td>北非西部为伊比利亚本土一部分；撒哈拉承担文明分界功能（以北西部属欧洲、以东属亚洲）</td><td></td><td>已确定</td></tr>
+<tr><td>REL409</td><td>CULTURAL_HEGEMONY</td><td>奥克王国</td><td>伊比利亚共和国（第五共和国后体制）</td><td>奥克语与伊比利亚半岛语言共享词汇语法；奥克人认同“北伊比利亚人”或“奥克-伊比利亚人”</td><td></td><td>已确定</td></tr>
+<tr><td>REL410</td><td>BORDER_TENSION</td><td>奥克王国</td><td>法兰克立宪君主国</td><td>1648年维也纳和约：法兰克在奥克地区占领后撤，伊比利亚获得部分奥克领土；1789年大革命即爆发于此地</td><td>1648 / 1789</td><td>已确定</td></tr>
+<tr><td>REL411</td><td>SUZERAIN_OF</td><td>科尔多瓦哈里发国</td><td>穆瓦希德哈里发国（及穆拉比特）</td><td>科尔多瓦哈里发国1031年分裂后，北非穆拉比特与穆瓦希德两王朝先后渡海接管安达卢斯</td><td>11—13世纪</td><td>已确定</td></tr>
+<tr><td>REL425</td><td>ENEMY_OF</td><td>马穆鲁克苏丹国（埃及—叙利亚）</td><td>蒙古帝国</td><td>1260年马穆鲁克阻止蒙古西进，划出蒙古—金帐体系的西侧界线</td><td>1260</td><td>已确定</td></tr>
+<tr><td>REL427</td><td>BORDER_TENSION</td><td>伊朗（伊斯兰什叶派波斯）</td><td>西域佛教文明带</td><td>波斯的东界止于伊斯兰中亚西部；再往东即西域佛教带——这正是 S1 所定的“伊斯兰文明东部边界”</td><td></td><td>已确定</td></tr>
+<tr><td>REL428</td><td>TERRITORY_TRANSFER</td><td>阿拔斯哈里发国（两河）</td><td>蒙古帝国</td><td>1258年巴格达陷落于蒙古西征军，阿拔斯哈里发国覆灭</td><td>1258</td><td>已确定</td></tr>
+<tr><td>REL429</td><td>RELIGIOUS_AFFILIATION</td><td>阿拉伯—汉志地区</td><td>伊斯兰教</td><td>麦加、麦地那两圣地所在，逊尼派为主</td><td></td><td>已确定</td></tr>
+<tr><td>REL430</td><td>SUZERAIN_OF</td><td>奥斯曼帝国（安纳托利亚突厥帝国）</td><td>阿拉伯—汉志地区</td><td>1517年后取得汉志两圣地的宗主权</td><td>1517后</td><td>已确定</td></tr>
+<tr><td>REL431</td><td>SUZERAIN_OF</td><td>法蒂玛哈里发国（埃及）</td><td>阿拉伯—汉志地区</td><td>法蒂玛王朝势力及于汉志</td><td>10—12世纪</td><td>已确定</td></tr>
+<tr><td>REL432</td><td>SUZERAIN_OF</td><td>阿尤布苏丹国（埃及—叙利亚）</td><td>叙利亚地区</td><td>阿尤布王朝统合埃及与叙利亚</td><td></td><td>已确定</td></tr>
+<tr><td>REL433</td><td>SUZERAIN_OF</td><td>马穆鲁克苏丹国（埃及—叙利亚）</td><td>叙利亚地区</td><td>马穆鲁克统治叙利亚</td><td></td><td>已确定</td></tr>
+<tr><td>REL434</td><td>SUZERAIN_OF</td><td>奥斯曼帝国（安纳托利亚突厥帝国）</td><td>叙利亚地区</td><td>1517年后叙利亚并入安纳托利亚突厥帝国</td><td>1517后</td><td>已确定</td></tr>
+<tr><td>REL435</td><td>BORDER_TENSION</td><td>奥斯曼帝国（安纳托利亚突厥帝国）</td><td>君士坦丁堡（海峡政治体，通称拜占庭）</td><td>安纳托利亚突厥帝国与基督教君士坦丁堡/海峡政治体长期对峙共处；“海峡是文明边界，而不是文明墙”</td><td></td><td>已确定</td></tr>
+<tr><td>REL436</td><td>RELIGIOUS_AFFILIATION</td><td>埃及地区</td><td>伊斯兰教</td><td>逊尼派伊斯兰为主；科普特教会长期存续</td><td></td><td>已确定</td></tr>
+<tr><td>REL437</td><td>RELIGIOUS_AFFILIATION</td><td>伊斯兰世界（区域文明体集合）</td><td>伊斯兰教</td><td>伊斯兰世界为区域文明体集合，无单一最高政治权威</td><td></td><td>已确定</td></tr>
+<tr><td>REL440</td><td>ENEMY_OF</td><td>法兰克立宪君主国</td><td>阿尤布苏丹国（埃及—叙利亚）</td><td>十字军东征：法兰西罗曼王国—教皇国一方对抗黎凡特穆斯林政权</td><td>11—13世纪</td><td>已确定</td></tr>
+<tr><td>REL441</td><td>ENEMY_OF</td><td>法兰克立宪君主国</td><td>法蒂玛哈里发国（埃及）</td><td>十字军东征：法兰克—教皇国一方对抗黎凡特穆斯林政权</td><td>11—13世纪</td><td>已确定</td></tr>
+<tr><td>REL442</td><td>ENEMY_OF</td><td>法兰克立宪君主国</td><td>马穆鲁克苏丹国（埃及—叙利亚）</td><td>1291年马穆鲁克夺取黎凡特沿岸最后据点，法兰西罗曼王国在大陆东岸的军事存在终结</td><td>至1291</td><td>已确定</td></tr>
+<tr><td>REL443</td><td>TRADE_PARTNER</td><td>法兰克立宪君主国</td><td>叙利亚地区</td><td>法兰克以商业、传教与学术方式维持近东联系，形成帕里斯东方学传统</td><td></td><td>已确定</td></tr>
+<tr><td>REL444</td><td>CULTURAL_HEGEMONY</td><td>法兰克立宪君主国</td><td>马格里布（北非西部）</td><td>法兰克承继法兰西罗曼王国的北非、黎凡特传统影响；帕里斯有神学、历史、东方学传统</td><td></td><td>已确定</td></tr>
+<tr><td>REL445</td><td>ALLY_OF</td><td>教皇国</td><td>法兰克立宪君主国</td><td>十字军东征中教皇国与法兰克同阵营</td><td>11—13世纪</td><td>已确定</td></tr>
+<tr><td>REL450</td><td>ENEMY_OF</td><td>奥斯曼帝国（安纳托利亚突厥帝国）</td><td>罗斯兀鲁思</td><td>安纳托利亚突厥帝国与罗斯兀鲁思在黑海—高加索方向长期对峙（S2 将二者同划入亚洲）</td><td></td><td>待定</td></tr>
+<tr><td>REL451</td><td>CULTURAL_HEGEMONY</td><td>伊斯兰世界（区域文明体集合）</td><td>亚洲（文明大洲）</td><td>S2 的亚洲文明大洲以“罗斯兀鲁思—西亚—伊斯兰文明空间”为核心构成</td><td></td><td>已确定</td></tr>
+<tr><td>REL452</td><td>RELIGIOUS_AFFILIATION</td><td>马格里布（北非西部）</td><td>天主教</td><td>北非西部经伊比利亚长期统治后基督教化</td><td></td><td>已确定</td></tr>
+<tr><td>REL473</td><td>SUBJECT_OF</td><td>约翰娜·冯·阿尔孔</td><td>法兰克立宪君主国</td><td>法兰克抗伊比利亚民兵领袖（推定）</td><td></td><td>待定</td></tr>
+<tr><td>REL474</td><td>SUBJECT_OF</td><td>帝国首相黎塞留</td><td>法兰克立宪君主国</td><td>法兰克帝国首相（推定）</td><td></td><td>待定</td></tr>
+<tr><td>REL501</td><td>SPLIT_FROM</td><td>西班牙-阿拉贡</td><td>西班牙王国</td><td>西班牙-阿拉贡及奥克王国由西班牙王国与阿拉贡王国合并而成（含奥克王国）</td><td>15世纪末 — 16世纪初</td><td>已确定</td></tr>
+<tr><td>REL502</td><td>SPLIT_FROM</td><td>西班牙-阿拉贡</td><td>阿拉贡王国</td><td>阿拉贡王国是西班牙-阿拉贡及奥克王国的两个构成主体之一</td><td>15世纪末 — 16世纪初</td><td>已确定</td></tr>
+<tr><td>REL503</td><td>ALLY_OF</td><td>西班牙王国</td><td>阿拉贡王国</td><td>卡斯蒂利亚方向与阿拉贡方向通过王朝联姻合为一体，共同推进伊比利亚统一</td><td>15世纪</td><td>已确定</td></tr>
+<tr><td>REL511</td><td>SPLIT_FROM</td><td>伊比利亚非哈布斯堡王朝</td><td>特拉斯塔马拉系（西班牙）</td><td>伊比利亚王朝由西班牙与阿拉贡两支王统合并而成</td><td></td><td>已确定</td></tr>
+<tr><td>REL512</td><td>BORDER_TENSION</td><td>阿拉贡王国</td><td>奥克王国</td><td>阿拉贡的地中海与南法扩张，是奥克语地区最终卷入伊比利亚轨道的关键</td><td></td><td>已确定</td></tr>
+<tr><td>REL513</td><td>TERRITORY_TRANSFER</td><td>奥克王国</td><td>西班牙-阿拉贡</td><td>奥克王国并入西班牙-阿拉贡及奥克王国</td><td>16世纪初</td><td>已确定</td></tr>
+<tr><td>REL526</td><td>CULTURAL_HEGEMONY</td><td>法兰西罗曼王国</td><td>不列颠联邦共和国</td><td>1270 年后法兰西罗曼王国的宫廷、文书与语言文化转入不列颠；此即「正统错位」的历史来源</td><td>1272 后</td><td>已确定</td></tr>
+<tr><td>REL527</td><td>ENEMY_OF</td><td>法兰西罗曼王国</td><td>阿尤布苏丹国（埃及—叙利亚）</td><td>十字军东征时期，大陆北部的罗曼语政治体（法兰西罗曼王国）是远征的发动者</td><td>11—13世纪</td><td>已确定</td></tr>
+<tr><td>REL528</td><td>ALLY_OF</td><td>法兰西罗曼王国</td><td>教皇国</td><td>十字军东征中与教皇国同阵营（1270 年之前）</td><td>11—13世纪</td><td>已确定</td></tr>
+<tr><td>REL530</td><td>ALLY_OF</td><td>法兰克共和国</td><td>德意志共和国（1918—1945）</td><td>二战中欧协定：法兰克共和国与德意志共和国同阵营</td><td>1939—1945</td><td>已确定</td></tr>
+<tr><td>REL546</td><td>ENEMY_OF</td><td>伊比利亚第三共和国（1871—1940）</td><td>德意志联邦共和国</td><td>一战与二战均与中欧为敌；1940 年被法兰克与德意志击败</td><td>1914—1918 / 1939—1940</td><td>已确定</td></tr>
+<tr><td>REL547</td><td>TERRITORY_TRANSFER</td><td>伊比利亚第四共和国（1945—1954）</td><td>法兰克立宪君主国</td><td>1945 年伊比利亚失去奥克地区，法兰克获取并设南部奥克省</td><td>1945</td><td>已确定</td></tr>
+<tr><td>AUTO0009</td><td>HAS_SUBDIVISION</td><td>法兰克立宪君主国</td><td>法兰克立宪君主国行政区划（11 本土州；1975 年后含奥克五州共 16 州）</td><td>行政区划</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0010</td><td>PARTICIPATES_IN_WAR</td><td>法兰克立宪君主国</td><td>1866年奥法战争</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0011</td><td>PARTICIPATES_IN_WAR</td><td>法兰克立宪君主国</td><td>第一次世界大战（1914—1918）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0012</td><td>PARTICIPATES_IN_WAR</td><td>法兰克立宪君主国</td><td>第二次世界大战（1939—1945）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0013</td><td>SIGNED_TREATY</td><td>法兰克立宪君主国</td><td>《法兰克福宪章》（法兰克福条约）</td><td>缔约</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0014</td><td>SIGNED_TREATY</td><td>法兰克立宪君主国</td><td>《维也纳和约》1648</td><td>缔约</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0015</td><td>OFFICIAL_LANGUAGE</td><td>法兰克立宪君主国</td><td>法兰克语 / 西法兰克语</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0032</td><td>HAS_SUBDIVISION</td><td>德意志联邦共和国</td><td>德意志联邦共和国行政区划（31个州/邦）</td><td>行政区划</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0033</td><td>PARTICIPATES_IN_WAR</td><td>德意志联邦共和国</td><td>1866年奥法战争</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0034</td><td>PARTICIPATES_IN_WAR</td><td>德意志联邦共和国</td><td>第一次世界大战（1914—1918）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0035</td><td>PARTICIPATES_IN_WAR</td><td>德意志联邦共和国</td><td>第二次世界大战（1939—1945）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0036</td><td>SIGNED_TREATY</td><td>德意志联邦共和国</td><td>《法兰克福宪章》（法兰克福条约）</td><td>缔约</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0037</td><td>SIGNED_TREATY</td><td>德意志联邦共和国</td><td>《维也纳和约》1648</td><td>缔约</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0038</td><td>OFFICIAL_LANGUAGE</td><td>德意志联邦共和国</td><td>共同体德语 / 泛德意志标准语 / 帝国德语</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0051</td><td>HAS_SUBDIVISION</td><td>不列颠联邦共和国</td><td>不列颠联邦共和国战后行政区划（八个一级联邦单位）</td><td>行政区划</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0052</td><td>HAS_SUBDIVISION</td><td>不列颠联邦共和国</td><td>不列颠王国战前行政区划（军政合一三级制）</td><td>行政区划</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0053</td><td>PARTICIPATES_IN_WAR</td><td>不列颠联邦共和国</td><td>不列颠镇压本土自由派（1848）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0054</td><td>PARTICIPATES_IN_WAR</td><td>不列颠联邦共和国</td><td>第一次世界大战（1914—1918）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0055</td><td>PARTICIPATES_IN_WAR</td><td>不列颠联邦共和国</td><td>第二次世界大战（1939—1945）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0056</td><td>SIGNED_TREATY</td><td>不列颠联邦共和国</td><td>《权利宪章》1945/1947</td><td>缔约</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0057</td><td>OFFICIAL_LANGUAGE</td><td>不列颠联邦共和国</td><td>英语（及盎格鲁-法兰西语 / Anglois）</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0063</td><td>HAS_SUBDIVISION</td><td>伊比利亚共和国（第五共和国后体制）</td><td>伊比利亚大区体系（大型一级行政区）</td><td>行政区划</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0064</td><td>PARTICIPATES_IN_WAR</td><td>伊比利亚共和国（第五共和国后体制）</td><td>伊比利亚大革命与反伊比利亚战争（1789—1815）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0065</td><td>PARTICIPATES_IN_WAR</td><td>伊比利亚共和国（第五共和国后体制）</td><td>1866年奥法战争</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0066</td><td>PARTICIPATES_IN_WAR</td><td>伊比利亚共和国（第五共和国后体制）</td><td>第一次世界大战（1914—1918）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0067</td><td>PARTICIPATES_IN_WAR</td><td>伊比利亚共和国（第五共和国后体制）</td><td>第二次世界大战（1939—1945）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0068</td><td>OFFICIAL_LANGUAGE</td><td>伊比利亚共和国（第五共和国后体制）</td><td>伊比利亚-奥克语</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0069</td><td>PARTICIPATES_IN_WAR</td><td>罗斯兀鲁思</td><td>第一次世界大战（1914—1918）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0070</td><td>PARTICIPATES_IN_WAR</td><td>罗斯兀鲁思</td><td>第二次世界大战（1939—1945）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0071</td><td>OFFICIAL_LANGUAGE</td><td>罗斯兀鲁思</td><td>东斯拉夫语</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0073</td><td>PARTICIPATES_IN_WAR</td><td>基辅王国</td><td>第一次世界大战（1914—1918）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0074</td><td>PARTICIPATES_IN_WAR</td><td>基辅王国</td><td>第二次世界大战（1939—1945）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0075</td><td>RELIGIOUS_AFFILIATION</td><td>基辅王国</td><td>东正教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0076</td><td>OFFICIAL_LANGUAGE</td><td>基辅王国</td><td>东斯拉夫语</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0077</td><td>PARTICIPATES_IN_WAR</td><td>白罗斯</td><td>第一次世界大战（1914—1918）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0078</td><td>PARTICIPATES_IN_WAR</td><td>白罗斯</td><td>第二次世界大战（1939—1945）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0079</td><td>RELIGIOUS_AFFILIATION</td><td>白罗斯</td><td>东正教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0080</td><td>OFFICIAL_LANGUAGE</td><td>白罗斯</td><td>东斯拉夫语</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0085</td><td>SIGNED_TREATY</td><td>瑞士永久联邦</td><td>《法兰克福宪章》（法兰克福条约）</td><td>缔约</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0086</td><td>SIGNED_TREATY</td><td>瑞士永久联邦</td><td>《维也纳和约》1648</td><td>缔约</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0087</td><td>OFFICIAL_LANGUAGE</td><td>瑞士永久联邦</td><td>高地德语</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0091</td><td>PARTICIPATES_IN_WAR</td><td>美利坚合众国</td><td>第一次世界大战（1914—1918）</td><td>参战</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0092</td><td>PARTICIPATES_IN_WAR</td><td>美利坚合众国</td><td>第二次世界大战（1939—1945）</td><td>参战</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0093</td><td>OFFICIAL_LANGUAGE</td><td>美利坚合众国</td><td>英语（及盎格鲁-法兰西语 / Anglois）</td><td>官方/通用语言</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0094</td><td>PARTICIPATES_IN_WAR</td><td>丹麦-挪威</td><td>宗教战争 / 三十年战争（1618—1648）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0095</td><td>RELIGIOUS_AFFILIATION</td><td>丹麦-挪威</td><td>北德意志路德宗</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0096</td><td>PARTICIPATES_IN_WAR</td><td>瑞典</td><td>宗教战争 / 三十年战争（1618—1648）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0097</td><td>RELIGIOUS_AFFILIATION</td><td>瑞典</td><td>北德意志路德宗</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0098</td><td>PARTICIPATES_IN_WAR</td><td>西班牙-阿拉贡</td><td>宗教战争 / 三十年战争（1618—1648）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0099</td><td>RELIGIOUS_AFFILIATION</td><td>西班牙-阿拉贡</td><td>天主教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0100</td><td>PARTICIPATES_IN_WAR</td><td>教皇国</td><td>宗教战争 / 三十年战争（1618—1648）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0101</td><td>SIGNED_TREATY</td><td>教皇国</td><td>《法兰克福宪章》（法兰克福条约）</td><td>缔约</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0103</td><td>PARTICIPATES_IN_WAR</td><td>低地联合省</td><td>宗教战争 / 三十年战争（1618—1648）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0104</td><td>PARTICIPATES_IN_WAR</td><td>低地联合省</td><td>第二次世界大战（1939—1945）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0105</td><td>SIGNED_TREATY</td><td>低地联合省</td><td>《维也纳和约》1648</td><td>缔约</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0106</td><td>RELIGIOUS_AFFILIATION</td><td>低地联合省</td><td>低地-瑞士加尔文宗</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0107</td><td>OFFICIAL_LANGUAGE</td><td>低地联合省</td><td>低地德语（含荷兰语）</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0108</td><td>PARTICIPATES_IN_WAR</td><td>英格兰-诺曼底</td><td>法兰克王位继承战争（1270-1272）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0109</td><td>RELIGIOUS_AFFILIATION</td><td>英格兰-诺曼底</td><td>天主教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0110</td><td>OFFICIAL_LANGUAGE</td><td>英格兰-诺曼底</td><td>英语（及盎格鲁-法兰西语 / Anglois）</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0112</td><td>PARTICIPATES_IN_WAR</td><td>蒙古帝国</td><td>蒙古帝国扩张（1200—1300及以后）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0113</td><td>RELIGIOUS_AFFILIATION</td><td>蒙古帝国</td><td>长生天信仰</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0115</td><td>PARTICIPATES_IN_WAR</td><td>金帐汗国</td><td>蒙古帝国扩张（1200—1300及以后）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0116</td><td>RELIGIOUS_AFFILIATION</td><td>金帐汗国</td><td>长生天信仰</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0118</td><td>RELIGIOUS_AFFILIATION</td><td>中国</td><td>儒家（兼佛教、道教）</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0119</td><td>RELIGIOUS_AFFILIATION</td><td>君士坦丁堡（海峡政治体，通称拜占庭）</td><td>东正教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0120</td><td>RELIGIOUS_AFFILIATION</td><td>东洲（新大洲，正式名称待定）</td><td>佛教（西域佛教 / 藏传佛教）</td><td>国教/主流宗教</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0122</td><td>RELIGIOUS_AFFILIATION</td><td>欧洲（文明大洲）</td><td>天主教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0123</td><td>OFFICIAL_LANGUAGE</td><td>欧洲（文明大洲）</td><td>共同体德语 / 泛德意志标准语 / 帝国德语</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0124</td><td>RELIGIOUS_AFFILIATION</td><td>亚洲（文明大洲）</td><td>伊斯兰教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0125</td><td>OFFICIAL_LANGUAGE</td><td>亚洲（文明大洲）</td><td>东斯拉夫语</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0126</td><td>RELIGIOUS_AFFILIATION</td><td>西亚伊斯兰文明空间</td><td>伊斯兰教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0127</td><td>RELIGIOUS_AFFILIATION</td><td>西域佛教文明带</td><td>佛教（西域佛教 / 藏传佛教）</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0128</td><td>RELIGIOUS_AFFILIATION</td><td>西伯利亚萨满文化区</td><td>萨满传统</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0129</td><td>PARTICIPATES_IN_WAR</td><td>奥克王国</td><td>宗教战争 / 三十年战争（1618—1648）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0130</td><td>PARTICIPATES_IN_WAR</td><td>奥克王国</td><td>伊比利亚大革命与反伊比利亚战争（1789—1815）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0131</td><td>PARTICIPATES_IN_WAR</td><td>奥克王国</td><td>收复失地运动与南下北非（8—16世纪）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0132</td><td>SIGNED_TREATY</td><td>奥克王国</td><td>《维也纳和约》1648</td><td>缔约</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0133</td><td>RELIGIOUS_AFFILIATION</td><td>奥克王国</td><td>天主教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0134</td><td>OFFICIAL_LANGUAGE</td><td>奥克王国</td><td>伊比利亚-奥克语</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0135</td><td>PARTICIPATES_IN_WAR</td><td>伊斯兰世界（区域文明体集合）</td><td>收复失地运动与南下北非（8—16世纪）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0136</td><td>PARTICIPATES_IN_WAR</td><td>伊斯兰世界（区域文明体集合）</td><td>十字军东征（11—13世纪）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0137</td><td>PARTICIPATES_IN_WAR</td><td>伊比利亚王国</td><td>收复失地运动与南下北非（8—16世纪）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0138</td><td>SIGNED_TREATY</td><td>伊比利亚王国</td><td>《维也纳和约》1648</td><td>缔约</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0139</td><td>RELIGIOUS_AFFILIATION</td><td>伊比利亚王国</td><td>天主教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0140</td><td>OFFICIAL_LANGUAGE</td><td>伊比利亚王国</td><td>伊比利亚-奥克语</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0142</td><td>PARTICIPATES_IN_WAR</td><td>科尔多瓦哈里发国</td><td>收复失地运动与南下北非（8—16世纪）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0143</td><td>RELIGIOUS_AFFILIATION</td><td>科尔多瓦哈里发国</td><td>伊斯兰教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0145</td><td>PARTICIPATES_IN_WAR</td><td>穆瓦希德哈里发国（及穆拉比特）</td><td>收复失地运动与南下北非（8—16世纪）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0146</td><td>RELIGIOUS_AFFILIATION</td><td>穆瓦希德哈里发国（及穆拉比特）</td><td>伊斯兰教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0148</td><td>PARTICIPATES_IN_WAR</td><td>法蒂玛哈里发国（埃及）</td><td>十字军东征（11—13世纪）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0149</td><td>RELIGIOUS_AFFILIATION</td><td>法蒂玛哈里发国（埃及）</td><td>伊斯兰教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0151</td><td>PARTICIPATES_IN_WAR</td><td>阿尤布苏丹国（埃及—叙利亚）</td><td>十字军东征（11—13世纪）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0152</td><td>RELIGIOUS_AFFILIATION</td><td>阿尤布苏丹国（埃及—叙利亚）</td><td>伊斯兰教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0154</td><td>PARTICIPATES_IN_WAR</td><td>马穆鲁克苏丹国（埃及—叙利亚）</td><td>蒙古帝国扩张（1200—1300及以后）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0155</td><td>RELIGIOUS_AFFILIATION</td><td>马穆鲁克苏丹国（埃及—叙利亚）</td><td>伊斯兰教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0157</td><td>PARTICIPATES_IN_WAR</td><td>阿拔斯哈里发国（两河）</td><td>蒙古帝国扩张（1200—1300及以后）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0158</td><td>RELIGIOUS_AFFILIATION</td><td>阿拔斯哈里发国（两河）</td><td>伊斯兰教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0160</td><td>PARTICIPATES_IN_WAR</td><td>伊朗（伊斯兰什叶派波斯）</td><td>蒙古帝国扩张（1200—1300及以后）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0161</td><td>RELIGIOUS_AFFILIATION</td><td>伊朗（伊斯兰什叶派波斯）</td><td>伊斯兰教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0163</td><td>PARTICIPATES_IN_WAR</td><td>奥斯曼帝国（安纳托利亚突厥帝国）</td><td>十字军东征（11—13世纪）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0164</td><td>RELIGIOUS_AFFILIATION</td><td>奥斯曼帝国（安纳托利亚突厥帝国）</td><td>伊斯兰教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0166</td><td>PARTICIPATES_IN_WAR</td><td>马格里布（北非西部）</td><td>收复失地运动与南下北非（8—16世纪）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0167</td><td>OFFICIAL_LANGUAGE</td><td>马格里布（北非西部）</td><td>伊比利亚-奥克语</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0169</td><td>PARTICIPATES_IN_WAR</td><td>埃及地区</td><td>十字军东征（11—13世纪）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0170</td><td>PARTICIPATES_IN_WAR</td><td>叙利亚地区</td><td>十字军东征（11—13世纪）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0171</td><td>RELIGIOUS_AFFILIATION</td><td>叙利亚地区</td><td>伊斯兰教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0172</td><td>PARTICIPATES_IN_WAR</td><td>西班牙王国</td><td>收复失地运动与南下北非（8—16世纪）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0173</td><td>RELIGIOUS_AFFILIATION</td><td>西班牙王国</td><td>天主教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0174</td><td>OFFICIAL_LANGUAGE</td><td>西班牙王国</td><td>伊比利亚-奥克语</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0175</td><td>PARTICIPATES_IN_WAR</td><td>阿拉贡王国</td><td>收复失地运动与南下北非（8—16世纪）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0176</td><td>RELIGIOUS_AFFILIATION</td><td>阿拉贡王国</td><td>天主教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0177</td><td>OFFICIAL_LANGUAGE</td><td>阿拉贡王国</td><td>伊比利亚-奥克语</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0178</td><td>PARTICIPATES_IN_WAR</td><td>伊比利亚第一共和国</td><td>伊比利亚大革命与反伊比利亚战争（1789—1815）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0179</td><td>RELIGIOUS_AFFILIATION</td><td>伊比利亚第一共和国</td><td>天主教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0180</td><td>OFFICIAL_LANGUAGE</td><td>伊比利亚第一共和国</td><td>伊比利亚-奥克语</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0181</td><td>PARTICIPATES_IN_WAR</td><td>伊比利亚第一帝国</td><td>伊比利亚大革命与反伊比利亚战争（1789—1815）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0182</td><td>RELIGIOUS_AFFILIATION</td><td>伊比利亚第一帝国</td><td>天主教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0183</td><td>OFFICIAL_LANGUAGE</td><td>伊比利亚第一帝国</td><td>伊比利亚-奥克语</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0184</td><td>PARTICIPATES_IN_WAR</td><td>伊比利亚第二共和国</td><td>1866年奥法战争</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0185</td><td>RELIGIOUS_AFFILIATION</td><td>伊比利亚第二共和国</td><td>天主教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0186</td><td>OFFICIAL_LANGUAGE</td><td>伊比利亚第二共和国</td><td>伊比利亚-奥克语</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0187</td><td>RELIGIOUS_AFFILIATION</td><td>西法兰克王国</td><td>天主教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0188</td><td>PARTICIPATES_IN_WAR</td><td>法兰西罗曼王国</td><td>十字军东征（11—13世纪）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0189</td><td>PARTICIPATES_IN_WAR</td><td>法兰西罗曼王国</td><td>收复失地运动与南下北非（8—16世纪）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0190</td><td>RELIGIOUS_AFFILIATION</td><td>法兰西罗曼王国</td><td>天主教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0192</td><td>PARTICIPATES_IN_WAR</td><td>法兰克共和国</td><td>第二次世界大战（1939—1945）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0193</td><td>RELIGIOUS_AFFILIATION</td><td>法兰克共和国</td><td>天主教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0194</td><td>OFFICIAL_LANGUAGE</td><td>法兰克共和国</td><td>法兰克语 / 西法兰克语</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0195</td><td>PARTICIPATES_IN_WAR</td><td>德意志共和国（1918—1945）</td><td>第二次世界大战（1939—1945）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0196</td><td>RELIGIOUS_AFFILIATION</td><td>德意志共和国（1918—1945）</td><td>南德意志阿尔卑斯福音派</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0197</td><td>OFFICIAL_LANGUAGE</td><td>德意志共和国（1918—1945）</td><td>共同体德语 / 泛德意志标准语 / 帝国德语</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0198</td><td>PARTICIPATES_IN_WAR</td><td>伊比利亚第三共和国（1871—1940）</td><td>第一次世界大战（1914—1918）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0199</td><td>PARTICIPATES_IN_WAR</td><td>伊比利亚第三共和国（1871—1940）</td><td>第二次世界大战（1939—1945）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0200</td><td>RELIGIOUS_AFFILIATION</td><td>伊比利亚第三共和国（1871—1940）</td><td>天主教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0201</td><td>OFFICIAL_LANGUAGE</td><td>伊比利亚第三共和国（1871—1940）</td><td>伊比利亚-奥克语</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0202</td><td>PARTICIPATES_IN_WAR</td><td>伊比利亚被占领与过渡期（1940—1945）</td><td>第二次世界大战（1939—1945）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0203</td><td>RELIGIOUS_AFFILIATION</td><td>伊比利亚被占领与过渡期（1940—1945）</td><td>天主教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0204</td><td>OFFICIAL_LANGUAGE</td><td>伊比利亚被占领与过渡期（1940—1945）</td><td>伊比利亚-奥克语</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0205</td><td>RELIGIOUS_AFFILIATION</td><td>伊比利亚第四共和国（1945—1954）</td><td>天主教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0206</td><td>OFFICIAL_LANGUAGE</td><td>伊比利亚第四共和国（1945—1954）</td><td>伊比利亚-奥克语</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0211</td><td>HAS_SUBDIVISION</td><td>伊比利亚第五共和国（1960— ）</td><td>伊比利亚大区体系（大型一级行政区）</td><td>行政区划</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0212</td><td>RELIGIOUS_AFFILIATION</td><td>伊比利亚第五共和国（1960— ）</td><td>天主教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0213</td><td>OFFICIAL_LANGUAGE</td><td>伊比利亚第五共和国（1960— ）</td><td>伊比利亚-奥克语</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0214</td><td>PARTICIPATES_IN_WAR</td><td>伊比利亚第二帝国</td><td>1866年奥法战争</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0215</td><td>RELIGIOUS_AFFILIATION</td><td>伊比利亚第二帝国</td><td>天主教</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0216</td><td>OFFICIAL_LANGUAGE</td><td>伊比利亚第二帝国</td><td>伊比利亚-奥克语</td><td>官方/通用语言</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0217</td><td>PARTICIPATES_IN_WAR</td><td>西域-波斯（佛教波斯残余）</td><td>蒙古帝国扩张（1200—1300及以后）</td><td>参战</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0218</td><td>RELIGIOUS_AFFILIATION</td><td>西域-波斯（佛教波斯残余）</td><td>佛教（西域佛教 / 藏传佛教）</td><td>国教/主流宗教</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0219</td><td>RELIGIOUS_AFFILIATION</td><td>阿拉伯王国</td><td>伊斯兰教</td><td>国教/主流宗教</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0220</td><td>RELIGIOUS_AFFILIATION</td><td>叙利亚共和国</td><td>伊斯兰教</td><td>国教/主流宗教</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0221</td><td>RELIGIOUS_AFFILIATION</td><td>埃及王国</td><td>伊斯兰教</td><td>国教/主流宗教</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0222</td><td>RELIGIOUS_AFFILIATION</td><td>两河王国</td><td>伊斯兰教</td><td>国教/主流宗教</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0557</td><td>WAR_INVOLVES</td><td>法兰克王位继承战争（1270-1272）</td><td>法兰克立宪君主国</td><td>A方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0558</td><td>WAR_INVOLVES</td><td>法兰克王位继承战争（1270-1272）</td><td>英格兰-诺曼底</td><td>B方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0559</td><td>WAR_INVOLVES</td><td>农民战争（1524—1527）</td><td>法兰克立宪君主国</td><td>B方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0560</td><td>WAR_INVOLVES</td><td>农民战争（1524—1527）</td><td>德意志联邦共和国</td><td>B方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0561</td><td>WAR_INVOLVES</td><td>宗教战争 / 三十年战争（1618—1648）</td><td>低地联合省</td><td>A方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0562</td><td>WAR_INVOLVES</td><td>宗教战争 / 三十年战争（1618—1648）</td><td>瑞士永久联邦</td><td>A方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0563</td><td>WAR_INVOLVES</td><td>宗教战争 / 三十年战争（1618—1648）</td><td>丹麦-挪威</td><td>A方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0564</td><td>WAR_INVOLVES</td><td>宗教战争 / 三十年战争（1618—1648）</td><td>瑞典</td><td>A方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0565</td><td>WAR_INVOLVES</td><td>宗教战争 / 三十年战争（1618—1648）</td><td>伊比利亚共和国（第五共和国后体制）</td><td>A方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0566</td><td>WAR_INVOLVES</td><td>宗教战争 / 三十年战争（1618—1648）</td><td>西班牙-阿拉贡</td><td>A方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0567</td><td>WAR_INVOLVES</td><td>宗教战争 / 三十年战争（1618—1648）</td><td>教皇国</td><td>B方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0568</td><td>WAR_ENDS_WITH</td><td>宗教战争 / 三十年战争（1618—1648）</td><td>《维也纳和约》1648</td><td>结束条约</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0569</td><td>WAR_INVOLVES</td><td>伊比利亚大革命与反伊比利亚战争（1789—1815）</td><td>法兰克立宪君主国</td><td>A方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0570</td><td>WAR_INVOLVES</td><td>伊比利亚大革命与反伊比利亚战争（1789—1815）</td><td>德意志联邦共和国</td><td>A方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0571</td><td>WAR_INVOLVES</td><td>伊比利亚大革命与反伊比利亚战争（1789—1815）</td><td>不列颠联邦共和国</td><td>A方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0572</td><td>WAR_INVOLVES</td><td>伊比利亚大革命与反伊比利亚战争（1789—1815）</td><td>罗斯兀鲁思</td><td>A方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0573</td><td>WAR_INVOLVES</td><td>伊比利亚大革命与反伊比利亚战争（1789—1815）</td><td>伊比利亚共和国（第五共和国后体制）</td><td>B方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0574</td><td>WAR_INVOLVES</td><td>1866年奥法战争</td><td>德意志联邦共和国</td><td>A方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0575</td><td>WAR_INVOLVES</td><td>1866年奥法战争</td><td>法兰克立宪君主国</td><td>B方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0576</td><td>WAR_INVOLVES</td><td>第一次世界大战（1914—1918）</td><td>伊比利亚共和国（第五共和国后体制）</td><td>B方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0577</td><td>WAR_INVOLVES</td><td>第一次世界大战（1914—1918）</td><td>不列颠联邦共和国</td><td>B方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0578</td><td>WAR_INVOLVES</td><td>第一次世界大战（1914—1918）</td><td>罗斯兀鲁思</td><td>B方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0579</td><td>WAR_INVOLVES</td><td>第一次世界大战（1914—1918）</td><td>美利坚合众国</td><td>B方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0580</td><td>WAR_INVOLVES</td><td>第二次世界大战（1939—1945）</td><td>德意志联邦共和国</td><td>A方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0581</td><td>WAR_INVOLVES</td><td>第二次世界大战（1939—1945）</td><td>法兰克立宪君主国</td><td>A方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0582</td><td>WAR_INVOLVES</td><td>第二次世界大战（1939—1945）</td><td>低地联合省</td><td>A方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0583</td><td>WAR_INVOLVES</td><td>第二次世界大战（1939—1945）</td><td>罗斯兀鲁思</td><td>B方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0584</td><td>WAR_INVOLVES</td><td>第二次世界大战（1939—1945）</td><td>美利坚合众国</td><td>B方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0585</td><td>WAR_INVOLVES</td><td>蒙古帝国扩张（1200—1300及以后）</td><td>蒙古帝国</td><td>A方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0586</td><td>WAR_INVOLVES</td><td>蒙古帝国扩张（1200—1300及以后）</td><td>金帐汗国</td><td>A方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0587</td><td>WAR_INVOLVES</td><td>不列颠镇压本土自由派（1848）</td><td>不列颠联邦共和国</td><td>A方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0588</td><td>WAR_INVOLVES</td><td>收复失地运动与南下北非（8—16世纪）</td><td>西班牙-阿拉贡</td><td>A方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0589</td><td>WAR_INVOLVES</td><td>收复失地运动与南下北非（8—16世纪）</td><td>伊比利亚王国</td><td>A方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0590</td><td>WAR_INVOLVES</td><td>收复失地运动与南下北非（8—16世纪）</td><td>奥克王国</td><td>A方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0591</td><td>WAR_INVOLVES</td><td>收复失地运动与南下北非（8—16世纪）</td><td>穆瓦希德哈里发国（及穆拉比特）</td><td>B方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0592</td><td>WAR_INVOLVES</td><td>收复失地运动与南下北非（8—16世纪）</td><td>马格里布（北非西部）</td><td>B方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0593</td><td>WAR_INVOLVES</td><td>十字军东征（11—13世纪）</td><td>法兰西罗曼王国</td><td>A方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0594</td><td>WAR_INVOLVES</td><td>十字军东征（11—13世纪）</td><td>教皇国</td><td>A方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0595</td><td>WAR_INVOLVES</td><td>十字军东征（11—13世纪）</td><td>法蒂玛哈里发国（埃及）</td><td>B方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0596</td><td>WAR_INVOLVES</td><td>十字军东征（11—13世纪）</td><td>阿尤布苏丹国（埃及—叙利亚）</td><td>B方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0597</td><td>WAR_INVOLVES</td><td>十字军东征（11—13世纪）</td><td>马穆鲁克苏丹国（埃及—叙利亚）</td><td>B方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0598</td><td>WAR_INVOLVES</td><td>十字军东征（11—13世纪）</td><td>叙利亚地区</td><td>B方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0599</td><td>SUBJECT_OF</td><td>鲁道夫</td><td>法兰克立宪君主国</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0600</td><td>SUBJECT_OF</td><td>鲁道夫之母（卡佩旁系公主）</td><td>法兰克立宪君主国</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0601</td><td>SUBJECT_OF</td><td>鲁道夫之妻（勃艮第伯爵之女）</td><td>法兰克立宪君主国</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0602</td><td>SUBJECT_OF</td><td>阿尔布雷希特</td><td>法兰克立宪君主国</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0603</td><td>SUBJECT_OF</td><td>让娜</td><td>法兰克立宪君主国</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0604</td><td>SUBJECT_OF</td><td>阿尔布雷希特二世</td><td>法兰克立宪君主国</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0605</td><td>SUBJECT_OF</td><td>奥托卡二世</td><td>德意志联邦共和国</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0606</td><td>SUBJECT_OF</td><td>瓦卢瓦的查理</td><td>法兰克立宪君主国</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0607</td><td>SUBJECT_OF</td><td>埃夫勒的腓力</td><td>法兰克立宪君主国</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0608</td><td>SUBJECT_OF</td><td>爱德华一世</td><td>英格兰-诺曼底</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0610</td><td>SUBJECT_OF</td><td>阿尔布雷希特二世之女（未具名）</td><td>法兰克立宪君主国</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0611</td><td>SUBJECT_OF</td><td>路易九世</td><td>法兰克立宪君主国</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0612</td><td>SUBJECT_OF</td><td>腓力三世</td><td>法兰克立宪君主国</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0613</td><td>SUBJECT_OF</td><td>腓力四世</td><td>法兰克立宪君主国</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0614</td><td>SUBJECT_OF</td><td>马丁·路德</td><td>德意志联邦共和国</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0615</td><td>SUBJECT_OF</td><td>加尔文</td><td>瑞士永久联邦</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0616</td><td>SUBJECT_OF</td><td>亚历山大·冯·洪堡</td><td>德意志联邦共和国</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0617</td><td>SUBJECT_OF</td><td>爱因斯坦</td><td>美利坚合众国</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0618</td><td>SUBJECT_OF</td><td>K. 彼得斯</td><td>德意志联邦共和国</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0619</td><td>SUBJECT_OF</td><td>腓力三世之妻（文档未具名）</td><td>法兰克立宪君主国</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0621</td><td>SUBJECT_OF</td><td>查理、路易（腓力三世之子，文档未具名）</td><td>法兰克立宪君主国</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0622</td><td>SUBJECT_OF</td><td>布列塔尼公爵（1270年继承争夺者，文档未具名）</td><td>法兰克立宪君主国</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0623</td><td>SUBJECT_OF</td><td>诺曼底公爵（1272年决战失败者，文档未具名）</td><td>英格兰-诺曼底</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0624</td><td>SUBJECT_OF</td><td>阿尔布雷希特二世之女婿（法兰克贵族推举对象，文档未具名）</td><td>法兰克立宪君主国</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0626</td><td>SUBJECT_OF</td><td>勃艮第伯爵（鲁道夫之岳父，文档未具名）</td><td>法兰克立宪君主国</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0627</td><td>SUBJECT_OF</td><td>雷姆斯大主教（1272年为鲁道夫加冕者，文档未具名）</td><td>法兰克立宪君主国</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0628</td><td>SUBJECT_OF</td><td>阿卜杜勒·拉赫曼三世</td><td>科尔多瓦哈里发国</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0629</td><td>SUBJECT_OF</td><td>阿方索十世</td><td>西班牙-阿拉贡</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0630</td><td>SUBJECT_OF</td><td>萨拉丁</td><td>阿尤布苏丹国（埃及—叙利亚）</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0631</td><td>SUBJECT_OF</td><td>拜巴尔斯</td><td>马穆鲁克苏丹国（埃及—叙利亚）</td><td>所属国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0632</td><td>SUBJECT_OF</td><td>沙阿伊斯玛仪</td><td>伊朗（伊斯兰什叶派波斯）</td><td>所属国家</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0633</td><td>SUBJECT_OF</td><td>奥斯曼一世</td><td>奥斯曼帝国（安纳托利亚突厥帝国）</td><td>所属国家</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0634</td><td>SUBJECT_OF</td><td>伊莎贝拉·冯·卡斯蒂利亚</td><td>西班牙-阿拉贡</td><td>所属国家</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0635</td><td>SUBJECT_OF</td><td>伊比利亚王国开国君主（本轮新增，姓名待定）</td><td>伊比利亚王国</td><td>所属国家</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0637</td><td>SUBJECT_OF</td><td>蒙福尔一世</td><td>不列颠联邦共和国</td><td>所属国家</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0639</td><td>SUBJECT_OF</td><td>蒙福尔二世</td><td>不列颠联邦共和国</td><td>所属国家</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0641</td><td>SUBJECT_OF</td><td>蒙福尔三世</td><td>不列颠联邦共和国</td><td>所属国家</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0643</td><td>SUBJECT_OF</td><td>蒙福尔四世</td><td>不列颠联邦共和国</td><td>所属国家</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0645</td><td>SUBJECT_OF</td><td>蒙福尔五世</td><td>不列颠联邦共和国</td><td>所属国家</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0675</td><td>RELIGION_IN</td><td>天主教</td><td>法兰克立宪君主国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0676</td><td>RELIGION_IN</td><td>天主教</td><td>伊比利亚共和国（第五共和国后体制）</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0677</td><td>RELIGION_IN</td><td>天主教</td><td>西班牙-阿拉贡</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0678</td><td>RELIGION_IN</td><td>天主教</td><td>教皇国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0679</td><td>RELIGION_IN</td><td>天主教</td><td>英格兰-诺曼底</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0680</td><td>RELIGION_IN</td><td>天主教</td><td>欧洲（文明大洲）</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0681</td><td>RELIGION_IN</td><td>天主教</td><td>奥克王国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0682</td><td>RELIGION_IN</td><td>天主教</td><td>伊比利亚王国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0683</td><td>RELIGION_IN</td><td>天主教</td><td>马格里布（北非西部）</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0684</td><td>RELIGION_IN</td><td>天主教</td><td>西班牙王国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0685</td><td>RELIGION_IN</td><td>天主教</td><td>阿拉贡王国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0686</td><td>RELIGION_IN</td><td>天主教</td><td>伊比利亚第一共和国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0687</td><td>RELIGION_IN</td><td>天主教</td><td>伊比利亚第一帝国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0688</td><td>RELIGION_IN</td><td>天主教</td><td>伊比利亚第二共和国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0689</td><td>RELIGION_IN</td><td>天主教</td><td>西法兰克王国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0690</td><td>RELIGION_IN</td><td>天主教</td><td>法兰西罗曼王国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0691</td><td>RELIGION_IN</td><td>天主教</td><td>法兰克共和国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0692</td><td>RELIGION_IN</td><td>天主教</td><td>伊比利亚第三共和国（1871—1940）</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0693</td><td>RELIGION_IN</td><td>天主教</td><td>伊比利亚被占领与过渡期（1940—1945）</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0694</td><td>RELIGION_IN</td><td>天主教</td><td>伊比利亚第四共和国（1945—1954）</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0695</td><td>RELIGION_IN</td><td>天主教</td><td>伊比利亚第五共和国（1960— ）</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0696</td><td>RELIGION_IN</td><td>天主教</td><td>伊比利亚第二帝国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0697</td><td>RELIGION_IN</td><td>北德意志路德宗</td><td>德意志联邦共和国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0698</td><td>RELIGION_IN</td><td>北德意志路德宗</td><td>丹麦-挪威</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0699</td><td>RELIGION_IN</td><td>北德意志路德宗</td><td>瑞典</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0700</td><td>RELIGION_IN</td><td>低地-瑞士加尔文宗</td><td>低地联合省</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0701</td><td>RELIGION_IN</td><td>低地-瑞士加尔文宗</td><td>瑞士永久联邦</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0702</td><td>RELIGION_IN</td><td>低地-瑞士加尔文宗</td><td>德意志联邦共和国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0703</td><td>RELIGION_IN</td><td>波西米亚胡斯派-路德宗混合</td><td>德意志联邦共和国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0704</td><td>RELIGION_IN</td><td>南德意志阿尔卑斯福音派</td><td>德意志联邦共和国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0705</td><td>RELIGION_IN</td><td>南德意志阿尔卑斯福音派</td><td>德意志共和国（1918—1945）</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0706</td><td>RELIGION_IN</td><td>王室新教（高教会式）</td><td>不列颠联邦共和国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0707</td><td>RELIGION_IN</td><td>东正教</td><td>罗斯兀鲁思</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0708</td><td>RELIGION_IN</td><td>东正教</td><td>基辅王国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0709</td><td>RELIGION_IN</td><td>东正教</td><td>白罗斯</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0710</td><td>RELIGION_IN</td><td>东正教</td><td>君士坦丁堡（海峡政治体，通称拜占庭）</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0711</td><td>RELIGION_IN</td><td>长生天信仰</td><td>蒙古帝国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0712</td><td>RELIGION_IN</td><td>长生天信仰</td><td>金帐汗国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0713</td><td>RELIGION_IN</td><td>长生天信仰</td><td>西伯利亚萨满文化区</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0714</td><td>RELIGION_IN</td><td>佛教（西域佛教 / 藏传佛教）</td><td>西域佛教文明带</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0715</td><td>RELIGION_IN</td><td>佛教（西域佛教 / 藏传佛教）</td><td>蒙古帝国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0716</td><td>RELIGION_IN</td><td>佛教（西域佛教 / 藏传佛教）</td><td>罗斯兀鲁思</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0717</td><td>RELIGION_IN</td><td>佛教（西域佛教 / 藏传佛教）</td><td>东洲（新大洲，正式名称待定）</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0718</td><td>RELIGION_IN</td><td>佛教（西域佛教 / 藏传佛教）</td><td>西域-波斯（佛教波斯残余）</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0719</td><td>RELIGION_IN</td><td>萨满传统</td><td>蒙古帝国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0720</td><td>RELIGION_IN</td><td>萨满传统</td><td>西伯利亚萨满文化区</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0721</td><td>RELIGION_IN</td><td>萨满传统</td><td>罗斯兀鲁思</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0722</td><td>RELIGION_IN</td><td>伊斯兰教</td><td>西亚伊斯兰文明空间</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0723</td><td>RELIGION_IN</td><td>伊斯兰教</td><td>亚洲（文明大洲）</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0724</td><td>RELIGION_IN</td><td>伊斯兰教</td><td>伊斯兰世界（区域文明体集合）</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0725</td><td>RELIGION_IN</td><td>伊斯兰教</td><td>科尔多瓦哈里发国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0726</td><td>RELIGION_IN</td><td>伊斯兰教</td><td>穆瓦希德哈里发国（及穆拉比特）</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0727</td><td>RELIGION_IN</td><td>伊斯兰教</td><td>法蒂玛哈里发国（埃及）</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0728</td><td>RELIGION_IN</td><td>伊斯兰教</td><td>阿尤布苏丹国（埃及—叙利亚）</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0729</td><td>RELIGION_IN</td><td>伊斯兰教</td><td>马穆鲁克苏丹国（埃及—叙利亚）</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0730</td><td>RELIGION_IN</td><td>伊斯兰教</td><td>阿拔斯哈里发国（两河）</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0731</td><td>RELIGION_IN</td><td>伊斯兰教</td><td>伊朗（伊斯兰什叶派波斯）</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0732</td><td>RELIGION_IN</td><td>伊斯兰教</td><td>奥斯曼帝国（安纳托利亚突厥帝国）</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0733</td><td>RELIGION_IN</td><td>伊斯兰教</td><td>埃及地区</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0734</td><td>RELIGION_IN</td><td>伊斯兰教</td><td>叙利亚地区</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0735</td><td>RELIGION_IN</td><td>伊斯兰教</td><td>阿拉伯—汉志地区</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0736</td><td>RELIGION_IN</td><td>伊斯兰教</td><td>阿拉伯王国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0737</td><td>RELIGION_IN</td><td>伊斯兰教</td><td>叙利亚共和国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0738</td><td>RELIGION_IN</td><td>伊斯兰教</td><td>埃及王国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0739</td><td>RELIGION_IN</td><td>伊斯兰教</td><td>两河王国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0740</td><td>RELIGION_IN</td><td>儒家（兼佛教、道教）</td><td>中国</td><td>信众所在</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0843</td><td>SUBDIVISION_OF</td><td>德意志联邦共和国行政区划（31个州/邦）</td><td>德意志联邦共和国</td><td>所属国</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0844</td><td>SUBDIVISION_OF</td><td>法兰克立宪君主国行政区划（11 本土州；1975 年后含奥克五州共 16 州）</td><td>法兰克立宪君主国</td><td>所属国</td><td></td><td>修正</td></tr>
+<tr><td>AUTO0845</td><td>SUBDIVISION_OF</td><td>不列颠联邦共和国战后行政区划（八个一级联邦单位）</td><td>不列颠联邦共和国</td><td>所属国</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0846</td><td>SUBDIVISION_OF</td><td>不列颠王国战前行政区划（军政合一三级制）</td><td>不列颠联邦共和国</td><td>所属国</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0847</td><td>SUBDIVISION_OF</td><td>伊比利亚大区体系（大型一级行政区）</td><td>伊比利亚共和国（第五共和国后体制）</td><td>所属国</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0848</td><td>SUBDIVISION_OF</td><td>爱尔兰共和国行政区划</td><td>基辅王国</td><td>所属国</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0849</td><td>PLACE_IN</td><td>帕里斯</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0850</td><td>PLACE_IN</td><td>雷姆斯</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0851</td><td>PLACE_IN</td><td>布吕格</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0852</td><td>PLACE_IN</td><td>鲁安 / 罗多姆</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0853</td><td>PLACE_IN</td><td>卡莱斯</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0854</td><td>PLACE_IN</td><td>南滕</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0855</td><td>PLACE_IN</td><td>梅茨</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0856</td><td>PLACE_IN</td><td>迪根 / 迪维翁</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0857</td><td>PLACE_IN</td><td>奥尔伦</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0858</td><td>PLACE_IN</td><td>曼斯</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0859</td><td>PLACE_IN</td><td>劳格登 / 卢登</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0860</td><td>PLACE_IN</td><td>斯特拉斯堡</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0861</td><td>PLACE_IN</td><td>德哈芬</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0862</td><td>PLACE_IN</td><td>谢尔堡</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0863</td><td>PLACE_IN</td><td>杜嫩基兴</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0864</td><td>PLACE_IN</td><td>里瑟尔</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0865</td><td>PLACE_IN</td><td>特罗伊 / 特罗伊恩</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0866</td><td>PLACE_IN</td><td>比桑茨</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0867</td><td>PLACE_IN</td><td>格拉茨施塔特</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0868</td><td>PLACE_IN</td><td>圣斯特凡</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0869</td><td>PLACE_IN</td><td>托洛森</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0870</td><td>PLACE_IN</td><td>马西利恩 / 马塞尔</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0871</td><td>PLACE_IN</td><td>蒙斯佩勒</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0872</td><td>PLACE_IN</td><td>尼门</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0873</td><td>PLACE_IN</td><td>阿文根</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0874</td><td>PLACE_IN</td><td>法兰克福</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0875</td><td>PLACE_IN</td><td>维也纳</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0876</td><td>PLACE_IN</td><td>罗马</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0877</td><td>PLACE_IN</td><td>基尔</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0878</td><td>PLACE_IN</td><td>汉堡</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0879</td><td>PLACE_IN</td><td>汉诺威</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0880</td><td>PLACE_IN</td><td>不来梅</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0881</td><td>PLACE_IN</td><td>布鲁塞尔</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0882</td><td>PLACE_IN</td><td>阿姆斯特丹</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0883</td><td>PLACE_IN</td><td>杜塞尔多夫</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0884</td><td>PLACE_IN</td><td>美因茨</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0885</td><td>PLACE_IN</td><td>威斯巴登</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0886</td><td>PLACE_IN</td><td>斯图加特</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0887</td><td>PLACE_IN</td><td>慕尼黑</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0888</td><td>PLACE_IN</td><td>斯德丁</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0889</td><td>PLACE_IN</td><td>柏林</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0890</td><td>PLACE_IN</td><td>马格德堡</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0891</td><td>PLACE_IN</td><td>埃尔福特</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0892</td><td>PLACE_IN</td><td>德累斯顿</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0893</td><td>PLACE_IN</td><td>布雷斯劳</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0894</td><td>PLACE_IN</td><td>波森</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0895</td><td>PLACE_IN</td><td>林茨</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0896</td><td>PLACE_IN</td><td>格拉茨</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0897</td><td>PLACE_IN</td><td>因斯布鲁克</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0898</td><td>PLACE_IN</td><td>特伦托</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0899</td><td>PLACE_IN</td><td>米兰</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0900</td><td>PLACE_IN</td><td>但泽</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0901</td><td>PLACE_IN</td><td>都灵</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0902</td><td>PLACE_IN</td><td>的里雅斯特</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0903</td><td>PLACE_IN</td><td>佛罗伦萨</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0904</td><td>PLACE_IN</td><td>布拉格</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0905</td><td>PLACE_IN</td><td>萨格勒布</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0906</td><td>PLACE_IN</td><td>莱比锡</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0907</td><td>PLACE_IN</td><td>哥廷根</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0908</td><td>PLACE_IN</td><td>维滕堡</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0909</td><td>PLACE_IN</td><td>苏黎世</td><td>瑞士永久联邦</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0910</td><td>PLACE_IN</td><td>日内瓦</td><td>瑞士永久联邦</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0911</td><td>PLACE_IN</td><td>巴塞尔</td><td>瑞士永久联邦</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0912</td><td>PLACE_IN</td><td>圣哥达</td><td>瑞士永久联邦</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0913</td><td>PLACE_IN</td><td>布伦纳</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0914</td><td>PLACE_IN</td><td>伦敦</td><td>不列颠联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0915</td><td>PLACE_IN</td><td>爱丁堡</td><td>不列颠联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0916</td><td>PLACE_IN</td><td>卡迪夫</td><td>不列颠联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0917</td><td>PLACE_IN</td><td>约克</td><td>不列颠联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0918</td><td>PLACE_IN</td><td>伯明翰</td><td>不列颠联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0919</td><td>PLACE_IN</td><td>诺里奇</td><td>不列颠联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0920</td><td>PLACE_IN</td><td>温切斯特</td><td>不列颠联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0921</td><td>PLACE_IN</td><td>布里斯托尔</td><td>不列颠联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0922</td><td>PLACE_IN</td><td>都柏林</td><td>基辅王国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0923</td><td>PLACE_IN</td><td>巴塞罗那</td><td>伊比利亚共和国（第五共和国后体制）</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0924</td><td>PLACE_IN</td><td>那不勒斯</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0925</td><td>PLACE_IN</td><td>莫斯科</td><td>罗斯兀鲁思</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0926</td><td>PLACE_IN</td><td>基辅</td><td>基辅王国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0927</td><td>PLACE_IN</td><td>君士坦丁堡</td><td>君士坦丁堡（海峡政治体，通称拜占庭）</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0928</td><td>PLACE_IN</td><td>敦煌</td><td>中国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0929</td><td>PLACE_IN</td><td>龟兹</td><td>西域佛教文明带</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0930</td><td>PLACE_IN</td><td>于阗</td><td>西域佛教文明带</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0931</td><td>PLACE_IN</td><td>吐鲁番</td><td>西域佛教文明带</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0932</td><td>PLACE_IN</td><td>塞根 / 塞讷</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0933</td><td>PLACE_IN</td><td>利格</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0934</td><td>PLACE_IN</td><td>罗登 / 罗讷</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0935</td><td>PLACE_IN</td><td>加伦</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0936</td><td>PLACE_IN</td><td>马恩 / 马特恩</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0937</td><td>PLACE_IN</td><td>索内 / 索兴</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0938</td><td>PLACE_IN</td><td>马斯</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0939</td><td>PLACE_IN</td><td>斯海尔德</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0940</td><td>PLACE_IN</td><td>阿登</td><td>法兰克立宪君主国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0941</td><td>PLACE_IN</td><td>瓦斯根 / 瓦斯高</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0942</td><td>PLACE_IN</td><td>中部山地</td><td>德意志联邦共和国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0943</td><td>PLACE_IN</td><td>托莱多</td><td>伊比利亚王国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0944</td><td>PLACE_IN</td><td>科尔多瓦</td><td>科尔多瓦哈里发国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0945</td><td>PLACE_IN</td><td>马拉喀什</td><td>穆瓦希德哈里发国（及穆拉比特）</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0946</td><td>PLACE_IN</td><td>非斯</td><td>马格里布（北非西部）</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0947</td><td>PLACE_IN</td><td>突尼斯</td><td>马格里布（北非西部）</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0948</td><td>PLACE_IN</td><td>开罗</td><td>埃及地区</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0949</td><td>PLACE_IN</td><td>大马士革</td><td>叙利亚地区</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0950</td><td>PLACE_IN</td><td>巴格达</td><td>阿拔斯哈里发国（两河）</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0951</td><td>PLACE_IN</td><td>伊斯法罕</td><td>伊朗（伊斯兰什叶派波斯）</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0952</td><td>PLACE_IN</td><td>麦加</td><td>阿拉伯—汉志地区</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0953</td><td>PLACE_IN</td><td>麦地那</td><td>阿拉伯—汉志地区</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0954</td><td>PLACE_IN</td><td>格拉纳达</td><td>伊比利亚王国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0955</td><td>PLACE_IN</td><td>布尔萨</td><td>奥斯曼帝国（安纳托利亚突厥帝国）</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0956</td><td>PLACE_IN</td><td>埃迪尔内</td><td>奥斯曼帝国（安纳托利亚突厥帝国）</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0957</td><td>PLACE_IN</td><td>图卢兹（奥克王国）</td><td>奥克王国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0958</td><td>PLACE_IN</td><td>萨拉戈萨</td><td>阿拉贡王国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0959</td><td>PLACE_IN</td><td>伊斯法罕王家清真寺</td><td>伊朗（伊斯兰什叶派波斯）</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0960</td><td>PLACE_IN</td><td>撒马尔罕佛寺群</td><td>西域-波斯（佛教波斯残余）</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0961</td><td>PLACE_IN</td><td>莫斯科克里姆林宫</td><td>罗斯兀鲁思</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0962</td><td>PLACE_IN</td><td>敦煌石窟群</td><td>中国</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0963</td><td>PLACE_IN</td><td>龟兹石窟群</td><td>西域佛教文明带</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0964</td><td>PLACE_IN</td><td>撒马尔罕</td><td>西域-波斯（佛教波斯残余）</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0965</td><td>PLACE_IN</td><td>布哈拉</td><td>西域-波斯（佛教波斯残余）</td><td>所在地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0966</td><td>PLACE_IN</td><td>呼罗珊</td><td>西域-波斯（佛教波斯残余）</td><td>所在地</td><td></td><td>已确定</td></tr>
+</tbody></table></div>
+<h2 id="事件因果关系链">事件因果关系链</h2>
+<p>事件之间的因果传导、事件与人物/国家/战争/条约的关联</p>
+<p>边数：<strong>411</strong></p>
+<div class="tw"><table>
+<thead><tr><th>边ID</th><th>关系类型</th><th>起点</th><th>终点</th><th>说明</th><th>时期</th><th>状态</th></tr></thead><tbody>
+<tr><td>REL201</td><td>CAUSES</td><td>卡佩绝嗣与法兰克继承危机</td><td>鲁道夫加冕为“法兰克人的国王”</td><td>卡佩绝嗣引发继承危机，鲁道夫入主</td><td></td><td>已确定</td></tr>
+<tr><td>REL202</td><td>CAUSES</td><td>卡佩绝嗣与法兰克继承危机</td><td>奥托卡二世崛起与东西双源形成</td><td>鲁道夫入主法兰克使德意志选侯不可能再选他，奥托卡成为最强势候选人</td><td></td><td>已确定</td></tr>
+<tr><td>REL203</td><td>CAUSES</td><td>鲁道夫加冕为“法兰克人的国王”</td><td>东西双源格局定型</td><td>西部法兰克文明成型</td><td></td><td>已确定</td></tr>
+<tr><td>REL204</td><td>CAUSES</td><td>奥托卡二世崛起与东西双源形成</td><td>东西双源格局定型</td><td>东部德意志文明成型</td><td></td><td>已确定</td></tr>
+<tr><td>REL205</td><td>CAUSES</td><td>鲁道夫加冕为“法兰克人的国王”</td><td>逆向的诺曼征服：诺曼-法兰西精英退回不列颠</td><td>击败诺曼底公爵与金雀花，诺曼-法兰西精英退回不列颠</td><td></td><td>已确定</td></tr>
+<tr><td>REL206</td><td>CAUSES</td><td>逆向的诺曼征服：诺曼-法兰西精英退回不列颠</td><td>不列颠绝对主义奠基</td><td>跨海帝国路线破产、语言分层使议会式宪政无法生长</td><td></td><td>已确定</td></tr>
+<tr><td>REL207</td><td>CAUSES</td><td>东西双源格局定型</td><td>《法兰克福宪章》与双王冠确立</td><td>双源格局下的制度性妥协需求</td><td></td><td>已确定</td></tr>
+<tr><td>REL208</td><td>RESULTS_IN</td><td>《法兰克福宪章》与双王冠确立</td><td>哈布斯堡回归帝国与双元君主国</td><td>双王冠制度为哈布斯堡回归帝国铺路</td><td></td><td>已确定</td></tr>
+<tr><td>REL209</td><td>CAUSES</td><td>普热米斯尔的德意志化</td><td>宗教改革与普热米斯尔新教化</td><td>德意志化使普热米斯尔成为新教世界核心</td><td></td><td>已确定</td></tr>
+<tr><td>REL210</td><td>CAUSES</td><td>宗教改革与普热米斯尔新教化</td><td>农民战争</td><td>宗教改革宣称“基督徒自由”成为农民战争起因之一</td><td></td><td>已确定</td></tr>
+<tr><td>REL211</td><td>CAUSES</td><td>《法兰克福宪章》与双王冠确立</td><td>三十年宗教战争</td><td>《法兰克福条约》宗教模糊性是宗教战争起因之一</td><td></td><td>已确定</td></tr>
+<tr><td>REL212</td><td>CAUSES</td><td>农民战争</td><td>三十年宗教战争</td><td>南德与北德新教文化分化，加剧宗教紧张</td><td></td><td>已确定</td></tr>
+<tr><td>REL213</td><td>RESULTS_IN</td><td>三十年宗教战争</td><td>《维也纳和约》与帝国分权</td><td>战争僵局以《维也纳和约》结束</td><td></td><td>已确定</td></tr>
+<tr><td>REL214</td><td>CAUSES</td><td>《维也纳和约》与帝国分权</td><td>双王冠的“准融合”</td><td>战后妥协促成双王冠准融合</td><td></td><td>已确定</td></tr>
+<tr><td>REL215</td><td>CAUSES</td><td>《维也纳和约》与帝国分权</td><td>1648年维也纳和约后的流亡波次</td><td>和约后的流亡波次加固英伦罗曼文化地位</td><td></td><td>已确定</td></tr>
+<tr><td>REL216</td><td>CAUSES</td><td>双王冠的“准融合”</td><td>伊比利亚-奥克大革命</td><td>双王冠准融合但未统一，宗教与北意大利矛盾积累</td><td></td><td>已确定</td></tr>
+<tr><td>REL217</td><td>CAUSES</td><td>《维也纳和约》与帝国分权</td><td>伊比利亚-奥克大革命</td><td>帝国分权使神圣罗马帝国易于被革命军迫使解散</td><td></td><td>已确定</td></tr>
+<tr><td>REL218</td><td>RESULTS_IN</td><td>伊比利亚-奥克大革命</td><td>反革命时代与旧秩序重建</td><td>反伊比利亚同盟击败革命帝国，进入反革命时代</td><td></td><td>已确定</td></tr>
+<tr><td>REL219</td><td>CAUSES</td><td>伊比利亚-奥克大革命</td><td>金雀花倾覆与蒙福尔家族上位</td><td>同期英国政治动荡，金雀花倾覆</td><td></td><td>已确定</td></tr>
+<tr><td>REL220</td><td>CAUSES</td><td>伊比利亚-奥克大革命</td><td>1789年伊比利亚革命后的流亡波次</td><td>革命后的流亡波次</td><td></td><td>已确定</td></tr>
+<tr><td>REL221</td><td>CAUSES</td><td>反革命时代与旧秩序重建</td><td>1848年革命与大德意志方案失败</td><td>革命留下的民族主义/共和主义/立宪主义/人民主权在19世纪爆发</td><td></td><td>已确定</td></tr>
+<tr><td>REL222</td><td>RESULTS_IN</td><td>1848年革命与大德意志方案失败</td><td>1866年奥法战争</td><td>大德意志方案破产，统一只能走小德意志道路</td><td></td><td>已确定</td></tr>
+<tr><td>REL223</td><td>RESULTS_IN</td><td>1866年奥法战争</td><td>罗马加冕与德意志帝国成立</td><td>普热米斯尔成为无可争议领导者，推进小德意志统一</td><td></td><td>已确定</td></tr>
+<tr><td>REL224</td><td>CAUSES</td><td>罗马加冕与德意志帝国成立</td><td>第二次工业革命与三大工业带</td><td>帝国整合多工业区，成为第二次工业革命中心</td><td></td><td>已确定</td></tr>
+<tr><td>REL225</td><td>CAUSES</td><td>第二次工业革命与三大工业带</td><td>第一次世界大战</td><td>工业与同盟体系导致一战</td><td></td><td>已确定</td></tr>
+<tr><td>REL226</td><td>RESULTS_IN</td><td>第一次世界大战</td><td>德意志帝国瓦解与法兰克共和化</td><td>中欧战败导致两个君主国瓦解</td><td></td><td>已确定</td></tr>
+<tr><td>REL227</td><td>CAUSES</td><td>第一次世界大战</td><td>一战后的知识分子流散</td><td>一战中欧战败后部分知识分子流散</td><td></td><td>已确定</td></tr>
+<tr><td>REL228</td><td>CAUSES</td><td>德意志帝国瓦解与法兰克共和化</td><td>第二次世界大战</td><td>战后恢复与结构性资产（学术中心、工业体系）成为重新崛起的结构原因</td><td></td><td>已确定</td></tr>
+<tr><td>REL229</td><td>CAUSES</td><td>一战后的知识分子流散</td><td>第二次世界大战</td><td>多数人才留在中欧参与战后重建</td><td></td><td>已确定</td></tr>
+<tr><td>REL230</td><td>RESULTS_IN</td><td>第二次世界大战</td><td>战后德意志世界恢复与联邦化</td><td>中欧协定惨胜后的战后安排</td><td></td><td>已确定</td></tr>
+<tr><td>REL231</td><td>RESULTS_IN</td><td>第二次世界大战</td><td>不列颠战败与被监督的民主化</td><td>不列颠战败，王权合法性崩溃</td><td></td><td>已确定</td></tr>
+<tr><td>REL232</td><td>RESULTS_IN</td><td>第二次世界大战</td><td>基辅王国与白罗斯脱离莫斯科国</td><td>基辅王国与白罗斯再次脱离莫斯科国</td><td></td><td>已确定</td></tr>
+<tr><td>REL233</td><td>RESULTS_IN</td><td>第二次世界大战</td><td>南部奥克省建制与法兰克-奥克问题</td><td>战后法兰克获得奥克地区并设特殊建制</td><td></td><td>已确定</td></tr>
+<tr><td>REL234</td><td>CAUSES</td><td>南部奥克省建制与法兰克-奥克问题</td><td>奥克省废除与“奥克正常化”（1972—1978）</td><td>“先控制、再正常化”的整合策略最终导向奥克省废除</td><td></td><td>修正</td></tr>
+<tr><td>REL235</td><td>CAUSES</td><td>战后德意志世界恢复与联邦化</td><td>多极均势与新亚洲文明地图</td><td>多极均势形成</td><td></td><td>已确定</td></tr>
+<tr><td>REL236</td><td>RESULTS_IN</td><td>不列颠战败与被监督的民主化</td><td>爱尔兰全岛独立</td><td>帝国体系瓦解，爱尔兰全岛释放</td><td></td><td>已确定</td></tr>
+<tr><td>REL237</td><td>CAUSES</td><td>西域佛教传统强化与伊斯兰化止步</td><td>蒙古帝国崛起与文明桥梁</td><td>西域佛教文明带为蒙古提供宗教多元基础</td><td></td><td>已确定</td></tr>
+<tr><td>REL238</td><td>CAUSES</td><td>蒙古帝国崛起与文明桥梁</td><td>金帐汗国未伊斯兰化与蒙古-罗斯制度融合</td><td>蒙古帝国西征后形成金帐汗国</td><td></td><td>已确定</td></tr>
+<tr><td>REL239</td><td>CAUSES</td><td>西域佛教传统强化与伊斯兰化止步</td><td>金帐汗国未伊斯兰化与蒙古-罗斯制度融合</td><td>西域佛教文明带长期存在使蒙古文明未迅速伊斯兰化，金帐汗国亦然</td><td></td><td>已确定</td></tr>
+<tr><td>REL240</td><td>RESULTS_IN</td><td>金帐汗国未伊斯兰化与蒙古-罗斯制度融合</td><td>罗斯兀鲁思建立与后基辅罗斯国家传统</td><td>莫斯科王朝蒙古化并建立罗斯兀鲁思</td><td></td><td>已确定</td></tr>
+<tr><td>REL241</td><td>CAUSES</td><td>罗斯兀鲁思建立与后基辅罗斯国家传统</td><td>基辅王国与罗斯兀鲁思的文明分流</td><td>后基辅罗斯国家传统与基辅罗斯传统分流</td><td></td><td>已确定</td></tr>
+<tr><td>REL242</td><td>CAUSES</td><td>基辅王国与罗斯兀鲁思的文明分流</td><td>基辅王国与白罗斯脱离莫斯科国</td><td>两次统一、两次分离的历史记忆</td><td></td><td>已确定</td></tr>
+<tr><td>REL243</td><td>CAUSES</td><td>基辅王国与白罗斯脱离莫斯科国</td><td>多极均势与新亚洲文明地图</td><td>罗斯兀鲁思-基辅王国边界成为欧洲—亚洲政治文明边界之一</td><td></td><td>已确定</td></tr>
+<tr><td>REL244</td><td>CAUSES</td><td>蒙古帝国崛起与文明桥梁</td><td>新亚洲秩序与文明边界线</td><td>蒙古文明遗产区从太平洋延伸到东欧森林地带</td><td></td><td>已确定</td></tr>
+<tr><td>REL245</td><td>CAUSES</td><td>奥克省废除与“奥克正常化”（1972—1978）</td><td>多极均势与新亚洲文明地图</td><td>法兰克奥克问题转入文化承认 + 普通联邦州地位阶段</td><td></td><td>修正</td></tr>
+<tr><td>REL246</td><td>CAUSES</td><td>鲁道夫加冕为“法兰克人的国王”</td><td>英-法兰克竞争长期化</td><td>英格兰被逐出大陆后竞争长期化</td><td></td><td>已确定</td></tr>
+<tr><td>REL301</td><td>PARTICIPATES_IN</td><td>鲁道夫</td><td>鲁道夫加冕为“法兰克人的国王”</td><td>主角</td><td></td><td>已确定</td></tr>
+<tr><td>REL302</td><td>PARTICIPATES_IN</td><td>爱德华一世</td><td>卡佩绝嗣与法兰克继承危机</td><td>继承争夺者之一</td><td></td><td>已确定</td></tr>
+<tr><td>REL303</td><td>PARTICIPATES_IN</td><td>奥托卡二世</td><td>奥托卡二世崛起与东西双源形成</td><td>主角</td><td></td><td>已确定</td></tr>
+<tr><td>REL304</td><td>PARTICIPATES_IN</td><td>阿尔布雷希特二世</td><td>《法兰克福宪章》与双王冠确立</td><td>召集者</td><td></td><td>已确定</td></tr>
+<tr><td>REL305</td><td>PARTICIPATES_IN</td><td>马丁·路德</td><td>农民战争</td><td>发表《反对杀人越货的农民暴徒》</td><td></td><td>已确定</td></tr>
+<tr><td>REL306</td><td>SIGNED</td><td>《法兰克福宪章》与双王冠确立</td><td>《法兰克福宪章》（法兰克福条约）</td><td>达成《法兰克福宪章》</td><td></td><td>已确定</td></tr>
+<tr><td>REL307</td><td>SIGNED</td><td>《维也纳和约》与帝国分权</td><td>《维也纳和约》1648</td><td>签订《维也纳和约》</td><td></td><td>已确定</td></tr>
+<tr><td>REL308</td><td>SIGNED</td><td>农民战争</td><td>《十二条款》1524/1525</td><td>起义者提出《十二条款》</td><td></td><td>已确定</td></tr>
+<tr><td>REL309</td><td>SIGNED</td><td>不列颠战败与被监督的民主化</td><td>《权利宪章》1945/1947</td><td>1945/1947《权利宪章》</td><td></td><td>已确定</td></tr>
+<tr><td>REL310</td><td>OCCURS_AT</td><td>鲁道夫加冕为“法兰克人的国王”</td><td>雷姆斯</td><td>鲁道夫在雷姆斯加冕</td><td></td><td>已确定</td></tr>
+<tr><td>REL311</td><td>OCCURS_AT</td><td>《法兰克福宪章》与双王冠确立</td><td>法兰克福</td><td>法兰克福会议</td><td></td><td>已确定</td></tr>
+<tr><td>REL312</td><td>OCCURS_AT</td><td>罗马加冕与德意志帝国成立</td><td>罗马</td><td>罗马加冕</td><td></td><td>已确定</td></tr>
+<tr><td>REL313</td><td>OCCURS_AT</td><td>《维也纳和约》与帝国分权</td><td>维也纳</td><td>《维也纳和约》</td><td></td><td>已确定</td></tr>
+<tr><td>REL480</td><td>CAUSES</td><td>科尔多瓦自立哈里发</td><td>科尔多瓦哈里发国分裂为诸泰法</td><td>哈里发国的集权并未持久，1031年分裂</td><td></td><td>已确定</td></tr>
+<tr><td>REL481</td><td>RESULTS_IN</td><td>科尔多瓦哈里发国分裂为诸泰法</td><td>穆瓦希德在伊比利亚战败</td><td>安达卢斯碎片化后由北非柏柏尔王朝接管，最终1212年战败</td><td></td><td>已确定</td></tr>
+<tr><td>REL482</td><td>CAUSES</td><td>穆瓦希德在伊比利亚战败</td><td>收复失地运动</td><td>穆瓦希德战败是收复失地运动的转折点</td><td></td><td>已确定</td></tr>
+<tr><td>REL483</td><td>RESULTS_IN</td><td>收复失地运动</td><td>伊比利亚统一与伊比利亚王国建立</td><td>收复失地运动形成共同基督教/伊比利亚身份，进而导向统一</td><td></td><td>已确定</td></tr>
+<tr><td>REL484</td><td>RESULTS_IN</td><td>伊比利亚统一与伊比利亚王国建立</td><td>南下北非与马格里布的基督教化、欧洲化</td><td>统一后的伊比利亚南下北非驱逐穆斯林</td><td></td><td>已确定</td></tr>
+<tr><td>REL485</td><td>CAUSES</td><td>伊比利亚统一与伊比利亚王国建立</td><td>伊比利亚-奥克大革命</td><td>伊比利亚王国的中央集权在1789年被大革命推翻</td><td></td><td>已确定</td></tr>
+<tr><td>REL486</td><td>CAUSES</td><td>十字军东征</td><td>黎凡特沿岸据点失守</td><td>十字军在地中海东岸的军事存在最终终结</td><td></td><td>已确定</td></tr>
+<tr><td>REL487</td><td>RESULTS_IN</td><td>黎凡特沿岸据点失守</td><td>法兰克东方学传统的形成</td><td>法兰克转为以商业、传教与学术维持近东联系，形成东方学传统</td><td></td><td>已确定</td></tr>
+<tr><td>REL488</td><td>CAUSES</td><td>蒙古帝国崛起与文明桥梁</td><td>马穆鲁克阻止蒙古西进</td><td>蒙古西征引发马穆鲁克的阻击</td><td></td><td>已确定</td></tr>
+<tr><td>REL489</td><td>CAUSES</td><td>马穆鲁克阻止蒙古西进</td><td>安纳托利亚突厥帝国取代马穆鲁克</td><td>马穆鲁克长期维持独立，最终为安纳托利亚突厥帝国取代</td><td></td><td>已确定</td></tr>
+<tr><td>REL490</td><td>CAUSES</td><td>安纳托利亚突厥帝国取代马穆鲁克</td><td>波斯确立什叶派国家传统</td><td>近东整合为逊尼派帝国，与波斯什叶派体系形成双极并立</td><td></td><td>已确定</td></tr>
+<tr><td>REL491</td><td>PARTICIPATES_IN</td><td>阿方索十世</td><td>收复失地运动</td><td>卡斯蒂利亚扩张的推动者</td><td></td><td>已确定</td></tr>
+<tr><td>REL492</td><td>PARTICIPATES_IN</td><td>伊莎贝拉·冯·卡斯蒂利亚</td><td>伊比利亚统一与伊比利亚王国建立</td><td>伊比利亚统一的推动者（推定）</td><td></td><td>待定</td></tr>
+<tr><td>REL493</td><td>PARTICIPATES_IN</td><td>萨拉丁</td><td>十字军东征</td><td>1187年收复耶路撒冷</td><td></td><td>已确定</td></tr>
+<tr><td>REL494</td><td>PARTICIPATES_IN</td><td>拜巴尔斯</td><td>马穆鲁克阻止蒙古西进</td><td>1260年击败蒙古西征军</td><td></td><td>已确定</td></tr>
+<tr><td>REL495</td><td>PARTICIPATES_IN</td><td>沙阿伊斯玛仪</td><td>波斯确立什叶派国家传统</td><td>确立什叶派为国教（推定）</td><td></td><td>待定</td></tr>
+<tr><td>REL496</td><td>PARTICIPATES_IN</td><td>奥斯曼一世</td><td>安纳托利亚突厥帝国取代马穆鲁克</td><td>其奠基的王朝最终取代马穆鲁克</td><td></td><td>已确定</td></tr>
+<tr><td>REL497</td><td>PARTICIPATES_IN</td><td>约翰娜·冯·阿尔孔</td><td>收复失地运动</td><td>法兰克方向对伊比利亚压力的抵抗（推定）</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0223</td><td>EVENT_INVOLVES_COUNTRY</td><td>卡佩绝嗣与法兰克继承危机</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0224</td><td>EVENT_INVOLVES_COUNTRY</td><td>卡佩绝嗣与法兰克继承危机</td><td>英格兰-诺曼底</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0225</td><td>EVENT_INVOLVES_PERSON</td><td>卡佩绝嗣与法兰克继承危机</td><td>路易九世</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0226</td><td>EVENT_INVOLVES_PERSON</td><td>卡佩绝嗣与法兰克继承危机</td><td>腓力三世</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0227</td><td>EVENT_INVOLVES_PERSON</td><td>卡佩绝嗣与法兰克继承危机</td><td>腓力四世</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0228</td><td>EVENT_INVOLVES_PERSON</td><td>卡佩绝嗣与法兰克继承危机</td><td>瓦卢瓦的查理</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0229</td><td>EVENT_INVOLVES_PERSON</td><td>卡佩绝嗣与法兰克继承危机</td><td>埃夫勒的腓力</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0230</td><td>EVENT_INVOLVES_PERSON</td><td>卡佩绝嗣与法兰克继承危机</td><td>爱德华一世</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0231</td><td>EVENT_INVOLVES_PERSON</td><td>卡佩绝嗣与法兰克继承危机</td><td>鲁道夫</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0232</td><td>RESULTS_IN</td><td>卡佩绝嗣与法兰克继承危机</td><td>鲁道夫加冕为“法兰克人的国王”</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0233</td><td>RESULTS_IN</td><td>卡佩绝嗣与法兰克继承危机</td><td>奥托卡二世崛起与东西双源形成</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0234</td><td>EVENT_INVOLVES_COUNTRY</td><td>鲁道夫加冕为“法兰克人的国王”</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0235</td><td>EVENT_INVOLVES_COUNTRY</td><td>鲁道夫加冕为“法兰克人的国王”</td><td>英格兰-诺曼底</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0236</td><td>EVENT_INVOLVES_PERSON</td><td>鲁道夫加冕为“法兰克人的国王”</td><td>鲁道夫</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0237</td><td>EVENT_INVOLVES_PERSON</td><td>鲁道夫加冕为“法兰克人的国王”</td><td>爱德华一世</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0238</td><td>RESULTS_IN</td><td>鲁道夫加冕为“法兰克人的国王”</td><td>东西双源格局定型</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0239</td><td>RESULTS_IN</td><td>鲁道夫加冕为“法兰克人的国王”</td><td>逆向的诺曼征服：诺曼-法兰西精英退回不列颠</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0240</td><td>EVENT_INVOLVES_COUNTRY</td><td>逆向的诺曼征服：诺曼-法兰西精英退回不列颠</td><td>不列颠联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0241</td><td>EVENT_INVOLVES_COUNTRY</td><td>逆向的诺曼征服：诺曼-法兰西精英退回不列颠</td><td>英格兰-诺曼底</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0242</td><td>EVENT_INVOLVES_PERSON</td><td>逆向的诺曼征服：诺曼-法兰西精英退回不列颠</td><td>鲁道夫</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0243</td><td>RESULTS_IN</td><td>逆向的诺曼征服：诺曼-法兰西精英退回不列颠</td><td>不列颠绝对主义奠基</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0244</td><td>RESULTS_IN</td><td>逆向的诺曼征服：诺曼-法兰西精英退回不列颠</td><td>英-法兰克竞争长期化</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0245</td><td>EVENT_INVOLVES_COUNTRY</td><td>不列颠绝对主义奠基</td><td>不列颠联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0246</td><td>RESULTS_IN</td><td>不列颠绝对主义奠基</td><td>不列颠战败与被监督的民主化</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0247</td><td>EVENT_INVOLVES_COUNTRY</td><td>奥托卡二世崛起与东西双源形成</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0248</td><td>EVENT_INVOLVES_PERSON</td><td>奥托卡二世崛起与东西双源形成</td><td>奥托卡二世</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0249</td><td>RESULTS_IN</td><td>奥托卡二世崛起与东西双源形成</td><td>东西双源格局定型</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0250</td><td>RESULTS_IN</td><td>奥托卡二世崛起与东西双源形成</td><td>普热米斯尔的德意志化</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0251</td><td>EVENT_INVOLVES_COUNTRY</td><td>东西双源格局定型</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0252</td><td>EVENT_INVOLVES_COUNTRY</td><td>东西双源格局定型</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0253</td><td>EVENT_INVOLVES_PERSON</td><td>东西双源格局定型</td><td>鲁道夫</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0254</td><td>EVENT_INVOLVES_PERSON</td><td>东西双源格局定型</td><td>奥托卡二世</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0255</td><td>RESULTS_IN</td><td>东西双源格局定型</td><td>《法兰克福宪章》与双王冠确立</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0256</td><td>RESULTS_IN</td><td>东西双源格局定型</td><td>哈布斯堡回归帝国与双元君主国</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0257</td><td>EVENT_INVOLVES_COUNTRY</td><td>《法兰克福宪章》与双王冠确立</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0258</td><td>EVENT_INVOLVES_COUNTRY</td><td>《法兰克福宪章》与双王冠确立</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0259</td><td>EVENT_INVOLVES_COUNTRY</td><td>《法兰克福宪章》与双王冠确立</td><td>瑞士永久联邦</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0260</td><td>EVENT_INVOLVES_COUNTRY</td><td>《法兰克福宪章》与双王冠确立</td><td>教皇国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0261</td><td>EVENT_INVOLVES_PERSON</td><td>《法兰克福宪章》与双王冠确立</td><td>阿尔布雷希特二世</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0262</td><td>EVENT_HAS_TREATY</td><td>《法兰克福宪章》与双王冠确立</td><td>《法兰克福宪章》（法兰克福条约）</td><td>关联</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0263</td><td>RESULTS_IN</td><td>《法兰克福宪章》与双王冠确立</td><td>三十年宗教战争</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0264</td><td>EVENT_INVOLVES_COUNTRY</td><td>普热米斯尔的德意志化</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0265</td><td>CAUSES</td><td>奥托卡二世崛起与东西双源形成</td><td>普热米斯尔的德意志化</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0266</td><td>RESULTS_IN</td><td>普热米斯尔的德意志化</td><td>宗教改革与普热米斯尔新教化</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0267</td><td>EVENT_INVOLVES_COUNTRY</td><td>哈布斯堡回归帝国与双元君主国</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0268</td><td>EVENT_INVOLVES_COUNTRY</td><td>哈布斯堡回归帝国与双元君主国</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0269</td><td>CAUSES</td><td>《法兰克福宪章》与双王冠确立</td><td>哈布斯堡回归帝国与双元君主国</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0270</td><td>RESULTS_IN</td><td>哈布斯堡回归帝国与双元君主国</td><td>宗教改革与普热米斯尔新教化</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0271</td><td>EVENT_INVOLVES_COUNTRY</td><td>宗教改革与普热米斯尔新教化</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0272</td><td>EVENT_INVOLVES_COUNTRY</td><td>宗教改革与普热米斯尔新教化</td><td>低地联合省</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0273</td><td>EVENT_INVOLVES_COUNTRY</td><td>宗教改革与普热米斯尔新教化</td><td>瑞士永久联邦</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0274</td><td>EVENT_INVOLVES_PERSON</td><td>宗教改革与普热米斯尔新教化</td><td>马丁·路德</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0275</td><td>EVENT_INVOLVES_PERSON</td><td>宗教改革与普热米斯尔新教化</td><td>加尔文</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0276</td><td>CAUSES</td><td>哈布斯堡回归帝国与双元君主国</td><td>宗教改革与普热米斯尔新教化</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0277</td><td>RESULTS_IN</td><td>宗教改革与普热米斯尔新教化</td><td>农民战争</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0278</td><td>RESULTS_IN</td><td>宗教改革与普热米斯尔新教化</td><td>三十年宗教战争</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0279</td><td>EVENT_INVOLVES_COUNTRY</td><td>农民战争</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0280</td><td>EVENT_INVOLVES_COUNTRY</td><td>农民战争</td><td>瑞士永久联邦</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0281</td><td>EVENT_INVOLVES_COUNTRY</td><td>农民战争</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0282</td><td>EVENT_INVOLVES_PERSON</td><td>农民战争</td><td>马丁·路德</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0283</td><td>EVENT_HAS_WAR</td><td>农民战争</td><td>农民战争（1524—1527）</td><td>关联</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0284</td><td>EVENT_HAS_TREATY</td><td>农民战争</td><td>《十二条款》1524/1525</td><td>关联</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0285</td><td>RESULTS_IN</td><td>农民战争</td><td>三十年宗教战争</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0286</td><td>EVENT_INVOLVES_COUNTRY</td><td>三十年宗教战争</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0287</td><td>EVENT_INVOLVES_COUNTRY</td><td>三十年宗教战争</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0288</td><td>EVENT_INVOLVES_COUNTRY</td><td>三十年宗教战争</td><td>低地联合省</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0289</td><td>EVENT_INVOLVES_COUNTRY</td><td>三十年宗教战争</td><td>瑞士永久联邦</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0290</td><td>EVENT_INVOLVES_COUNTRY</td><td>三十年宗教战争</td><td>伊比利亚共和国（第五共和国后体制）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0291</td><td>EVENT_INVOLVES_COUNTRY</td><td>三十年宗教战争</td><td>西班牙-阿拉贡</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0292</td><td>EVENT_INVOLVES_COUNTRY</td><td>三十年宗教战争</td><td>教皇国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0293</td><td>EVENT_INVOLVES_COUNTRY</td><td>三十年宗教战争</td><td>丹麦-挪威</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0294</td><td>EVENT_INVOLVES_COUNTRY</td><td>三十年宗教战争</td><td>瑞典</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0295</td><td>EVENT_HAS_WAR</td><td>三十年宗教战争</td><td>宗教战争 / 三十年战争（1618—1648）</td><td>关联</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0296</td><td>CAUSES</td><td>宗教改革与普热米斯尔新教化</td><td>三十年宗教战争</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0297</td><td>RESULTS_IN</td><td>三十年宗教战争</td><td>1648年维也纳和约后的流亡波次</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0298</td><td>EVENT_INVOLVES_COUNTRY</td><td>《维也纳和约》与帝国分权</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0299</td><td>EVENT_INVOLVES_COUNTRY</td><td>《维也纳和约》与帝国分权</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0300</td><td>EVENT_INVOLVES_COUNTRY</td><td>《维也纳和约》与帝国分权</td><td>低地联合省</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0301</td><td>EVENT_INVOLVES_COUNTRY</td><td>《维也纳和约》与帝国分权</td><td>瑞士永久联邦</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0302</td><td>EVENT_INVOLVES_COUNTRY</td><td>《维也纳和约》与帝国分权</td><td>伊比利亚共和国（第五共和国后体制）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0303</td><td>EVENT_HAS_TREATY</td><td>《维也纳和约》与帝国分权</td><td>《维也纳和约》1648</td><td>关联</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0304</td><td>CAUSES</td><td>三十年宗教战争</td><td>《维也纳和约》与帝国分权</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0305</td><td>RESULTS_IN</td><td>《维也纳和约》与帝国分权</td><td>双王冠的“准融合”</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0306</td><td>RESULTS_IN</td><td>《维也纳和约》与帝国分权</td><td>伊比利亚-奥克大革命</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0307</td><td>EVENT_INVOLVES_COUNTRY</td><td>1648年维也纳和约后的流亡波次</td><td>不列颠联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0308</td><td>RESULTS_IN</td><td>1648年维也纳和约后的流亡波次</td><td>1789年伊比利亚革命后的流亡波次</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0309</td><td>EVENT_INVOLVES_COUNTRY</td><td>双王冠的“准融合”</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0310</td><td>EVENT_INVOLVES_COUNTRY</td><td>双王冠的“准融合”</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0311</td><td>RESULTS_IN</td><td>双王冠的“准融合”</td><td>伊比利亚-奥克大革命</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0312</td><td>RESULTS_IN</td><td>双王冠的“准融合”</td><td>1848年革命与大德意志方案失败</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0313</td><td>EVENT_INVOLVES_COUNTRY</td><td>伊比利亚-奥克大革命</td><td>伊比利亚共和国（第五共和国后体制）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0314</td><td>EVENT_INVOLVES_COUNTRY</td><td>伊比利亚-奥克大革命</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0315</td><td>EVENT_INVOLVES_COUNTRY</td><td>伊比利亚-奥克大革命</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0316</td><td>EVENT_INVOLVES_COUNTRY</td><td>伊比利亚-奥克大革命</td><td>教皇国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0317</td><td>EVENT_HAS_WAR</td><td>伊比利亚-奥克大革命</td><td>伊比利亚大革命与反伊比利亚战争（1789—1815）</td><td>关联</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0318</td><td>RESULTS_IN</td><td>伊比利亚-奥克大革命</td><td>1789年伊比利亚革命后的流亡波次</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0319</td><td>RESULTS_IN</td><td>伊比利亚-奥克大革命</td><td>金雀花倾覆与蒙福尔家族上位</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0320</td><td>EVENT_INVOLVES_COUNTRY</td><td>1789年伊比利亚革命后的流亡波次</td><td>不列颠联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0321</td><td>EVENT_INVOLVES_COUNTRY</td><td>1789年伊比利亚革命后的流亡波次</td><td>伊比利亚共和国（第五共和国后体制）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0322</td><td>RESULTS_IN</td><td>1789年伊比利亚革命后的流亡波次</td><td>南部奥克省建制与法兰克-奥克问题</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0323</td><td>EVENT_INVOLVES_COUNTRY</td><td>金雀花倾覆与蒙福尔家族上位</td><td>不列颠联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0324</td><td>RESULTS_IN</td><td>金雀花倾覆与蒙福尔家族上位</td><td>反革命时代与旧秩序重建</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0325</td><td>EVENT_INVOLVES_COUNTRY</td><td>反革命时代与旧秩序重建</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0326</td><td>EVENT_INVOLVES_COUNTRY</td><td>反革命时代与旧秩序重建</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0327</td><td>EVENT_INVOLVES_COUNTRY</td><td>反革命时代与旧秩序重建</td><td>不列颠联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0328</td><td>EVENT_INVOLVES_COUNTRY</td><td>反革命时代与旧秩序重建</td><td>伊比利亚共和国（第五共和国后体制）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0329</td><td>CAUSES</td><td>伊比利亚-奥克大革命</td><td>反革命时代与旧秩序重建</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0330</td><td>RESULTS_IN</td><td>反革命时代与旧秩序重建</td><td>1848年革命与大德意志方案失败</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0331</td><td>EVENT_INVOLVES_COUNTRY</td><td>1848年革命与大德意志方案失败</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0332</td><td>EVENT_INVOLVES_COUNTRY</td><td>1848年革命与大德意志方案失败</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0333</td><td>EVENT_INVOLVES_COUNTRY</td><td>1848年革命与大德意志方案失败</td><td>低地联合省</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0334</td><td>EVENT_INVOLVES_COUNTRY</td><td>1848年革命与大德意志方案失败</td><td>不列颠联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0335</td><td>CAUSES</td><td>双王冠的“准融合”</td><td>1848年革命与大德意志方案失败</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0336</td><td>EVENT_INVOLVES_COUNTRY</td><td>1866年奥法战争</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0337</td><td>EVENT_INVOLVES_COUNTRY</td><td>1866年奥法战争</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0338</td><td>EVENT_HAS_WAR</td><td>1866年奥法战争</td><td>1866年奥法战争</td><td>关联</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0339</td><td>CAUSES</td><td>1848年革命与大德意志方案失败</td><td>1866年奥法战争</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0340</td><td>EVENT_INVOLVES_COUNTRY</td><td>罗马加冕与德意志帝国成立</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0341</td><td>EVENT_INVOLVES_COUNTRY</td><td>罗马加冕与德意志帝国成立</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0342</td><td>EVENT_INVOLVES_COUNTRY</td><td>罗马加冕与德意志帝国成立</td><td>教皇国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0343</td><td>CAUSES</td><td>1866年奥法战争</td><td>罗马加冕与德意志帝国成立</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0344</td><td>RESULTS_IN</td><td>罗马加冕与德意志帝国成立</td><td>第二次工业革命与三大工业带</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0345</td><td>RESULTS_IN</td><td>罗马加冕与德意志帝国成立</td><td>第一次世界大战</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0346</td><td>EVENT_INVOLVES_COUNTRY</td><td>第二次工业革命与三大工业带</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0347</td><td>EVENT_INVOLVES_COUNTRY</td><td>第二次工业革命与三大工业带</td><td>美利坚合众国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0348</td><td>EVENT_INVOLVES_COUNTRY</td><td>第二次工业革命与三大工业带</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0349</td><td>RESULTS_IN</td><td>第二次工业革命与三大工业带</td><td>第一次世界大战</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0350</td><td>EVENT_INVOLVES_COUNTRY</td><td>第一次世界大战</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0351</td><td>EVENT_INVOLVES_COUNTRY</td><td>第一次世界大战</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0352</td><td>EVENT_INVOLVES_COUNTRY</td><td>第一次世界大战</td><td>伊比利亚共和国（第五共和国后体制）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0353</td><td>EVENT_INVOLVES_COUNTRY</td><td>第一次世界大战</td><td>不列颠联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0354</td><td>EVENT_INVOLVES_COUNTRY</td><td>第一次世界大战</td><td>罗斯兀鲁思</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0355</td><td>EVENT_INVOLVES_COUNTRY</td><td>第一次世界大战</td><td>美利坚合众国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0356</td><td>EVENT_HAS_WAR</td><td>第一次世界大战</td><td>第一次世界大战（1914—1918）</td><td>关联</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0357</td><td>CAUSES</td><td>罗马加冕与德意志帝国成立</td><td>第一次世界大战</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0358</td><td>RESULTS_IN</td><td>第一次世界大战</td><td>一战后的知识分子流散</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0359</td><td>EVENT_INVOLVES_COUNTRY</td><td>德意志帝国瓦解与法兰克共和化</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0360</td><td>EVENT_INVOLVES_COUNTRY</td><td>德意志帝国瓦解与法兰克共和化</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0361</td><td>CAUSES</td><td>第一次世界大战</td><td>德意志帝国瓦解与法兰克共和化</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0362</td><td>RESULTS_IN</td><td>德意志帝国瓦解与法兰克共和化</td><td>一战后的知识分子流散</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0363</td><td>RESULTS_IN</td><td>德意志帝国瓦解与法兰克共和化</td><td>第二次世界大战</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0364</td><td>EVENT_INVOLVES_COUNTRY</td><td>一战后的知识分子流散</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0365</td><td>EVENT_INVOLVES_COUNTRY</td><td>一战后的知识分子流散</td><td>美利坚合众国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0366</td><td>EVENT_INVOLVES_COUNTRY</td><td>一战后的知识分子流散</td><td>瑞士永久联邦</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0367</td><td>EVENT_INVOLVES_COUNTRY</td><td>一战后的知识分子流散</td><td>伊比利亚共和国（第五共和国后体制）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0368</td><td>EVENT_INVOLVES_PERSON</td><td>一战后的知识分子流散</td><td>爱因斯坦</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0369</td><td>CAUSES</td><td>德意志帝国瓦解与法兰克共和化</td><td>一战后的知识分子流散</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0370</td><td>RESULTS_IN</td><td>一战后的知识分子流散</td><td>第二次世界大战</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0371</td><td>EVENT_INVOLVES_COUNTRY</td><td>第二次世界大战</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0372</td><td>EVENT_INVOLVES_COUNTRY</td><td>第二次世界大战</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0373</td><td>EVENT_INVOLVES_COUNTRY</td><td>第二次世界大战</td><td>伊比利亚共和国（第五共和国后体制）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0374</td><td>EVENT_INVOLVES_COUNTRY</td><td>第二次世界大战</td><td>不列颠联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0375</td><td>EVENT_INVOLVES_COUNTRY</td><td>第二次世界大战</td><td>罗斯兀鲁思</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0376</td><td>EVENT_INVOLVES_COUNTRY</td><td>第二次世界大战</td><td>美利坚合众国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0377</td><td>EVENT_INVOLVES_COUNTRY</td><td>第二次世界大战</td><td>低地联合省</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0378</td><td>EVENT_HAS_WAR</td><td>第二次世界大战</td><td>第二次世界大战（1939—1945）</td><td>关联</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0379</td><td>EVENT_INVOLVES_COUNTRY</td><td>战后德意志世界恢复与联邦化</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0380</td><td>EVENT_INVOLVES_COUNTRY</td><td>战后德意志世界恢复与联邦化</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0381</td><td>CAUSES</td><td>第二次世界大战</td><td>战后德意志世界恢复与联邦化</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0382</td><td>RESULTS_IN</td><td>战后德意志世界恢复与联邦化</td><td>多极均势与新亚洲文明地图</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0383</td><td>RESULTS_IN</td><td>战后德意志世界恢复与联邦化</td><td>奥克省废除与“奥克正常化”（1972—1978）</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0384</td><td>EVENT_INVOLVES_COUNTRY</td><td>南部奥克省建制与法兰克-奥克问题</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>修正</td></tr>
+<tr><td>AUTO0385</td><td>EVENT_INVOLVES_COUNTRY</td><td>南部奥克省建制与法兰克-奥克问题</td><td>伊比利亚共和国（第五共和国后体制）</td><td>涉及国家</td><td></td><td>修正</td></tr>
+<tr><td>AUTO0386</td><td>CAUSES</td><td>第二次世界大战</td><td>南部奥克省建制与法兰克-奥克问题</td><td>前因</td><td></td><td>修正</td></tr>
+<tr><td>AUTO0387</td><td>CAUSES</td><td>战后德意志世界恢复与联邦化</td><td>南部奥克省建制与法兰克-奥克问题</td><td>前因</td><td></td><td>修正</td></tr>
+<tr><td>AUTO0388</td><td>CAUSES</td><td>1789年伊比利亚革命后的流亡波次</td><td>南部奥克省建制与法兰克-奥克问题</td><td>前因</td><td></td><td>修正</td></tr>
+<tr><td>AUTO0389</td><td>RESULTS_IN</td><td>南部奥克省建制与法兰克-奥克问题</td><td>奥克省废除与“奥克正常化”（1972—1978）</td><td>后果</td><td></td><td>修正</td></tr>
+<tr><td>AUTO0390</td><td>EVENT_INVOLVES_COUNTRY</td><td>奥克省废除与“奥克正常化”（1972—1978）</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>修正</td></tr>
+<tr><td>AUTO0391</td><td>RESULTS_IN</td><td>奥克省废除与“奥克正常化”（1972—1978）</td><td>多极均势与新亚洲文明地图</td><td>后果</td><td></td><td>修正</td></tr>
+<tr><td>AUTO0392</td><td>EVENT_INVOLVES_COUNTRY</td><td>不列颠战败与被监督的民主化</td><td>不列颠联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0393</td><td>EVENT_INVOLVES_COUNTRY</td><td>不列颠战败与被监督的民主化</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0394</td><td>EVENT_INVOLVES_COUNTRY</td><td>不列颠战败与被监督的民主化</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0395</td><td>EVENT_HAS_TREATY</td><td>不列颠战败与被监督的民主化</td><td>《权利宪章》1945/1947</td><td>关联</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0396</td><td>CAUSES</td><td>第二次世界大战</td><td>不列颠战败与被监督的民主化</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0397</td><td>CAUSES</td><td>不列颠绝对主义奠基</td><td>不列颠战败与被监督的民主化</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0398</td><td>EVENT_INVOLVES_COUNTRY</td><td>爱尔兰全岛独立</td><td>不列颠联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0399</td><td>CAUSES</td><td>第二次世界大战</td><td>爱尔兰全岛独立</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0400</td><td>CAUSES</td><td>不列颠战败与被监督的民主化</td><td>爱尔兰全岛独立</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0401</td><td>RESULTS_IN</td><td>爱尔兰全岛独立</td><td>多极均势与新亚洲文明地图</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0402</td><td>EVENT_INVOLVES_COUNTRY</td><td>基辅王国与白罗斯脱离莫斯科国</td><td>基辅王国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0403</td><td>EVENT_INVOLVES_COUNTRY</td><td>基辅王国与白罗斯脱离莫斯科国</td><td>白罗斯</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0404</td><td>EVENT_INVOLVES_COUNTRY</td><td>基辅王国与白罗斯脱离莫斯科国</td><td>罗斯兀鲁思</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0405</td><td>CAUSES</td><td>第二次世界大战</td><td>基辅王国与白罗斯脱离莫斯科国</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0406</td><td>CAUSES</td><td>第一次世界大战</td><td>基辅王国与白罗斯脱离莫斯科国</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0407</td><td>RESULTS_IN</td><td>基辅王国与白罗斯脱离莫斯科国</td><td>多极均势与新亚洲文明地图</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0408</td><td>EVENT_INVOLVES_COUNTRY</td><td>多极均势与新亚洲文明地图</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0409</td><td>EVENT_INVOLVES_COUNTRY</td><td>多极均势与新亚洲文明地图</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0410</td><td>EVENT_INVOLVES_COUNTRY</td><td>多极均势与新亚洲文明地图</td><td>伊比利亚共和国（第五共和国后体制）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0411</td><td>EVENT_INVOLVES_COUNTRY</td><td>多极均势与新亚洲文明地图</td><td>罗斯兀鲁思</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0412</td><td>EVENT_INVOLVES_COUNTRY</td><td>多极均势与新亚洲文明地图</td><td>不列颠联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0413</td><td>EVENT_INVOLVES_COUNTRY</td><td>多极均势与新亚洲文明地图</td><td>美利坚合众国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0414</td><td>CAUSES</td><td>爱尔兰全岛独立</td><td>多极均势与新亚洲文明地图</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0415</td><td>EVENT_INVOLVES_COUNTRY</td><td>英-法兰克竞争长期化</td><td>不列颠联邦共和国</td><td>涉及国家</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0416</td><td>EVENT_INVOLVES_COUNTRY</td><td>英-法兰克竞争长期化</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0417</td><td>EVENT_INVOLVES_COUNTRY</td><td>蒙古帝国崛起与文明桥梁</td><td>蒙古帝国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0418</td><td>EVENT_INVOLVES_COUNTRY</td><td>蒙古帝国崛起与文明桥梁</td><td>金帐汗国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0419</td><td>EVENT_INVOLVES_COUNTRY</td><td>蒙古帝国崛起与文明桥梁</td><td>中国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0420</td><td>EVENT_INVOLVES_COUNTRY</td><td>蒙古帝国崛起与文明桥梁</td><td>西域佛教文明带</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0421</td><td>EVENT_HAS_WAR</td><td>蒙古帝国崛起与文明桥梁</td><td>蒙古帝国扩张（1200—1300及以后）</td><td>关联</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0422</td><td>RESULTS_IN</td><td>蒙古帝国崛起与文明桥梁</td><td>金帐汗国未伊斯兰化与蒙古-罗斯制度融合</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0423</td><td>EVENT_INVOLVES_COUNTRY</td><td>西域佛教传统强化与伊斯兰化止步</td><td>西域佛教文明带</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0424</td><td>EVENT_INVOLVES_COUNTRY</td><td>西域佛教传统强化与伊斯兰化止步</td><td>中国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0425</td><td>RESULTS_IN</td><td>西域佛教传统强化与伊斯兰化止步</td><td>蒙古帝国崛起与文明桥梁</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0426</td><td>RESULTS_IN</td><td>西域佛教传统强化与伊斯兰化止步</td><td>金帐汗国未伊斯兰化与蒙古-罗斯制度融合</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0427</td><td>EVENT_INVOLVES_COUNTRY</td><td>金帐汗国未伊斯兰化与蒙古-罗斯制度融合</td><td>金帐汗国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0428</td><td>EVENT_INVOLVES_COUNTRY</td><td>金帐汗国未伊斯兰化与蒙古-罗斯制度融合</td><td>罗斯兀鲁思</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0429</td><td>EVENT_INVOLVES_COUNTRY</td><td>罗斯兀鲁思建立与后基辅罗斯国家传统</td><td>罗斯兀鲁思</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0430</td><td>EVENT_INVOLVES_COUNTRY</td><td>罗斯兀鲁思建立与后基辅罗斯国家传统</td><td>金帐汗国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0431</td><td>CAUSES</td><td>金帐汗国未伊斯兰化与蒙古-罗斯制度融合</td><td>罗斯兀鲁思建立与后基辅罗斯国家传统</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0432</td><td>RESULTS_IN</td><td>罗斯兀鲁思建立与后基辅罗斯国家传统</td><td>基辅王国与罗斯兀鲁思的文明分流</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0433</td><td>EVENT_INVOLVES_COUNTRY</td><td>基辅王国与罗斯兀鲁思的文明分流</td><td>基辅王国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0434</td><td>EVENT_INVOLVES_COUNTRY</td><td>基辅王国与罗斯兀鲁思的文明分流</td><td>罗斯兀鲁思</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0435</td><td>EVENT_INVOLVES_COUNTRY</td><td>基辅王国与罗斯兀鲁思的文明分流</td><td>白罗斯</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0436</td><td>RESULTS_IN</td><td>基辅王国与罗斯兀鲁思的文明分流</td><td>基辅王国与白罗斯脱离莫斯科国</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0437</td><td>RESULTS_IN</td><td>基辅王国与罗斯兀鲁思的文明分流</td><td>多极均势与新亚洲文明地图</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0438</td><td>EVENT_INVOLVES_COUNTRY</td><td>新亚洲秩序与文明边界线</td><td>中国</td><td>涉及国家</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0439</td><td>EVENT_INVOLVES_COUNTRY</td><td>新亚洲秩序与文明边界线</td><td>蒙古帝国</td><td>涉及国家</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0440</td><td>EVENT_INVOLVES_COUNTRY</td><td>新亚洲秩序与文明边界线</td><td>西域佛教文明带</td><td>涉及国家</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0441</td><td>EVENT_INVOLVES_COUNTRY</td><td>新亚洲秩序与文明边界线</td><td>西伯利亚萨满文化区</td><td>涉及国家</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0442</td><td>EVENT_INVOLVES_COUNTRY</td><td>新亚洲秩序与文明边界线</td><td>西亚伊斯兰文明空间</td><td>涉及国家</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0443</td><td>EVENT_INVOLVES_COUNTRY</td><td>新亚洲秩序与文明边界线</td><td>君士坦丁堡（海峡政治体，通称拜占庭）</td><td>涉及国家</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0444</td><td>EVENT_INVOLVES_COUNTRY</td><td>新亚洲秩序与文明边界线</td><td>东洲（新大洲，正式名称待定）</td><td>涉及国家</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0445</td><td>CAUSES</td><td>西域佛教传统强化与伊斯兰化止步</td><td>新亚洲秩序与文明边界线</td><td>前因</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0446</td><td>CAUSES</td><td>金帐汗国未伊斯兰化与蒙古-罗斯制度融合</td><td>新亚洲秩序与文明边界线</td><td>前因</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0447</td><td>EVENT_INVOLVES_COUNTRY</td><td>科尔多瓦自立哈里发</td><td>科尔多瓦哈里发国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0448</td><td>EVENT_INVOLVES_COUNTRY</td><td>科尔多瓦自立哈里发</td><td>西班牙-阿拉贡</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0449</td><td>EVENT_INVOLVES_PERSON</td><td>科尔多瓦自立哈里发</td><td>阿卜杜勒·拉赫曼三世</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0450</td><td>RESULTS_IN</td><td>科尔多瓦自立哈里发</td><td>科尔多瓦哈里发国分裂为诸泰法</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0451</td><td>EVENT_INVOLVES_COUNTRY</td><td>科尔多瓦哈里发国分裂为诸泰法</td><td>科尔多瓦哈里发国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0452</td><td>EVENT_INVOLVES_COUNTRY</td><td>科尔多瓦哈里发国分裂为诸泰法</td><td>穆瓦希德哈里发国（及穆拉比特）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0453</td><td>EVENT_INVOLVES_COUNTRY</td><td>科尔多瓦哈里发国分裂为诸泰法</td><td>西班牙-阿拉贡</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0454</td><td>RESULTS_IN</td><td>科尔多瓦哈里发国分裂为诸泰法</td><td>收复失地运动</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0455</td><td>EVENT_INVOLVES_COUNTRY</td><td>穆瓦希德在伊比利亚战败</td><td>穆瓦希德哈里发国（及穆拉比特）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0456</td><td>EVENT_INVOLVES_COUNTRY</td><td>穆瓦希德在伊比利亚战败</td><td>西班牙-阿拉贡</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0457</td><td>EVENT_INVOLVES_COUNTRY</td><td>穆瓦希德在伊比利亚战败</td><td>马格里布（北非西部）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0458</td><td>CAUSES</td><td>科尔多瓦哈里发国分裂为诸泰法</td><td>穆瓦希德在伊比利亚战败</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0459</td><td>RESULTS_IN</td><td>穆瓦希德在伊比利亚战败</td><td>收复失地运动</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0460</td><td>RESULTS_IN</td><td>穆瓦希德在伊比利亚战败</td><td>伊比利亚统一与伊比利亚王国建立</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0461</td><td>EVENT_INVOLVES_COUNTRY</td><td>收复失地运动</td><td>西班牙-阿拉贡</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0462</td><td>EVENT_INVOLVES_COUNTRY</td><td>收复失地运动</td><td>穆瓦希德哈里发国（及穆拉比特）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0463</td><td>EVENT_INVOLVES_COUNTRY</td><td>收复失地运动</td><td>科尔多瓦哈里发国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0464</td><td>EVENT_INVOLVES_COUNTRY</td><td>收复失地运动</td><td>马格里布（北非西部）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0465</td><td>EVENT_INVOLVES_PERSON</td><td>收复失地运动</td><td>阿方索十世</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0466</td><td>EVENT_INVOLVES_PERSON</td><td>收复失地运动</td><td>伊莎贝拉·冯·卡斯蒂利亚</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0467</td><td>EVENT_HAS_WAR</td><td>收复失地运动</td><td>收复失地运动与南下北非（8—16世纪）</td><td>关联</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0468</td><td>CAUSES</td><td>科尔多瓦哈里发国分裂为诸泰法</td><td>收复失地运动</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0469</td><td>RESULTS_IN</td><td>收复失地运动</td><td>南下北非与马格里布的基督教化、欧洲化</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0470</td><td>EVENT_INVOLVES_COUNTRY</td><td>伊比利亚统一与伊比利亚王国建立</td><td>西班牙-阿拉贡</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0471</td><td>EVENT_INVOLVES_COUNTRY</td><td>伊比利亚统一与伊比利亚王国建立</td><td>伊比利亚王国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0472</td><td>EVENT_INVOLVES_COUNTRY</td><td>伊比利亚统一与伊比利亚王国建立</td><td>奥克王国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0473</td><td>EVENT_INVOLVES_PERSON</td><td>伊比利亚统一与伊比利亚王国建立</td><td>伊莎贝拉·冯·卡斯蒂利亚</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0474</td><td>EVENT_INVOLVES_PERSON</td><td>伊比利亚统一与伊比利亚王国建立</td><td>伊比利亚王国开国君主（本轮新增，姓名待定）</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0475</td><td>CAUSES</td><td>收复失地运动</td><td>伊比利亚统一与伊比利亚王国建立</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0476</td><td>RESULTS_IN</td><td>伊比利亚统一与伊比利亚王国建立</td><td>伊比利亚-奥克大革命</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0477</td><td>EVENT_INVOLVES_COUNTRY</td><td>南下北非与马格里布的基督教化、欧洲化</td><td>伊比利亚王国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0478</td><td>EVENT_INVOLVES_COUNTRY</td><td>南下北非与马格里布的基督教化、欧洲化</td><td>马格里布（北非西部）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0479</td><td>EVENT_INVOLVES_COUNTRY</td><td>南下北非与马格里布的基督教化、欧洲化</td><td>伊比利亚共和国（第五共和国后体制）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0480</td><td>EVENT_HAS_WAR</td><td>南下北非与马格里布的基督教化、欧洲化</td><td>收复失地运动与南下北非（8—16世纪）</td><td>关联</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0481</td><td>CAUSES</td><td>伊比利亚统一与伊比利亚王国建立</td><td>南下北非与马格里布的基督教化、欧洲化</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0482</td><td>RESULTS_IN</td><td>南下北非与马格里布的基督教化、欧洲化</td><td>多极均势与新亚洲文明地图</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0483</td><td>EVENT_INVOLVES_COUNTRY</td><td>十字军东征</td><td>法兰西罗曼王国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0484</td><td>EVENT_INVOLVES_COUNTRY</td><td>十字军东征</td><td>教皇国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0485</td><td>EVENT_INVOLVES_COUNTRY</td><td>十字军东征</td><td>阿尤布苏丹国（埃及—叙利亚）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0486</td><td>EVENT_INVOLVES_COUNTRY</td><td>十字军东征</td><td>法蒂玛哈里发国（埃及）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0487</td><td>EVENT_INVOLVES_COUNTRY</td><td>十字军东征</td><td>叙利亚地区</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0488</td><td>EVENT_INVOLVES_COUNTRY</td><td>十字军东征</td><td>君士坦丁堡（海峡政治体，通称拜占庭）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0489</td><td>EVENT_INVOLVES_COUNTRY</td><td>十字军东征</td><td>奥斯曼帝国（安纳托利亚突厥帝国）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0490</td><td>EVENT_INVOLVES_PERSON</td><td>十字军东征</td><td>萨拉丁</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0491</td><td>EVENT_HAS_WAR</td><td>十字军东征</td><td>十字军东征（11—13世纪）</td><td>关联</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0492</td><td>RESULTS_IN</td><td>十字军东征</td><td>法兰克东方学传统的形成</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0493</td><td>RESULTS_IN</td><td>十字军东征</td><td>黎凡特沿岸据点失守</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0494</td><td>EVENT_INVOLVES_COUNTRY</td><td>黎凡特沿岸据点失守</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0495</td><td>EVENT_INVOLVES_COUNTRY</td><td>黎凡特沿岸据点失守</td><td>马穆鲁克苏丹国（埃及—叙利亚）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0496</td><td>EVENT_INVOLVES_COUNTRY</td><td>黎凡特沿岸据点失守</td><td>叙利亚地区</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0497</td><td>EVENT_INVOLVES_COUNTRY</td><td>法兰克东方学传统的形成</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0498</td><td>EVENT_INVOLVES_COUNTRY</td><td>法兰克东方学传统的形成</td><td>叙利亚地区</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0499</td><td>EVENT_INVOLVES_COUNTRY</td><td>法兰克东方学传统的形成</td><td>马格里布（北非西部）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0500</td><td>EVENT_INVOLVES_COUNTRY</td><td>法兰克东方学传统的形成</td><td>埃及地区</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0501</td><td>CAUSES</td><td>黎凡特沿岸据点失守</td><td>法兰克东方学传统的形成</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0502</td><td>EVENT_INVOLVES_COUNTRY</td><td>马穆鲁克阻止蒙古西进</td><td>马穆鲁克苏丹国（埃及—叙利亚）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0503</td><td>EVENT_INVOLVES_COUNTRY</td><td>马穆鲁克阻止蒙古西进</td><td>蒙古帝国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0504</td><td>EVENT_INVOLVES_COUNTRY</td><td>马穆鲁克阻止蒙古西进</td><td>阿拔斯哈里发国（两河）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0505</td><td>EVENT_INVOLVES_COUNTRY</td><td>马穆鲁克阻止蒙古西进</td><td>叙利亚地区</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0506</td><td>EVENT_INVOLVES_COUNTRY</td><td>马穆鲁克阻止蒙古西进</td><td>埃及地区</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0507</td><td>EVENT_INVOLVES_PERSON</td><td>马穆鲁克阻止蒙古西进</td><td>拜巴尔斯</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0508</td><td>EVENT_HAS_WAR</td><td>马穆鲁克阻止蒙古西进</td><td>蒙古帝国扩张（1200—1300及以后）</td><td>关联</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0509</td><td>RESULTS_IN</td><td>马穆鲁克阻止蒙古西进</td><td>罗斯兀鲁思建立与后基辅罗斯国家传统</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0510</td><td>EVENT_INVOLVES_COUNTRY</td><td>安纳托利亚突厥帝国取代马穆鲁克</td><td>奥斯曼帝国（安纳托利亚突厥帝国）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0511</td><td>EVENT_INVOLVES_COUNTRY</td><td>安纳托利亚突厥帝国取代马穆鲁克</td><td>马穆鲁克苏丹国（埃及—叙利亚）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0512</td><td>EVENT_INVOLVES_COUNTRY</td><td>安纳托利亚突厥帝国取代马穆鲁克</td><td>埃及地区</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0513</td><td>EVENT_INVOLVES_COUNTRY</td><td>安纳托利亚突厥帝国取代马穆鲁克</td><td>叙利亚地区</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0514</td><td>EVENT_INVOLVES_COUNTRY</td><td>安纳托利亚突厥帝国取代马穆鲁克</td><td>阿拉伯—汉志地区</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0515</td><td>EVENT_INVOLVES_PERSON</td><td>安纳托利亚突厥帝国取代马穆鲁克</td><td>奥斯曼一世</td><td>涉及人物</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0516</td><td>CAUSES</td><td>罗斯兀鲁思建立与后基辅罗斯国家传统</td><td>安纳托利亚突厥帝国取代马穆鲁克</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0517</td><td>RESULTS_IN</td><td>安纳托利亚突厥帝国取代马穆鲁克</td><td>多极均势与新亚洲文明地图</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0518</td><td>EVENT_INVOLVES_COUNTRY</td><td>波斯确立什叶派国家传统</td><td>伊朗（伊斯兰什叶派波斯）</td><td>涉及国家</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0519</td><td>EVENT_INVOLVES_COUNTRY</td><td>波斯确立什叶派国家传统</td><td>奥斯曼帝国（安纳托利亚突厥帝国）</td><td>涉及国家</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0520</td><td>EVENT_INVOLVES_COUNTRY</td><td>波斯确立什叶派国家传统</td><td>阿拔斯哈里发国（两河）</td><td>涉及国家</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0521</td><td>EVENT_INVOLVES_PERSON</td><td>波斯确立什叶派国家传统</td><td>沙阿伊斯玛仪</td><td>涉及人物</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0522</td><td>CAUSES</td><td>蒙古帝国崛起与文明桥梁</td><td>波斯确立什叶派国家传统</td><td>前因</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0523</td><td>RESULTS_IN</td><td>波斯确立什叶派国家传统</td><td>多极均势与新亚洲文明地图</td><td>后果</td><td></td><td>待定</td></tr>
+<tr><td>AUTO0524</td><td>EVENT_INVOLVES_COUNTRY</td><td>伊比利亚第二帝国被德意志帝国击败，第三共和国成立</td><td>伊比利亚第二共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0525</td><td>EVENT_INVOLVES_COUNTRY</td><td>伊比利亚第二帝国被德意志帝国击败，第三共和国成立</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0526</td><td>EVENT_INVOLVES_COUNTRY</td><td>伊比利亚第二帝国被德意志帝国击败，第三共和国成立</td><td>伊比利亚第三共和国（1871—1940）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0527</td><td>CAUSES</td><td>1866年奥法战争</td><td>伊比利亚第二帝国被德意志帝国击败，第三共和国成立</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0528</td><td>RESULTS_IN</td><td>伊比利亚第二帝国被德意志帝国击败，第三共和国成立</td><td>罗马加冕与德意志帝国成立</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0529</td><td>RESULTS_IN</td><td>伊比利亚第二帝国被德意志帝国击败，第三共和国成立</td><td>第一次世界大战</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0530</td><td>EVENT_INVOLVES_COUNTRY</td><td>伊比利亚第三共和国被法兰克与德意志击败</td><td>伊比利亚第三共和国（1871—1940）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0531</td><td>EVENT_INVOLVES_COUNTRY</td><td>伊比利亚第三共和国被法兰克与德意志击败</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0532</td><td>EVENT_INVOLVES_COUNTRY</td><td>伊比利亚第三共和国被法兰克与德意志击败</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0533</td><td>EVENT_INVOLVES_COUNTRY</td><td>伊比利亚第三共和国被法兰克与德意志击败</td><td>德意志共和国（1918—1945）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0534</td><td>EVENT_INVOLVES_COUNTRY</td><td>伊比利亚第三共和国被法兰克与德意志击败</td><td>伊比利亚被占领与过渡期（1940—1945）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0535</td><td>EVENT_HAS_WAR</td><td>伊比利亚第三共和国被法兰克与德意志击败</td><td>第二次世界大战（1939—1945）</td><td>关联</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0536</td><td>CAUSES</td><td>第二次世界大战</td><td>伊比利亚第三共和国被法兰克与德意志击败</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0537</td><td>RESULTS_IN</td><td>伊比利亚第三共和国被法兰克与德意志击败</td><td>伊比利亚第四共和国成立</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0538</td><td>EVENT_INVOLVES_COUNTRY</td><td>伊比利亚第四共和国成立</td><td>伊比利亚第四共和国（1945—1954）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0539</td><td>EVENT_INVOLVES_COUNTRY</td><td>伊比利亚第四共和国成立</td><td>伊比利亚共和国（第五共和国后体制）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0540</td><td>EVENT_INVOLVES_COUNTRY</td><td>伊比利亚第四共和国成立</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0541</td><td>EVENT_INVOLVES_COUNTRY</td><td>伊比利亚第四共和国成立</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0542</td><td>CAUSES</td><td>伊比利亚第三共和国被法兰克与德意志击败</td><td>伊比利亚第四共和国成立</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0543</td><td>CAUSES</td><td>第二次世界大战</td><td>伊比利亚第四共和国成立</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0544</td><td>RESULTS_IN</td><td>伊比利亚第四共和国成立</td><td>非洲殖民地危机与第四共和国覆灭</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0545</td><td>EVENT_INVOLVES_COUNTRY</td><td>非洲殖民地危机与第四共和国覆灭</td><td>伊比利亚第四共和国（1945—1954）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0546</td><td>EVENT_INVOLVES_COUNTRY</td><td>非洲殖民地危机与第四共和国覆灭</td><td>马格里布（北非西部）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0547</td><td>EVENT_INVOLVES_COUNTRY</td><td>非洲殖民地危机与第四共和国覆灭</td><td>伊比利亚第五共和国（1960— ）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0548</td><td>CAUSES</td><td>伊比利亚第四共和国成立</td><td>非洲殖民地危机与第四共和国覆灭</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0549</td><td>CAUSES</td><td>南下北非与马格里布的基督教化、欧洲化</td><td>非洲殖民地危机与第四共和国覆灭</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0550</td><td>RESULTS_IN</td><td>非洲殖民地危机与第四共和国覆灭</td><td>伊比利亚第五共和国建立</td><td>后果</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0551</td><td>EVENT_INVOLVES_COUNTRY</td><td>伊比利亚第五共和国建立</td><td>伊比利亚第五共和国（1960— ）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0552</td><td>EVENT_INVOLVES_COUNTRY</td><td>伊比利亚第五共和国建立</td><td>伊比利亚共和国（第五共和国后体制）</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0553</td><td>EVENT_INVOLVES_COUNTRY</td><td>伊比利亚第五共和国建立</td><td>德意志联邦共和国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0554</td><td>EVENT_INVOLVES_COUNTRY</td><td>伊比利亚第五共和国建立</td><td>法兰克立宪君主国</td><td>涉及国家</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0555</td><td>CAUSES</td><td>非洲殖民地危机与第四共和国覆灭</td><td>伊比利亚第五共和国建立</td><td>前因</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0556</td><td>RESULTS_IN</td><td>伊比利亚第五共和国建立</td><td>多极均势与新亚洲文明地图</td><td>后果</td><td></td><td>已确定</td></tr>
+</tbody></table></div>
+<h2 id="历史物品留存网">历史物品留存网</h2>
+<p>留存物与其现存持有方、存放地与收藏机构的关系</p>
+<p>边数：<strong>75</strong></p>
+<div class="tw"><table>
+<thead><tr><th>边ID</th><th>关系类型</th><th>起点</th><th>终点</th><th>说明</th><th>时期</th><th>状态</th></tr></thead><tbody>
+<tr><td>AUTO0967</td><td>HELD_BY</td><td>圣斯特凡王冠（波西米亚—奥地利王冠）</td><td>德意志联邦共和国</td><td>现存持有方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0968</td><td>KEPT_IN</td><td>圣斯特凡王冠（波西米亚—奥地利王冠）</td><td>维也纳</td><td>存放地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0969</td><td>KEPT_AT</td><td>圣斯特凡王冠（波西米亚—奥地利王冠）</td><td>维也纳霍夫堡宫</td><td>收藏机构</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0970</td><td>HELD_BY</td><td>雷姆斯圣油瓶</td><td>法兰克立宪君主国</td><td>现存持有方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0971</td><td>KEPT_IN</td><td>雷姆斯圣油瓶</td><td>雷姆斯</td><td>存放地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0972</td><td>KEPT_AT</td><td>雷姆斯圣油瓶</td><td>雷姆斯圣母大教堂</td><td>收藏机构</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0973</td><td>HELD_BY</td><td>《法兰克福宪章》御玺</td><td>德意志联邦共和国</td><td>现存持有方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0974</td><td>KEPT_IN</td><td>《法兰克福宪章》御玺</td><td>法兰克福</td><td>存放地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0975</td><td>KEPT_AT</td><td>《法兰克福宪章》御玺</td><td>法兰克福帝国议会档案馆</td><td>收藏机构</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0976</td><td>HELD_BY</td><td>七选侯权杖</td><td>德意志联邦共和国</td><td>现存持有方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0977</td><td>KEPT_IN</td><td>七选侯权杖</td><td>法兰克福</td><td>存放地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0978</td><td>KEPT_AT</td><td>七选侯权杖</td><td>法兰克福帝国议会档案馆</td><td>收藏机构</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0979</td><td>HELD_BY</td><td>胡斯派圣杯</td><td>德意志联邦共和国</td><td>现存持有方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0980</td><td>KEPT_IN</td><td>胡斯派圣杯</td><td>布拉格</td><td>存放地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0981</td><td>KEPT_AT</td><td>胡斯派圣杯</td><td>布拉格伯利恒礼拜堂</td><td>收藏机构</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0982</td><td>HELD_BY</td><td>维滕堡城堡教堂大门（九十五条论纲之门）</td><td>德意志联邦共和国</td><td>现存持有方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0983</td><td>KEPT_IN</td><td>维滕堡城堡教堂大门（九十五条论纲之门）</td><td>维滕堡</td><td>存放地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0984</td><td>KEPT_AT</td><td>维滕堡城堡教堂大门（九十五条论纲之门）</td><td>维滕堡城堡教堂</td><td>收藏机构</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0985</td><td>HELD_BY</td><td>阿尔卑斯福音派巴洛克祭坛（圣斯特凡）</td><td>德意志联邦共和国</td><td>现存持有方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0986</td><td>KEPT_IN</td><td>阿尔卑斯福音派巴洛克祭坛（圣斯特凡）</td><td>维也纳</td><td>存放地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0987</td><td>KEPT_AT</td><td>阿尔卑斯福音派巴洛克祭坛（圣斯特凡）</td><td>圣斯特凡大教堂</td><td>收藏机构</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0988</td><td>HELD_BY</td><td>加尔文讲坛（日内瓦圣彼得大教堂）</td><td>瑞士永久联邦</td><td>现存持有方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0989</td><td>KEPT_IN</td><td>加尔文讲坛（日内瓦圣彼得大教堂）</td><td>日内瓦</td><td>存放地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0990</td><td>KEPT_AT</td><td>加尔文讲坛（日内瓦圣彼得大教堂）</td><td>日内瓦圣彼得大教堂</td><td>收藏机构</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0991</td><td>HELD_BY</td><td>《维也纳和约》正本</td><td>德意志联邦共和国</td><td>现存持有方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0992</td><td>KEPT_IN</td><td>《维也纳和约》正本</td><td>维也纳</td><td>存放地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0993</td><td>KEPT_AT</td><td>《维也纳和约》正本</td><td>维也纳国家档案馆</td><td>收藏机构</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0994</td><td>HELD_BY</td><td>《十二条款》农民战争传单</td><td>德意志联邦共和国</td><td>现存持有方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0995</td><td>KEPT_IN</td><td>《十二条款》农民战争传单</td><td>维滕堡</td><td>存放地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0996</td><td>KEPT_AT</td><td>《十二条款》农民战争传单</td><td>德意志联邦国家博物馆（社会史部）</td><td>收藏机构</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0997</td><td>HELD_BY</td><td>不列颠《权利宪章》1945/1947 正本</td><td>不列颠联邦共和国</td><td>现存持有方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0998</td><td>KEPT_IN</td><td>不列颠《权利宪章》1945/1947 正本</td><td>伦敦</td><td>存放地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO0999</td><td>KEPT_AT</td><td>不列颠《权利宪章》1945/1947 正本</td><td>枢密院法庭（星室式）</td><td>收藏机构</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1000</td><td>HELD_BY</td><td>金帐汗国册封诏书（雅尔里克）</td><td>罗斯兀鲁思</td><td>现存持有方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1001</td><td>KEPT_IN</td><td>金帐汗国册封诏书（雅尔里克）</td><td>莫斯科</td><td>存放地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1002</td><td>KEPT_AT</td><td>金帐汗国册封诏书（雅尔里克）</td><td>莫斯科罗斯兀鲁思国家档案馆</td><td>收藏机构</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1003</td><td>HELD_BY</td><td>《贵族宪章废止令》原件</td><td>不列颠联邦共和国</td><td>现存持有方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1004</td><td>KEPT_IN</td><td>《贵族宪章废止令》原件</td><td>伦敦</td><td>存放地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1005</td><td>KEPT_AT</td><td>《贵族宪章废止令》原件</td><td>伦敦国家档案馆</td><td>收藏机构</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1006</td><td>HELD_BY</td><td>双王冠旗</td><td>法兰克立宪君主国</td><td>现存持有方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1007</td><td>KEPT_IN</td><td>双王冠旗</td><td>法兰克福</td><td>存放地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1008</td><td>KEPT_AT</td><td>双王冠旗</td><td>法兰克福帝国议会档案馆</td><td>收藏机构</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1009</td><td>HELD_BY</td><td>阿尔卑斯福音派军旗</td><td>德意志联邦共和国</td><td>现存持有方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1010</td><td>KEPT_IN</td><td>阿尔卑斯福音派军旗</td><td>慕尼黑</td><td>存放地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1011</td><td>KEPT_AT</td><td>阿尔卑斯福音派军旗</td><td>巴伐利亚国家博物馆</td><td>收藏机构</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1012</td><td>HELD_BY</td><td>奥克十字旗</td><td>法兰克立宪君主国</td><td>现存持有方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1013</td><td>KEPT_IN</td><td>奥克十字旗</td><td>托洛森</td><td>存放地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1014</td><td>KEPT_AT</td><td>奥克十字旗</td><td>托洛森奥克文化博物馆</td><td>收藏机构</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1015</td><td>HELD_BY</td><td>布拉格首台工业发电机</td><td>德意志联邦共和国</td><td>现存持有方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1016</td><td>KEPT_IN</td><td>布拉格首台工业发电机</td><td>布拉格</td><td>存放地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1017</td><td>KEPT_AT</td><td>布拉格首台工业发电机</td><td>布拉格国家技术博物馆</td><td>收藏机构</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1018</td><td>HELD_BY</td><td>米兰精密织机（波河-阿尔卑斯工业带）</td><td>德意志联邦共和国</td><td>现存持有方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1019</td><td>KEPT_IN</td><td>米兰精密织机（波河-阿尔卑斯工业带）</td><td>米兰</td><td>存放地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1020</td><td>KEPT_AT</td><td>米兰精密织机（波河-阿尔卑斯工业带）</td><td>米兰布雷拉美术馆</td><td>收藏机构</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1021</td><td>HELD_BY</td><td>哥廷根天文台六分仪</td><td>德意志联邦共和国</td><td>现存持有方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1022</td><td>KEPT_IN</td><td>哥廷根天文台六分仪</td><td>哥廷根</td><td>存放地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1023</td><td>KEPT_AT</td><td>哥廷根天文台六分仪</td><td>哥廷根大学</td><td>收藏机构</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1024</td><td>HELD_BY</td><td>汉萨三城联合印记</td><td>德意志联邦共和国</td><td>现存持有方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1025</td><td>KEPT_IN</td><td>汉萨三城联合印记</td><td>汉堡</td><td>存放地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1026</td><td>KEPT_AT</td><td>汉萨三城联合印记</td><td>汉堡艺术馆</td><td>收藏机构</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1027</td><td>HELD_BY</td><td>《共同体德语正字法》标准字样本</td><td>德意志联邦共和国</td><td>现存持有方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1028</td><td>KEPT_IN</td><td>《共同体德语正字法》标准字样本</td><td>法兰克福</td><td>存放地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1029</td><td>KEPT_AT</td><td>《共同体德语正字法》标准字样本</td><td>泛德意志语言会议</td><td>收藏机构</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1030</td><td>HELD_BY</td><td>的里雅斯特共管锚</td><td>德意志联邦共和国</td><td>现存持有方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1031</td><td>KEPT_IN</td><td>的里雅斯特共管锚</td><td>的里雅斯特</td><td>存放地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1032</td><td>KEPT_AT</td><td>的里雅斯特共管锚</td><td>的里雅斯特共管纪念广场</td><td>收藏机构</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1033</td><td>HELD_BY</td><td>诺曼底公爵之盾（1272 年决战遗物）</td><td>法兰克立宪君主国</td><td>现存持有方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1034</td><td>KEPT_IN</td><td>诺曼底公爵之盾（1272 年决战遗物）</td><td>帕里斯</td><td>存放地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1035</td><td>KEPT_AT</td><td>诺曼底公爵之盾（1272 年决战遗物）</td><td>帕里斯王家美术馆（卢浮宫）</td><td>收藏机构</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1036</td><td>HELD_BY</td><td>格拉纳达城门钥匙</td><td>伊比利亚王国</td><td>现存持有方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1037</td><td>KEPT_IN</td><td>格拉纳达城门钥匙</td><td>格拉纳达</td><td>存放地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1038</td><td>KEPT_AT</td><td>格拉纳达城门钥匙</td><td>托莱多王家军械库</td><td>收藏机构</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1039</td><td>HELD_BY</td><td>马格里布基督教化纪念钟</td><td>马格里布（北非西部）</td><td>现存持有方</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1040</td><td>KEPT_IN</td><td>马格里布基督教化纪念钟</td><td>马拉喀什</td><td>存放地</td><td></td><td>已确定</td></tr>
+<tr><td>AUTO1041</td><td>KEPT_AT</td><td>马格里布基督教化纪念钟</td><td>马拉喀什圣堂</td><td>收藏机构</td><td></td><td>已确定</td></tr>
+</tbody></table></div>
+<h2 id="人物与家族关系网-结构化视图">人物与家族关系网 · 结构化视图</h2>
+<h3 id="哈布斯堡-法兰克王统">哈布斯堡 → 法兰克王统</h3>
+<p>```</p>
+<p>鲁道夫之母（卡佩旁系公主）</p>
+<p>│</p>
+<p>▼</p>
+<p>鲁道夫 ──(妻)── 勃艮第伯爵之女</p>
+<p>│ 1272 加冕为法兰克人的国王</p>
+<p>▼</p>
+<p>阿尔布雷希特 ──(妻)── 让娜（香槟女继承人）</p>
+<p>│  ⇒ 哈布斯堡合法吞并香槟</p>
+<p>▼</p>
+<p>…（世系未载）…</p>
+<p>▼</p>
+<p>阿尔布雷希特二世（皇帝，年老无嗣）</p>
+<p>│ 1356 召集法兰克福会议</p>
+<p>├── 一女（未具名）──(婿，未具名)</p>
+<p>▼</p>
+<p>1356《法兰克福宪章》⇒ 双重王冠 + 双轨继承 + 三重加冕</p>
+<p>▼ 14世纪后期</p>
+<p>哈布斯堡取得皇帝位 ⇒ 双元君主国（至1871）</p>
+<p>▼</p>
+<p>1871 法兰克与德意志王冠分离 ⇒ 法兰克立宪君主国</p>
+<p>▼ 1918 失去统治 ⇒ 法兰克共和国 ⇒ 1945 复辟 ⇒ 礼仪性君主制</p>
+<p>```</p>
+<h3 id="卡佩绝嗣与继承争夺">卡佩绝嗣与继承争夺</h3>
+<p>```</p>
+<p>路易九世</p>
+<p>▼</p>
+<p>腓力三世（早逝）</p>
+<p>├── 腓力四世（夭折或仅有女嗣）</p>
+<p>├── 查理（夭折或仅有女嗣）</p>
+<p>└── 路易（夭折或仅有女嗣）</p>
+<p>⇒ 萨利克法下卡佩直系断绝（1270）</p>
+<p>继承争夺者：</p>
+<p>瓦卢瓦的查理      ┐</p>
+<p>埃夫勒的腓力      │</p>
+<p>布列塔尼公爵      ├─→ 哈布斯堡的鲁道夫【胜】─→ 1272 法兰克人的国王</p>
+<p>英格兰爱德华一世  │      （母系卡佩血统 + 勃艮第联姻 + 阿尔萨斯/瑞士军事资源）</p>
+<p>哈布斯堡的鲁道夫  ┘</p>
+<p>```</p>
+<h3 id="普热米斯尔-德意志皇统">普热米斯尔 → 德意志皇统</h3>
+<p>```</p>
+<p>奥托卡二世（波希米亚国王）</p>
+<p>│ 1273 成为德意志最强势候选人</p>
+<p>│ 掌波希米亚 + 奥地利 + 施蒂利亚</p>
+<p>▼ 约1290 罗马加冕为神圣罗马帝国皇帝</p>
+<p>普热米斯尔王朝</p>
+<p>│ 14—15世纪 波西米亚/奥地利德意志化</p>
+<p>│ 16世纪 皈依路德宗-胡斯派混合信条</p>
+<p>▼ 17世纪 泛德意志新教世界最高世俗领袖</p>
+<p>│ 1866 奥法战争击败法兰克、夺取北意大利</p>
+<p>▼ 1871 罗马加冕 ⇒ 德意志帝国（维也纳行政首都 / 罗马加冕圣城）</p>
+<p>▼ 1918 王朝结束 ⇒ 维也纳德意志共和国 ⇒ 1945 联邦化</p>
+<p>```</p>
+<h3 id="金雀花-蒙福尔-不列颠王统">金雀花 → 蒙福尔（不列颠王统）</h3>
+<p>```</p>
+<p>金雀花王朝（12—13世纪跨海帝国）</p>
+<p>│ 爱德华一世：卡佩继承争夺者之一</p>
+<p>▼ 1272 败于鲁道夫、被逐出大陆</p>
+<p>│ ⇒ 诺曼-法兰西精英退回不列颠（逆向的诺曼征服）</p>
+<p>▼ 13—15世纪 绝对主义奠基（废贵族宪章、停开等级会议）</p>
+<p>▼ 16世纪 王室宗教改革：国王为教会最高元首</p>
+<p>▼ 17—18世纪 绝对主义鼎盛（宫廷古典主义、海外殖民）</p>
+<p>▼ 约1789—1815 金雀花倾覆</p>
+<p>蒙福尔王朝（源自法兰西 Montfort-l'Amaury，英语化拼写 Mountfort）</p>
+<p>▼ 1815后 反革命时代加固绝对主义</p>
+<p>▼ 1914—1918 一战获胜 ⇒ 旧制度固化</p>
+<p>▼ 1939—1945 二战战败 ⇒ 王权合法性崩溃</p>
+<p>▼ 1945 制宪会议 + 全民公决 ⇒ 废除王位 ⇒ 不列颠联邦共和国</p>
+<p>```</p>
+<h3 id="蒙古-金帐汗国-罗斯兀鲁思">蒙古 → 金帐汗国 → 罗斯兀鲁思</h3>
+<p>```</p>
+<p>蒙古帝国（长生天 + 佛教 + 萨满 三层结构）</p>
+<p>▼ 13世纪西征</p>
+<p>金帐汗国（14世纪未伊斯兰化）</p>
+<p>│ 制度化/官僚化/地方化：任命大公、税收、道路、驿站、贵族等级</p>
+<p>▼ 莫斯科成为最重要的斯拉夫代理政权</p>
+<p>莫斯科蒙古王朝（蒙古王族与莫斯科大公家族联姻融合）</p>
+<p>▼ 金帐汗国政治覆灭（但文明传统被继承）</p>
+<p>罗斯兀鲁思（后基辅罗斯国家）</p>
+<p>│ 一战：重新夺取基辅、白罗斯</p>
+<p>▼ 二战：基辅王国 + 白罗斯再次脱离</p>
+<p>⇒ 欧洲—亚洲政治文明边界之一</p>
+<p>```</p>
+<hr class="mdhr">
+<h2 id="出处代号">出处代号</h2>
+<ul class="mdul">
+<li>- <strong>S0</strong> = <code>source/设定集.docx</code>（泛德意志世界设定总集（纯文本整合版））</li>
+<li>- <strong>S1</strong> = <code>source/设定集补充.docx</code>（泛德意志世界设定 · 本轮扩充整理稿）</li>
+<li>- <strong>S2</strong> = <code>source/设定集补充2.docx</code>（五国行政·政党·大洲划分）</li>
+<li>- <strong>S3</strong> = <code>source/设定集补充3.docx</code>（设定集3：英国线（盎格鲁-罗曼世界））</li>
+<li>- <strong>S4</strong> = <code>source/设定集补充4.docx</code>（罗斯兀鲁思：蒙古王朝与后基辅罗斯国家传统）</li>
+</ul>
+</div>
+</main>
+
+<footer>
+<div class="madeby"><span class="mk">Created with</span>本页面由 <b>DeepSeek Harness</b> 创作<span class="fl">设定集解析 · 知识图谱构建 · 一致性审计 · 站点生成，全流程由 DeepSeek Harness 完成</span></div><div class="footmeta">出处代号：<a href="../index.html#sources">S0</a> 设定集.docx ｜ S1 设定集补充.docx ｜ S2 设定集补充2.docx ｜ S3 设定集补充3.docx ｜ S4 设定集补充4.docx ｜ <b>S5</b> 整合层（S0–S4 去重合并 + 用户裁定）｜ <b>S*</b> 仿真文献层（基于设定生成，不新增设定）<br><a href="../home.html">主页</a> ／ <a href="../index.html">设定集索引</a> ／ <a href="../wiki/index.html">历史文献</a> ／ <a href="../wiki/docs-index.html">文档中心</a> ／ <a href="../timeline.html">交互式时间轴</a></div>
+</footer>
+<script>(function(){var b=document.getElementById('gnavToggle'),n=document.querySelector('.gnav');if(b&&n){b.onclick=function(){n.classList.toggle('open')};}var p=document.getElementById('bkPrev');if(p){p.onclick=function(){if(history.length>1){history.back();}else{location.href='../home.html';}};}}())</script>
+
+</body>
+</html>

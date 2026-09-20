@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>事件 · 分类清单 · 泛德意志的欧洲</title>
+<style>
+:root{
+  --bg:#14110d; --fg:#e8e2d4; --dim:#a89e8a; --accent:#c9a227; --line:#3a332a;
+  --card:#1d1913; --card2:#231e17; --link:#d8b64a; --ok:#7fa650; --warn:#d0913c; --bad:#c25b45;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+     font-family:"Segoe UI","Microsoft YaHei",system-ui,sans-serif;line-height:1.7}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+header{position:sticky;top:0;z-index:20;background:rgba(20,17,13,.97);
+       border-bottom:1px solid var(--line);backdrop-filter:blur(6px);padding:12px 20px}
+.hdr{max-width:1180px;margin:0 auto}
+h1{margin:0;font-size:19px;letter-spacing:.03em}
+h1 .sub{color:var(--dim);font-size:12px;font-weight:400;margin-left:10px;letter-spacing:0}
+nav.crumbs{font-size:12px;color:var(--dim);margin-top:5px}
+nav.crumbs a{color:var(--dim)}
+nav.crumbs a:hover{color:var(--link)}
+main{max-width:1180px;margin:0 auto;padding:18px 20px 70px}
+h2{font-size:17px;border-bottom:1px solid var(--line);padding-bottom:6px;margin:28px 0 12px}
+h3{font-size:15px;margin:20px 0 8px}
+h4{font-size:13.5px;margin:14px 0 6px;color:#cfc6b2}
+p{margin:8px 0}
+ul,ol{margin:8px 0;padding-left:22px}
+li{margin:3px 0}
+code,.mono{font-family:Consolas,"Cascadia Mono",monospace;font-size:12.5px}
+code{background:#0e0c09;border:1px solid var(--line);border-radius:4px;padding:1px 5px;color:var(--accent)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:14px 17px;margin:12px 0}
+.grid{display:grid;gap:10px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+table{border-collapse:collapse;width:100%;font-size:13px;margin:10px 0}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}
+th{background:#0e0c09;color:#cfc6b2;font-weight:600;white-space:nowrap}
+tr:nth-child(even) td{background:#191510}
+.tag{display:inline-block;font-size:11px;padding:1px 8px;border-radius:20px;
+     border:1px solid var(--line);background:#0e0c09;color:var(--dim);margin:1px 3px 1px 0}
+.tag.ok{color:var(--ok);border-color:#3d4d28}
+.tag.warn{color:var(--warn);border-color:#4d3d22}
+.tag.bad{color:var(--bad);border-color:#4d2a22}
+.tag.s5{color:#8fb6d8;border-color:#2a3d4d;background:#0e1419}
+.tag.sstar{color:#c9a2d8;border-color:#432a4d;background:#180e19}
+/* 文献页 */
+.doc{background:#f6f0e2;color:#241d12;border-radius:10px;padding:30px 38px;margin:16px 0;
+     border:1px solid #c9b98f;box-shadow:0 3px 20px #0006;line-height:1.95;
+     font-family:Georgia,"Times New Roman","Songti SC","SimSun",serif;max-width:820px}
+.doc h3{font-size:21px;margin:0 0 4px;color:#3a2c15;letter-spacing:.02em;font-weight:700}
+.doc .dsub{font-size:12.5px;color:#6d5c3a;margin-bottom:14px;border-bottom:1px solid #d6c9a4;padding-bottom:10px}
+.doc h4{font-size:15px;margin:20px 0 6px;color:#5a4318;font-weight:700}
+.doc p{margin:10px 0}
+.doc ol,.doc ul{margin:10px 0 10px 4px;padding-left:24px}
+.doc li{margin:5px 0}
+.doc b{color:#3a2c15}
+/* 正文中的词条交叉引用标记：浅色下划线点线，不打断阅读，不参与链接嵌套 */
+.xr{border-bottom:1px dotted #a08a52;cursor:help}
+.doc .xr{border-bottom-color:#b09a62;color:#3f3016}
+.doc-preamble{font-style:italic;color:#6d5c3a;border-left:3px solid #c9b98f;padding-left:12px;margin-bottom:16px}
+.doc-seal{text-align:right;font-size:13px;color:#7a6841;font-style:italic;margin-top:22px;
+          border-top:1px solid #d6c9a4;padding-top:10px}
+.docmeta{display:grid;grid-template-columns:120px 1fr;gap:6px 14px;font-size:13.5px;margin:12px 0}
+.docmeta dt{color:var(--dim);font-size:12.5px}
+.docmeta dd{margin:0}
+.doclist li{margin:7px 0}
+.kindbadge{font-size:11.5px;padding:2px 9px;border-radius:20px;background:#2a2218;
+           border:1px solid #4a3d22;color:#d8b64a;margin-right:6px}
+.kv{display:grid;grid-template-columns:132px 1fr;gap:5px 12px;font-size:13.5px;margin:10px 0}
+.kv dt{color:var(--dim);font-size:12.5px}
+.kv dd{margin:0}
+.q{position:sticky;top:56px;z-index:15;background:var(--bg);padding:10px 0}
+input[type=search],input[type=text],select{
+  background:#0e0c09;border:1px solid var(--line);color:var(--fg);border-radius:7px;
+  padding:9px 12px;font-size:14px;font-family:inherit}
+input[type=search]{width:100%}
+input:focus,select:focus{outline:none;border-color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.chip{font-size:12px;padding:3px 10px;border-radius:20px;border:1px solid var(--line);
+      background:#0e0c09;color:var(--dim);cursor:pointer;user-select:none}
+.chip:hover{border-color:var(--accent);color:var(--fg)}
+.chip.on{background:var(--accent);color:#14110d;border-color:var(--accent);font-weight:600}
+.item{border:1px solid var(--line);border-radius:9px;background:var(--card);padding:11px 14px;margin-bottom:9px}
+.item h3{margin:0 0 4px;font-size:15px}
+.item .meta{font-size:11.5px;color:var(--dim);margin-bottom:4px}
+.item .sm{font-size:13px;color:#d6cebc}
+mark{background:var(--accent);color:#14110d;border-radius:2px;padding:0 1px}
+.count{color:var(--dim);font-size:12px;margin:10px 0}
+.empty{color:var(--dim);padding:30px 0;text-align:center}
+.rid{font-family:Consolas,monospace;font-size:11px;color:var(--accent);
+     border:1px solid var(--line);border-radius:4px;padding:1px 5px;margin-left:7px}
+footer{max-width:1180px;margin:0 auto;padding:0 20px 40px;color:var(--dim);font-size:11.5px}
+.pill{display:inline-block;min-width:22px;text-align:center}
+.legend{font-size:12px;color:var(--dim)}
+/* 时间轴 */
+.tl-wrap{position:relative;margin:14px 0 0}
+.tl-axis{position:relative;height:34px;border-bottom:2px solid var(--line);margin-bottom:6px}
+.tl-tick{position:absolute;top:0;height:34px;width:1px;background:var(--line)}
+.tl-tick span{position:absolute;top:8px;left:4px;font-size:10.5px;color:var(--dim);white-space:nowrap}
+.tl-lane{position:relative;height:26px;margin:5px 0;background:#191510;border-radius:4px;
+         border:1px solid #2a251d}
+.tl-ev{position:absolute;top:3px;height:19px;border-radius:4px;cursor:pointer;
+       background:#4a3f22;border:1px solid var(--accent);overflow:hidden}
+.tl-ev:hover{background:var(--accent);z-index:6}
+.tl-ev span{font-size:10px;color:#f3ecd8;padding:0 4px;white-space:nowrap;line-height:19px}
+.tl-ev:hover span{color:#14110d}
+.tl-lane-label{position:absolute;left:0;top:3px;height:19px;line-height:19px;font-size:10.5px;
+               color:#a89e8a;transform:translateX(-100%);padding-right:9px;white-space:nowrap;
+               text-align:right;box-sizing:border-box;pointer-events:none}
+.tl-holder{padding-left:138px}
+#tip{position:fixed;z-index:50;max-width:380px;background:var(--card2);border:1px solid var(--accent);
+     border-radius:8px;padding:10px 13px;font-size:12.5px;display:none;box-shadow:0 6px 24px #000a}
+#tip h4{margin:0 0 4px;color:var(--accent);font-size:13.5px}
+.scrub{width:100%;margin:8px 0 4px}
+/* 主页 */
+.hero{padding:54px 20px 36px;text-align:center;
+      background:radial-gradient(ellipse at 50% -10%,#2c2418 0%,#14110d 64%);
+      border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(24px,4.4vw,36px);letter-spacing:.06em;margin:0 0 8px;font-weight:700}
+.hero h1 b{color:var(--accent)}
+.hero .tagline{color:#bdb4a1;font-size:14px;max-width:820px;margin:12px auto 0;line-height:1.9}
+.hero .realms{margin-top:22px;display:flex;gap:9px;justify-content:center;flex-wrap:wrap}
+.realm{font-size:12.5px;padding:5px 14px;border-radius:22px;border:1px solid var(--line);
+       background:#0e0c09;color:#cfc6b2}
+.realm i{font-style:normal;color:var(--accent);font-weight:600}
+.entries{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:24px 0}
+.entry{display:block;border:1px solid var(--line);border-radius:11px;background:var(--card);
+       padding:18px 20px;transition:transform .16s,border-color .16s,box-shadow .16s;
+       position:relative;overflow:hidden}
+.entry:hover{border-color:var(--accent);background:var(--card2);transform:translateY(-2px);
+             text-decoration:none;box-shadow:0 9px 28px #0007}
+.entry .ico{font-size:22px;margin-bottom:8px;display:block}
+.entry h3{margin:0 0 6px;font-size:16px;color:var(--fg)}
+.entry p{margin:0;font-size:12.5px;color:var(--dim);line-height:1.74}
+.entry .n{position:absolute;right:15px;top:14px;font-size:11px;color:var(--accent);
+          border:1px solid var(--line);border-radius:20px;padding:1px 9px;background:#0e0c09}
+.entry.wide{grid-column:span 2}
+@media(max-width:700px){.entry.wide{grid-column:span 1}}
+.stats{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));margin:18px 0}
+.stat{border:1px solid var(--line);border-radius:9px;background:#191510;padding:14px 10px;text-align:center}
+.stat b{display:block;font-size:23px;color:var(--accent);font-weight:700;line-height:1.3}
+.stat span{font-size:11.5px;color:var(--dim)}
+.quote{border-left:3px solid var(--accent);padding:3px 0 3px 17px;margin:22px 0;
+       color:#cfc6b2;font-size:13.5px;line-height:1.88}
+.quote cite{display:block;color:var(--dim);font-size:12px;font-style:normal;margin-top:7px}
+.twocol{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(318px,1fr))}
+.pill-row{display:flex;flex-wrap:wrap;gap:6px;margin:9px 0}
+a.pill{font-size:12px;padding:3px 11px;border-radius:20px;border:1px solid var(--line);
+       background:#0e0c09;color:#cfc6b2;display:inline-block}
+a.pill:hover{border-color:var(--accent);color:var(--fg);text-decoration:none}
+a.pill.gold{border-color:#5a4a22;color:var(--accent)}
+.tl-mini{position:relative;height:158px;margin:14px 0 4px;border:1px solid var(--line);
+         border-radius:9px;background:#191510;overflow:hidden}
+.tl-mini .dot{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--accent);
+              border:1px solid #0e0c09;transform:translate(-50%,-50%);cursor:pointer;
+              transition:width .14s,height .14s,box-shadow .14s}
+.tl-mini .dot:hover{width:15px;height:15px;box-shadow:0 0 0 3px #c9a22744}
+.tl-mini .dot.rel{background:#c25b45}
+.tl-mini .dot.cul{background:#7fa650}
+.tl-mini .dot.pol{background:#8fb6d8}
+.tl-mini .axl{position:absolute;bottom:6px;width:1px;height:8px;background:#3a332a}
+.tl-mini .axt{position:absolute;bottom:17px;font-size:9.5px;color:#6f6656;transform:translateX(-50%)}
+.tl-mini .lgd{position:absolute;right:9px;top:7px;font-size:10px;color:var(--dim)}
+/* 主页迷你时间轴：泳道 + 密度柱 + 锚点 */
+.tlmini-grid{position:absolute;left:0;right:0;top:0;bottom:26px;pointer-events:none}
+.tlmini-line{position:absolute;top:0;bottom:0;width:1px;background:#221e18}
+.tlmini-lane{position:relative;height:44px;background:#1c1813;border-bottom:1px solid #221e18}
+.tlmini-lane span{position:absolute;left:9px;top:6px;font-size:10.5px;color:#7d7462;
+                  letter-spacing:.04em;z-index:3;pointer-events:none}
+.tlmini-bars{position:absolute;left:0;right:0;top:0;bottom:26px;z-index:1}
+.tl-mini .bar{position:absolute;bottom:0;width:8px;border-radius:2px 2px 0 0;
+              opacity:.92;transition:opacity .14s,filter .14s}
+.tl-mini .bar:hover{opacity:1;filter:brightness(1.4)}
+.tl-mini .bar i{position:absolute;top:-13px;left:50%;transform:translateX(-50%);font-size:9px;
+                font-style:normal;color:#cfc6b2}
+.tl-mini .bar.rel{background:linear-gradient(#c25b45,#8e4033)}
+.tl-mini .bar.cul{background:linear-gradient(#7fa650,#5a7a38)}
+.tl-mini .bar.pol{background:linear-gradient(#8fb6d8,#5a7fa3)}
+.tlmini-anchor{position:absolute;bottom:0;height:100%;width:1px;background:#3a332a;
+               transform:translateX(-0.5px);pointer-events:none;z-index:2}
+.tlmini-anchor i{position:absolute;bottom:28px;left:-2px;width:5px;height:5px;border-radius:50%;
+                 background:#c9a227}
+.tlmini-anchor b{position:absolute;bottom:8px;left:0;transform:translateX(-50%);
+                 font-size:9.5px;font-weight:400;color:#8a8170;white-space:nowrap}
+.tlmini-foot{display:flex;justify-content:space-between;font-size:11.5px;color:var(--dim);
+             margin-top:7px}
+/* Hero 分叉图 */
+.fork{display:block;width:100%;max-width:900px;margin:28px auto 0;height:auto}
+.fork .fkl{fill:#c9a227;font-size:12px;font-weight:600}
+.fork .fkt{fill:#e2dbcb;font-size:12.5px}
+.fork .fks{fill:#8f8674;font-size:11px}
+.fork .fkm{fill:#8f8674;font-size:10.5px}
+/* Markdown 转换页 */
+.mdbody{font-size:13.5px;line-height:1.85}
+.mdbody h1{font-size:23px;margin:26px 0 12px;color:var(--accent);font-weight:700}
+.mdbody h2{font-size:18px;margin:30px 0 12px;border-bottom:1px solid var(--line);padding-bottom:7px}
+.mdbody h3{font-size:15.5px;margin:22px 0 9px;color:#e6dfcd}
+.mdbody h4{font-size:14px;margin:16px 0 7px;color:#cfc6b2}
+.mdbody p{margin:9px 0}
+.mdbody ul.mdul,.mdbody ol{margin:9px 0;padding-left:24px}
+.mdbody li{margin:4px 0}
+.mdbody code{background:#0e0c09;border:1px solid var(--line);border-radius:4px;
+             padding:1px 5px;color:var(--accent);font-size:12.5px}
+.mdbody a{color:var(--link)}
+.mdbody blockquote.mdq{border-left:3px solid var(--accent);background:#191510;
+                       margin:12px 0;padding:8px 15px;border-radius:0 7px 7px 0}
+.mdbody blockquote.mdq p{margin:5px 0;color:#cfc6b2}
+.mdbody hr.mdhr{border:none;border-top:1px solid var(--line);margin:26px 0}
+.mdbody .tw{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:8px}
+.mdbody table{margin:0;font-size:12.5px;border-collapse:collapse;width:100%}
+.mdbody th{position:sticky;top:0;background:#14110d;z-index:1}
+.mdbody td,.mdbody th{border:none;border-bottom:1px solid #241f19;border-right:1px solid #241f19;
+                      padding:6px 10px;vertical-align:top}
+.mdbody tr:last-child td{border-bottom:none}
+.mdbody tr:nth-child(even) td{background:#1a1611}
+.mdbody strong{color:#f0e9d8}
+/* 全局顶栏 */
+.topbar{position:sticky;top:0;z-index:30;background:rgba(16,13,10,.97);
+        border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+.topbar-in{max-width:1180px;margin:0 auto;padding:9px 20px;display:flex;align-items:center;
+           gap:14px;flex-wrap:nowrap;min-width:0}
+.brand{font-size:14.5px;font-weight:600;color:var(--accent);letter-spacing:.05em;
+       white-space:nowrap;flex-shrink:0}
+.brand:hover{text-decoration:none;color:#e0bc45}
+.gnav{display:flex;gap:4px;margin-left:auto;flex-shrink:0}
+.gnav-i{font-size:13px;color:var(--dim);padding:5px 12px;border-radius:7px;white-space:nowrap;
+        border:1px solid transparent}
+.gnav-i:hover{color:var(--fg);background:#211c16;text-decoration:none}
+.gnav-i.on{color:#14110d;background:var(--accent);border-color:var(--accent);font-weight:600}
+.gnav-t{display:none;background:#211c16;border:1px solid var(--line);color:var(--fg);
+        border-radius:7px;font-size:15px;padding:3px 10px;cursor:pointer}
+/* 左上角返回导航 */
+.backnav{display:flex;gap:6px;flex-shrink:0}
+.bkn{font-size:12.5px;color:#cfc6b2;background:#211c16;border:1px solid var(--line);
+     border-radius:7px;padding:5px 11px;white-space:nowrap;cursor:pointer;
+     font-family:inherit;line-height:1.35;transition:border-color .14s,color .14s,background .14s}
+.bkn:hover{border-color:var(--accent);color:var(--accent);background:#2a2218;text-decoration:none}
+/* 页脚署名 */
+.madeby{margin:30px 0 0;padding:22px 24px;text-align:center;border-radius:11px;
+        background:linear-gradient(135deg,rgba(201,162,39,.10),rgba(201,162,39,.03) 45%,transparent);
+        border:1px solid #3d3527;font-size:14px;color:#ddd5c3;letter-spacing:.04em}
+.madeby .mk{display:block;font-size:11.5px;color:var(--dim);letter-spacing:.22em;
+            text-transform:uppercase;margin-bottom:7px}
+.madeby b{color:var(--accent);font-weight:700;font-size:16px;letter-spacing:.06em;
+          padding:0 3px}
+.madeby .fl{display:block;margin-top:9px;font-size:11.5px;color:#7d7462;letter-spacing:.02em}
+.footmeta{font-size:11.5px;color:var(--dim);line-height:1.9;margin-top:20px;
+          padding-top:16px;border-top:1px solid var(--line)}
+.footmeta a{color:#a89e8a}
+.footmeta a:hover{color:var(--link)}
+@media(max-width:760px){
+  .backnav{order:3;width:100%}
+  .bkn{flex:1;text-align:center}
+}
+@media(max-width:760px){
+  .topbar-in{flex-wrap:wrap;gap:10px}
+  .gnav-t{display:block;margin-left:auto}
+  .gnav{display:none;width:100%;flex-direction:column;gap:2px}
+  .gnav.open{display:flex}
+  .gnav-i{padding:8px 12px}
+}
+</style>
+
+</head>
+<body>
+<div class="topbar"><div class="topbar-in"><div class="backnav"><a class="bkn" href="../home.html" title="回到主页">⌂ 回到主页</a><button class="bkn" id="bkPrev" type="button" title="返回上一页">← 返回上一页</button></div><a class="brand" href="../home.html">泛德意志的欧洲</a><nav class="gnav"><a class="gnav-i" href="../home.html">主页</a><a class="gnav-i on" href="../index.html">索引</a><a class="gnav-i" href="../wiki/index.html">文献</a><a class="gnav-i" href="../wiki/docs-index.html">文档</a><a class="gnav-i" href="../timeline.html">时间轴</a></nav><button class="gnav-t" id="gnavToggle" aria-label="切换导航">☰</button></div></div>
+
+<header><div class="hdr">
+<h1>📜 事件<span class="sub">共 58 条</span></h1>
+<nav class="crumbs"><a href="../home.html">主页</a> ／ <a href="../index.html">索引</a> ／
+<a href="docs-index.html">文档</a> ／ 分类清单</nav></div></header>
+<main>
+<div class="card">
+<span class="kindbadge">分类型清单</span>从 929 年科尔多瓦自立哈里发到 1972—1978 年奥克正常化。
+<div class="pill-row" style="margin-top:10px"><a class="chip" href="list-countries.html">🏛 国家与政治实体</a><a class="chip" href="list-dynasties.html">👑 王朝与家族</a><a class="chip" href="list-people.html">🧑 人物</a><a class="chip on" href="list-events.html">📜 事件</a><a class="chip" href="list-wars.html">⚔ 战争</a><a class="chip" href="list-treaties.html">📃 条约与宪章</a><a class="chip" href="list-religions.html">✝ 宗教</a><a class="chip" href="list-languages.html">🔤 语言</a><a class="chip" href="list-places.html">📍 地点</a><a class="chip" href="list-subdivisions.html">🗺 行政区划</a><a class="chip" href="list-parties.html">🗳 政党</a><a class="chip" href="list-organizations.html">🎓 机构与学校</a><a class="chip" href="list-artifacts.html">🏺 历史物品留存</a></div>
+<div style="margin-top:8px"><a href="../index.html#events">→ 在设定集索引中检索本类</a></div>
+</div>
+<div class="entries">
+<a class="entry" href="e-1648-exiles.html"><h3>1648年维也纳和约后的流亡波次</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>维也纳和约后，罗曼-法兰西精英的又一次流亡波次进入英伦。</p></a><a class="entry" href="e-1789-exiles.html"><h3>1789年伊比利亚革命后的流亡波次</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>伊比利亚革命后的又一次罗曼-法兰西精英流亡波次。S0另载：迁往伊比利亚的奥克和法兰克知识分子加强了奥克文化复兴。</p></a><a class="entry" href="e-1848-revolution.html"><h3>1848年革命与大德意志方案失败</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>大德意志议会召开，讨论建立包括德意志诸邦、法兰克、低地、北意大利在内的“大德意志”联邦或帝国。最终被法兰克哈布斯堡统治者和德意志各邦君主联合镇压。</p></a><a class="entry" href="e-1866-war.html"><h3>1866年奥法战争</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>德意志波西米亚-奥地利公国（普热米斯尔家族）在几十年间推进小德意志统一方案。1866年，普热米斯尔在奥法战争中击败法兰克，夺取北意大利。</p></a><a class="entry" href="e-1356-charter.html"><h3>《法兰克福宪章》与双王冠确立</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>皇帝阿尔布雷希特二世年老无嗣，仅有一女。法兰克贵族要求女婿继承法兰克王位，德意志选侯坚持选举德意志诸侯为皇帝。教皇介入。阿尔布雷希特二世召集法兰克贵族、德意志选侯、教皇使节和瑞士联邦代表在法兰克福开会八个月，达成妥协。</p></a><a class="entry" href="e-1648-vienna.html"><h3>《维也纳和约》与帝国分权</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>确认宗教条款，诸侯可自选信仰；低地联合省正式独立；瑞士联邦独立和永久中立确认；波西米亚恢复胡斯派-路德宗混合教会；南德意志阿尔卑斯福音派获得帝国承认；北意大利留在哈布斯堡法兰克统治下；法兰克在奥克地区占领后撤；普热米斯尔获得西里西亚和摩拉维亚完全控制权；帝国进一步分权。</p></a><a class="entry" href="e-1918-exiles.html"><h3>一战后的知识分子流散</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>迁往美国（爱因斯坦式物理学家、法兰克福学派式社会理论家、包豪斯式建筑师）；迁往瑞士（日内瓦、苏黎世、巴塞尔流亡学术中心）；迁往伊比利亚（奥克和法兰克知识分子，加强奥克文化复兴）；多数留在中欧参与战后重建。</p></a><a class="entry" href="e-1618-religion.html"><h3>三十年宗教战争</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>战争不再只是“天主教—新教”的简单冲突，而是哈布斯堡中央集权 vs 普热米斯尔地方/新教权力，叠加法兰克-德意志竞争、伊比利亚介入、北意大利问题、瑞士自治、低地独立。</p></a><a class="entry" href="e-1945-britain-democratisation.html"><h3>不列颠战败与被监督的民主化</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>一战获胜固化旧制度，二战作为协约国成员战败，王权合法性崩溃，被迫立宪化。民主化不是自发生长，而是在中欧协定胜利方（德意志、法兰克）严肃监督下被强制推行。两项被强加的改造：强制实行多党制、强制联邦化分权。过渡形态：1945至约1955年为监督过渡期，设监督委员会与制宪会议。</p></a><a class="entry" href="e-1272-absolutism.html"><h3>不列颠绝对主义奠基</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>1272后跨海帝国路线破产，英王被逐回岛屿，失去大陆战争的财政议价杠杆，钱袋权无从生长。罗曼语精英与日耳曼语民众长期分层，跨阶层的贵族与平民联合议价集团无法形成。诺曼-罗曼王统带来“王在国中即皇帝”式的罗马法主权观。于是等级会议自14世纪后基本停开，1215年式贵族宪章曾被签署而后废止。</p></a><a class="entry" href="e-1300-dual-source.html"><h3>东西双源格局定型</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>哈布斯堡=西部法兰克文明，普热米斯尔=东部德意志文明。两者都属于广义日耳曼世界，但开始走向不同道路。</p></a><a class="entry" href="e-1789-revolution.html"><h3>伊比利亚-奥克大革命</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>1789年，伊比利亚-奥克地区爆发大革命，建立伊比利亚革命帝国。革命军席卷南欧，占领奥克地区，攻入南意大利那不勒斯，迫使神圣罗马帝国解散。哈布斯堡法兰克和普热米斯尔波西米亚-奥地利被迫让出奥克和南意大利那不勒斯权力。</p></a><a class="entry" href="e-1940-iberia-defeat.html"><h3>伊比利亚第三共和国被法兰克与德意志击败</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>二战中伊比利亚第三共和国再度站到协约国一侧；1940 年，法兰克与德意志将其击败，第三共和国终结，伊比利亚进入被占领与过渡期。</p></a><a class="entry" href="e-1871-iberia-2emp-fall.html"><h3>伊比利亚第二帝国被德意志帝国击败，第三共和国成立</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>普热米斯尔攻入受伊比利亚第二帝国长臂管辖的那不勒斯与罗马，在罗马加冕成立德意志帝国；伊比利亚第二帝国同时被击败，自此转入第三共和国。</p></a><a class="entry" href="e-1960-iberia-5rep.html"><h3>伊比利亚第五共和国建立</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>第四共和国覆灭后，伊比利亚于 1960 年重建为第五共和国，总统权力重新加强，形成「强国家 + 民主化」的现行体制。</p></a><a class="entry" href="e-1945-iberia-4rep.html"><h3>伊比利亚第四共和国成立</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>二战结束后，由胜利方（德意志等）推动民主化，伊比利亚建立高度议会化的第四共和国，总统权力受限，实权归于议会与内阁。</p></a><a class="entry" href="e-iberian-unification.html"><h3>伊比利亚统一与伊比利亚王国建立</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>由西班牙-阿拉贡（及奥克王国）为起点，伊比利亚各基督教王国逐步统一，建立伊比利亚王国。</p></a><a class="entry" href="e-1524-peasants.html"><h3>农民战争</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>起因包括经济压迫、宗教改革宣称“基督徒自由”、政治动荡、瘟疫与饥荒。《十二条款》要求自由选举牧师、废除农奴制、恢复公地权利、降低赋税劳役、限制贵族司法权、宗教自由。北德意志路德宗诸侯联合镇压，马丁·路德发表《反对杀人越货的农民暴徒》。南德意志普热米斯尔和阿尔卑斯福音派采取较温和态度。</p></a><a class="entry" href="e-crusades.html"><h3>十字军东征</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p><strong>法兰西罗曼王国</strong>（1270 年前大陆北部的罗曼语政治体，即十字军的发动者）与教皇国向黎凡特发动的军事远征。1270 年卡佩绝嗣、1272 年哈布斯堡入主之后，大陆北部的十字军遗产与地中海—黎凡特传统由日耳曼的法兰克承继，并最终形成帕里斯的东方学传统（S1）。</p></a><a class="entry" href="e-maghreb-christianisation.html"><h3>南下北非与马格里布的基督教化、欧洲化</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>伊比利亚南下北非驱逐穆斯林，此后长期统治并基督教化、欧洲化马格里布。S2 明确该地区“没有特殊宪制地位”，与半岛同属一个国家行政体系。</p></a><a class="entry" href="e-1945-occitan-issue.html"><h3>南部奥克省建制与法兰克-奥克问题</h3><div style="margin:4px 0 6px"><span class="tag bad">修正</span></div><p>二战后法兰克获得奥克地区，设立南部奥克省这一特殊建制（1945-1975年的临时性省级行政层，而非永久性第一级联邦单位）。帕里斯中央政府 ↓ 法兰克本土各州，同时帕里斯中央政府 ↓ 南部奥克省 ↓ 奥克各州。</p></a><a class="entry" href="e-1270-capet.html"><h3>卡佩绝嗣与法兰克继承危机</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>路易九世后裔连续死亡，腓力三世早逝，其子腓力四世、查理、路易均夭折或仅有女嗣。萨利克法下卡佩直系断绝。继承争夺者有瓦卢瓦的查理、埃夫勒的腓力、布列塔尼公爵、英格兰国王爱德华一世、哈布斯堡的鲁道夫。</p></a><a class="entry" href="e-1700-dual-crown.html"><h3>双王冠的“准融合”</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>宗教战争后，哈布斯堡与普热米斯尔长期妥协，通过联姻、帝国议会、共同防御条约和语言共同体维持“法兰克-德意志王冠几乎融为一体”。但宗教差异、语言差异和北意大利争夺使融合停留在王朝联合层面。</p></a><a class="entry" href="e-1815-restoration.html"><h3>反革命时代与旧秩序重建</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>伊比利亚革命帝国最终被击败，但是革命没有被真正消灭。它留下民族主义、共和主义、立宪主义、人民主权。</p></a><a class="entry" href="e-1400-dual-empire.html"><h3>哈布斯堡回归帝国与双元君主国</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>普热米斯尔统治下的帝国在后继者手中因集权过度松动。哈布斯堡法兰克通过联姻、选侯斡旋和军事介入，在14世纪后期取得皇帝位。</p></a><a class="entry" href="e-1945-kiev.html"><h3>基辅王国与白罗斯脱离莫斯科国</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>一战期间罗斯兀鲁思曾以军事手段重新夺取基辅、白罗斯等地区；二战后基辅王国再次脱离。一种合理方案是二战后白罗斯与基辅王国同时脱离莫斯科国，与基辅王国组成联邦。</p></a><a class="entry" href="e-1918-kiev-split.html"><h3>基辅王国与罗斯兀鲁思的文明分流</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>基辅王国认为自己是古罗斯传统的真正继承者，强调基辅、东斯拉夫传统、东欧基督教、欧洲政治文化、古罗斯法律传统、与中欧/德意志/波罗的海的联系，越来越靠近欧洲文明。罗斯兀鲁思则强调蒙古帝国、金帐汗国、莫斯科王朝、草原政治传统、北亚、东正教/蒙古佛教复合文化，因此越来越接近亚洲文明。</p></a><a class="entry" href="e-1960-multipolar.html"><h3>多极均势与新亚洲文明地图</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>从一超到多极均势：德意志联邦（超）、法兰克、美国、罗斯兀鲁思、英联邦、伊比利亚六极。无冷战，意识形态斗争未成主线。亚洲形成更复杂的文明梯度：中国东部儒家+佛教+道教；西域/塔里木西域佛教；西藏藏传佛教；蒙古长生天+佛教+萨满；西伯利亚萨满+长生天影响；中亚西部伊斯兰为主；伊朗、两河、阿拉伯伊斯兰；安…</p></a><a class="entry" href="e-1975-occitan-normalisation.html"><h3>奥克省废除与“奥克正常化”（1972—1978）</h3><div style="margin:4px 0 6px"><span class="tag bad">修正</span></div><p>1972—1978 年（1975 为关键节点），帕里斯推动“奥克正常化”，最终南部奥克省废除，原来的奥克州全部直接成为普通联邦州。中央政府 ↓ 所有联邦州，不再存在“中央 → 奥克省 → 奥克州”这一层。</p></a><a class="entry" href="e-1273-ottokar.html"><h3>奥托卡二世崛起与东西双源形成</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>1273年德意志选侯无法再选鲁道夫，波希米亚国王奥托卡二世成为最强势候选人。他击败巴伐利亚、奥地利贵族等反对者，掌控波希米亚、奥地利、施蒂利亚，推行皇权加强政策。1290年前后在罗马加冕为神圣罗马帝国皇帝。</p></a><a class="entry" href="e-1517-mamluk-end.html"><h3>安纳托利亚突厥帝国取代马穆鲁克</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>安纳托利亚的突厥帝国吞并马穆鲁克统治的埃及与叙利亚，并取得汉志两圣地的宗主权。</p></a><a class="entry" href="e-1500-reformation.html"><h3>宗教改革与普热米斯尔新教化</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>16世纪宗教改革后，普热米斯尔正式皈依路德宗-胡斯派混合信条，建立波西米亚福音教会。巴伐利亚、奥地利、施蒂利亚、蒂罗尔形成“阿尔卑斯福音派”。到17世纪，普热米斯尔成为泛德意志新教世界最高世俗领袖。</p></a><a class="entry" href="e-1918-collapse.html"><h3>德意志帝国瓦解与法兰克共和化</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>普热米斯尔王朝结束，成立维也纳德意志共和国，并被迫放弃波兰地区、接受北意大利非军事化、接受的里雅斯特国际共管及其他战后安排。法兰克方面哈布斯堡失去实际统治，成立法兰克共和国，但哈布斯堡贵族仍然渗透政府与军队。</p></a><a class="entry" href="e-1945-settlement.html"><h3>战后德意志世界恢复与联邦化</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>德意志共和国取消战后不平等条约、收复波兰地区、重建联邦、低地重新加入、北意大利重新加入。法兰克哈布斯堡恢复统治、建立君主立宪共和国、收回勃艮第与洛林、不重新占领奥克。</p></a><a class="entry" href="e-reconquista.html"><h3>收复失地运动</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>伊比利亚各基督教王国历时数百年逐步收复半岛，驱逐穆斯林政权。S2 第十八节以此作为伊比利亚历史链条的起点，并由此形成“共同基督教/伊比利亚身份”。</p></a><a class="entry" href="e-1945-asia-order.html"><h3>新亚洲秩序与文明边界线</h3><div style="margin:4px 0 6px"><span class="tag warn">待定</span></div><p>S1 指出下一阶段最值得钉死的并不是继续给世界增加国家，而是确定一条非常关键的“宗教—文明边界线”：伊斯兰文明究竟止于哪里？西域佛教究竟覆盖到哪里？蒙古长生天世界向西延伸到哪里？罗斯兀鲁思何时、以什么方式进入这个非伊斯兰化的中亚？</p></a><a class="entry" href="e-1400-15c-germanisation.html"><h3>普热米斯尔的德意志化</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>普热米斯尔在波西米亚、奥地利、南德意志推进德意志化。德语成为宫廷语言、行政语言、城市语言，捷克语没有消失但逐渐边缘化。</p></a><a class="entry" href="e-frankish-orientalism.html"><h3>法兰克东方学传统的形成</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>法兰克承继了<strong>法兰西罗曼王国</strong>的十字军遗产（天主教、地中海传统、北非与黎凡特传统影响），加上帕里斯自身的神学、历史、东方学传统，发展出自己的东方学学术传统。</p></a><a class="entry" href="e-1501-persia-shiite.html"><h3>波斯确立什叶派国家传统</h3><div style="margin:4px 0 6px"><span class="tag warn">待定</span></div><p>波斯统一并确立什叶派为国教，成为伊斯兰世界内部与逊尼派阿拉伯—安纳托利亚体系并立的第二极。</p></a><a class="entry" href="e-1945-ireland.html"><h3>爱尔兰全岛独立</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>战前不列颠绝对君主国把爱尔兰列为四个省区；1945年战败后帝国体系瓦解，在监督方压力与爱尔兰民族运动的共同作用下，全岛一并释放。分治方案被否决，因为绝对君主国从未在爱尔兰形成足以切割的移民-本土双元结构。</p></a><a class="entry" href="e-1031-taifas.html"><h3>科尔多瓦哈里发国分裂为诸泰法</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>科尔多瓦哈里发国分裂为诸多泰法小国，安达卢斯政治碎片化；北非的穆拉比特与穆瓦希德两王朝先后渡海接管。</p></a><a class="entry" href="e-0929-cordoba.html"><h3>科尔多瓦自立哈里发</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>阿卜杜勒·拉赫曼三世自立为哈里发，使安达卢斯在政治上与阿拔斯、法蒂玛三足鼎立。</p></a><a class="entry" href="e-1212-las-navas.html"><h3>穆瓦希德在伊比利亚战败</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>伊比利亚各基督教王国联军击败穆瓦希德，北非柏柏尔王朝在伊比利亚的统治崩溃。</p></a><a class="entry" href="e-ww1.html"><h3>第一次世界大战</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>奥地利德意志与法兰克携手，对抗伊比利亚第三共和国、英帝国、罗斯兀鲁思和美国。最终战败，双方两败俱伤。</p></a><a class="entry" href="e-1939-ww2.html"><h3>第二次世界大战</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>意识形态斗争从未发生。法兰克哈布斯堡重新统治，建立法兰克君主立宪共和国，统治奥克以外法兰克地区。德意志共和国取消所有不平等条约，收复波兰，将西斯拉夫人赶去乌克兰-罗斯兀鲁思，建立统一联邦制民主共和国。</p></a><a class="entry" href="e-1900-industry.html"><h3>第二次工业革命与三大工业带</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>新教奥地利德意志帝国与美国成为第二次工业革命中心。德意志世界拥有现实历史中德国+奥地利+波西米亚+荷兰+北意大利等多个工业资产，形成三个巨型工业带：莱茵-低地（钢铁、化工、机械）、多瑙-波西米亚（电气、汽车、军工）、波河-阿尔卑斯（纺织、金融、精密仪器）。法兰克形成中部工业带（洛林、勃艮第北部、香槟…</p></a><a class="entry" href="e-1500-ros-uhlus.html"><h3>罗斯兀鲁思建立与后基辅罗斯国家传统</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>金帐汗国最终在政治意义上覆灭，但其制度、贵族、军队和政治文化被莫斯科继承。历史连续性：蒙古帝国 → 金帐汗国 → 金帐汗国诸政治实体 → 莫斯科蒙古王朝 → 罗斯兀鲁思。罗斯兀鲁思甚至可以把金帐汗国视为自己的前身王朝。</p></a><a class="entry" href="e-1871-empire.html"><h3>罗马加冕与德意志帝国成立</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>普热米斯尔推进小德意志统一，攻入受伊比利亚第二帝国长臂管辖的那不勒斯和罗马，在罗马加冕成立德意志帝国。</p></a><a class="entry" href="e-anglo-frankish-rivalry.html"><h3>英-法兰克竞争长期化</h3><div style="margin:4px 0 6px"><span class="tag warn">待定</span></div><p>1272年鲁道夫击败诺曼底公爵后，英格兰被逐出大陆，英-法兰克竞争长期化。战后演变为一种「正统错位」：帕里斯自认是日耳曼世界的延伸（不主张罗曼正统），伦敦则放弃日耳曼身份、更倾向罗曼身份（但对大陆领土不做要求）。两者的语言-文化竞赛（谁的正字法、谁的古典典范算正统）成为继“奥克问题”之后的第二条文化…</p></a><a class="entry" href="e-1200-mongol.html"><h3>蒙古帝国崛起与文明桥梁</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>蒙古帝国成为连接三大文明的关键：中国佛教世界 → 蒙古-草原世界 → 西域佛教世界 → 伊斯兰中亚 → 伊朗-西亚。蒙古保持自己的长生天政治传统，同时吸收佛教。</p></a><a class="entry" href="e-1100-western-buddhism.html"><h3>西域佛教传统强化与伊斯兰化止步</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>现实历史中，龟兹、于阗、吐鲁番、敦煌等都是重要佛教中心；本世界线把这些现实中已经存在的文化基础进一步放大。8-12世纪，西域佛教没有迅速被完全伊斯兰化：伊斯兰化止步于更西侧。河中地区穆斯林影响强；天山以东佛教强；塔里木盆地佛教持续；敦煌继续作为东方佛教门户。</p></a><a class="entry" href="e-1272-norman-exodus.html"><h3>逆向的诺曼征服：诺曼-法兰西精英退回不列颠</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>1272年鲁道夫击败诺曼底公爵、夺取法兰西岛与香槟。金雀花-诺曼本是法兰西化程度更深、延续更久的王朝，于是丧失欧陆的诺曼-法兰西贵族、教士、诗人、法学家、工匠退回不列颠，把整套罗曼-法兰西宫廷文明带回岛上。</p></a><a class="entry" href="e-1400-golden-horde.html"><h3>金帐汗国未伊斯兰化与蒙古-罗斯制度融合</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>金帐汗国并没有在14世纪逐渐转变成一个伊斯兰汗国，而是继续保持蒙古贵族政治传统、长生天信仰、佛教、草原萨满传统、蒙古军事制度与汗国封建体系。蒙古统治逐渐制度化、官僚化、地方化：任命大公、建立税收体系、管理道路、组织驿站、规范贵族等级、介入诸公国继承、使用蒙古-突厥官僚、建立跨草原与森林地区的贸易网络…</p></a><a class="entry" href="e-1789-plantagenet-fall.html"><h3>金雀花倾覆与蒙福尔家族上位</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>约1789-1815期间，英国发生政治动荡，金雀花倾覆。动荡中曾短暂出现共和派与议会派要求，均被镇压。源自法兰西贵族家族蒙福尔的蒙福尔王朝以恢复秩序、对外抗击伊比利亚为旗号上位。</p></a><a class="entry" href="e-1954-iberia-colonial.html"><h3>非洲殖民地危机与第四共和国覆灭</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>第四共和国高度议会化、总统权力受限，难以应对<strong>非洲殖民地危机</strong>。1954 年前后危机爆发，第四共和国覆灭。</p></a><a class="entry" href="e-mamluk-mongol.html"><h3>马穆鲁克阻止蒙古西进</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>马穆鲁克击败蒙古西征军，并在此之前后目睹巴格达（1258）陷落。</p></a><a class="entry" href="e-1272-rudolf.html"><h3>鲁道夫加冕为“法兰克人的国王”</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>法国北方贵族不愿接受英格兰统治，瓦卢瓦无力抵抗诺曼底-英格兰联军。鲁道夫以“保卫法兰克不受金雀花奴役”为口号，承诺尊重贵族封建特权、教会自由和城市自治，带来阿尔萨斯与瑞士雇佣军。雷姆斯大主教在部分贵族见证下为鲁道夫加冕为“法兰克人的国王”。教皇最初反对，后默认，但要求头衔为“法兰克人的国王”而非“法…</p></a><a class="entry" href="e-1291-acre.html"><h3>黎凡特沿岸据点失守</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>马穆鲁克夺取黎凡特沿岸最后据点，法兰克在地中海东岸的军事存在终结。</p></a>
+</div>
+</main>
+
+<footer>
+<div class="madeby"><span class="mk">Created with</span>本页面由 <b>DeepSeek Harness</b> 创作<span class="fl">设定集解析 · 知识图谱构建 · 一致性审计 · 站点生成，全流程由 DeepSeek Harness 完成</span></div><div class="footmeta">出处代号：<a href="../index.html#sources">S0</a> 设定集.docx ｜ S1 设定集补充.docx ｜ S2 设定集补充2.docx ｜ S3 设定集补充3.docx ｜ S4 设定集补充4.docx ｜ <b>S5</b> 整合层（S0–S4 去重合并 + 用户裁定）｜ <b>S*</b> 仿真文献层（基于设定生成，不新增设定）<br><a href="../home.html">主页</a> ／ <a href="../index.html">设定集索引</a> ／ <a href="../wiki/index.html">历史文献</a> ／ <a href="../wiki/docs-index.html">文档中心</a> ／ <a href="../timeline.html">交互式时间轴</a></div>
+</footer>
+<script>(function(){var b=document.getElementById('gnavToggle'),n=document.querySelector('.gnav');if(b&&n){b.onclick=function(){n.classList.toggle('open')};}var p=document.getElementById('bkPrev');if(p){p.onclick=function(){if(history.length>1){history.back();}else{location.href='../home.html';}};}}())</script>
+
+</body>
+</html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>交互式时间轴 · 泛德意志的欧洲</title>
+<style>
+:root{
+  --bg:#14110d; --fg:#e8e2d4; --dim:#a89e8a; --accent:#c9a227; --line:#3a332a;
+  --card:#1d1913; --card2:#231e17; --link:#d8b64a; --ok:#7fa650; --warn:#d0913c; --bad:#c25b45;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+     font-family:"Segoe UI","Microsoft YaHei",system-ui,sans-serif;line-height:1.7}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+header{position:sticky;top:0;z-index:20;background:rgba(20,17,13,.97);
+       border-bottom:1px solid var(--line);backdrop-filter:blur(6px);padding:12px 20px}
+.hdr{max-width:1180px;margin:0 auto}
+h1{margin:0;font-size:19px;letter-spacing:.03em}
+h1 .sub{color:var(--dim);font-size:12px;font-weight:400;margin-left:10px;letter-spacing:0}
+nav.crumbs{font-size:12px;color:var(--dim);margin-top:5px}
+nav.crumbs a{color:var(--dim)}
+nav.crumbs a:hover{color:var(--link)}
+main{max-width:1180px;margin:0 auto;padding:18px 20px 70px}
+h2{font-size:17px;border-bottom:1px solid var(--line);padding-bottom:6px;margin:28px 0 12px}
+h3{font-size:15px;margin:20px 0 8px}
+h4{font-size:13.5px;margin:14px 0 6px;color:#cfc6b2}
+p{margin:8px 0}
+ul,ol{margin:8px 0;padding-left:22px}
+li{margin:3px 0}
+code,.mono{font-family:Consolas,"Cascadia Mono",monospace;font-size:12.5px}
+code{background:#0e0c09;border:1px solid var(--line);border-radius:4px;padding:1px 5px;color:var(--accent)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:14px 17px;margin:12px 0}
+.grid{display:grid;gap:10px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+table{border-collapse:collapse;width:100%;font-size:13px;margin:10px 0}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}
+th{background:#0e0c09;color:#cfc6b2;font-weight:600;white-space:nowrap}
+tr:nth-child(even) td{background:#191510}
+.tag{display:inline-block;font-size:11px;padding:1px 8px;border-radius:20px;
+     border:1px solid var(--line);background:#0e0c09;color:var(--dim);margin:1px 3px 1px 0}
+.tag.ok{color:var(--ok);border-color:#3d4d28}
+.tag.warn{color:var(--warn);border-color:#4d3d22}
+.tag.bad{color:var(--bad);border-color:#4d2a22}
+.tag.s5{color:#8fb6d8;border-color:#2a3d4d;background:#0e1419}
+.tag.sstar{color:#c9a2d8;border-color:#432a4d;background:#180e19}
+/* 文献页 */
+.doc{background:#f6f0e2;color:#241d12;border-radius:10px;padding:30px 38px;margin:16px 0;
+     border:1px solid #c9b98f;box-shadow:0 3px 20px #0006;line-height:1.95;
+     font-family:Georgia,"Times New Roman","Songti SC","SimSun",serif;max-width:820px}
+.doc h3{font-size:21px;margin:0 0 4px;color:#3a2c15;letter-spacing:.02em;font-weight:700}
+.doc .dsub{font-size:12.5px;color:#6d5c3a;margin-bottom:14px;border-bottom:1px solid #d6c9a4;padding-bottom:10px}
+.doc h4{font-size:15px;margin:20px 0 6px;color:#5a4318;font-weight:700}
+.doc p{margin:10px 0}
+.doc ol,.doc ul{margin:10px 0 10px 4px;padding-left:24px}
+.doc li{margin:5px 0}
+.doc b{color:#3a2c15}
+/* 正文中的词条交叉引用标记：浅色下划线点线，不打断阅读，不参与链接嵌套 */
+.xr{border-bottom:1px dotted #a08a52;cursor:help}
+.doc .xr{border-bottom-color:#b09a62;color:#3f3016}
+.doc-preamble{font-style:italic;color:#6d5c3a;border-left:3px solid #c9b98f;padding-left:12px;margin-bottom:16px}
+.doc-seal{text-align:right;font-size:13px;color:#7a6841;font-style:italic;margin-top:22px;
+          border-top:1px solid #d6c9a4;padding-top:10px}
+.docmeta{display:grid;grid-template-columns:120px 1fr;gap:6px 14px;font-size:13.5px;margin:12px 0}
+.docmeta dt{color:var(--dim);font-size:12.5px}
+.docmeta dd{margin:0}
+.doclist li{margin:7px 0}
+.kindbadge{font-size:11.5px;padding:2px 9px;border-radius:20px;background:#2a2218;
+           border:1px solid #4a3d22;color:#d8b64a;margin-right:6px}
+.kv{display:grid;grid-template-columns:132px 1fr;gap:5px 12px;font-size:13.5px;margin:10px 0}
+.kv dt{color:var(--dim);font-size:12.5px}
+.kv dd{margin:0}
+.q{position:sticky;top:56px;z-index:15;background:var(--bg);padding:10px 0}
+input[type=search],input[type=text],select{
+  background:#0e0c09;border:1px solid var(--line);color:var(--fg);border-radius:7px;
+  padding:9px 12px;font-size:14px;font-family:inherit}
+input[type=search]{width:100%}
+input:focus,select:focus{outline:none;border-color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.chip{font-size:12px;padding:3px 10px;border-radius:20px;border:1px solid var(--line);
+      background:#0e0c09;color:var(--dim);cursor:pointer;user-select:none}
+.chip:hover{border-color:var(--accent);color:var(--fg)}
+.chip.on{background:var(--accent);color:#14110d;border-color:var(--accent);font-weight:600}
+.item{border:1px solid var(--line);border-radius:9px;background:var(--card);padding:11px 14px;margin-bottom:9px}
+.item h3{margin:0 0 4px;font-size:15px}
+.item .meta{font-size:11.5px;color:var(--dim);margin-bottom:4px}
+.item .sm{font-size:13px;color:#d6cebc}
+mark{background:var(--accent);color:#14110d;border-radius:2px;padding:0 1px}
+.count{color:var(--dim);font-size:12px;margin:10px 0}
+.empty{color:var(--dim);padding:30px 0;text-align:center}
+.rid{font-family:Consolas,monospace;font-size:11px;color:var(--accent);
+     border:1px solid var(--line);border-radius:4px;padding:1px 5px;margin-left:7px}
+footer{max-width:1180px;margin:0 auto;padding:0 20px 40px;color:var(--dim);font-size:11.5px}
+.pill{display:inline-block;min-width:22px;text-align:center}
+.legend{font-size:12px;color:var(--dim)}
+/* 时间轴 */
+.tl-wrap{position:relative;margin:14px 0 0}
+.tl-axis{position:relative;height:34px;border-bottom:2px solid var(--line);margin-bottom:6px}
+.tl-tick{position:absolute;top:0;height:34px;width:1px;background:var(--line)}
+.tl-tick span{position:absolute;top:8px;left:4px;font-size:10.5px;color:var(--dim);white-space:nowrap}
+.tl-lane{position:relative;height:26px;margin:5px 0;background:#191510;border-radius:4px;
+         border:1px solid #2a251d}
+.tl-ev{position:absolute;top:3px;height:19px;border-radius:4px;cursor:pointer;
+       background:#4a3f22;border:1px solid var(--accent);overflow:hidden}
+.tl-ev:hover{background:var(--accent);z-index:6}
+.tl-ev span{font-size:10px;color:#f3ecd8;padding:0 4px;white-space:nowrap;line-height:19px}
+.tl-ev:hover span{color:#14110d}
+.tl-lane-label{position:absolute;left:0;top:3px;height:19px;line-height:19px;font-size:10.5px;
+               color:#a89e8a;transform:translateX(-100%);padding-right:9px;white-space:nowrap;
+               text-align:right;box-sizing:border-box;pointer-events:none}
+.tl-holder{padding-left:138px}
+#tip{position:fixed;z-index:50;max-width:380px;background:var(--card2);border:1px solid var(--accent);
+     border-radius:8px;padding:10px 13px;font-size:12.5px;display:none;box-shadow:0 6px 24px #000a}
+#tip h4{margin:0 0 4px;color:var(--accent);font-size:13.5px}
+.scrub{width:100%;margin:8px 0 4px}
+/* 主页 */
+.hero{padding:54px 20px 36px;text-align:center;
+      background:radial-gradient(ellipse at 50% -10%,#2c2418 0%,#14110d 64%);
+      border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(24px,4.4vw,36px);letter-spacing:.06em;margin:0 0 8px;font-weight:700}
+.hero h1 b{color:var(--accent)}
+.hero .tagline{color:#bdb4a1;font-size:14px;max-width:820px;margin:12px auto 0;line-height:1.9}
+.hero .realms{margin-top:22px;display:flex;gap:9px;justify-content:center;flex-wrap:wrap}
+.realm{font-size:12.5px;padding:5px 14px;border-radius:22px;border:1px solid var(--line);
+       background:#0e0c09;color:#cfc6b2}
+.realm i{font-style:normal;color:var(--accent);font-weight:600}
+.entries{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:24px 0}
+.entry{display:block;border:1px solid var(--line);border-radius:11px;background:var(--card);
+       padding:18px 20px;transition:transform .16s,border-color .16s,box-shadow .16s;
+       position:relative;overflow:hidden}
+.entry:hover{border-color:var(--accent);background:var(--card2);transform:translateY(-2px);
+             text-decoration:none;box-shadow:0 9px 28px #0007}
+.entry .ico{font-size:22px;margin-bottom:8px;display:block}
+.entry h3{margin:0 0 6px;font-size:16px;color:var(--fg)}
+.entry p{margin:0;font-size:12.5px;color:var(--dim);line-height:1.74}
+.entry .n{position:absolute;right:15px;top:14px;font-size:11px;color:var(--accent);
+          border:1px solid var(--line);border-radius:20px;padding:1px 9px;background:#0e0c09}
+.entry.wide{grid-column:span 2}
+@media(max-width:700px){.entry.wide{grid-column:span 1}}
+.stats{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));margin:18px 0}
+.stat{border:1px solid var(--line);border-radius:9px;background:#191510;padding:14px 10px;text-align:center}
+.stat b{display:block;font-size:23px;color:var(--accent);font-weight:700;line-height:1.3}
+.stat span{font-size:11.5px;color:var(--dim)}
+.quote{border-left:3px solid var(--accent);padding:3px 0 3px 17px;margin:22px 0;
+       color:#cfc6b2;font-size:13.5px;line-height:1.88}
+.quote cite{display:block;color:var(--dim);font-size:12px;font-style:normal;margin-top:7px}
+.twocol{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(318px,1fr))}
+.pill-row{display:flex;flex-wrap:wrap;gap:6px;margin:9px 0}
+a.pill{font-size:12px;padding:3px 11px;border-radius:20px;border:1px solid var(--line);
+       background:#0e0c09;color:#cfc6b2;display:inline-block}
+a.pill:hover{border-color:var(--accent);color:var(--fg);text-decoration:none}
+a.pill.gold{border-color:#5a4a22;color:var(--accent)}
+.tl-mini{position:relative;height:158px;margin:14px 0 4px;border:1px solid var(--line);
+         border-radius:9px;background:#191510;overflow:hidden}
+.tl-mini .dot{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--accent);
+              border:1px solid #0e0c09;transform:translate(-50%,-50%);cursor:pointer;
+              transition:width .14s,height .14s,box-shadow .14s}
+.tl-mini .dot:hover{width:15px;height:15px;box-shadow:0 0 0 3px #c9a22744}
+.tl-mini .dot.rel{background:#c25b45}
+.tl-mini .dot.cul{background:#7fa650}
+.tl-mini .dot.pol{background:#8fb6d8}
+.tl-mini .axl{position:absolute;bottom:6px;width:1px;height:8px;background:#3a332a}
+.tl-mini .axt{position:absolute;bottom:17px;font-size:9.5px;color:#6f6656;transform:translateX(-50%)}
+.tl-mini .lgd{position:absolute;right:9px;top:7px;font-size:10px;color:var(--dim)}
+/* 主页迷你时间轴：泳道 + 密度柱 + 锚点 */
+.tlmini-grid{position:absolute;left:0;right:0;top:0;bottom:26px;pointer-events:none}
+.tlmini-line{position:absolute;top:0;bottom:0;width:1px;background:#221e18}
+.tlmini-lane{position:relative;height:44px;background:#1c1813;border-bottom:1px solid #221e18}
+.tlmini-lane span{position:absolute;left:9px;top:6px;font-size:10.5px;color:#7d7462;
+                  letter-spacing:.04em;z-index:3;pointer-events:none}
+.tlmini-bars{position:absolute;left:0;right:0;top:0;bottom:26px;z-index:1}
+.tl-mini .bar{position:absolute;bottom:0;width:8px;border-radius:2px 2px 0 0;
+              opacity:.92;transition:opacity .14s,filter .14s}
+.tl-mini .bar:hover{opacity:1;filter:brightness(1.4)}
+.tl-mini .bar i{position:absolute;top:-13px;left:50%;transform:translateX(-50%);font-size:9px;
+                font-style:normal;color:#cfc6b2}
+.tl-mini .bar.rel{background:linear-gradient(#c25b45,#8e4033)}
+.tl-mini .bar.cul{background:linear-gradient(#7fa650,#5a7a38)}
+.tl-mini .bar.pol{background:linear-gradient(#8fb6d8,#5a7fa3)}
+.tlmini-anchor{position:absolute;bottom:0;height:100%;width:1px;background:#3a332a;
+               transform:translateX(-0.5px);pointer-events:none;z-index:2}
+.tlmini-anchor i{position:absolute;bottom:28px;left:-2px;width:5px;height:5px;border-radius:50%;
+                 background:#c9a227}
+.tlmini-anchor b{position:absolute;bottom:8px;left:0;transform:translateX(-50%);
+                 font-size:9.5px;font-weight:400;color:#8a8170;white-space:nowrap}
+.tlmini-foot{display:flex;justify-content:space-between;font-size:11.5px;color:var(--dim);
+             margin-top:7px}
+/* Hero 分叉图 */
+.fork{display:block;width:100%;max-width:900px;margin:28px auto 0;height:auto}
+.fork .fkl{fill:#c9a227;font-size:12px;font-weight:600}
+.fork .fkt{fill:#e2dbcb;font-size:12.5px}
+.fork .fks{fill:#8f8674;font-size:11px}
+.fork .fkm{fill:#8f8674;font-size:10.5px}
+/* Markdown 转换页 */
+.mdbody{font-size:13.5px;line-height:1.85}
+.mdbody h1{font-size:23px;margin:26px 0 12px;color:var(--accent);font-weight:700}
+.mdbody h2{font-size:18px;margin:30px 0 12px;border-bottom:1px solid var(--line);padding-bottom:7px}
+.mdbody h3{font-size:15.5px;margin:22px 0 9px;color:#e6dfcd}
+.mdbody h4{font-size:14px;margin:16px 0 7px;color:#cfc6b2}
+.mdbody p{margin:9px 0}
+.mdbody ul.mdul,.mdbody ol{margin:9px 0;padding-left:24px}
+.mdbody li{margin:4px 0}
+.mdbody code{background:#0e0c09;border:1px solid var(--line);border-radius:4px;
+             padding:1px 5px;color:var(--accent);font-size:12.5px}
+.mdbody a{color:var(--link)}
+.mdbody blockquote.mdq{border-left:3px solid var(--accent);background:#191510;
+                       margin:12px 0;padding:8px 15px;border-radius:0 7px 7px 0}
+.mdbody blockquote.mdq p{margin:5px 0;color:#cfc6b2}
+.mdbody hr.mdhr{border:none;border-top:1px solid var(--line);margin:26px 0}
+.mdbody .tw{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:8px}
+.mdbody table{margin:0;font-size:12.5px;border-collapse:collapse;width:100%}
+.mdbody th{position:sticky;top:0;background:#14110d;z-index:1}
+.mdbody td,.mdbody th{border:none;border-bottom:1px solid #241f19;border-right:1px solid #241f19;
+                      padding:6px 10px;vertical-align:top}
+.mdbody tr:last-child td{border-bottom:none}
+.mdbody tr:nth-child(even) td{background:#1a1611}
+.mdbody strong{color:#f0e9d8}
+/* 全局顶栏 */
+.topbar{position:sticky;top:0;z-index:30;background:rgba(16,13,10,.97);
+        border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+.topbar-in{max-width:1180px;margin:0 auto;padding:9px 20px;display:flex;align-items:center;
+           gap:14px;flex-wrap:nowrap;min-width:0}
+.brand{font-size:14.5px;font-weight:600;color:var(--accent);letter-spacing:.05em;
+       white-space:nowrap;flex-shrink:0}
+.brand:hover{text-decoration:none;color:#e0bc45}
+.gnav{display:flex;gap:4px;margin-left:auto;flex-shrink:0}
+.gnav-i{font-size:13px;color:var(--dim);padding:5px 12px;border-radius:7px;white-space:nowrap;
+        border:1px solid transparent}
+.gnav-i:hover{color:var(--fg);background:#211c16;text-decoration:none}
+.gnav-i.on{color:#14110d;background:var(--accent);border-color:var(--accent);font-weight:600}
+.gnav-t{display:none;background:#211c16;border:1px solid var(--line);color:var(--fg);
+        border-radius:7px;font-size:15px;padding:3px 10px;cursor:pointer}
+/* 左上角返回导航 */
+.backnav{display:flex;gap:6px;flex-shrink:0}
+.bkn{font-size:12.5px;color:#cfc6b2;background:#211c16;border:1px solid var(--line);
+     border-radius:7px;padding:5px 11px;white-space:nowrap;cursor:pointer;
+     font-family:inherit;line-height:1.35;transition:border-color .14s,color .14s,background .14s}
+.bkn:hover{border-color:var(--accent);color:var(--accent);background:#2a2218;text-decoration:none}
+/* 页脚署名 */
+.madeby{margin:30px 0 0;padding:22px 24px;text-align:center;border-radius:11px;
+        background:linear-gradient(135deg,rgba(201,162,39,.10),rgba(201,162,39,.03) 45%,transparent);
+        border:1px solid #3d3527;font-size:14px;color:#ddd5c3;letter-spacing:.04em}
+.madeby .mk{display:block;font-size:11.5px;color:var(--dim);letter-spacing:.22em;
+            text-transform:uppercase;margin-bottom:7px}
+.madeby b{color:var(--accent);font-weight:700;font-size:16px;letter-spacing:.06em;
+          padding:0 3px}
+.madeby .fl{display:block;margin-top:9px;font-size:11.5px;color:#7d7462;letter-spacing:.02em}
+.footmeta{font-size:11.5px;color:var(--dim);line-height:1.9;margin-top:20px;
+          padding-top:16px;border-top:1px solid var(--line)}
+.footmeta a{color:#a89e8a}
+.footmeta a:hover{color:var(--link)}
+@media(max-width:760px){
+  .backnav{order:3;width:100%}
+  .bkn{flex:1;text-align:center}
+}
+@media(max-width:760px){
+  .topbar-in{flex-wrap:wrap;gap:10px}
+  .gnav-t{display:block;margin-left:auto}
+  .gnav{display:none;width:100%;flex-direction:column;gap:2px}
+  .gnav.open{display:flex}
+  .gnav-i{padding:8px 12px}
+}
+</style>
+
+</head>
+<body>
+<div class="topbar"><div class="topbar-in"><div class="backnav"><a class="bkn" href="home.html" title="回到主页">⌂ 回到主页</a><button class="bkn" id="bkPrev" type="button" title="返回上一页">← 返回上一页</button></div><a class="brand" href="home.html">泛德意志的欧洲</a><nav class="gnav"><a class="gnav-i" href="home.html">主页</a><a class="gnav-i" href="index.html">索引</a><a class="gnav-i" href="wiki/index.html">文献</a><a class="gnav-i" href="wiki/docs-index.html">文档</a><a class="gnav-i on" href="timeline.html">时间轴</a></nav><button class="gnav-t" id="gnavToggle" aria-label="切换导航">☰</button></div></div>
+
+<header><div class="hdr">
+<h1>泛德意志的欧洲 · <span style="color:var(--accent)">交互式时间轴</span>
+<span class="sub">横轴＝时间　纵轴＝地域／宗教／文化／制度／军事</span></h1>
+<nav class="crumbs"><a href="index.html">索引</a> ／ <a href="index.html#wiki">百科词条</a> ／
+<a href="wiki/index.html">历史文献</a> ／ <a href="#acc">事件年表</a></nav></div></header>
+<main>
+<div class="card">
+<div class="legend">
+时间范围 <b id="rg"></b>　｜　事件 <b id="cnt"></b> 个　｜　当前视角
+<b id="modev">地域</b>　｜　把鼠标移到方块上可看事件，点击展开因果链
+</div>
+<input class="scrub" id="from" type="range" min="700" max="2000" value="700">
+<input class="scrub" id="to" type="range" min="700" max="2000" value="2000">
+<div style="margin-top:12px">
+<label class="legend" for="mode">纵轴视角：</label>
+<select id="mode">
+<option value="region">地域 · 西欧／中欧／东欧／南欧·地中海／不列颠／北欧／近东·北非／亚洲</option>
+<option value="religion">宗教 · 天主教／路德宗／加尔文宗／胡斯派／阿尔卑斯福音派／东正教／伊斯兰／佛教·萨满·长生天</option>
+<option value="culture">文化 · 语言正字法／学术教育／艺术音乐／文献编纂</option>
+<option value="polity">制度 · 王朝更替／宪制条约／政体变革／国际体系</option>
+<option value="conflict">军事 · 战争／革命起义／迫害流散</option>
+<option value="epoch">时代 · 按设定集原有分期</option>
+</select>
+</div>
+<div class="chips" id="kinds" style="margin-top:9px"></div>
+<div class="chips" id="epochs" style="margin-top:4px"></div>
+</div>
+<div class="tl-wrap"><div class="tl-holder" id="chart"></div></div>
+<h2 id="acc">事件年表</h2>
+<div id="acc-list"></div>
+<h2>因果链</h2>
+<div id="causal" class="legend">点击上方任意事件方块或年表中的事件，即可展开其前因与后果。</div>
+</main>
+<div id="tip"></div>
+
+<footer>
+<div class="madeby"><span class="mk">Created with</span>本页面由 <b>DeepSeek Harness</b> 创作<span class="fl">设定集解析 · 知识图谱构建 · 一致性审计 · 站点生成，全流程由 DeepSeek Harness 完成</span></div><div class="footmeta">出处代号：<a href="index.html#sources">S0</a> 设定集.docx ｜ S1 设定集补充.docx ｜ S2 设定集补充2.docx ｜ S3 设定集补充3.docx ｜ S4 设定集补充4.docx ｜ <b>S5</b> 整合层（S0–S4 去重合并 + 用户裁定）｜ <b>S*</b> 仿真文献层（基于设定生成，不新增设定）<br><a href="home.html">主页</a> ／ <a href="index.html">设定集索引</a> ／ <a href="wiki/index.html">历史文献</a> ／ <a href="wiki/docs-index.html">文档中心</a> ／ <a href="timeline.html">交互式时间轴</a></div>
+</footer>
+<script>(function(){var b=document.getElementById('gnavToggle'),n=document.querySelector('.gnav');if(b&&n){b.onclick=function(){n.classList.toggle('open')};}var p=document.getElementById('bkPrev');if(p){p.onclick=function(){if(history.length>1){history.back();}else{location.href='home.html';}};}}())</script>
+
+<script>
+const D = {"events": [{"id": "E_1100_WESTERN_BUDDHISM", "year": 800, "year_text": "公元前后 — 8世纪 / 8—12世纪", "title": "西域佛教传统强化与伊斯兰化止步", "epoch": "宗教史长时段", "region": "西域、塔里木盆地、敦煌", "countries": ["西域佛教文明带", "中国"], "persons": [], "result": "西域成为独立的佛教文明圈，使“中国—西域—中亚”的文明联系远远强于现实。", "causes": [], "effects": ["E_1200_MONGOL", "E_1400_GOLDEN_HORDE"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S1"], "href": "wiki/e-1100-western-buddhism.html"}, {"id": "E_0929_CORDOBA", "year": 929, "year_text": "929", "title": "科尔多瓦自立哈里发", "epoch": "8—11世纪：伊斯兰伊比利亚", "region": "伊比利亚南部（科尔多瓦）", "countries": ["科尔多瓦哈里发国", "西班牙-阿拉贡"], "persons": ["阿卜杜勒·拉赫曼三世"], "result": "伊斯兰世界形成科尔多瓦、巴格达、开罗（法蒂玛）三哈里发并立格局；安达卢斯进入文明鼎盛期。", "causes": [], "effects": ["E_1031_TAIFAS"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S0", "S2"], "href": "wiki/e-0929-cordoba.html"}, {"id": "E_1031_TAIFAS", "year": 1031, "year_text": "1031", "title": "科尔多瓦哈里发国分裂为诸泰法", "epoch": "11世纪：安达卢斯分裂", "region": "伊比利亚南部", "countries": ["科尔多瓦哈里发国", "穆瓦希德哈里发国（及穆拉比特）", "西班牙-阿拉贡"], "persons": [], "result": "安达卢斯由统一转为分裂，为北方基督教诸王国的推进提供条件；北非柏柏尔王朝介入伊比利亚。", "causes": ["E_0929_CORDOBA"], "effects": ["E_1212_LAS_NAVAS", "E_RECONQUISTA"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S0", "S2"], "href": "wiki/e-1031-taifas.html"}, {"id": "E_CRUSADES", "year": 1096, "year_text": "11—13世纪", "title": "十字军东征", "epoch": "11—13世纪：十字军东征", "region": "黎凡特、东地中海", "countries": ["法兰西罗曼王国", "教皇国", "阿尤布苏丹国（埃及—叙利亚）", "法蒂玛哈里发国（埃及）", "叙利亚地区", "君士坦丁堡（海峡政治体，通称拜占庭）", "奥斯曼帝国（安纳托利亚突厥帝国）"], "persons": ["萨拉丁"], "result": "十字军遗产经法兰西罗曼王国转入日耳曼的法兰克，使法兰克成为「连接西欧、地中海、黎凡特与德意志世界的文明边界国家」；黎凡特穆斯林政权（法蒂玛、阿尤布、马穆鲁克）在对抗中完成整合。", "causes": [], "effects": ["E_FRANKISH_ORIENTALISM", "E_1291_ACRE"], "war": "W_CRUSADES", "treaty": null, "significance": "", "status": "已确定", "src": ["S1"], "href": "wiki/e-crusades.html"}, {"id": "E_1200_MONGOL", "year": 1200, "year_text": "1200 — 1300及以后", "title": "蒙古帝国崛起与文明桥梁", "epoch": "1200—1300：蒙古帝国", "region": "欧亚大陆", "countries": ["蒙古帝国", "金帐汗国", "中国", "西域佛教文明带"], "persons": [], "result": "蒙古帝国在欧亚大陆北部留下远比现实深厚的政治与文化遗产；文明遗产区从太平洋延伸到东欧森林地带。", "causes": [], "effects": ["E_1400_GOLDEN_HORDE"], "war": "W_MONGOL_EXPANSION", "treaty": null, "significance": "", "status": "已确定", "src": ["S1", "S4"], "href": "wiki/e-1200-mongol.html"}, {"id": "E_1212_LAS_NAVAS", "year": 1212, "year_text": "1212", "title": "穆瓦希德在伊比利亚战败", "epoch": "13世纪：收复失地运动的转折", "region": "伊比利亚南部", "countries": ["穆瓦希德哈里发国（及穆拉比特）", "西班牙-阿拉贡", "马格里布（北非西部）"], "persons": [], "result": "收复失地运动进入决定性阶段；伊比利亚各基督教王国得以逐步统一，并开始南下北非驱逐穆斯林。", "causes": ["E_1031_TAIFAS"], "effects": ["E_RECONQUISTA", "E_IBERIAN_UNIFICATION"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S0", "S2"], "href": "wiki/e-1212-las-navas.html"}, {"id": "E_MAMLUK_MONGOL", "year": 1260, "year_text": "1260", "title": "马穆鲁克阻止蒙古西进", "epoch": "13世纪：蒙古西征的界线", "region": "黎凡特", "countries": ["马穆鲁克苏丹国（埃及—叙利亚）", "蒙古帝国", "阿拔斯哈里发国（两河）", "叙利亚地区", "埃及地区"], "persons": ["拜巴尔斯"], "result": "蒙古—金帐体系的西侧界线被划定；埃及与叙利亚保住独立的伊斯兰政治传统，未被并入蒙古体系。这与 S4 所记“蒙古文明遗产从太平洋延伸到东欧森林地带”形成对照——其南界与西界正是此处。", "causes": ["E_1200_MONGOL"], "effects": ["E_1500_ROS_UHLUS"], "war": "W_MONGOL_EXPANSION", "treaty": null, "significance": "", "status": "已确定", "src": ["S1", "S4"], "href": "wiki/e-mamluk-mongol.html"}, {"id": "E_1270_CAPET", "year": 1270, "year_text": "1270年前后", "title": "卡佩绝嗣与法兰克继承危机", "epoch": "13世纪：双源发生", "region": "欧洲西部", "countries": ["法兰克立宪君主国", "英格兰-诺曼底"], "persons": ["路易九世", "腓力三世", "腓力四世", "瓦卢瓦的查理", "埃夫勒的腓力", "爱德华一世", "鲁道夫"], "result": "历史分叉点：法兰克继承危机开启，并由此形成两个日耳曼语政治体（双源）。", "causes": [], "effects": ["E_1272_RUDOLF", "E_1273_OTTOKAR"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S0", "S1"], "href": "wiki/e-1270-capet.html"}, {"id": "E_1272_ABSOLUTISM", "year": 1272, "year_text": "1272后 / 13—15世纪", "title": "不列颠绝对主义奠基", "epoch": "13—15世纪", "region": "不列颠", "countries": ["不列颠联邦共和国"], "persons": [], "result": "绝对主义奠基；宪政与议会不是中世纪遗产，而是1945年战败后的产物。", "causes": ["E_1272_NORMAN_EXODUS"], "effects": ["E_1945_BRITAIN_DEMOCRATISATION"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S3"], "href": "wiki/e-1272-absolutism.html"}, {"id": "E_1272_NORMAN_EXODUS", "year": 1272, "year_text": "1272后", "title": "逆向的诺曼征服：诺曼-法兰西精英退回不列颠", "epoch": "13世纪：双源发生", "region": "不列颠", "countries": ["不列颠联邦共和国", "英格兰-诺曼底"], "persons": ["鲁道夫"], "result": "英伦作为罗曼-法兰西高文化唯一活体保存地的地位奠定；此后叠加1648、1789流亡波次不断加固。", "causes": ["E_1272_RUDOLF"], "effects": ["E_1272_ABSOLUTISM", "E_ANGLO_FRANKISH_RIVALRY"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S3"], "href": "wiki/e-1272-norman-exodus.html"}, {"id": "E_1272_RUDOLF", "year": 1272, "year_text": "1272", "title": "鲁道夫加冕为“法兰克人的国王”", "epoch": "13世纪：双源发生", "region": "欧洲西部（雷姆斯）", "countries": ["法兰克立宪君主国", "英格兰-诺曼底"], "persons": ["鲁道夫", "爱德华一世"], "result": "鲁道夫成为法兰克人的国王；鲁道夫在一次决战中击败诺曼底公爵，夺取法兰西岛和香槟，定都帕里斯。", "causes": ["E_1270_CAPET"], "effects": ["E_1300_DUAL_SOURCE", "E_1272_NORMAN_EXODUS"], "war": null, "treaty": null, "significance": "为后来的法兰克民族与德意志民族的分离埋下了制度基础。", "status": "已确定", "src": ["S0", "S1"], "href": "wiki/e-1272-rudolf.html"}, {"id": "E_ANGLO_FRANKISH_RIVALRY", "year": 1272, "year_text": "1272 — 至今", "title": "英-法兰克竞争长期化", "epoch": "长时段", "region": "不列颠与法兰克", "countries": ["不列颠联邦共和国", "法兰克立宪君主国"], "persons": [], "result": "长期文化张力线；经用户本轮裁定（P33）明确为「正统错位」而非「双方争夺正统」。", "causes": ["E_1272_RUDOLF"], "effects": [], "war": null, "treaty": null, "significance": "", "status": "待定", "src": ["S3"], "href": "wiki/e-anglo-frankish-rivalry.html"}, {"id": "E_1273_OTTOKAR", "year": 1273, "year_text": "1273 — 1300", "title": "奥托卡二世崛起与东西双源形成", "epoch": "13世纪：双源发生", "region": "欧洲中部", "countries": ["德意志联邦共和国"], "persons": ["奥托卡二世"], "result": "普热米斯尔王朝获得现实历史中哈布斯堡式的中欧权力基础；东部德意志文明路线确立。", "causes": ["E_1270_CAPET"], "effects": ["E_1300_DUAL_SOURCE", "E_1400_15C_GERMANISATION"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S0", "S1"], "href": "wiki/e-1273-ottokar.html"}, {"id": "E_1291_ACRE", "year": 1291, "year_text": "1291", "title": "黎凡特沿岸据点失守", "epoch": "13世纪：十字军据点的终结", "region": "黎凡特沿岸", "countries": ["法兰克立宪君主国", "马穆鲁克苏丹国（埃及—叙利亚）", "叙利亚地区"], "persons": [], "result": "法兰克转为以商业、传教与学术方式维持近东联系——这正是 S1 所记“法兰克东方学传统”的由来。", "causes": ["E_CRUSADES"], "effects": ["E_FRANKISH_ORIENTALISM"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S1"], "href": "wiki/e-1291-acre.html"}, {"id": "E_1300_DUAL_SOURCE", "year": 1300, "year_text": "1300年前后", "title": "东西双源格局定型", "epoch": "13—14世纪", "region": "欧洲西部与中部", "countries": ["法兰克立宪君主国", "德意志联邦共和国"], "persons": ["鲁道夫", "奥托卡二世"], "result": "整个世界线最重要的“双源”格局形成。", "causes": ["E_1272_RUDOLF", "E_1273_OTTOKAR"], "effects": ["E_1356_CHARTER", "E_1400_DUAL_EMPIRE"], "war": null, "treaty": null, "significance": "是后续一切日耳曼世界分裂结构的根源。", "status": "已确定", "src": ["S0", "S1"], "href": "wiki/e-1300-dual-source.html"}, {"id": "E_RECONQUISTA", "year": 1300, "year_text": "8—15世纪（决定性阶段1212—1492）", "title": "收复失地运动", "epoch": "8—15世纪：收复失地运动", "region": "伊比利亚半岛", "countries": ["西班牙-阿拉贡", "穆瓦希德哈里发国（及穆拉比特）", "科尔多瓦哈里发国", "马格里布（北非西部）"], "persons": ["阿方索十世", "伊莎贝拉·冯·卡斯蒂利亚"], "result": "半岛穆斯林政权被逐出；伊比利亚形成以天主教为立国原则的共同身份，并转向南下北非。", "causes": ["E_1212_LAS_NAVAS", "E_1031_TAIFAS"], "effects": ["E_IBERIAN_UNIFICATION", "E_MAGHREB_CHRISTIANISATION"], "war": "W_RECONQUISTA", "treaty": null, "significance": "", "status": "已确定", "src": ["S0", "S2"], "href": "wiki/e-reconquista.html"}, {"id": "E_1356_CHARTER", "year": 1356, "year_text": "1356", "title": "《法兰克福宪章》与双王冠确立", "epoch": "14世纪：法兰克福条约与双元帝国", "region": "法兰克福", "countries": ["法兰克立宪君主国", "德意志联邦共和国", "瑞士永久联邦", "教皇国"], "persons": ["阿尔布雷希特二世"], "result": "法兰克王冠 + 德意志王冠 = 不可分割的双重王冠；法兰克王冠哈布斯堡世袭、德意志王冠七选侯选举、皇帝三重加冕；瑞士获特殊自治地位。", "causes": ["E_1300_DUAL_SOURCE"], "effects": ["E_1400_DUAL_EMPIRE", "E_1618_RELIGION"], "war": null, "treaty": "T_FRANKFURT_1356", "significance": "创造了一个极其重要的制度矛盾：同一个帝国皇帝，同时是两个政治民族的国王。同时体现法兰克协商传统，是法兰克宪政早熟的制度起点。", "status": "已确定", "src": ["S0", "S1", "S2"], "href": "wiki/e-1356-charter.html"}, {"id": "E_1400_15C_GERMANISATION", "year": 1400, "year_text": "14—15世纪", "title": "普热米斯尔的德意志化", "epoch": "14—15世纪", "region": "波西米亚、奥地利、南德意志", "countries": ["德意志联邦共和国"], "persons": [], "result": "奥地利并没有形成“奥地利人≠德国人”的现代民族身份；相反，奥地利成为德意志世界内部核心区域，与现实历史形成有意反转。", "causes": ["E_1273_OTTOKAR"], "effects": ["E_1500_REFORMATION"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S0", "S1"], "href": "wiki/e-1400-15c-germanisation.html"}, {"id": "E_1400_DUAL_EMPIRE", "year": 1400, "year_text": "14世纪后期", "title": "哈布斯堡回归帝国与双元君主国", "epoch": "14世纪：法兰克福条约与双元帝国", "region": "中欧", "countries": ["法兰克立宪君主国", "德意志联邦共和国"], "persons": [], "result": "形成哈布斯堡双元君主国：法兰克王冠为实际权力核心，德意志王冠为帝国法理基础，皇帝冠冕需三重加冕。", "causes": ["E_1356_CHARTER"], "effects": ["E_1500_REFORMATION"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S0", "S1"], "href": "wiki/e-1400-dual-empire.html"}, {"id": "E_1400_GOLDEN_HORDE", "year": 1400, "year_text": "13世纪 — 金帐汗国分裂", "title": "金帐汗国未伊斯兰化与蒙古-罗斯制度融合", "epoch": "13—15世纪", "region": "东欧草原、罗斯诸公国", "countries": ["金帐汗国", "罗斯兀鲁思"], "persons": [], "result": "莫斯科诸王公逐渐发现蒙古制度不是需要被消灭的东西，而是自己可以继承的国家机器；他们也逐渐血脉合流，越发蒙古化。最终蒙古王族直接成为莫斯科统治王朝。", "causes": ["E_1200_MONGOL", "E_1100_WESTERN_BUDDHISM"], "effects": ["E_1500_ROS_UHLUS"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S4"], "href": "wiki/e-1400-golden-horde.html"}, {"id": "E_FRANKISH_ORIENTALISM", "year": 1400, "year_text": "14世纪以后（长时段）", "title": "法兰克东方学传统的形成", "epoch": "14世纪以后：法兰克东方学", "region": "帕里斯、劳格登", "countries": ["法兰克立宪君主国", "叙利亚地区", "马格里布（北非西部）", "埃及地区"], "persons": [], "result": "法兰克成为“连接西欧、地中海、黎凡特与德意志世界的文明边界国家”，而非简单的“德国西边的法国替代品”。", "causes": ["E_1291_ACRE"], "effects": [], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S1"], "href": "wiki/e-frankish-orientalism.html"}, {"id": "E_1500_ROS_UHLUS", "year": 1500, "year_text": "金帐汗国分裂后", "title": "罗斯兀鲁思建立与后基辅罗斯国家传统", "epoch": "15—16世纪", "region": "东欧、北亚", "countries": ["罗斯兀鲁思", "金帐汗国"], "persons": [], "result": "国家正统发生变化：古罗斯诸国 → 蒙古征服 → 金帐秩序 → 罗斯兀鲁思。基辅罗斯成为莫斯科国家历史上的早期阶段，但不是最重要的政治合法性来源；金帐汗国反而成为莫斯科国家形成现代国家制度的直接祖先。", "causes": ["E_1400_GOLDEN_HORDE"], "effects": ["E_1918_KIEV_SPLIT"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S4"], "href": "wiki/e-1500-ros-uhlus.html"}, {"id": "E_IBERIAN_UNIFICATION", "year": 1500, "year_text": "15—16世纪（推定）", "title": "伊比利亚统一与伊比利亚王国建立", "epoch": "15—16世纪：伊比利亚统一", "region": "伊比利亚半岛", "countries": ["西班牙-阿拉贡", "伊比利亚王国", "奥克王国"], "persons": ["伊莎贝拉·冯·卡斯蒂利亚", "伊比利亚王国开国君主（本轮新增，姓名待定）"], "result": "伊比利亚成为统一的中央集权君主国；此后转向南下北非，驱逐穆斯林并长期统治、基督教化马格里布。", "causes": ["E_RECONQUISTA"], "effects": ["E_MAGHREB_CHRISTIANISATION", "E_1789_REVOLUTION"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S2"], "href": "wiki/e-iberian-unification.html"}, {"id": "E_1501_PERSIA_SHIITE", "year": 1501, "year_text": "16世纪（推定）", "title": "波斯确立什叶派国家传统", "epoch": "16世纪：波斯什叶派国家", "region": "伊朗高原", "countries": ["伊朗（伊斯兰什叶派波斯）", "奥斯曼帝国（安纳托利亚突厥帝国）", "阿拔斯哈里发国（两河）"], "persons": ["沙阿伊斯玛仪"], "result": "伊斯兰世界形成逊尼（阿拉伯—安纳托利亚）与什叶（波斯）双极结构；波斯的东界止于伊斯兰中亚西部，再东即西域佛教带。", "causes": ["E_1200_MONGOL"], "effects": ["E_1960_MULTIPOLAR"], "war": null, "treaty": null, "significance": "", "status": "待定", "src": ["S1"], "href": "wiki/e-1501-persia-shiite.html"}, {"id": "E_1517_MAMLUK_END", "year": 1517, "year_text": "1517", "title": "安纳托利亚突厥帝国取代马穆鲁克", "epoch": "16世纪：近东格局重组", "region": "埃及、叙利亚、汉志", "countries": ["奥斯曼帝国（安纳托利亚突厥帝国）", "马穆鲁克苏丹国（埃及—叙利亚）", "埃及地区", "叙利亚地区", "阿拉伯—汉志地区"], "persons": ["奥斯曼一世"], "result": "近东整合为单一的逊尼派伊斯兰帝国，与波斯的什叶派体系形成长期并立格局。", "causes": ["E_1500_ROS_UHLUS"], "effects": ["E_1960_MULTIPOLAR"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S1"], "href": "wiki/e-1517-mamluk-end.html"}, {"id": "E_1500_REFORMATION", "year": 1520, "year_text": "1450—1600 / 16世纪", "title": "宗教改革与普热米斯尔新教化", "epoch": "15—16世纪：宗教改革与农民战争", "region": "德意志、波西米亚、低地、瑞士", "countries": ["德意志联邦共和国", "低地联合省", "瑞士永久联邦"], "persons": ["马丁·路德", "加尔文"], "result": "新教四大派别形成：北德意志路德宗、低地-瑞士加尔文宗、波西米亚胡斯派-路德宗混合、南德意志阿尔卑斯福音派。", "causes": ["E_1400_15C_GERMANISATION", "E_1400_DUAL_EMPIRE"], "effects": ["E_1524_PEASANTS", "E_1618_RELIGION"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S0", "S1"], "href": "wiki/e-1500-reformation.html"}, {"id": "E_1524_PEASANTS", "year": 1524, "year_text": "1524 — 1527", "title": "农民战争", "epoch": "15—16世纪", "region": "瑞士、阿尔萨斯 → 南德意志、莱茵兰、北德意志、波西米亚、北意大利", "countries": ["德意志联邦共和国", "瑞士永久联邦", "法兰克立宪君主国"], "persons": ["马丁·路德"], "result": "部分要求被满足，农奴制部分地区废除；波西米亚胡斯派贵族利用战争削弱天主教贵族；北意大利农民起义被镇压，部分庄园制度被改革。", "causes": ["E_1500_REFORMATION"], "effects": ["E_1618_RELIGION"], "war": "W_PEASANT_1524", "treaty": "T_TWELVE_ARTICLES", "significance": "进一步解释了为什么南德新教与北德新教最终会发展成不同文化。", "status": "已确定", "src": ["S0", "S1"], "href": "wiki/e-1524-peasants.html"}, {"id": "E_MAGHREB_CHRISTIANISATION", "year": 1550, "year_text": "16—20世纪（长期过程）", "title": "南下北非与马格里布的基督教化、欧洲化", "epoch": "16—20世纪：北非西部的基督教化", "region": "北非西部（马格里布）", "countries": ["伊比利亚王国", "马格里布（北非西部）", "伊比利亚共和国（第五共和国后体制）"], "persons": [], "result": "北非西部成为伊比利亚本土的一部分；撒哈拉从此承担文明分界功能——以北西部划入欧洲，以东划入亚洲。", "causes": ["E_IBERIAN_UNIFICATION"], "effects": ["E_1960_MULTIPOLAR"], "war": "W_RECONQUISTA", "treaty": null, "significance": "", "status": "已确定", "src": ["S0", "S2"], "href": "wiki/e-maghreb-christianisation.html"}, {"id": "E_1618_RELIGION", "year": 1618, "year_text": "1618 — 1648", "title": "三十年宗教战争", "epoch": "17世纪：宗教战争与维也纳和约", "region": "中欧、低地、南德意志、波西米亚、北意大利", "countries": ["法兰克立宪君主国", "德意志联邦共和国", "低地联合省", "瑞士永久联邦", "伊比利亚共和国（第五共和国后体制）", "西班牙-阿拉贡", "教皇国", "丹麦-挪威", "瑞典"], "persons": [], "result": "僵局，以《维也纳和约》1648结束。", "causes": ["E_1356_CHARTER", "E_1500_REFORMATION", "E_1524_PEASANTS"], "effects": ["E_1648_VIENNA", "E_1648_EXILES"], "war": "W_RELIGION", "treaty": null, "significance": "关键变量：西班牙-阿拉贡虽在国内压制新教徒，但出于反哈布斯堡法兰克地缘利益，后期加入新教联盟，形成“外交新教、内政天主教”矛盾立场。", "status": "已确定", "src": ["S0", "S1"], "href": "wiki/e-1618-religion.html"}, {"id": "E_1648_EXILES", "year": 1648, "year_text": "1648后", "title": "1648年维也纳和约后的流亡波次", "epoch": "17世纪后", "region": "不列颠", "countries": ["不列颠联邦共和国"], "persons": [], "result": "英伦作为罗曼-法兰西高文化唯一活体保存地的地位不断加固。", "causes": ["E_1648_VIENNA"], "effects": ["E_1789_EXILES"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S3"], "href": "wiki/e-1648-exiles.html"}, {"id": "E_1648_VIENNA", "year": 1648, "year_text": "1648", "title": "《维也纳和约》与帝国分权", "epoch": "17世纪", "region": "维也纳", "countries": ["法兰克立宪君主国", "德意志联邦共和国", "低地联合省", "瑞士永久联邦", "伊比利亚共和国（第五共和国后体制）"], "persons": [], "result": "形成重要文明结构：政治边界 ≠ 宗教边界 ≠ 文化边界。德意志地区普遍新教，法兰克和北意大利官方天主教。", "causes": ["E_1618_RELIGION"], "effects": ["E_1700_DUAL_CROWN", "E_1789_REVOLUTION"], "war": null, "treaty": "T_VIENNA_1648", "significance": "", "status": "已确定", "src": ["S0", "S1"], "href": "wiki/e-1648-vienna.html"}, {"id": "E_1700_DUAL_CROWN", "year": 1700, "year_text": "18世纪 / 1700年前后", "title": "双王冠的“准融合”", "epoch": "18世纪：双王冠融合", "region": "中欧", "countries": ["法兰克立宪君主国", "德意志联邦共和国"], "persons": [], "result": "并没有真正统一；但形成事实上的文明共同体——“泛德意志世界”概念的来源。18世纪普热米斯尔推动南德意志和波西米亚集权化、工业化与德意志化；哈布斯堡强化法兰克天主教君主制和北意大利统治。", "causes": ["E_1648_VIENNA"], "effects": ["E_1789_REVOLUTION", "E_1848_REVOLUTION"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S0", "S1"], "href": "wiki/e-1700-dual-crown.html"}, {"id": "E_1789_EXILES", "year": 1789, "year_text": "1789后", "title": "1789年伊比利亚革命后的流亡波次", "epoch": "18—19世纪", "region": "不列颠、伊比利亚", "countries": ["不列颠联邦共和国", "伊比利亚共和国（第五共和国后体制）"], "persons": [], "result": "英伦的罗曼高文化保存地地位进一步加固；奥克文化复兴获得人才。", "causes": ["E_1789_REVOLUTION"], "effects": ["E_1945_OCCITAN_ISSUE"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S0", "S3"], "href": "wiki/e-1789-exiles.html"}, {"id": "E_1789_PLANTAGENET_FALL", "year": 1789, "year_text": "约1789—1815", "title": "金雀花倾覆与蒙福尔家族上位", "epoch": "18—19世纪", "region": "不列颠", "countries": ["不列颠联邦共和国"], "persons": [], "result": "蒙福尔王朝建立；1815年后的反革命时代反而使不列颠的绝对主义被进一步加固。", "causes": ["E_1789_REVOLUTION"], "effects": ["E_1815_RESTORATION"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S3"], "href": "wiki/e-1789-plantagenet-fall.html"}, {"id": "E_1789_REVOLUTION", "year": 1789, "year_text": "1789 — 1815", "title": "伊比利亚-奥克大革命", "epoch": "18—19世纪：伊比利亚大革命", "region": "伊比利亚-奥克地区 → 南欧 → 南意大利", "countries": ["伊比利亚共和国（第五共和国后体制）", "法兰克立宪君主国", "德意志联邦共和国", "教皇国"], "persons": [], "result": "法兰克、普热米斯尔、英国、罗斯兀鲁思等组成反伊比利亚同盟，最终击败伊比利亚革命帝国。大革命略微平息，但民族主义、立宪主义和共和主义深入人心。", "causes": ["E_1648_VIENNA", "E_1700_DUAL_CROWN"], "effects": ["E_1815_RESTORATION", "E_1789_EXILES", "E_1789_PLANTAGENET_FALL"], "war": "W_REV_IBERIA", "treaty": null, "significance": "另一个世界轴心。伊比利亚不是简单的“法国替代品”，而是一个持续改变中欧权力平衡的第三文明中心。", "status": "已确定", "src": ["S0", "S1"], "href": "wiki/e-1789-revolution.html"}, {"id": "E_1815_RESTORATION", "year": 1815, "year_text": "1815", "title": "反革命时代与旧秩序重建", "epoch": "19世纪", "region": "欧洲", "countries": ["法兰克立宪君主国", "德意志联邦共和国", "不列颠联邦共和国", "伊比利亚共和国（第五共和国后体制）"], "persons": [], "result": "19世纪的统一问题已经无法重新退回旧制度。神圣罗马帝国在此期间被迫解散。", "causes": ["E_1789_REVOLUTION"], "effects": ["E_1848_REVOLUTION"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S0", "S1"], "href": "wiki/e-1815-restoration.html"}, {"id": "E_1848_REVOLUTION", "year": 1848, "year_text": "1848", "title": "1848年革命与大德意志方案失败", "epoch": "19世纪：1848、1866、1871", "region": "中欧", "countries": ["法兰克立宪君主国", "德意志联邦共和国", "低地联合省", "不列颠联邦共和国"], "persons": [], "result": "失败原因包括：哈布斯堡不愿放弃法兰克天主教君主制和北意大利；普热米斯尔不愿将新教德意志领导权交给哈布斯堡；各邦君主害怕革命削弱自身权力；低地和北意大利地方精英担心被吞并。", "causes": ["E_1700_DUAL_CROWN", "E_1815_RESTORATION"], "effects": ["E_1866_WAR"], "war": null, "treaty": null, "significance": "1848年失败意味着“大德意志方案”破产，统一只能走“小德意志”道路；这是“大德意志”最后一次真正可能实现的时刻。", "status": "已确定", "src": ["S0", "S1", "S2"], "href": "wiki/e-1848-revolution.html"}, {"id": "E_1866_WAR", "year": 1866, "year_text": "1866", "title": "1866年奥法战争", "epoch": "19世纪", "region": "中欧、北意大利", "countries": ["德意志联邦共和国", "法兰克立宪君主国"], "persons": [], "result": "法兰克被排除出德意志统一进程；北意大利从哈布斯堡法兰克转归普热米斯尔；普热米斯尔成为德意志诸邦中无可争议的领导者；小德意志方案正式确立：现实意义上的德意志、低地、北意大利，排除法兰克核心区。", "causes": ["E_1848_REVOLUTION"], "effects": ["E_1871_EMPIRE"], "war": "W_1866", "treaty": null, "significance": "整个世界线的第二个决定性转折点；现实历史的“奥地利问题”在这里被替换成“法兰克问题”。", "status": "已确定", "src": ["S0", "S1"], "href": "wiki/e-1866-war.html"}, {"id": "E_1871_EMPIRE", "year": 1871, "year_text": "1871", "title": "罗马加冕与德意志帝国成立", "epoch": "19世纪", "region": "罗马、维也纳", "countries": ["德意志联邦共和国", "法兰克立宪君主国", "教皇国"], "persons": [], "result": "普热米斯尔家族成为德意志皇帝；维也纳为行政首都，罗马为加冕圣城；帝国包括德意志诸邦、低地、北意大利；南意大利那不勒斯和罗马被从伊比利亚势力范围中夺出；法兰克成为独立的法兰克立宪君主国，不再与德意志王冠共戴；意大利民族从未被构建，北意大利被纳入德意志民族构建，类似现实中西里西亚地位。", "causes": ["E_1866_WAR"], "effects": ["E_1900_INDUSTRY", "E_WW1"], "war": null, "treaty": null, "significance": "正式形成德意志帝国（德语新教世界的核心国家）与法兰克（与德意志高度相关但政治上独立的西部日耳曼国家）的并存格局。同时也是法兰克成熟宪政君主制的制度化/现代化阶段，而非第一次建立宪政君主制。", "status": "已确定", "src": ["S0", "S1", "S2"], "href": "wiki/e-1871-empire.html"}, {"id": "E_1871_IBERIA_2EMP_FALL", "year": 1871, "year_text": "1871", "title": "伊比利亚第二帝国被德意志帝国击败，第三共和国成立", "epoch": "19世纪：小德意志统一与伊比利亚转折", "region": "中欧、南欧、那不勒斯与罗马", "countries": ["伊比利亚第二共和国", "德意志联邦共和国", "伊比利亚第三共和国（1871—1940）"], "persons": [], "result": "南意大利与罗马被从伊比利亚势力范围中夺出；伊比利亚第二帝国终结，第三共和国成立并延续至 1940 年。", "causes": ["E_1866_WAR"], "effects": ["E_1871_EMPIRE", "E_WW1"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S0", "S1"], "href": "wiki/e-1871-iberia-2emp-fall.html"}, {"id": "E_1900_INDUSTRY", "year": 1900, "year_text": "19世纪后期 — 20世纪", "title": "第二次工业革命与三大工业带", "epoch": "19—20世纪：工业化与第二次工业革命", "region": "中欧、北美", "countries": ["德意志联邦共和国", "美利坚合众国", "法兰克立宪君主国"], "persons": [], "result": "德意志世界不是单一工业核心，而是多个历史工业区的叠加。这正是后来“输掉一战仍然能够恢复”的基础之一。中欧未衰落，美国未崛起为超级大国。", "causes": ["E_1871_EMPIRE"], "effects": ["E_WW1"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S0", "S1"], "href": "wiki/e-1900-industry.html"}, {"id": "E_WW1", "year": 1914, "year_text": "1914 — 1918", "title": "第一次世界大战", "epoch": "20世纪", "region": "欧洲", "countries": ["德意志联邦共和国", "法兰克立宪君主国", "伊比利亚共和国（第五共和国后体制）", "不列颠联邦共和国", "罗斯兀鲁思", "美利坚合众国"], "persons": [], "result": "奥地利德意志受更严厉处罚：被迫释放占领的波兰地区，北意大利设非军事区，的里雅斯特国际共管。奥地利德意志君主政体瓦解，建立维也纳德意志共和国。法兰克哈布斯堡失去统治地位，建立不完善的法兰克共和国。罗斯兀鲁思曾以军事手段重新夺取基辅、白罗斯等地区。", "causes": ["E_1900_INDUSTRY", "E_1871_EMPIRE"], "effects": ["E_1918_COLLAPSE", "E_1918_EXILES"], "war": "W_WW1", "treaty": null, "significance": "一战不是世界线失败点，而是韧性测试：一个文明资产远比现实德意志世界庞大的德国，即使输掉世界大战，仍然拥有足够的结构性资本来保存自身核心文明。", "status": "已确定", "src": ["S0", "S1", "S3", "S4"], "href": "wiki/e-ww1.html"}, {"id": "E_1918_COLLAPSE", "year": 1918, "year_text": "1918", "title": "德意志帝国瓦解与法兰克共和化", "epoch": "20世纪", "region": "中欧", "countries": ["德意志联邦共和国", "法兰克立宪君主国"], "persons": [], "result": "两个中欧君主国同时终结；不列颠因一战获胜而免于王朝终结，绝对主义存续。", "causes": ["E_WW1"], "effects": ["E_1918_EXILES", "E_1939_WW2"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S0", "S1"], "href": "wiki/e-1918-collapse.html"}, {"id": "E_1918_EXILES", "year": 1918, "year_text": "1918后 / 1918—1939", "title": "一战后的知识分子流散", "epoch": "20世纪", "region": "中欧 → 美国、瑞士、伊比利亚", "countries": ["德意志联邦共和国", "美利坚合众国", "瑞士永久联邦", "伊比利亚共和国（第五共和国后体制）"], "persons": ["爱因斯坦"], "result": "一战没有摧毁德意志文明的核心。这也是二战中能够重新崛起的结构原因。", "causes": ["E_WW1", "E_1918_COLLAPSE"], "effects": ["E_1939_WW2"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S0", "S1"], "href": "wiki/e-1918-exiles.html"}, {"id": "E_1918_KIEV_SPLIT", "year": 1918, "year_text": "一战期间 / 二战后", "title": "基辅王国与罗斯兀鲁思的文明分流", "epoch": "20世纪", "region": "东欧", "countries": ["基辅王国", "罗斯兀鲁思", "白罗斯"], "persons": [], "result": "同一个古罗斯世界在蒙古时代以后走上了两条完全不同的道路；一战的重新征服、二战后的再次分离，让这条文明分界最终获得了现代国际边界的形式。", "causes": ["E_1500_ROS_UHLUS"], "effects": ["E_1945_KIEV", "E_1960_MULTIPOLAR"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S4"], "href": "wiki/e-1918-kiev-split.html"}, {"id": "E_1939_WW2", "year": 1939, "year_text": "1939 — 1945", "title": "第二次世界大战", "epoch": "20世纪", "region": "欧洲", "countries": ["德意志联邦共和国", "法兰克立宪君主国", "伊比利亚共和国（第五共和国后体制）", "不列颠联邦共和国", "罗斯兀鲁思", "美利坚合众国", "低地联合省"], "persons": [], "result": "中欧协定方惨胜：德意志取消不平等条约，吞并波兰地区，低地与北意大利重新并入德意志；法兰克恢复对勃艮第、洛林控制，未占领奥克。战后无冷战，多极均势。", "causes": ["E_1918_COLLAPSE", "E_1918_EXILES"], "effects": ["E_1945_SETTLEMENT", "E_1945_OCCITAN_ISSUE", "E_1945_BRITAIN_DEMOCRATISATION", "E_1945_KIEV"], "war": "W_WW2", "treaty": null, "significance": "", "status": "已确定", "src": ["S0", "S1", "S3", "S4"], "href": "wiki/e-1939-ww2.html"}, {"id": "E_1940_IBERIA_DEFEAT", "year": 1940, "year_text": "1940", "title": "伊比利亚第三共和国被法兰克与德意志击败", "epoch": "20世纪：第二次世界大战", "region": "伊比利亚半岛、奥克地区、西地中海", "countries": ["伊比利亚第三共和国（1871—1940）", "法兰克立宪君主国", "德意志联邦共和国", "德意志共和国（1918—1945）", "伊比利亚被占领与过渡期（1940—1945）"], "persons": [], "result": "第三共和国终结；1940—1945 为被占领与过渡期；伊比利亚在奥克地区的势力就此终结，1945 年失去奥克地区。", "causes": ["E_1939_WW2"], "effects": ["E_1945_IBERIA_4REP"], "war": "W_WW2", "treaty": null, "significance": "", "status": "已确定", "src": ["S0"], "href": "wiki/e-1940-iberia-defeat.html"}, {"id": "E_1945_ASIA_ORDER", "year": 1945, "year_text": "1945 — 1960", "title": "新亚洲秩序与文明边界线", "epoch": "20世纪后期", "region": "亚洲", "countries": ["中国", "蒙古帝国", "西域佛教文明带", "西伯利亚萨满文化区", "西亚伊斯兰文明空间", "君士坦丁堡（海峡政治体，通称拜占庭）", "东洲（新大洲，正式名称待定）"], "persons": [], "result": "一旦这条线确定，罗斯兀鲁思、中国、蒙古、西域、西亚乃至君士坦丁堡的历史就可以沿着同一条纵轴展开，而不再是几个互相孤立的“亚洲背景设定”。", "causes": ["E_1200_MONGOL", "E_1100_WESTERN_BUDDHISM", "E_1400_GOLDEN_HORDE"], "effects": [], "war": null, "treaty": null, "significance": "", "status": "待定", "src": ["S1", "S4"], "href": "wiki/e-1945-asia-order.html"}, {"id": "E_1945_BRITAIN_DEMOCRATISATION", "year": 1945, "year_text": "1945 — 约1955", "title": "不列颠战败与被监督的民主化", "epoch": "20世纪", "region": "不列颠", "countries": ["不列颠联邦共和国", "德意志联邦共和国", "法兰克立宪君主国"], "persons": [], "result": "1945年经制宪会议决议并辅以全民公决，正式废除王位，确立共和制。1945/1947《权利宪章》成文宪法。", "causes": ["E_1939_WW2", "E_1272_ABSOLUTISM"], "effects": ["E_1945_IRELAND"], "war": null, "treaty": "T_RIGHTS_CHARTER", "significance": "", "status": "已确定", "src": ["S3", "S2"], "href": "wiki/e-1945-britain-democratisation.html"}, {"id": "E_1945_IBERIA_4REP", "year": 1945, "year_text": "1945", "title": "伊比利亚第四共和国成立", "epoch": "20世纪：战后秩序", "region": "伊比利亚半岛", "countries": ["伊比利亚第四共和国（1945—1954）", "伊比利亚共和国（第五共和国后体制）", "德意志联邦共和国", "法兰克立宪君主国"], "persons": [], "result": "伊比利亚进入总统权力最弱的阶段；同时失去奥克地区。", "causes": ["E_1940_IBERIA_DEFEAT", "E_1939_WW2"], "effects": ["E_1954_IBERIA_COLONIAL"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S2"], "href": "wiki/e-1945-iberia-4rep.html"}, {"id": "E_1945_IRELAND", "year": 1945, "year_text": "1945", "title": "爱尔兰全岛独立", "epoch": "20世纪", "region": "爱尔兰", "countries": ["不列颠联邦共和国"], "persons": [], "result": "成立爱尔兰共和国（Republic of Ireland），首都都柏林，不分治，乌尔斯特全境属爱尔兰。长期文化殖民使本土凯尔特语言文化大幅减弱，未出现现实式的盖尔语复兴。", "causes": ["E_1939_WW2", "E_1945_BRITAIN_DEMOCRATISATION"], "effects": ["E_1960_MULTIPOLAR"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S3"], "href": "wiki/e-1945-ireland.html"}, {"id": "E_1945_KIEV", "year": 1945, "year_text": "1945后", "title": "基辅王国与白罗斯脱离莫斯科国", "epoch": "20世纪", "region": "东欧", "countries": ["基辅王国", "白罗斯", "罗斯兀鲁思"], "persons": [], "result": "二战后的国际秩序最终承认基辅王国与罗斯兀鲁思是两个不同的主权国家。罗斯兀鲁思从此不得不接受古罗斯世界已经永久分裂。形成“两次统一、两次分离”的历史记忆。", "causes": ["E_1939_WW2", "E_WW1"], "effects": ["E_1960_MULTIPOLAR"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S4"], "href": "wiki/e-1945-kiev.html"}, {"id": "E_1945_OCCITAN_ISSUE", "year": 1945, "year_text": "1945 — 1975", "title": "南部奥克省建制与法兰克-奥克问题", "epoch": "20世纪", "region": "南部奥克省", "countries": ["法兰克立宪君主国", "伊比利亚共和国（第五共和国后体制）"], "persons": [], "result": "核心矛盾不是“帕里斯 vs 整个奥克地区”，而是“中央法兰克国家 ↔ 多样化的奥克南部 ↔ 奥克文化 ↔ 法兰克文化 ↔ 德意志文化”，是真正的联邦化、多民族政治问题。普罗旺斯、多菲内可能是中央政府在南方最可靠的支持者。", "causes": ["E_1939_WW2", "E_1945_SETTLEMENT", "E_1789_EXILES"], "effects": ["E_1975_OCCITAN_NORMALISATION"], "war": null, "treaty": null, "significance": "", "status": "修正", "src": ["S0", "S1", "S2"], "href": "wiki/e-1945-occitan-issue.html"}, {"id": "E_1945_SETTLEMENT", "year": 1945, "year_text": "1945", "title": "战后德意志世界恢复与联邦化", "epoch": "20世纪", "region": "中欧", "countries": ["德意志联邦共和国", "法兰克立宪君主国"], "persons": [], "result": "最终形成德意志联邦共和国 + 法兰克立宪君主国，两者政治独立，但属于同一个更大的日耳曼文明体系。", "causes": ["E_1939_WW2"], "effects": ["E_1960_MULTIPOLAR", "E_1975_OCCITAN_NORMALISATION"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S0", "S1", "S2"], "href": "wiki/e-1945-settlement.html"}, {"id": "E_1954_IBERIA_COLONIAL", "year": 1954, "year_text": "1954年前后", "title": "非洲殖民地危机与第四共和国覆灭", "epoch": "20世纪：战后秩序", "region": "北非西部（马格里布）、伊比利亚半岛", "countries": ["伊比利亚第四共和国（1945—1954）", "马格里布（北非西部）", "伊比利亚第五共和国（1960— ）"], "persons": [], "result": "第四共和国终结；1960 年重建为总统权力加强的第五共和国。", "causes": ["E_1945_IBERIA_4REP", "E_MAGHREB_CHRISTIANISATION"], "effects": ["E_1960_IBERIA_5REP"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S2"], "href": "wiki/e-1954-iberia-colonial.html"}, {"id": "E_1960_IBERIA_5REP", "year": 1960, "year_text": "1960", "title": "伊比利亚第五共和国建立", "epoch": "20世纪后期：多极均势", "region": "伊比利亚半岛、北非西部", "countries": ["伊比利亚第五共和国（1960— ）", "伊比利亚共和国（第五共和国后体制）", "德意志联邦共和国", "法兰克立宪君主国"], "persons": [], "result": "现行伊比利亚共和国体制确立；同年多极均势格局成局。", "causes": ["E_1954_IBERIA_COLONIAL"], "effects": ["E_1960_MULTIPOLAR"], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S0", "S1", "S2"], "href": "wiki/e-1960-iberia-5rep.html"}, {"id": "E_1960_MULTIPOLAR", "year": 1960, "year_text": "1960年前后", "title": "多极均势与新亚洲文明地图", "epoch": "20世纪后期", "region": "全球", "countries": ["德意志联邦共和国", "法兰克立宪君主国", "伊比利亚共和国（第五共和国后体制）", "罗斯兀鲁思", "不列颠联邦共和国", "美利坚合众国"], "persons": [], "result": "亚洲形成了一个更复杂的文明梯度，而非“穆斯林少了”。", "causes": ["E_1945_SETTLEMENT", "E_1975_OCCITAN_NORMALISATION", "E_1945_KIEV", "E_1945_IRELAND"], "effects": [], "war": null, "treaty": null, "significance": "", "status": "已确定", "src": ["S0", "S1", "S2", "S4"], "href": "wiki/e-1960-multipolar.html"}, {"id": "E_1975_OCCITAN_NORMALISATION", "year": 1975, "year_text": "1972—1978（1975 为关键节点）", "title": "奥克省废除与“奥克正常化”（1972—1978）", "epoch": "20世纪后期", "region": "法兰克南部", "countries": ["法兰克立宪君主国"], "persons": [], "result": "奥克地区不再享有政治上的特殊地位，但文化上获得承认：奥克语可成为州级官方语言、双语教育、奥克文化机构得到国家支持、地方文化自治扩大、州议会普选、州政府由议会多数产生、州法院独立、州拥有一定税收自主权。但法兰克语仍是联邦层面唯一官方语言。", "causes": ["E_1945_OCCITAN_ISSUE"], "effects": ["E_1960_MULTIPOLAR"], "war": null, "treaty": null, "significance": "不是“民族自治领”，而是“文化承认 + 普通联邦州地位”。", "status": "修正", "src": ["S2"], "href": "wiki/e-1975-occitan-normalisation.html"}], "causal": [{"from": "E_1270_CAPET", "to": "E_1272_RUDOLF", "kind": "CAUSES", "label": "卡佩绝嗣引发继承危机，鲁道夫入主"}, {"from": "E_1270_CAPET", "to": "E_1273_OTTOKAR", "kind": "CAUSES", "label": "鲁道夫入主法兰克使德意志选侯不可能再选他，奥托卡成为最强势候选人"}, {"from": "E_1272_RUDOLF", "to": "E_1300_DUAL_SOURCE", "kind": "CAUSES", "label": "西部法兰克文明成型"}, {"from": "E_1273_OTTOKAR", "to": "E_1300_DUAL_SOURCE", "kind": "CAUSES", "label": "东部德意志文明成型"}, {"from": "E_1272_RUDOLF", "to": "E_1272_NORMAN_EXODUS", "kind": "CAUSES", "label": "击败诺曼底公爵与金雀花，诺曼-法兰西精英退回不列颠"}, {"from": "E_1272_NORMAN_EXODUS", "to": "E_1272_ABSOLUTISM", "kind": "CAUSES", "label": "跨海帝国路线破产、语言分层使议会式宪政无法生长"}, {"from": "E_1300_DUAL_SOURCE", "to": "E_1356_CHARTER", "kind": "CAUSES", "label": "双源格局下的制度性妥协需求"}, {"from": "E_1356_CHARTER", "to": "E_1400_DUAL_EMPIRE", "kind": "RESULTS_IN", "label": "双王冠制度为哈布斯堡回归帝国铺路"}, {"from": "E_1400_15C_GERMANISATION", "to": "E_1500_REFORMATION", "kind": "CAUSES", "label": "德意志化使普热米斯尔成为新教世界核心"}, {"from": "E_1500_REFORMATION", "to": "E_1524_PEASANTS", "kind": "CAUSES", "label": "宗教改革宣称“基督徒自由”成为农民战争起因之一"}, {"from": "E_1356_CHARTER", "to": "E_1618_RELIGION", "kind": "CAUSES", "label": "《法兰克福条约》宗教模糊性是宗教战争起因之一"}, {"from": "E_1524_PEASANTS", "to": "E_1618_RELIGION", "kind": "CAUSES", "label": "南德与北德新教文化分化，加剧宗教紧张"}, {"from": "E_1618_RELIGION", "to": "E_1648_VIENNA", "kind": "RESULTS_IN", "label": "战争僵局以《维也纳和约》结束"}, {"from": "E_1648_VIENNA", "to": "E_1700_DUAL_CROWN", "kind": "CAUSES", "label": "战后妥协促成双王冠准融合"}, {"from": "E_1648_VIENNA", "to": "E_1648_EXILES", "kind": "CAUSES", "label": "和约后的流亡波次加固英伦罗曼文化地位"}, {"from": "E_1700_DUAL_CROWN", "to": "E_1789_REVOLUTION", "kind": "CAUSES", "label": "双王冠准融合但未统一，宗教与北意大利矛盾积累"}, {"from": "E_1648_VIENNA", "to": "E_1789_REVOLUTION", "kind": "CAUSES", "label": "帝国分权使神圣罗马帝国易于被革命军迫使解散"}, {"from": "E_1789_REVOLUTION", "to": "E_1815_RESTORATION", "kind": "RESULTS_IN", "label": "反伊比利亚同盟击败革命帝国，进入反革命时代"}, {"from": "E_1789_REVOLUTION", "to": "E_1789_PLANTAGENET_FALL", "kind": "CAUSES", "label": "同期英国政治动荡，金雀花倾覆"}, {"from": "E_1789_REVOLUTION", "to": "E_1789_EXILES", "kind": "CAUSES", "label": "革命后的流亡波次"}, {"from": "E_1815_RESTORATION", "to": "E_1848_REVOLUTION", "kind": "CAUSES", "label": "革命留下的民族主义/共和主义/立宪主义/人民主权在19世纪爆发"}, {"from": "E_1848_REVOLUTION", "to": "E_1866_WAR", "kind": "RESULTS_IN", "label": "大德意志方案破产，统一只能走小德意志道路"}, {"from": "E_1866_WAR", "to": "E_1871_EMPIRE", "kind": "RESULTS_IN", "label": "普热米斯尔成为无可争议领导者，推进小德意志统一"}, {"from": "E_1871_EMPIRE", "to": "E_1900_INDUSTRY", "kind": "CAUSES", "label": "帝国整合多工业区，成为第二次工业革命中心"}, {"from": "E_1900_INDUSTRY", "to": "E_WW1", "kind": "CAUSES", "label": "工业与同盟体系导致一战"}, {"from": "E_WW1", "to": "E_1918_COLLAPSE", "kind": "RESULTS_IN", "label": "中欧战败导致两个君主国瓦解"}, {"from": "E_WW1", "to": "E_1918_EXILES", "kind": "CAUSES", "label": "一战中欧战败后部分知识分子流散"}, {"from": "E_1918_COLLAPSE", "to": "E_1939_WW2", "kind": "CAUSES", "label": "战后恢复与结构性资产（学术中心、工业体系）成为重新崛起的结构原因"}, {"from": "E_1918_EXILES", "to": "E_1939_WW2", "kind": "CAUSES", "label": "多数人才留在中欧参与战后重建"}, {"from": "E_1939_WW2", "to": "E_1945_SETTLEMENT", "kind": "RESULTS_IN", "label": "中欧协定惨胜后的战后安排"}, {"from": "E_1939_WW2", "to": "E_1945_BRITAIN_DEMOCRATISATION", "kind": "RESULTS_IN", "label": "不列颠战败，王权合法性崩溃"}, {"from": "E_1939_WW2", "to": "E_1945_KIEV", "kind": "RESULTS_IN", "label": "基辅王国与白罗斯再次脱离莫斯科国"}, {"from": "E_1939_WW2", "to": "E_1945_OCCITAN_ISSUE", "kind": "RESULTS_IN", "label": "战后法兰克获得奥克地区并设特殊建制"}, {"from": "E_1945_OCCITAN_ISSUE", "to": "E_1975_OCCITAN_NORMALISATION", "kind": "CAUSES", "label": "“先控制、再正常化”的整合策略最终导向奥克省废除"}, {"from": "E_1945_SETTLEMENT", "to": "E_1960_MULTIPOLAR", "kind": "CAUSES", "label": "多极均势形成"}, {"from": "E_1945_BRITAIN_DEMOCRATISATION", "to": "E_1945_IRELAND", "kind": "RESULTS_IN", "label": "帝国体系瓦解，爱尔兰全岛释放"}, {"from": "E_1100_WESTERN_BUDDHISM", "to": "E_1200_MONGOL", "kind": "CAUSES", "label": "西域佛教文明带为蒙古提供宗教多元基础"}, {"from": "E_1200_MONGOL", "to": "E_1400_GOLDEN_HORDE", "kind": "CAUSES", "label": "蒙古帝国西征后形成金帐汗国"}, {"from": "E_1100_WESTERN_BUDDHISM", "to": "E_1400_GOLDEN_HORDE", "kind": "CAUSES", "label": "西域佛教文明带长期存在使蒙古文明未迅速伊斯兰化，金帐汗国亦然"}, {"from": "E_1400_GOLDEN_HORDE", "to": "E_1500_ROS_UHLUS", "kind": "RESULTS_IN", "label": "莫斯科王朝蒙古化并建立罗斯兀鲁思"}, {"from": "E_1500_ROS_UHLUS", "to": "E_1918_KIEV_SPLIT", "kind": "CAUSES", "label": "后基辅罗斯国家传统与基辅罗斯传统分流"}, {"from": "E_1918_KIEV_SPLIT", "to": "E_1945_KIEV", "kind": "CAUSES", "label": "两次统一、两次分离的历史记忆"}, {"from": "E_1945_KIEV", "to": "E_1960_MULTIPOLAR", "kind": "CAUSES", "label": "罗斯兀鲁思-基辅王国边界成为欧洲—亚洲政治文明边界之一"}, {"from": "E_1200_MONGOL", "to": "E_1945_ASIA_ORDER", "kind": "CAUSES", "label": "蒙古文明遗产区从太平洋延伸到东欧森林地带"}, {"from": "E_1975_OCCITAN_NORMALISATION", "to": "E_1960_MULTIPOLAR", "kind": "CAUSES", "label": "法兰克奥克问题转入文化承认 + 普通联邦州地位阶段"}, {"from": "E_1272_RUDOLF", "to": "E_ANGLO_FRANKISH_RIVALRY", "kind": "CAUSES", "label": "英格兰被逐出大陆后竞争长期化"}, {"from": "E_0929_CORDOBA", "to": "E_1031_TAIFAS", "kind": "CAUSES", "label": "哈里发国的集权并未持久，1031年分裂"}, {"from": "E_1031_TAIFAS", "to": "E_1212_LAS_NAVAS", "kind": "RESULTS_IN", "label": "安达卢斯碎片化后由北非柏柏尔王朝接管，最终1212年战败"}, {"from": "E_1212_LAS_NAVAS", "to": "E_RECONQUISTA", "kind": "CAUSES", "label": "穆瓦希德战败是收复失地运动的转折点"}, {"from": "E_RECONQUISTA", "to": "E_IBERIAN_UNIFICATION", "kind": "RESULTS_IN", "label": "收复失地运动形成共同基督教/伊比利亚身份，进而导向统一"}, {"from": "E_IBERIAN_UNIFICATION", "to": "E_MAGHREB_CHRISTIANISATION", "kind": "RESULTS_IN", "label": "统一后的伊比利亚南下北非驱逐穆斯林"}, {"from": "E_IBERIAN_UNIFICATION", "to": "E_1789_REVOLUTION", "kind": "CAUSES", "label": "伊比利亚王国的中央集权在1789年被大革命推翻"}, {"from": "E_CRUSADES", "to": "E_1291_ACRE", "kind": "CAUSES", "label": "十字军在地中海东岸的军事存在最终终结"}, {"from": "E_1291_ACRE", "to": "E_FRANKISH_ORIENTALISM", "kind": "RESULTS_IN", "label": "法兰克转为以商业、传教与学术维持近东联系，形成东方学传统"}, {"from": "E_1200_MONGOL", "to": "E_MAMLUK_MONGOL", "kind": "CAUSES", "label": "蒙古西征引发马穆鲁克的阻击"}, {"from": "E_MAMLUK_MONGOL", "to": "E_1517_MAMLUK_END", "kind": "CAUSES", "label": "马穆鲁克长期维持独立，最终为安纳托利亚突厥帝国取代"}, {"from": "E_1517_MAMLUK_END", "to": "E_1501_PERSIA_SHIITE", "kind": "CAUSES", "label": "近东整合为逊尼派帝国，与波斯什叶派体系形成双极并立"}, {"from": "E_1270_CAPET", "to": "E_1272_RUDOLF", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1270_CAPET", "to": "E_1273_OTTOKAR", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1272_RUDOLF", "to": "E_1300_DUAL_SOURCE", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1272_RUDOLF", "to": "E_1272_NORMAN_EXODUS", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1272_NORMAN_EXODUS", "to": "E_1272_ABSOLUTISM", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1272_NORMAN_EXODUS", "to": "E_ANGLO_FRANKISH_RIVALRY", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1272_ABSOLUTISM", "to": "E_1945_BRITAIN_DEMOCRATISATION", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1273_OTTOKAR", "to": "E_1300_DUAL_SOURCE", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1273_OTTOKAR", "to": "E_1400_15C_GERMANISATION", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1300_DUAL_SOURCE", "to": "E_1356_CHARTER", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1300_DUAL_SOURCE", "to": "E_1400_DUAL_EMPIRE", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1356_CHARTER", "to": "E_1618_RELIGION", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1273_OTTOKAR", "to": "E_1400_15C_GERMANISATION", "kind": "CAUSES", "label": "前因"}, {"from": "E_1400_15C_GERMANISATION", "to": "E_1500_REFORMATION", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1356_CHARTER", "to": "E_1400_DUAL_EMPIRE", "kind": "CAUSES", "label": "前因"}, {"from": "E_1400_DUAL_EMPIRE", "to": "E_1500_REFORMATION", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1400_DUAL_EMPIRE", "to": "E_1500_REFORMATION", "kind": "CAUSES", "label": "前因"}, {"from": "E_1500_REFORMATION", "to": "E_1524_PEASANTS", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1500_REFORMATION", "to": "E_1618_RELIGION", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1524_PEASANTS", "to": "E_1618_RELIGION", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1500_REFORMATION", "to": "E_1618_RELIGION", "kind": "CAUSES", "label": "前因"}, {"from": "E_1618_RELIGION", "to": "E_1648_EXILES", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1618_RELIGION", "to": "E_1648_VIENNA", "kind": "CAUSES", "label": "前因"}, {"from": "E_1648_VIENNA", "to": "E_1700_DUAL_CROWN", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1648_VIENNA", "to": "E_1789_REVOLUTION", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1648_EXILES", "to": "E_1789_EXILES", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1700_DUAL_CROWN", "to": "E_1789_REVOLUTION", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1700_DUAL_CROWN", "to": "E_1848_REVOLUTION", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1789_REVOLUTION", "to": "E_1789_EXILES", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1789_REVOLUTION", "to": "E_1789_PLANTAGENET_FALL", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1789_EXILES", "to": "E_1945_OCCITAN_ISSUE", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1789_PLANTAGENET_FALL", "to": "E_1815_RESTORATION", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1789_REVOLUTION", "to": "E_1815_RESTORATION", "kind": "CAUSES", "label": "前因"}, {"from": "E_1815_RESTORATION", "to": "E_1848_REVOLUTION", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1700_DUAL_CROWN", "to": "E_1848_REVOLUTION", "kind": "CAUSES", "label": "前因"}, {"from": "E_1848_REVOLUTION", "to": "E_1866_WAR", "kind": "CAUSES", "label": "前因"}, {"from": "E_1866_WAR", "to": "E_1871_EMPIRE", "kind": "CAUSES", "label": "前因"}, {"from": "E_1871_EMPIRE", "to": "E_1900_INDUSTRY", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1871_EMPIRE", "to": "E_WW1", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1900_INDUSTRY", "to": "E_WW1", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1871_EMPIRE", "to": "E_WW1", "kind": "CAUSES", "label": "前因"}, {"from": "E_WW1", "to": "E_1918_EXILES", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_WW1", "to": "E_1918_COLLAPSE", "kind": "CAUSES", "label": "前因"}, {"from": "E_1918_COLLAPSE", "to": "E_1918_EXILES", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1918_COLLAPSE", "to": "E_1939_WW2", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1918_COLLAPSE", "to": "E_1918_EXILES", "kind": "CAUSES", "label": "前因"}, {"from": "E_1918_EXILES", "to": "E_1939_WW2", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1939_WW2", "to": "E_1945_SETTLEMENT", "kind": "CAUSES", "label": "前因"}, {"from": "E_1945_SETTLEMENT", "to": "E_1960_MULTIPOLAR", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1945_SETTLEMENT", "to": "E_1975_OCCITAN_NORMALISATION", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1939_WW2", "to": "E_1945_OCCITAN_ISSUE", "kind": "CAUSES", "label": "前因"}, {"from": "E_1945_SETTLEMENT", "to": "E_1945_OCCITAN_ISSUE", "kind": "CAUSES", "label": "前因"}, {"from": "E_1789_EXILES", "to": "E_1945_OCCITAN_ISSUE", "kind": "CAUSES", "label": "前因"}, {"from": "E_1945_OCCITAN_ISSUE", "to": "E_1975_OCCITAN_NORMALISATION", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1975_OCCITAN_NORMALISATION", "to": "E_1960_MULTIPOLAR", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1939_WW2", "to": "E_1945_BRITAIN_DEMOCRATISATION", "kind": "CAUSES", "label": "前因"}, {"from": "E_1272_ABSOLUTISM", "to": "E_1945_BRITAIN_DEMOCRATISATION", "kind": "CAUSES", "label": "前因"}, {"from": "E_1939_WW2", "to": "E_1945_IRELAND", "kind": "CAUSES", "label": "前因"}, {"from": "E_1945_BRITAIN_DEMOCRATISATION", "to": "E_1945_IRELAND", "kind": "CAUSES", "label": "前因"}, {"from": "E_1945_IRELAND", "to": "E_1960_MULTIPOLAR", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1939_WW2", "to": "E_1945_KIEV", "kind": "CAUSES", "label": "前因"}, {"from": "E_WW1", "to": "E_1945_KIEV", "kind": "CAUSES", "label": "前因"}, {"from": "E_1945_KIEV", "to": "E_1960_MULTIPOLAR", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1945_IRELAND", "to": "E_1960_MULTIPOLAR", "kind": "CAUSES", "label": "前因"}, {"from": "E_1200_MONGOL", "to": "E_1400_GOLDEN_HORDE", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1100_WESTERN_BUDDHISM", "to": "E_1200_MONGOL", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1100_WESTERN_BUDDHISM", "to": "E_1400_GOLDEN_HORDE", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1400_GOLDEN_HORDE", "to": "E_1500_ROS_UHLUS", "kind": "CAUSES", "label": "前因"}, {"from": "E_1500_ROS_UHLUS", "to": "E_1918_KIEV_SPLIT", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1918_KIEV_SPLIT", "to": "E_1945_KIEV", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1918_KIEV_SPLIT", "to": "E_1960_MULTIPOLAR", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1100_WESTERN_BUDDHISM", "to": "E_1945_ASIA_ORDER", "kind": "CAUSES", "label": "前因"}, {"from": "E_1400_GOLDEN_HORDE", "to": "E_1945_ASIA_ORDER", "kind": "CAUSES", "label": "前因"}, {"from": "E_0929_CORDOBA", "to": "E_1031_TAIFAS", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1031_TAIFAS", "to": "E_RECONQUISTA", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1031_TAIFAS", "to": "E_1212_LAS_NAVAS", "kind": "CAUSES", "label": "前因"}, {"from": "E_1212_LAS_NAVAS", "to": "E_RECONQUISTA", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1212_LAS_NAVAS", "to": "E_IBERIAN_UNIFICATION", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1031_TAIFAS", "to": "E_RECONQUISTA", "kind": "CAUSES", "label": "前因"}, {"from": "E_RECONQUISTA", "to": "E_MAGHREB_CHRISTIANISATION", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_RECONQUISTA", "to": "E_IBERIAN_UNIFICATION", "kind": "CAUSES", "label": "前因"}, {"from": "E_IBERIAN_UNIFICATION", "to": "E_1789_REVOLUTION", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_IBERIAN_UNIFICATION", "to": "E_MAGHREB_CHRISTIANISATION", "kind": "CAUSES", "label": "前因"}, {"from": "E_MAGHREB_CHRISTIANISATION", "to": "E_1960_MULTIPOLAR", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_CRUSADES", "to": "E_FRANKISH_ORIENTALISM", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_CRUSADES", "to": "E_1291_ACRE", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1291_ACRE", "to": "E_FRANKISH_ORIENTALISM", "kind": "CAUSES", "label": "前因"}, {"from": "E_MAMLUK_MONGOL", "to": "E_1500_ROS_UHLUS", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1500_ROS_UHLUS", "to": "E_1517_MAMLUK_END", "kind": "CAUSES", "label": "前因"}, {"from": "E_1517_MAMLUK_END", "to": "E_1960_MULTIPOLAR", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1200_MONGOL", "to": "E_1501_PERSIA_SHIITE", "kind": "CAUSES", "label": "前因"}, {"from": "E_1501_PERSIA_SHIITE", "to": "E_1960_MULTIPOLAR", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1866_WAR", "to": "E_1871_IBERIA_2EMP_FALL", "kind": "CAUSES", "label": "前因"}, {"from": "E_1871_IBERIA_2EMP_FALL", "to": "E_1871_EMPIRE", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1871_IBERIA_2EMP_FALL", "to": "E_WW1", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1939_WW2", "to": "E_1940_IBERIA_DEFEAT", "kind": "CAUSES", "label": "前因"}, {"from": "E_1940_IBERIA_DEFEAT", "to": "E_1945_IBERIA_4REP", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1940_IBERIA_DEFEAT", "to": "E_1945_IBERIA_4REP", "kind": "CAUSES", "label": "前因"}, {"from": "E_1939_WW2", "to": "E_1945_IBERIA_4REP", "kind": "CAUSES", "label": "前因"}, {"from": "E_1945_IBERIA_4REP", "to": "E_1954_IBERIA_COLONIAL", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1945_IBERIA_4REP", "to": "E_1954_IBERIA_COLONIAL", "kind": "CAUSES", "label": "前因"}, {"from": "E_MAGHREB_CHRISTIANISATION", "to": "E_1954_IBERIA_COLONIAL", "kind": "CAUSES", "label": "前因"}, {"from": "E_1954_IBERIA_COLONIAL", "to": "E_1960_IBERIA_5REP", "kind": "RESULTS_IN", "label": "后果"}, {"from": "E_1954_IBERIA_COLONIAL", "to": "E_1960_IBERIA_5REP", "kind": "CAUSES", "label": "前因"}, {"from": "E_1960_IBERIA_5REP", "to": "E_1960_MULTIPOLAR", "kind": "RESULTS_IN", "label": "后果"}], "epochs": ["宗教史长时段", "8—11世纪：伊斯兰伊比利亚", "11世纪：安达卢斯分裂", "11—13世纪：十字军东征", "1200—1300：蒙古帝国", "13世纪：收复失地运动的转折", "13世纪：蒙古西征的界线", "13世纪：双源发生", "13—15世纪", "长时段", "13世纪：十字军据点的终结", "13—14世纪", "8—15世纪：收复失地运动", "14世纪：法兰克福条约与双元帝国", "14—15世纪", "14世纪以后：法兰克东方学", "15—16世纪", "15—16世纪：伊比利亚统一", "16世纪：波斯什叶派国家", "16世纪：近东格局重组", "15—16世纪：宗教改革与农民战争", "16—20世纪：北非西部的基督教化", "17世纪：宗教战争与维也纳和约", "17世纪后", "17世纪", "18世纪：双王冠融合", "18—19世纪", "18—19世纪：伊比利亚大革命", "19世纪", "19世纪：1848、1866、1871", "19世纪：小德意志统一与伊比利亚转折", "19—20世纪：工业化与第二次工业革命", "20世纪", "20世纪：第二次世界大战", "20世纪后期", "20世纪：战后秩序", "20世纪后期：多极均势"], "axis": [{"year": 1270, "label": "卡佩绝嗣 / 继承危机", "event_id": "E_1270_CAPET", "event_zh": "卡佩绝嗣与法兰克继承危机", "on_map_axis_16": true, "note": null}, {"year": 1272, "label": "鲁道夫加冕 / 英格兰被逐出大陆", "event_id": "E_1272_RUDOLF", "event_zh": "鲁道夫加冕为“法兰克人的国王”", "on_map_axis_16": true, "note": null}, {"year": 1300, "label": "东西双源格局定型", "event_id": "E_1300_DUAL_SOURCE", "event_zh": "东西双源格局定型", "on_map_axis_16": true, "note": null}, {"year": 1356, "label": "《法兰克福宪章》/ 双王冠", "event_id": "E_1356_CHARTER", "event_zh": "《法兰克福宪章》与双王冠确立", "on_map_axis_16": true, "note": null}, {"year": 1450, "label": "哈布斯堡回归帝国 / 双元君主国", "event_id": "E_1400_DUAL_EMPIRE", "event_zh": "哈布斯堡回归帝国与双元君主国", "on_map_axis_16": true, "note": "S0《地图工程》以1450为纵轴节点（“1450哈布斯堡回归”）；S0/S1正文将此过程记于“14世纪后期”。两者指向同一事件：此处以1450为地图节点、以14世纪后期为正文纪年。"}, {"year": 1524, "label": "农民战争（1524—1527）", "event_id": "E_1524_PEASANTS", "event_zh": "农民战争", "on_map_axis_16": true, "note": null}, {"year": 1618, "label": "三十年宗教战争爆发", "event_id": "E_1618_RELIGION", "event_zh": "三十年宗教战争", "on_map_axis_16": true, "note": null}, {"year": 1648, "label": "《维也纳和约》/ 帝国分权", "event_id": "E_1648_VIENNA", "event_zh": "《维也纳和约》与帝国分权", "on_map_axis_16": true, "note": null}, {"year": 1789, "label": "伊比利亚-奥克大革命", "event_id": "E_1789_REVOLUTION", "event_zh": "伊比利亚-奥克大革命", "on_map_axis_16": true, "note": null}, {"year": 1815, "label": "反革命时代 / 神罗解散", "event_id": "E_1815_RESTORATION", "event_zh": "反革命时代与旧秩序重建", "on_map_axis_16": true, "note": null}, {"year": 1848, "label": "大德意志方案失败", "event_id": "E_1848_REVOLUTION", "event_zh": "1848年革命与大德意志方案失败", "on_map_axis_16": true, "note": null}, {"year": 1866, "label": "奥法战争", "event_id": "E_1866_WAR", "event_zh": "1866年奥法战争", "on_map_axis_16": true, "note": null}, {"year": 1871, "label": "罗马加冕 / 德意志帝国成立", "event_id": "E_1871_EMPIRE", "event_zh": "罗马加冕与德意志帝国成立", "on_map_axis_16": true, "note": null}, {"year": 1914, "label": "第一次世界大战（地图节点以1918记其结局）", "event_id": "E_WW1", "event_zh": "第一次世界大战", "on_map_axis_16": false, "note": null}, {"year": 1918, "label": "德意志帝国瓦解 / 法兰克共和化", "event_id": "E_1918_COLLAPSE", "event_zh": "德意志帝国瓦解与法兰克共和化", "on_map_axis_16": true, "note": null}, {"year": 1939, "label": "第二次世界大战（地图节点以1945记其结果）", "event_id": "E_1939_WW2", "event_zh": "第二次世界大战", "on_map_axis_16": false, "note": null}, {"year": 1945, "label": "战后德意志世界恢复与联邦化", "event_id": "E_1945_SETTLEMENT", "event_zh": "战后德意志世界恢复与联邦化", "on_map_axis_16": true, "note": null}, {"year": 1960, "label": "多极均势 / 新亚洲文明地图", "event_id": "E_1960_MULTIPOLAR", "event_zh": "多极均势与新亚洲文明地图", "on_map_axis_16": true, "note": null}, {"year": 1975, "label": "奥克省废除（S2新增节点，不在S0地图16节点内）", "event_id": "E_1975_OCCITAN_NORMALISATION", "event_zh": "奥克省废除与“奥克正常化”（1972—1978）", "on_map_axis_16": false, "note": null}], "min": 800, "max": 1975};
+const EV = {}; D.events.forEach(e => EV[e.id]=e);
+
+/* ============ 分类规则：地域 / 宗教 / 文化 / 制度 / 军事 ============ */
+const RULES = {
+  region: [
+    ['不列颠',      ['不列颠','英格兰','伦敦','爱尔兰','苏格兰','威尔士','英联邦','蒙福尔','金雀花','盎格鲁']],
+    ['近东·北非',   ['近东','黎凡特','叙利亚','埃及','阿拉伯','马格里布','北非','十字军','马穆鲁克','阿尤布','法蒂玛','奥斯曼','安纳托利亚','君士坦丁堡','海峡','波斯','伊朗','两河','巴格达','汉志','麦加','麦地那','科尔多瓦','穆瓦希德','收复失地']],
+    ['亚洲',        ['亚洲','西域','蒙古','金帐','罗斯兀鲁思','基辅王国','白罗斯','中国','西藏','敦煌','龟兹','于阗','吐鲁番','东洲','长生天','萨满','撒马尔罕','布哈拉','呼罗珊']],
+    ['南欧·地中海', ['意大利','罗马','伦巴底','威尼托','皮埃蒙特','那不勒斯','米兰','托斯卡纳','北意大利','教皇','地中海','西西里']],
+    ['东欧',        ['波兰','波西米亚','摩拉维亚','西里西亚','克罗地亚','斯洛文尼亚','布拉格','维也纳','奥地利','施蒂利亚','蒂罗尔','卡林西亚','布雷斯劳','波森','但泽']],
+    ['北欧',        ['丹麦','挪威','瑞典','北欧']],
+    ['西欧',        ['法兰克','帕里斯','雷姆斯','香槟','勃艮第','洛林','诺曼底','布列塔尼','弗兰登','法兰西岛','奥克','图卢兹','普罗旺斯','多菲内','伊比利亚','卡斯蒂利亚','阿拉贡','葡萄牙','托莱多','鲁安','南滕']],
+    ['中欧',        ['德意志','普鲁士','萨克森','巴伐利亚','勃兰登堡','汉萨','莱茵','威斯特法伦','美因茨','黑森','图林根','阿尔萨斯','瑞士','低地','尼德兰','阿姆斯特丹','汉诺威','汉堡','不来梅','法兰克福','斯特拉斯堡']],
+  ],
+  religion: [
+    ['天主教',            ['天主教','教皇','教宗','圣母','修道院','本笃','克吕尼','神学院','枢机','黎塞留','封圣','雷姆斯圣母']],
+    ['阿尔卑斯福音派',    ['阿尔卑斯福音','南德意志新教','十字架下的喜悦','有节制的喜乐','巴伐利亚','蒂罗尔','施蒂利亚','伦巴底新教']],
+    ['胡斯派',            ['胡斯','波西米亚福音','伯利恒礼拜堂','布拉格']],
+    ['加尔文宗',          ['加尔文','改革宗','长老制','日内瓦','苏黎世','低地','尼德兰','瑞士德语']],
+    ['路德宗',            ['路德','路德宗','维滕堡','九十五条','北德意志','萨克森','勃兰登堡','丹麦','瑞典']],
+    ['东正教',            ['东正教','正教','基辅','古罗斯','白罗斯','君士坦丁堡','拜占庭','东正']],
+    ['伊斯兰',            ['伊斯兰','穆斯林','哈里发','苏丹','逊尼','什叶','科尔多瓦','穆瓦希德','法蒂玛','阿尤布','马穆鲁克','阿拔斯','奥斯曼','波斯','伊朗','阿拉伯','埃及','叙利亚','马格里布','安纳托利亚']],
+    ['佛教·萨满·长生天', ['佛教','佛','萨满','长生天','腾格里','西域','敦煌','龟兹','于阗','吐鲁番','蒙古','西藏','东洲','犍陀罗']],
+    ['宗教改革与战争',    ['宗教改革','宗教战争','三十年','维也纳和约','教产','信仰','新教联盟','天主教联盟','政教分离','教会','皈依']],
+  ],
+  culture: [
+    ['语言·正字法',    ['语言','正字法','共同体德语','标准语','法兰克语','英语','奥克语','方言','宫廷语','语言会议','术语','称谓','译名','罗曼化','正统']],
+    ['学术·教育',      ['大学','学院','学术','科学','物理','数学','化学','医学','法学','哲学','东方学','理工','出版','图书馆','知识分子','人才','学人','哥廷根','莱比锡']],
+    ['艺术·音乐·建筑', ['艺术','音乐','歌剧','巴洛克','教堂','建筑','咖啡馆','甜点','啤酒节','斯卡拉','美学院','绘画','文学','宫廷古典主义','沙龙']],
+    ['文献·编纂',      ['宪章','和约','条约','条款','法典','档案','文献','编纂','纪年','注记','敕令','诏书']],
+  ],
+  polity: [
+    ['王朝更替',    ['王朝','世系','继承','绝嗣','登基','加冕','复辟','废王','谱系','联姻','王冠','君主','国王','皇帝','哈里发国','苏丹国']],
+    ['宪制·条约',   ['宪章','和约','条约','宪法','权利宪章','宪政','议会','选举','选侯','帝国议会','法案','三重加冕','双王冠','双轨制']],
+    ['政体变革',    ['共和','帝国','联邦','单一制','总统制','多党','政体','民主化','联邦化','革命','改革','集权','自治','正常化']],
+    ['国际体系',    ['同盟','协约','中欧协定','均势','六极','多极','外交','中立','殖民地','国际','英联邦','欧盟']],
+  ],
+  conflict: [
+    ['战争',      ['战争','大战','一战','二战','三十年','奥法','收复失地','十字军','蒙古西征','入侵','战役','会战','联军','出征']],
+    ['革命·起义', ['革命','起义','农民战争','暴动','叛乱','独立','镇压','政变']],
+    ['迫害·流散', ['屠杀','迫害','驱逐','迁移','压制','流散','流亡','迁往','赶去','禁止']],
+  ],
+};
+const CHRONO = ['13世纪','14世纪','15—16世纪','17世纪','18世纪','19世纪','20世纪','长时段','宗教史长时段','亚洲线'];
+const MODES = {
+  region:  {label:'地域', order:['西欧','中欧','东欧','南欧·地中海','不列颠','北欧','近东·北非','亚洲']},
+  religion:{label:'宗教', order:['天主教','路德宗','加尔文宗','胡斯派','阿尔卑斯福音派','东正教','伊斯兰','佛教·萨满·长生天','宗教改革与战争']},
+  culture: {label:'文化', order:['语言·正字法','学术·教育','艺术·音乐·建筑','文献·编纂']},
+  polity:  {label:'制度', order:['王朝更替','宪制·条约','政体变革','国际体系']},
+  conflict:{label:'军事', order:['战争','革命·起义','迫害·流散']},
+};
+function classify(e, mode) {
+  const text = e.title+' '+e.region+' '+e.epoch+' '+e.result+' '+(e.significance||'')+' '
+             + e.countries.join(' ')+' '+e.persons.join(' ');
+  const rules = RULES[mode] || [];
+  for (let i=0;i<rules.length;i++) {
+    const lane=rules[i][0], kws=rules[i][1];
+    for (let j=0;j<kws.length;j++) if (text.indexOf(kws[j]) >= 0) return lane;
+  }
+  return '其他';
+}
+function chronoLane(e) {
+  const ep = e.epoch||'';
+  if (ep.indexOf('宗教史')>=0) return '宗教史长时段';
+  if (ep.indexOf('亚洲')>=0 || ep.indexOf('蒙古')>=0) return '亚洲线';
+  const y=e.year;
+  if (y<1300) return '13世纪';
+  if (y<1400) return '14世纪';
+  if (y<1600) return '15—16世纪';
+  if (y<1700) return '17世纪';
+  if (y<1800) return '18世纪';
+  if (y<1900) return '19世纪';
+  if (y<2000) return '20世纪';
+  return '长时段';
+}
+function laneOf(e, mode) { return mode==='epoch' ? chronoLane(e) : classify(e, mode); }
+function laneOrder(mode) {
+  if (mode==='epoch') return CHRONO.slice();
+  return ((MODES[mode]||{order:[]}).order).slice();
+}
+
+const activeEpochs=new Set(), activeLanes=new Set();
+const fromEl=document.getElementById('from'), toEl=document.getElementById('to');
+let MODE='region';
+function fmt(y){ return y<0? (-y)+' BC' : y; }
+function visible(){
+  const f=+fromEl.value, t=+toEl.value;
+  return D.events.filter(e=>e.year>=f && e.year<=t
+     && (!activeEpochs.size || activeEpochs.has(e.epoch))
+     && (!activeLanes.size || activeLanes.has(laneOf(e, MODE))));
+}
+document.getElementById('mode').onchange=function(){
+  MODE=this.value;
+  activeLanes.clear();
+  document.getElementById('modev').textContent=(MODES[MODE]||{label:'时代'}).label;
+  buildLaneChips(); draw();
+};
+const epEl=document.getElementById('epochs');
+D.epochs.forEach(function(ep){
+  const c=document.createElement('div'); c.className='chip'; c.textContent=ep;
+  c.onclick=function(){ activeEpochs.has(ep)?activeEpochs.delete(ep):activeEpochs.add(ep);
+                        c.classList.toggle('on'); draw(); };
+  epEl.appendChild(c);
+});
+const lnEl=document.getElementById('kinds');
+function buildLaneChips(){
+  lnEl.innerHTML='';
+  const order=laneOrder(MODE);
+  const present={};
+  D.events.forEach(function(e){ present[laneOf(e,MODE)]=1; });
+  Object.keys(present).forEach(function(l){ if(order.indexOf(l)<0) order.push(l); });
+  order.forEach(function(l){
+    if(!present[l]) return;
+    const c=document.createElement('div'); c.className='chip'; c.textContent=l;
+    c.onclick=function(){ activeLanes.has(l)?activeLanes.delete(l):activeLanes.add(l);
+                          c.classList.toggle('on'); draw(); };
+    lnEl.appendChild(c);
+  });
+}
+fromEl.oninput=toEl.oninput=draw;
+
+function draw(){
+  const f=+fromEl.value, t=+toEl.value;
+  document.getElementById('rg').textContent=fmt(f)+' — '+fmt(t);
+  const rows=visible();
+  document.getElementById('cnt').textContent=rows.length;
+  const span=Math.max(1,t-f);
+  const chart=document.getElementById('chart');
+  let html='<div class="tl-axis">';
+  const step=Math.max(25, Math.round(span/10/25)*25);
+  for(let y=Math.ceil(f/step)*step; y<=t; y+=step){
+    html+='<div class="tl-tick" style="left:'+((y-f)/span*100)+'%"><span>'+fmt(y)+'</span></div>';
+  }
+  html+='</div>';
+  const byLane={};
+  rows.forEach(function(e){ const l=laneOf(e,MODE); (byLane[l]=byLane[l]||[]).push(e); });
+  const order=laneOrder(MODE);
+  Object.keys(byLane).forEach(function(l){ if(order.indexOf(l)<0) order.push(l); });
+  order.forEach(function(l){
+    const list=byLane[l]; if(!list) return;
+    list.sort(function(a,b){return a.year-b.year;});
+    const clusters=[];
+    const tol=Math.max(2, span*0.012);
+    list.forEach(function(e){
+      const last=clusters[clusters.length-1];
+      if(last && e.year-last.year<=tol) { last.items.push(e); last.year=(last.year+e.year)/2; }
+      else clusters.push({year:e.year, items:[e]});
+    });
+    html+='<div class="tl-lane"><div class="tl-lane-label">'+l+'</div>';
+    clusters.forEach(function(c){
+      const p=(c.year-f)/span*100;
+      const w=Math.max(0.8, Math.min(26, 1600/span));
+      const lbl = c.items.length>1 ? ('● '+c.items.length) : c.items[0].title;
+      let tt='';
+      c.items.forEach(function(x){ tt += x.year_text+' '+x.title+' / '; });
+      html+='<div class="tl-ev" style="left:'+p+'%;width:'+w+'%" '
+          + 'data-cluster="'+c.items.map(function(x){return x.id;}).join(',')+'" '
+          + 'title="'+esc(tt)+'"><span>'+esc(lbl)+'</span></div>';
+    });
+    html+='</div>';
+  });
+  chart.innerHTML=html;
+  const blocks=chart.querySelectorAll('.tl-ev');
+  for(let i=0;i<blocks.length;i++){
+    blocks[i].onclick=function(){
+      const ids=(this.dataset.cluster||'').split(',').filter(Boolean);
+      if(ids.length===1) show(ids[0], this); else showCluster(ids, this);
+    };
+  }
+  document.getElementById('acc-list').innerHTML =
+    '<table><tr><th>年份</th><th>事件</th><th>国家</th><th>结果</th><th>状态</th></tr>'
+    + rows.slice().sort(function(a,b){return a.year-b.year;}).map(function(e){
+        return '<tr><td>'+esc(e.year_text)+'</td>'
+        +'<td><a href="'+e.href+'">'+esc(e.title)+'</a></td>'
+        +'<td>'+esc(e.countries.join('、'))+'</td>'
+        +'<td>'+esc(e.result.slice(0,90))+(e.result.length>90?'…':'')+'</td>'
+        +'<td>'+esc(e.status)+'</td></tr>';
+      }).join('')+'</table>';
+}
+function esc(s){return (s==null?'':String(s)).replace(/[&<>"]/g,function(m){
+  return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[m];});}
+function nm(id){ return EV[id]? EV[id].title : id; }
+function place(el, w){
+  const tip=document.getElementById('tip');
+  const r=el.getBoundingClientRect();
+  tip.style.left=Math.min(window.innerWidth-(w||400), Math.max(10, r.left))+'px';
+  tip.style.top=Math.min(window.innerHeight-300, r.bottom+8)+'px';
+  tip.style.display='block';
+}
+function show(id, el){
+  const e=EV[id]; if(!e) return;
+  let causes='', effs='';
+  (e.causes||[]).forEach(function(c){ causes+='<li>'+esc(nm(c))+'</li>'; });
+  (e.effects||[]).forEach(function(c){ effs+='<li>'+esc(nm(c))+'</li>'; });
+  document.getElementById('tip').innerHTML='<h4>'+esc(e.year_text)+'　'+esc(e.title)+'</h4>'
+   +'<div class="legend">'+esc(e.epoch)+' ｜ '+esc(e.region)+' ｜ '+esc(e.status)+' ｜ '+esc(e.src.join('、'))+'</div>'
+   +(e.countries.length?'<div><b>国家：</b>'+esc(e.countries.join('、'))+'</div>':'')
+   +(e.persons.length?'<div><b>人物：</b>'+esc(e.persons.join('、'))+'</div>':'')
+   +'<div><b>结果：</b>'+esc(e.result)+'</div>'
+   +(causes?'<div><b>前因：</b><ul>'+causes+'</ul></div>':'')
+   +(effs?'<div><b>后果：</b><ul>'+effs+'</ul></div>':'')
+   +'<div style="margin-top:6px"><a href="'+e.href+'">打开完整词条 →</a></div>';
+  place(el, 400);
+}
+function showCluster(ids, el){
+  let items='';
+  ids.forEach(function(id){ const e=EV[id];
+    items+='<li><a href="'+e.href+'">'+esc(e.year_text)+'　'+esc(e.title)+'</a></li>'; });
+  document.getElementById('tip').innerHTML='<h4>该处共 '+ids.length+' 个事件</h4><ul>'+items+'</ul>';
+  place(el, 420);
+}
+document.addEventListener('click', function(ev){
+  const tip=document.getElementById('tip');
+  if(!tip.contains(ev.target) && !ev.target.closest('.tl-ev')) tip.style.display='none';
+});
+buildLaneChips();
+draw();
+</script>
+
+</body>
+</html>

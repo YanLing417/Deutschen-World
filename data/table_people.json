@@ -1,0 +1,1187 @@
+{
+  "table": "people",
+  "rows": [
+    {
+      "id": "PE_ALBERT_EINSTEIN",
+      "name_zh": "爱因斯坦",
+      "name_de": "Albert Einstein",
+      "name_en": "Albert Einstein",
+      "title": "物理学家",
+      "dynasty": null,
+      "dynasty_id": null,
+      "country": "美利坚合众国",
+      "birth": "文档未载",
+      "death": "文档未载",
+      "reign": null,
+      "positions": [
+        "一战后流散知识分子之代表"
+      ],
+      "deeds": [
+        "一战后迁往美国（“爱因斯坦式物理学家”）"
+      ],
+      "family": {},
+      "context": "S0“一战后的知识分子流散”一节以此类人物为代表。",
+      "appendix": false,
+      "status": "已确定",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "PE_ALBRECHT_II_SON_IN_LAW",
+      "name_zh": "阿尔布雷希特二世之女婿（法兰克贵族推举对象，文档未具名）",
+      "name_de": "Schwiegersohn Albrechts II. (ungenannt)",
+      "name_en": "Son-in-law of Albrecht II (unnamed)",
+      "title": "法兰克贵族推举的王位继承人（推定）",
+      "dynasty": null,
+      "dynasty_id": null,
+      "country": "法兰克立宪君主国",
+      "birth": "文档未载",
+      "death": "文档未载",
+      "reign": null,
+      "positions": [
+        "法兰克贵族推举对象"
+      ],
+      "deeds": [
+        "1356年法兰克贵族要求其继承法兰克王位，德意志选侯坚持选举德意志诸侯为皇帝；教皇介入后以《法兰克福宪章》的双轨制妥协解决"
+      ],
+      "family": {
+        "wife": "PE_ALBRECHT_II_DAUGHTER"
+      },
+      "context": "S0 只记身份未记姓名。",
+      "appendix": true,
+      "status": "已确定",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "PE_ALEXANDER_HUMBOLDT",
+      "name_zh": "亚历山大·冯·洪堡",
+      "name_de": "Alexander von Humboldt",
+      "name_en": "Alexander von Humboldt",
+      "title": "普鲁士博物学家、地理学家",
+      "dynasty": null,
+      "dynasty_id": null,
+      "country": "德意志联邦共和国",
+      "birth": "1769",
+      "death": "1859",
+      "reign": null,
+      "positions": [
+        "19世纪最著名的科学家之一"
+      ],
+      "deeds": [
+        "历史坐标：作为1828年柏林“自然研究者会议”与科学社交生活的中心人物在此参照"
+      ],
+      "family": {},
+      "context": "现实史人物，用于锚定19世纪中欧科学盛况。",
+      "appendix": true,
+      "status": "已确定",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "PE_ALFONS_X",
+      "name_zh": "阿方索十世",
+      "name_de": "Alfons X. von Kastilien",
+      "name_en": "Alfonso X of Castile",
+      "title": "卡斯蒂利亚国王",
+      "dynasty": null,
+      "dynasty_id": null,
+      "country": "西班牙-阿拉贡",
+      "birth": "1221",
+      "death": "1284",
+      "reign": "1252 — 1284",
+      "positions": [
+        "卡斯蒂利亚国王",
+        "神圣罗马帝国皇位候选人（推定）"
+      ],
+      "deeds": [
+        "推动卡斯蒂利亚在伊比利亚的扩张，是伊比利亚统一进程的早期阶段之一",
+        "主持编纂《七章法典》（Siete Partidas）与天文表，是伊比利亚罗曼语高文化的代表"
+      ],
+      "family": {},
+      "context": "伊比利亚统一进程早期的代表性君主。按世界线口径，其名采用德式转写（Alfons）。",
+      "appendix": false,
+      "status": "已确定",
+      "src": [
+        "S2"
+      ]
+    },
+    {
+      "id": "PE_BRITTANY_DUKE",
+      "name_zh": "布列塔尼公爵（1270年继承争夺者，文档未具名）",
+      "name_de": "Herzog der Bretagne (ungenannt)",
+      "name_en": "Duke of Brittany (unnamed)",
+      "title": "布列塔尼公爵",
+      "dynasty": null,
+      "dynasty_id": null,
+      "country": "法兰克立宪君主国",
+      "birth": "文档未载",
+      "death": "文档未载",
+      "reign": null,
+      "positions": [
+        "法兰克王位继承争夺者"
+      ],
+      "deeds": [
+        "1270年前后作为卡佩继承争夺者之一提出主张，未成功"
+      ],
+      "family": {},
+      "context": "S0 只记头衔未记姓名。",
+      "appendix": true,
+      "status": "已确定",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "PE_ISABELLA_VON_KASTILIEN",
+      "name_zh": "伊莎贝拉·冯·卡斯蒂利亚",
+      "name_de": "Isabella von Kastilien",
+      "name_en": "Isabella of Castile",
+      "title": "卡斯蒂利亚女王（推定）",
+      "dynasty": null,
+      "dynasty_id": null,
+      "country": "西班牙-阿拉贡",
+      "birth": "推定 1451年",
+      "death": "推定 1504年（本轮新增，可调整）",
+      "reign": "推定 1474 — 1504",
+      "positions": [
+        "卡斯蒂利亚女王",
+        "伊比利亚统一的推动者（推定）"
+      ],
+      "deeds": [
+        "与阿拉贡王权联合，完成伊比利亚半岛主要部分的统一（推定）",
+        "推动对半岛南部穆斯林政权的最后征服（推定）",
+        "其政策开启了伊比利亚南下北非驱逐穆斯林的进程（推定）"
+      ],
+      "family": {},
+      "context": "姓名按德语化处理（Isabella von Kastilien）。用途：为“西班牙-阿拉贡逐步统一伊比利亚”提供人物锚点。",
+      "appendix": false,
+      "status": "待定",
+      "src": [
+        "S2"
+      ]
+    },
+    {
+      "id": "PE_JEANNE_CHAMPAGNE",
+      "name_zh": "香槟女继承人让娜",
+      "name_de": "Jeanne von Champagne",
+      "name_en": "Jeanne of Champagne",
+      "title": "香槟女继承人",
+      "dynasty": null,
+      "dynasty_id": null,
+      "country": "法兰克立宪君主国",
+      "birth": "文档未载",
+      "death": "文档未载",
+      "reign": null,
+      "positions": [],
+      "deeds": [
+        "嫁给鲁道夫之子阿尔布雷希特，使哈布斯堡合法吞并香槟"
+      ],
+      "family": {
+        "husband": "PE_ALBRECHT_I"
+      },
+      "context": "文档仅一处提及。",
+      "appendix": false,
+      "status": "已确定",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "PE_JOHANNA_VON_ARKON",
+      "name_zh": "约翰娜·冯·阿尔孔",
+      "name_de": "Johanna von Arkon",
+      "name_en": "Johanna von Arkon",
+      "title": "法兰克抗伊比利亚民兵领袖（推定）",
+      "dynasty": null,
+      "dynasty_id": null,
+      "country": "法兰克立宪君主国",
+      "birth": "推定 1410年前后",
+      "death": "推定 1431年（本轮新增，可调整）",
+      "reign": null,
+      "positions": [
+        "民兵领袖",
+        "后为法兰克王家教会封圣对象（推定）"
+      ],
+      "deeds": [
+        "在伊比利亚（阿拉贡—奥克方向）压力最大的年代，率法兰克民兵解围奥尔伦（Orlen）",
+        "推动鲁道夫系之后的法兰克王权在香槟—卢瓦尔一线重新站稳",
+        "后被法兰克王家教会封圣，成为“天主教法兰克民族意识”的象征之一"
+      ],
+      "family": {},
+      "context": "以现实史的贞德为原型，按本世界线改造：法兰克为西部日耳曼政治体、天主教，其对手由英格兰改为伊比利亚—奥克方向的压力。姓名按德语化处理（Arkon ← Arc）。",
+      "appendix": false,
+      "status": "待定",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "PE_JOHN_CALVIN",
+      "name_zh": "加尔文",
+      "name_de": "Johannes Calvin",
+      "name_en": "John Calvin",
+      "title": "改革宗神学家",
+      "dynasty": null,
+      "dynasty_id": null,
+      "country": "瑞士永久联邦",
+      "birth": "文档未载",
+      "death": "文档未载",
+      "reign": null,
+      "positions": [
+        "日内瓦圣彼得大教堂与加尔文学院相关人物"
+      ],
+      "deeds": [
+        "加尔文宗传统（预定论、上帝主权、教会纪律、长老制）的代表"
+      ],
+      "family": {},
+      "context": "文档仅在地名/圣地条目中提及“日内瓦圣彼得大教堂与加尔文学院”。",
+      "appendix": false,
+      "status": "已确定",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "PE_KARDINAL_RICHELIEU",
+      "name_zh": "帝国首相黎塞留",
+      "name_de": "Reichskanzler Richelieu",
+      "name_en": "Imperial Chancellor Richelieu",
+      "title": "法兰克帝国首相 / 枢机（推定）",
+      "dynasty": null,
+      "dynasty_id": null,
+      "country": "法兰克立宪君主国",
+      "birth": "推定 1585年",
+      "death": "推定 1642年（本轮新增，可调整）",
+      "reign": null,
+      "positions": [
+        "法兰克帝国首相",
+        "枢机",
+        "帕里斯王家学院赞助人"
+      ],
+      "deeds": [
+        "在宗教战争后期主持法兰克战时财政与外交，支撑两线作战的僵局",
+        "确立“法兰克优先于帝国”的国务路线，为1871年法兰克与德意志王冠分离埋下长期伏笔",
+        "赞助帕里斯王家学院，推动法兰克东方学传统（对应 S1《法兰克与近东》）"
+      ],
+      "family": {},
+      "context": "以现实史的黎塞留为原型，按本世界线改造：法兰克为天主教哈布斯堡国家，其国务路线以“法兰克本位”对抗双王冠体制。姓名保留罗曼语姓氏并加德语头衔。",
+      "appendix": false,
+      "status": "待定",
+      "src": [
+        "S0",
+        "S1"
+      ]
+    },
+    {
+      "id": "PE_K_PETERS",
+      "name_zh": "K. 彼得斯",
+      "name_de": "K. Peters",
+      "name_en": "K. Peters",
+      "title": "民族学博物馆馆长",
+      "dynasty": null,
+      "dynasty_id": null,
+      "country": "德意志联邦共和国",
+      "birth": "文档未载",
+      "death": "文档未载",
+      "reign": null,
+      "positions": [
+        "民族学博物馆馆长（相关文献作者）"
+      ],
+      "deeds": [
+        "作为《中欧与比较民族学：方法论批判》相关文献作者被引用"
+      ],
+      "family": {},
+      "context": "附录文献署名，非设定集正文人物。",
+      "appendix": true,
+      "status": "已确定",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "PE_MARTIN_LUTHER",
+      "name_zh": "马丁·路德",
+      "name_de": "Martin Luther",
+      "name_en": "Martin Luther",
+      "title": "宗教改革者",
+      "dynasty": null,
+      "dynasty_id": null,
+      "country": "德意志联邦共和国",
+      "birth": "文档未载",
+      "death": "文档未载",
+      "reign": null,
+      "positions": [
+        "维滕堡城堡教堂张贴九十五条论纲者；新教母教会相关人物"
+      ],
+      "deeds": [
+        "在维滕堡城堡教堂张贴九十五条论纲",
+        "1525年发表《反对杀人越货的农民暴徒》，支持北德意志路德宗诸侯镇压农民战争"
+      ],
+      "family": {},
+      "context": "文档将其作为现实史人物引用，未另设本世界线生平。",
+      "appendix": false,
+      "status": "已确定",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "PE_NORMANDY_DUKE",
+      "name_zh": "诺曼底公爵（1272年决战失败者，文档未具名）",
+      "name_de": "Herzog der Normandie (ungenannt)",
+      "name_en": "Duke of Normandy (unnamed)",
+      "title": "诺曼底公爵",
+      "dynasty": null,
+      "dynasty_id": null,
+      "country": "英格兰-诺曼底",
+      "birth": "文档未载",
+      "death": "文档未载",
+      "reign": null,
+      "positions": [
+        "诺曼底公爵",
+        "诺曼底-英格兰联军统帅（推定）"
+      ],
+      "deeds": [
+        "1272年在一次决战中被鲁道夫击败，诺曼底-英格兰联军失去法兰西岛与香槟，英格兰-诺曼底被逐出大陆"
+      ],
+      "family": {},
+      "context": "S0/S1 只记头衔未记姓名。",
+      "appendix": true,
+      "status": "已确定",
+      "src": [
+        "S0",
+        "S1"
+      ]
+    },
+    {
+      "id": "PE_PHILIP_III_WIFE",
+      "name_zh": "腓力三世之妻（文档未具名）",
+      "name_de": "Gemahlin Philipps III. (ungenannt)",
+      "name_en": "Wife of Philip III (unnamed)",
+      "title": "王后（推定）",
+      "dynasty": null,
+      "dynasty_id": null,
+      "country": "法兰克立宪君主国",
+      "birth": "文档未载",
+      "death": "文档未载",
+      "reign": null,
+      "positions": [],
+      "deeds": [
+        "文档仅以“腓力三世早逝，其子腓力四世、查理、路易均夭折或仅有女嗣”记载其子嗣，未具其名"
+      ],
+      "family": {
+        "husband": "PE_PHILIP_III",
+        "sons": [
+          "PE_PHILIP_IV"
+        ]
+      },
+      "context": "S0 仅记其存在（作为三子的母亲），未具名。",
+      "appendix": true,
+      "status": "已确定",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "PE_REIMS_ARCHBISHOP",
+      "name_zh": "雷姆斯大主教（1272年为鲁道夫加冕者，文档未具名）",
+      "name_de": "Erzbischof von Reims (ungenannt)",
+      "name_en": "Archbishop of Reims (unnamed)",
+      "title": "雷姆斯大主教",
+      "dynasty": null,
+      "dynasty_id": null,
+      "country": "法兰克立宪君主国",
+      "birth": "文档未载",
+      "death": "文档未载",
+      "reign": null,
+      "positions": [
+        "雷姆斯大主教（法兰克国王的加冕主持者）"
+      ],
+      "deeds": [
+        "1272年在部分贵族见证下为鲁道夫加冕为“法兰克人的国王”"
+      ],
+      "family": {},
+      "context": "S0/S1 只记职务未记姓名。",
+      "appendix": true,
+      "status": "已确定",
+      "src": [
+        "S0",
+        "S1"
+      ]
+    },
+    {
+      "id": "PE_SALADIN",
+      "name_zh": "萨拉丁",
+      "name_de": "Salah ad-Din",
+      "name_en": "Saladin",
+      "title": "阿尤布苏丹",
+      "dynasty": "阿尤布",
+      "dynasty_id": "D_AYYUBID",
+      "country": "阿尤布苏丹国（埃及—叙利亚）",
+      "birth": "1137",
+      "death": "1193",
+      "reign": "1171 — 1193",
+      "positions": [
+        "埃及与叙利亚苏丹",
+        "阿尤布王朝创立者"
+      ],
+      "deeds": [
+        "1171年推翻法蒂玛王朝，埃及转入逊尼派",
+        "统合埃及与叙利亚，成为十字军东征时期穆斯林一方的主要政治体",
+        "1187年收复耶路撒冷"
+      ],
+      "family": {},
+      "context": "法兰克东方学传统与军事传统的主要对位人物（库尔德裔）。",
+      "appendix": false,
+      "status": "已确定",
+      "src": [
+        "S1"
+      ]
+    },
+    {
+      "id": "PE_BURGUNDY_COUNT",
+      "name_zh": "勃艮第伯爵（鲁道夫之岳父，文档未具名）",
+      "name_de": "Graf von Burgund (ungenannt)",
+      "name_en": "Count of Burgundy (unnamed)",
+      "title": "勃艮第伯爵",
+      "dynasty": "勃艮第",
+      "dynasty_id": "D_BURGUNDY",
+      "country": "法兰克立宪君主国",
+      "birth": "文档未载",
+      "death": "文档未载",
+      "reign": null,
+      "positions": [
+        "勃艮第伯爵"
+      ],
+      "deeds": [
+        "其女嫁与鲁道夫，使鲁道夫掌握东部军事资源，成为其当选法兰克国王的重要资本"
+      ],
+      "family": {
+        "daughter": "PE_RUDOLF_WIFE"
+      },
+      "context": "S0/S1 只记身份未记姓名。",
+      "appendix": true,
+      "status": "已确定",
+      "src": [
+        "S0",
+        "S1"
+      ]
+    },
+    {
+      "id": "PE_RUDOLF_WIFE",
+      "name_zh": "鲁道夫之妻（勃艮第伯爵之女）",
+      "name_de": "Rudolfs Gemahlin (Tochter des Grafen von Burgund)",
+      "name_en": "Rudolf's wife (daughter of the Count of Burgundy)",
+      "title": "勃艮第伯爵之女",
+      "dynasty": "勃艮第",
+      "dynasty_id": "D_BURGUNDY",
+      "country": "法兰克立宪君主国",
+      "birth": "文档未载",
+      "death": "文档未载",
+      "reign": null,
+      "positions": [],
+      "deeds": [
+        "其婚姻联系使鲁道夫掌握东部军事资源"
+      ],
+      "family": {
+        "father": "勃艮第伯爵（未具名）",
+        "husband": "PE_RUDOLF"
+      },
+      "context": "文档仅提及身份，未载姓名。",
+      "appendix": false,
+      "status": "已确定",
+      "src": [
+        "S0",
+        "S1"
+      ]
+    },
+    {
+      "id": "PE_CAPET_SONS",
+      "name_zh": "查理、路易（腓力三世之子，文档未具名）",
+      "name_de": "Karl und Ludwig (Söhne Philipps III., ungenannt)",
+      "name_en": "Charles and Louis (sons of Philip III, unnamed)",
+      "title": "卡佩王裔",
+      "dynasty": "卡佩",
+      "dynasty_id": "D_CAPET",
+      "country": "法兰克立宪君主国",
+      "birth": "文档未载",
+      "death": "1270年前后（夭折或仅有女嗣）",
+      "reign": null,
+      "positions": [],
+      "deeds": [
+        "与腓力四世同为腓力三世之子；均夭折或仅有女嗣，不构成萨利克法下的继承可能，导致卡佩直系断绝"
+      ],
+      "family": {
+        "father": "PE_PHILIP_III",
+        "brothers": [
+          "PE_PHILIP_IV"
+        ]
+      },
+      "context": "S0 只记名字未记生卒；二人合并为一条以保持家族关系网完整。",
+      "appendix": true,
+      "status": "已确定",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "PE_LOUIS_IX",
+      "name_zh": "路易九世",
+      "name_de": "Ludwig IX.",
+      "name_en": "Louis IX",
+      "title": "法兰西国王（卡佩）",
+      "dynasty": "卡佩",
+      "dynasty_id": "D_CAPET",
+      "country": "法兰克立宪君主国",
+      "birth": "文档未载",
+      "death": "文档未载（1270年前后其裔连续死亡）",
+      "reign": null,
+      "positions": [
+        "法兰西国王"
+      ],
+      "deeds": [
+        "其1270年前后后裔连续死亡，是卡佩绝嗣链条的起点"
+      ],
+      "family": {
+        "descendants": "1270年前后连续死亡"
+      },
+      "context": "仅作为卡佩绝嗣的背景提及。",
+      "appendix": false,
+      "status": "已确定",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "PE_PHILIP_III",
+      "name_zh": "腓力三世",
+      "name_de": "Philipp III.",
+      "name_en": "Philip III",
+      "title": "法兰西国王（卡佩）",
+      "dynasty": "卡佩",
+      "dynasty_id": "D_CAPET",
+      "country": "法兰克立宪君主国",
+      "birth": "文档未载",
+      "death": "1270年前后（早逝）",
+      "reign": null,
+      "positions": [
+        "法兰西国王"
+      ],
+      "deeds": [
+        "早逝，其子腓力四世、查理、路易均夭折或仅有女嗣，导致萨利克法下卡佩直系断绝"
+      ],
+      "family": {
+        "father": "PE_LOUIS_IX",
+        "sons": [
+          "腓力四世（PE_PHILIP_IV）",
+          "查理（未具名）",
+          "路易（未具名）"
+        ]
+      },
+      "context": "卡佩绝嗣链条的中间环节。",
+      "appendix": false,
+      "status": "已确定",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "PE_PHILIP_IV",
+      "name_zh": "腓力四世",
+      "name_de": "Philipp IV.",
+      "name_en": "Philip IV",
+      "title": "卡佩王裔",
+      "dynasty": "卡佩",
+      "dynasty_id": "D_CAPET",
+      "country": "法兰克立宪君主国",
+      "birth": "文档未载",
+      "death": "1270年前后（夭折或仅有女嗣）",
+      "reign": null,
+      "positions": [],
+      "deeds": [
+        "夭折或仅有女嗣，不构成萨利克法下的继承可能"
+      ],
+      "family": {
+        "father": "PE_PHILIP_III"
+      },
+      "context": "卡佩绝嗣的直接当事人之一。",
+      "appendix": false,
+      "status": "已确定",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "PE_RUDOLF_MOTHER",
+      "name_zh": "鲁道夫之母（卡佩旁系公主）",
+      "name_de": "Rudolfs Mutter (kapetingische Nebenlinie)",
+      "name_en": "Rudolf's mother (Capetian cadet line)",
+      "title": "卡佩旁系公主",
+      "dynasty": "卡佩（旁系）",
+      "dynasty_id": "D_CAPET",
+      "country": "法兰克立宪君主国",
+      "birth": "文档未载",
+      "death": "文档未载",
+      "reign": null,
+      "positions": [],
+      "deeds": [
+        "其卡佩旁系血统构成鲁道夫继承法兰克王位的合法性依据之一"
+      ],
+      "family": {
+        "son": "PE_RUDOLF"
+      },
+      "context": "文档仅提及血统身份，未载姓名。",
+      "appendix": false,
+      "status": "已确定",
+      "src": [
+        "S0",
+        "S1"
+      ]
+    },
+    {
+      "id": "PE_PHILIP_EVREUX",
+      "name_zh": "埃夫勒的腓力",
+      "name_de": "Philipp von Évreux",
+      "name_en": "Philip of Evreux",
+      "title": "卡佩继承争夺者",
+      "dynasty": "埃夫勒",
+      "dynasty_id": "D_EVREUX",
+      "country": "法兰克立宪君主国",
+      "birth": "文档未载",
+      "death": "文档未载",
+      "reign": null,
+      "positions": [
+        "法兰克王位继承争夺者"
+      ],
+      "deeds": [
+        "参与1270年前后的法兰克继承争夺"
+      ],
+      "family": {},
+      "context": "继承争夺者之一。",
+      "appendix": false,
+      "status": "已确定",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "PE_ALBRECHT_I",
+      "name_zh": "鲁道夫之子阿尔布雷希特",
+      "name_de": "Albrecht",
+      "name_en": "Albrecht",
+      "title": "哈布斯堡家族成员（具体头衔文档未载）",
+      "dynasty": "哈布斯堡",
+      "dynasty_id": "D_HABSBURG",
+      "country": "法兰克立宪君主国",
+      "birth": "文档未载",
+      "death": "文档未载",
+      "reign": null,
+      "positions": [],
+      "deeds": [
+        "迎娶香槟女继承人让娜，使哈布斯堡合法吞并香槟"
+      ],
+      "family": {
+        "father": "PE_RUDOLF",
+        "wife": "PE_JEANNE_CHAMPAGNE"
+      },
+      "context": "文档仅一处提及。注意与 PE_ALBRECHT_II 区分。",
+      "appendix": false,
+      "status": "已确定",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "PE_ALBRECHT_II",
+      "name_zh": "阿尔布雷希特二世",
+      "name_de": "Albrecht II.",
+      "name_en": "Albrecht II",
+      "title": "皇帝",
+      "dynasty": "哈布斯堡",
+      "dynasty_id": "D_HABSBURG",
+      "country": "法兰克立宪君主国",
+      "birth": "文档未载",
+      "death": "文档未载（1356年时已年老）",
+      "reign": "至1356年（年老无嗣，仅有一女）",
+      "positions": [
+        "神圣罗马帝国皇帝",
+        "法兰克国王"
+      ],
+      "deeds": [
+        "年老无嗣，仅有一女；法兰克贵族要求女婿继承法兰克王位，德意志选侯坚持选举德意志诸侯为皇帝",
+        "召集法兰克贵族、德意志选侯、教皇使节和瑞士联邦代表在法兰克福开会八个月，达成妥协",
+        "促成1356年《法兰克福宪章》（双重王冠不可分割、选举与继承双轨制、三重加冕、帝国议会与诸侯权利、宗教与教会、瑞士永久联邦、七位选侯）"
+      ],
+      "family": {
+        "daughter": "一女（未具名）",
+        "son_in_law": "女婿（未具名，法兰克贵族推举对象）"
+      },
+      "context": "其继承危机直接催生《法兰克福宪章》。",
+      "appendix": false,
+      "status": "已确定",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "PE_ALBRECHT_II_DAUGHTER",
+      "name_zh": "阿尔布雷希特二世之女（未具名）",
+      "name_de": "Tochter Albrechts II. (ungenannt)",
+      "name_en": "Daughter of Albrecht II (unnamed)",
+      "title": "皇帝独女",
+      "dynasty": "哈布斯堡",
+      "dynasty_id": "D_HABSBURG",
+      "country": "法兰克立宪君主国",
+      "birth": "文档未载",
+      "death": "文档未载",
+      "reign": null,
+      "positions": [],
+      "deeds": [
+        "因父皇年老无嗣而成为法兰克继承问题的焦点；法兰克贵族要求其女婿继承法兰克王位，德意志选侯坚持选举德意志诸侯为皇帝，最终以1356《法兰克福宪章》妥协解决"
+      ],
+      "family": {
+        "father": "PE_ALBRECHT_II",
+        "husband": "其婿（未具名，法兰克贵族推举对象）"
+      },
+      "context": "文档只写“仅有一女”，未载姓名。为保持家族关系网完整单列此条目，并明确标注“未具名”。",
+      "appendix": false,
+      "status": "已确定",
+      "src": [
+        "S0"
+      ]
+    },
+    {
+      "id": "PE_RUDOLF",
+      "name_zh": "哈布斯堡的鲁道夫",
+      "name_de": "Rudolf von Habsburg",
+      "name_en": "Rudolf of Habsburg",
+      "title": "法兰克人的国王（King of the Franks）",
+      "dynasty": "哈布斯堡",
+      "dynasty_id": "D_HABSBURG",
+      "country": "法兰克立宪君主国",
+      "birth": "文档未载",
+      "death": "文档未载",
+      "reign": "1272 — 文档未载",
+      "positions": [
+        "法兰克人的国王（1272年在雷姆斯由雷姆斯大主教加冕）",
+        "哈布斯堡伯爵"
+      ],
+      "deeds": [
+        "1270年前后卡佩绝嗣后成为最强有力的候选人之一",
+        "以“保卫法兰克不受金雀花奴役”为口号参选，承诺尊重贵族封建特权、教会自由和城市自治",
+        "带来阿尔萨斯与瑞士雇佣军",
+        "1272年在雷姆斯大主教主持下加冕为“法兰克人的国王”（教皇最初反对，后默认，但要求头衔为“法兰克人的国王”而非“法兰西国王”）",
+        "在一次决战中击败诺曼底公爵，夺取法兰西岛和香槟，定都帕里斯",
+        "其子阿尔布雷希特迎娶香槟女继承人让娜，使哈布斯堡合法吞并香槟"
+      ],
+      "family": {
+        "mother": "卡佩旁系公主（PE_RUDOLF_MOTHER）",
+        "wife": "勃艮第伯爵之女（PE_RUDOLF_WIFE）",
+        "son": "阿尔布雷希特（PE_ALBRECHT_I，妻为香槟女继承人让娜）"
+      },
+      "context": "宫廷语言、文书和军事组织明显德意志化；法兰克王权仍面临法语贵族、教会和南方奥克抵制。",
+      "appendix": false,
+      "status": "已确定",
+      "src": [
+        "S0",
+        "S1"
+      ]
+    },
+    {
+      "id": "PE_IBERIA_KING_FOUNDER",
+      "name_zh": "伊比利亚王国开国君主（本轮新增，姓名待定）",
+      "name_de": "Gründerkönig von Iberien (Name offen)",
+      "name_en": "Founding King of Iberia (name pending)",
+      "title": "伊比利亚国王（推定）",
+      "dynasty": "伊比利亚王朝",
+      "dynasty_id": "D_IBERIA_DYNASTY",
+      "country": "伊比利亚王国",
+      "birth": "文档未载（本轮新增）",
+      "death": "文档未载（本轮新增）",
+      "reign": "推定 16世纪（伊比利亚统一完成后）",
+      "positions": [
+        "伊比利亚国王"
+      ],
+      "deeds": [
+        "宣布伊比利亚各基督教王国统一为伊比利亚王国（推定）",
+        "确立对北非西部的统治，开始长期基督教化与欧洲化进程（推定）"
+      ],
+      "family": {},
+      "context": "用户本轮补充“逐步统一伊比利亚，并南下北非驱逐穆斯林，建立伊比利亚王国”。此条目为该建国行为的占位人物，姓名与具体年份等待用户裁定。",
+      "appendix": false,
+      "status": "待定",
+      "src": [
+        "S2"
+      ]
+    },
+    {
+      "id": "PE_BAIBARS",
+      "name_zh": "拜巴尔斯",
+      "name_de": "Baibars",
+      "name_en": "Baibars",
+      "title": "马穆鲁克苏丹",
+      "dynasty": "马穆鲁克",
+      "dynasty_id": "D_MAMLUK",
+      "country": "马穆鲁克苏丹国（埃及—叙利亚）",
+      "birth": "1223年前后",
+      "death": "1277",
+      "reign": "1260 — 1277",
+      "positions": [
+        "马穆鲁克苏丹"
+      ],
+      "deeds": [
+        "1260年击败蒙古西征军，阻止蒙古—金帐体系向黎凡特与埃及扩张",
+        "巩固马穆鲁克在埃及与叙利亚的统治",
+        "在东地中海与红海贸易中确立马穆鲁克的中介地位"
+      ],
+      "family": {},
+      "context": "本世界线中蒙古文明遗产极为深厚（S4），因此马穆鲁克对蒙古的阻击具有世界史意义：它划出了蒙古—金帐体系的西侧界线。",
+      "appendix": false,
+      "status": "已确定",
+      "src": [
+        "S1",
+        "S4"
+      ]
+    },
+    {
+      "id": "PE_MOUNTFORT_I",
+      "name_zh": "蒙福尔一世",
+      "name_de": "Mountfort I.",
+      "name_en": "Mountfort I",
+      "title": "不列颠国王（蒙福尔王朝开国君主）",
+      "dynasty": "蒙福尔",
+      "dynasty_id": "D_MOUNTFORT",
+      "country": "不列颠联邦共和国",
+      "birth": "推定 1755 年",
+      "death": "推定 1823 年（本轮新增，可调整）",
+      "reign": "推定 1795 — 1823",
+      "positions": [
+        "不列颠国王"
+      ],
+      "deeds": [
+        "约1789—1815 政治动荡中，以「恢复秩序、对外抗击伊比利亚」为旗号上位",
+        "加入反伊比利亚同盟，绝对主义渡过革命浪潮",
+        "镇压曾短暂出现的共和派与议会派要求",
+        "以诺曼-罗曼式「王在国中即皇帝」的主权观重建权威"
+      ],
+      "family": {
+        "dynasty": "蒙福尔"
+      },
+      "context": "蒙福尔王朝开国君主。其家族源自法兰西贵族蒙福尔（Montfort，祖地帕里斯西侧），姓名的英语化拼写为 Mountfort。",
+      "appendix": false,
+      "status": "待定",
+      "src": [
+        "S3"
+      ]
+    },
+    {
+      "id": "PE_MOUNTFORT_II",
+      "name_zh": "蒙福尔二世",
+      "name_de": "Mountfort II.",
+      "name_en": "Mountfort II",
+      "title": "不列颠国王",
+      "dynasty": "蒙福尔",
+      "dynasty_id": "D_MOUNTFORT",
+      "country": "不列颠联邦共和国",
+      "birth": "推定 1786 年",
+      "death": "推定 1851 年（本轮新增，可调整）",
+      "reign": "推定 1823 — 1851",
+      "positions": [
+        "不列颠国王"
+      ],
+      "deeds": [
+        "1815 年后的反革命时代中进一步加固绝对主义",
+        "1848 年大陆大德意志方案失败之际，镇压本土自由派，旧制度未动",
+        "维持宫廷古典主义与盎格鲁语歌剧的高文化"
+      ],
+      "family": {
+        "dynasty": "蒙福尔",
+        "predecessor": "PE_MOUNTFORT_I"
+      },
+      "context": "蒙福尔王朝第二代。承接 1815 年后的反革命时代。",
+      "appendix": false,
+      "status": "待定",
+      "src": [
+        "S3"
+      ]
+    },
+    {
+      "id": "PE_MOUNTFORT_III",
+      "name_zh": "蒙福尔三世",
+      "name_de": "Mountfort III.",
+      "name_en": "Mountfort III",
+      "title": "不列颠国王",
+      "dynasty": "蒙福尔",
+      "dynasty_id": "D_MOUNTFORT",
+      "country": "不列颠联邦共和国",
+      "birth": "推定 1820 年",
+      "death": "推定 1893 年（本轮新增，可调整）",
+      "reign": "推定 1851 — 1893",
+      "positions": [
+        "不列颠国王"
+      ],
+      "deeds": [
+        "绝对主义鼎盛期：宫廷古典主义、沙龙、海外殖民",
+        "与伊比利亚、德意志争夺海权",
+        "维持「海洋帝国天命」作为绝对主义的意识形态燃料"
+      ],
+      "family": {
+        "dynasty": "蒙福尔",
+        "predecessor": "PE_MOUNTFORT_II"
+      },
+      "context": "蒙福尔王朝第三代，绝对主义鼎盛期的君主。",
+      "appendix": false,
+      "status": "待定",
+      "src": [
+        "S3"
+      ]
+    },
+    {
+      "id": "PE_MOUNTFORT_IV",
+      "name_zh": "蒙福尔四世",
+      "name_de": "Mountfort IV.",
+      "name_en": "Mountfort IV",
+      "title": "不列颠国王",
+      "dynasty": "蒙福尔",
+      "dynasty_id": "D_MOUNTFORT",
+      "country": "不列颠联邦共和国",
+      "birth": "推定 1862 年",
+      "death": "推定 1943 年（本轮新增，可调整）",
+      "reign": "推定 1893 — 1943",
+      "positions": [
+        "不列颠国王",
+        "教会最高元首"
+      ],
+      "deeds": [
+        "1914—1918 一战中作为协约国成员获胜，战功增强王权合法性",
+        "战时经济扩大国家能力，胜利固化旧制度",
+        "战间期帝国鼎盛，绝对主义成为欧洲孤例",
+        "1939—1945 二战中作为协约国成员参战并战败"
+      ],
+      "family": {
+        "dynasty": "蒙福尔",
+        "predecessor": "PE_MOUNTFORT_III",
+        "successor": "PE_MOUNTFORT_V"
+      },
+      "context": "蒙福尔王朝第四代。经历了「一战获胜固化旧制度 → 二战战败」的完整转折。",
+      "appendix": false,
+      "status": "待定",
+      "src": [
+        "S3"
+      ]
+    },
+    {
+      "id": "PE_MOUNTFORT_V",
+      "name_zh": "蒙福尔五世",
+      "name_de": "Mountfort V.",
+      "name_en": "Mountfort V",
+      "title": "不列颠末代国王",
+      "dynasty": "蒙福尔",
+      "dynasty_id": "D_MOUNTFORT",
+      "country": "不列颠联邦共和国",
+      "birth": "推定 1901 年",
+      "death": "推定 1968 年（本轮新增，可调整）",
+      "reign": "推定 1943 — 1945（王位于 1945 年废除）",
+      "positions": [
+        "不列颠国王（末代）"
+      ],
+      "deeds": [
+        "1943 年继承王位，两年后即逢二战战败",
+        "1945 年王权合法性崩溃，经制宪会议决议并辅以全民公决被正式废除王位",
+        "退位后不列颠进入 1945—1955 年的监督过渡期"
+      ],
+      "family": {
+        "dynasty": "蒙福尔",
+        "predecessor": "PE_MOUNTFORT_IV"
+      },
+      "context": "蒙福尔王朝末代君主，也是不列颠历史上最后一位国王。",
+      "appendix": false,
+      "status": "待定",
+      "src": [
+        "S3"
+      ]
+    },
+    {
+      "id": "PE_OSMAN_I",
+      "name_zh": "奥斯曼一世",
+      "name_de": "Osman I.",
+      "name_en": "Osman I",
+      "title": "安纳托利亚突厥贝伊（推定）",
+      "dynasty": "安纳托利亚突厥王朝",
+      "dynasty_id": "D_OTTOMAN",
+      "country": "奥斯曼帝国（安纳托利亚突厥帝国）",
+      "birth": "1258年前后",
+      "death": "1326年前后",
+      "reign": "推定 1299 — 1326",
+      "positions": [
+        "安纳托利亚西北部贝伊",
+        "安纳托利亚突厥王朝的奠基者"
+      ],
+      "deeds": [
+        "在安纳托利亚西北部起家，为后来取代马穆鲁克、统合近东的突厥帝国奠基",
+        "其政权与基督教君士坦丁堡/海峡政治体长期对峙共处"
+      ],
+      "family": {},
+      "context": "本世界线中安纳托利亚是伊斯兰力量向欧洲方向的主要压力来源，而海峡则是“文明边界而非文明墙”。",
+      "appendix": false,
+      "status": "待定",
+      "src": [
+        "S1"
+      ]
+    },
+    {
+      "id": "PE_SCHAH_ISMAIL",
+      "name_zh": "沙阿伊斯玛仪",
+      "name_de": "Schah Ismail",
+      "name_en": "Shah Ismail",
+      "title": "波斯沙阿（推定）",
+      "dynasty": "波斯诸王朝",
+      "dynasty_id": "D_PERSIAN_LINE",
+      "country": "伊朗（伊斯兰什叶派波斯）",
+      "birth": "推定 1487年",
+      "death": "推定 1524年（本轮新增，可调整）",
+      "reign": "推定 1501 — 1524",
+      "positions": [
+        "波斯沙阿",
+        "什叶派国教的奠基者（推定）"
+      ],
+      "deeds": [
+        "统一伊朗高原，确立波斯作为伊斯兰世界第二极的地位",
+        "将什叶派确立为国教，使波斯与逊尼派的阿拉伯—安纳托利亚体系长期并立",
+        "其东界止于伊斯兰中亚西部，再东即西域佛教带——正对应 S1 所定的“伊斯兰文明东部边界”"
+      ],
+      "family": {},
+      "context": "以现实史的萨法维王朝开国者伊斯玛仪一世为原型。用途：为“波斯逐步形成什叶派国家传统”提供人物锚点。",
+      "appendix": false,
+      "status": "待定",
+      "src": [
+        "S1"
+      ]
+    },
+    {
+      "id": "PE_EDWARD_I",
+      "name_zh": "英格兰国王爱德华一世",
+      "name_de": "Eduard I.",
+      "name_en": "Edward I",
+      "title": "英格兰国王",
+      "dynasty": "金雀花",
+      "dynasty_id": "D_PLANTAGENET",
+      "country": "英格兰-诺曼底",
+      "birth": "文档未载",
+      "death": "文档未载",
+      "reign": "文档未载（1270年前后在位）",
+      "positions": [
+        "英格兰国王",
+        "法兰克王位继承争夺者"
+      ],
+      "deeds": [
+        "1270年前后作为卡佩继承争夺者之一提出主张",
+        "法国北方贵族不愿接受英格兰统治，但瓦卢瓦无力抵抗诺曼底-英格兰联军",
+        "最终败于鲁道夫，英格兰被逐出大陆（1272年分水岭）"
+      ],
+      "family": {
+        "dynasty": "金雀花"
+      },
+      "context": "金雀花王朝跨海帝国路线的顶点与转折点。S3称“爱德华一世即继承争夺者之一”。",
+      "appendix": false,
+      "status": "已确定",
+      "src": [
+        "S0",
+        "S3"
+      ]
+    },
+    {
+      "id": "PE_OTTOKAR_II",
+      "name_zh": "波希米亚国王奥托卡二世",
+      "name_de": "Ottokar II. Přemysl",
+      "name_en": "Ottokar II",
+      "title": "波希米亚国王 → 神圣罗马帝国皇帝",
+      "dynasty": "普热米斯尔",
+      "dynasty_id": "D_PREMISLID",
+      "country": "德意志联邦共和国",
+      "birth": "文档未载",
+      "death": "文档未载",
+      "reign": "1273 — 文档未载（约1290年前后在罗马加冕为皇帝）",
+      "positions": [
+        "波希米亚国王",
+        "神圣罗马帝国皇帝（约1290年前后于罗马加冕）"
+      ],
+      "deeds": [
+        "1273年德意志选侯无法再选鲁道夫后，成为最强势候选人",
+        "击败巴伐利亚、奥地利贵族等反对者",
+        "掌控波希米亚、奥地利、施蒂利亚",
+        "推行皇权加强政策",
+        "约1290年前后在罗马加冕为神圣罗马帝国皇帝"
+      ],
+      "family": {
+        "dynasty": "普热米斯尔"
+      },
+      "context": "与鲁道夫构成“东西双源”：哈布斯堡=西部法兰克文明，普热米斯尔=东部德意志文明。",
+      "appendix": false,
+      "status": "已确定",
+      "src": [
+        "S0",
+        "S1"
+      ]
+    },
+    {
+      "id": "PE_ABD_AL_RAHMAN_III",
+      "name_zh": "阿卜杜勒·拉赫曼三世",
+      "name_de": "Abd ar-Rahman III.",
+      "name_en": "Abd al-Rahman III",
+      "title": "科尔多瓦哈里发",
+      "dynasty": "伍麦叶（西班牙支系）",
+      "dynasty_id": "D_UMAYYAD",
+      "country": "科尔多瓦哈里发国",
+      "birth": "891",
+      "death": "961",
+      "reign": "912 — 961（929年自立哈里发）",
+      "positions": [
+        "科尔多瓦埃米尔（912起）",
+        "科尔多瓦哈里发（929起）"
+      ],
+      "deeds": [
+        "929年自立为哈里发，与阿拔斯、法蒂玛三足鼎立",
+        "使科尔多瓦成为西欧最繁盛的城市与文化中心"
+      ],
+      "family": {},
+      "context": "安达卢斯穆斯林政权的最高点；其自立哈里发是伊斯兰世界三分格局的起点。",
+      "appendix": false,
+      "status": "已确定",
+      "src": [
+        "S0",
+        "S2"
+      ]
+    },
+    {
+      "id": "PE_CHARLES_VALOIS",
+      "name_zh": "瓦卢瓦的查理",
+      "name_de": "Karl von Valois",
+      "name_en": "Charles of Valois",
+      "title": "卡佩继承争夺者",
+      "dynasty": "瓦卢瓦",
+      "dynasty_id": "D_VALOIS",
+      "country": "法兰克立宪君主国",
+      "birth": "文档未载",
+      "death": "文档未载",
+      "reign": null,
+      "positions": [
+        "法兰克王位继承争夺者"
+      ],
+      "deeds": [
+        "参与1270年前后的法兰克继承争夺；瓦卢瓦无力抵抗诺曼底-英格兰联军，使鲁道夫得以入主"
+      ],
+      "family": {},
+      "context": "继承争夺失败方之一。",
+      "appendix": false,
+      "status": "已确定",
+      "src": [
+        "S0"
+      ]
+    }
+  ]
+}

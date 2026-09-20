@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>国家表 · 泛德意志的欧洲</title>
+<style>
+:root{
+  --bg:#14110d; --fg:#e8e2d4; --dim:#a89e8a; --accent:#c9a227; --line:#3a332a;
+  --card:#1d1913; --card2:#231e17; --link:#d8b64a; --ok:#7fa650; --warn:#d0913c; --bad:#c25b45;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+     font-family:"Segoe UI","Microsoft YaHei",system-ui,sans-serif;line-height:1.7}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+header{position:sticky;top:0;z-index:20;background:rgba(20,17,13,.97);
+       border-bottom:1px solid var(--line);backdrop-filter:blur(6px);padding:12px 20px}
+.hdr{max-width:1180px;margin:0 auto}
+h1{margin:0;font-size:19px;letter-spacing:.03em}
+h1 .sub{color:var(--dim);font-size:12px;font-weight:400;margin-left:10px;letter-spacing:0}
+nav.crumbs{font-size:12px;color:var(--dim);margin-top:5px}
+nav.crumbs a{color:var(--dim)}
+nav.crumbs a:hover{color:var(--link)}
+main{max-width:1180px;margin:0 auto;padding:18px 20px 70px}
+h2{font-size:17px;border-bottom:1px solid var(--line);padding-bottom:6px;margin:28px 0 12px}
+h3{font-size:15px;margin:20px 0 8px}
+h4{font-size:13.5px;margin:14px 0 6px;color:#cfc6b2}
+p{margin:8px 0}
+ul,ol{margin:8px 0;padding-left:22px}
+li{margin:3px 0}
+code,.mono{font-family:Consolas,"Cascadia Mono",monospace;font-size:12.5px}
+code{background:#0e0c09;border:1px solid var(--line);border-radius:4px;padding:1px 5px;color:var(--accent)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:14px 17px;margin:12px 0}
+.grid{display:grid;gap:10px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+table{border-collapse:collapse;width:100%;font-size:13px;margin:10px 0}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}
+th{background:#0e0c09;color:#cfc6b2;font-weight:600;white-space:nowrap}
+tr:nth-child(even) td{background:#191510}
+.tag{display:inline-block;font-size:11px;padding:1px 8px;border-radius:20px;
+     border:1px solid var(--line);background:#0e0c09;color:var(--dim);margin:1px 3px 1px 0}
+.tag.ok{color:var(--ok);border-color:#3d4d28}
+.tag.warn{color:var(--warn);border-color:#4d3d22}
+.tag.bad{color:var(--bad);border-color:#4d2a22}
+.tag.s5{color:#8fb6d8;border-color:#2a3d4d;background:#0e1419}
+.tag.sstar{color:#c9a2d8;border-color:#432a4d;background:#180e19}
+/* 文献页 */
+.doc{background:#f6f0e2;color:#241d12;border-radius:10px;padding:30px 38px;margin:16px 0;
+     border:1px solid #c9b98f;box-shadow:0 3px 20px #0006;line-height:1.95;
+     font-family:Georgia,"Times New Roman","Songti SC","SimSun",serif;max-width:820px}
+.doc h3{font-size:21px;margin:0 0 4px;color:#3a2c15;letter-spacing:.02em;font-weight:700}
+.doc .dsub{font-size:12.5px;color:#6d5c3a;margin-bottom:14px;border-bottom:1px solid #d6c9a4;padding-bottom:10px}
+.doc h4{font-size:15px;margin:20px 0 6px;color:#5a4318;font-weight:700}
+.doc p{margin:10px 0}
+.doc ol,.doc ul{margin:10px 0 10px 4px;padding-left:24px}
+.doc li{margin:5px 0}
+.doc b{color:#3a2c15}
+/* 正文中的词条交叉引用标记：浅色下划线点线，不打断阅读，不参与链接嵌套 */
+.xr{border-bottom:1px dotted #a08a52;cursor:help}
+.doc .xr{border-bottom-color:#b09a62;color:#3f3016}
+.doc-preamble{font-style:italic;color:#6d5c3a;border-left:3px solid #c9b98f;padding-left:12px;margin-bottom:16px}
+.doc-seal{text-align:right;font-size:13px;color:#7a6841;font-style:italic;margin-top:22px;
+          border-top:1px solid #d6c9a4;padding-top:10px}
+.docmeta{display:grid;grid-template-columns:120px 1fr;gap:6px 14px;font-size:13.5px;margin:12px 0}
+.docmeta dt{color:var(--dim);font-size:12.5px}
+.docmeta dd{margin:0}
+.doclist li{margin:7px 0}
+.kindbadge{font-size:11.5px;padding:2px 9px;border-radius:20px;background:#2a2218;
+           border:1px solid #4a3d22;color:#d8b64a;margin-right:6px}
+.kv{display:grid;grid-template-columns:132px 1fr;gap:5px 12px;font-size:13.5px;margin:10px 0}
+.kv dt{color:var(--dim);font-size:12.5px}
+.kv dd{margin:0}
+.q{position:sticky;top:56px;z-index:15;background:var(--bg);padding:10px 0}
+input[type=search],input[type=text],select{
+  background:#0e0c09;border:1px solid var(--line);color:var(--fg);border-radius:7px;
+  padding:9px 12px;font-size:14px;font-family:inherit}
+input[type=search]{width:100%}
+input:focus,select:focus{outline:none;border-color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.chip{font-size:12px;padding:3px 10px;border-radius:20px;border:1px solid var(--line);
+      background:#0e0c09;color:var(--dim);cursor:pointer;user-select:none}
+.chip:hover{border-color:var(--accent);color:var(--fg)}
+.chip.on{background:var(--accent);color:#14110d;border-color:var(--accent);font-weight:600}
+.item{border:1px solid var(--line);border-radius:9px;background:var(--card);padding:11px 14px;margin-bottom:9px}
+.item h3{margin:0 0 4px;font-size:15px}
+.item .meta{font-size:11.5px;color:var(--dim);margin-bottom:4px}
+.item .sm{font-size:13px;color:#d6cebc}
+mark{background:var(--accent);color:#14110d;border-radius:2px;padding:0 1px}
+.count{color:var(--dim);font-size:12px;margin:10px 0}
+.empty{color:var(--dim);padding:30px 0;text-align:center}
+.rid{font-family:Consolas,monospace;font-size:11px;color:var(--accent);
+     border:1px solid var(--line);border-radius:4px;padding:1px 5px;margin-left:7px}
+footer{max-width:1180px;margin:0 auto;padding:0 20px 40px;color:var(--dim);font-size:11.5px}
+.pill{display:inline-block;min-width:22px;text-align:center}
+.legend{font-size:12px;color:var(--dim)}
+/* 时间轴 */
+.tl-wrap{position:relative;margin:14px 0 0}
+.tl-axis{position:relative;height:34px;border-bottom:2px solid var(--line);margin-bottom:6px}
+.tl-tick{position:absolute;top:0;height:34px;width:1px;background:var(--line)}
+.tl-tick span{position:absolute;top:8px;left:4px;font-size:10.5px;color:var(--dim);white-space:nowrap}
+.tl-lane{position:relative;height:26px;margin:5px 0;background:#191510;border-radius:4px;
+         border:1px solid #2a251d}
+.tl-ev{position:absolute;top:3px;height:19px;border-radius:4px;cursor:pointer;
+       background:#4a3f22;border:1px solid var(--accent);overflow:hidden}
+.tl-ev:hover{background:var(--accent);z-index:6}
+.tl-ev span{font-size:10px;color:#f3ecd8;padding:0 4px;white-space:nowrap;line-height:19px}
+.tl-ev:hover span{color:#14110d}
+.tl-lane-label{position:absolute;left:0;top:3px;height:19px;line-height:19px;font-size:10.5px;
+               color:#a89e8a;transform:translateX(-100%);padding-right:9px;white-space:nowrap;
+               text-align:right;box-sizing:border-box;pointer-events:none}
+.tl-holder{padding-left:138px}
+#tip{position:fixed;z-index:50;max-width:380px;background:var(--card2);border:1px solid var(--accent);
+     border-radius:8px;padding:10px 13px;font-size:12.5px;display:none;box-shadow:0 6px 24px #000a}
+#tip h4{margin:0 0 4px;color:var(--accent);font-size:13.5px}
+.scrub{width:100%;margin:8px 0 4px}
+/* 主页 */
+.hero{padding:54px 20px 36px;text-align:center;
+      background:radial-gradient(ellipse at 50% -10%,#2c2418 0%,#14110d 64%);
+      border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(24px,4.4vw,36px);letter-spacing:.06em;margin:0 0 8px;font-weight:700}
+.hero h1 b{color:var(--accent)}
+.hero .tagline{color:#bdb4a1;font-size:14px;max-width:820px;margin:12px auto 0;line-height:1.9}
+.hero .realms{margin-top:22px;display:flex;gap:9px;justify-content:center;flex-wrap:wrap}
+.realm{font-size:12.5px;padding:5px 14px;border-radius:22px;border:1px solid var(--line);
+       background:#0e0c09;color:#cfc6b2}
+.realm i{font-style:normal;color:var(--accent);font-weight:600}
+.entries{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:24px 0}
+.entry{display:block;border:1px solid var(--line);border-radius:11px;background:var(--card);
+       padding:18px 20px;transition:transform .16s,border-color .16s,box-shadow .16s;
+       position:relative;overflow:hidden}
+.entry:hover{border-color:var(--accent);background:var(--card2);transform:translateY(-2px);
+             text-decoration:none;box-shadow:0 9px 28px #0007}
+.entry .ico{font-size:22px;margin-bottom:8px;display:block}
+.entry h3{margin:0 0 6px;font-size:16px;color:var(--fg)}
+.entry p{margin:0;font-size:12.5px;color:var(--dim);line-height:1.74}
+.entry .n{position:absolute;right:15px;top:14px;font-size:11px;color:var(--accent);
+          border:1px solid var(--line);border-radius:20px;padding:1px 9px;background:#0e0c09}
+.entry.wide{grid-column:span 2}
+@media(max-width:700px){.entry.wide{grid-column:span 1}}
+.stats{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));margin:18px 0}
+.stat{border:1px solid var(--line);border-radius:9px;background:#191510;padding:14px 10px;text-align:center}
+.stat b{display:block;font-size:23px;color:var(--accent);font-weight:700;line-height:1.3}
+.stat span{font-size:11.5px;color:var(--dim)}
+.quote{border-left:3px solid var(--accent);padding:3px 0 3px 17px;margin:22px 0;
+       color:#cfc6b2;font-size:13.5px;line-height:1.88}
+.quote cite{display:block;color:var(--dim);font-size:12px;font-style:normal;margin-top:7px}
+.twocol{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(318px,1fr))}
+.pill-row{display:flex;flex-wrap:wrap;gap:6px;margin:9px 0}
+a.pill{font-size:12px;padding:3px 11px;border-radius:20px;border:1px solid var(--line);
+       background:#0e0c09;color:#cfc6b2;display:inline-block}
+a.pill:hover{border-color:var(--accent);color:var(--fg);text-decoration:none}
+a.pill.gold{border-color:#5a4a22;color:var(--accent)}
+.tl-mini{position:relative;height:158px;margin:14px 0 4px;border:1px solid var(--line);
+         border-radius:9px;background:#191510;overflow:hidden}
+.tl-mini .dot{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--accent);
+              border:1px solid #0e0c09;transform:translate(-50%,-50%);cursor:pointer;
+              transition:width .14s,height .14s,box-shadow .14s}
+.tl-mini .dot:hover{width:15px;height:15px;box-shadow:0 0 0 3px #c9a22744}
+.tl-mini .dot.rel{background:#c25b45}
+.tl-mini .dot.cul{background:#7fa650}
+.tl-mini .dot.pol{background:#8fb6d8}
+.tl-mini .axl{position:absolute;bottom:6px;width:1px;height:8px;background:#3a332a}
+.tl-mini .axt{position:absolute;bottom:17px;font-size:9.5px;color:#6f6656;transform:translateX(-50%)}
+.tl-mini .lgd{position:absolute;right:9px;top:7px;font-size:10px;color:var(--dim)}
+/* 主页迷你时间轴：泳道 + 密度柱 + 锚点 */
+.tlmini-grid{position:absolute;left:0;right:0;top:0;bottom:26px;pointer-events:none}
+.tlmini-line{position:absolute;top:0;bottom:0;width:1px;background:#221e18}
+.tlmini-lane{position:relative;height:44px;background:#1c1813;border-bottom:1px solid #221e18}
+.tlmini-lane span{position:absolute;left:9px;top:6px;font-size:10.5px;color:#7d7462;
+                  letter-spacing:.04em;z-index:3;pointer-events:none}
+.tlmini-bars{position:absolute;left:0;right:0;top:0;bottom:26px;z-index:1}
+.tl-mini .bar{position:absolute;bottom:0;width:8px;border-radius:2px 2px 0 0;
+              opacity:.92;transition:opacity .14s,filter .14s}
+.tl-mini .bar:hover{opacity:1;filter:brightness(1.4)}
+.tl-mini .bar i{position:absolute;top:-13px;left:50%;transform:translateX(-50%);font-size:9px;
+                font-style:normal;color:#cfc6b2}
+.tl-mini .bar.rel{background:linear-gradient(#c25b45,#8e4033)}
+.tl-mini .bar.cul{background:linear-gradient(#7fa650,#5a7a38)}
+.tl-mini .bar.pol{background:linear-gradient(#8fb6d8,#5a7fa3)}
+.tlmini-anchor{position:absolute;bottom:0;height:100%;width:1px;background:#3a332a;
+               transform:translateX(-0.5px);pointer-events:none;z-index:2}
+.tlmini-anchor i{position:absolute;bottom:28px;left:-2px;width:5px;height:5px;border-radius:50%;
+                 background:#c9a227}
+.tlmini-anchor b{position:absolute;bottom:8px;left:0;transform:translateX(-50%);
+                 font-size:9.5px;font-weight:400;color:#8a8170;white-space:nowrap}
+.tlmini-foot{display:flex;justify-content:space-between;font-size:11.5px;color:var(--dim);
+             margin-top:7px}
+/* Hero 分叉图 */
+.fork{display:block;width:100%;max-width:900px;margin:28px auto 0;height:auto}
+.fork .fkl{fill:#c9a227;font-size:12px;font-weight:600}
+.fork .fkt{fill:#e2dbcb;font-size:12.5px}
+.fork .fks{fill:#8f8674;font-size:11px}
+.fork .fkm{fill:#8f8674;font-size:10.5px}
+/* Markdown 转换页 */
+.mdbody{font-size:13.5px;line-height:1.85}
+.mdbody h1{font-size:23px;margin:26px 0 12px;color:var(--accent);font-weight:700}
+.mdbody h2{font-size:18px;margin:30px 0 12px;border-bottom:1px solid var(--line);padding-bottom:7px}
+.mdbody h3{font-size:15.5px;margin:22px 0 9px;color:#e6dfcd}
+.mdbody h4{font-size:14px;margin:16px 0 7px;color:#cfc6b2}
+.mdbody p{margin:9px 0}
+.mdbody ul.mdul,.mdbody ol{margin:9px 0;padding-left:24px}
+.mdbody li{margin:4px 0}
+.mdbody code{background:#0e0c09;border:1px solid var(--line);border-radius:4px;
+             padding:1px 5px;color:var(--accent);font-size:12.5px}
+.mdbody a{color:var(--link)}
+.mdbody blockquote.mdq{border-left:3px solid var(--accent);background:#191510;
+                       margin:12px 0;padding:8px 15px;border-radius:0 7px 7px 0}
+.mdbody blockquote.mdq p{margin:5px 0;color:#cfc6b2}
+.mdbody hr.mdhr{border:none;border-top:1px solid var(--line);margin:26px 0}
+.mdbody .tw{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:8px}
+.mdbody table{margin:0;font-size:12.5px;border-collapse:collapse;width:100%}
+.mdbody th{position:sticky;top:0;background:#14110d;z-index:1}
+.mdbody td,.mdbody th{border:none;border-bottom:1px solid #241f19;border-right:1px solid #241f19;
+                      padding:6px 10px;vertical-align:top}
+.mdbody tr:last-child td{border-bottom:none}
+.mdbody tr:nth-child(even) td{background:#1a1611}
+.mdbody strong{color:#f0e9d8}
+/* 全局顶栏 */
+.topbar{position:sticky;top:0;z-index:30;background:rgba(16,13,10,.97);
+        border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+.topbar-in{max-width:1180px;margin:0 auto;padding:9px 20px;display:flex;align-items:center;
+           gap:14px;flex-wrap:nowrap;min-width:0}
+.brand{font-size:14.5px;font-weight:600;color:var(--accent);letter-spacing:.05em;
+       white-space:nowrap;flex-shrink:0}
+.brand:hover{text-decoration:none;color:#e0bc45}
+.gnav{display:flex;gap:4px;margin-left:auto;flex-shrink:0}
+.gnav-i{font-size:13px;color:var(--dim);padding:5px 12px;border-radius:7px;white-space:nowrap;
+        border:1px solid transparent}
+.gnav-i:hover{color:var(--fg);background:#211c16;text-decoration:none}
+.gnav-i.on{color:#14110d;background:var(--accent);border-color:var(--accent);font-weight:600}
+.gnav-t{display:none;background:#211c16;border:1px solid var(--line);color:var(--fg);
+        border-radius:7px;font-size:15px;padding:3px 10px;cursor:pointer}
+/* 左上角返回导航 */
+.backnav{display:flex;gap:6px;flex-shrink:0}
+.bkn{font-size:12.5px;color:#cfc6b2;background:#211c16;border:1px solid var(--line);
+     border-radius:7px;padding:5px 11px;white-space:nowrap;cursor:pointer;
+     font-family:inherit;line-height:1.35;transition:border-color .14s,color .14s,background .14s}
+.bkn:hover{border-color:var(--accent);color:var(--accent);background:#2a2218;text-decoration:none}
+/* 页脚署名 */
+.madeby{margin:30px 0 0;padding:22px 24px;text-align:center;border-radius:11px;
+        background:linear-gradient(135deg,rgba(201,162,39,.10),rgba(201,162,39,.03) 45%,transparent);
+        border:1px solid #3d3527;font-size:14px;color:#ddd5c3;letter-spacing:.04em}
+.madeby .mk{display:block;font-size:11.5px;color:var(--dim);letter-spacing:.22em;
+            text-transform:uppercase;margin-bottom:7px}
+.madeby b{color:var(--accent);font-weight:700;font-size:16px;letter-spacing:.06em;
+          padding:0 3px}
+.madeby .fl{display:block;margin-top:9px;font-size:11.5px;color:#7d7462;letter-spacing:.02em}
+.footmeta{font-size:11.5px;color:var(--dim);line-height:1.9;margin-top:20px;
+          padding-top:16px;border-top:1px solid var(--line)}
+.footmeta a{color:#a89e8a}
+.footmeta a:hover{color:var(--link)}
+@media(max-width:760px){
+  .backnav{order:3;width:100%}
+  .bkn{flex:1;text-align:center}
+}
+@media(max-width:760px){
+  .topbar-in{flex-wrap:wrap;gap:10px}
+  .gnav-t{display:block;margin-left:auto}
+  .gnav{display:none;width:100%;flex-direction:column;gap:2px}
+  .gnav.open{display:flex}
+  .gnav-i{padding:8px 12px}
+}
+</style>
+
+</head>
+<body>
+<div class="topbar"><div class="topbar-in"><div class="backnav"><a class="bkn" href="../home.html" title="回到主页">⌂ 回到主页</a><button class="bkn" id="bkPrev" type="button" title="返回上一页">← 返回上一页</button></div><a class="brand" href="../home.html">泛德意志的欧洲</a><nav class="gnav"><a class="gnav-i" href="../home.html">主页</a><a class="gnav-i" href="../index.html">索引</a><a class="gnav-i" href="../wiki/index.html">文献</a><a class="gnav-i on" href="../wiki/docs-index.html">文档</a><a class="gnav-i" href="../timeline.html">时间轴</a></nav><button class="gnav-t" id="gnavToggle" aria-label="切换导航">☰</button></div></div>
+
+<header><div class="hdr">
+<h1>🏛 国家表<span class="sub">国名 · 政体 · 宗教 · 首都 · 领土（46 个国家与政治实体）</span></h1>
+<nav class="crumbs"><a href="../home.html">主页</a> ／ <a href="../index.html">索引</a> ／
+<a href="index.html">文档</a> ／ 四张表</nav></div></header>
+<main>
+<div class="card">
+<span class="kindbadge">四张表</span>
+本页由 <code>docs/table_countries.md</code> 自动转换生成，
+数据源为 <code>tools/kb_data.py</code> 等设定数据层；源 Markdown 保留在 <code>docs/</code> 下。
+<div class="pill-row" style="margin-top:10px"><a class="chip" href="table-timeline.html">📅 时间线表</a><a class="chip" href="table-people.html">🧑 人物表</a><a class="chip" href="table-wars.html">⚔ 战争表</a></div>
+</div>
+<div class="card"><div class="legend">本页目录</div><div class="pill-row"><a class="pill" href="#国家详表">国家详表</a><a class="pill" href="#出处代号">出处代号</a></div></div>
+<div class="mdbody">
+<h1 id="国家表-国名-政体-宗教-首都-领土">国家表（国名 · 政体 · 宗教 · 首都 · 领土）</h1>
+<blockquote class="mdq">
+<p>共 60 个国家/政治实体。包含大洲文明体与区域文明体。</p>
+</blockquote>
+<div class="tw"><table>
+<thead><tr><th>国名</th><th>政体</th><th>宗教</th><th>首都</th><th>领土</th></tr></thead><tbody>
+<tr><td>法兰克立宪君主国</td><td>联邦化单一制；早期宪政→成熟宪政君主制→(1918-1945)共和国→(1945-)君主立宪共和国，国王完全礼仪化</td><td>天主教（官方）</td><td>帕里斯</td><td>法兰西岛、香槟、勃艮第、洛林、阿尔萨斯南部、弗兰德斯、诺曼底、布列塔尼、加来-皮卡第、卢瓦尔、罗讷-阿尔卑斯；1945后另获南部奥克省（1975年该省废除，奥克各州升为普通联邦州）</td></tr>
+<tr><td>德意志联邦共和国</td><td>真正的联邦制民主共和国；州权较强（地方→联邦→民主）</td><td>新教（阿尔卑斯福音派为国教性主流）</td><td>维也纳（行政首都）</td><td>德意志诸邦、低地、波西米亚、摩拉维亚、奥地利、施蒂利亚、卡林西亚、蒂罗尔、北意大利（伦巴底、皮埃蒙特、威尼托、特伦托、罗马涅-托斯卡纳）、西里西亚、波森、克罗地亚-斯洛文尼亚、普鲁士（但泽）</td></tr>
+<tr><td>不列颠联邦共和国</td><td>1945年前为绝对君主制（Kingdom of Britain）；1945年战败后被监督强制民主化，建立联邦共和国（总统为礼仪与有限仲裁性质）</td><td>王室新教（高教会式，保留主教制、礼仪、管风琴与教堂艺术）；战后政教分离，原国教改为自治教会</td><td>伦敦</td><td>英格兰、威尔士、苏格兰、爱尔兰（1945年前）；1945年爱尔兰全岛独立，不列颠保留大不列颠与若干岛屿领地</td></tr>
+<tr><td>伊比利亚共和国（第五共和国后体制）</td><td>高度中央集权的总统制共和国（统一国家 ＞ 地方自治；二战后：国家可以很强，但权力必须民主化）</td><td>天主教（长期压制国内新教徒）</td><td>—</td><td>伊比利亚半岛、北非西部（长期统治并基督教化、欧洲化，无特殊宪制地位，与半岛同属一个国家行政体系）；二战后失去奥克地区</td></tr>
+<tr><td>罗斯兀鲁思</td><td>蒙古-金帐政治传统本土化后的王朝国家；君主合法性来自“蒙古帝国—金帐汗国政治秩序在北方的合法继承者”</td><td>东正教斯拉夫人口 + 蒙古佛教王朝的复合结构；佛教/萨满进入贵族文化</td><td>莫斯科</td><td>莫斯科诸公国故地、伏尔加-乌拉尔、西伯利亚；一战期间曾重新夺取基辅、白罗斯、乌克兰东部，二战后失去</td></tr>
+<tr><td>基辅王国</td><td>欧洲东部国家；主动继承基辅罗斯传统（政体细节待定）</td><td>东欧基督教（东正教）</td><td>基辅</td><td>基辅、乌克兰东部；二战后与白罗斯同时脱离莫斯科国并可能组成联邦</td></tr>
+<tr><td>白罗斯</td><td>与基辅王国组成联邦（基辅王国—白罗斯联邦的成员邦）</td><td>东正教</td><td>—</td><td>基辅王国—莫斯科国—波罗的海世界之间</td></tr>
+<tr><td>瑞士永久联邦</td><td>永久联邦、永久中立；改革宗共和国</td><td>加尔文宗（改革宗）</td><td>—</td><td>瑞士祖地（哈布斯堡已放弃宗主权要求）；夺取哈布斯堡祖地</td></tr>
+<tr><td>美利坚合众国</td><td>联邦共和国；共和党 ↔ 美国社会主义党两党主导（政治生态相对现实“左移”）</td><td>未指定</td><td>—</td><td>北美；太平洋有势力范围</td></tr>
+<tr><td>丹麦-挪威</td><td>新教王国</td><td>新教（路德宗）</td><td>—</td><td>丹麦、挪威</td></tr>
+<tr><td>瑞典</td><td>新教王国</td><td>新教（路德宗）</td><td>—</td><td>瑞典</td></tr>
+<tr><td>西班牙-阿拉贡</td><td>天主教王国</td><td>天主教</td><td>—</td><td>伊比利亚半岛</td></tr>
+<tr><td>教皇国</td><td>教宗世俗领地</td><td>天主教</td><td>罗马</td><td>中意大利</td></tr>
+<tr><td>低地联合省</td><td>加尔文宗共和国；后并入德意志联邦（尼德兰州、阿姆斯特丹城市州等）</td><td>加尔文宗</td><td>—</td><td>尼德兰各州</td></tr>
+<tr><td>英格兰-诺曼底</td><td>金雀花王朝跨海封建王权</td><td>天主教（宗教改革前）</td><td>—</td><td>英格兰、诺曼底、法兰西北部；曾侵占法兰西北部</td></tr>
+<tr><td>蒙古帝国</td><td>汗国体系；三层宗教结构（长生天为国家与王权合法性最高来源；佛教提供宇宙论/哲学/文字/寺院体系；萨满负责地方仪式/祖先崇拜/山川崇拜）</td><td>长生天 + 佛教 + 萨满（层级化共存，非互相消灭）</td><td>—</td><td>蒙古高原、西伯利亚、中亚、金帐汗国（东欧草原）、罗斯兀鲁思故地；文明遗产区从太平洋延伸到东欧森林地带</td></tr>
+<tr><td>金帐汗国</td><td>蒙古汗国；制度化、官僚化、地方化的宗主权体系（任命大公、税收体系、道路管理、驿站组织、贵族等级规范、介入诸公国继承、蒙古-突厥官僚、跨草原与森林贸易网络）</td><td>长生天 + 佛教 + 草原萨满传统（未在14世纪伊斯兰化）</td><td>—</td><td>东欧草原、伏尔加流域；宗主权覆盖东斯拉夫诸公国</td></tr>
+<tr><td>中国</td><td>中华帝国制度传统</td><td>儒家 + 佛教 + 道教</td><td>—</td><td>中国内地、河西走廊、敦煌；西向文明轴延伸至塔里木盆地、天山、中亚佛教世界</td></tr>
+<tr><td>君士坦丁堡（海峡政治体，通称拜占庭）</td><td>希腊人主导的基督教城邦—海峡政治体；以控制海峡通行权立国，靠海峡通行税与贸易维生</td><td>基督教（与安纳托利亚伊斯兰并存/竞争）</td><td>君士坦丁堡</td><td>君士坦丁堡与海峡</td></tr>
+<tr><td>东洲（新大洲，正式名称待定）</td><td>待定：内部国家行政制度及其历史尚未设定</td><td>佛教（西域佛教文明带）、藏传佛教、儒家/道教、印度文明（未穆斯林化）</td><td>—</td><td>中国、蒙古、西藏、西域、中亚东部、印度及相关东亚文明空间</td></tr>
+<tr><td>欧洲（文明大洲）</td><td>欧盟作为这些不同政治传统的共同框架（“古老欧洲多层政治传统的现代民主化延续”）</td><td>天主教 / 新教（多派）/ 东正教（东部）</td><td>—</td><td>欧洲大陆 + 撒哈拉以北非洲西部</td></tr>
+<tr><td>亚洲（文明大洲）</td><td>罗斯兀鲁思—西亚—伊斯兰文明空间</td><td>伊斯兰教（西亚、中亚西部）/ 东正教+佛教+萨满（罗斯兀鲁思）</td><td>—</td><td>罗斯兀鲁思整体、撒哈拉以北非洲东部、近东、中东、穆斯林西亚</td></tr>
+<tr><td>非洲（文明大洲）</td><td>撒哈拉以南非洲作为独立的非洲大洲主体</td><td>—</td><td>—</td><td>撒哈拉以南非洲</td></tr>
+<tr><td>西亚伊斯兰文明空间</td><td>阿拉伯-伊朗-两河-安纳托利亚伊斯兰文明为主</td><td>伊斯兰教</td><td>—</td><td>阿拉伯、伊朗、两河、安纳托利亚</td></tr>
+<tr><td>西域佛教文明带</td><td>独立的佛教文明圈</td><td>西域佛教（龟兹、于阗、吐鲁番、敦煌传统强化）</td><td>—</td><td>塔里木盆地、天山以东、河中地区以东；敦煌为东方佛教门户</td></tr>
+<tr><td>西伯利亚萨满文化区</td><td>部落/文化区</td><td>萨满传统 + 长生天传统</td><td>—</td><td>西伯利亚</td></tr>
+<tr><td>奥克王国</td><td>奥克语地区的独立王国（具体政体文档未载）</td><td>天主教</td><td>—</td><td>奥克语地区（朗格多克、普罗旺斯、多菲内、奥克海岸、罗讷河口一带）</td></tr>
+<tr><td>伊斯兰世界（区域文明体集合）</td><td>哈里发—苏丹—沙阿多中心体系；无单一最高政治权威</td><td>伊斯兰教（逊尼派、什叶派并存）</td><td>—</td><td>伊比利亚南部（至收复失地运动）、北非、埃及、叙利亚、阿拉伯半岛、两河、伊朗、安纳托利亚、中亚西部</td></tr>
+<tr><td>伊比利亚王国</td><td>中央集权君主国（统一伊比利亚半岛与北非西部）</td><td>天主教</td><td>托莱多（推定）</td><td>伊比利亚半岛全境（卡斯蒂利亚、阿拉贡、葡萄牙、纳瓦拉、格拉纳达）与北非西部（马格里布）</td></tr>
+<tr><td>科尔多瓦哈里发国</td><td>哈里发国（929年自立哈里发）</td><td>伊斯兰教（逊尼派）</td><td>科尔多瓦</td><td>伊比利亚半岛大部（安达卢斯）</td></tr>
+<tr><td>穆瓦希德哈里发国（及穆拉比特）</td><td>柏柏尔哈里发国（北非—安达卢斯联合体）</td><td>伊斯兰教（逊尼派，严格派）</td><td>马拉喀什</td><td>马格里布（今摩洛哥、阿尔及利亚一带）与安达卢斯南部</td></tr>
+<tr><td>法蒂玛哈里发国（埃及）</td><td>什叶派哈里发国</td><td>伊斯兰教（伊斯玛仪派什叶派）</td><td>开罗</td><td>埃及、叙利亚南部、阿拉伯半岛西部（汉志）、北非东部</td></tr>
+<tr><td>阿尤布苏丹国（埃及—叙利亚）</td><td>逊尼派苏丹国</td><td>伊斯兰教（逊尼派）</td><td>开罗</td><td>埃及、叙利亚、巴勒斯坦、汉志、也门</td></tr>
+<tr><td>马穆鲁克苏丹国（埃及—叙利亚）</td><td>军事寡头苏丹国（伯海里系 → 布尔吉系）</td><td>伊斯兰教（逊尼派）</td><td>开罗</td><td>埃及、叙利亚、巴勒斯坦、汉志</td></tr>
+<tr><td>阿拔斯哈里发国（两河）</td><td>哈里发国（后期为名义宗主权）</td><td>伊斯兰教（逊尼派）</td><td>巴格达</td><td>两河、伊朗、阿拉伯半岛东部；后期仅存两河</td></tr>
+<tr><td>伊朗（伊斯兰什叶派波斯）</td><td>沙阿制；什叶派逐步成为国教</td><td>伊斯兰教（伊斯玛仪派 → 十二伊玛目派什叶派为国教）</td><td>伊斯法罕（后期）</td><td>伊朗高原、两河东部、呼罗珊、高加索南部、中亚西部边缘</td></tr>
+<tr><td>奥斯曼帝国（安纳托利亚突厥帝国）</td><td>苏丹—帝国制；逊尼派伊斯兰国家，行米勒特式多宗教治理</td><td>伊斯兰教（逊尼派）；境内东正教、亚美尼亚教会等并存</td><td>君士坦丁堡（1517年后）</td><td>安纳托利亚、巴尔干南部、叙利亚、埃及、汉志、两河；1517年取代马穆鲁克</td></tr>
+<tr><td>马格里布（北非西部）</td><td>柏柏尔诸王朝 → 伊比利亚国家行政体系的一部分</td><td>伊斯兰教 → 经伊比利亚长期统治后基督教化</td><td>—</td><td>今摩洛哥、阿尔及利亚、突尼斯、西撒哈拉一带</td></tr>
+<tr><td>埃及地区</td><td>先后为法蒂玛、阿尤布、马穆鲁克、安纳托利亚突厥帝国属地</td><td>伊斯兰教（逊尼派为主）；科普特教会长期存续</td><td>开罗</td><td>尼罗河流域、红海西岸、地中海南岸东部</td></tr>
+<tr><td>叙利亚地区</td><td>先后为法蒂玛、阿尤布、马穆鲁克、安纳托利亚突厥帝国属地</td><td>伊斯兰教（逊尼派、什叶派及诸教派并存）；基督徒与犹太社群长期存在</td><td>大马士革</td><td>黎凡特（叙利亚、巴勒斯坦、黎巴嫩沿海）</td></tr>
+<tr><td>阿拉伯—汉志地区</td><td>谢里夫/埃米尔地方政权；名义上隶属区域强权</td><td>伊斯兰教（逊尼派为主，麦加、麦地那两圣地所在）</td><td>—</td><td>阿拉伯半岛、汉志、红海东岸</td></tr>
+<tr><td>西班牙王国</td><td>中央集权君主国（卡斯蒂利亚—莱昂王统）</td><td>天主教</td><td>托莱多（推定）</td><td>卡斯蒂利亚、莱昂、加利西亚、安达卢斯北部</td></tr>
+<tr><td>阿拉贡王国</td><td>君主国（联姻与地中海扩张型）</td><td>天主教</td><td>萨拉戈萨（推定）</td><td>阿拉贡、加泰罗尼亚、瓦伦西亚；地中海属地</td></tr>
+<tr><td>伊比利亚第一共和国</td><td>革命共和政体（1789 年大革命推翻伊比利亚王国后建立）</td><td>天主教（革命期一度推行国家教会化）</td><td>托莱多（推定）</td><td>伊比利亚半岛、北非西部；革命期曾占领奥克地区并攻入南意大利</td></tr>
+<tr><td>伊比利亚第一帝国</td><td>革命帝国（共和政体转向帝制）</td><td>天主教</td><td>托莱多（推定）</td><td>伊比利亚半岛、北非西部、奥克地区；曾远征罗斯兀鲁思</td></tr>
+<tr><td>伊比利亚第二共和国</td><td>共和政体（拿破仑战争后重建）</td><td>天主教（压制国内新教徒）</td><td>托莱多（推定）</td><td>伊比利亚半岛、北非西部</td></tr>
+<tr><td>西法兰克王国</td><td>加洛林系君主国</td><td>天主教</td><td>帕里斯（推定）</td><td>塞根河、利格河、加伦河流域及勃艮第、阿基坦</td></tr>
+<tr><td>法兰西罗曼王国</td><td>罗曼语君主国（卡佩王统）</td><td>天主教</td><td>帕里斯</td><td>法兰西岛、香槟、勃艮第、诺曼底、阿基坦、朗格多克北部</td></tr>
+<tr><td>法兰克共和国</td><td>共和政体（不完善；哈布斯堡贵族仍渗透政府与军队）</td><td>天主教</td><td>帕里斯</td><td>原法兰克王领（法兰西岛、香槟、勃艮第、洛林、弗兰登等），不含南部奥克省</td></tr>
+<tr><td>德意志共和国（1918—1945）</td><td>共和政体；1930 年代重建为统一联邦制民主共和国</td><td>新教（阿尔卑斯福音派为主流）</td><td>维也纳</td><td>波西米亚、摩拉维亚、奥地利、施蒂利亚、卡林西亚、蒂罗尔、低地全境、北意大利及部分波兰地区（一战后被迫释放波兰地区）</td></tr>
+<tr><td>伊比利亚第三共和国（1871—1940）</td><td>共和政体；中央集权，但尚未形成后来的强总统制</td><td>天主教（压制国内新教徒）</td><td>托莱多（推定）</td><td>伊比利亚半岛、北非西部、奥克地区</td></tr>
+<tr><td>伊比利亚被占领与过渡期（1940—1945）</td><td>战败后被占领并由过渡政权管理的时期</td><td>天主教</td><td>托莱多（推定）</td><td>伊比利亚半岛、北非西部（1945 年失去奥克地区）</td></tr>
+<tr><td>伊比利亚第四共和国（1945—1954）</td><td>高度议会化的共和国；<strong>总统权力受限</strong>，实权在议会与内阁</td><td>天主教；战后推动民主化与文化保护</td><td>托莱多（推定）</td><td>伊比利亚半岛、北非西部（已失去奥克地区）</td></tr>
+<tr><td>伊比利亚第五共和国（1960— ）</td><td><strong>总统权力重新加强</strong>的共和国；即现行伊比利亚共和国体制</td><td>天主教（长期压制国内新教徒）</td><td>托莱多（推定）</td><td>伊比利亚半岛、北非西部（本土一体行政）</td></tr>
+<tr><td>伊比利亚第二帝国</td><td>帝制政体（第二共和国之后）</td><td>天主教</td><td>托莱多（推定）</td><td>伊比利亚半岛、北非西部、奥克地区；长臂管辖伸至南意大利那不勒斯与罗马</td></tr>
+<tr><td>西域-波斯（佛教波斯残余）</td><td>波斯遗民的佛教政权；据河中及以东，与西域佛教文明带连为一体</td><td>佛教（兼存波斯传统宗教与摩尼教、祆教残余）</td><td>撒马尔罕（推定）</td><td>河中地区（阿姆河—锡尔河之间）、呼罗珊东部；东与西域佛教文明带相连</td></tr>
+<tr><td>阿拉伯王国</td><td>汉志与阿拉伯半岛的谢里夫王朝国家</td><td>伊斯兰教（逊尼派）</td><td>麦加（推定）</td><td>汉志、阿拉伯半岛西部与内陆</td></tr>
+<tr><td>叙利亚共和国</td><td>议会制共和国</td><td>伊斯兰教（逊尼派为主，多教派并存）</td><td>大马士革</td><td>黎凡特（叙利亚、巴勒斯坦、黎巴嫩沿海）</td></tr>
+<tr><td>埃及王国</td><td>君主立宪国</td><td>伊斯兰教（逊尼派）；科普特教会并存</td><td>开罗</td><td>尼罗河流域、苏伊士地峡</td></tr>
+<tr><td>两河王国</td><td>君主立宪国</td><td>伊斯兰教（逊尼派与什叶派并存）</td><td>巴格达</td><td>两河流域</td></tr>
+</tbody></table></div>
+<h2 id="国家详表">国家详表</h2>
+<h3 id="法兰克立宪君主国-C_FRANKEN">法兰克立宪君主国　<code>C_FRANKEN</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Fränkisch-Konstitutionelle Monarchie　<strong>英</strong>：Frankish Constitutional Monarchy</li>
+<li>- <strong>政体</strong>：联邦化单一制；早期宪政→成熟宪政君主制→(1918-1945)共和国→(1945-)君主立宪共和国，国王完全礼仪化</li>
+<li>- <strong>王朝</strong>：哈布斯堡（Habsburg，贯穿始终）</li>
+<li>- <strong>宗教</strong>：天主教（官方）</li>
+<li>- <strong>首都</strong>：帕里斯</li>
+<li>- <strong>领土</strong>：法兰西岛、香槟、勃艮第、洛林、阿尔萨斯南部、弗兰德斯、诺曼底、布列塔尼、加来-皮卡第、卢瓦尔、罗讷-阿尔卑斯；1945后另获南部奥克省（1975年该省废除，奥克各州升为普通联邦州）</li>
+<li>- <strong>语言</strong>：法兰克语 / 西法兰克语（Fränkisch / Westfränkisch），西日耳曼语支</li>
+<li>- <strong>存续</strong>：1272 — 1918；1945 — 至今（1918—1945 为法兰克共和国）</li>
+<li>- <strong>概述</strong>：本世界线的西部日耳曼政治体。由哈布斯堡的鲁道夫在卡佩绝嗣后入主，定都帕里斯，宫廷与军事德意志化。1356年《法兰克福宪章》后与德意志王冠构成不可分割的双重王冠。1871年罗马加冕后与德意志王冠分离，成为独立国家。</li>
+<li>- <strong>关键特征</strong>：天主教君主制传统；宪政早熟（协商而非革命）；法语人口不存在，只有法兰克语；帕里斯为时尚、外交、奢侈品、金融中心；工业落后于德意志联邦；南部奥克省为最大内部挑战</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0、S1、S2、S3</li>
+</ul>
+<h3 id="德意志联邦共和国-C_DEUTSCHLAND">德意志联邦共和国　<code>C_DEUTSCHLAND</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Deutsche Bundesrepublik　<strong>英</strong>：German Federal Republic</li>
+<li>- <strong>政体</strong>：真正的联邦制民主共和国；州权较强（地方→联邦→民主）</li>
+<li>- <strong>王朝</strong>：普热米斯尔（Přemyslid，1871-1918为帝国皇帝；1918后共和）</li>
+<li>- <strong>宗教</strong>：新教（阿尔卑斯福音派为国教性主流）</li>
+<li>- <strong>首都</strong>：维也纳（行政首都）</li>
+<li>- <strong>领土</strong>：德意志诸邦、低地、波西米亚、摩拉维亚、奥地利、施蒂利亚、卡林西亚、蒂罗尔、北意大利（伦巴底、皮埃蒙特、威尼托、特伦托、罗马涅-托斯卡纳）、西里西亚、波森、克罗地亚-斯洛文尼亚、普鲁士（但泽）</li>
+<li>- <strong>语言</strong>：高地德语（含瑞士）、低地德语（含荷兰）融合的“共同体德语/泛德意志标准语/帝国德语”</li>
+<li>- <strong>存续</strong>：1945 — 至今（1945 年重建为联邦制民主共和国；1871—1918 为德意志帝国，1918—1945 为德意志共和国）</li>
+<li>- <strong>概述</strong>：本世界线的东部日耳曼政治体与泛德意志文明核心。普热米斯尔家族自奥托卡二世起推行集权与德意志化，16世纪皈依新教，17世纪成为泛德意志新教世界最高世俗领袖。1866年击败法兰克确立小德意志方案，1871年在罗马加冕成立帝国。一战战败后建立维也纳德意志共和国，二战后重建为联邦制民主共和国。</li>
+<li>- <strong>关键特征</strong>：多党制；强联邦+地方主义；多民族多区域；第二次工业革命中心之一；科学人文人才集中；意大利民族从未被构建（北意大利类似西里西亚）</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0、S1、S2</li>
+</ul>
+<h3 id="不列颠联邦共和国-C_UK">不列颠联邦共和国　<code>C_UK</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Bundesrepublik Britannien　<strong>英</strong>：Federal Republic of Britain</li>
+<li>- <strong>政体</strong>：1945年前为绝对君主制（Kingdom of Britain）；1945年战败后被监督强制民主化，建立联邦共和国（总统为礼仪与有限仲裁性质）</li>
+<li>- <strong>王朝</strong>：金雀花（Plantagenet，至1789-1815倾覆）→ 蒙福尔（Mountfort / Haus Montfort）→ 1945年废除王位</li>
+<li>- <strong>宗教</strong>：王室新教（高教会式，保留主教制、礼仪、管风琴与教堂艺术）；战后政教分离，原国教改为自治教会</li>
+<li>- <strong>首都</strong>：伦敦</li>
+<li>- <strong>领土</strong>：英格兰、威尔士、苏格兰、爱尔兰（1945年前）；1945年爱尔兰全岛独立，不列颠保留大不列颠与若干岛屿领地</li>
+<li>- <strong>语言</strong>：英语（日耳曼骨架+高度罗曼化）；盎格鲁-法兰西语（Anglois）为其最高语域，17-19世纪合流为同一语言的两种语域</li>
+<li>- <strong>存续</strong>：1066 诺曼征服 — 至今；1272-1945 为绝对君主制；1945 — 联邦共和国</li>
+<li>- <strong>概述</strong>：本世界线的罗曼-法兰西高文化正宗保存者。大陆法兰克被日耳曼化后，罗曼-法兰西宫廷文明逆流回不列颠，使英格兰走上与法兰克相反的绝对君主制道路，直至1945年战败才被迫民主化。</li>
+<li>- <strong>关键特征</strong>：绝对主义固化（对比法兰克宪政早熟）；语言断层导致跨阶层议价集团无法形成；海洋商业帝国（特许公司+海军护航）；一战获胜固化旧制度，二战战败才崩溃；民主化由中欧协定胜利方（德意志、法兰克）监督强制</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0、S1、S2、S3</li>
+</ul>
+<h3 id="伊比利亚共和国-第五共和国后体制-C_IBERIA">伊比利亚共和国（第五共和国后体制）　<code>C_IBERIA</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Iberische Republik　<strong>英</strong>：Iberian Republic</li>
+<li>- <strong>政体</strong>：高度中央集权的总统制共和国（统一国家 ＞ 地方自治；二战后：国家可以很强，但权力必须民主化）</li>
+<li>- <strong>王朝</strong>：高度中央集权的非哈布斯堡王朝 → 共和国/帝国反复更替（伊比利亚第一至第五共和国、第一至第二帝国）</li>
+<li>- <strong>宗教</strong>：天主教（长期压制国内新教徒）</li>
+<li>- <strong>首都</strong>：—</li>
+<li>- <strong>领土</strong>：伊比利亚半岛、北非西部（长期统治并基督教化、欧洲化，无特殊宪制地位，与半岛同属一个国家行政体系）；二战后失去奥克地区</li>
+<li>- <strong>语言</strong>：伊比利亚-奥克语（罗曼语族）</li>
+<li>- <strong>存续</strong>：伊比利亚王国 → 伊比利亚第一共和国 → 第一帝国 → 第二共和国 → 第二帝国 → 第三/四/五共和国</li>
+<li>- <strong>概述</strong>：本世界线的秩序挑战者与第三文明中心。1789年伊比利亚-奥克大革命建立革命帝国，席卷南欧、占领奥克、攻入那不勒斯、迫使神圣罗马帝国解散。其历史功能是不断打破德意志-法兰克之间的平衡。</li>
+<li>- <strong>关键特征</strong>：中央集权从未真正逆转；边缘民族被同化/边缘化但不联邦化；外交新教、内政天主教；一战后成为奥克和地中海西部强国，二战后失去奥克；二战后PNI被拆解、PSI成为第一大党</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0、S1、S2</li>
+</ul>
+<h3 id="罗斯兀鲁思-C_ROS_UHLUS">罗斯兀鲁思　<code>C_ROS_UHLUS</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Ross-Ulus　<strong>英</strong>：Ros Ulus</li>
+<li>- <strong>政体</strong>：蒙古-金帐政治传统本土化后的王朝国家；君主合法性来自“蒙古帝国—金帐汗国政治秩序在北方的合法继承者”</li>
+<li>- <strong>王朝</strong>：莫斯科蒙古王朝（蒙古王族与莫斯科大公家族联姻融合而成）</li>
+<li>- <strong>宗教</strong>：东正教斯拉夫人口 + 蒙古佛教王朝的复合结构；佛教/萨满进入贵族文化</li>
+<li>- <strong>首都</strong>：莫斯科</li>
+<li>- <strong>领土</strong>：莫斯科诸公国故地、伏尔加-乌拉尔、西伯利亚；一战期间曾重新夺取基辅、白罗斯、乌克兰东部，二战后失去</li>
+<li>- <strong>语言</strong>：东斯拉夫语言底层 + 蒙古语影响；西里尔字母（可用于蒙古语转写）</li>
+<li>- <strong>存续</strong>：古罗斯诸国 → 蒙古征服 → 金帐秩序 → 莫斯科王朝 → 现代罗斯兀鲁思</li>
+<li>- <strong>概述</strong>：本世界线中罗斯兀鲁思的替代者。因蒙古帝国未伊斯兰化、西域佛教文明带长期存在，莫斯科诸公国并未“摆脱鞑靼枷锁”，而是继承了金帐汗国的国家机器与政治传统，形成“后基辅罗斯国家”。其文明来源被自我认定主要为蒙古-金帐体系。</li>
+<li>- <strong>关键特征</strong>：把蒙古帝国视为“我们的帝国时代之一”；国家正统：古罗斯诸国→蒙古征服→金帐秩序→罗斯兀鲁思；文化四层：东斯拉夫+蒙古+突厥+佛教/萨满；两次统一、两次分离的历史记忆</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S1、S4</li>
+</ul>
+<h3 id="基辅王国-C_KIEV">基辅王国　<code>C_KIEV</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Königreich Kyiw　<strong>英</strong>：Kingdom of Kyiv</li>
+<li>- <strong>政体</strong>：欧洲东部国家；主动继承基辅罗斯传统（政体细节待定）</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：东欧基督教（东正教）</li>
+<li>- <strong>首都</strong>：基辅</li>
+<li>- <strong>领土</strong>：基辅、乌克兰东部；二战后与白罗斯同时脱离莫斯科国并可能组成联邦</li>
+<li>- <strong>语言</strong>：东斯拉夫语（乌克兰自称传统）</li>
+<li>- <strong>存续</strong>：古罗斯 → 一战后被罗斯兀鲁思吞并 → 二战后重新独立</li>
+<li>- <strong>概述</strong>：本世界线中乌克兰的替代者。自称古罗斯传统的真正继承者，强调基辅、东斯拉夫传统、东欧基督教、欧洲政治文化、古罗斯法律传统，以及与中欧、德意志、波罗的海的联系，越来越靠近欧洲文明。</li>
+<li>- <strong>关键特征</strong>：罗斯向欧洲发展的道路；与罗斯兀鲁思构成文明分流；可能吸收白罗斯组成联邦</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S4</li>
+</ul>
+<h3 id="白罗斯-C_WEISSRUSSLAND">白罗斯　<code>C_WEISSRUSSLAND</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Weißrussland　<strong>英</strong>：White Rus</li>
+<li>- <strong>政体</strong>：与基辅王国组成联邦（基辅王国—白罗斯联邦的成员邦）</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：东正教</li>
+<li>- <strong>首都</strong>：—</li>
+<li>- <strong>领土</strong>：基辅王国—莫斯科国—波罗的海世界之间</li>
+<li>- <strong>语言</strong>：东斯拉夫语</li>
+<li>- <strong>存续</strong>：二战结束 — 至今</li>
+<li>- <strong>概述</strong>：二战后与基辅王国同时脱离罗斯兀鲁思，并与基辅王国组成「基辅王国—白罗斯联邦」，成为德意志/欧洲 → 基辅王国-白罗斯 → 罗斯兀鲁思 → 蒙古-西伯利亚文化圈这一文明梯度的中间环。</li>
+<li>- <strong>关键特征</strong>：文明梯度缓冲国；基辅王国—白罗斯联邦成员邦</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S4</li>
+</ul>
+<h3 id="瑞士永久联邦-C_SWITZERLAND">瑞士永久联邦　<code>C_SWITZERLAND</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Ewiger Bund der Schweiz　<strong>英</strong>：Perpetual Swiss Confederation</li>
+<li>- <strong>政体</strong>：永久联邦、永久中立；改革宗共和国</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：加尔文宗（改革宗）</li>
+<li>- <strong>首都</strong>：—</li>
+<li>- <strong>领土</strong>：瑞士祖地（哈布斯堡已放弃宗主权要求）；夺取哈布斯堡祖地</li>
+<li>- <strong>语言</strong>：高地德语（含瑞士方言）；瑞士德语区</li>
+<li>- <strong>存续</strong>：1356 — 至今</li>
+<li>- <strong>概述</strong>：帝国内特殊自治体，不承担帝国税和兵役，各州可保留共和制度，但对外不得与帝国敌人结盟。1648年确认独立与永久中立。同时是法兰克和普热米斯尔-德意志的角力之地，并在泛德意志语言共同体中发挥桥梁作用。</li>
+<li>- <strong>关键特征</strong>：永久中立；改革宗国际神学中心；语言共同体桥梁；一战、二战知识分子流亡学术中心</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0、S1、S3</li>
+</ul>
+<h3 id="美利坚合众国-C_USA">美利坚合众国　<code>C_USA</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Vereinigte Staaten von Amerika　<strong>英</strong>：United States of America</li>
+<li>- <strong>政体</strong>：联邦共和国；共和党 ↔ 美国社会主义党两党主导（政治生态相对现实“左移”）</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：未指定</li>
+<li>- <strong>首都</strong>：—</li>
+<li>- <strong>领土</strong>：北美；太平洋有势力范围</li>
+<li>- <strong>语言</strong>：英语</li>
+<li>- <strong>存续</strong>：— 至今</li>
+<li>- <strong>概述</strong>：未崛起为超级大国，但仍是重要工业和科学力量。钢铁、石油、汽车、电气与中欧并驾齐驱。大学吸引部分欧洲流亡学者。因欧洲政治环境不同，移民结构改变，大量欧洲共和派、社会主义者、激进自由主义者迁入，使美国成为“欧洲激进共和主义的实验场”。</li>
+<li>- <strong>关键特征</strong>：未成全球霸权；大众文化有影响；美国社会主义党为主要政党（非苏联式共产党）；各州边界与行政层级尚未重新设计</li>
+<li>- <strong>状态</strong>：待定　<strong>出处</strong>：S0、S1、S2</li>
+</ul>
+<h3 id="丹麦-挪威-C_DENMARK_NORWAY">丹麦-挪威　<code>C_DENMARK_NORWAY</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Dänemark-Norwegen　<strong>英</strong>：Denmark-Norway</li>
+<li>- <strong>政体</strong>：新教王国</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：新教（路德宗）</li>
+<li>- <strong>首都</strong>：—</li>
+<li>- <strong>领土</strong>：丹麦、挪威</li>
+<li>- <strong>语言</strong>：北日耳曼语（未指定）</li>
+<li>- <strong>存续</strong>：— 17世纪</li>
+<li>- <strong>概述</strong>：宗教战争中“丹麦-低地阶段（1625-1629）”的介入方，丹麦-挪威新教国王介入战争。</li>
+<li>- <strong>关键特征</strong>：宗教战争新教一方介入者</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0</li>
+</ul>
+<h3 id="瑞典-C_SWEDEN">瑞典　<code>C_SWEDEN</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Schweden　<strong>英</strong>：Sweden</li>
+<li>- <strong>政体</strong>：新教王国</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：新教（路德宗）</li>
+<li>- <strong>首都</strong>：—</li>
+<li>- <strong>领土</strong>：瑞典</li>
+<li>- <strong>语言</strong>：北日耳曼语（未指定）</li>
+<li>- <strong>存续</strong>：— 17世纪</li>
+<li>- <strong>概述</strong>：宗教战争中“瑞典-南德阶段（1630-1635）”的介入方，瑞典新教国王介入并与普热米斯尔结盟。</li>
+<li>- <strong>关键特征</strong>：宗教战争新教一方介入者</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0</li>
+</ul>
+<h3 id="西班牙-阿拉贡-C_SPAIN_ARAGON">西班牙-阿拉贡　<code>C_SPAIN_ARAGON</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Spanien-Aragon　<strong>英</strong>：Spain-Aragon</li>
+<li>- <strong>政体</strong>：天主教王国</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：天主教</li>
+<li>- <strong>首都</strong>：—</li>
+<li>- <strong>领土</strong>：伊比利亚半岛</li>
+<li>- <strong>语言</strong>：—</li>
+<li>- <strong>存续</strong>：— 17世纪</li>
+<li>- <strong>概述</strong>：宗教战争初期属天主教联盟，后出于反哈布斯堡法兰克地缘利益加入新教联盟，形成“外交新教、内政天主教”的矛盾立场。</li>
+<li>- <strong>关键特征</strong>：宗教战争中立场转换（关键变量）</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0</li>
+</ul>
+<h3 id="教皇国-C_PAPAL">教皇国　<code>C_PAPAL</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Kirchenstaat　<strong>英</strong>：Papal States</li>
+<li>- <strong>政体</strong>：教宗世俗领地</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：天主教</li>
+<li>- <strong>首都</strong>：罗马</li>
+<li>- <strong>领土</strong>：中意大利</li>
+<li>- <strong>语言</strong>：拉丁语（教会）/意大利地方语</li>
+<li>- <strong>存续</strong>：— 至今（1871年罗马加冕后罗马被纳入德意志帝国；教皇国作为世俗领地终结，教宗权威延续）</li>
+<li>- <strong>概述</strong>：宗教制度中的关键一极。1356年教皇使节参与法兰克福会议；教皇承认皇帝对法兰克教会的提名权。1871年普热米斯尔攻入罗马并在此加冕，罗马自此成为德意志帝国的加冕圣城。</li>
+<li>- <strong>关键特征</strong>：三重加冕制度中的加冕方；法兰克教会提名权授予者</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0</li>
+</ul>
+<h3 id="低地联合省-C_LOWLANDS">低地联合省　<code>C_LOWLANDS</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Vereinigte Provinzen der Niederlande　<strong>英</strong>：United Provinces of the Low Countries</li>
+<li>- <strong>政体</strong>：加尔文宗共和国；后并入德意志联邦（尼德兰州、阿姆斯特丹城市州等）</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：加尔文宗</li>
+<li>- <strong>首都</strong>：—</li>
+<li>- <strong>领土</strong>：尼德兰各州</li>
+<li>- <strong>语言</strong>：低地德语（含荷兰语，被视为低地德语一部分）</li>
+<li>- <strong>存续</strong>：1625 — 至今（1871后作为尼德兰州、阿姆斯特丹城市州并入德意志；二战后低地重新并入德意志联邦）</li>
+<li>- <strong>概述</strong>：宗教战争中凭海军和金融坚持抵抗并宣布独立，1648年正式独立为加尔文宗共和国。19世纪后并入德意志统一进程，成为德意志联邦的尼德兰州与阿姆斯特丹城市州。</li>
+<li>- <strong>关键特征</strong>：海军与金融；共和主义、商业伦理、国际网络；汉萨贸易金融集团</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0、S1</li>
+</ul>
+<h3 id="英格兰-诺曼底-C_ENGLAND_NORMANDY">英格兰-诺曼底　<code>C_ENGLAND_NORMANDY</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：England-Normandie　<strong>英</strong>：England-Normandy</li>
+<li>- <strong>政体</strong>：金雀花王朝跨海封建王权</li>
+<li>- <strong>王朝</strong>：金雀花（Plantagenet）</li>
+<li>- <strong>宗教</strong>：天主教（宗教改革前）</li>
+<li>- <strong>首都</strong>：—</li>
+<li>- <strong>领土</strong>：英格兰、诺曼底、法兰西北部；曾侵占法兰西北部</li>
+<li>- <strong>语言</strong>：盎格鲁-法兰西语（宫廷）/日耳曼英语（民间）</li>
+<li>- <strong>存续</strong>：1066 — 1272（被鲁道夫击败，被逐出大陆）</li>
+<li>- <strong>概述</strong>：金雀花王朝延长、法兰西化程度加深的跨海政权。爱德华一世为卡佩继承争夺者之一。1272年鲁道夫击败诺曼底公爵，夺取法兰西岛和香槟，英格兰-诺曼底被逐出大陆，英-法兰克竞争长期化。</li>
+<li>- <strong>关键特征</strong>：卡佩继承争夺者之一（爱德华一世）；被逐出大陆后转为绝对主义岛屿国家</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0、S2、S3</li>
+</ul>
+<h3 id="蒙古帝国-C_MONGOL_EMPIRE">蒙古帝国　<code>C_MONGOL_EMPIRE</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Mongolisches Reich　<strong>英</strong>：Mongol Empire</li>
+<li>- <strong>政体</strong>：汗国体系；三层宗教结构（长生天为国家与王权合法性最高来源；佛教提供宇宙论/哲学/文字/寺院体系；萨满负责地方仪式/祖先崇拜/山川崇拜）</li>
+<li>- <strong>王朝</strong>：蒙古诸王朝（成吉思汗系；金帐汗国）</li>
+<li>- <strong>宗教</strong>：长生天 + 佛教 + 萨满（层级化共存，非互相消灭）</li>
+<li>- <strong>首都</strong>：—</li>
+<li>- <strong>领土</strong>：蒙古高原、西伯利亚、中亚、金帐汗国（东欧草原）、罗斯兀鲁思故地；文明遗产区从太平洋延伸到东欧森林地带</li>
+<li>- <strong>语言</strong>：蒙古语（西里尔字母转写）</li>
+<li>- <strong>存续</strong>：1200—1300崛起；金帐汗国延续至政治覆灭后由其继承者承接传统</li>
+<li>- <strong>概述</strong>：连接中国佛教世界、西域佛教世界、伊斯兰中亚与伊朗-西亚的关键文明枢纽。本世界线中蒙古帝国未迅速伊斯兰化，且西域佛教文明带长期存在，使其在欧亚大陆北部留下的政治与文化遗产远比现实更深厚。</li>
+<li>- <strong>关键特征</strong>：保持长生天政治传统，同时吸收佛教；宗教多元与宽容；文明遗产从太平洋延伸至东欧森林地带；金帐汗国未在14世纪转为伊斯兰汗国</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S1、S4</li>
+</ul>
+<h3 id="金帐汗国-C_GOLDEN_HORDE">金帐汗国　<code>C_GOLDEN_HORDE</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Goldene Horde　<strong>英</strong>：Golden Horde</li>
+<li>- <strong>政体</strong>：蒙古汗国；制度化、官僚化、地方化的宗主权体系（任命大公、税收体系、道路管理、驿站组织、贵族等级规范、介入诸公国继承、蒙古-突厥官僚、跨草原与森林贸易网络）</li>
+<li>- <strong>王朝</strong>：蒙古王族（成吉思汗系）</li>
+<li>- <strong>宗教</strong>：长生天 + 佛教 + 草原萨满传统（未在14世纪伊斯兰化）</li>
+<li>- <strong>首都</strong>：—</li>
+<li>- <strong>领土</strong>：东欧草原、伏尔加流域；宗主权覆盖东斯拉夫诸公国</li>
+<li>- <strong>语言</strong>：蒙古-突厥语</li>
+<li>- <strong>存续</strong>：13世纪 — 政治覆灭（制度由罗斯兀鲁思继承）</li>
+<li>- <strong>概述</strong>：本世界线中，金帐汗国并未在14世纪逐渐转变为伊斯兰汗国，而是继续保持蒙古贵族政治传统、长生天信仰、佛教、草原萨满传统、蒙古军事制度与汗国封建体系。其统治逐渐制度化、官僚化、地方化，成为莫斯科诸王公可以继承的国家机器。</li>
+<li>- <strong>关键特征</strong>：金帐汗国作为国家灭亡 ≠ 金帐汗国文明传统消失；被罗斯兀鲁思视为自己的前身王朝；莫斯科国家形成现代国家制度的直接祖先</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S4</li>
+</ul>
+<h3 id="中国-C_CHINA">中国　<code>C_CHINA</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：China　<strong>英</strong>：China</li>
+<li>- <strong>政体</strong>：中华帝国制度传统</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：儒家 + 佛教 + 道教</li>
+<li>- <strong>首都</strong>：—</li>
+<li>- <strong>领土</strong>：中国内地、河西走廊、敦煌；西向文明轴延伸至塔里木盆地、天山、中亚佛教世界</li>
+<li>- <strong>语言</strong>：汉语（汉字文化）</li>
+<li>- <strong>存续</strong>：— 至今</li>
+<li>- <strong>概述</strong>：本世界线中拥有一条更强的西向文明轴：中国内地 → 河西走廊 → 敦煌 → 塔里木盆地 → 天山 → 中亚佛教世界。“西域”不再只是边疆，而是中国文明向中亚投射影响的长期文明走廊。</li>
+<li>- <strong>关键特征</strong>：西域为长期文明走廊；中国-西域-中亚文明联系远强于现实；与新大洲（泛中华文明圈—印度文明圈）核心</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S1、S4</li>
+</ul>
+<h3 id="君士坦丁堡-海峡政治体-通称拜占庭-C_BYZANTIUM">君士坦丁堡（海峡政治体，通称拜占庭）　<code>C_BYZANTIUM</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Byzanz　<strong>英</strong>：Byzantium</li>
+<li>- <strong>政体</strong>：希腊人主导的基督教城邦—海峡政治体；以控制海峡通行权立国，靠海峡通行税与贸易维生</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：基督教（与安纳托利亚伊斯兰并存/竞争）</li>
+<li>- <strong>首都</strong>：君士坦丁堡</li>
+<li>- <strong>领土</strong>：君士坦丁堡与海峡</li>
+<li>- <strong>语言</strong>：希腊语（推定）</li>
+<li>- <strong>存续</strong>：— 至今</li>
+<li>- <strong>概述</strong>：希腊人主导的基督教城邦—海峡政治体，通称「拜占庭」，以控制海峡通行权立国，靠海峡通行税与贸易维生。它与安纳托利亚突厥帝国长期对峙共处，是伊斯兰文明与基督教文明之间的「边界」——S1 明言「海峡是文明边界，而不是文明墙」：一个收取通行费、允许双方通行的城邦，恰恰不是墙。</li>
+<li>- <strong>关键特征</strong>：海峡是文明边界，不是文明墙；靠海峡通行税与贸易维生；东正教教会不向罗斯兀鲁思转移（因君士坦丁堡仍然存在）</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S1、S4</li>
+</ul>
+<h3 id="东洲-新大洲-正式名称待定-C_NEW_CONTINENT">东洲（新大洲，正式名称待定）　<code>C_NEW_CONTINENT</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Ostland (Arbeitsname)　<strong>英</strong>：Orient (working name)</li>
+<li>- <strong>政体</strong>：待定：内部国家行政制度及其历史尚未设定</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：佛教（西域佛教文明带）、藏传佛教、儒家/道教、印度文明（未穆斯林化）</li>
+<li>- <strong>首都</strong>：—</li>
+<li>- <strong>领土</strong>：中国、蒙古、西藏、西域、中亚东部、印度及相关东亚文明空间</li>
+<li>- <strong>语言</strong>：汉语、藏语、蒙古语、印度诸语、西域诸语</li>
+<li>- <strong>存续</strong>：— 至今</li>
+<li>- <strong>概述</strong>：S2 提出的第三大洲，也是最重要的新设定。核心概念不是“中华文明圈”这么简单，而是“泛中华文明圈—印度文明圈”，其历史联系来自印度佛教 → 犍陀罗 → 西域 → 中亚 → 中国 → 蒙古/西藏 → 东亚。西域佛教成为这个新大洲文明连续性的关键历史桥梁。</li>
+<li>- <strong>关键特征</strong>：正式名称待定（“奥洲/Orient”为故称，“东洲”为20世纪后现代称呼）；丝绸之路、蒙古帝国、藏传佛教、中华帝国制度、汉字文化、草原文明、印度洋贸易共同塑造；多个文明通过长期交通、宗教、帝国和文化传播形成共同文明地理空间</li>
+<li>- <strong>状态</strong>：待定　<strong>出处</strong>：S2、S4</li>
+</ul>
+<h3 id="欧洲-文明大洲-C_EUROPE_CONTINENT">欧洲（文明大洲）　<code>C_EUROPE_CONTINENT</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Europa　<strong>英</strong>：Europe</li>
+<li>- <strong>政体</strong>：欧盟作为这些不同政治传统的共同框架（“古老欧洲多层政治传统的现代民主化延续”）</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：天主教 / 新教（多派）/ 东正教（东部）</li>
+<li>- <strong>首都</strong>：—</li>
+<li>- <strong>领土</strong>：欧洲大陆 + 撒哈拉以北非洲西部</li>
+<li>- <strong>语言</strong>：共同体德语/泛德意志标准语、法兰克语、伊比利亚-奥克语、英语</li>
+<li>- <strong>存续</strong>：— 至今</li>
+<li>- <strong>概述</strong>：大洲不再单纯按地质/地理连续性划分，而按长期形成的文明—历史空间划分。欧洲包括欧洲大陆 + 撒哈拉以北非洲西部。伊比利亚北非不是殖民地意义上的“非洲”，而是伊比利亚国家内部的普通行政区域，故在文明地理上属于欧洲。</li>
+<li>- <strong>关键特征</strong>：撒哈拉承担文明分界功能；欧盟为多层政治传统的现代民主化延续；非简单“HRE 2.0”</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S2、S4</li>
+</ul>
+<h3 id="亚洲-文明大洲-C_ASIA_CONTINENT">亚洲（文明大洲）　<code>C_ASIA_CONTINENT</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Asien　<strong>英</strong>：Asia</li>
+<li>- <strong>政体</strong>：罗斯兀鲁思—西亚—伊斯兰文明空间</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：伊斯兰教（西亚、中亚西部）/ 东正教+佛教+萨满（罗斯兀鲁思）</li>
+<li>- <strong>首都</strong>：—</li>
+<li>- <strong>领土</strong>：罗斯兀鲁思整体、撒哈拉以北非洲东部、近东、中东、穆斯林西亚</li>
+<li>- <strong>语言</strong>：东斯拉夫语、阿拉伯语、波斯语、突厥语</li>
+<li>- <strong>存续</strong>：— 至今</li>
+<li>- <strong>概述</strong>：S2 把罗斯兀鲁思整体划入亚洲，同时包括撒哈拉以北非洲东部、近东、中东、穆斯林西亚，形成“罗斯兀鲁思—西亚—伊斯兰文明空间”。</li>
+<li>- <strong>关键特征</strong>：罗斯兀鲁思成为亚洲北部核心国家；伊斯兰文明东部边界被重新划定（未消灭伊斯兰世界，而是重划边界）</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S2、S4</li>
+</ul>
+<h3 id="非洲-文明大洲-C_AFRICA_CONTINENT">非洲（文明大洲）　<code>C_AFRICA_CONTINENT</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Afrika　<strong>英</strong>：Africa</li>
+<li>- <strong>政体</strong>：撒哈拉以南非洲作为独立的非洲大洲主体</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：—</li>
+<li>- <strong>首都</strong>：—</li>
+<li>- <strong>领土</strong>：撒哈拉以南非洲</li>
+<li>- <strong>语言</strong>：—</li>
+<li>- <strong>存续</strong>：— 至今</li>
+<li>- <strong>概述</strong>：四洲划分中的第四洲。撒哈拉承担文明分界功能：撒哈拉以北西部 → 欧洲；撒哈拉以北东部 → 亚洲；撒哈拉以南 → 非洲。</li>
+<li>- <strong>关键特征</strong>：世界级地理设定的最新成果之一</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S2</li>
+</ul>
+<h3 id="西亚伊斯兰文明空间-C_ASIA_ISLAMIC">西亚伊斯兰文明空间　<code>C_ASIA_ISLAMIC</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Islamischer Raum Westasiens　<strong>英</strong>：West Asian Islamic space</li>
+<li>- <strong>政体</strong>：阿拉伯-伊朗-两河-安纳托利亚伊斯兰文明为主</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：伊斯兰教</li>
+<li>- <strong>首都</strong>：—</li>
+<li>- <strong>领土</strong>：阿拉伯、伊朗、两河、安纳托利亚</li>
+<li>- <strong>语言</strong>：阿拉伯语、波斯语、突厥语</li>
+<li>- <strong>存续</strong>：— 至今</li>
+<li>- <strong>概述</strong>：S1《1960年前后：新的亚洲文明地图》中的区域文明之一。伊斯兰文明在西亚仍为主流，但其向中亚东部与塔里木盆地的推进在本世界线中“止步于更西侧”。</li>
+<li>- <strong>关键特征</strong>：伊斯兰文明的东部边界被重新划定；中亚西部仍有较强伊斯兰影响</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S1</li>
+</ul>
+<h3 id="西域佛教文明带-C_WESTERN_REGIONS">西域佛教文明带　<code>C_WESTERN_REGIONS</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Buddhistischer Gürtel des Westlandes　<strong>英</strong>：Western Regions Buddhist belt</li>
+<li>- <strong>政体</strong>：独立的佛教文明圈</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：西域佛教（龟兹、于阗、吐鲁番、敦煌传统强化）</li>
+<li>- <strong>首都</strong>：—</li>
+<li>- <strong>领土</strong>：塔里木盆地、天山以东、河中地区以东；敦煌为东方佛教门户</li>
+<li>- <strong>语言</strong>：西域诸语（吐火罗语等）</li>
+<li>- <strong>存续</strong>：公元前后 — 至今（8-12世纪未被迅速伊斯兰化）</li>
+<li>- <strong>概述</strong>：本世界线与现实最大的宗教史差异之一：现实中伊斯兰逐渐向中亚东部和塔里木盆地推进，龟兹等地约在12世纪前后结束佛教时代；本世界线改变这一节点，伊斯兰化止步于更西侧，天山以东佛教强、塔里木盆地佛教持续、敦煌继续作为东方佛教门户。</li>
+<li>- <strong>关键特征</strong>：西域成为独立佛教文明圈；中国-西域-中亚文明联系远强于现实；新大洲文明连续性的关键历史桥梁</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S1、S2、S4</li>
+</ul>
+<h3 id="西伯利亚萨满文化区-C_SIBERIA">西伯利亚萨满文化区　<code>C_SIBERIA</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Sibirischer Schamanenraum　<strong>英</strong>：Siberian shamanic zone</li>
+<li>- <strong>政体</strong>：部落/文化区</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：萨满传统 + 长生天传统</li>
+<li>- <strong>首都</strong>：—</li>
+<li>- <strong>领土</strong>：西伯利亚</li>
+<li>- <strong>语言</strong>：—</li>
+<li>- <strong>存续</strong>：— 至今</li>
+<li>- <strong>概述</strong>：S1 亚洲宗教史新原则中的一环：西伯利亚形成“萨满传统 + 长生天传统”。这让罗斯兀鲁思向东扩张面对的不再是单纯的穆斯林汗国，而是一条草原蒙古文化圈 → 西伯利亚萨满文化 → 佛教西域 → 中国的梯度。</li>
+<li>- <strong>关键特征</strong>：萨满+长生天；罗斯兀鲁思亚洲经验的关键一环</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S1</li>
+</ul>
+<h3 id="奥克王国-C_OCCITAN_KINGDOM">奥克王国　<code>C_OCCITAN_KINGDOM</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Königreich Okzitanien　<strong>英</strong>：Kingdom of Occitania</li>
+<li>- <strong>政体</strong>：奥克语地区的独立王国（具体政体文档未载）</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：天主教</li>
+<li>- <strong>首都</strong>：—</li>
+<li>- <strong>领土</strong>：奥克语地区（朗格多克、普罗旺斯、多菲内、奥克海岸、罗讷河口一带）</li>
+<li>- <strong>语言</strong>：伊比利亚-奥克语</li>
+<li>- <strong>存续</strong>：— 1648年前后（部分领土被伊比利亚取得）；1789年大革命后其地成为革命军的占领区</li>
+<li>- <strong>概述</strong>：用户本轮补充设定的实体：伊比利亚的前身之一。奥克语地区的政治体，与西班牙-阿拉贡同为伊比利亚统一进程的源头。1648年《维也纳和约》后法兰克在奥克地区占领后撤，伊比利亚获得部分奥克领土；1789年伊比利亚-奥克大革命即爆发于此地区。二战后法兰克获取奥克地区并设南部奥克省。</li>
+<li>- <strong>关键特征</strong>：伊比利亚的前身之一；与法兰克长期纠缠；奥克语与伊比利亚半岛语言共享词汇语法；奥克人认同“北伊比利亚人”或“奥克-伊比利亚人”</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0、S1、S2</li>
+</ul>
+<h3 id="伊斯兰世界-区域文明体集合-C_ISLAMIC_WORLD">伊斯兰世界（区域文明体集合）　<code>C_ISLAMIC_WORLD</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Islamische Welt　<strong>英</strong>：The Islamic World</li>
+<li>- <strong>政体</strong>：哈里发—苏丹—沙阿多中心体系；无单一最高政治权威</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：伊斯兰教（逊尼派、什叶派并存）</li>
+<li>- <strong>首都</strong>：—</li>
+<li>- <strong>领土</strong>：伊比利亚南部（至收复失地运动）、北非、埃及、叙利亚、阿拉伯半岛、两河、伊朗、安纳托利亚、中亚西部</li>
+<li>- <strong>语言</strong>：阿拉伯语、波斯语、突厥语</li>
+<li>- <strong>存续</strong>：7世纪 — 至今</li>
+<li>- <strong>概述</strong>：本世界线的区域文明体集合。S1 明确本世界并非“消灭伊斯兰世界”，而是重新划定伊斯兰文明的东部边界：伊斯兰化止步于更西侧，西域/塔里木保持佛教。其西线则在伊比利亚被逐出，但北非西部到19—20世纪仍为伊比利亚国家的一部分。西亚（阿拉伯—伊朗—两河—安纳托利亚）仍以伊斯兰文明为主。</li>
+<li>- <strong>关键特征</strong>：多中心、无单一最高权威；逊尼派与什叶派二分；西线止于伊比利亚—马格里布，东线止于河中；埃及/叙利亚/阿拉伯/安纳托利亚/波斯各自形成独立政治传统</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S1、S2</li>
+</ul>
+<h3 id="伊比利亚王国-C_IBERIAN_KINGDOM">伊比利亚王国　<code>C_IBERIAN_KINGDOM</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Königreich Iberien　<strong>英</strong>：Kingdom of Iberia</li>
+<li>- <strong>政体</strong>：中央集权君主国（统一伊比利亚半岛与北非西部）</li>
+<li>- <strong>王朝</strong>：伊比利亚王朝（由西班牙-阿拉贡与奥克王国的王朝合并而成，具体王朝名待定）</li>
+<li>- <strong>宗教</strong>：天主教</li>
+<li>- <strong>首都</strong>：托莱多（推定）</li>
+<li>- <strong>领土</strong>：伊比利亚半岛全境（卡斯蒂利亚、阿拉贡、葡萄牙、纳瓦拉、格拉纳达）与北非西部（马格里布）</li>
+<li>- <strong>语言</strong>：伊比利亚-奥克语</li>
+<li>- <strong>存续</strong>：— 1789（伊比利亚-奥克大革命中推翻）</li>
+<li>- <strong>概述</strong>：用户本轮补充设定的实体。由西班牙-阿拉贡（及奥克王国）为起点，逐步统一伊比利亚各基督教王国，并南下北非驱逐穆斯林，最终建立伊比利亚王国。该王国在1789年伊比利亚-奥克大革命中被推翻，此后进入共和国/帝国反复更替的时代。</li>
+<li>- <strong>关键特征</strong>：统一伊比利亚半岛；南下北非驱逐穆斯林；中央集权从未真正逆转；在1789年大革命中被推翻</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0、S2</li>
+</ul>
+<h3 id="科尔多瓦哈里发国-C_CORDOBA">科尔多瓦哈里发国　<code>C_CORDOBA</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Kalifat von Córdoba　<strong>英</strong>：Caliphate of Córdoba</li>
+<li>- <strong>政体</strong>：哈里发国（929年自立哈里发）</li>
+<li>- <strong>王朝</strong>：伍麦叶（西班牙支系）</li>
+<li>- <strong>宗教</strong>：伊斯兰教（逊尼派）</li>
+<li>- <strong>首都</strong>：科尔多瓦</li>
+<li>- <strong>领土</strong>：伊比利亚半岛大部（安达卢斯）</li>
+<li>- <strong>语言</strong>：阿拉伯语</li>
+<li>- <strong>存续</strong>：929 — 1031（分裂为诸泰法）</li>
+<li>- <strong>概述</strong>：伊比利亚的穆斯林政权，8世纪起统治半岛大部，929年自立哈里发。1031年分裂为诸多泰法小国，为北方基督教诸王国的推进提供条件。此后由北非的穆拉比特与穆瓦希德两王朝先后渡海接管安达卢斯。</li>
+<li>- <strong>关键特征</strong>：安达卢斯文明中心；1031年后分裂为泰法诸国；后被北非柏柏尔王朝接管</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0、S2</li>
+</ul>
+<h3 id="穆瓦希德哈里发国-及穆拉比特-C_ALMOHAD">穆瓦希德哈里发国（及穆拉比特）　<code>C_ALMOHAD</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Almohadenkalifat (und Almoraviden)　<strong>英</strong>：Almohad Caliphate (and Almoravids)</li>
+<li>- <strong>政体</strong>：柏柏尔哈里发国（北非—安达卢斯联合体）</li>
+<li>- <strong>王朝</strong>：穆拉比特 → 穆瓦希德</li>
+<li>- <strong>宗教</strong>：伊斯兰教（逊尼派，严格派）</li>
+<li>- <strong>首都</strong>：马拉喀什</li>
+<li>- <strong>领土</strong>：马格里布（今摩洛哥、阿尔及利亚一带）与安达卢斯南部</li>
+<li>- <strong>语言</strong>：柏柏尔语、阿拉伯语</li>
+<li>- <strong>存续</strong>：11世纪 — 13世纪（1212年后在伊比利亚崩溃）</li>
+<li>- <strong>概述</strong>：北非柏柏尔人的两个王朝，先后渡海接管安达卢斯。1212年战败后其在伊比利亚的统治崩溃，伊比利亚各基督教王国由此得以完成收复失地运动并南下北非。</li>
+<li>- <strong>关键特征</strong>：北非—安达卢斯联合体；1212年后在伊比利亚崩溃；伊比利亚南下北非的直接对位方</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0、S2</li>
+</ul>
+<h3 id="法蒂玛哈里发国-埃及-C_FATIMID">法蒂玛哈里发国（埃及）　<code>C_FATIMID</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Fatimidenkalifat　<strong>英</strong>：Fatimid Caliphate</li>
+<li>- <strong>政体</strong>：什叶派哈里发国</li>
+<li>- <strong>王朝</strong>：法蒂玛</li>
+<li>- <strong>宗教</strong>：伊斯兰教（伊斯玛仪派什叶派）</li>
+<li>- <strong>首都</strong>：开罗</li>
+<li>- <strong>领土</strong>：埃及、叙利亚南部、阿拉伯半岛西部（汉志）、北非东部</li>
+<li>- <strong>语言</strong>：阿拉伯语</li>
+<li>- <strong>存续</strong>：909 — 1171</li>
+<li>- <strong>概述</strong>：埃及的什叶派哈里发国，以开罗为中心，势力及于叙利亚与汉志。1171年被萨拉丁推翻，埃及转入逊尼派阿尤布王朝。</li>
+<li>- <strong>关键特征</strong>：什叶派哈里发国；开罗为都；与阿拔斯哈里发国对立</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S1、S2</li>
+</ul>
+<h3 id="阿尤布苏丹国-埃及-叙利亚-C_AYYUBID">阿尤布苏丹国（埃及—叙利亚）　<code>C_AYYUBID</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Ayyubidensultanat　<strong>英</strong>：Ayyubid Sultanate</li>
+<li>- <strong>政体</strong>：逊尼派苏丹国</li>
+<li>- <strong>王朝</strong>：阿尤布</li>
+<li>- <strong>宗教</strong>：伊斯兰教（逊尼派）</li>
+<li>- <strong>首都</strong>：开罗</li>
+<li>- <strong>领土</strong>：埃及、叙利亚、巴勒斯坦、汉志、也门</li>
+<li>- <strong>语言</strong>：阿拉伯语、库尔德语</li>
+<li>- <strong>存续</strong>：1171 — 1250（马穆鲁克取而代之）</li>
+<li>- <strong>概述</strong>：萨拉丁建立的逊尼派苏丹国，统合埃及与叙利亚，是十字军东征时期穆斯林一方的主要政治体。1250年被马穆鲁克王朝取代。</li>
+<li>- <strong>关键特征</strong>：萨拉丁建立；统合埃及与叙利亚；十字军的主要对位方</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S1</li>
+</ul>
+<h3 id="马穆鲁克苏丹国-埃及-叙利亚-C_MAMLUK">马穆鲁克苏丹国（埃及—叙利亚）　<code>C_MAMLUK</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Mamlukensultanat　<strong>英</strong>：Mamluk Sultanate</li>
+<li>- <strong>政体</strong>：军事寡头苏丹国（伯海里系 → 布尔吉系）</li>
+<li>- <strong>王朝</strong>：马穆鲁克</li>
+<li>- <strong>宗教</strong>：伊斯兰教（逊尼派）</li>
+<li>- <strong>首都</strong>：开罗</li>
+<li>- <strong>领土</strong>：埃及、叙利亚、巴勒斯坦、汉志</li>
+<li>- <strong>语言</strong>：阿拉伯语、突厥语（钦察）</li>
+<li>- <strong>存续</strong>：1250 — 1517（被安纳托利亚突厥帝国取代）</li>
+<li>- <strong>概述</strong>：由军事奴隶精英建立的苏丹国。1260年阻止蒙古西进，此后长期统治埃及与叙利亚，是东地中海与红海贸易的关键政治体。1517年并入安纳托利亚的突厥帝国。</li>
+<li>- <strong>关键特征</strong>：1260年阻止蒙古西进；东地中海与红海贸易枢纽；1517年被突厥帝国取代</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S1、S4</li>
+</ul>
+<h3 id="阿拔斯哈里发国-两河-C_ABBASID">阿拔斯哈里发国（两河）　<code>C_ABBASID</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Abbasidenkalifat　<strong>英</strong>：Abbasid Caliphate</li>
+<li>- <strong>政体</strong>：哈里发国（后期为名义宗主权）</li>
+<li>- <strong>王朝</strong>：阿拔斯</li>
+<li>- <strong>宗教</strong>：伊斯兰教（逊尼派）</li>
+<li>- <strong>首都</strong>：巴格达</li>
+<li>- <strong>领土</strong>：两河、伊朗、阿拉伯半岛东部；后期仅存两河</li>
+<li>- <strong>语言</strong>：阿拉伯语、波斯语</li>
+<li>- <strong>存续</strong>：750 — 1258（巴格达陷落）</li>
+<li>- <strong>概述</strong>：以巴格达为中心的哈里发国，是伊斯兰世界逊尼派名义上的最高权威。1258年巴格达陷落于蒙古西征军，此后哈里发名义由马穆鲁克庇护。</li>
+<li>- <strong>关键特征</strong>：逊尼派名义最高权威；1258年巴格达陷落于蒙古；两河为伊斯兰文明核心区之一</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S1</li>
+</ul>
+<h3 id="伊朗-伊斯兰什叶派波斯-C_PERSIA">伊朗（伊斯兰什叶派波斯）　<code>C_PERSIA</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Persisches Reich　<strong>英</strong>：Persia</li>
+<li>- <strong>政体</strong>：沙阿制；什叶派逐步成为国教</li>
+<li>- <strong>王朝</strong>：诸波斯王朝（11—16世纪陆续更替，详见 D_PERSIAN_LINE）</li>
+<li>- <strong>宗教</strong>：伊斯兰教（伊斯玛仪派 → 十二伊玛目派什叶派为国教）</li>
+<li>- <strong>首都</strong>：伊斯法罕（后期）</li>
+<li>- <strong>领土</strong>：伊朗高原、两河东部、呼罗珊、高加索南部、中亚西部边缘</li>
+<li>- <strong>语言</strong>：波斯语（阿拉伯语为宗教与学术语）</li>
+<li>- <strong>存续</strong>：7世纪 — 至今</li>
+<li>- <strong>概述</strong>：「波斯」概念在本世界线中被撕裂为两支：一支是伊斯兰化的什叶派波斯，即本条目「伊朗」；另一支是退守河中及以东、保持佛教的「西域-波斯残余」（见 C_PERSIA_BUDDHIST）。波斯曾抵御伊斯兰入侵，后因内乱而退守河中及以东，伊朗遂成为伊斯兰文明东端的什叶派国家，与逊尼派的阿拉伯—安纳托利亚体系长期并立。</li>
+<li>- <strong>关键特征</strong>：什叶派国家传统（伊斯兰化的波斯）；波斯语高文化；与逊尼派阿拉伯—安纳托利亚体系并立；其东侧紧邻退守河中的佛教-西域波斯残余</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S1</li>
+</ul>
+<h3 id="奥斯曼帝国-安纳托利亚突厥帝国-C_ANATOLIAN_TURKS">奥斯曼帝国（安纳托利亚突厥帝国）　<code>C_ANATOLIAN_TURKS</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Osmanisches Reich　<strong>英</strong>：Anatolian Turkish Empire</li>
+<li>- <strong>政体</strong>：苏丹—帝国制；逊尼派伊斯兰国家，行米勒特式多宗教治理</li>
+<li>- <strong>王朝</strong>：安纳托利亚突厥王朝（详见 D_OTTOMAN）</li>
+<li>- <strong>宗教</strong>：伊斯兰教（逊尼派）；境内东正教、亚美尼亚教会等并存</li>
+<li>- <strong>首都</strong>：君士坦丁堡（1517年后）</li>
+<li>- <strong>领土</strong>：安纳托利亚、巴尔干南部、叙利亚、埃及、汉志、两河；1517年取代马穆鲁克</li>
+<li>- <strong>语言</strong>：突厥语（奥斯曼突厥语）；阿拉伯语、波斯语为文化与宗教语</li>
+<li>- <strong>存续</strong>：13世纪末 — 至今</li>
+<li>- <strong>概述</strong>：安纳托利亚的突厥穆斯林帝国。本世界线中伊斯兰世界在东部受限于西域佛教带，因此安纳托利亚成为伊斯兰力量向欧洲方向的主要压力来源。S1 明确“安纳托利亚：伊斯兰与基督教并存/竞争”，且“君士坦丁堡：基督教文明核心之一”，故本帝国与海峡基督教政治体长期对峙共处。</li>
+<li>- <strong>关键特征</strong>：逊尼派伊斯兰帝国；米勒特式多宗教治理；1517年取代马穆鲁克；安纳托利亚为伊斯兰与基督教并存/竞争地带</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S1</li>
+</ul>
+<h3 id="马格里布-北非西部-C_MAGHREB">马格里布（北非西部）　<code>C_MAGHREB</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Maghreb　<strong>英</strong>：The Maghreb</li>
+<li>- <strong>政体</strong>：柏柏尔诸王朝 → 伊比利亚国家行政体系的一部分</li>
+<li>- <strong>王朝</strong>：穆拉比特 → 穆瓦希德 → 后由伊比利亚统治</li>
+<li>- <strong>宗教</strong>：伊斯兰教 → 经伊比利亚长期统治后基督教化</li>
+<li>- <strong>首都</strong>：—</li>
+<li>- <strong>领土</strong>：今摩洛哥、阿尔及利亚、突尼斯、西撒哈拉一带</li>
+<li>- <strong>语言</strong>：柏柏尔语、阿拉伯语 → 伊比利亚-奥克语作为行政语言</li>
+<li>- <strong>存续</strong>：伊斯兰化（7世纪）→ 柏柏尔诸王朝 → 伊比利亚南下驱逐穆斯林 → 19—20世纪为伊比利亚本土一部分</li>
+<li>- <strong>概述</strong>：北非西部。7世纪起伊斯兰化，11—13世纪由柏柏尔王朝（穆拉比特、穆瓦希德）统治并渡海接管安达卢斯。此后伊比利亚各基督教王国南下驱逐穆斯林，长期统治并基督教化、欧洲化该地区。S2 明确其“没有特殊宪制地位”，与伊比利亚半岛同属一个国家行政体系。</li>
+<li>- <strong>关键特征</strong>：伊比利亚南下驱逐穆斯林的对象；长期被基督教化、欧洲化；无特殊宪制地位，非殖民地；撒哈拉承担文明分界：以北西部属欧洲、以东属亚洲</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0、S2</li>
+</ul>
+<h3 id="埃及地区-C_EGYPT_REGION">埃及地区　<code>C_EGYPT_REGION</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Ägypten　<strong>英</strong>：Egypt</li>
+<li>- <strong>政体</strong>：先后为法蒂玛、阿尤布、马穆鲁克、安纳托利亚突厥帝国属地</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：伊斯兰教（逊尼派为主）；科普特教会长期存续</li>
+<li>- <strong>首都</strong>：开罗</li>
+<li>- <strong>领土</strong>：尼罗河流域、红海西岸、地中海南岸东部</li>
+<li>- <strong>语言</strong>：阿拉伯语；科普特语为礼仪语言</li>
+<li>- <strong>存续</strong>：7世纪 — 至今</li>
+<li>- <strong>概述</strong>：尼罗河流域。法蒂玛王朝在此建开罗；此后历经阿尤布、马穆鲁克，1517年并入安纳托利亚突厥帝国。是东地中海与印度洋贸易的关键中转。按 S2 的大洲划分，埃及属“撒哈拉以北非洲东部”，文明地理上划入亚洲。</li>
+<li>- <strong>关键特征</strong>：东地中海—印度洋贸易中转；科普特教会长期存续；文明地理上属亚洲（撒哈拉以北东部）</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S2</li>
+</ul>
+<h3 id="叙利亚地区-C_SYRIA">叙利亚地区　<code>C_SYRIA</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Syrien　<strong>英</strong>：Syria</li>
+<li>- <strong>政体</strong>：先后为法蒂玛、阿尤布、马穆鲁克、安纳托利亚突厥帝国属地</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：伊斯兰教（逊尼派、什叶派及诸教派并存）；基督徒与犹太社群长期存在</li>
+<li>- <strong>首都</strong>：大马士革</li>
+<li>- <strong>领土</strong>：黎凡特（叙利亚、巴勒斯坦、黎巴嫩沿海）</li>
+<li>- <strong>语言</strong>：阿拉伯语、阿拉米语残余</li>
+<li>- <strong>存续</strong>：7世纪 — 至今</li>
+<li>- <strong>概述</strong>：东地中海沿岸的伊斯兰地区，十字军东征的主要战场。S1 特别指出法兰克“拥有地中海传统……拥有北非、黎凡特传统影响”，且首都（原文作“巴黎”，本库统一作帕里斯）有神学、历史、东方学传统，因此法兰克自然会成为“欧洲研究东方世界的重要文明”——其直接接触面即叙利亚与黎凡特。</li>
+<li>- <strong>关键特征</strong>：十字军东征主战场；法兰克东方学传统的接触面；多教派并存</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S1</li>
+</ul>
+<h3 id="阿拉伯-汉志地区-C_ARABIA">阿拉伯—汉志地区　<code>C_ARABIA</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Arabien und Hedschas　<strong>英</strong>：Arabia and the Hejaz</li>
+<li>- <strong>政体</strong>：谢里夫/埃米尔地方政权；名义上隶属区域强权</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：伊斯兰教（逊尼派为主，麦加、麦地那两圣地所在）</li>
+<li>- <strong>首都</strong>：—</li>
+<li>- <strong>领土</strong>：阿拉伯半岛、汉志、红海东岸</li>
+<li>- <strong>语言</strong>：阿拉伯语</li>
+<li>- <strong>存续</strong>：7世纪 — 至今</li>
+<li>- <strong>概述</strong>：麦加与麦地那两圣地所在。政治上长期为地方谢里夫政权，名义上隶属先后更替的区域强权（阿拔斯、法蒂玛、马穆鲁克、安纳托利亚突厥帝国）。红海贸易为其经济命脉。</li>
+<li>- <strong>关键特征</strong>：两圣地所在；红海—印度洋贸易枢纽；政治上长期为地方政权</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S1</li>
+</ul>
+<h3 id="西班牙王国-C_SPAIN">西班牙王国　<code>C_SPAIN</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Königreich Spanien　<strong>英</strong>：Kingdom of Spain</li>
+<li>- <strong>政体</strong>：中央集权君主国（卡斯蒂利亚—莱昂王统）</li>
+<li>- <strong>王朝</strong>：特拉斯塔马拉系（推定）</li>
+<li>- <strong>宗教</strong>：天主教</li>
+<li>- <strong>首都</strong>：托莱多（推定）</li>
+<li>- <strong>领土</strong>：卡斯蒂利亚、莱昂、加利西亚、安达卢斯北部</li>
+<li>- <strong>语言</strong>：伊比利亚-奥克语（卡斯蒂利亚语域）</li>
+<li>- <strong>存续</strong>：15世纪 — 16世纪初（并入西班牙-阿拉贡及奥克王国）</li>
+<li>- <strong>概述</strong>：伊比利亚半岛中部的中央集权君主国，是伊比利亚统一进程的两大起点之一。它在收复失地运动中扩张最快，推动天主教共同身份的形成，并最终与阿拉贡合并。其首都托莱多后来成为伊比利亚王国的首都。</li>
+<li>- <strong>关键特征</strong>：伊比利亚统一的两个起点之一；收复失地运动的主力；中央集权传统的源头</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0、S2</li>
+</ul>
+<h3 id="阿拉贡王国-C_ARAGON">阿拉贡王国　<code>C_ARAGON</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Königreich Aragon　<strong>英</strong>：Kingdom of Aragon</li>
+<li>- <strong>政体</strong>：君主国（联姻与地中海扩张型）</li>
+<li>- <strong>王朝</strong>：巴塞罗那系（推定）</li>
+<li>- <strong>宗教</strong>：天主教</li>
+<li>- <strong>首都</strong>：萨拉戈萨（推定）</li>
+<li>- <strong>领土</strong>：阿拉贡、加泰罗尼亚、瓦伦西亚；地中海属地</li>
+<li>- <strong>语言</strong>：伊比利亚-奥克语（加泰罗尼亚语域）</li>
+<li>- <strong>存续</strong>：12世纪 — 16世纪初（并入西班牙-阿拉贡及奥克王国）</li>
+<li>- <strong>概述</strong>：伊比利亚半岛东北部的君主国，伊比利亚统一进程的另一起点。与卡斯蒂利亚方向不同，阿拉贡的扩张重心在地中海与南法，因此与奥克语地区关系密切，是奥克最终卷入伊比利亚轨道的关键。</li>
+<li>- <strong>关键特征</strong>：伊比利亚统一的两个起点之一；地中海扩张型君主国；与奥克语地区的联系枢纽</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0、S2</li>
+</ul>
+<h3 id="伊比利亚第一共和国-C_IBERIA_1REP">伊比利亚第一共和国　<code>C_IBERIA_1REP</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Erste Iberische Republik　<strong>英</strong>：First Iberian Republic</li>
+<li>- <strong>政体</strong>：革命共和政体（1789 年大革命推翻伊比利亚王国后建立）</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：天主教（革命期一度推行国家教会化）</li>
+<li>- <strong>首都</strong>：托莱多（推定）</li>
+<li>- <strong>领土</strong>：伊比利亚半岛、北非西部；革命期曾占领奥克地区并攻入南意大利</li>
+<li>- <strong>语言</strong>：伊比利亚-奥克语</li>
+<li>- <strong>存续</strong>：1789 — 约1804（转为伊比利亚第一帝国）</li>
+<li>- <strong>概述</strong>：伊比利亚大革命推翻王国后建立的第一个共和政体，是「伊比利亚共和国—帝国反复更替」序列的起点。革命军自伊比利亚与奥克出发席卷南欧，攻入那不勒斯，迫使神圣罗马帝国解散。该政体后由第一帝国取代。</li>
+<li>- <strong>关键特征</strong>：伊比利亚革命政体的开端；革命军远征南欧的发起点；民族主义、立宪主义、共和主义由此深入人心</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0、S1</li>
+</ul>
+<h3 id="伊比利亚第一帝国-C_IBERIA_1EMP">伊比利亚第一帝国　<code>C_IBERIA_1EMP</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Erstes Iberisches Kaiserreich　<strong>英</strong>：First Iberian Empire</li>
+<li>- <strong>政体</strong>：革命帝国（共和政体转向帝制）</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：天主教</li>
+<li>- <strong>首都</strong>：托莱多（推定）</li>
+<li>- <strong>领土</strong>：伊比利亚半岛、北非西部、奥克地区；曾远征罗斯兀鲁思</li>
+<li>- <strong>语言</strong>：伊比利亚-奥克语</li>
+<li>- <strong>存续</strong>：约1804 — 1815（被反伊比利亚同盟击败）</li>
+<li>- <strong>概述</strong>：伊比利亚革命政权的帝国阶段，也是其扩张的顶点。它把大革命推向全欧，但其<strong>远征罗斯兀鲁思最终失败</strong>——这与现实史中拿破仑远征的失败同构，是伊比利亚由盛转衰的转折。1815 年被法兰克、普热米斯尔、英国、罗斯兀鲁思组成的反伊比利亚同盟击败。</li>
+<li>- <strong>关键特征</strong>：伊比利亚扩张的顶点；远征罗斯兀鲁思失败；1815 年被反伊比利亚同盟击败</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0、S1</li>
+</ul>
+<h3 id="伊比利亚第二共和国-C_IBERIA_2REP">伊比利亚第二共和国　<code>C_IBERIA_2REP</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Zweite Iberische Republik　<strong>英</strong>：Second Iberian Republic</li>
+<li>- <strong>政体</strong>：共和政体（拿破仑战争后重建）</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：天主教（压制国内新教徒）</li>
+<li>- <strong>首都</strong>：托莱多（推定）</li>
+<li>- <strong>领土</strong>：伊比利亚半岛、北非西部</li>
+<li>- <strong>语言</strong>：伊比利亚-奥克语</li>
+<li>- <strong>存续</strong>：1815 — 19世纪中叶（转为伊比利亚第二帝国）</li>
+<li>- <strong>概述</strong>：拿破仑战争后重建的共和政体。它接过革命留下的民族主义、立宪主义与共和主义遗产，但中央集权并未松动——S2 所记「中央集权从未真正逆转」正由此延续。其长臂管辖一度伸至南意大利那不勒斯与罗马。</li>
+<li>- <strong>关键特征</strong>：革命遗产的承接者；中央集权延续；长臂管辖伸至南意大利</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0、S2</li>
+</ul>
+<h3 id="西法兰克王国-C_WEST_FRANKIA">西法兰克王国　<code>C_WEST_FRANKIA</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Westfrankenreich　<strong>英</strong>：West Francia</li>
+<li>- <strong>政体</strong>：加洛林系君主国</li>
+<li>- <strong>王朝</strong>：加洛林（Karolinger）</li>
+<li>- <strong>宗教</strong>：天主教</li>
+<li>- <strong>首都</strong>：帕里斯（推定）</li>
+<li>- <strong>领土</strong>：塞根河、利格河、加伦河流域及勃艮第、阿基坦</li>
+<li>- <strong>语言</strong>：罗曼语（langue d'oïl 的前身）</li>
+<li>- <strong>存续</strong>：843 — 987（卡佩家族取代加洛林）</li>
+<li>- <strong>概述</strong>：大陆北部罗曼语政治体序列的第一阶段，也是后来「法兰西罗曼王国」的前身。本世界线中，这一支罗曼语政治体最终在 1270 年卡佩绝嗣后终结，其语言与宫廷文化则转移到不列颠（见「罗曼正统错位」）。</li>
+<li>- <strong>关键特征</strong>：罗曼语政治体的第一阶段；langue d'oïl 的政治母体；其文化后被不列颠承接</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0、S3</li>
+</ul>
+<h3 id="法兰西罗曼王国-C_FRANKISH_ROMANCE">法兰西罗曼王国　<code>C_FRANKISH_ROMANCE</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Romanisch-fränkisches Königreich　<strong>英</strong>：Romano-Frankish Kingdom</li>
+<li>- <strong>政体</strong>：罗曼语君主国（卡佩王统）</li>
+<li>- <strong>王朝</strong>：卡佩（Kapetinger）</li>
+<li>- <strong>宗教</strong>：天主教</li>
+<li>- <strong>首都</strong>：帕里斯</li>
+<li>- <strong>领土</strong>：法兰西岛、香槟、勃艮第、诺曼底、阿基坦、朗格多克北部</li>
+<li>- <strong>语言</strong>：langue d'oïl（罗曼语）</li>
+<li>- <strong>存续</strong>：987 — 1270（卡佩直系绝嗣）</li>
+<li>- <strong>概述</strong>：<strong>大陆北部的罗曼语政治体</strong>，本世界线中十字军东征的发动者，也是「法兰西」这一政治名称的最后载体。1270 年前后卡佩直系绝嗣后，它被哈布斯堡的法兰克所取代——此后大陆北部说日耳曼语，而它的语言与宫廷文化转入不列颠。</li>
+<li>- <strong>关键特征</strong>：十字军东征的发动者；罗曼语政治体的最后阶段；1270 年卡佩绝嗣后终结；其文化转入不列颠</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0、S1、S3</li>
+</ul>
+<h3 id="法兰克共和国-C_FRANKEN_REPUBLIC">法兰克共和国　<code>C_FRANKEN_REPUBLIC</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Fränkische Republik　<strong>英</strong>：Frankish Republic</li>
+<li>- <strong>政体</strong>：共和政体（不完善；哈布斯堡贵族仍渗透政府与军队）</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：天主教</li>
+<li>- <strong>首都</strong>：帕里斯</li>
+<li>- <strong>领土</strong>：原法兰克王领（法兰西岛、香槟、勃艮第、洛林、弗兰登等），不含南部奥克省</li>
+<li>- <strong>语言</strong>：法兰克语（Fränkisch）</li>
+<li>- <strong>存续</strong>：1918 — 1945（二战中哈布斯堡复辟）</li>
+<li>- <strong>概述</strong>：一战战败后，哈布斯堡失去对法兰克的实际统治，法兰克由君主国立宪政体转为共和国。但这一共和国是<strong>不完善的</strong>：哈布斯堡贵族仍然渗透政府与军队。1945 年二战中哈布斯堡复辟，此共和国时期结束。</li>
+<li>- <strong>关键特征</strong>：不完善的共和国；哈布斯堡贵族仍渗透政府与军队；1945 年被复辟取代</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0、S1、S2</li>
+</ul>
+<h3 id="德意志共和国-1918-1945-C_GERMAN_REPUBLIC">德意志共和国（1918—1945）　<code>C_GERMAN_REPUBLIC</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Deutsche Republik　<strong>英</strong>：German Republic</li>
+<li>- <strong>政体</strong>：共和政体；1930 年代重建为统一联邦制民主共和国</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：新教（阿尔卑斯福音派为主流）</li>
+<li>- <strong>首都</strong>：维也纳</li>
+<li>- <strong>领土</strong>：波西米亚、摩拉维亚、奥地利、施蒂利亚、卡林西亚、蒂罗尔、低地全境、北意大利及部分波兰地区（一战后被迫释放波兰地区）</li>
+<li>- <strong>语言</strong>：共同体德语</li>
+<li>- <strong>存续</strong>：1918 — 1945（二战中取消不平等条约、收复波兰，其后重建联邦政体）</li>
+<li>- <strong>概述</strong>：一战战败后普热米斯尔王朝结束，德意志由帝国转为共和政体。它在两次大战之间<strong>保住了学院、工厂、乐团与咖啡馆</strong>，却没有保住国家的能力——直到二战中取消不平等条约、收复波兰，并最终重建为统一联邦制民主共和国。</li>
+<li>- <strong>关键特征</strong>：普热米斯尔王朝结束后的共和政体；一战后的领土与军事限制；1930 年代重建为联邦制民主共和国</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0、S1、S2</li>
+</ul>
+<h3 id="伊比利亚第三共和国-1871-1940-C_IBERIA_3REP_FULL">伊比利亚第三共和国（1871—1940）　<code>C_IBERIA_3REP_FULL</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Dritte Iberische Republik　<strong>英</strong>：Third Iberian Republic</li>
+<li>- <strong>政体</strong>：共和政体；中央集权，但尚未形成后来的强总统制</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：天主教（压制国内新教徒）</li>
+<li>- <strong>首都</strong>：托莱多（推定）</li>
+<li>- <strong>领土</strong>：伊比利亚半岛、北非西部、奥克地区</li>
+<li>- <strong>语言</strong>：伊比利亚-奥克语</li>
+<li>- <strong>存续</strong>：1871 — 1940（被法兰克与德意志击败）</li>
+<li>- <strong>概述</strong>：伊比利亚第二帝国于 1871 年被新成立的德意志帝国击败后，伊比利亚转入第三共和国。它是本世界线中存续最久、出场最频繁的伊比利亚政权：一战中加入协约方（与英帝国、罗斯兀鲁思、美国同侧）对中欧作战；二战中再度站到协约国一侧，结果于 <strong>1940 年被法兰克与德意志击败</strong>，第三共和国就此终结。其在奥克地区的势力也在此期间被法兰克逐出。</li>
+<li>- <strong>关键特征</strong>：1871 年第二帝国战败后成立；一战、二战均属协约方；1940 年被法兰克与德意志击败；奥克地区的伊比利亚势力在此期终结</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0、S1、S2</li>
+</ul>
+<h3 id="伊比利亚被占领与过渡期-1940-1945-C_IBERIA_OCCUPIED">伊比利亚被占领与过渡期（1940—1945）　<code>C_IBERIA_OCCUPIED</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Besetztes und Übergangs-Iberien　<strong>英</strong>：Occupied and Transitional Iberia</li>
+<li>- <strong>政体</strong>：战败后被占领并由过渡政权管理的时期</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：天主教</li>
+<li>- <strong>首都</strong>：托莱多（推定）</li>
+<li>- <strong>领土</strong>：伊比利亚半岛、北非西部（1945 年失去奥克地区）</li>
+<li>- <strong>语言</strong>：伊比利亚-奥克语</li>
+<li>- <strong>存续</strong>：1940 — 1945（战后建立第四共和国）</li>
+<li>- <strong>概述</strong>：第三共和国于 1940 年战败后，伊比利亚进入被占领与过渡管理期，直至 1945 年二战结束。这五年是伊比利亚政治体制的断点：旧共和国的中央集权与殖民体系在此期间崩解，为战后高度议会化的第四共和国铺路。1945 年，胜利方（德意志等）推动伊比利亚民主化，第四共和国由此建立。</li>
+<li>- <strong>关键特征</strong>：1940 年战败后的占领与过渡；旧共和体制的断点；1945 年由胜利方推动民主化</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0、S2</li>
+</ul>
+<h3 id="伊比利亚第四共和国-1945-1954-C_IBERIA_4REP">伊比利亚第四共和国（1945—1954）　<code>C_IBERIA_4REP</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Vierte Iberische Republik　<strong>英</strong>：Fourth Iberian Republic</li>
+<li>- <strong>政体</strong>：高度议会化的共和国；<strong>总统权力受限</strong>，实权在议会与内阁</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：天主教；战后推动民主化与文化保护</li>
+<li>- <strong>首都</strong>：托莱多（推定）</li>
+<li>- <strong>领土</strong>：伊比利亚半岛、北非西部（已失去奥克地区）</li>
+<li>- <strong>语言</strong>：伊比利亚-奥克语</li>
+<li>- <strong>存续</strong>：1945 — 1954（因非洲殖民地危机覆灭）</li>
+<li>- <strong>概述</strong>：战后由胜利方推动建立的议会制共和国，是伊比利亚政治史上<strong>总统权力最弱</strong>的阶段：国家高度议会化，总统权力受限。它面临的核心难题是<strong>非洲殖民地危机</strong>——北非西部在法律上属伊比利亚本土行政体系，但战后的民族主义浪潮使这一体制难以为继。1954 年前后危机爆发，第四共和国覆灭。</li>
+<li>- <strong>关键特征</strong>：高度议会化；总统权力受限；1954 年前后非洲殖民地危机；危机导致共和国覆灭</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S2</li>
+</ul>
+<h3 id="伊比利亚第五共和国-1960-C_IBERIA_5REP">伊比利亚第五共和国（1960— ）　<code>C_IBERIA_5REP</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Fünfte Iberische Republik　<strong>英</strong>：Fifth Iberian Republic</li>
+<li>- <strong>政体</strong>：<strong>总统权力重新加强</strong>的共和国；即现行伊比利亚共和国体制</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：天主教（长期压制国内新教徒）</li>
+<li>- <strong>首都</strong>：托莱多（推定）</li>
+<li>- <strong>领土</strong>：伊比利亚半岛、北非西部（本土一体行政）</li>
+<li>- <strong>语言</strong>：伊比利亚-奥克语</li>
+<li>- <strong>存续</strong>：1960 — 至今</li>
+<li>- <strong>概述</strong>：第四共和国因非洲殖民地危机覆灭后，伊比利亚于 1960 年重建为第五共和国。与第四共和国相反，本期<strong>总统权力重新加强</strong>，中央集权传统回归，同时保留战后确立的民主化框架——这正是 S2 所概括的「国家可以很强，但权力必须民主化」。本词条即现行「伊比利亚共和国」的正式分期名称。</li>
+<li>- <strong>关键特征</strong>：总统权力重新加强；「强国家 + 民主化」的体制；大区很大而少、省份承载传统地区；北非为本土一部分；六极之一</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0、S1、S2</li>
+</ul>
+<h3 id="伊比利亚第二帝国-C_IBERIA_2EMP_UNION">伊比利亚第二帝国　<code>C_IBERIA_2EMP_UNION</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Zweites Iberisches Kaiserreich　<strong>英</strong>：Second Iberian Empire</li>
+<li>- <strong>政体</strong>：帝制政体（第二共和国之后）</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：天主教</li>
+<li>- <strong>首都</strong>：托莱多（推定）</li>
+<li>- <strong>领土</strong>：伊比利亚半岛、北非西部、奥克地区；长臂管辖伸至南意大利那不勒斯与罗马</li>
+<li>- <strong>语言</strong>：伊比利亚-奥克语</li>
+<li>- <strong>存续</strong>：19世纪中叶 — 1871（被德意志帝国击败）</li>
+<li>- <strong>概述</strong>：第二共和国之后的帝制阶段。它的势力范围一度覆盖那不勒斯与罗马，1871 年普热米斯尔攻入这两地并在罗马加冕，第二帝国同时被击败——<strong>德意志帝国成立之日，即伊比利亚第二帝国终结之时</strong>。</li>
+<li>- <strong>关键特征</strong>：长臂管辖伸至南意大利；1871 年被德意志帝国击败；其终结与德意志帝国成立同年</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S0</li>
+</ul>
+<h3 id="西域-波斯-佛教波斯残余-C_PERSIA_BUDDHIST">西域-波斯（佛教波斯残余）　<code>C_PERSIA_BUDDHIST</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Westland-Persien (buddhistisches Persien)　<strong>英</strong>：Western-Persia (Buddhist Persia)</li>
+<li>- <strong>政体</strong>：波斯遗民的佛教政权；据河中及以东，与西域佛教文明带连为一体</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：佛教（兼存波斯传统宗教与摩尼教、祆教残余）</li>
+<li>- <strong>首都</strong>：撒马尔罕（推定）</li>
+<li>- <strong>领土</strong>：河中地区（阿姆河—锡尔河之间）、呼罗珊东部；东与西域佛教文明带相连</li>
+<li>- <strong>语言</strong>：波斯语（佛教与行政语域）；兼用西域诸语</li>
+<li>- <strong>存续</strong>：8世纪后 — 至今</li>
+<li>- <strong>概述</strong>：「波斯」概念在本世界线中被撕裂为两支之一。波斯曾抵御伊斯兰入侵，但最终因内乱而退守河中及以东地区，其遗民在此保持佛教，成为「西域-波斯」。它把河中地区纳入佛教文明圈，从而与东侧的西域佛教文明带连成一片，构成伊斯兰文明与东洲佛教世界之间的过渡地带。这正是用户裁定（P5）确立的结构。</li>
+<li>- <strong>关键特征</strong>：「波斯」概念的另一半；据河中及以东，与西域佛教带连为一体；伊斯兰文明与西域佛教之间的过渡地带；波斯语高文化在佛教语境中延续</li>
+<li>- <strong>状态</strong>：已确定　<strong>出处</strong>：S1</li>
+</ul>
+<h3 id="阿拉伯王国-C_ARAB_KINGDOM">阿拉伯王国　<code>C_ARAB_KINGDOM</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Arabisches Königreich　<strong>英</strong>：Arab Kingdom</li>
+<li>- <strong>政体</strong>：汉志与阿拉伯半岛的谢里夫王朝国家</li>
+<li>- <strong>王朝</strong>：哈希姆系（推定）</li>
+<li>- <strong>宗教</strong>：伊斯兰教（逊尼派）</li>
+<li>- <strong>首都</strong>：麦加（推定）</li>
+<li>- <strong>领土</strong>：汉志、阿拉伯半岛西部与内陆</li>
+<li>- <strong>语言</strong>：阿拉伯语</li>
+<li>- <strong>存续</strong>：—</li>
+<li>- <strong>概述</strong>：20 世纪近东民族国家格局中的阿拉伯国家。由汉志的谢里夫政权升格而来，控制麦加、麦地那两圣地。其诞生背景是安纳托利亚突厥帝国在 20 世纪的多极格局中逐步失去对阿拉伯半岛的直接统治。</li>
+<li>- <strong>状态</strong>：待定　<strong>出处</strong>：S1</li>
+</ul>
+<h3 id="叙利亚共和国-C_SYRIAN_REPUBLIC">叙利亚共和国　<code>C_SYRIAN_REPUBLIC</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Syrische Republik　<strong>英</strong>：Syrian Republic</li>
+<li>- <strong>政体</strong>：议会制共和国</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：伊斯兰教（逊尼派为主，多教派并存）</li>
+<li>- <strong>首都</strong>：大马士革</li>
+<li>- <strong>领土</strong>：黎凡特（叙利亚、巴勒斯坦、黎巴嫩沿海）</li>
+<li>- <strong>语言</strong>：阿拉伯语</li>
+<li>- <strong>存续</strong>：—</li>
+<li>- <strong>概述</strong>：20 世纪近东民族国家格局中的叙利亚国家。是法兰克东方学传统在 20 世纪的直接接触对象。</li>
+<li>- <strong>状态</strong>：待定　<strong>出处</strong>：S1</li>
+</ul>
+<h3 id="埃及王国-C_EGYPT_KINGDOM">埃及王国　<code>C_EGYPT_KINGDOM</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Königreich Ägypten　<strong>英</strong>：Kingdom of Egypt</li>
+<li>- <strong>政体</strong>：君主立宪国</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：伊斯兰教（逊尼派）；科普特教会并存</li>
+<li>- <strong>首都</strong>：开罗</li>
+<li>- <strong>领土</strong>：尼罗河流域、苏伊士地峡</li>
+<li>- <strong>语言</strong>：阿拉伯语</li>
+<li>- <strong>存续</strong>：—</li>
+<li>- <strong>概述</strong>：20 世纪近东民族国家格局中的埃及国家，控制苏伊士地峡——东地中海与印度洋之间的关键通道。</li>
+<li>- <strong>状态</strong>：待定　<strong>出处</strong>：S1、S2</li>
+</ul>
+<h3 id="两河王国-C_IRAQ_KINGDOM">两河王国　<code>C_IRAQ_KINGDOM</code></h3>
+<ul class="mdul">
+<li>- <strong>德</strong>：Königreich Mesopotamien　<strong>英</strong>：Kingdom of Mesopotamia</li>
+<li>- <strong>政体</strong>：君主立宪国</li>
+<li>- <strong>王朝</strong>：—</li>
+<li>- <strong>宗教</strong>：伊斯兰教（逊尼派与什叶派并存）</li>
+<li>- <strong>首都</strong>：巴格达</li>
+<li>- <strong>领土</strong>：两河流域</li>
+<li>- <strong>语言</strong>：阿拉伯语</li>
+<li>- <strong>存续</strong>：—</li>
+<li>- <strong>概述</strong>：20 世纪近东民族国家格局中的两河国家，以巴格达为都——阿拔斯哈里发国的故地。</li>
+<li>- <strong>状态</strong>：待定　<strong>出处</strong>：S1</li>
+</ul>
+<hr class="mdhr">
+<h2 id="出处代号">出处代号</h2>
+<ul class="mdul">
+<li>- <strong>S0</strong> = <code>source/设定集.docx</code>（泛德意志世界设定总集（纯文本整合版））</li>
+<li>- <strong>S1</strong> = <code>source/设定集补充.docx</code>（泛德意志世界设定 · 本轮扩充整理稿）</li>
+<li>- <strong>S2</strong> = <code>source/设定集补充2.docx</code>（五国行政·政党·大洲划分）</li>
+<li>- <strong>S3</strong> = <code>source/设定集补充3.docx</code>（设定集3：英国线（盎格鲁-罗曼世界））</li>
+<li>- <strong>S4</strong> = <code>source/设定集补充4.docx</code>（罗斯兀鲁思：蒙古王朝与后基辅罗斯国家传统）</li>
+</ul>
+</div>
+</main>
+
+<footer>
+<div class="madeby"><span class="mk">Created with</span>本页面由 <b>DeepSeek Harness</b> 创作<span class="fl">设定集解析 · 知识图谱构建 · 一致性审计 · 站点生成，全流程由 DeepSeek Harness 完成</span></div><div class="footmeta">出处代号：<a href="../index.html#sources">S0</a> 设定集.docx ｜ S1 设定集补充.docx ｜ S2 设定集补充2.docx ｜ S3 设定集补充3.docx ｜ S4 设定集补充4.docx ｜ <b>S5</b> 整合层（S0–S4 去重合并 + 用户裁定）｜ <b>S*</b> 仿真文献层（基于设定生成，不新增设定）<br><a href="../home.html">主页</a> ／ <a href="../index.html">设定集索引</a> ／ <a href="../wiki/index.html">历史文献</a> ／ <a href="../wiki/docs-index.html">文档中心</a> ／ <a href="../timeline.html">交互式时间轴</a></div>
+</footer>
+<script>(function(){var b=document.getElementById('gnavToggle'),n=document.querySelector('.gnav');if(b&&n){b.onclick=function(){n.classList.toggle('open')};}var p=document.getElementById('bkPrev');if(p){p.onclick=function(){if(history.length>1){history.back();}else{location.href='../home.html';}};}}())</script>
+
+</body>
+</html>

@@ -1,0 +1,5696 @@
+{
+  "meta": {
+    "project": "泛德意志的欧洲 · 历史设定集知识工程",
+    "phase": "阶段一：解析与结构化",
+    "generated_by": "历史设定集知识工程 Agent",
+    "source_documents": [
+      {
+        "id": "S0",
+        "file": "source/设定集.docx",
+        "title": "泛德意志世界设定总集（纯文本整合版）",
+        "role": "主干：总纲、时间纵轴、横轴指标、语言与地名系统、地图工程、修正与注意"
+      },
+      {
+        "id": "S1",
+        "file": "source/设定集补充.docx",
+        "title": "泛德意志世界设定 · 本轮扩充整理稿",
+        "role": "总纲重述与理论核心；亚洲宗教史新扩展；六极文明定位；世界史母表"
+      },
+      {
+        "id": "S2",
+        "file": "source/设定集补充2.docx",
+        "title": "五国行政·政党·大洲划分",
+        "role": "法兰克/德意志/伊比利亚/英国/美国行政与政党体系；四大洲文明划分；🟢🟡状态清单"
+      },
+      {
+        "id": "S3",
+        "file": "source/设定集补充3.docx",
+        "title": "设定集3：英国线（盎格鲁-罗曼世界）",
+        "role": "英国完整设定；R1-R7 修订清单；法兰克-不列颠对偶表"
+      },
+      {
+        "id": "S4",
+        "file": "source/设定集补充4.docx",
+        "title": "罗斯兀鲁思：蒙古王朝与后基辅罗斯国家传统",
+        "role": "莫斯科国/基辅王国分流；金帐汗国继承线；欧亚文明梯度"
+      }
+    ],
+    "status_vocab": [
+      "已确定",
+      "待定",
+      "修正"
+    ]
+  },
+  "timeline": {
+    "table": "timeline",
+    "rows": [
+      {
+        "seq": 1,
+        "id": "E_1100_WESTERN_BUDDHISM",
+        "year": 800,
+        "year_text": "公元前后 — 8世纪 / 8—12世纪",
+        "epoch": "宗教史长时段",
+        "event_zh": "西域佛教传统强化与伊斯兰化止步",
+        "event_de": "Stärkung des westländischen Buddhismus",
+        "event_en": "Strengthening of the Western Regions' Buddhism",
+        "region": "西域、塔里木盆地、敦煌",
+        "countries": [
+          "西域佛教文明带",
+          "中国"
+        ],
+        "country_ids": [
+          "C_WESTERN_REGIONS",
+          "C_CHINA"
+        ],
+        "persons": [],
+        "result": "西域成为独立的佛教文明圈，使“中国—西域—中亚”的文明联系远远强于现实。",
+        "causes": [],
+        "effects": [
+          "E_1200_MONGOL",
+          "E_1400_GOLDEN_HORDE"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "seq": 2,
+        "id": "E_0929_CORDOBA",
+        "year": 929,
+        "year_text": "929",
+        "epoch": "8—11世纪：伊斯兰伊比利亚",
+        "event_zh": "科尔多瓦自立哈里发",
+        "event_de": "Selbsterhebung zum Kalifat von Córdoba",
+        "event_en": "Self-proclamation of the Caliphate of Córdoba",
+        "region": "伊比利亚南部（科尔多瓦）",
+        "countries": [
+          "科尔多瓦哈里发国",
+          "西班牙-阿拉贡"
+        ],
+        "country_ids": [
+          "C_CORDOBA",
+          "C_SPAIN_ARAGON"
+        ],
+        "persons": [
+          "阿卜杜勒·拉赫曼三世"
+        ],
+        "result": "伊斯兰世界形成科尔多瓦、巴格达、开罗（法蒂玛）三哈里发并立格局；安达卢斯进入文明鼎盛期。",
+        "causes": [],
+        "effects": [
+          "E_1031_TAIFAS"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S2"
+        ]
+      },
+      {
+        "seq": 3,
+        "id": "E_1031_TAIFAS",
+        "year": 1031,
+        "year_text": "1031",
+        "epoch": "11世纪：安达卢斯分裂",
+        "event_zh": "科尔多瓦哈里发国分裂为诸泰法",
+        "event_de": "Zerfall in die Taifa-Königreiche",
+        "event_en": "Collapse into the Taifa kingdoms",
+        "region": "伊比利亚南部",
+        "countries": [
+          "科尔多瓦哈里发国",
+          "穆瓦希德哈里发国（及穆拉比特）",
+          "西班牙-阿拉贡"
+        ],
+        "country_ids": [
+          "C_CORDOBA",
+          "C_ALMOHAD",
+          "C_SPAIN_ARAGON"
+        ],
+        "persons": [],
+        "result": "安达卢斯由统一转为分裂，为北方基督教诸王国的推进提供条件；北非柏柏尔王朝介入伊比利亚。",
+        "causes": [
+          "E_0929_CORDOBA"
+        ],
+        "effects": [
+          "E_1212_LAS_NAVAS",
+          "E_RECONQUISTA"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S2"
+        ]
+      },
+      {
+        "seq": 4,
+        "id": "E_CRUSADES",
+        "year": 1096,
+        "year_text": "11—13世纪",
+        "epoch": "11—13世纪：十字军东征",
+        "event_zh": "十字军东征",
+        "event_de": "Kreuzzüge",
+        "event_en": "The Crusades",
+        "region": "黎凡特、东地中海",
+        "countries": [
+          "法兰西罗曼王国",
+          "教皇国",
+          "阿尤布苏丹国（埃及—叙利亚）",
+          "法蒂玛哈里发国（埃及）",
+          "叙利亚地区",
+          "君士坦丁堡（海峡政治体，通称拜占庭）",
+          "奥斯曼帝国（安纳托利亚突厥帝国）"
+        ],
+        "country_ids": [
+          "C_FRANKISH_ROMANCE",
+          "C_PAPAL",
+          "C_AYYUBID",
+          "C_FATIMID",
+          "C_SYRIA",
+          "C_BYZANTIUM",
+          "C_ANATOLIAN_TURKS"
+        ],
+        "persons": [
+          "萨拉丁"
+        ],
+        "result": "十字军遗产经法兰西罗曼王国转入日耳曼的法兰克，使法兰克成为「连接西欧、地中海、黎凡特与德意志世界的文明边界国家」；黎凡特穆斯林政权（法蒂玛、阿尤布、马穆鲁克）在对抗中完成整合。",
+        "causes": [],
+        "effects": [
+          "E_FRANKISH_ORIENTALISM",
+          "E_1291_ACRE"
+        ],
+        "war_id": "W_CRUSADES",
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "seq": 5,
+        "id": "E_1200_MONGOL",
+        "year": 1200,
+        "year_text": "1200 — 1300及以后",
+        "epoch": "1200—1300：蒙古帝国",
+        "event_zh": "蒙古帝国崛起与文明桥梁",
+        "event_de": "Aufstieg des Mongolenreiches",
+        "event_en": "Rise of the Mongol Empire",
+        "region": "欧亚大陆",
+        "countries": [
+          "蒙古帝国",
+          "金帐汗国",
+          "中国",
+          "西域佛教文明带"
+        ],
+        "country_ids": [
+          "C_MONGOL_EMPIRE",
+          "C_GOLDEN_HORDE",
+          "C_CHINA",
+          "C_WESTERN_REGIONS"
+        ],
+        "persons": [],
+        "result": "蒙古帝国在欧亚大陆北部留下远比现实深厚的政治与文化遗产；文明遗产区从太平洋延伸到东欧森林地带。",
+        "causes": [],
+        "effects": [
+          "E_1400_GOLDEN_HORDE"
+        ],
+        "war_id": "W_MONGOL_EXPANSION",
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S1",
+          "S4"
+        ]
+      },
+      {
+        "seq": 6,
+        "id": "E_1212_LAS_NAVAS",
+        "year": 1212,
+        "year_text": "1212",
+        "epoch": "13世纪：收复失地运动的转折",
+        "event_zh": "穆瓦希德在伊比利亚战败",
+        "event_de": "Niederlage der Almohaden in Iberien",
+        "event_en": "Almohad defeat in Iberia",
+        "region": "伊比利亚南部",
+        "countries": [
+          "穆瓦希德哈里发国（及穆拉比特）",
+          "西班牙-阿拉贡",
+          "马格里布（北非西部）"
+        ],
+        "country_ids": [
+          "C_ALMOHAD",
+          "C_SPAIN_ARAGON",
+          "C_MAGHREB"
+        ],
+        "persons": [],
+        "result": "收复失地运动进入决定性阶段；伊比利亚各基督教王国得以逐步统一，并开始南下北非驱逐穆斯林。",
+        "causes": [
+          "E_1031_TAIFAS"
+        ],
+        "effects": [
+          "E_RECONQUISTA",
+          "E_IBERIAN_UNIFICATION"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S2"
+        ]
+      },
+      {
+        "seq": 7,
+        "id": "E_MAMLUK_MONGOL",
+        "year": 1260,
+        "year_text": "1260",
+        "epoch": "13世纪：蒙古西征的界线",
+        "event_zh": "马穆鲁克阻止蒙古西进",
+        "event_de": "Mamlukischer Sieg über die Mongolen",
+        "event_en": "Mamluk halt of the Mongol advance",
+        "region": "黎凡特",
+        "countries": [
+          "马穆鲁克苏丹国（埃及—叙利亚）",
+          "蒙古帝国",
+          "阿拔斯哈里发国（两河）",
+          "叙利亚地区",
+          "埃及地区"
+        ],
+        "country_ids": [
+          "C_MAMLUK",
+          "C_MONGOL_EMPIRE",
+          "C_ABBASID",
+          "C_SYRIA",
+          "C_EGYPT_REGION"
+        ],
+        "persons": [
+          "拜巴尔斯"
+        ],
+        "result": "蒙古—金帐体系的西侧界线被划定；埃及与叙利亚保住独立的伊斯兰政治传统，未被并入蒙古体系。这与 S4 所记“蒙古文明遗产从太平洋延伸到东欧森林地带”形成对照——其南界与西界正是此处。",
+        "causes": [
+          "E_1200_MONGOL"
+        ],
+        "effects": [
+          "E_1500_ROS_UHLUS"
+        ],
+        "war_id": "W_MONGOL_EXPANSION",
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S1",
+          "S4"
+        ]
+      },
+      {
+        "seq": 8,
+        "id": "E_1270_CAPET",
+        "year": 1270,
+        "year_text": "1270年前后",
+        "epoch": "13世纪：双源发生",
+        "event_zh": "卡佩绝嗣与法兰克继承危机",
+        "event_de": "Aussterben der Kapetinger",
+        "event_en": "Extinction of the Capetians",
+        "region": "欧洲西部",
+        "countries": [
+          "法兰克立宪君主国",
+          "英格兰-诺曼底"
+        ],
+        "country_ids": [
+          "C_FRANKEN",
+          "C_ENGLAND_NORMANDY"
+        ],
+        "persons": [
+          "路易九世",
+          "腓力三世",
+          "腓力四世",
+          "瓦卢瓦的查理",
+          "埃夫勒的腓力",
+          "爱德华一世",
+          "鲁道夫"
+        ],
+        "result": "历史分叉点：法兰克继承危机开启，并由此形成两个日耳曼语政治体（双源）。",
+        "causes": [],
+        "effects": [
+          "E_1272_RUDOLF",
+          "E_1273_OTTOKAR"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "seq": 9,
+        "id": "E_1272_ABSOLUTISM",
+        "year": 1272,
+        "year_text": "1272后 / 13—15世纪",
+        "epoch": "13—15世纪",
+        "event_zh": "不列颠绝对主义奠基",
+        "event_de": "Grundlegung des britischen Absolutismus",
+        "event_en": "Founding of British absolutism",
+        "region": "不列颠",
+        "countries": [
+          "不列颠联邦共和国"
+        ],
+        "country_ids": [
+          "C_UK"
+        ],
+        "persons": [],
+        "result": "绝对主义奠基；宪政与议会不是中世纪遗产，而是1945年战败后的产物。",
+        "causes": [
+          "E_1272_NORMAN_EXODUS"
+        ],
+        "effects": [
+          "E_1945_BRITAIN_DEMOCRATISATION"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "seq": 10,
+        "id": "E_1272_NORMAN_EXODUS",
+        "year": 1272,
+        "year_text": "1272后",
+        "epoch": "13世纪：双源发生",
+        "event_zh": "逆向的诺曼征服：诺曼-法兰西精英退回不列颠",
+        "event_de": "Umgekehrte normannische Eroberung",
+        "event_en": "The reverse Norman Conquest",
+        "region": "不列颠",
+        "countries": [
+          "不列颠联邦共和国",
+          "英格兰-诺曼底"
+        ],
+        "country_ids": [
+          "C_UK",
+          "C_ENGLAND_NORMANDY"
+        ],
+        "persons": [
+          "鲁道夫"
+        ],
+        "result": "英伦作为罗曼-法兰西高文化唯一活体保存地的地位奠定；此后叠加1648、1789流亡波次不断加固。",
+        "causes": [
+          "E_1272_RUDOLF"
+        ],
+        "effects": [
+          "E_1272_ABSOLUTISM",
+          "E_ANGLO_FRANKISH_RIVALRY"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "seq": 11,
+        "id": "E_1272_RUDOLF",
+        "year": 1272,
+        "year_text": "1272",
+        "epoch": "13世纪：双源发生",
+        "event_zh": "鲁道夫加冕为“法兰克人的国王”",
+        "event_de": "Rudolfs Krönung zum König der Franken",
+        "event_en": "Coronation of Rudolf as King of the Franks",
+        "region": "欧洲西部（雷姆斯）",
+        "countries": [
+          "法兰克立宪君主国",
+          "英格兰-诺曼底"
+        ],
+        "country_ids": [
+          "C_FRANKEN",
+          "C_ENGLAND_NORMANDY"
+        ],
+        "persons": [
+          "鲁道夫",
+          "爱德华一世"
+        ],
+        "result": "鲁道夫成为法兰克人的国王；鲁道夫在一次决战中击败诺曼底公爵，夺取法兰西岛和香槟，定都帕里斯。",
+        "causes": [
+          "E_1270_CAPET"
+        ],
+        "effects": [
+          "E_1300_DUAL_SOURCE",
+          "E_1272_NORMAN_EXODUS"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": "为后来的法兰克民族与德意志民族的分离埋下了制度基础。",
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "seq": 12,
+        "id": "E_ANGLO_FRANKISH_RIVALRY",
+        "year": 1272,
+        "year_text": "1272 — 至今",
+        "epoch": "长时段",
+        "event_zh": "英-法兰克竞争长期化",
+        "event_de": "Langfristige englisch-fränkische Rivalität",
+        "event_en": "Protracted Anglo-Frankish rivalry",
+        "region": "不列颠与法兰克",
+        "countries": [
+          "不列颠联邦共和国",
+          "法兰克立宪君主国"
+        ],
+        "country_ids": [
+          "C_UK",
+          "C_FRANKEN"
+        ],
+        "persons": [],
+        "result": "长期文化张力线；经用户本轮裁定（P33）明确为「正统错位」而非「双方争夺正统」。",
+        "causes": [
+          "E_1272_RUDOLF"
+        ],
+        "effects": [],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "待定",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "seq": 13,
+        "id": "E_1273_OTTOKAR",
+        "year": 1273,
+        "year_text": "1273 — 1300",
+        "epoch": "13世纪：双源发生",
+        "event_zh": "奥托卡二世崛起与东西双源形成",
+        "event_de": "Aufstieg Ottokars II.",
+        "event_en": "Rise of Ottokar II and the two sources",
+        "region": "欧洲中部",
+        "countries": [
+          "德意志联邦共和国"
+        ],
+        "country_ids": [
+          "C_DEUTSCHLAND"
+        ],
+        "persons": [
+          "奥托卡二世"
+        ],
+        "result": "普热米斯尔王朝获得现实历史中哈布斯堡式的中欧权力基础；东部德意志文明路线确立。",
+        "causes": [
+          "E_1270_CAPET"
+        ],
+        "effects": [
+          "E_1300_DUAL_SOURCE",
+          "E_1400_15C_GERMANISATION"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "seq": 14,
+        "id": "E_1291_ACRE",
+        "year": 1291,
+        "year_text": "1291",
+        "epoch": "13世纪：十字军据点的终结",
+        "event_zh": "黎凡特沿岸据点失守",
+        "event_de": "Verlust der Levante-Stützpunkte",
+        "event_en": "Loss of the Levantine strongholds",
+        "region": "黎凡特沿岸",
+        "countries": [
+          "法兰克立宪君主国",
+          "马穆鲁克苏丹国（埃及—叙利亚）",
+          "叙利亚地区"
+        ],
+        "country_ids": [
+          "C_FRANKEN",
+          "C_MAMLUK",
+          "C_SYRIA"
+        ],
+        "persons": [],
+        "result": "法兰克转为以商业、传教与学术方式维持近东联系——这正是 S1 所记“法兰克东方学传统”的由来。",
+        "causes": [
+          "E_CRUSADES"
+        ],
+        "effects": [
+          "E_FRANKISH_ORIENTALISM"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "seq": 15,
+        "id": "E_1300_DUAL_SOURCE",
+        "year": 1300,
+        "year_text": "1300年前后",
+        "epoch": "13—14世纪",
+        "event_zh": "东西双源格局定型",
+        "event_de": "Herausbildung der zwei Quellen",
+        "event_en": "Crystallisation of the two sources",
+        "region": "欧洲西部与中部",
+        "countries": [
+          "法兰克立宪君主国",
+          "德意志联邦共和国"
+        ],
+        "country_ids": [
+          "C_FRANKEN",
+          "C_DEUTSCHLAND"
+        ],
+        "persons": [
+          "鲁道夫",
+          "奥托卡二世"
+        ],
+        "result": "整个世界线最重要的“双源”格局形成。",
+        "causes": [
+          "E_1272_RUDOLF",
+          "E_1273_OTTOKAR"
+        ],
+        "effects": [
+          "E_1356_CHARTER",
+          "E_1400_DUAL_EMPIRE"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": "是后续一切日耳曼世界分裂结构的根源。",
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "seq": 16,
+        "id": "E_RECONQUISTA",
+        "year": 1300,
+        "year_text": "8—15世纪（决定性阶段1212—1492）",
+        "epoch": "8—15世纪：收复失地运动",
+        "event_zh": "收复失地运动",
+        "event_de": "Reconquista",
+        "event_en": "Reconquista",
+        "region": "伊比利亚半岛",
+        "countries": [
+          "西班牙-阿拉贡",
+          "穆瓦希德哈里发国（及穆拉比特）",
+          "科尔多瓦哈里发国",
+          "马格里布（北非西部）"
+        ],
+        "country_ids": [
+          "C_SPAIN_ARAGON",
+          "C_ALMOHAD",
+          "C_CORDOBA",
+          "C_MAGHREB"
+        ],
+        "persons": [
+          "阿方索十世",
+          "伊莎贝拉·冯·卡斯蒂利亚"
+        ],
+        "result": "半岛穆斯林政权被逐出；伊比利亚形成以天主教为立国原则的共同身份，并转向南下北非。",
+        "causes": [
+          "E_1212_LAS_NAVAS",
+          "E_1031_TAIFAS"
+        ],
+        "effects": [
+          "E_IBERIAN_UNIFICATION",
+          "E_MAGHREB_CHRISTIANISATION"
+        ],
+        "war_id": "W_RECONQUISTA",
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S2"
+        ]
+      },
+      {
+        "seq": 17,
+        "id": "E_1356_CHARTER",
+        "year": 1356,
+        "year_text": "1356",
+        "epoch": "14世纪：法兰克福条约与双元帝国",
+        "event_zh": "《法兰克福宪章》与双王冠确立",
+        "event_de": "Frankfurter Verfassung",
+        "event_en": "Charter of Frankfurt",
+        "region": "法兰克福",
+        "countries": [
+          "法兰克立宪君主国",
+          "德意志联邦共和国",
+          "瑞士永久联邦",
+          "教皇国"
+        ],
+        "country_ids": [
+          "C_FRANKEN",
+          "C_DEUTSCHLAND",
+          "C_SWITZERLAND",
+          "C_PAPAL"
+        ],
+        "persons": [
+          "阿尔布雷希特二世"
+        ],
+        "result": "法兰克王冠 + 德意志王冠 = 不可分割的双重王冠；法兰克王冠哈布斯堡世袭、德意志王冠七选侯选举、皇帝三重加冕；瑞士获特殊自治地位。",
+        "causes": [
+          "E_1300_DUAL_SOURCE"
+        ],
+        "effects": [
+          "E_1400_DUAL_EMPIRE",
+          "E_1618_RELIGION"
+        ],
+        "war_id": null,
+        "treaty_id": "T_FRANKFURT_1356",
+        "significance": "创造了一个极其重要的制度矛盾：同一个帝国皇帝，同时是两个政治民族的国王。同时体现法兰克协商传统，是法兰克宪政早熟的制度起点。",
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "seq": 18,
+        "id": "E_1400_15C_GERMANISATION",
+        "year": 1400,
+        "year_text": "14—15世纪",
+        "epoch": "14—15世纪",
+        "event_zh": "普热米斯尔的德意志化",
+        "event_de": "Germanisierung unter den Přemysliden",
+        "event_en": "Přemyslid Germanisation",
+        "region": "波西米亚、奥地利、南德意志",
+        "countries": [
+          "德意志联邦共和国"
+        ],
+        "country_ids": [
+          "C_DEUTSCHLAND"
+        ],
+        "persons": [],
+        "result": "奥地利并没有形成“奥地利人≠德国人”的现代民族身份；相反，奥地利成为德意志世界内部核心区域，与现实历史形成有意反转。",
+        "causes": [
+          "E_1273_OTTOKAR"
+        ],
+        "effects": [
+          "E_1500_REFORMATION"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "seq": 19,
+        "id": "E_1400_DUAL_EMPIRE",
+        "year": 1400,
+        "year_text": "14世纪后期",
+        "epoch": "14世纪：法兰克福条约与双元帝国",
+        "event_zh": "哈布斯堡回归帝国与双元君主国",
+        "event_de": "Rückkehr der Habsburger ins Reich",
+        "event_en": "Habsburg return to the Empire",
+        "region": "中欧",
+        "countries": [
+          "法兰克立宪君主国",
+          "德意志联邦共和国"
+        ],
+        "country_ids": [
+          "C_FRANKEN",
+          "C_DEUTSCHLAND"
+        ],
+        "persons": [],
+        "result": "形成哈布斯堡双元君主国：法兰克王冠为实际权力核心，德意志王冠为帝国法理基础，皇帝冠冕需三重加冕。",
+        "causes": [
+          "E_1356_CHARTER"
+        ],
+        "effects": [
+          "E_1500_REFORMATION"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "seq": 20,
+        "id": "E_1400_GOLDEN_HORDE",
+        "year": 1400,
+        "year_text": "13世纪 — 金帐汗国分裂",
+        "epoch": "13—15世纪",
+        "event_zh": "金帐汗国未伊斯兰化与蒙古-罗斯制度融合",
+        "event_de": "Nichtislamisierung der Goldenen Horde",
+        "event_en": "Non-Islamisation of the Golden Horde",
+        "region": "东欧草原、罗斯诸公国",
+        "countries": [
+          "金帐汗国",
+          "罗斯兀鲁思"
+        ],
+        "country_ids": [
+          "C_GOLDEN_HORDE",
+          "C_ROS_UHLUS"
+        ],
+        "persons": [],
+        "result": "莫斯科诸王公逐渐发现蒙古制度不是需要被消灭的东西，而是自己可以继承的国家机器；他们也逐渐血脉合流，越发蒙古化。最终蒙古王族直接成为莫斯科统治王朝。",
+        "causes": [
+          "E_1200_MONGOL",
+          "E_1100_WESTERN_BUDDHISM"
+        ],
+        "effects": [
+          "E_1500_ROS_UHLUS"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S4"
+        ]
+      },
+      {
+        "seq": 21,
+        "id": "E_FRANKISH_ORIENTALISM",
+        "year": 1400,
+        "year_text": "14世纪以后（长时段）",
+        "epoch": "14世纪以后：法兰克东方学",
+        "event_zh": "法兰克东方学传统的形成",
+        "event_de": "Herausbildung der fränkischen Orientalistik",
+        "event_en": "Formation of the Frankish Orientalist tradition",
+        "region": "帕里斯、劳格登",
+        "countries": [
+          "法兰克立宪君主国",
+          "叙利亚地区",
+          "马格里布（北非西部）",
+          "埃及地区"
+        ],
+        "country_ids": [
+          "C_FRANKEN",
+          "C_SYRIA",
+          "C_MAGHREB",
+          "C_EGYPT_REGION"
+        ],
+        "persons": [],
+        "result": "法兰克成为“连接西欧、地中海、黎凡特与德意志世界的文明边界国家”，而非简单的“德国西边的法国替代品”。",
+        "causes": [
+          "E_1291_ACRE"
+        ],
+        "effects": [],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "seq": 22,
+        "id": "E_1500_ROS_UHLUS",
+        "year": 1500,
+        "year_text": "金帐汗国分裂后",
+        "epoch": "15—16世纪",
+        "event_zh": "罗斯兀鲁思建立与后基辅罗斯国家传统",
+        "event_de": "Gründung von Ross-Ulus",
+        "event_en": "Founding of Ros Ulus",
+        "region": "东欧、北亚",
+        "countries": [
+          "罗斯兀鲁思",
+          "金帐汗国"
+        ],
+        "country_ids": [
+          "C_ROS_UHLUS",
+          "C_GOLDEN_HORDE"
+        ],
+        "persons": [],
+        "result": "国家正统发生变化：古罗斯诸国 → 蒙古征服 → 金帐秩序 → 罗斯兀鲁思。基辅罗斯成为莫斯科国家历史上的早期阶段，但不是最重要的政治合法性来源；金帐汗国反而成为莫斯科国家形成现代国家制度的直接祖先。",
+        "causes": [
+          "E_1400_GOLDEN_HORDE"
+        ],
+        "effects": [
+          "E_1918_KIEV_SPLIT"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S4"
+        ]
+      },
+      {
+        "seq": 23,
+        "id": "E_IBERIAN_UNIFICATION",
+        "year": 1500,
+        "year_text": "15—16世纪（推定）",
+        "epoch": "15—16世纪：伊比利亚统一",
+        "event_zh": "伊比利亚统一与伊比利亚王国建立",
+        "event_de": "Iberische Einigung und Gründung des Königreichs Iberien",
+        "event_en": "Iberian unification and the founding of the Kingdom of Iberia",
+        "region": "伊比利亚半岛",
+        "countries": [
+          "西班牙-阿拉贡",
+          "伊比利亚王国",
+          "奥克王国"
+        ],
+        "country_ids": [
+          "C_SPAIN_ARAGON",
+          "C_IBERIAN_KINGDOM",
+          "C_OCCITAN_KINGDOM"
+        ],
+        "persons": [
+          "伊莎贝拉·冯·卡斯蒂利亚",
+          "伊比利亚王国开国君主（本轮新增，姓名待定）"
+        ],
+        "result": "伊比利亚成为统一的中央集权君主国；此后转向南下北非，驱逐穆斯林并长期统治、基督教化马格里布。",
+        "causes": [
+          "E_RECONQUISTA"
+        ],
+        "effects": [
+          "E_MAGHREB_CHRISTIANISATION",
+          "E_1789_REVOLUTION"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S2"
+        ]
+      },
+      {
+        "seq": 24,
+        "id": "E_1501_PERSIA_SHIITE",
+        "year": 1501,
+        "year_text": "16世纪（推定）",
+        "epoch": "16世纪：波斯什叶派国家",
+        "event_zh": "波斯确立什叶派国家传统",
+        "event_de": "Etablierung der schiitischen Staatstradition in Persien",
+        "event_en": "Establishment of Persia's Shi'ite state tradition",
+        "region": "伊朗高原",
+        "countries": [
+          "伊朗（伊斯兰什叶派波斯）",
+          "奥斯曼帝国（安纳托利亚突厥帝国）",
+          "阿拔斯哈里发国（两河）"
+        ],
+        "country_ids": [
+          "C_PERSIA",
+          "C_ANATOLIAN_TURKS",
+          "C_ABBASID"
+        ],
+        "persons": [
+          "沙阿伊斯玛仪"
+        ],
+        "result": "伊斯兰世界形成逊尼（阿拉伯—安纳托利亚）与什叶（波斯）双极结构；波斯的东界止于伊斯兰中亚西部，再东即西域佛教带。",
+        "causes": [
+          "E_1200_MONGOL"
+        ],
+        "effects": [
+          "E_1960_MULTIPOLAR"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "待定",
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "seq": 25,
+        "id": "E_1517_MAMLUK_END",
+        "year": 1517,
+        "year_text": "1517",
+        "epoch": "16世纪：近东格局重组",
+        "event_zh": "安纳托利亚突厥帝国取代马穆鲁克",
+        "event_de": "Ende des Mamlukensultanats",
+        "event_en": "End of the Mamluk Sultanate",
+        "region": "埃及、叙利亚、汉志",
+        "countries": [
+          "奥斯曼帝国（安纳托利亚突厥帝国）",
+          "马穆鲁克苏丹国（埃及—叙利亚）",
+          "埃及地区",
+          "叙利亚地区",
+          "阿拉伯—汉志地区"
+        ],
+        "country_ids": [
+          "C_ANATOLIAN_TURKS",
+          "C_MAMLUK",
+          "C_EGYPT_REGION",
+          "C_SYRIA",
+          "C_ARABIA"
+        ],
+        "persons": [
+          "奥斯曼一世"
+        ],
+        "result": "近东整合为单一的逊尼派伊斯兰帝国，与波斯的什叶派体系形成长期并立格局。",
+        "causes": [
+          "E_1500_ROS_UHLUS"
+        ],
+        "effects": [
+          "E_1960_MULTIPOLAR"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "seq": 26,
+        "id": "E_1500_REFORMATION",
+        "year": 1520,
+        "year_text": "1450—1600 / 16世纪",
+        "epoch": "15—16世纪：宗教改革与农民战争",
+        "event_zh": "宗教改革与普热米斯尔新教化",
+        "event_de": "Reformation und Protestantisierung",
+        "event_en": "Reformation and Protestantisation",
+        "region": "德意志、波西米亚、低地、瑞士",
+        "countries": [
+          "德意志联邦共和国",
+          "低地联合省",
+          "瑞士永久联邦"
+        ],
+        "country_ids": [
+          "C_DEUTSCHLAND",
+          "C_LOWLANDS",
+          "C_SWITZERLAND"
+        ],
+        "persons": [
+          "马丁·路德",
+          "加尔文"
+        ],
+        "result": "新教四大派别形成：北德意志路德宗、低地-瑞士加尔文宗、波西米亚胡斯派-路德宗混合、南德意志阿尔卑斯福音派。",
+        "causes": [
+          "E_1400_15C_GERMANISATION",
+          "E_1400_DUAL_EMPIRE"
+        ],
+        "effects": [
+          "E_1524_PEASANTS",
+          "E_1618_RELIGION"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "seq": 27,
+        "id": "E_1524_PEASANTS",
+        "year": 1524,
+        "year_text": "1524 — 1527",
+        "epoch": "15—16世纪",
+        "event_zh": "农民战争",
+        "event_de": "Bauernkrieg",
+        "event_en": "Peasants' War",
+        "region": "瑞士、阿尔萨斯 → 南德意志、莱茵兰、北德意志、波西米亚、北意大利",
+        "countries": [
+          "德意志联邦共和国",
+          "瑞士永久联邦",
+          "法兰克立宪君主国"
+        ],
+        "country_ids": [
+          "C_DEUTSCHLAND",
+          "C_SWITZERLAND",
+          "C_FRANKEN"
+        ],
+        "persons": [
+          "马丁·路德"
+        ],
+        "result": "部分要求被满足，农奴制部分地区废除；波西米亚胡斯派贵族利用战争削弱天主教贵族；北意大利农民起义被镇压，部分庄园制度被改革。",
+        "causes": [
+          "E_1500_REFORMATION"
+        ],
+        "effects": [
+          "E_1618_RELIGION"
+        ],
+        "war_id": "W_PEASANT_1524",
+        "treaty_id": "T_TWELVE_ARTICLES",
+        "significance": "进一步解释了为什么南德新教与北德新教最终会发展成不同文化。",
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "seq": 28,
+        "id": "E_MAGHREB_CHRISTIANISATION",
+        "year": 1550,
+        "year_text": "16—20世纪（长期过程）",
+        "epoch": "16—20世纪：北非西部的基督教化",
+        "event_zh": "南下北非与马格里布的基督教化、欧洲化",
+        "event_de": "Vordringen nach Nordafrika und Christianisierung des Maghreb",
+        "event_en": "Southward expansion into North Africa and the Christianisation of the Maghreb",
+        "region": "北非西部（马格里布）",
+        "countries": [
+          "伊比利亚王国",
+          "马格里布（北非西部）",
+          "伊比利亚共和国（第五共和国后体制）"
+        ],
+        "country_ids": [
+          "C_IBERIAN_KINGDOM",
+          "C_MAGHREB",
+          "C_IBERIA"
+        ],
+        "persons": [],
+        "result": "北非西部成为伊比利亚本土的一部分；撒哈拉从此承担文明分界功能——以北西部划入欧洲，以东划入亚洲。",
+        "causes": [
+          "E_IBERIAN_UNIFICATION"
+        ],
+        "effects": [
+          "E_1960_MULTIPOLAR"
+        ],
+        "war_id": "W_RECONQUISTA",
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S2"
+        ]
+      },
+      {
+        "seq": 29,
+        "id": "E_1618_RELIGION",
+        "year": 1618,
+        "year_text": "1618 — 1648",
+        "epoch": "17世纪：宗教战争与维也纳和约",
+        "event_zh": "三十年宗教战争",
+        "event_de": "Dreißigjähriger Krieg",
+        "event_en": "Thirty Years' War",
+        "region": "中欧、低地、南德意志、波西米亚、北意大利",
+        "countries": [
+          "法兰克立宪君主国",
+          "德意志联邦共和国",
+          "低地联合省",
+          "瑞士永久联邦",
+          "伊比利亚共和国（第五共和国后体制）",
+          "西班牙-阿拉贡",
+          "教皇国",
+          "丹麦-挪威",
+          "瑞典"
+        ],
+        "country_ids": [
+          "C_FRANKEN",
+          "C_DEUTSCHLAND",
+          "C_LOWLANDS",
+          "C_SWITZERLAND",
+          "C_IBERIA",
+          "C_SPAIN_ARAGON",
+          "C_PAPAL",
+          "C_DENMARK_NORWAY",
+          "C_SWEDEN"
+        ],
+        "persons": [],
+        "result": "僵局，以《维也纳和约》1648结束。",
+        "causes": [
+          "E_1356_CHARTER",
+          "E_1500_REFORMATION",
+          "E_1524_PEASANTS"
+        ],
+        "effects": [
+          "E_1648_VIENNA",
+          "E_1648_EXILES"
+        ],
+        "war_id": "W_RELIGION",
+        "treaty_id": null,
+        "significance": "关键变量：西班牙-阿拉贡虽在国内压制新教徒，但出于反哈布斯堡法兰克地缘利益，后期加入新教联盟，形成“外交新教、内政天主教”矛盾立场。",
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "seq": 30,
+        "id": "E_1648_EXILES",
+        "year": 1648,
+        "year_text": "1648后",
+        "epoch": "17世纪后",
+        "event_zh": "1648年维也纳和约后的流亡波次",
+        "event_de": "Exilwelle nach 1648",
+        "event_en": "Exile wave after 1648",
+        "region": "不列颠",
+        "countries": [
+          "不列颠联邦共和国"
+        ],
+        "country_ids": [
+          "C_UK"
+        ],
+        "persons": [],
+        "result": "英伦作为罗曼-法兰西高文化唯一活体保存地的地位不断加固。",
+        "causes": [
+          "E_1648_VIENNA"
+        ],
+        "effects": [
+          "E_1789_EXILES"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "seq": 31,
+        "id": "E_1648_VIENNA",
+        "year": 1648,
+        "year_text": "1648",
+        "epoch": "17世纪",
+        "event_zh": "《维也纳和约》与帝国分权",
+        "event_de": "Frieden von Wien",
+        "event_en": "Peace of Vienna",
+        "region": "维也纳",
+        "countries": [
+          "法兰克立宪君主国",
+          "德意志联邦共和国",
+          "低地联合省",
+          "瑞士永久联邦",
+          "伊比利亚共和国（第五共和国后体制）"
+        ],
+        "country_ids": [
+          "C_FRANKEN",
+          "C_DEUTSCHLAND",
+          "C_LOWLANDS",
+          "C_SWITZERLAND",
+          "C_IBERIA"
+        ],
+        "persons": [],
+        "result": "形成重要文明结构：政治边界 ≠ 宗教边界 ≠ 文化边界。德意志地区普遍新教，法兰克和北意大利官方天主教。",
+        "causes": [
+          "E_1618_RELIGION"
+        ],
+        "effects": [
+          "E_1700_DUAL_CROWN",
+          "E_1789_REVOLUTION"
+        ],
+        "war_id": null,
+        "treaty_id": "T_VIENNA_1648",
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "seq": 32,
+        "id": "E_1700_DUAL_CROWN",
+        "year": 1700,
+        "year_text": "18世纪 / 1700年前后",
+        "epoch": "18世纪：双王冠融合",
+        "event_zh": "双王冠的“准融合”",
+        "event_de": "Quasiverschmelzung der Doppelkrone",
+        "event_en": "Quasi-fusion of the dual crown",
+        "region": "中欧",
+        "countries": [
+          "法兰克立宪君主国",
+          "德意志联邦共和国"
+        ],
+        "country_ids": [
+          "C_FRANKEN",
+          "C_DEUTSCHLAND"
+        ],
+        "persons": [],
+        "result": "并没有真正统一；但形成事实上的文明共同体——“泛德意志世界”概念的来源。18世纪普热米斯尔推动南德意志和波西米亚集权化、工业化与德意志化；哈布斯堡强化法兰克天主教君主制和北意大利统治。",
+        "causes": [
+          "E_1648_VIENNA"
+        ],
+        "effects": [
+          "E_1789_REVOLUTION",
+          "E_1848_REVOLUTION"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "seq": 33,
+        "id": "E_1789_EXILES",
+        "year": 1789,
+        "year_text": "1789后",
+        "epoch": "18—19世纪",
+        "event_zh": "1789年伊比利亚革命后的流亡波次",
+        "event_de": "Exilwelle nach 1789",
+        "event_en": "Exile wave after 1789",
+        "region": "不列颠、伊比利亚",
+        "countries": [
+          "不列颠联邦共和国",
+          "伊比利亚共和国（第五共和国后体制）"
+        ],
+        "country_ids": [
+          "C_UK",
+          "C_IBERIA"
+        ],
+        "persons": [],
+        "result": "英伦的罗曼高文化保存地地位进一步加固；奥克文化复兴获得人才。",
+        "causes": [
+          "E_1789_REVOLUTION"
+        ],
+        "effects": [
+          "E_1945_OCCITAN_ISSUE"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S3"
+        ]
+      },
+      {
+        "seq": 34,
+        "id": "E_1789_PLANTAGENET_FALL",
+        "year": 1789,
+        "year_text": "约1789—1815",
+        "epoch": "18—19世纪",
+        "event_zh": "金雀花倾覆与蒙福尔家族上位",
+        "event_de": "Sturz der Plantagenets",
+        "event_en": "Fall of the Plantagenets",
+        "region": "不列颠",
+        "countries": [
+          "不列颠联邦共和国"
+        ],
+        "country_ids": [
+          "C_UK"
+        ],
+        "persons": [],
+        "result": "蒙福尔王朝建立；1815年后的反革命时代反而使不列颠的绝对主义被进一步加固。",
+        "causes": [
+          "E_1789_REVOLUTION"
+        ],
+        "effects": [
+          "E_1815_RESTORATION"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "seq": 35,
+        "id": "E_1789_REVOLUTION",
+        "year": 1789,
+        "year_text": "1789 — 1815",
+        "epoch": "18—19世纪：伊比利亚大革命",
+        "event_zh": "伊比利亚-奥克大革命",
+        "event_de": "Iberische Revolution",
+        "event_en": "Iberian Revolution",
+        "region": "伊比利亚-奥克地区 → 南欧 → 南意大利",
+        "countries": [
+          "伊比利亚共和国（第五共和国后体制）",
+          "法兰克立宪君主国",
+          "德意志联邦共和国",
+          "教皇国"
+        ],
+        "country_ids": [
+          "C_IBERIA",
+          "C_FRANKEN",
+          "C_DEUTSCHLAND",
+          "C_PAPAL"
+        ],
+        "persons": [],
+        "result": "法兰克、普热米斯尔、英国、罗斯兀鲁思等组成反伊比利亚同盟，最终击败伊比利亚革命帝国。大革命略微平息，但民族主义、立宪主义和共和主义深入人心。",
+        "causes": [
+          "E_1648_VIENNA",
+          "E_1700_DUAL_CROWN"
+        ],
+        "effects": [
+          "E_1815_RESTORATION",
+          "E_1789_EXILES",
+          "E_1789_PLANTAGENET_FALL"
+        ],
+        "war_id": "W_REV_IBERIA",
+        "treaty_id": null,
+        "significance": "另一个世界轴心。伊比利亚不是简单的“法国替代品”，而是一个持续改变中欧权力平衡的第三文明中心。",
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "seq": 36,
+        "id": "E_1815_RESTORATION",
+        "year": 1815,
+        "year_text": "1815",
+        "epoch": "19世纪",
+        "event_zh": "反革命时代与旧秩序重建",
+        "event_de": "Restauration",
+        "event_en": "Restoration",
+        "region": "欧洲",
+        "countries": [
+          "法兰克立宪君主国",
+          "德意志联邦共和国",
+          "不列颠联邦共和国",
+          "伊比利亚共和国（第五共和国后体制）"
+        ],
+        "country_ids": [
+          "C_FRANKEN",
+          "C_DEUTSCHLAND",
+          "C_UK",
+          "C_IBERIA"
+        ],
+        "persons": [],
+        "result": "19世纪的统一问题已经无法重新退回旧制度。神圣罗马帝国在此期间被迫解散。",
+        "causes": [
+          "E_1789_REVOLUTION"
+        ],
+        "effects": [
+          "E_1848_REVOLUTION"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "seq": 37,
+        "id": "E_1848_REVOLUTION",
+        "year": 1848,
+        "year_text": "1848",
+        "epoch": "19世纪：1848、1866、1871",
+        "event_zh": "1848年革命与大德意志方案失败",
+        "event_de": "Revolution von 1848",
+        "event_en": "Revolution of 1848",
+        "region": "中欧",
+        "countries": [
+          "法兰克立宪君主国",
+          "德意志联邦共和国",
+          "低地联合省",
+          "不列颠联邦共和国"
+        ],
+        "country_ids": [
+          "C_FRANKEN",
+          "C_DEUTSCHLAND",
+          "C_LOWLANDS",
+          "C_UK"
+        ],
+        "persons": [],
+        "result": "失败原因包括：哈布斯堡不愿放弃法兰克天主教君主制和北意大利；普热米斯尔不愿将新教德意志领导权交给哈布斯堡；各邦君主害怕革命削弱自身权力；低地和北意大利地方精英担心被吞并。",
+        "causes": [
+          "E_1700_DUAL_CROWN",
+          "E_1815_RESTORATION"
+        ],
+        "effects": [
+          "E_1866_WAR"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": "1848年失败意味着“大德意志方案”破产，统一只能走“小德意志”道路；这是“大德意志”最后一次真正可能实现的时刻。",
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "seq": 38,
+        "id": "E_1866_WAR",
+        "year": 1866,
+        "year_text": "1866",
+        "epoch": "19世纪",
+        "event_zh": "1866年奥法战争",
+        "event_de": "Deutsch-Französischer Krieg 1866",
+        "event_en": "War of 1866",
+        "region": "中欧、北意大利",
+        "countries": [
+          "德意志联邦共和国",
+          "法兰克立宪君主国"
+        ],
+        "country_ids": [
+          "C_DEUTSCHLAND",
+          "C_FRANKEN"
+        ],
+        "persons": [],
+        "result": "法兰克被排除出德意志统一进程；北意大利从哈布斯堡法兰克转归普热米斯尔；普热米斯尔成为德意志诸邦中无可争议的领导者；小德意志方案正式确立：现实意义上的德意志、低地、北意大利，排除法兰克核心区。",
+        "causes": [
+          "E_1848_REVOLUTION"
+        ],
+        "effects": [
+          "E_1871_EMPIRE"
+        ],
+        "war_id": "W_1866",
+        "treaty_id": null,
+        "significance": "整个世界线的第二个决定性转折点；现实历史的“奥地利问题”在这里被替换成“法兰克问题”。",
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "seq": 39,
+        "id": "E_1871_EMPIRE",
+        "year": 1871,
+        "year_text": "1871",
+        "epoch": "19世纪",
+        "event_zh": "罗马加冕与德意志帝国成立",
+        "event_de": "Kaiserkrönung in Rom",
+        "event_en": "Coronation in Rome",
+        "region": "罗马、维也纳",
+        "countries": [
+          "德意志联邦共和国",
+          "法兰克立宪君主国",
+          "教皇国"
+        ],
+        "country_ids": [
+          "C_DEUTSCHLAND",
+          "C_FRANKEN",
+          "C_PAPAL"
+        ],
+        "persons": [],
+        "result": "普热米斯尔家族成为德意志皇帝；维也纳为行政首都，罗马为加冕圣城；帝国包括德意志诸邦、低地、北意大利；南意大利那不勒斯和罗马被从伊比利亚势力范围中夺出；法兰克成为独立的法兰克立宪君主国，不再与德意志王冠共戴；意大利民族从未被构建，北意大利被纳入德意志民族构建，类似现实中西里西亚地位。",
+        "causes": [
+          "E_1866_WAR"
+        ],
+        "effects": [
+          "E_1900_INDUSTRY",
+          "E_WW1"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": "正式形成德意志帝国（德语新教世界的核心国家）与法兰克（与德意志高度相关但政治上独立的西部日耳曼国家）的并存格局。同时也是法兰克成熟宪政君主制的制度化/现代化阶段，而非第一次建立宪政君主制。",
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "seq": 40,
+        "id": "E_1871_IBERIA_2EMP_FALL",
+        "year": 1871,
+        "year_text": "1871",
+        "epoch": "19世纪：小德意志统一与伊比利亚转折",
+        "event_zh": "伊比利亚第二帝国被德意志帝国击败，第三共和国成立",
+        "event_de": "Sieg über das Zweite Iberische Kaiserreich",
+        "event_en": "Defeat of the Second Iberian Empire",
+        "region": "中欧、南欧、那不勒斯与罗马",
+        "countries": [
+          "伊比利亚第二共和国",
+          "德意志联邦共和国",
+          "伊比利亚第三共和国（1871—1940）"
+        ],
+        "country_ids": [
+          "C_IBERIA_2REP",
+          "C_DEUTSCHLAND",
+          "C_IBERIA_3REP_FULL"
+        ],
+        "persons": [],
+        "result": "南意大利与罗马被从伊比利亚势力范围中夺出；伊比利亚第二帝国终结，第三共和国成立并延续至 1940 年。",
+        "causes": [
+          "E_1866_WAR"
+        ],
+        "effects": [
+          "E_1871_EMPIRE",
+          "E_WW1"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "seq": 41,
+        "id": "E_1900_INDUSTRY",
+        "year": 1900,
+        "year_text": "19世纪后期 — 20世纪",
+        "epoch": "19—20世纪：工业化与第二次工业革命",
+        "event_zh": "第二次工业革命与三大工业带",
+        "event_de": "Zweite industrielle Revolution",
+        "event_en": "Second Industrial Revolution",
+        "region": "中欧、北美",
+        "countries": [
+          "德意志联邦共和国",
+          "美利坚合众国",
+          "法兰克立宪君主国"
+        ],
+        "country_ids": [
+          "C_DEUTSCHLAND",
+          "C_USA",
+          "C_FRANKEN"
+        ],
+        "persons": [],
+        "result": "德意志世界不是单一工业核心，而是多个历史工业区的叠加。这正是后来“输掉一战仍然能够恢复”的基础之一。中欧未衰落，美国未崛起为超级大国。",
+        "causes": [
+          "E_1871_EMPIRE"
+        ],
+        "effects": [
+          "E_WW1"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "seq": 42,
+        "id": "E_WW1",
+        "year": 1914,
+        "year_text": "1914 — 1918",
+        "epoch": "20世纪",
+        "event_zh": "第一次世界大战",
+        "event_de": "Erster Weltkrieg",
+        "event_en": "World War I",
+        "region": "欧洲",
+        "countries": [
+          "德意志联邦共和国",
+          "法兰克立宪君主国",
+          "伊比利亚共和国（第五共和国后体制）",
+          "不列颠联邦共和国",
+          "罗斯兀鲁思",
+          "美利坚合众国"
+        ],
+        "country_ids": [
+          "C_DEUTSCHLAND",
+          "C_FRANKEN",
+          "C_IBERIA",
+          "C_UK",
+          "C_ROS_UHLUS",
+          "C_USA"
+        ],
+        "persons": [],
+        "result": "奥地利德意志受更严厉处罚：被迫释放占领的波兰地区，北意大利设非军事区，的里雅斯特国际共管。奥地利德意志君主政体瓦解，建立维也纳德意志共和国。法兰克哈布斯堡失去统治地位，建立不完善的法兰克共和国。罗斯兀鲁思曾以军事手段重新夺取基辅、白罗斯等地区。",
+        "causes": [
+          "E_1900_INDUSTRY",
+          "E_1871_EMPIRE"
+        ],
+        "effects": [
+          "E_1918_COLLAPSE",
+          "E_1918_EXILES"
+        ],
+        "war_id": "W_WW1",
+        "treaty_id": null,
+        "significance": "一战不是世界线失败点，而是韧性测试：一个文明资产远比现实德意志世界庞大的德国，即使输掉世界大战，仍然拥有足够的结构性资本来保存自身核心文明。",
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "seq": 43,
+        "id": "E_1918_COLLAPSE",
+        "year": 1918,
+        "year_text": "1918",
+        "epoch": "20世纪",
+        "event_zh": "德意志帝国瓦解与法兰克共和化",
+        "event_de": "Zusammenbruch des Deutschen Kaiserreichs",
+        "event_en": "Collapse of the German Empire",
+        "region": "中欧",
+        "countries": [
+          "德意志联邦共和国",
+          "法兰克立宪君主国"
+        ],
+        "country_ids": [
+          "C_DEUTSCHLAND",
+          "C_FRANKEN"
+        ],
+        "persons": [],
+        "result": "两个中欧君主国同时终结；不列颠因一战获胜而免于王朝终结，绝对主义存续。",
+        "causes": [
+          "E_WW1"
+        ],
+        "effects": [
+          "E_1918_EXILES",
+          "E_1939_WW2"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "seq": 44,
+        "id": "E_1918_EXILES",
+        "year": 1918,
+        "year_text": "1918后 / 1918—1939",
+        "epoch": "20世纪",
+        "event_zh": "一战后的知识分子流散",
+        "event_de": "Intellektuellenexodus nach 1918",
+        "event_en": "Post-WWI intellectual emigration",
+        "region": "中欧 → 美国、瑞士、伊比利亚",
+        "countries": [
+          "德意志联邦共和国",
+          "美利坚合众国",
+          "瑞士永久联邦",
+          "伊比利亚共和国（第五共和国后体制）"
+        ],
+        "country_ids": [
+          "C_DEUTSCHLAND",
+          "C_USA",
+          "C_SWITZERLAND",
+          "C_IBERIA"
+        ],
+        "persons": [
+          "爱因斯坦"
+        ],
+        "result": "一战没有摧毁德意志文明的核心。这也是二战中能够重新崛起的结构原因。",
+        "causes": [
+          "E_WW1",
+          "E_1918_COLLAPSE"
+        ],
+        "effects": [
+          "E_1939_WW2"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "seq": 45,
+        "id": "E_1918_KIEV_SPLIT",
+        "year": 1918,
+        "year_text": "一战期间 / 二战后",
+        "epoch": "20世纪",
+        "event_zh": "基辅王国与罗斯兀鲁思的文明分流",
+        "event_de": "Zivilisatorische Gabelung",
+        "event_en": "Civilisational forking",
+        "region": "东欧",
+        "countries": [
+          "基辅王国",
+          "罗斯兀鲁思",
+          "白罗斯"
+        ],
+        "country_ids": [
+          "C_KIEV",
+          "C_ROS_UHLUS",
+          "C_WEISSRUSSLAND"
+        ],
+        "persons": [],
+        "result": "同一个古罗斯世界在蒙古时代以后走上了两条完全不同的道路；一战的重新征服、二战后的再次分离，让这条文明分界最终获得了现代国际边界的形式。",
+        "causes": [
+          "E_1500_ROS_UHLUS"
+        ],
+        "effects": [
+          "E_1945_KIEV",
+          "E_1960_MULTIPOLAR"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S4"
+        ]
+      },
+      {
+        "seq": 46,
+        "id": "E_1939_WW2",
+        "year": 1939,
+        "year_text": "1939 — 1945",
+        "epoch": "20世纪",
+        "event_zh": "第二次世界大战",
+        "event_de": "Zweiter Weltkrieg",
+        "event_en": "World War II",
+        "region": "欧洲",
+        "countries": [
+          "德意志联邦共和国",
+          "法兰克立宪君主国",
+          "伊比利亚共和国（第五共和国后体制）",
+          "不列颠联邦共和国",
+          "罗斯兀鲁思",
+          "美利坚合众国",
+          "低地联合省"
+        ],
+        "country_ids": [
+          "C_DEUTSCHLAND",
+          "C_FRANKEN",
+          "C_IBERIA",
+          "C_UK",
+          "C_ROS_UHLUS",
+          "C_USA",
+          "C_LOWLANDS"
+        ],
+        "persons": [],
+        "result": "中欧协定方惨胜：德意志取消不平等条约，吞并波兰地区，低地与北意大利重新并入德意志；法兰克恢复对勃艮第、洛林控制，未占领奥克。战后无冷战，多极均势。",
+        "causes": [
+          "E_1918_COLLAPSE",
+          "E_1918_EXILES"
+        ],
+        "effects": [
+          "E_1945_SETTLEMENT",
+          "E_1945_OCCITAN_ISSUE",
+          "E_1945_BRITAIN_DEMOCRATISATION",
+          "E_1945_KIEV"
+        ],
+        "war_id": "W_WW2",
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "seq": 47,
+        "id": "E_1940_IBERIA_DEFEAT",
+        "year": 1940,
+        "year_text": "1940",
+        "epoch": "20世纪：第二次世界大战",
+        "event_zh": "伊比利亚第三共和国被法兰克与德意志击败",
+        "event_de": "Niederlage der Dritten Iberischen Republik",
+        "event_en": "Defeat of the Third Iberian Republic",
+        "region": "伊比利亚半岛、奥克地区、西地中海",
+        "countries": [
+          "伊比利亚第三共和国（1871—1940）",
+          "法兰克立宪君主国",
+          "德意志联邦共和国",
+          "德意志共和国（1918—1945）",
+          "伊比利亚被占领与过渡期（1940—1945）"
+        ],
+        "country_ids": [
+          "C_IBERIA_3REP_FULL",
+          "C_FRANKEN",
+          "C_DEUTSCHLAND",
+          "C_GERMAN_REPUBLIC",
+          "C_IBERIA_OCCUPIED"
+        ],
+        "persons": [],
+        "result": "第三共和国终结；1940—1945 为被占领与过渡期；伊比利亚在奥克地区的势力就此终结，1945 年失去奥克地区。",
+        "causes": [
+          "E_1939_WW2"
+        ],
+        "effects": [
+          "E_1945_IBERIA_4REP"
+        ],
+        "war_id": "W_WW2",
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "seq": 48,
+        "id": "E_1945_ASIA_ORDER",
+        "year": 1945,
+        "year_text": "1945 — 1960",
+        "epoch": "20世纪后期",
+        "event_zh": "新亚洲秩序与文明边界线",
+        "event_de": "Neue asiatische Ordnung",
+        "event_en": "New Asian order",
+        "region": "亚洲",
+        "countries": [
+          "中国",
+          "蒙古帝国",
+          "西域佛教文明带",
+          "西伯利亚萨满文化区",
+          "西亚伊斯兰文明空间",
+          "君士坦丁堡（海峡政治体，通称拜占庭）",
+          "东洲（新大洲，正式名称待定）"
+        ],
+        "country_ids": [
+          "C_CHINA",
+          "C_MONGOL_EMPIRE",
+          "C_WESTERN_REGIONS",
+          "C_SIBERIA",
+          "C_ASIA_ISLAMIC",
+          "C_BYZANTIUM",
+          "C_NEW_CONTINENT"
+        ],
+        "persons": [],
+        "result": "一旦这条线确定，罗斯兀鲁思、中国、蒙古、西域、西亚乃至君士坦丁堡的历史就可以沿着同一条纵轴展开，而不再是几个互相孤立的“亚洲背景设定”。",
+        "causes": [
+          "E_1200_MONGOL",
+          "E_1100_WESTERN_BUDDHISM",
+          "E_1400_GOLDEN_HORDE"
+        ],
+        "effects": [],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "待定",
+        "src": [
+          "S1",
+          "S4"
+        ]
+      },
+      {
+        "seq": 49,
+        "id": "E_1945_BRITAIN_DEMOCRATISATION",
+        "year": 1945,
+        "year_text": "1945 — 约1955",
+        "epoch": "20世纪",
+        "event_zh": "不列颠战败与被监督的民主化",
+        "event_de": "Überwachte Demokratisierung Britanniens",
+        "event_en": "Supervised democratisation of Britain",
+        "region": "不列颠",
+        "countries": [
+          "不列颠联邦共和国",
+          "德意志联邦共和国",
+          "法兰克立宪君主国"
+        ],
+        "country_ids": [
+          "C_UK",
+          "C_DEUTSCHLAND",
+          "C_FRANKEN"
+        ],
+        "persons": [],
+        "result": "1945年经制宪会议决议并辅以全民公决，正式废除王位，确立共和制。1945/1947《权利宪章》成文宪法。",
+        "causes": [
+          "E_1939_WW2",
+          "E_1272_ABSOLUTISM"
+        ],
+        "effects": [
+          "E_1945_IRELAND"
+        ],
+        "war_id": null,
+        "treaty_id": "T_RIGHTS_CHARTER",
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S3",
+          "S2"
+        ]
+      },
+      {
+        "seq": 50,
+        "id": "E_1945_IBERIA_4REP",
+        "year": 1945,
+        "year_text": "1945",
+        "epoch": "20世纪：战后秩序",
+        "event_zh": "伊比利亚第四共和国成立",
+        "event_de": "Gründung der Vierten Iberischen Republik",
+        "event_en": "Founding of the Fourth Iberian Republic",
+        "region": "伊比利亚半岛",
+        "countries": [
+          "伊比利亚第四共和国（1945—1954）",
+          "伊比利亚共和国（第五共和国后体制）",
+          "德意志联邦共和国",
+          "法兰克立宪君主国"
+        ],
+        "country_ids": [
+          "C_IBERIA_4REP",
+          "C_IBERIA",
+          "C_DEUTSCHLAND",
+          "C_FRANKEN"
+        ],
+        "persons": [],
+        "result": "伊比利亚进入总统权力最弱的阶段；同时失去奥克地区。",
+        "causes": [
+          "E_1940_IBERIA_DEFEAT",
+          "E_1939_WW2"
+        ],
+        "effects": [
+          "E_1954_IBERIA_COLONIAL"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S2"
+        ]
+      },
+      {
+        "seq": 51,
+        "id": "E_1945_IRELAND",
+        "year": 1945,
+        "year_text": "1945",
+        "epoch": "20世纪",
+        "event_zh": "爱尔兰全岛独立",
+        "event_de": "Irische Unabhängigkeit",
+        "event_en": "Irish independence",
+        "region": "爱尔兰",
+        "countries": [
+          "不列颠联邦共和国"
+        ],
+        "country_ids": [
+          "C_UK"
+        ],
+        "persons": [],
+        "result": "成立爱尔兰共和国（Republic of Ireland），首都都柏林，不分治，乌尔斯特全境属爱尔兰。长期文化殖民使本土凯尔特语言文化大幅减弱，未出现现实式的盖尔语复兴。",
+        "causes": [
+          "E_1939_WW2",
+          "E_1945_BRITAIN_DEMOCRATISATION"
+        ],
+        "effects": [
+          "E_1960_MULTIPOLAR"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "seq": 52,
+        "id": "E_1945_KIEV",
+        "year": 1945,
+        "year_text": "1945后",
+        "epoch": "20世纪",
+        "event_zh": "基辅王国与白罗斯脱离莫斯科国",
+        "event_de": "Unabhängigkeit des Königreichs Kyiw",
+        "event_en": "Independence of the Kingdom of Kyiv",
+        "region": "东欧",
+        "countries": [
+          "基辅王国",
+          "白罗斯",
+          "罗斯兀鲁思"
+        ],
+        "country_ids": [
+          "C_KIEV",
+          "C_WEISSRUSSLAND",
+          "C_ROS_UHLUS"
+        ],
+        "persons": [],
+        "result": "二战后的国际秩序最终承认基辅王国与罗斯兀鲁思是两个不同的主权国家。罗斯兀鲁思从此不得不接受古罗斯世界已经永久分裂。形成“两次统一、两次分离”的历史记忆。",
+        "causes": [
+          "E_1939_WW2",
+          "E_WW1"
+        ],
+        "effects": [
+          "E_1960_MULTIPOLAR"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S4"
+        ]
+      },
+      {
+        "seq": 53,
+        "id": "E_1945_OCCITAN_ISSUE",
+        "year": 1945,
+        "year_text": "1945 — 1975",
+        "epoch": "20世纪",
+        "event_zh": "南部奥克省建制与法兰克-奥克问题",
+        "event_de": "Südokzitanische Frage",
+        "event_en": "The Southern Occitan question",
+        "region": "南部奥克省",
+        "countries": [
+          "法兰克立宪君主国",
+          "伊比利亚共和国（第五共和国后体制）"
+        ],
+        "country_ids": [
+          "C_FRANKEN",
+          "C_IBERIA"
+        ],
+        "persons": [],
+        "result": "核心矛盾不是“帕里斯 vs 整个奥克地区”，而是“中央法兰克国家 ↔ 多样化的奥克南部 ↔ 奥克文化 ↔ 法兰克文化 ↔ 德意志文化”，是真正的联邦化、多民族政治问题。普罗旺斯、多菲内可能是中央政府在南方最可靠的支持者。",
+        "causes": [
+          "E_1939_WW2",
+          "E_1945_SETTLEMENT",
+          "E_1789_EXILES"
+        ],
+        "effects": [
+          "E_1975_OCCITAN_NORMALISATION"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "修正",
+        "src": [
+          "S0",
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "seq": 54,
+        "id": "E_1945_SETTLEMENT",
+        "year": 1945,
+        "year_text": "1945",
+        "epoch": "20世纪",
+        "event_zh": "战后德意志世界恢复与联邦化",
+        "event_de": "Nachkriegsordnung",
+        "event_en": "Post-war settlement",
+        "region": "中欧",
+        "countries": [
+          "德意志联邦共和国",
+          "法兰克立宪君主国"
+        ],
+        "country_ids": [
+          "C_DEUTSCHLAND",
+          "C_FRANKEN"
+        ],
+        "persons": [],
+        "result": "最终形成德意志联邦共和国 + 法兰克立宪君主国，两者政治独立，但属于同一个更大的日耳曼文明体系。",
+        "causes": [
+          "E_1939_WW2"
+        ],
+        "effects": [
+          "E_1960_MULTIPOLAR",
+          "E_1975_OCCITAN_NORMALISATION"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "seq": 55,
+        "id": "E_1954_IBERIA_COLONIAL",
+        "year": 1954,
+        "year_text": "1954年前后",
+        "epoch": "20世纪：战后秩序",
+        "event_zh": "非洲殖民地危机与第四共和国覆灭",
+        "event_de": "Afrikanische Kolonialkrise",
+        "event_en": "African colonial crisis",
+        "region": "北非西部（马格里布）、伊比利亚半岛",
+        "countries": [
+          "伊比利亚第四共和国（1945—1954）",
+          "马格里布（北非西部）",
+          "伊比利亚第五共和国（1960— ）"
+        ],
+        "country_ids": [
+          "C_IBERIA_4REP",
+          "C_MAGHREB",
+          "C_IBERIA_5REP"
+        ],
+        "persons": [],
+        "result": "第四共和国终结；1960 年重建为总统权力加强的第五共和国。",
+        "causes": [
+          "E_1945_IBERIA_4REP",
+          "E_MAGHREB_CHRISTIANISATION"
+        ],
+        "effects": [
+          "E_1960_IBERIA_5REP"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S2"
+        ]
+      },
+      {
+        "seq": 56,
+        "id": "E_1960_IBERIA_5REP",
+        "year": 1960,
+        "year_text": "1960",
+        "epoch": "20世纪后期：多极均势",
+        "event_zh": "伊比利亚第五共和国建立",
+        "event_de": "Gründung der Fünften Iberischen Republik",
+        "event_en": "Founding of the Fifth Iberian Republic",
+        "region": "伊比利亚半岛、北非西部",
+        "countries": [
+          "伊比利亚第五共和国（1960— ）",
+          "伊比利亚共和国（第五共和国后体制）",
+          "德意志联邦共和国",
+          "法兰克立宪君主国"
+        ],
+        "country_ids": [
+          "C_IBERIA_5REP",
+          "C_IBERIA",
+          "C_DEUTSCHLAND",
+          "C_FRANKEN"
+        ],
+        "persons": [],
+        "result": "现行伊比利亚共和国体制确立；同年多极均势格局成局。",
+        "causes": [
+          "E_1954_IBERIA_COLONIAL"
+        ],
+        "effects": [
+          "E_1960_MULTIPOLAR"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "seq": 57,
+        "id": "E_1960_MULTIPOLAR",
+        "year": 1960,
+        "year_text": "1960年前后",
+        "epoch": "20世纪后期",
+        "event_zh": "多极均势与新亚洲文明地图",
+        "event_de": "Multipolare Ordnung",
+        "event_en": "Multipolar order",
+        "region": "全球",
+        "countries": [
+          "德意志联邦共和国",
+          "法兰克立宪君主国",
+          "伊比利亚共和国（第五共和国后体制）",
+          "罗斯兀鲁思",
+          "不列颠联邦共和国",
+          "美利坚合众国"
+        ],
+        "country_ids": [
+          "C_DEUTSCHLAND",
+          "C_FRANKEN",
+          "C_IBERIA",
+          "C_ROS_UHLUS",
+          "C_UK",
+          "C_USA"
+        ],
+        "persons": [],
+        "result": "亚洲形成了一个更复杂的文明梯度，而非“穆斯林少了”。",
+        "causes": [
+          "E_1945_SETTLEMENT",
+          "E_1975_OCCITAN_NORMALISATION",
+          "E_1945_KIEV",
+          "E_1945_IRELAND"
+        ],
+        "effects": [],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1",
+          "S2",
+          "S4"
+        ]
+      },
+      {
+        "seq": 58,
+        "id": "E_1975_OCCITAN_NORMALISATION",
+        "year": 1975,
+        "year_text": "1972—1978（1975 为关键节点）",
+        "epoch": "20世纪后期",
+        "event_zh": "奥克省废除与“奥克正常化”（1972—1978）",
+        "event_de": "Okzitanische Normalisierung",
+        "event_en": "Occitan normalisation",
+        "region": "法兰克南部",
+        "countries": [
+          "法兰克立宪君主国"
+        ],
+        "country_ids": [
+          "C_FRANKEN"
+        ],
+        "persons": [],
+        "result": "奥克地区不再享有政治上的特殊地位，但文化上获得承认：奥克语可成为州级官方语言、双语教育、奥克文化机构得到国家支持、地方文化自治扩大、州议会普选、州政府由议会多数产生、州法院独立、州拥有一定税收自主权。但法兰克语仍是联邦层面唯一官方语言。",
+        "causes": [
+          "E_1945_OCCITAN_ISSUE"
+        ],
+        "effects": [
+          "E_1960_MULTIPOLAR"
+        ],
+        "war_id": null,
+        "treaty_id": null,
+        "significance": "不是“民族自治领”，而是“文化承认 + 普通联邦州地位”。",
+        "status": "修正",
+        "src": [
+          "S2"
+        ]
+      }
+    ],
+    "axis_nodes": [
+      {
+        "year": 1270,
+        "label": "卡佩绝嗣 / 继承危机",
+        "event_id": "E_1270_CAPET",
+        "event_zh": "卡佩绝嗣与法兰克继承危机",
+        "on_map_axis_16": true,
+        "note": null
+      },
+      {
+        "year": 1272,
+        "label": "鲁道夫加冕 / 英格兰被逐出大陆",
+        "event_id": "E_1272_RUDOLF",
+        "event_zh": "鲁道夫加冕为“法兰克人的国王”",
+        "on_map_axis_16": true,
+        "note": null
+      },
+      {
+        "year": 1300,
+        "label": "东西双源格局定型",
+        "event_id": "E_1300_DUAL_SOURCE",
+        "event_zh": "东西双源格局定型",
+        "on_map_axis_16": true,
+        "note": null
+      },
+      {
+        "year": 1356,
+        "label": "《法兰克福宪章》/ 双王冠",
+        "event_id": "E_1356_CHARTER",
+        "event_zh": "《法兰克福宪章》与双王冠确立",
+        "on_map_axis_16": true,
+        "note": null
+      },
+      {
+        "year": 1450,
+        "label": "哈布斯堡回归帝国 / 双元君主国",
+        "event_id": "E_1400_DUAL_EMPIRE",
+        "event_zh": "哈布斯堡回归帝国与双元君主国",
+        "on_map_axis_16": true,
+        "note": "S0《地图工程》以1450为纵轴节点（“1450哈布斯堡回归”）；S0/S1正文将此过程记于“14世纪后期”。两者指向同一事件：此处以1450为地图节点、以14世纪后期为正文纪年。"
+      },
+      {
+        "year": 1524,
+        "label": "农民战争（1524—1527）",
+        "event_id": "E_1524_PEASANTS",
+        "event_zh": "农民战争",
+        "on_map_axis_16": true,
+        "note": null
+      },
+      {
+        "year": 1618,
+        "label": "三十年宗教战争爆发",
+        "event_id": "E_1618_RELIGION",
+        "event_zh": "三十年宗教战争",
+        "on_map_axis_16": true,
+        "note": null
+      },
+      {
+        "year": 1648,
+        "label": "《维也纳和约》/ 帝国分权",
+        "event_id": "E_1648_VIENNA",
+        "event_zh": "《维也纳和约》与帝国分权",
+        "on_map_axis_16": true,
+        "note": null
+      },
+      {
+        "year": 1789,
+        "label": "伊比利亚-奥克大革命",
+        "event_id": "E_1789_REVOLUTION",
+        "event_zh": "伊比利亚-奥克大革命",
+        "on_map_axis_16": true,
+        "note": null
+      },
+      {
+        "year": 1815,
+        "label": "反革命时代 / 神罗解散",
+        "event_id": "E_1815_RESTORATION",
+        "event_zh": "反革命时代与旧秩序重建",
+        "on_map_axis_16": true,
+        "note": null
+      },
+      {
+        "year": 1848,
+        "label": "大德意志方案失败",
+        "event_id": "E_1848_REVOLUTION",
+        "event_zh": "1848年革命与大德意志方案失败",
+        "on_map_axis_16": true,
+        "note": null
+      },
+      {
+        "year": 1866,
+        "label": "奥法战争",
+        "event_id": "E_1866_WAR",
+        "event_zh": "1866年奥法战争",
+        "on_map_axis_16": true,
+        "note": null
+      },
+      {
+        "year": 1871,
+        "label": "罗马加冕 / 德意志帝国成立",
+        "event_id": "E_1871_EMPIRE",
+        "event_zh": "罗马加冕与德意志帝国成立",
+        "on_map_axis_16": true,
+        "note": null
+      },
+      {
+        "year": 1914,
+        "label": "第一次世界大战（地图节点以1918记其结局）",
+        "event_id": "E_WW1",
+        "event_zh": "第一次世界大战",
+        "on_map_axis_16": false,
+        "note": null
+      },
+      {
+        "year": 1918,
+        "label": "德意志帝国瓦解 / 法兰克共和化",
+        "event_id": "E_1918_COLLAPSE",
+        "event_zh": "德意志帝国瓦解与法兰克共和化",
+        "on_map_axis_16": true,
+        "note": null
+      },
+      {
+        "year": 1939,
+        "label": "第二次世界大战（地图节点以1945记其结果）",
+        "event_id": "E_1939_WW2",
+        "event_zh": "第二次世界大战",
+        "on_map_axis_16": false,
+        "note": null
+      },
+      {
+        "year": 1945,
+        "label": "战后德意志世界恢复与联邦化",
+        "event_id": "E_1945_SETTLEMENT",
+        "event_zh": "战后德意志世界恢复与联邦化",
+        "on_map_axis_16": true,
+        "note": null
+      },
+      {
+        "year": 1960,
+        "label": "多极均势 / 新亚洲文明地图",
+        "event_id": "E_1960_MULTIPOLAR",
+        "event_zh": "多极均势与新亚洲文明地图",
+        "on_map_axis_16": true,
+        "note": null
+      },
+      {
+        "year": 1975,
+        "label": "奥克省废除（S2新增节点，不在S0地图16节点内）",
+        "event_id": "E_1975_OCCITAN_NORMALISATION",
+        "event_zh": "奥克省废除与“奥克正常化”（1972—1978）",
+        "on_map_axis_16": false,
+        "note": null
+      }
+    ]
+  },
+  "countries": {
+    "table": "countries",
+    "rows": [
+      {
+        "id": "C_FRANKEN",
+        "name_zh": "法兰克立宪君主国",
+        "name_short": "法兰克",
+        "name_de": "Fränkisch-Konstitutionelle Monarchie",
+        "name_en": "Frankish Constitutional Monarchy",
+        "polity": "联邦化单一制；早期宪政→成熟宪政君主制→(1918-1945)共和国→(1945-)君主立宪共和国，国王完全礼仪化",
+        "dynasty": "哈布斯堡（Habsburg，贯穿始终）",
+        "religion": "天主教（官方）",
+        "capital": "帕里斯",
+        "territory": "法兰西岛、香槟、勃艮第、洛林、阿尔萨斯南部、弗兰德斯、诺曼底、布列塔尼、加来-皮卡第、卢瓦尔、罗讷-阿尔卑斯；1945后另获南部奥克省（1975年该省废除，奥克各州升为普通联邦州）",
+        "language": "法兰克语 / 西法兰克语（Fränkisch / Westfränkisch），西日耳曼语支",
+        "founded": "1272（鲁道夫加冕为法兰克人的国王）",
+        "time_span": "1272 — 1918；1945 — 至今（1918—1945 为法兰克共和国）",
+        "overview": "本世界线的西部日耳曼政治体。由哈布斯堡的鲁道夫在卡佩绝嗣后入主，定都帕里斯，宫廷与军事德意志化。1356年《法兰克福宪章》后与德意志王冠构成不可分割的双重王冠。1871年罗马加冕后与德意志王冠分离，成为独立国家。",
+        "key_traits": [
+          "天主教君主制传统",
+          "宪政早熟（协商而非革命）",
+          "法语人口不存在，只有法兰克语",
+          "帕里斯为时尚、外交、奢侈品、金融中心",
+          "工业落后于德意志联邦",
+          "南部奥克省为最大内部挑战"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "id": "C_DEUTSCHLAND",
+        "name_zh": "德意志联邦共和国",
+        "name_short": "德意志联邦",
+        "name_de": "Deutsche Bundesrepublik",
+        "name_en": "German Federal Republic",
+        "polity": "真正的联邦制民主共和国；州权较强（地方→联邦→民主）",
+        "dynasty": "普热米斯尔（Přemyslid，1871-1918为帝国皇帝；1918后共和）",
+        "religion": "新教（阿尔卑斯福音派为国教性主流）",
+        "capital": "维也纳（行政首都）",
+        "territory": "德意志诸邦、低地、波西米亚、摩拉维亚、奥地利、施蒂利亚、卡林西亚、蒂罗尔、北意大利（伦巴底、皮埃蒙特、威尼托、特伦托、罗马涅-托斯卡纳）、西里西亚、波森、克罗地亚-斯洛文尼亚、普鲁士（但泽）",
+        "language": "高地德语（含瑞士）、低地德语（含荷兰）融合的“共同体德语/泛德意志标准语/帝国德语”",
+        "founded": "1871（罗马加冕成立德意志帝国）；1945后重建为德意志联邦共和国",
+        "time_span": "1945 — 至今（1945 年重建为联邦制民主共和国；1871—1918 为德意志帝国，1918—1945 为德意志共和国）",
+        "overview": "本世界线的东部日耳曼政治体与泛德意志文明核心。普热米斯尔家族自奥托卡二世起推行集权与德意志化，16世纪皈依新教，17世纪成为泛德意志新教世界最高世俗领袖。1866年击败法兰克确立小德意志方案，1871年在罗马加冕成立帝国。一战战败后建立维也纳德意志共和国，二战后重建为联邦制民主共和国。",
+        "key_traits": [
+          "多党制",
+          "强联邦+地方主义",
+          "多民族多区域",
+          "第二次工业革命中心之一",
+          "科学人文人才集中",
+          "意大利民族从未被构建（北意大利类似西里西亚）"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "id": "C_UK",
+        "name_zh": "不列颠联邦共和国",
+        "name_short": "不列颠",
+        "name_de": "Bundesrepublik Britannien",
+        "name_en": "Federal Republic of Britain",
+        "polity": "1945年前为绝对君主制（Kingdom of Britain）；1945年战败后被监督强制民主化，建立联邦共和国（总统为礼仪与有限仲裁性质）",
+        "dynasty": "金雀花（Plantagenet，至1789-1815倾覆）→ 蒙福尔（Mountfort / Haus Montfort）→ 1945年废除王位",
+        "religion": "王室新教（高教会式，保留主教制、礼仪、管风琴与教堂艺术）；战后政教分离，原国教改为自治教会",
+        "capital": "伦敦",
+        "territory": "英格兰、威尔士、苏格兰、爱尔兰（1945年前）；1945年爱尔兰全岛独立，不列颠保留大不列颠与若干岛屿领地",
+        "language": "英语（日耳曼骨架+高度罗曼化）；盎格鲁-法兰西语（Anglois）为其最高语域，17-19世纪合流为同一语言的两种语域",
+        "founded": "1272定型（鲁道夫击败诺曼底公爵、跨海帝国路线破产）；1945转为共和国",
+        "time_span": "1066 诺曼征服 — 至今；1272-1945 为绝对君主制；1945 — 联邦共和国",
+        "overview": "本世界线的罗曼-法兰西高文化正宗保存者。大陆法兰克被日耳曼化后，罗曼-法兰西宫廷文明逆流回不列颠，使英格兰走上与法兰克相反的绝对君主制道路，直至1945年战败才被迫民主化。",
+        "key_traits": [
+          "绝对主义固化（对比法兰克宪政早熟）",
+          "语言断层导致跨阶层议价集团无法形成",
+          "海洋商业帝国（特许公司+海军护航）",
+          "一战获胜固化旧制度，二战战败才崩溃",
+          "民主化由中欧协定胜利方（德意志、法兰克）监督强制"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "id": "C_IBERIA",
+        "name_zh": "伊比利亚共和国（第五共和国后体制）",
+        "name_short": "伊比利亚",
+        "name_de": "Iberische Republik",
+        "name_en": "Iberian Republic",
+        "polity": "高度中央集权的总统制共和国（统一国家 ＞ 地方自治；二战后：国家可以很强，但权力必须民主化）",
+        "dynasty": "高度中央集权的非哈布斯堡王朝 → 共和国/帝国反复更替（伊比利亚第一至第五共和国、第一至第二帝国）",
+        "religion": "天主教（长期压制国内新教徒）",
+        "capital": null,
+        "territory": "伊比利亚半岛、北非西部（长期统治并基督教化、欧洲化，无特殊宪制地位，与半岛同属一个国家行政体系）；二战后失去奥克地区",
+        "language": "伊比利亚-奥克语（罗曼语族）",
+        "founded": "伊比利亚王国（收复失地运动后）",
+        "time_span": "伊比利亚王国 → 伊比利亚第一共和国 → 第一帝国 → 第二共和国 → 第二帝国 → 第三/四/五共和国",
+        "overview": "本世界线的秩序挑战者与第三文明中心。1789年伊比利亚-奥克大革命建立革命帝国，席卷南欧、占领奥克、攻入那不勒斯、迫使神圣罗马帝国解散。其历史功能是不断打破德意志-法兰克之间的平衡。",
+        "key_traits": [
+          "中央集权从未真正逆转",
+          "边缘民族被同化/边缘化但不联邦化",
+          "外交新教、内政天主教",
+          "一战后成为奥克和地中海西部强国，二战后失去奥克",
+          "二战后PNI被拆解、PSI成为第一大党"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "id": "C_ROS_UHLUS",
+        "name_zh": "罗斯兀鲁思",
+        "name_short": "罗斯兀鲁思",
+        "name_de": "Ross-Ulus",
+        "name_en": "Ros Ulus",
+        "polity": "蒙古-金帐政治传统本土化后的王朝国家；君主合法性来自“蒙古帝国—金帐汗国政治秩序在北方的合法继承者”",
+        "dynasty": "莫斯科蒙古王朝（蒙古王族与莫斯科大公家族联姻融合而成）",
+        "religion": "东正教斯拉夫人口 + 蒙古佛教王朝的复合结构；佛教/萨满进入贵族文化",
+        "capital": "莫斯科",
+        "territory": "莫斯科诸公国故地、伏尔加-乌拉尔、西伯利亚；一战期间曾重新夺取基辅、白罗斯、乌克兰东部，二战后失去",
+        "language": "东斯拉夫语言底层 + 蒙古语影响；西里尔字母（可用于蒙古语转写）",
+        "founded": "金帐汗国分裂后，莫斯科蒙古王朝建立罗斯兀鲁思",
+        "time_span": "古罗斯诸国 → 蒙古征服 → 金帐秩序 → 莫斯科王朝 → 现代罗斯兀鲁思",
+        "overview": "本世界线中罗斯兀鲁思的替代者。因蒙古帝国未伊斯兰化、西域佛教文明带长期存在，莫斯科诸公国并未“摆脱鞑靼枷锁”，而是继承了金帐汗国的国家机器与政治传统，形成“后基辅罗斯国家”。其文明来源被自我认定主要为蒙古-金帐体系。",
+        "key_traits": [
+          "把蒙古帝国视为“我们的帝国时代之一”",
+          "国家正统：古罗斯诸国→蒙古征服→金帐秩序→罗斯兀鲁思",
+          "文化四层：东斯拉夫+蒙古+突厥+佛教/萨满",
+          "两次统一、两次分离的历史记忆"
+        ],
+        "status": "已确定",
+        "src": [
+          "S1",
+          "S4"
+        ]
+      },
+      {
+        "id": "C_KIEV",
+        "name_zh": "基辅王国",
+        "name_short": "基辅王国",
+        "name_de": "Königreich Kyiw",
+        "name_en": "Kingdom of Kyiv",
+        "polity": "欧洲东部国家；主动继承基辅罗斯传统（政体细节待定）",
+        "dynasty": null,
+        "religion": "东欧基督教（东正教）",
+        "capital": "基辅",
+        "territory": "基辅、乌克兰东部；二战后与白罗斯同时脱离莫斯科国并可能组成联邦",
+        "language": "东斯拉夫语（乌克兰自称传统）",
+        "founded": "二战结束后重新独立（一战后曾被罗斯兀鲁思夺取）",
+        "time_span": "古罗斯 → 一战后被罗斯兀鲁思吞并 → 二战后重新独立",
+        "overview": "本世界线中乌克兰的替代者。自称古罗斯传统的真正继承者，强调基辅、东斯拉夫传统、东欧基督教、欧洲政治文化、古罗斯法律传统，以及与中欧、德意志、波罗的海的联系，越来越靠近欧洲文明。",
+        "key_traits": [
+          "罗斯向欧洲发展的道路",
+          "与罗斯兀鲁思构成文明分流",
+          "可能吸收白罗斯组成联邦"
+        ],
+        "status": "已确定",
+        "src": [
+          "S4"
+        ]
+      },
+      {
+        "id": "C_WEISSRUSSLAND",
+        "name_zh": "白罗斯",
+        "name_short": "白罗斯",
+        "name_de": "Weißrussland",
+        "name_en": "White Rus",
+        "polity": "与基辅王国组成联邦（基辅王国—白罗斯联邦的成员邦）",
+        "dynasty": null,
+        "religion": "东正教",
+        "capital": null,
+        "territory": "基辅王国—莫斯科国—波罗的海世界之间",
+        "language": "东斯拉夫语",
+        "founded": "二战结束后脱离莫斯科国",
+        "time_span": "二战结束 — 至今",
+        "overview": "二战后与基辅王国同时脱离罗斯兀鲁思，并与基辅王国组成「基辅王国—白罗斯联邦」，成为德意志/欧洲 → 基辅王国-白罗斯 → 罗斯兀鲁思 → 蒙古-西伯利亚文化圈这一文明梯度的中间环。",
+        "key_traits": [
+          "文明梯度缓冲国",
+          "基辅王国—白罗斯联邦成员邦"
+        ],
+        "status": "已确定",
+        "src": [
+          "S4"
+        ]
+      },
+      {
+        "id": "C_SWITZERLAND",
+        "name_zh": "瑞士永久联邦",
+        "name_short": "瑞士",
+        "name_de": "Ewiger Bund der Schweiz",
+        "name_en": "Perpetual Swiss Confederation",
+        "polity": "永久联邦、永久中立；改革宗共和国",
+        "dynasty": null,
+        "religion": "加尔文宗（改革宗）",
+        "capital": null,
+        "territory": "瑞士祖地（哈布斯堡已放弃宗主权要求）；夺取哈布斯堡祖地",
+        "language": "高地德语（含瑞士方言）；瑞士德语区",
+        "founded": "1356《法兰克福宪章》承认为帝国内“特殊自治体”；1648《维也纳和约》确认独立与永久中立",
+        "time_span": "1356 — 至今",
+        "overview": "帝国内特殊自治体，不承担帝国税和兵役，各州可保留共和制度，但对外不得与帝国敌人结盟。1648年确认独立与永久中立。同时是法兰克和普热米斯尔-德意志的角力之地，并在泛德意志语言共同体中发挥桥梁作用。",
+        "key_traits": [
+          "永久中立",
+          "改革宗国际神学中心",
+          "语言共同体桥梁",
+          "一战、二战知识分子流亡学术中心"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1",
+          "S3"
+        ]
+      },
+      {
+        "id": "C_USA",
+        "name_zh": "美利坚合众国",
+        "name_short": "美国",
+        "name_de": "Vereinigte Staaten von Amerika",
+        "name_en": "United States of America",
+        "polity": "联邦共和国；共和党 ↔ 美国社会主义党两党主导（政治生态相对现实“左移”）",
+        "dynasty": null,
+        "religion": "未指定",
+        "capital": null,
+        "territory": "北美；太平洋有势力范围",
+        "language": "英语",
+        "founded": null,
+        "time_span": "— 至今",
+        "overview": "未崛起为超级大国，但仍是重要工业和科学力量。钢铁、石油、汽车、电气与中欧并驾齐驱。大学吸引部分欧洲流亡学者。因欧洲政治环境不同，移民结构改变，大量欧洲共和派、社会主义者、激进自由主义者迁入，使美国成为“欧洲激进共和主义的实验场”。",
+        "key_traits": [
+          "未成全球霸权",
+          "大众文化有影响",
+          "美国社会主义党为主要政党（非苏联式共产党）",
+          "各州边界与行政层级尚未重新设计"
+        ],
+        "status": "待定",
+        "src": [
+          "S0",
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "id": "C_DENMARK_NORWAY",
+        "name_zh": "丹麦-挪威",
+        "name_short": "丹麦-挪威",
+        "name_de": "Dänemark-Norwegen",
+        "name_en": "Denmark-Norway",
+        "polity": "新教王国",
+        "dynasty": null,
+        "religion": "新教（路德宗）",
+        "capital": null,
+        "territory": "丹麦、挪威",
+        "language": "北日耳曼语（未指定）",
+        "founded": null,
+        "time_span": "— 17世纪",
+        "overview": "宗教战争中“丹麦-低地阶段（1625-1629）”的介入方，丹麦-挪威新教国王介入战争。",
+        "key_traits": [
+          "宗教战争新教一方介入者"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "C_SWEDEN",
+        "name_zh": "瑞典",
+        "name_short": "瑞典",
+        "name_de": "Schweden",
+        "name_en": "Sweden",
+        "polity": "新教王国",
+        "dynasty": null,
+        "religion": "新教（路德宗）",
+        "capital": null,
+        "territory": "瑞典",
+        "language": "北日耳曼语（未指定）",
+        "founded": null,
+        "time_span": "— 17世纪",
+        "overview": "宗教战争中“瑞典-南德阶段（1630-1635）”的介入方，瑞典新教国王介入并与普热米斯尔结盟。",
+        "key_traits": [
+          "宗教战争新教一方介入者"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "C_SPAIN_ARAGON",
+        "name_zh": "西班牙-阿拉贡",
+        "name_short": "西班牙-阿拉贡",
+        "name_de": "Spanien-Aragon",
+        "name_en": "Spain-Aragon",
+        "polity": "天主教王国",
+        "dynasty": null,
+        "religion": "天主教",
+        "capital": null,
+        "territory": "伊比利亚半岛",
+        "language": null,
+        "founded": null,
+        "time_span": "— 17世纪",
+        "overview": "宗教战争初期属天主教联盟，后出于反哈布斯堡法兰克地缘利益加入新教联盟，形成“外交新教、内政天主教”的矛盾立场。",
+        "key_traits": [
+          "宗教战争中立场转换（关键变量）"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "C_PAPAL",
+        "name_zh": "教皇国",
+        "name_short": "教皇国",
+        "name_de": "Kirchenstaat",
+        "name_en": "Papal States",
+        "polity": "教宗世俗领地",
+        "dynasty": null,
+        "religion": "天主教",
+        "capital": "罗马",
+        "territory": "中意大利",
+        "language": "拉丁语（教会）/意大利地方语",
+        "founded": null,
+        "time_span": "— 至今（1871年罗马加冕后罗马被纳入德意志帝国；教皇国作为世俗领地终结，教宗权威延续）",
+        "overview": "宗教制度中的关键一极。1356年教皇使节参与法兰克福会议；教皇承认皇帝对法兰克教会的提名权。1871年普热米斯尔攻入罗马并在此加冕，罗马自此成为德意志帝国的加冕圣城。",
+        "key_traits": [
+          "三重加冕制度中的加冕方",
+          "法兰克教会提名权授予者"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "C_LOWLANDS",
+        "name_zh": "低地联合省",
+        "name_short": "低地联合省",
+        "name_de": "Vereinigte Provinzen der Niederlande",
+        "name_en": "United Provinces of the Low Countries",
+        "polity": "加尔文宗共和国；后并入德意志联邦（尼德兰州、阿姆斯特丹城市州等）",
+        "dynasty": null,
+        "religion": "加尔文宗",
+        "capital": null,
+        "territory": "尼德兰各州",
+        "language": "低地德语（含荷兰语，被视为低地德语一部分）",
+        "founded": "1625-1629宣布独立",
+        "time_span": "1625 — 至今（1871后作为尼德兰州、阿姆斯特丹城市州并入德意志；二战后低地重新并入德意志联邦）",
+        "overview": "宗教战争中凭海军和金融坚持抵抗并宣布独立，1648年正式独立为加尔文宗共和国。19世纪后并入德意志统一进程，成为德意志联邦的尼德兰州与阿姆斯特丹城市州。",
+        "key_traits": [
+          "海军与金融",
+          "共和主义、商业伦理、国际网络",
+          "汉萨贸易金融集团"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "id": "C_ENGLAND_NORMANDY",
+        "name_zh": "英格兰-诺曼底",
+        "name_short": "英格兰-诺曼底",
+        "name_de": "England-Normandie",
+        "name_en": "England-Normandy",
+        "polity": "金雀花王朝跨海封建王权",
+        "dynasty": "金雀花（Plantagenet）",
+        "religion": "天主教（宗教改革前）",
+        "capital": null,
+        "territory": "英格兰、诺曼底、法兰西北部；曾侵占法兰西北部",
+        "language": "盎格鲁-法兰西语（宫廷）/日耳曼英语（民间）",
+        "founded": "1066诺曼征服",
+        "time_span": "1066 — 1272（被鲁道夫击败，被逐出大陆）",
+        "overview": "金雀花王朝延长、法兰西化程度加深的跨海政权。爱德华一世为卡佩继承争夺者之一。1272年鲁道夫击败诺曼底公爵，夺取法兰西岛和香槟，英格兰-诺曼底被逐出大陆，英-法兰克竞争长期化。",
+        "key_traits": [
+          "卡佩继承争夺者之一（爱德华一世）",
+          "被逐出大陆后转为绝对主义岛屿国家"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "id": "C_MONGOL_EMPIRE",
+        "name_zh": "蒙古帝国",
+        "name_short": "蒙古帝国",
+        "name_de": "Mongolisches Reich",
+        "name_en": "Mongol Empire",
+        "polity": "汗国体系；三层宗教结构（长生天为国家与王权合法性最高来源；佛教提供宇宙论/哲学/文字/寺院体系；萨满负责地方仪式/祖先崇拜/山川崇拜）",
+        "dynasty": "蒙古诸王朝（成吉思汗系；金帐汗国）",
+        "religion": "长生天 + 佛教 + 萨满（层级化共存，非互相消灭）",
+        "capital": null,
+        "territory": "蒙古高原、西伯利亚、中亚、金帐汗国（东欧草原）、罗斯兀鲁思故地；文明遗产区从太平洋延伸到东欧森林地带",
+        "language": "蒙古语（西里尔字母转写）",
+        "founded": "1200-1300年间崛起",
+        "time_span": "1200—1300崛起；金帐汗国延续至政治覆灭后由其继承者承接传统",
+        "overview": "连接中国佛教世界、西域佛教世界、伊斯兰中亚与伊朗-西亚的关键文明枢纽。本世界线中蒙古帝国未迅速伊斯兰化，且西域佛教文明带长期存在，使其在欧亚大陆北部留下的政治与文化遗产远比现实更深厚。",
+        "key_traits": [
+          "保持长生天政治传统，同时吸收佛教",
+          "宗教多元与宽容",
+          "文明遗产从太平洋延伸至东欧森林地带",
+          "金帐汗国未在14世纪转为伊斯兰汗国"
+        ],
+        "status": "已确定",
+        "src": [
+          "S1",
+          "S4"
+        ]
+      },
+      {
+        "id": "C_GOLDEN_HORDE",
+        "name_zh": "金帐汗国",
+        "name_short": "金帐汗国",
+        "name_de": "Goldene Horde",
+        "name_en": "Golden Horde",
+        "polity": "蒙古汗国；制度化、官僚化、地方化的宗主权体系（任命大公、税收体系、道路管理、驿站组织、贵族等级规范、介入诸公国继承、蒙古-突厥官僚、跨草原与森林贸易网络）",
+        "dynasty": "蒙古王族（成吉思汗系）",
+        "religion": "长生天 + 佛教 + 草原萨满传统（未在14世纪伊斯兰化）",
+        "capital": null,
+        "territory": "东欧草原、伏尔加流域；宗主权覆盖东斯拉夫诸公国",
+        "language": "蒙古-突厥语",
+        "founded": "13世纪（蒙古帝国西征后）",
+        "time_span": "13世纪 — 政治覆灭（制度由罗斯兀鲁思继承）",
+        "overview": "本世界线中，金帐汗国并未在14世纪逐渐转变为伊斯兰汗国，而是继续保持蒙古贵族政治传统、长生天信仰、佛教、草原萨满传统、蒙古军事制度与汗国封建体系。其统治逐渐制度化、官僚化、地方化，成为莫斯科诸王公可以继承的国家机器。",
+        "key_traits": [
+          "金帐汗国作为国家灭亡 ≠ 金帐汗国文明传统消失",
+          "被罗斯兀鲁思视为自己的前身王朝",
+          "莫斯科国家形成现代国家制度的直接祖先"
+        ],
+        "status": "已确定",
+        "src": [
+          "S4"
+        ]
+      },
+      {
+        "id": "C_CHINA",
+        "name_zh": "中国",
+        "name_short": "中国",
+        "name_de": "China",
+        "name_en": "China",
+        "polity": "中华帝国制度传统",
+        "dynasty": null,
+        "religion": "儒家 + 佛教 + 道教",
+        "capital": null,
+        "territory": "中国内地、河西走廊、敦煌；西向文明轴延伸至塔里木盆地、天山、中亚佛教世界",
+        "language": "汉语（汉字文化）",
+        "founded": null,
+        "time_span": "— 至今",
+        "overview": "本世界线中拥有一条更强的西向文明轴：中国内地 → 河西走廊 → 敦煌 → 塔里木盆地 → 天山 → 中亚佛教世界。“西域”不再只是边疆，而是中国文明向中亚投射影响的长期文明走廊。",
+        "key_traits": [
+          "西域为长期文明走廊",
+          "中国-西域-中亚文明联系远强于现实",
+          "与新大洲（泛中华文明圈—印度文明圈）核心"
+        ],
+        "status": "已确定",
+        "src": [
+          "S1",
+          "S4"
+        ]
+      },
+      {
+        "id": "C_BYZANTIUM",
+        "name_zh": "君士坦丁堡（海峡政治体，通称拜占庭）",
+        "name_short": "君士坦丁堡",
+        "name_de": "Byzanz",
+        "name_en": "Byzantium",
+        "polity": "希腊人主导的基督教城邦—海峡政治体；以控制海峡通行权立国，靠海峡通行税与贸易维生",
+        "dynasty": null,
+        "religion": "基督教（与安纳托利亚伊斯兰并存/竞争）",
+        "capital": "君士坦丁堡",
+        "territory": "君士坦丁堡与海峡",
+        "language": "希腊语（推定）",
+        "founded": null,
+        "time_span": "— 至今",
+        "overview": "希腊人主导的基督教城邦—海峡政治体，通称「拜占庭」，以控制海峡通行权立国，靠海峡通行税与贸易维生。它与安纳托利亚突厥帝国长期对峙共处，是伊斯兰文明与基督教文明之间的「边界」——S1 明言「海峡是文明边界，而不是文明墙」：一个收取通行费、允许双方通行的城邦，恰恰不是墙。",
+        "key_traits": [
+          "海峡是文明边界，不是文明墙",
+          "靠海峡通行税与贸易维生",
+          "东正教教会不向罗斯兀鲁思转移（因君士坦丁堡仍然存在）"
+        ],
+        "status": "已确定",
+        "src": [
+          "S1",
+          "S4"
+        ]
+      },
+      {
+        "id": "C_NEW_CONTINENT",
+        "name_zh": "东洲（新大洲，正式名称待定）",
+        "name_short": "东洲",
+        "name_de": "Ostland (Arbeitsname)",
+        "name_en": "Orient (working name)",
+        "polity": "待定：内部国家行政制度及其历史尚未设定",
+        "dynasty": null,
+        "religion": "佛教（西域佛教文明带）、藏传佛教、儒家/道教、印度文明（未穆斯林化）",
+        "capital": null,
+        "territory": "中国、蒙古、西藏、西域、中亚东部、印度及相关东亚文明空间",
+        "language": "汉语、藏语、蒙古语、印度诸语、西域诸语",
+        "founded": null,
+        "time_span": "— 至今",
+        "overview": "S2 提出的第三大洲，也是最重要的新设定。核心概念不是“中华文明圈”这么简单，而是“泛中华文明圈—印度文明圈”，其历史联系来自印度佛教 → 犍陀罗 → 西域 → 中亚 → 中国 → 蒙古/西藏 → 东亚。西域佛教成为这个新大洲文明连续性的关键历史桥梁。",
+        "key_traits": [
+          "正式名称待定（“奥洲/Orient”为故称，“东洲”为20世纪后现代称呼）",
+          "丝绸之路、蒙古帝国、藏传佛教、中华帝国制度、汉字文化、草原文明、印度洋贸易共同塑造",
+          "多个文明通过长期交通、宗教、帝国和文化传播形成共同文明地理空间"
+        ],
+        "status": "待定",
+        "src": [
+          "S2",
+          "S4"
+        ]
+      },
+      {
+        "id": "C_EUROPE_CONTINENT",
+        "name_zh": "欧洲（文明大洲）",
+        "name_short": "欧洲",
+        "name_de": "Europa",
+        "name_en": "Europe",
+        "polity": "欧盟作为这些不同政治传统的共同框架（“古老欧洲多层政治传统的现代民主化延续”）",
+        "dynasty": null,
+        "religion": "天主教 / 新教（多派）/ 东正教（东部）",
+        "capital": null,
+        "territory": "欧洲大陆 + 撒哈拉以北非洲西部",
+        "language": "共同体德语/泛德意志标准语、法兰克语、伊比利亚-奥克语、英语",
+        "founded": null,
+        "time_span": "— 至今",
+        "overview": "大洲不再单纯按地质/地理连续性划分，而按长期形成的文明—历史空间划分。欧洲包括欧洲大陆 + 撒哈拉以北非洲西部。伊比利亚北非不是殖民地意义上的“非洲”，而是伊比利亚国家内部的普通行政区域，故在文明地理上属于欧洲。",
+        "key_traits": [
+          "撒哈拉承担文明分界功能",
+          "欧盟为多层政治传统的现代民主化延续",
+          "非简单“HRE 2.0”"
+        ],
+        "status": "已确定",
+        "src": [
+          "S2",
+          "S4"
+        ]
+      },
+      {
+        "id": "C_ASIA_CONTINENT",
+        "name_zh": "亚洲（文明大洲）",
+        "name_short": "亚洲",
+        "name_de": "Asien",
+        "name_en": "Asia",
+        "polity": "罗斯兀鲁思—西亚—伊斯兰文明空间",
+        "dynasty": null,
+        "religion": "伊斯兰教（西亚、中亚西部）/ 东正教+佛教+萨满（罗斯兀鲁思）",
+        "capital": null,
+        "territory": "罗斯兀鲁思整体、撒哈拉以北非洲东部、近东、中东、穆斯林西亚",
+        "language": "东斯拉夫语、阿拉伯语、波斯语、突厥语",
+        "founded": null,
+        "time_span": "— 至今",
+        "overview": "S2 把罗斯兀鲁思整体划入亚洲，同时包括撒哈拉以北非洲东部、近东、中东、穆斯林西亚，形成“罗斯兀鲁思—西亚—伊斯兰文明空间”。",
+        "key_traits": [
+          "罗斯兀鲁思成为亚洲北部核心国家",
+          "伊斯兰文明东部边界被重新划定（未消灭伊斯兰世界，而是重划边界）"
+        ],
+        "status": "已确定",
+        "src": [
+          "S2",
+          "S4"
+        ]
+      },
+      {
+        "id": "C_AFRICA_CONTINENT",
+        "name_zh": "非洲（文明大洲）",
+        "name_short": "非洲",
+        "name_de": "Afrika",
+        "name_en": "Africa",
+        "polity": "撒哈拉以南非洲作为独立的非洲大洲主体",
+        "dynasty": null,
+        "religion": null,
+        "capital": null,
+        "territory": "撒哈拉以南非洲",
+        "language": null,
+        "founded": null,
+        "time_span": "— 至今",
+        "overview": "四洲划分中的第四洲。撒哈拉承担文明分界功能：撒哈拉以北西部 → 欧洲；撒哈拉以北东部 → 亚洲；撒哈拉以南 → 非洲。",
+        "key_traits": [
+          "世界级地理设定的最新成果之一"
+        ],
+        "status": "已确定",
+        "src": [
+          "S2"
+        ]
+      },
+      {
+        "id": "C_ASIA_ISLAMIC",
+        "name_zh": "西亚伊斯兰文明空间",
+        "name_short": "西亚伊斯兰",
+        "name_de": "Islamischer Raum Westasiens",
+        "name_en": "West Asian Islamic space",
+        "polity": "阿拉伯-伊朗-两河-安纳托利亚伊斯兰文明为主",
+        "dynasty": null,
+        "religion": "伊斯兰教",
+        "capital": null,
+        "territory": "阿拉伯、伊朗、两河、安纳托利亚",
+        "language": "阿拉伯语、波斯语、突厥语",
+        "founded": null,
+        "time_span": "— 至今",
+        "overview": "S1《1960年前后：新的亚洲文明地图》中的区域文明之一。伊斯兰文明在西亚仍为主流，但其向中亚东部与塔里木盆地的推进在本世界线中“止步于更西侧”。",
+        "key_traits": [
+          "伊斯兰文明的东部边界被重新划定",
+          "中亚西部仍有较强伊斯兰影响"
+        ],
+        "status": "已确定",
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "id": "C_WESTERN_REGIONS",
+        "name_zh": "西域佛教文明带",
+        "name_short": "西域佛教",
+        "name_de": "Buddhistischer Gürtel des Westlandes",
+        "name_en": "Western Regions Buddhist belt",
+        "polity": "独立的佛教文明圈",
+        "dynasty": null,
+        "religion": "西域佛教（龟兹、于阗、吐鲁番、敦煌传统强化）",
+        "capital": null,
+        "territory": "塔里木盆地、天山以东、河中地区以东；敦煌为东方佛教门户",
+        "language": "西域诸语（吐火罗语等）",
+        "founded": "公元前后-8世纪佛教传统强化",
+        "time_span": "公元前后 — 至今（8-12世纪未被迅速伊斯兰化）",
+        "overview": "本世界线与现实最大的宗教史差异之一：现实中伊斯兰逐渐向中亚东部和塔里木盆地推进，龟兹等地约在12世纪前后结束佛教时代；本世界线改变这一节点，伊斯兰化止步于更西侧，天山以东佛教强、塔里木盆地佛教持续、敦煌继续作为东方佛教门户。",
+        "key_traits": [
+          "西域成为独立佛教文明圈",
+          "中国-西域-中亚文明联系远强于现实",
+          "新大洲文明连续性的关键历史桥梁"
+        ],
+        "status": "已确定",
+        "src": [
+          "S1",
+          "S2",
+          "S4"
+        ]
+      },
+      {
+        "id": "C_SIBERIA",
+        "name_zh": "西伯利亚萨满文化区",
+        "name_short": "西伯利亚",
+        "name_de": "Sibirischer Schamanenraum",
+        "name_en": "Siberian shamanic zone",
+        "polity": "部落/文化区",
+        "dynasty": null,
+        "religion": "萨满传统 + 长生天传统",
+        "capital": null,
+        "territory": "西伯利亚",
+        "language": null,
+        "founded": null,
+        "time_span": "— 至今",
+        "overview": "S1 亚洲宗教史新原则中的一环：西伯利亚形成“萨满传统 + 长生天传统”。这让罗斯兀鲁思向东扩张面对的不再是单纯的穆斯林汗国，而是一条草原蒙古文化圈 → 西伯利亚萨满文化 → 佛教西域 → 中国的梯度。",
+        "key_traits": [
+          "萨满+长生天",
+          "罗斯兀鲁思亚洲经验的关键一环"
+        ],
+        "status": "已确定",
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "id": "C_OCCITAN_KINGDOM",
+        "name_zh": "奥克王国",
+        "name_short": "奥克王国",
+        "name_de": "Königreich Okzitanien",
+        "name_en": "Kingdom of Occitania",
+        "polity": "奥克语地区的独立王国（具体政体文档未载）",
+        "dynasty": null,
+        "religion": "天主教",
+        "capital": null,
+        "territory": "奥克语地区（朗格多克、普罗旺斯、多菲内、奥克海岸、罗讷河口一带）",
+        "language": "伊比利亚-奥克语",
+        "founded": "文档未载具体年份",
+        "time_span": "— 1648年前后（部分领土被伊比利亚取得）；1789年大革命后其地成为革命军的占领区",
+        "overview": "用户本轮补充设定的实体：伊比利亚的前身之一。奥克语地区的政治体，与西班牙-阿拉贡同为伊比利亚统一进程的源头。1648年《维也纳和约》后法兰克在奥克地区占领后撤，伊比利亚获得部分奥克领土；1789年伊比利亚-奥克大革命即爆发于此地区。二战后法兰克获取奥克地区并设南部奥克省。",
+        "key_traits": [
+          "伊比利亚的前身之一",
+          "与法兰克长期纠缠",
+          "奥克语与伊比利亚半岛语言共享词汇语法",
+          "奥克人认同“北伊比利亚人”或“奥克-伊比利亚人”"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "id": "C_ISLAMIC_WORLD",
+        "name_zh": "伊斯兰世界（区域文明体集合）",
+        "name_short": "伊斯兰世界",
+        "name_de": "Islamische Welt",
+        "name_en": "The Islamic World",
+        "polity": "哈里发—苏丹—沙阿多中心体系；无单一最高政治权威",
+        "dynasty": null,
+        "religion": "伊斯兰教（逊尼派、什叶派并存）",
+        "capital": null,
+        "territory": "伊比利亚南部（至收复失地运动）、北非、埃及、叙利亚、阿拉伯半岛、两河、伊朗、安纳托利亚、中亚西部",
+        "language": "阿拉伯语、波斯语、突厥语",
+        "founded": "7世纪",
+        "time_span": "7世纪 — 至今",
+        "overview": "本世界线的区域文明体集合。S1 明确本世界并非“消灭伊斯兰世界”，而是重新划定伊斯兰文明的东部边界：伊斯兰化止步于更西侧，西域/塔里木保持佛教。其西线则在伊比利亚被逐出，但北非西部到19—20世纪仍为伊比利亚国家的一部分。西亚（阿拉伯—伊朗—两河—安纳托利亚）仍以伊斯兰文明为主。",
+        "key_traits": [
+          "多中心、无单一最高权威",
+          "逊尼派与什叶派二分",
+          "西线止于伊比利亚—马格里布，东线止于河中",
+          "埃及/叙利亚/阿拉伯/安纳托利亚/波斯各自形成独立政治传统"
+        ],
+        "status": "已确定",
+        "src": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "id": "C_IBERIAN_KINGDOM",
+        "name_zh": "伊比利亚王国",
+        "name_short": "伊比利亚王国",
+        "name_de": "Königreich Iberien",
+        "name_en": "Kingdom of Iberia",
+        "polity": "中央集权君主国（统一伊比利亚半岛与北非西部）",
+        "dynasty": "伊比利亚王朝（由西班牙-阿拉贡与奥克王国的王朝合并而成，具体王朝名待定）",
+        "religion": "天主教",
+        "capital": "托莱多（推定）",
+        "territory": "伊比利亚半岛全境（卡斯蒂利亚、阿拉贡、葡萄牙、纳瓦拉、格拉纳达）与北非西部（马格里布）",
+        "language": "伊比利亚-奥克语",
+        "founded": "伊比利亚各基督教王国完成统一、并南下北非驱逐穆斯林后建立（具体年份待定）",
+        "time_span": "— 1789（伊比利亚-奥克大革命中推翻）",
+        "overview": "用户本轮补充设定的实体。由西班牙-阿拉贡（及奥克王国）为起点，逐步统一伊比利亚各基督教王国，并南下北非驱逐穆斯林，最终建立伊比利亚王国。该王国在1789年伊比利亚-奥克大革命中被推翻，此后进入共和国/帝国反复更替的时代。",
+        "key_traits": [
+          "统一伊比利亚半岛",
+          "南下北非驱逐穆斯林",
+          "中央集权从未真正逆转",
+          "在1789年大革命中被推翻"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S2"
+        ]
+      },
+      {
+        "id": "C_CORDOBA",
+        "name_zh": "科尔多瓦哈里发国",
+        "name_short": "科尔多瓦",
+        "name_de": "Kalifat von Córdoba",
+        "name_en": "Caliphate of Córdoba",
+        "polity": "哈里发国（929年自立哈里发）",
+        "dynasty": "伍麦叶（西班牙支系）",
+        "religion": "伊斯兰教（逊尼派）",
+        "capital": "科尔多瓦",
+        "territory": "伊比利亚半岛大部（安达卢斯）",
+        "language": "阿拉伯语",
+        "founded": "929（阿卜杜勒·拉赫曼三世自立哈里发）",
+        "time_span": "929 — 1031（分裂为诸泰法）",
+        "overview": "伊比利亚的穆斯林政权，8世纪起统治半岛大部，929年自立哈里发。1031年分裂为诸多泰法小国，为北方基督教诸王国的推进提供条件。此后由北非的穆拉比特与穆瓦希德两王朝先后渡海接管安达卢斯。",
+        "key_traits": [
+          "安达卢斯文明中心",
+          "1031年后分裂为泰法诸国",
+          "后被北非柏柏尔王朝接管"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S2"
+        ]
+      },
+      {
+        "id": "C_ALMOHAD",
+        "name_zh": "穆瓦希德哈里发国（及穆拉比特）",
+        "name_short": "穆瓦希德",
+        "name_de": "Almohadenkalifat (und Almoraviden)",
+        "name_en": "Almohad Caliphate (and Almoravids)",
+        "polity": "柏柏尔哈里发国（北非—安达卢斯联合体）",
+        "dynasty": "穆拉比特 → 穆瓦希德",
+        "religion": "伊斯兰教（逊尼派，严格派）",
+        "capital": "马拉喀什",
+        "territory": "马格里布（今摩洛哥、阿尔及利亚一带）与安达卢斯南部",
+        "language": "柏柏尔语、阿拉伯语",
+        "founded": "11世纪（穆拉比特）→ 12世纪（穆瓦希德）",
+        "time_span": "11世纪 — 13世纪（1212年后在伊比利亚崩溃）",
+        "overview": "北非柏柏尔人的两个王朝，先后渡海接管安达卢斯。1212年战败后其在伊比利亚的统治崩溃，伊比利亚各基督教王国由此得以完成收复失地运动并南下北非。",
+        "key_traits": [
+          "北非—安达卢斯联合体",
+          "1212年后在伊比利亚崩溃",
+          "伊比利亚南下北非的直接对位方"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S2"
+        ]
+      },
+      {
+        "id": "C_FATIMID",
+        "name_zh": "法蒂玛哈里发国（埃及）",
+        "name_short": "法蒂玛",
+        "name_de": "Fatimidenkalifat",
+        "name_en": "Fatimid Caliphate",
+        "polity": "什叶派哈里发国",
+        "dynasty": "法蒂玛",
+        "religion": "伊斯兰教（伊斯玛仪派什叶派）",
+        "capital": "开罗",
+        "territory": "埃及、叙利亚南部、阿拉伯半岛西部（汉志）、北非东部",
+        "language": "阿拉伯语",
+        "founded": "909",
+        "time_span": "909 — 1171",
+        "overview": "埃及的什叶派哈里发国，以开罗为中心，势力及于叙利亚与汉志。1171年被萨拉丁推翻，埃及转入逊尼派阿尤布王朝。",
+        "key_traits": [
+          "什叶派哈里发国",
+          "开罗为都",
+          "与阿拔斯哈里发国对立"
+        ],
+        "status": "已确定",
+        "src": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "id": "C_AYYUBID",
+        "name_zh": "阿尤布苏丹国（埃及—叙利亚）",
+        "name_short": "阿尤布",
+        "name_de": "Ayyubidensultanat",
+        "name_en": "Ayyubid Sultanate",
+        "polity": "逊尼派苏丹国",
+        "dynasty": "阿尤布",
+        "religion": "伊斯兰教（逊尼派）",
+        "capital": "开罗",
+        "territory": "埃及、叙利亚、巴勒斯坦、汉志、也门",
+        "language": "阿拉伯语、库尔德语",
+        "founded": "1171",
+        "time_span": "1171 — 1250（马穆鲁克取而代之）",
+        "overview": "萨拉丁建立的逊尼派苏丹国，统合埃及与叙利亚，是十字军东征时期穆斯林一方的主要政治体。1250年被马穆鲁克王朝取代。",
+        "key_traits": [
+          "萨拉丁建立",
+          "统合埃及与叙利亚",
+          "十字军的主要对位方"
+        ],
+        "status": "已确定",
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "id": "C_MAMLUK",
+        "name_zh": "马穆鲁克苏丹国（埃及—叙利亚）",
+        "name_short": "马穆鲁克",
+        "name_de": "Mamlukensultanat",
+        "name_en": "Mamluk Sultanate",
+        "polity": "军事寡头苏丹国（伯海里系 → 布尔吉系）",
+        "dynasty": "马穆鲁克",
+        "religion": "伊斯兰教（逊尼派）",
+        "capital": "开罗",
+        "territory": "埃及、叙利亚、巴勒斯坦、汉志",
+        "language": "阿拉伯语、突厥语（钦察）",
+        "founded": "1250",
+        "time_span": "1250 — 1517（被安纳托利亚突厥帝国取代）",
+        "overview": "由军事奴隶精英建立的苏丹国。1260年阻止蒙古西进，此后长期统治埃及与叙利亚，是东地中海与红海贸易的关键政治体。1517年并入安纳托利亚的突厥帝国。",
+        "key_traits": [
+          "1260年阻止蒙古西进",
+          "东地中海与红海贸易枢纽",
+          "1517年被突厥帝国取代"
+        ],
+        "status": "已确定",
+        "src": [
+          "S1",
+          "S4"
+        ]
+      },
+      {
+        "id": "C_ABBASID",
+        "name_zh": "阿拔斯哈里发国（两河）",
+        "name_short": "阿拔斯",
+        "name_de": "Abbasidenkalifat",
+        "name_en": "Abbasid Caliphate",
+        "polity": "哈里发国（后期为名义宗主权）",
+        "dynasty": "阿拔斯",
+        "religion": "伊斯兰教（逊尼派）",
+        "capital": "巴格达",
+        "territory": "两河、伊朗、阿拉伯半岛东部；后期仅存两河",
+        "language": "阿拉伯语、波斯语",
+        "founded": "750",
+        "time_span": "750 — 1258（巴格达陷落）",
+        "overview": "以巴格达为中心的哈里发国，是伊斯兰世界逊尼派名义上的最高权威。1258年巴格达陷落于蒙古西征军，此后哈里发名义由马穆鲁克庇护。",
+        "key_traits": [
+          "逊尼派名义最高权威",
+          "1258年巴格达陷落于蒙古",
+          "两河为伊斯兰文明核心区之一"
+        ],
+        "status": "已确定",
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "id": "C_PERSIA",
+        "name_zh": "伊朗（伊斯兰什叶派波斯）",
+        "name_short": "伊朗",
+        "name_de": "Persisches Reich",
+        "name_en": "Persia",
+        "polity": "沙阿制；什叶派逐步成为国教",
+        "dynasty": "诸波斯王朝（11—16世纪陆续更替，详见 D_PERSIAN_LINE）",
+        "religion": "伊斯兰教（伊斯玛仪派 → 十二伊玛目派什叶派为国教）",
+        "capital": "伊斯法罕（后期）",
+        "territory": "伊朗高原、两河东部、呼罗珊、高加索南部、中亚西部边缘",
+        "language": "波斯语（阿拉伯语为宗教与学术语）",
+        "founded": "7世纪阿拉伯征服后逐步形成独立波斯政权；11世纪起由突厥—波斯混合王朝主导",
+        "time_span": "7世纪 — 至今",
+        "overview": "「波斯」概念在本世界线中被撕裂为两支：一支是伊斯兰化的什叶派波斯，即本条目「伊朗」；另一支是退守河中及以东、保持佛教的「西域-波斯残余」（见 C_PERSIA_BUDDHIST）。波斯曾抵御伊斯兰入侵，后因内乱而退守河中及以东，伊朗遂成为伊斯兰文明东端的什叶派国家，与逊尼派的阿拉伯—安纳托利亚体系长期并立。",
+        "key_traits": [
+          "什叶派国家传统（伊斯兰化的波斯）",
+          "波斯语高文化",
+          "与逊尼派阿拉伯—安纳托利亚体系并立",
+          "其东侧紧邻退守河中的佛教-西域波斯残余"
+        ],
+        "status": "已确定",
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "id": "C_ANATOLIAN_TURKS",
+        "name_zh": "奥斯曼帝国（安纳托利亚突厥帝国）",
+        "name_short": "奥斯曼帝国",
+        "name_de": "Osmanisches Reich",
+        "name_en": "Anatolian Turkish Empire",
+        "polity": "苏丹—帝国制；逊尼派伊斯兰国家，行米勒特式多宗教治理",
+        "dynasty": "安纳托利亚突厥王朝（详见 D_OTTOMAN）",
+        "religion": "伊斯兰教（逊尼派）；境内东正教、亚美尼亚教会等并存",
+        "capital": "君士坦丁堡（1517年后）",
+        "territory": "安纳托利亚、巴尔干南部、叙利亚、埃及、汉志、两河；1517年取代马穆鲁克",
+        "language": "突厥语（奥斯曼突厥语）；阿拉伯语、波斯语为文化与宗教语",
+        "founded": "13世纪末（安纳托利亚西北部起家）",
+        "time_span": "13世纪末 — 至今",
+        "overview": "安纳托利亚的突厥穆斯林帝国。本世界线中伊斯兰世界在东部受限于西域佛教带，因此安纳托利亚成为伊斯兰力量向欧洲方向的主要压力来源。S1 明确“安纳托利亚：伊斯兰与基督教并存/竞争”，且“君士坦丁堡：基督教文明核心之一”，故本帝国与海峡基督教政治体长期对峙共处。",
+        "key_traits": [
+          "逊尼派伊斯兰帝国",
+          "米勒特式多宗教治理",
+          "1517年取代马穆鲁克",
+          "安纳托利亚为伊斯兰与基督教并存/竞争地带"
+        ],
+        "status": "已确定",
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "id": "C_MAGHREB",
+        "name_zh": "马格里布（北非西部）",
+        "name_short": "马格里布",
+        "name_de": "Maghreb",
+        "name_en": "The Maghreb",
+        "polity": "柏柏尔诸王朝 → 伊比利亚国家行政体系的一部分",
+        "dynasty": "穆拉比特 → 穆瓦希德 → 后由伊比利亚统治",
+        "religion": "伊斯兰教 → 经伊比利亚长期统治后基督教化",
+        "capital": null,
+        "territory": "今摩洛哥、阿尔及利亚、突尼斯、西撒哈拉一带",
+        "language": "柏柏尔语、阿拉伯语 → 伊比利亚-奥克语作为行政语言",
+        "founded": "7世纪阿拉伯征服后伊斯兰化；11世纪起柏柏尔王朝",
+        "time_span": "伊斯兰化（7世纪）→ 柏柏尔诸王朝 → 伊比利亚南下驱逐穆斯林 → 19—20世纪为伊比利亚本土一部分",
+        "overview": "北非西部。7世纪起伊斯兰化，11—13世纪由柏柏尔王朝（穆拉比特、穆瓦希德）统治并渡海接管安达卢斯。此后伊比利亚各基督教王国南下驱逐穆斯林，长期统治并基督教化、欧洲化该地区。S2 明确其“没有特殊宪制地位”，与伊比利亚半岛同属一个国家行政体系。",
+        "key_traits": [
+          "伊比利亚南下驱逐穆斯林的对象",
+          "长期被基督教化、欧洲化",
+          "无特殊宪制地位，非殖民地",
+          "撒哈拉承担文明分界：以北西部属欧洲、以东属亚洲"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S2"
+        ]
+      },
+      {
+        "id": "C_EGYPT_REGION",
+        "name_zh": "埃及地区",
+        "name_short": "埃及",
+        "name_de": "Ägypten",
+        "name_en": "Egypt",
+        "polity": "先后为法蒂玛、阿尤布、马穆鲁克、安纳托利亚突厥帝国属地",
+        "dynasty": null,
+        "religion": "伊斯兰教（逊尼派为主）；科普特教会长期存续",
+        "capital": "开罗",
+        "territory": "尼罗河流域、红海西岸、地中海南岸东部",
+        "language": "阿拉伯语；科普特语为礼仪语言",
+        "founded": "7世纪阿拉伯征服",
+        "time_span": "7世纪 — 至今",
+        "overview": "尼罗河流域。法蒂玛王朝在此建开罗；此后历经阿尤布、马穆鲁克，1517年并入安纳托利亚突厥帝国。是东地中海与印度洋贸易的关键中转。按 S2 的大洲划分，埃及属“撒哈拉以北非洲东部”，文明地理上划入亚洲。",
+        "key_traits": [
+          "东地中海—印度洋贸易中转",
+          "科普特教会长期存续",
+          "文明地理上属亚洲（撒哈拉以北东部）"
+        ],
+        "status": "已确定",
+        "src": [
+          "S2"
+        ]
+      },
+      {
+        "id": "C_SYRIA",
+        "name_zh": "叙利亚地区",
+        "name_short": "叙利亚",
+        "name_de": "Syrien",
+        "name_en": "Syria",
+        "polity": "先后为法蒂玛、阿尤布、马穆鲁克、安纳托利亚突厥帝国属地",
+        "dynasty": null,
+        "religion": "伊斯兰教（逊尼派、什叶派及诸教派并存）；基督徒与犹太社群长期存在",
+        "capital": "大马士革",
+        "territory": "黎凡特（叙利亚、巴勒斯坦、黎巴嫩沿海）",
+        "language": "阿拉伯语、阿拉米语残余",
+        "founded": "7世纪",
+        "time_span": "7世纪 — 至今",
+        "overview": "东地中海沿岸的伊斯兰地区，十字军东征的主要战场。S1 特别指出法兰克“拥有地中海传统……拥有北非、黎凡特传统影响”，且首都（原文作“巴黎”，本库统一作帕里斯）有神学、历史、东方学传统，因此法兰克自然会成为“欧洲研究东方世界的重要文明”——其直接接触面即叙利亚与黎凡特。",
+        "key_traits": [
+          "十字军东征主战场",
+          "法兰克东方学传统的接触面",
+          "多教派并存"
+        ],
+        "status": "已确定",
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "id": "C_ARABIA",
+        "name_zh": "阿拉伯—汉志地区",
+        "name_short": "阿拉伯",
+        "name_de": "Arabien und Hedschas",
+        "name_en": "Arabia and the Hejaz",
+        "polity": "谢里夫/埃米尔地方政权；名义上隶属区域强权",
+        "dynasty": null,
+        "religion": "伊斯兰教（逊尼派为主，麦加、麦地那两圣地所在）",
+        "capital": null,
+        "territory": "阿拉伯半岛、汉志、红海东岸",
+        "language": "阿拉伯语",
+        "founded": "7世纪",
+        "time_span": "7世纪 — 至今",
+        "overview": "麦加与麦地那两圣地所在。政治上长期为地方谢里夫政权，名义上隶属先后更替的区域强权（阿拔斯、法蒂玛、马穆鲁克、安纳托利亚突厥帝国）。红海贸易为其经济命脉。",
+        "key_traits": [
+          "两圣地所在",
+          "红海—印度洋贸易枢纽",
+          "政治上长期为地方政权"
+        ],
+        "status": "已确定",
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "id": "C_SPAIN",
+        "name_zh": "西班牙王国",
+        "name_short": "西班牙",
+        "name_de": "Königreich Spanien",
+        "name_en": "Kingdom of Spain",
+        "polity": "中央集权君主国（卡斯蒂利亚—莱昂王统）",
+        "dynasty": "特拉斯塔马拉系（推定）",
+        "religion": "天主教",
+        "capital": "托莱多（推定）",
+        "territory": "卡斯蒂利亚、莱昂、加利西亚、安达卢斯北部",
+        "language": "伊比利亚-奥克语（卡斯蒂利亚语域）",
+        "founded": "卡斯蒂利亚与莱昂合并后形成",
+        "time_span": "15世纪 — 16世纪初（并入西班牙-阿拉贡及奥克王国）",
+        "overview": "伊比利亚半岛中部的中央集权君主国，是伊比利亚统一进程的两大起点之一。它在收复失地运动中扩张最快，推动天主教共同身份的形成，并最终与阿拉贡合并。其首都托莱多后来成为伊比利亚王国的首都。",
+        "key_traits": [
+          "伊比利亚统一的两个起点之一",
+          "收复失地运动的主力",
+          "中央集权传统的源头"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S2"
+        ]
+      },
+      {
+        "id": "C_ARAGON",
+        "name_zh": "阿拉贡王国",
+        "name_short": "阿拉贡",
+        "name_de": "Königreich Aragon",
+        "name_en": "Kingdom of Aragon",
+        "polity": "君主国（联姻与地中海扩张型）",
+        "dynasty": "巴塞罗那系（推定）",
+        "religion": "天主教",
+        "capital": "萨拉戈萨（推定）",
+        "territory": "阿拉贡、加泰罗尼亚、瓦伦西亚；地中海属地",
+        "language": "伊比利亚-奥克语（加泰罗尼亚语域）",
+        "founded": "阿拉贡与巴塞罗那伯国联合后形成",
+        "time_span": "12世纪 — 16世纪初（并入西班牙-阿拉贡及奥克王国）",
+        "overview": "伊比利亚半岛东北部的君主国，伊比利亚统一进程的另一起点。与卡斯蒂利亚方向不同，阿拉贡的扩张重心在地中海与南法，因此与奥克语地区关系密切，是奥克最终卷入伊比利亚轨道的关键。",
+        "key_traits": [
+          "伊比利亚统一的两个起点之一",
+          "地中海扩张型君主国",
+          "与奥克语地区的联系枢纽"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S2"
+        ]
+      },
+      {
+        "id": "C_IBERIA_1REP",
+        "name_zh": "伊比利亚第一共和国",
+        "name_short": "第一共和国",
+        "name_de": "Erste Iberische Republik",
+        "name_en": "First Iberian Republic",
+        "polity": "革命共和政体（1789 年大革命推翻伊比利亚王国后建立）",
+        "dynasty": null,
+        "religion": "天主教（革命期一度推行国家教会化）",
+        "capital": "托莱多（推定）",
+        "territory": "伊比利亚半岛、北非西部；革命期曾占领奥克地区并攻入南意大利",
+        "language": "伊比利亚-奥克语",
+        "founded": "1789（大革命推翻伊比利亚王国）",
+        "time_span": "1789 — 约1804（转为伊比利亚第一帝国）",
+        "overview": "伊比利亚大革命推翻王国后建立的第一个共和政体，是「伊比利亚共和国—帝国反复更替」序列的起点。革命军自伊比利亚与奥克出发席卷南欧，攻入那不勒斯，迫使神圣罗马帝国解散。该政体后由第一帝国取代。",
+        "key_traits": [
+          "伊比利亚革命政体的开端",
+          "革命军远征南欧的发起点",
+          "民族主义、立宪主义、共和主义由此深入人心"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "id": "C_IBERIA_1EMP",
+        "name_zh": "伊比利亚第一帝国",
+        "name_short": "第一帝国",
+        "name_de": "Erstes Iberisches Kaiserreich",
+        "name_en": "First Iberian Empire",
+        "polity": "革命帝国（共和政体转向帝制）",
+        "dynasty": null,
+        "religion": "天主教",
+        "capital": "托莱多（推定）",
+        "territory": "伊比利亚半岛、北非西部、奥克地区；曾远征罗斯兀鲁思",
+        "language": "伊比利亚-奥克语",
+        "founded": "约1804（第一共和国转为帝制）",
+        "time_span": "约1804 — 1815（被反伊比利亚同盟击败）",
+        "overview": "伊比利亚革命政权的帝国阶段，也是其扩张的顶点。它把大革命推向全欧，但其**远征罗斯兀鲁思最终失败**——这与现实史中拿破仑远征的失败同构，是伊比利亚由盛转衰的转折。1815 年被法兰克、普热米斯尔、英国、罗斯兀鲁思组成的反伊比利亚同盟击败。",
+        "key_traits": [
+          "伊比利亚扩张的顶点",
+          "远征罗斯兀鲁思失败",
+          "1815 年被反伊比利亚同盟击败"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "id": "C_IBERIA_2REP",
+        "name_zh": "伊比利亚第二共和国",
+        "name_short": "第二共和国",
+        "name_de": "Zweite Iberische Republik",
+        "name_en": "Second Iberian Republic",
+        "polity": "共和政体（拿破仑战争后重建）",
+        "dynasty": null,
+        "religion": "天主教（压制国内新教徒）",
+        "capital": "托莱多（推定）",
+        "territory": "伊比利亚半岛、北非西部",
+        "language": "伊比利亚-奥克语",
+        "founded": "1815（反伊比利亚战争结束、帝国倾覆后）",
+        "time_span": "1815 — 19世纪中叶（转为伊比利亚第二帝国）",
+        "overview": "拿破仑战争后重建的共和政体。它接过革命留下的民族主义、立宪主义与共和主义遗产，但中央集权并未松动——S2 所记「中央集权从未真正逆转」正由此延续。其长臂管辖一度伸至南意大利那不勒斯与罗马。",
+        "key_traits": [
+          "革命遗产的承接者",
+          "中央集权延续",
+          "长臂管辖伸至南意大利"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S2"
+        ]
+      },
+      {
+        "id": "C_WEST_FRANKIA",
+        "name_zh": "西法兰克王国",
+        "name_short": "西法兰克",
+        "name_de": "Westfrankenreich",
+        "name_en": "West Francia",
+        "polity": "加洛林系君主国",
+        "dynasty": "加洛林（Karolinger）",
+        "religion": "天主教",
+        "capital": "帕里斯（推定）",
+        "territory": "塞根河、利格河、加伦河流域及勃艮第、阿基坦",
+        "language": "罗曼语（langue d'oïl 的前身）",
+        "founded": "843（凡尔登分家后）",
+        "time_span": "843 — 987（卡佩家族取代加洛林）",
+        "overview": "大陆北部罗曼语政治体序列的第一阶段，也是后来「法兰西罗曼王国」的前身。本世界线中，这一支罗曼语政治体最终在 1270 年卡佩绝嗣后终结，其语言与宫廷文化则转移到不列颠（见「罗曼正统错位」）。",
+        "key_traits": [
+          "罗曼语政治体的第一阶段",
+          "langue d'oïl 的政治母体",
+          "其文化后被不列颠承接"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S3"
+        ]
+      },
+      {
+        "id": "C_FRANKISH_ROMANCE",
+        "name_zh": "法兰西罗曼王国",
+        "name_short": "法兰西罗曼",
+        "name_de": "Romanisch-fränkisches Königreich",
+        "name_en": "Romano-Frankish Kingdom",
+        "polity": "罗曼语君主国（卡佩王统）",
+        "dynasty": "卡佩（Kapetinger）",
+        "religion": "天主教",
+        "capital": "帕里斯",
+        "territory": "法兰西岛、香槟、勃艮第、诺曼底、阿基坦、朗格多克北部",
+        "language": "langue d'oïl（罗曼语）",
+        "founded": "987（卡佩家族即位）",
+        "time_span": "987 — 1270（卡佩直系绝嗣）",
+        "overview": "**大陆北部的罗曼语政治体**，本世界线中十字军东征的发动者，也是「法兰西」这一政治名称的最后载体。1270 年前后卡佩直系绝嗣后，它被哈布斯堡的法兰克所取代——此后大陆北部说日耳曼语，而它的语言与宫廷文化转入不列颠。",
+        "key_traits": [
+          "十字军东征的发动者",
+          "罗曼语政治体的最后阶段",
+          "1270 年卡佩绝嗣后终结",
+          "其文化转入不列颠"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1",
+          "S3"
+        ]
+      },
+      {
+        "id": "C_FRANKEN_REPUBLIC",
+        "name_zh": "法兰克共和国",
+        "name_short": "法兰克共和国",
+        "name_de": "Fränkische Republik",
+        "name_en": "Frankish Republic",
+        "polity": "共和政体（不完善；哈布斯堡贵族仍渗透政府与军队）",
+        "dynasty": null,
+        "religion": "天主教",
+        "capital": "帕里斯",
+        "territory": "原法兰克王领（法兰西岛、香槟、勃艮第、洛林、弗兰登等），不含南部奥克省",
+        "language": "法兰克语（Fränkisch）",
+        "founded": "1918（一战战败、哈布斯堡失去统治地位）",
+        "time_span": "1918 — 1945（二战中哈布斯堡复辟）",
+        "overview": "一战战败后，哈布斯堡失去对法兰克的实际统治，法兰克由君主国立宪政体转为共和国。但这一共和国是**不完善的**：哈布斯堡贵族仍然渗透政府与军队。1945 年二战中哈布斯堡复辟，此共和国时期结束。",
+        "key_traits": [
+          "不完善的共和国",
+          "哈布斯堡贵族仍渗透政府与军队",
+          "1945 年被复辟取代"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "id": "C_GERMAN_REPUBLIC",
+        "name_zh": "德意志共和国（1918—1945）",
+        "name_short": "德意志共和国",
+        "name_de": "Deutsche Republik",
+        "name_en": "German Republic",
+        "polity": "共和政体；1930 年代重建为统一联邦制民主共和国",
+        "dynasty": null,
+        "religion": "新教（阿尔卑斯福音派为主流）",
+        "capital": "维也纳",
+        "territory": "波西米亚、摩拉维亚、奥地利、施蒂利亚、卡林西亚、蒂罗尔、低地全境、北意大利及部分波兰地区（一战后被迫释放波兰地区）",
+        "language": "共同体德语",
+        "founded": "1918（德意志帝国瓦解，普热米斯尔王朝结束）",
+        "time_span": "1918 — 1945（二战中取消不平等条约、收复波兰，其后重建联邦政体）",
+        "overview": "一战战败后普热米斯尔王朝结束，德意志由帝国转为共和政体。它在两次大战之间**保住了学院、工厂、乐团与咖啡馆**，却没有保住国家的能力——直到二战中取消不平等条约、收复波兰，并最终重建为统一联邦制民主共和国。",
+        "key_traits": [
+          "普热米斯尔王朝结束后的共和政体",
+          "一战后的领土与军事限制",
+          "1930 年代重建为联邦制民主共和国"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "id": "C_IBERIA_3REP_FULL",
+        "name_zh": "伊比利亚第三共和国（1871—1940）",
+        "name_short": "伊比利亚第三共和国",
+        "name_de": "Dritte Iberische Republik",
+        "name_en": "Third Iberian Republic",
+        "polity": "共和政体；中央集权，但尚未形成后来的强总统制",
+        "dynasty": null,
+        "religion": "天主教（压制国内新教徒）",
+        "capital": "托莱多（推定）",
+        "territory": "伊比利亚半岛、北非西部、奥克地区",
+        "language": "伊比利亚-奥克语",
+        "founded": "1871（伊比利亚第二帝国被德意志帝国击败后成立）",
+        "time_span": "1871 — 1940（被法兰克与德意志击败）",
+        "overview": "伊比利亚第二帝国于 1871 年被新成立的德意志帝国击败后，伊比利亚转入第三共和国。它是本世界线中存续最久、出场最频繁的伊比利亚政权：一战中加入协约方（与英帝国、罗斯兀鲁思、美国同侧）对中欧作战；二战中再度站到协约国一侧，结果于 **1940 年被法兰克与德意志击败**，第三共和国就此终结。其在奥克地区的势力也在此期间被法兰克逐出。",
+        "key_traits": [
+          "1871 年第二帝国战败后成立",
+          "一战、二战均属协约方",
+          "1940 年被法兰克与德意志击败",
+          "奥克地区的伊比利亚势力在此期终结"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "id": "C_IBERIA_OCCUPIED",
+        "name_zh": "伊比利亚被占领与过渡期（1940—1945）",
+        "name_short": "伊比利亚过渡期",
+        "name_de": "Besetztes und Übergangs-Iberien",
+        "name_en": "Occupied and Transitional Iberia",
+        "polity": "战败后被占领并由过渡政权管理的时期",
+        "dynasty": null,
+        "religion": "天主教",
+        "capital": "托莱多（推定）",
+        "territory": "伊比利亚半岛、北非西部（1945 年失去奥克地区）",
+        "language": "伊比利亚-奥克语",
+        "founded": "1940（第三共和国被法兰克与德意志击败）",
+        "time_span": "1940 — 1945（战后建立第四共和国）",
+        "overview": "第三共和国于 1940 年战败后，伊比利亚进入被占领与过渡管理期，直至 1945 年二战结束。这五年是伊比利亚政治体制的断点：旧共和国的中央集权与殖民体系在此期间崩解，为战后高度议会化的第四共和国铺路。1945 年，胜利方（德意志等）推动伊比利亚民主化，第四共和国由此建立。",
+        "key_traits": [
+          "1940 年战败后的占领与过渡",
+          "旧共和体制的断点",
+          "1945 年由胜利方推动民主化"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S2"
+        ]
+      },
+      {
+        "id": "C_IBERIA_4REP",
+        "name_zh": "伊比利亚第四共和国（1945—1954）",
+        "name_short": "伊比利亚第四共和国",
+        "name_de": "Vierte Iberische Republik",
+        "name_en": "Fourth Iberian Republic",
+        "polity": "高度议会化的共和国；**总统权力受限**，实权在议会与内阁",
+        "dynasty": null,
+        "religion": "天主教；战后推动民主化与文化保护",
+        "capital": "托莱多（推定）",
+        "territory": "伊比利亚半岛、北非西部（已失去奥克地区）",
+        "language": "伊比利亚-奥克语",
+        "founded": "1945（二战结束，由胜利方推动民主化）",
+        "time_span": "1945 — 1954（因非洲殖民地危机覆灭）",
+        "overview": "战后由胜利方推动建立的议会制共和国，是伊比利亚政治史上**总统权力最弱**的阶段：国家高度议会化，总统权力受限。它面临的核心难题是**非洲殖民地危机**——北非西部在法律上属伊比利亚本土行政体系，但战后的民族主义浪潮使这一体制难以为继。1954 年前后危机爆发，第四共和国覆灭。",
+        "key_traits": [
+          "高度议会化",
+          "总统权力受限",
+          "1954 年前后非洲殖民地危机",
+          "危机导致共和国覆灭"
+        ],
+        "status": "已确定",
+        "src": [
+          "S2"
+        ]
+      },
+      {
+        "id": "C_IBERIA_5REP",
+        "name_zh": "伊比利亚第五共和国（1960— ）",
+        "name_short": "伊比利亚第五共和国",
+        "name_de": "Fünfte Iberische Republik",
+        "name_en": "Fifth Iberian Republic",
+        "polity": "**总统权力重新加强**的共和国；即现行伊比利亚共和国体制",
+        "dynasty": null,
+        "religion": "天主教（长期压制国内新教徒）",
+        "capital": "托莱多（推定）",
+        "territory": "伊比利亚半岛、北非西部（本土一体行政）",
+        "language": "伊比利亚-奥克语",
+        "founded": "1960",
+        "time_span": "1960 — 至今",
+        "overview": "第四共和国因非洲殖民地危机覆灭后，伊比利亚于 1960 年重建为第五共和国。与第四共和国相反，本期**总统权力重新加强**，中央集权传统回归，同时保留战后确立的民主化框架——这正是 S2 所概括的「国家可以很强，但权力必须民主化」。本词条即现行「伊比利亚共和国」的正式分期名称。",
+        "key_traits": [
+          "总统权力重新加强",
+          "「强国家 + 民主化」的体制",
+          "大区很大而少、省份承载传统地区",
+          "北非为本土一部分",
+          "六极之一"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "id": "C_IBERIA_2EMP_UNION",
+        "name_zh": "伊比利亚第二帝国",
+        "name_short": "第二帝国",
+        "name_de": "Zweites Iberisches Kaiserreich",
+        "name_en": "Second Iberian Empire",
+        "polity": "帝制政体（第二共和国之后）",
+        "dynasty": null,
+        "religion": "天主教",
+        "capital": "托莱多（推定）",
+        "territory": "伊比利亚半岛、北非西部、奥克地区；长臂管辖伸至南意大利那不勒斯与罗马",
+        "language": "伊比利亚-奥克语",
+        "founded": "19世纪中叶（第二共和国转为帝制）",
+        "time_span": "19世纪中叶 — 1871（被德意志帝国击败）",
+        "overview": "第二共和国之后的帝制阶段。它的势力范围一度覆盖那不勒斯与罗马，1871 年普热米斯尔攻入这两地并在罗马加冕，第二帝国同时被击败——**德意志帝国成立之日，即伊比利亚第二帝国终结之时**。",
+        "key_traits": [
+          "长臂管辖伸至南意大利",
+          "1871 年被德意志帝国击败",
+          "其终结与德意志帝国成立同年"
+        ],
+        "status": "已确定",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "C_PERSIA_BUDDHIST",
+        "name_zh": "西域-波斯（佛教波斯残余）",
+        "name_short": "西域-波斯",
+        "name_de": "Westland-Persien (buddhistisches Persien)",
+        "name_en": "Western-Persia (Buddhist Persia)",
+        "polity": "波斯遗民的佛教政权；据河中及以东，与西域佛教文明带连为一体",
+        "dynasty": null,
+        "religion": "佛教（兼存波斯传统宗教与摩尼教、祆教残余）",
+        "capital": "撒马尔罕（推定）",
+        "territory": "河中地区（阿姆河—锡尔河之间）、呼罗珊东部；东与西域佛教文明带相连",
+        "language": "波斯语（佛教与行政语域）；兼用西域诸语",
+        "founded": "波斯抵御伊斯兰入侵失败后，因内乱退守河中及以东（具体年份待定）",
+        "time_span": "8世纪后 — 至今",
+        "overview": "「波斯」概念在本世界线中被撕裂为两支之一。波斯曾抵御伊斯兰入侵，但最终因内乱而退守河中及以东地区，其遗民在此保持佛教，成为「西域-波斯」。它把河中地区纳入佛教文明圈，从而与东侧的西域佛教文明带连成一片，构成伊斯兰文明与东洲佛教世界之间的过渡地带。这正是用户裁定（P5）确立的结构。",
+        "key_traits": [
+          "「波斯」概念的另一半",
+          "据河中及以东，与西域佛教带连为一体",
+          "伊斯兰文明与西域佛教之间的过渡地带",
+          "波斯语高文化在佛教语境中延续"
+        ],
+        "status": "已确定",
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "id": "C_ARAB_KINGDOM",
+        "name_zh": "阿拉伯王国",
+        "name_short": "阿拉伯王国",
+        "name_de": "Arabisches Königreich",
+        "name_en": "Arab Kingdom",
+        "polity": "汉志与阿拉伯半岛的谢里夫王朝国家",
+        "dynasty": "哈希姆系（推定）",
+        "religion": "伊斯兰教（逊尼派）",
+        "capital": "麦加（推定）",
+        "territory": "汉志、阿拉伯半岛西部与内陆",
+        "language": "阿拉伯语",
+        "founded": null,
+        "time_span": null,
+        "overview": "20 世纪近东民族国家格局中的阿拉伯国家。由汉志的谢里夫政权升格而来，控制麦加、麦地那两圣地。其诞生背景是安纳托利亚突厥帝国在 20 世纪的多极格局中逐步失去对阿拉伯半岛的直接统治。",
+        "key_traits": null,
+        "status": "待定",
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "id": "C_SYRIAN_REPUBLIC",
+        "name_zh": "叙利亚共和国",
+        "name_short": "叙利亚共和国",
+        "name_de": "Syrische Republik",
+        "name_en": "Syrian Republic",
+        "polity": "议会制共和国",
+        "dynasty": null,
+        "religion": "伊斯兰教（逊尼派为主，多教派并存）",
+        "capital": "大马士革",
+        "territory": "黎凡特（叙利亚、巴勒斯坦、黎巴嫩沿海）",
+        "language": "阿拉伯语",
+        "founded": null,
+        "time_span": null,
+        "overview": "20 世纪近东民族国家格局中的叙利亚国家。是法兰克东方学传统在 20 世纪的直接接触对象。",
+        "key_traits": null,
+        "status": "待定",
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "id": "C_EGYPT_KINGDOM",
+        "name_zh": "埃及王国",
+        "name_short": "埃及王国",
+        "name_de": "Königreich Ägypten",
+        "name_en": "Kingdom of Egypt",
+        "polity": "君主立宪国",
+        "dynasty": null,
+        "religion": "伊斯兰教（逊尼派）；科普特教会并存",
+        "capital": "开罗",
+        "territory": "尼罗河流域、苏伊士地峡",
+        "language": "阿拉伯语",
+        "founded": null,
+        "time_span": null,
+        "overview": "20 世纪近东民族国家格局中的埃及国家，控制苏伊士地峡——东地中海与印度洋之间的关键通道。",
+        "key_traits": null,
+        "status": "待定",
+        "src": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "id": "C_IRAQ_KINGDOM",
+        "name_zh": "两河王国",
+        "name_short": "两河王国",
+        "name_de": "Königreich Mesopotamien",
+        "name_en": "Kingdom of Mesopotamia",
+        "polity": "君主立宪国",
+        "dynasty": null,
+        "religion": "伊斯兰教（逊尼派与什叶派并存）",
+        "capital": "巴格达",
+        "territory": "两河流域",
+        "language": "阿拉伯语",
+        "founded": null,
+        "time_span": null,
+        "overview": "20 世纪近东民族国家格局中的两河国家，以巴格达为都——阿拔斯哈里发国的故地。",
+        "key_traits": null,
+        "status": "待定",
+        "src": [
+          "S1"
+        ]
+      }
+    ]
+  },
+  "people": {
+    "table": "people",
+    "rows": [
+      {
+        "id": "PE_ALBERT_EINSTEIN",
+        "name_zh": "爱因斯坦",
+        "name_de": "Albert Einstein",
+        "name_en": "Albert Einstein",
+        "title": "物理学家",
+        "dynasty": null,
+        "dynasty_id": null,
+        "country": "美利坚合众国",
+        "birth": "文档未载",
+        "death": "文档未载",
+        "reign": null,
+        "positions": [
+          "一战后流散知识分子之代表"
+        ],
+        "deeds": [
+          "一战后迁往美国（“爱因斯坦式物理学家”）"
+        ],
+        "family": {},
+        "context": "S0“一战后的知识分子流散”一节以此类人物为代表。",
+        "appendix": false,
+        "status": "已确定",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "PE_ALBRECHT_II_SON_IN_LAW",
+        "name_zh": "阿尔布雷希特二世之女婿（法兰克贵族推举对象，文档未具名）",
+        "name_de": "Schwiegersohn Albrechts II. (ungenannt)",
+        "name_en": "Son-in-law of Albrecht II (unnamed)",
+        "title": "法兰克贵族推举的王位继承人（推定）",
+        "dynasty": null,
+        "dynasty_id": null,
+        "country": "法兰克立宪君主国",
+        "birth": "文档未载",
+        "death": "文档未载",
+        "reign": null,
+        "positions": [
+          "法兰克贵族推举对象"
+        ],
+        "deeds": [
+          "1356年法兰克贵族要求其继承法兰克王位，德意志选侯坚持选举德意志诸侯为皇帝；教皇介入后以《法兰克福宪章》的双轨制妥协解决"
+        ],
+        "family": {
+          "wife": "PE_ALBRECHT_II_DAUGHTER"
+        },
+        "context": "S0 只记身份未记姓名。",
+        "appendix": true,
+        "status": "已确定",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "PE_ALEXANDER_HUMBOLDT",
+        "name_zh": "亚历山大·冯·洪堡",
+        "name_de": "Alexander von Humboldt",
+        "name_en": "Alexander von Humboldt",
+        "title": "普鲁士博物学家、地理学家",
+        "dynasty": null,
+        "dynasty_id": null,
+        "country": "德意志联邦共和国",
+        "birth": "1769",
+        "death": "1859",
+        "reign": null,
+        "positions": [
+          "19世纪最著名的科学家之一"
+        ],
+        "deeds": [
+          "历史坐标：作为1828年柏林“自然研究者会议”与科学社交生活的中心人物在此参照"
+        ],
+        "family": {},
+        "context": "现实史人物，用于锚定19世纪中欧科学盛况。",
+        "appendix": true,
+        "status": "已确定",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "PE_ALFONS_X",
+        "name_zh": "阿方索十世",
+        "name_de": "Alfons X. von Kastilien",
+        "name_en": "Alfonso X of Castile",
+        "title": "卡斯蒂利亚国王",
+        "dynasty": null,
+        "dynasty_id": null,
+        "country": "西班牙-阿拉贡",
+        "birth": "1221",
+        "death": "1284",
+        "reign": "1252 — 1284",
+        "positions": [
+          "卡斯蒂利亚国王",
+          "神圣罗马帝国皇位候选人（推定）"
+        ],
+        "deeds": [
+          "推动卡斯蒂利亚在伊比利亚的扩张，是伊比利亚统一进程的早期阶段之一",
+          "主持编纂《七章法典》（Siete Partidas）与天文表，是伊比利亚罗曼语高文化的代表"
+        ],
+        "family": {},
+        "context": "伊比利亚统一进程早期的代表性君主。按世界线口径，其名采用德式转写（Alfons）。",
+        "appendix": false,
+        "status": "已确定",
+        "src": [
+          "S2"
+        ]
+      },
+      {
+        "id": "PE_BRITTANY_DUKE",
+        "name_zh": "布列塔尼公爵（1270年继承争夺者，文档未具名）",
+        "name_de": "Herzog der Bretagne (ungenannt)",
+        "name_en": "Duke of Brittany (unnamed)",
+        "title": "布列塔尼公爵",
+        "dynasty": null,
+        "dynasty_id": null,
+        "country": "法兰克立宪君主国",
+        "birth": "文档未载",
+        "death": "文档未载",
+        "reign": null,
+        "positions": [
+          "法兰克王位继承争夺者"
+        ],
+        "deeds": [
+          "1270年前后作为卡佩继承争夺者之一提出主张，未成功"
+        ],
+        "family": {},
+        "context": "S0 只记头衔未记姓名。",
+        "appendix": true,
+        "status": "已确定",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "PE_ISABELLA_VON_KASTILIEN",
+        "name_zh": "伊莎贝拉·冯·卡斯蒂利亚",
+        "name_de": "Isabella von Kastilien",
+        "name_en": "Isabella of Castile",
+        "title": "卡斯蒂利亚女王（推定）",
+        "dynasty": null,
+        "dynasty_id": null,
+        "country": "西班牙-阿拉贡",
+        "birth": "推定 1451年",
+        "death": "推定 1504年（本轮新增，可调整）",
+        "reign": "推定 1474 — 1504",
+        "positions": [
+          "卡斯蒂利亚女王",
+          "伊比利亚统一的推动者（推定）"
+        ],
+        "deeds": [
+          "与阿拉贡王权联合，完成伊比利亚半岛主要部分的统一（推定）",
+          "推动对半岛南部穆斯林政权的最后征服（推定）",
+          "其政策开启了伊比利亚南下北非驱逐穆斯林的进程（推定）"
+        ],
+        "family": {},
+        "context": "姓名按德语化处理（Isabella von Kastilien）。用途：为“西班牙-阿拉贡逐步统一伊比利亚”提供人物锚点。",
+        "appendix": false,
+        "status": "待定",
+        "src": [
+          "S2"
+        ]
+      },
+      {
+        "id": "PE_JEANNE_CHAMPAGNE",
+        "name_zh": "香槟女继承人让娜",
+        "name_de": "Jeanne von Champagne",
+        "name_en": "Jeanne of Champagne",
+        "title": "香槟女继承人",
+        "dynasty": null,
+        "dynasty_id": null,
+        "country": "法兰克立宪君主国",
+        "birth": "文档未载",
+        "death": "文档未载",
+        "reign": null,
+        "positions": [],
+        "deeds": [
+          "嫁给鲁道夫之子阿尔布雷希特，使哈布斯堡合法吞并香槟"
+        ],
+        "family": {
+          "husband": "PE_ALBRECHT_I"
+        },
+        "context": "文档仅一处提及。",
+        "appendix": false,
+        "status": "已确定",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "PE_JOHANNA_VON_ARKON",
+        "name_zh": "约翰娜·冯·阿尔孔",
+        "name_de": "Johanna von Arkon",
+        "name_en": "Johanna von Arkon",
+        "title": "法兰克抗伊比利亚民兵领袖（推定）",
+        "dynasty": null,
+        "dynasty_id": null,
+        "country": "法兰克立宪君主国",
+        "birth": "推定 1410年前后",
+        "death": "推定 1431年（本轮新增，可调整）",
+        "reign": null,
+        "positions": [
+          "民兵领袖",
+          "后为法兰克王家教会封圣对象（推定）"
+        ],
+        "deeds": [
+          "在伊比利亚（阿拉贡—奥克方向）压力最大的年代，率法兰克民兵解围奥尔伦（Orlen）",
+          "推动鲁道夫系之后的法兰克王权在香槟—卢瓦尔一线重新站稳",
+          "后被法兰克王家教会封圣，成为“天主教法兰克民族意识”的象征之一"
+        ],
+        "family": {},
+        "context": "以现实史的贞德为原型，按本世界线改造：法兰克为西部日耳曼政治体、天主教，其对手由英格兰改为伊比利亚—奥克方向的压力。姓名按德语化处理（Arkon ← Arc）。",
+        "appendix": false,
+        "status": "待定",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "PE_JOHN_CALVIN",
+        "name_zh": "加尔文",
+        "name_de": "Johannes Calvin",
+        "name_en": "John Calvin",
+        "title": "改革宗神学家",
+        "dynasty": null,
+        "dynasty_id": null,
+        "country": "瑞士永久联邦",
+        "birth": "文档未载",
+        "death": "文档未载",
+        "reign": null,
+        "positions": [
+          "日内瓦圣彼得大教堂与加尔文学院相关人物"
+        ],
+        "deeds": [
+          "加尔文宗传统（预定论、上帝主权、教会纪律、长老制）的代表"
+        ],
+        "family": {},
+        "context": "文档仅在地名/圣地条目中提及“日内瓦圣彼得大教堂与加尔文学院”。",
+        "appendix": false,
+        "status": "已确定",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "PE_KARDINAL_RICHELIEU",
+        "name_zh": "帝国首相黎塞留",
+        "name_de": "Reichskanzler Richelieu",
+        "name_en": "Imperial Chancellor Richelieu",
+        "title": "法兰克帝国首相 / 枢机（推定）",
+        "dynasty": null,
+        "dynasty_id": null,
+        "country": "法兰克立宪君主国",
+        "birth": "推定 1585年",
+        "death": "推定 1642年（本轮新增，可调整）",
+        "reign": null,
+        "positions": [
+          "法兰克帝国首相",
+          "枢机",
+          "帕里斯王家学院赞助人"
+        ],
+        "deeds": [
+          "在宗教战争后期主持法兰克战时财政与外交，支撑两线作战的僵局",
+          "确立“法兰克优先于帝国”的国务路线，为1871年法兰克与德意志王冠分离埋下长期伏笔",
+          "赞助帕里斯王家学院，推动法兰克东方学传统（对应 S1《法兰克与近东》）"
+        ],
+        "family": {},
+        "context": "以现实史的黎塞留为原型，按本世界线改造：法兰克为天主教哈布斯堡国家，其国务路线以“法兰克本位”对抗双王冠体制。姓名保留罗曼语姓氏并加德语头衔。",
+        "appendix": false,
+        "status": "待定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "id": "PE_K_PETERS",
+        "name_zh": "K. 彼得斯",
+        "name_de": "K. Peters",
+        "name_en": "K. Peters",
+        "title": "民族学博物馆馆长",
+        "dynasty": null,
+        "dynasty_id": null,
+        "country": "德意志联邦共和国",
+        "birth": "文档未载",
+        "death": "文档未载",
+        "reign": null,
+        "positions": [
+          "民族学博物馆馆长（相关文献作者）"
+        ],
+        "deeds": [
+          "作为《中欧与比较民族学：方法论批判》相关文献作者被引用"
+        ],
+        "family": {},
+        "context": "附录文献署名，非设定集正文人物。",
+        "appendix": true,
+        "status": "已确定",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "PE_MARTIN_LUTHER",
+        "name_zh": "马丁·路德",
+        "name_de": "Martin Luther",
+        "name_en": "Martin Luther",
+        "title": "宗教改革者",
+        "dynasty": null,
+        "dynasty_id": null,
+        "country": "德意志联邦共和国",
+        "birth": "文档未载",
+        "death": "文档未载",
+        "reign": null,
+        "positions": [
+          "维滕堡城堡教堂张贴九十五条论纲者；新教母教会相关人物"
+        ],
+        "deeds": [
+          "在维滕堡城堡教堂张贴九十五条论纲",
+          "1525年发表《反对杀人越货的农民暴徒》，支持北德意志路德宗诸侯镇压农民战争"
+        ],
+        "family": {},
+        "context": "文档将其作为现实史人物引用，未另设本世界线生平。",
+        "appendix": false,
+        "status": "已确定",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "PE_NORMANDY_DUKE",
+        "name_zh": "诺曼底公爵（1272年决战失败者，文档未具名）",
+        "name_de": "Herzog der Normandie (ungenannt)",
+        "name_en": "Duke of Normandy (unnamed)",
+        "title": "诺曼底公爵",
+        "dynasty": null,
+        "dynasty_id": null,
+        "country": "英格兰-诺曼底",
+        "birth": "文档未载",
+        "death": "文档未载",
+        "reign": null,
+        "positions": [
+          "诺曼底公爵",
+          "诺曼底-英格兰联军统帅（推定）"
+        ],
+        "deeds": [
+          "1272年在一次决战中被鲁道夫击败，诺曼底-英格兰联军失去法兰西岛与香槟，英格兰-诺曼底被逐出大陆"
+        ],
+        "family": {},
+        "context": "S0/S1 只记头衔未记姓名。",
+        "appendix": true,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "id": "PE_PHILIP_III_WIFE",
+        "name_zh": "腓力三世之妻（文档未具名）",
+        "name_de": "Gemahlin Philipps III. (ungenannt)",
+        "name_en": "Wife of Philip III (unnamed)",
+        "title": "王后（推定）",
+        "dynasty": null,
+        "dynasty_id": null,
+        "country": "法兰克立宪君主国",
+        "birth": "文档未载",
+        "death": "文档未载",
+        "reign": null,
+        "positions": [],
+        "deeds": [
+          "文档仅以“腓力三世早逝，其子腓力四世、查理、路易均夭折或仅有女嗣”记载其子嗣，未具其名"
+        ],
+        "family": {
+          "husband": "PE_PHILIP_III",
+          "sons": [
+            "PE_PHILIP_IV"
+          ]
+        },
+        "context": "S0 仅记其存在（作为三子的母亲），未具名。",
+        "appendix": true,
+        "status": "已确定",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "PE_REIMS_ARCHBISHOP",
+        "name_zh": "雷姆斯大主教（1272年为鲁道夫加冕者，文档未具名）",
+        "name_de": "Erzbischof von Reims (ungenannt)",
+        "name_en": "Archbishop of Reims (unnamed)",
+        "title": "雷姆斯大主教",
+        "dynasty": null,
+        "dynasty_id": null,
+        "country": "法兰克立宪君主国",
+        "birth": "文档未载",
+        "death": "文档未载",
+        "reign": null,
+        "positions": [
+          "雷姆斯大主教（法兰克国王的加冕主持者）"
+        ],
+        "deeds": [
+          "1272年在部分贵族见证下为鲁道夫加冕为“法兰克人的国王”"
+        ],
+        "family": {},
+        "context": "S0/S1 只记职务未记姓名。",
+        "appendix": true,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "id": "PE_SALADIN",
+        "name_zh": "萨拉丁",
+        "name_de": "Salah ad-Din",
+        "name_en": "Saladin",
+        "title": "阿尤布苏丹",
+        "dynasty": "阿尤布",
+        "dynasty_id": "D_AYYUBID",
+        "country": "阿尤布苏丹国（埃及—叙利亚）",
+        "birth": "1137",
+        "death": "1193",
+        "reign": "1171 — 1193",
+        "positions": [
+          "埃及与叙利亚苏丹",
+          "阿尤布王朝创立者"
+        ],
+        "deeds": [
+          "1171年推翻法蒂玛王朝，埃及转入逊尼派",
+          "统合埃及与叙利亚，成为十字军东征时期穆斯林一方的主要政治体",
+          "1187年收复耶路撒冷"
+        ],
+        "family": {},
+        "context": "法兰克东方学传统与军事传统的主要对位人物（库尔德裔）。",
+        "appendix": false,
+        "status": "已确定",
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "id": "PE_BURGUNDY_COUNT",
+        "name_zh": "勃艮第伯爵（鲁道夫之岳父，文档未具名）",
+        "name_de": "Graf von Burgund (ungenannt)",
+        "name_en": "Count of Burgundy (unnamed)",
+        "title": "勃艮第伯爵",
+        "dynasty": "勃艮第",
+        "dynasty_id": "D_BURGUNDY",
+        "country": "法兰克立宪君主国",
+        "birth": "文档未载",
+        "death": "文档未载",
+        "reign": null,
+        "positions": [
+          "勃艮第伯爵"
+        ],
+        "deeds": [
+          "其女嫁与鲁道夫，使鲁道夫掌握东部军事资源，成为其当选法兰克国王的重要资本"
+        ],
+        "family": {
+          "daughter": "PE_RUDOLF_WIFE"
+        },
+        "context": "S0/S1 只记身份未记姓名。",
+        "appendix": true,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "id": "PE_RUDOLF_WIFE",
+        "name_zh": "鲁道夫之妻（勃艮第伯爵之女）",
+        "name_de": "Rudolfs Gemahlin (Tochter des Grafen von Burgund)",
+        "name_en": "Rudolf's wife (daughter of the Count of Burgundy)",
+        "title": "勃艮第伯爵之女",
+        "dynasty": "勃艮第",
+        "dynasty_id": "D_BURGUNDY",
+        "country": "法兰克立宪君主国",
+        "birth": "文档未载",
+        "death": "文档未载",
+        "reign": null,
+        "positions": [],
+        "deeds": [
+          "其婚姻联系使鲁道夫掌握东部军事资源"
+        ],
+        "family": {
+          "father": "勃艮第伯爵（未具名）",
+          "husband": "PE_RUDOLF"
+        },
+        "context": "文档仅提及身份，未载姓名。",
+        "appendix": false,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "id": "PE_CAPET_SONS",
+        "name_zh": "查理、路易（腓力三世之子，文档未具名）",
+        "name_de": "Karl und Ludwig (Söhne Philipps III., ungenannt)",
+        "name_en": "Charles and Louis (sons of Philip III, unnamed)",
+        "title": "卡佩王裔",
+        "dynasty": "卡佩",
+        "dynasty_id": "D_CAPET",
+        "country": "法兰克立宪君主国",
+        "birth": "文档未载",
+        "death": "1270年前后（夭折或仅有女嗣）",
+        "reign": null,
+        "positions": [],
+        "deeds": [
+          "与腓力四世同为腓力三世之子；均夭折或仅有女嗣，不构成萨利克法下的继承可能，导致卡佩直系断绝"
+        ],
+        "family": {
+          "father": "PE_PHILIP_III",
+          "brothers": [
+            "PE_PHILIP_IV"
+          ]
+        },
+        "context": "S0 只记名字未记生卒；二人合并为一条以保持家族关系网完整。",
+        "appendix": true,
+        "status": "已确定",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "PE_LOUIS_IX",
+        "name_zh": "路易九世",
+        "name_de": "Ludwig IX.",
+        "name_en": "Louis IX",
+        "title": "法兰西国王（卡佩）",
+        "dynasty": "卡佩",
+        "dynasty_id": "D_CAPET",
+        "country": "法兰克立宪君主国",
+        "birth": "文档未载",
+        "death": "文档未载（1270年前后其裔连续死亡）",
+        "reign": null,
+        "positions": [
+          "法兰西国王"
+        ],
+        "deeds": [
+          "其1270年前后后裔连续死亡，是卡佩绝嗣链条的起点"
+        ],
+        "family": {
+          "descendants": "1270年前后连续死亡"
+        },
+        "context": "仅作为卡佩绝嗣的背景提及。",
+        "appendix": false,
+        "status": "已确定",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "PE_PHILIP_III",
+        "name_zh": "腓力三世",
+        "name_de": "Philipp III.",
+        "name_en": "Philip III",
+        "title": "法兰西国王（卡佩）",
+        "dynasty": "卡佩",
+        "dynasty_id": "D_CAPET",
+        "country": "法兰克立宪君主国",
+        "birth": "文档未载",
+        "death": "1270年前后（早逝）",
+        "reign": null,
+        "positions": [
+          "法兰西国王"
+        ],
+        "deeds": [
+          "早逝，其子腓力四世、查理、路易均夭折或仅有女嗣，导致萨利克法下卡佩直系断绝"
+        ],
+        "family": {
+          "father": "PE_LOUIS_IX",
+          "sons": [
+            "腓力四世（PE_PHILIP_IV）",
+            "查理（未具名）",
+            "路易（未具名）"
+          ]
+        },
+        "context": "卡佩绝嗣链条的中间环节。",
+        "appendix": false,
+        "status": "已确定",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "PE_PHILIP_IV",
+        "name_zh": "腓力四世",
+        "name_de": "Philipp IV.",
+        "name_en": "Philip IV",
+        "title": "卡佩王裔",
+        "dynasty": "卡佩",
+        "dynasty_id": "D_CAPET",
+        "country": "法兰克立宪君主国",
+        "birth": "文档未载",
+        "death": "1270年前后（夭折或仅有女嗣）",
+        "reign": null,
+        "positions": [],
+        "deeds": [
+          "夭折或仅有女嗣，不构成萨利克法下的继承可能"
+        ],
+        "family": {
+          "father": "PE_PHILIP_III"
+        },
+        "context": "卡佩绝嗣的直接当事人之一。",
+        "appendix": false,
+        "status": "已确定",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "PE_RUDOLF_MOTHER",
+        "name_zh": "鲁道夫之母（卡佩旁系公主）",
+        "name_de": "Rudolfs Mutter (kapetingische Nebenlinie)",
+        "name_en": "Rudolf's mother (Capetian cadet line)",
+        "title": "卡佩旁系公主",
+        "dynasty": "卡佩（旁系）",
+        "dynasty_id": "D_CAPET",
+        "country": "法兰克立宪君主国",
+        "birth": "文档未载",
+        "death": "文档未载",
+        "reign": null,
+        "positions": [],
+        "deeds": [
+          "其卡佩旁系血统构成鲁道夫继承法兰克王位的合法性依据之一"
+        ],
+        "family": {
+          "son": "PE_RUDOLF"
+        },
+        "context": "文档仅提及血统身份，未载姓名。",
+        "appendix": false,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "id": "PE_PHILIP_EVREUX",
+        "name_zh": "埃夫勒的腓力",
+        "name_de": "Philipp von Évreux",
+        "name_en": "Philip of Evreux",
+        "title": "卡佩继承争夺者",
+        "dynasty": "埃夫勒",
+        "dynasty_id": "D_EVREUX",
+        "country": "法兰克立宪君主国",
+        "birth": "文档未载",
+        "death": "文档未载",
+        "reign": null,
+        "positions": [
+          "法兰克王位继承争夺者"
+        ],
+        "deeds": [
+          "参与1270年前后的法兰克继承争夺"
+        ],
+        "family": {},
+        "context": "继承争夺者之一。",
+        "appendix": false,
+        "status": "已确定",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "PE_ALBRECHT_I",
+        "name_zh": "鲁道夫之子阿尔布雷希特",
+        "name_de": "Albrecht",
+        "name_en": "Albrecht",
+        "title": "哈布斯堡家族成员（具体头衔文档未载）",
+        "dynasty": "哈布斯堡",
+        "dynasty_id": "D_HABSBURG",
+        "country": "法兰克立宪君主国",
+        "birth": "文档未载",
+        "death": "文档未载",
+        "reign": null,
+        "positions": [],
+        "deeds": [
+          "迎娶香槟女继承人让娜，使哈布斯堡合法吞并香槟"
+        ],
+        "family": {
+          "father": "PE_RUDOLF",
+          "wife": "PE_JEANNE_CHAMPAGNE"
+        },
+        "context": "文档仅一处提及。注意与 PE_ALBRECHT_II 区分。",
+        "appendix": false,
+        "status": "已确定",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "PE_ALBRECHT_II",
+        "name_zh": "阿尔布雷希特二世",
+        "name_de": "Albrecht II.",
+        "name_en": "Albrecht II",
+        "title": "皇帝",
+        "dynasty": "哈布斯堡",
+        "dynasty_id": "D_HABSBURG",
+        "country": "法兰克立宪君主国",
+        "birth": "文档未载",
+        "death": "文档未载（1356年时已年老）",
+        "reign": "至1356年（年老无嗣，仅有一女）",
+        "positions": [
+          "神圣罗马帝国皇帝",
+          "法兰克国王"
+        ],
+        "deeds": [
+          "年老无嗣，仅有一女；法兰克贵族要求女婿继承法兰克王位，德意志选侯坚持选举德意志诸侯为皇帝",
+          "召集法兰克贵族、德意志选侯、教皇使节和瑞士联邦代表在法兰克福开会八个月，达成妥协",
+          "促成1356年《法兰克福宪章》（双重王冠不可分割、选举与继承双轨制、三重加冕、帝国议会与诸侯权利、宗教与教会、瑞士永久联邦、七位选侯）"
+        ],
+        "family": {
+          "daughter": "一女（未具名）",
+          "son_in_law": "女婿（未具名，法兰克贵族推举对象）"
+        },
+        "context": "其继承危机直接催生《法兰克福宪章》。",
+        "appendix": false,
+        "status": "已确定",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "PE_ALBRECHT_II_DAUGHTER",
+        "name_zh": "阿尔布雷希特二世之女（未具名）",
+        "name_de": "Tochter Albrechts II. (ungenannt)",
+        "name_en": "Daughter of Albrecht II (unnamed)",
+        "title": "皇帝独女",
+        "dynasty": "哈布斯堡",
+        "dynasty_id": "D_HABSBURG",
+        "country": "法兰克立宪君主国",
+        "birth": "文档未载",
+        "death": "文档未载",
+        "reign": null,
+        "positions": [],
+        "deeds": [
+          "因父皇年老无嗣而成为法兰克继承问题的焦点；法兰克贵族要求其女婿继承法兰克王位，德意志选侯坚持选举德意志诸侯为皇帝，最终以1356《法兰克福宪章》妥协解决"
+        ],
+        "family": {
+          "father": "PE_ALBRECHT_II",
+          "husband": "其婿（未具名，法兰克贵族推举对象）"
+        },
+        "context": "文档只写“仅有一女”，未载姓名。为保持家族关系网完整单列此条目，并明确标注“未具名”。",
+        "appendix": false,
+        "status": "已确定",
+        "src": [
+          "S0"
+        ]
+      },
+      {
+        "id": "PE_RUDOLF",
+        "name_zh": "哈布斯堡的鲁道夫",
+        "name_de": "Rudolf von Habsburg",
+        "name_en": "Rudolf of Habsburg",
+        "title": "法兰克人的国王（King of the Franks）",
+        "dynasty": "哈布斯堡",
+        "dynasty_id": "D_HABSBURG",
+        "country": "法兰克立宪君主国",
+        "birth": "文档未载",
+        "death": "文档未载",
+        "reign": "1272 — 文档未载",
+        "positions": [
+          "法兰克人的国王（1272年在雷姆斯由雷姆斯大主教加冕）",
+          "哈布斯堡伯爵"
+        ],
+        "deeds": [
+          "1270年前后卡佩绝嗣后成为最强有力的候选人之一",
+          "以“保卫法兰克不受金雀花奴役”为口号参选，承诺尊重贵族封建特权、教会自由和城市自治",
+          "带来阿尔萨斯与瑞士雇佣军",
+          "1272年在雷姆斯大主教主持下加冕为“法兰克人的国王”（教皇最初反对，后默认，但要求头衔为“法兰克人的国王”而非“法兰西国王”）",
+          "在一次决战中击败诺曼底公爵，夺取法兰西岛和香槟，定都帕里斯",
+          "其子阿尔布雷希特迎娶香槟女继承人让娜，使哈布斯堡合法吞并香槟"
+        ],
+        "family": {
+          "mother": "卡佩旁系公主（PE_RUDOLF_MOTHER）",
+          "wife": "勃艮第伯爵之女（PE_RUDOLF_WIFE）",
+          "son": "阿尔布雷希特（PE_ALBRECHT_I，妻为香槟女继承人让娜）"
+        },
+        "context": "宫廷语言、文书和军事组织明显德意志化；法兰克王权仍面临法语贵族、教会和南方奥克抵制。",
+        "appendix": false,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "id": "PE_IBERIA_KING_FOUNDER",
+        "name_zh": "伊比利亚王国开国君主（本轮新增，姓名待定）",
+        "name_de": "Gründerkönig von Iberien (Name offen)",
+        "name_en": "Founding King of Iberia (name pending)",
+        "title": "伊比利亚国王（推定）",
+        "dynasty": "伊比利亚王朝",
+        "dynasty_id": "D_IBERIA_DYNASTY",
+        "country": "伊比利亚王国",
+        "birth": "文档未载（本轮新增）",
+        "death": "文档未载（本轮新增）",
+        "reign": "推定 16世纪（伊比利亚统一完成后）",
+        "positions": [
+          "伊比利亚国王"
+        ],
+        "deeds": [
+          "宣布伊比利亚各基督教王国统一为伊比利亚王国（推定）",
+          "确立对北非西部的统治，开始长期基督教化与欧洲化进程（推定）"
+        ],
+        "family": {},
+        "context": "用户本轮补充“逐步统一伊比利亚，并南下北非驱逐穆斯林，建立伊比利亚王国”。此条目为该建国行为的占位人物，姓名与具体年份等待用户裁定。",
+        "appendix": false,
+        "status": "待定",
+        "src": [
+          "S2"
+        ]
+      },
+      {
+        "id": "PE_BAIBARS",
+        "name_zh": "拜巴尔斯",
+        "name_de": "Baibars",
+        "name_en": "Baibars",
+        "title": "马穆鲁克苏丹",
+        "dynasty": "马穆鲁克",
+        "dynasty_id": "D_MAMLUK",
+        "country": "马穆鲁克苏丹国（埃及—叙利亚）",
+        "birth": "1223年前后",
+        "death": "1277",
+        "reign": "1260 — 1277",
+        "positions": [
+          "马穆鲁克苏丹"
+        ],
+        "deeds": [
+          "1260年击败蒙古西征军，阻止蒙古—金帐体系向黎凡特与埃及扩张",
+          "巩固马穆鲁克在埃及与叙利亚的统治",
+          "在东地中海与红海贸易中确立马穆鲁克的中介地位"
+        ],
+        "family": {},
+        "context": "本世界线中蒙古文明遗产极为深厚（S4），因此马穆鲁克对蒙古的阻击具有世界史意义：它划出了蒙古—金帐体系的西侧界线。",
+        "appendix": false,
+        "status": "已确定",
+        "src": [
+          "S1",
+          "S4"
+        ]
+      },
+      {
+        "id": "PE_MOUNTFORT_I",
+        "name_zh": "蒙福尔一世",
+        "name_de": "Mountfort I.",
+        "name_en": "Mountfort I",
+        "title": "不列颠国王（蒙福尔王朝开国君主）",
+        "dynasty": "蒙福尔",
+        "dynasty_id": "D_MOUNTFORT",
+        "country": "不列颠联邦共和国",
+        "birth": "推定 1755 年",
+        "death": "推定 1823 年（本轮新增，可调整）",
+        "reign": "推定 1795 — 1823",
+        "positions": [
+          "不列颠国王"
+        ],
+        "deeds": [
+          "约1789—1815 政治动荡中，以「恢复秩序、对外抗击伊比利亚」为旗号上位",
+          "加入反伊比利亚同盟，绝对主义渡过革命浪潮",
+          "镇压曾短暂出现的共和派与议会派要求",
+          "以诺曼-罗曼式「王在国中即皇帝」的主权观重建权威"
+        ],
+        "family": {
+          "dynasty": "蒙福尔"
+        },
+        "context": "蒙福尔王朝开国君主。其家族源自法兰西贵族蒙福尔（Montfort，祖地帕里斯西侧），姓名的英语化拼写为 Mountfort。",
+        "appendix": false,
+        "status": "待定",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "id": "PE_MOUNTFORT_II",
+        "name_zh": "蒙福尔二世",
+        "name_de": "Mountfort II.",
+        "name_en": "Mountfort II",
+        "title": "不列颠国王",
+        "dynasty": "蒙福尔",
+        "dynasty_id": "D_MOUNTFORT",
+        "country": "不列颠联邦共和国",
+        "birth": "推定 1786 年",
+        "death": "推定 1851 年（本轮新增，可调整）",
+        "reign": "推定 1823 — 1851",
+        "positions": [
+          "不列颠国王"
+        ],
+        "deeds": [
+          "1815 年后的反革命时代中进一步加固绝对主义",
+          "1848 年大陆大德意志方案失败之际，镇压本土自由派，旧制度未动",
+          "维持宫廷古典主义与盎格鲁语歌剧的高文化"
+        ],
+        "family": {
+          "dynasty": "蒙福尔",
+          "predecessor": "PE_MOUNTFORT_I"
+        },
+        "context": "蒙福尔王朝第二代。承接 1815 年后的反革命时代。",
+        "appendix": false,
+        "status": "待定",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "id": "PE_MOUNTFORT_III",
+        "name_zh": "蒙福尔三世",
+        "name_de": "Mountfort III.",
+        "name_en": "Mountfort III",
+        "title": "不列颠国王",
+        "dynasty": "蒙福尔",
+        "dynasty_id": "D_MOUNTFORT",
+        "country": "不列颠联邦共和国",
+        "birth": "推定 1820 年",
+        "death": "推定 1893 年（本轮新增，可调整）",
+        "reign": "推定 1851 — 1893",
+        "positions": [
+          "不列颠国王"
+        ],
+        "deeds": [
+          "绝对主义鼎盛期：宫廷古典主义、沙龙、海外殖民",
+          "与伊比利亚、德意志争夺海权",
+          "维持「海洋帝国天命」作为绝对主义的意识形态燃料"
+        ],
+        "family": {
+          "dynasty": "蒙福尔",
+          "predecessor": "PE_MOUNTFORT_II"
+        },
+        "context": "蒙福尔王朝第三代，绝对主义鼎盛期的君主。",
+        "appendix": false,
+        "status": "待定",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "id": "PE_MOUNTFORT_IV",
+        "name_zh": "蒙福尔四世",
+        "name_de": "Mountfort IV.",
+        "name_en": "Mountfort IV",
+        "title": "不列颠国王",
+        "dynasty": "蒙福尔",
+        "dynasty_id": "D_MOUNTFORT",
+        "country": "不列颠联邦共和国",
+        "birth": "推定 1862 年",
+        "death": "推定 1943 年（本轮新增，可调整）",
+        "reign": "推定 1893 — 1943",
+        "positions": [
+          "不列颠国王",
+          "教会最高元首"
+        ],
+        "deeds": [
+          "1914—1918 一战中作为协约国成员获胜，战功增强王权合法性",
+          "战时经济扩大国家能力，胜利固化旧制度",
+          "战间期帝国鼎盛，绝对主义成为欧洲孤例",
+          "1939—1945 二战中作为协约国成员参战并战败"
+        ],
+        "family": {
+          "dynasty": "蒙福尔",
+          "predecessor": "PE_MOUNTFORT_III",
+          "successor": "PE_MOUNTFORT_V"
+        },
+        "context": "蒙福尔王朝第四代。经历了「一战获胜固化旧制度 → 二战战败」的完整转折。",
+        "appendix": false,
+        "status": "待定",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "id": "PE_MOUNTFORT_V",
+        "name_zh": "蒙福尔五世",
+        "name_de": "Mountfort V.",
+        "name_en": "Mountfort V",
+        "title": "不列颠末代国王",
+        "dynasty": "蒙福尔",
+        "dynasty_id": "D_MOUNTFORT",
+        "country": "不列颠联邦共和国",
+        "birth": "推定 1901 年",
+        "death": "推定 1968 年（本轮新增，可调整）",
+        "reign": "推定 1943 — 1945（王位于 1945 年废除）",
+        "positions": [
+          "不列颠国王（末代）"
+        ],
+        "deeds": [
+          "1943 年继承王位，两年后即逢二战战败",
+          "1945 年王权合法性崩溃，经制宪会议决议并辅以全民公决被正式废除王位",
+          "退位后不列颠进入 1945—1955 年的监督过渡期"
+        ],
+        "family": {
+          "dynasty": "蒙福尔",
+          "predecessor": "PE_MOUNTFORT_IV"
+        },
+        "context": "蒙福尔王朝末代君主，也是不列颠历史上最后一位国王。",
+        "appendix": false,
+        "status": "待定",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "id": "PE_OSMAN_I",
+        "name_zh": "奥斯曼一世",
+        "name_de": "Osman I.",
+        "name_en": "Osman I",
+        "title": "安纳托利亚突厥贝伊（推定）",
+        "dynasty": "安纳托利亚突厥王朝",
+        "dynasty_id": "D_OTTOMAN",
+        "country": "奥斯曼帝国（安纳托利亚突厥帝国）",
+        "birth": "1258年前后",
+        "death": "1326年前后",
+        "reign": "推定 1299 — 1326",
+        "positions": [
+          "安纳托利亚西北部贝伊",
+          "安纳托利亚突厥王朝的奠基者"
+        ],
+        "deeds": [
+          "在安纳托利亚西北部起家，为后来取代马穆鲁克、统合近东的突厥帝国奠基",
+          "其政权与基督教君士坦丁堡/海峡政治体长期对峙共处"
+        ],
+        "family": {},
+        "context": "本世界线中安纳托利亚是伊斯兰力量向欧洲方向的主要压力来源，而海峡则是“文明边界而非文明墙”。",
+        "appendix": false,
+        "status": "待定",
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "id": "PE_SCHAH_ISMAIL",
+        "name_zh": "沙阿伊斯玛仪",
+        "name_de": "Schah Ismail",
+        "name_en": "Shah Ismail",
+        "title": "波斯沙阿（推定）",
+        "dynasty": "波斯诸王朝",
+        "dynasty_id": "D_PERSIAN_LINE",
+        "country": "伊朗（伊斯兰什叶派波斯）",
+        "birth": "推定 1487年",
+        "death": "推定 1524年（本轮新增，可调整）",
+        "reign": "推定 1501 — 1524",
+        "positions": [
+          "波斯沙阿",
+          "什叶派国教的奠基者（推定）"
+        ],
+        "deeds": [
+          "统一伊朗高原，确立波斯作为伊斯兰世界第二极的地位",
+          "将什叶派确立为国教，使波斯与逊尼派的阿拉伯—安纳托利亚体系长期并立",
+          "其东界止于伊斯兰中亚西部，再东即西域佛教带——正对应 S1 所定的“伊斯兰文明东部边界”"
+        ],
+        "family": {},
+        "context": "以现实史的萨法维王朝开国者伊斯玛仪一世为原型。用途：为“波斯逐步形成什叶派国家传统”提供人物锚点。",
+        "appendix": false,
+        "status": "待定",
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "id": "PE_EDWARD_I",
+        "name_zh": "英格兰国王爱德华一世",
+        "name_de": "Eduard I.",
+        "name_en": "Edward I",
+        "title": "英格兰国王",
+        "dynasty": "金雀花",
+        "dynasty_id": "D_PLANTAGENET",
+        "country": "英格兰-诺曼底",
+        "birth": "文档未载",
+        "death": "文档未载",
+        "reign": "文档未载（1270年前后在位）",
+        "positions": [
+          "英格兰国王",
+          "法兰克王位继承争夺者"
+        ],
+        "deeds": [
+          "1270年前后作为卡佩继承争夺者之一提出主张",
+          "法国北方贵族不愿接受英格兰统治，但瓦卢瓦无力抵抗诺曼底-英格兰联军",
+          "最终败于鲁道夫，英格兰被逐出大陆（1272年分水岭）"
+        ],
+        "family": {
+          "dynasty": "金雀花"
+        },
+        "context": "金雀花王朝跨海帝国路线的顶点与转折点。S3称“爱德华一世即继承争夺者之一”。",
+        "appendix": false,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S3"
+        ]
+      },
+      {
+        "id": "PE_OTTOKAR_II",
+        "name_zh": "波希米亚国王奥托卡二世",
+        "name_de": "Ottokar II. Přemysl",
+        "name_en": "Ottokar II",
+        "title": "波希米亚国王 → 神圣罗马帝国皇帝",
+        "dynasty": "普热米斯尔",
+        "dynasty_id": "D_PREMISLID",
+        "country": "德意志联邦共和国",
+        "birth": "文档未载",
+        "death": "文档未载",
+        "reign": "1273 — 文档未载（约1290年前后在罗马加冕为皇帝）",
+        "positions": [
+          "波希米亚国王",
+          "神圣罗马帝国皇帝（约1290年前后于罗马加冕）"
+        ],
+        "deeds": [
+          "1273年德意志选侯无法再选鲁道夫后，成为最强势候选人",
+          "击败巴伐利亚、奥地利贵族等反对者",
+          "掌控波希米亚、奥地利、施蒂利亚",
+          "推行皇权加强政策",
+          "约1290年前后在罗马加冕为神圣罗马帝国皇帝"
+        ],
+        "family": {
+          "dynasty": "普热米斯尔"
+        },
+        "context": "与鲁道夫构成“东西双源”：哈布斯堡=西部法兰克文明，普热米斯尔=东部德意志文明。",
+        "appendix": false,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "id": "PE_ABD_AL_RAHMAN_III",
+        "name_zh": "阿卜杜勒·拉赫曼三世",
+        "name_de": "Abd ar-Rahman III.",
+        "name_en": "Abd al-Rahman III",
+        "title": "科尔多瓦哈里发",
+        "dynasty": "伍麦叶（西班牙支系）",
+        "dynasty_id": "D_UMAYYAD",
+        "country": "科尔多瓦哈里发国",
+        "birth": "891",
+        "death": "961",
+        "reign": "912 — 961（929年自立哈里发）",
+        "positions": [
+          "科尔多瓦埃米尔（912起）",
+          "科尔多瓦哈里发（929起）"
+        ],
+        "deeds": [
+          "929年自立为哈里发，与阿拔斯、法蒂玛三足鼎立",
+          "使科尔多瓦成为西欧最繁盛的城市与文化中心"
+        ],
+        "family": {},
+        "context": "安达卢斯穆斯林政权的最高点；其自立哈里发是伊斯兰世界三分格局的起点。",
+        "appendix": false,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S2"
+        ]
+      },
+      {
+        "id": "PE_CHARLES_VALOIS",
+        "name_zh": "瓦卢瓦的查理",
+        "name_de": "Karl von Valois",
+        "name_en": "Charles of Valois",
+        "title": "卡佩继承争夺者",
+        "dynasty": "瓦卢瓦",
+        "dynasty_id": "D_VALOIS",
+        "country": "法兰克立宪君主国",
+        "birth": "文档未载",
+        "death": "文档未载",
+        "reign": null,
+        "positions": [
+          "法兰克王位继承争夺者"
+        ],
+        "deeds": [
+          "参与1270年前后的法兰克继承争夺；瓦卢瓦无力抵抗诺曼底-英格兰联军，使鲁道夫得以入主"
+        ],
+        "family": {},
+        "context": "继承争夺失败方之一。",
+        "appendix": false,
+        "status": "已确定",
+        "src": [
+          "S0"
+        ]
+      }
+    ]
+  },
+  "wars": {
+    "table": "wars",
+    "rows": [
+      {
+        "id": "W_CRUSADES",
+        "name_zh": "十字军东征（11—13世纪）",
+        "name_de": "Kreuzzüge",
+        "name_en": "The Crusades",
+        "time": "11—13世纪",
+        "time_start": "1096",
+        "time_end": "1291",
+        "epoch": "11—13世纪：十字军东征",
+        "side_a": "法兰西罗曼王国—教皇国一方（1270 年前大陆北部的罗曼语政治体）",
+        "side_a_members": [
+          "法兰西罗曼王国（十字军发动者）",
+          "教皇国",
+          "北意大利天主教城市"
+        ],
+        "side_b": "黎凡特穆斯林政权",
+        "side_b_members": [
+          "法蒂玛哈里发国",
+          "阿尤布苏丹国",
+          "马穆鲁克苏丹国",
+          "叙利亚地区"
+        ],
+        "causes": [
+          "法兰克的天主教扩张动力",
+          "教皇国主导的远征号召",
+          "东地中海商路控制权"
+        ],
+        "phases": null,
+        "key_battles": [
+          "1187年萨拉丁收复耶路撒冷",
+          "1291年黎凡特沿岸最后据点失守"
+        ],
+        "result": "穆斯林一方最终保有黎凡特；法兰克在地中海东岸的军事存在终结",
+        "consequence": [
+          "十字军遗产由法兰西罗曼王国转入日耳曼的法兰克",
+          "法兰克由此承继地中海传统、北非与黎凡特传统影响、帕里斯东方学传统",
+          "法兰克成为“连接西欧、地中海、黎凡特与德意志世界的文明边界国家”",
+          "阿尤布与马穆鲁克在对抗中完成整合"
+        ],
+        "treaty": null,
+        "treaty_id": null,
+        "status": "已确定",
+        "src": [
+          "S1"
+        ]
+      },
+      {
+        "id": "W_MONGOL_EXPANSION",
+        "name_zh": "蒙古帝国扩张（1200—1300及以后）",
+        "name_de": "Mongolische Expansion",
+        "name_en": "Mongol Expansion",
+        "time": "1200 — 1300（及金帐汗国延续期）",
+        "time_start": "1200",
+        "time_end": "1300",
+        "epoch": "1200—1300：蒙古帝国",
+        "side_a": "蒙古帝国 / 金帐汗国",
+        "side_a_members": [
+          "蒙古诸部",
+          "突厥人口",
+          "东斯拉夫诸公国的宗主权体系"
+        ],
+        "side_b": "被征服诸政治体",
+        "side_b_members": [
+          "东斯拉夫诸公国",
+          "中亚诸政权",
+          "西亚诸政权"
+        ],
+        "causes": [
+          "蒙古帝国崛起"
+        ],
+        "phases": null,
+        "key_battles": [],
+        "result": "蒙古帝国成为连接中国佛教世界、蒙古-草原世界、西域佛教世界、伊斯兰中亚、伊朗-西亚的关键枢纽",
+        "consequence": [
+          "金帐汗国未伊斯兰化",
+          "蒙古帝国在欧亚大陆北部留下远比现实深厚的政治与文化遗产",
+          "文明遗产区从太平洋延伸到东欧森林地带",
+          "为罗斯兀鲁思的蒙古王朝化提供条件"
+        ],
+        "treaty": null,
+        "treaty_id": null,
+        "status": "已确定",
+        "src": [
+          "S1",
+          "S4"
+        ]
+      },
+      {
+        "id": "W_RECONQUISTA",
+        "name_zh": "收复失地运动与南下北非（8—16世纪）",
+        "name_de": "Reconquista und Vordringen nach Nordafrika",
+        "name_en": "Reconquista and the southward expansion into North Africa",
+        "time": "8—16世纪（决定性阶段1212—16世纪）",
+        "time_start": "1212",
+        "time_end": "1550",
+        "epoch": "8—16世纪：伊比利亚与马格里布",
+        "side_a": "伊比利亚基督教诸王国（后为伊比利亚王国）",
+        "side_a_members": [
+          "卡斯蒂利亚",
+          "阿拉贡",
+          "葡萄牙",
+          "纳瓦拉",
+          "奥克王国（早期）"
+        ],
+        "side_b": "伊比利亚与马格里的穆斯林政权",
+        "side_b_members": [
+          "诸泰法",
+          "穆拉比特",
+          "穆瓦希德",
+          "马格里布诸王朝"
+        ],
+        "causes": [
+          "伊比利亚各基督教王国的扩张",
+          "安达卢斯1031年后的政治碎片化",
+          "天主教共同身份的形成"
+        ],
+        "phases": null,
+        "key_battles": [
+          "1212年穆瓦希德在伊比利亚战败（收复失地运动的转折点）"
+        ],
+        "result": "伊比利亚各基督教王国完成半岛统一并南下北非驱逐穆斯林，建立伊比利亚王国；马格里布被长期统治、基督教化与欧洲化",
+        "consequence": [
+          "伊比利亚成为统一的中央集权君主国",
+          "北非西部成为伊比利亚本土一部分（无特殊宪制地位）",
+          "撒哈拉成为文明分界线：以北西部属欧洲、以东属亚洲",
+          "奥克王国被卷入伊比利亚的政治轨道"
+        ],
+        "treaty": null,
+        "treaty_id": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S2"
+        ]
+      },
+      {
+        "id": "W_FRANKISH_SUCCESSION",
+        "name_zh": "法兰克王位继承战争（1270-1272）",
+        "name_de": "Fränkischer Erbfolgekrieg",
+        "name_en": "Frankish War of Succession",
+        "time": "1270年前后 — 1272",
+        "time_start": "1270",
+        "time_end": "1272",
+        "epoch": "13世纪：双源发生",
+        "side_a": "哈布斯堡的鲁道夫阵营",
+        "side_a_members": [
+          "哈布斯堡",
+          "阿尔萨斯雇佣军",
+          "瑞士雇佣军",
+          "士瓦本骑士",
+          "法国北方部分贵族（有限）"
+        ],
+        "side_b": "诺曼底-英格兰联军",
+        "side_b_members": [
+          "诺曼底公爵",
+          "英格兰（金雀花）"
+        ],
+        "causes": null,
+        "phases": null,
+        "key_battles": [
+          "鲁道夫击败诺曼底公爵的决战（未具名，夺取法兰西岛和香槟）"
+        ],
+        "result": "鲁道夫获胜，被雷姆斯大主教加冕为“法兰克人的国王”，定都帕里斯，夺取法兰西岛和香槟；英格兰-诺曼底被逐出大陆",
+        "consequence": [
+          "两个日耳曼语政治体（哈布斯堡法兰克 / 普热米斯尔波西米亚-奥地利-南德意志）形成",
+          "英-法兰克竞争长期化",
+          "诺曼-法兰西精英退回不列颠，罗曼-法兰西宫廷文明输入英伦"
+        ],
+        "treaty": null,
+        "treaty_id": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1",
+          "S3"
+        ]
+      },
+      {
+        "id": "W_PEASANT_1524",
+        "name_zh": "农民战争（1524—1527）",
+        "name_de": "Bauernkrieg",
+        "name_en": "German Peasants' War",
+        "time": "1524 — 1527",
+        "time_start": "1524",
+        "time_end": "1527",
+        "epoch": "15—16世纪：宗教改革与农民战争",
+        "side_a": "农民起义者",
+        "side_a_members": [
+          "瑞士农民",
+          "阿尔萨斯农民",
+          "南德意志农民",
+          "莱茵兰农民",
+          "北德意志农民",
+          "波西米亚农民",
+          "北意大利农民"
+        ],
+        "side_b": "镇压方",
+        "side_b_members": [
+          "北德意志路德宗诸侯（联合镇压）",
+          "哈布斯堡法兰克总督",
+          "北意大利城市贵族"
+        ],
+        "causes": null,
+        "phases": null,
+        "key_battles": [],
+        "result": "北德意志路德宗诸侯强硬镇压（马丁·路德发表《反对杀人越货的农民暴徒》）；南德意志普热米斯尔和阿尔卑斯福音派采取较温和态度，部分要求被满足，农奴制部分地区废除；波西米亚胡斯派贵族利用战争削弱天主教贵族；北意大利农民起义被镇压，部分庄园制度被改革",
+        "consequence": [
+          "南德新教与北德新教最终发展成不同文化",
+          "农奴制部分地区废除、地方自治与教育权利部分实现",
+          "《十二条款》提出自由选举牧师、废除农奴制、恢复公地权利、降低赋税劳役、限制贵族司法权、宗教自由"
+        ],
+        "treaty": null,
+        "treaty_id": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "id": "W_RELIGION",
+        "name_zh": "宗教战争 / 三十年战争（1618—1648）",
+        "name_de": "Religionskrieg / Dreißigjähriger Krieg",
+        "name_en": "War of Religion / Thirty Years' War",
+        "time": "1618 — 1648",
+        "time_start": "1618",
+        "time_end": "1648",
+        "epoch": "17世纪：宗教战争与维也纳和约",
+        "side_a": "新教联盟（普热米斯尔领导）",
+        "side_a_members": [
+          "普热米斯尔家族（波西米亚、奥地利、巴伐利亚、施蒂利亚、蒂罗尔）",
+          "北德意志路德宗诸侯",
+          "低地加尔文宗城市",
+          "瑞士联邦",
+          "波西米亚胡斯派-路德宗贵族",
+          "丹麦-挪威",
+          "瑞典",
+          "伊比利亚第三共和国（外交支持）",
+          "西班牙-阿拉贡（后期）"
+        ],
+        "side_b": "天主教联盟（哈布斯堡领导）",
+        "side_b_members": [
+          "哈布斯堡皇帝",
+          "法兰克天主教贵族",
+          "北意大利天主教城市",
+          "西班牙-阿拉贡（初期）",
+          "教皇国"
+        ],
+        "causes": [
+          "《法兰克福条约》宗教模糊性",
+          "哈布斯堡皇帝中央集权",
+          "普热米斯尔扩张",
+          "伊比利亚介入",
+          "南德意志新教独立倾向"
+        ],
+        "phases": [
+          {
+            "name": "波西米亚阶段",
+            "time": "1618—1623",
+            "content": "波西米亚新教贵族反抗哈布斯堡，宣布独立；普热米斯尔支持；皇帝联合法兰克和西班牙镇压；波西米亚失败，战争蔓延"
+          },
+          {
+            "name": "丹麦-低地阶段",
+            "time": "1625—1629",
+            "content": "丹麦-挪威新教国王和低地加尔文宗城市介入；低地联合省宣布独立；皇帝联合法兰克镇压，低地城市凭海军和金融坚持抵抗"
+          },
+          {
+            "name": "瑞典-南德阶段",
+            "time": "1630—1635",
+            "content": "瑞典新教国王介入，与普热米斯尔结盟；南德意志新教军队在巴伐利亚和奥地利取得胜利，威胁法兰克东部边境；法兰克天主教贵族要求皇帝停战"
+          },
+          {
+            "name": "伊比利亚-法兰克阶段",
+            "time": "1635—1648",
+            "content": "伊比利亚第三共和国加入新教联盟，对法兰克和西班牙宣战；法兰克两线作战，战争僵局"
+          }
+        ],
+        "key_battles": [
+          "南德意志新教军队在巴伐利亚和奥地利取得胜利，威胁法兰克东部边境"
+        ],
+        "result": "战争僵局，以《维也纳和约》1648结束",
+        "consequence": [
+          "确认宗教条款，诸侯可自选信仰",
+          "低地联合省正式独立",
+          "瑞士联邦独立和永久中立确认",
+          "帝国进一步分权",
+          "德意志地区普遍新教，法兰克和北意大利官方天主教",
+          "政治边界 ≠ 宗教边界 ≠ 文化边界"
+        ],
+        "treaty": "《维也纳和约》1648",
+        "treaty_id": "T_VIENNA_1648",
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "id": "W_REV_IBERIA",
+        "name_zh": "伊比利亚大革命与反伊比利亚战争（1789—1815）",
+        "name_de": "Iberische Revolution und Gegenkrieg",
+        "name_en": "Iberian Revolution and Counter-Revolutionary War",
+        "time": "1789 — 1815",
+        "time_start": "1789",
+        "time_end": "1815",
+        "epoch": "18—19世纪：双王冠融合与伊比利亚大革命",
+        "side_a": "反伊比利亚同盟",
+        "side_a_members": [
+          "法兰克",
+          "普热米斯尔",
+          "英国",
+          "罗斯兀鲁思"
+        ],
+        "side_b": "伊比利亚革命帝国",
+        "side_b_members": [
+          "伊比利亚革命军"
+        ],
+        "causes": [
+          "1789年伊比利亚-奥克地区爆发大革命"
+        ],
+        "phases": null,
+        "key_battles": [
+          "革命军席卷南欧，占领奥克地区，攻入南意大利那不勒斯",
+          "第一帝国大革命远征罗斯兀鲁思最终失败"
+        ],
+        "result": "反伊比利亚同盟最终击败伊比利亚革命帝国；大革命略微平息；神圣罗马帝国被迫解散",
+        "consequence": [
+          "民族主义、立宪主义和共和主义深入人心",
+          "哈布斯堡法兰克和普热米斯尔被迫让出奥克和南意大利那不勒斯权力",
+          "伊比利亚成为奥克和地中海西部强国",
+          "英国金雀花倾覆、蒙福尔家族上位",
+          "1815年后反革命时代使不列颠绝对主义进一步加固"
+        ],
+        "treaty": null,
+        "treaty_id": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "id": "W_IMMOBI",
+        "name_zh": "不列颠镇压本土自由派（1848）",
+        "name_de": "Unterdrückung der britischen Liberalen 1848",
+        "name_en": "Suppression of British liberals (1848)",
+        "time": "1848",
+        "time_start": "1848",
+        "time_end": "1848",
+        "epoch": "19世纪：1848、1866、1871",
+        "side_a": "不列颠绝对君主国",
+        "side_a_members": [
+          "王室",
+          "宫廷-官僚集团"
+        ],
+        "side_b": "不列颠本土自由派",
+        "side_b_members": [
+          "本土自由派"
+        ],
+        "causes": [
+          "大陆大德意志方案失败的同一年，革命浪潮波及不列颠"
+        ],
+        "phases": null,
+        "key_battles": [],
+        "result": "镇压成功，旧制度未动",
+        "consequence": [
+          "不列颠绝对主义延续至1945"
+        ],
+        "treaty": null,
+        "treaty_id": null,
+        "status": "已确定",
+        "src": [
+          "S3"
+        ]
+      },
+      {
+        "id": "W_1866",
+        "name_zh": "1866年奥法战争",
+        "name_de": "Deutsch-Französischer Krieg 1866",
+        "name_en": "Austro-Frankish War of 1866",
+        "time": "1866",
+        "time_start": "1866",
+        "time_end": "1866",
+        "epoch": "19世纪：1848、1866、1871",
+        "side_a": "德意志波西米亚-奥地利公国（普热米斯尔家族）",
+        "side_a_members": [
+          "普热米斯尔",
+          "德意志诸邦"
+        ],
+        "side_b": "哈布斯堡法兰克",
+        "side_b_members": [
+          "哈布斯堡法兰克"
+        ],
+        "causes": [
+          "德意志波西米亚-奥地利公国在几十年间推进小德意志统一方案"
+        ],
+        "phases": null,
+        "key_battles": [],
+        "result": "普热米斯尔击败法兰克，夺取北意大利",
+        "consequence": [
+          "法兰克被排除出德意志统一进程",
+          "北意大利从哈布斯堡法兰克转归普热米斯尔",
+          "普热米斯尔成为德意志诸邦中无可争议的领导者",
+          "小德意志方案正式确立：现实意义上的德意志、低地、北意大利，排除法兰克核心区",
+          "这是整个世界线的第二个决定性转折点"
+        ],
+        "treaty": null,
+        "treaty_id": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1"
+        ]
+      },
+      {
+        "id": "W_WW1",
+        "name_zh": "第一次世界大战（1914—1918）",
+        "name_de": "Erster Weltkrieg",
+        "name_en": "World War I",
+        "time": "1914 — 1918",
+        "time_start": "1914",
+        "time_end": "1918",
+        "epoch": "20世纪：一战、二战与战后秩序",
+        "side_a": "中欧同盟",
+        "side_a_members": [
+          "奥地利德意志（普热米斯尔）",
+          "法兰克（哈布斯堡）"
+        ],
+        "side_b": "协约方",
+        "side_b_members": [
+          "伊比利亚第三共和国",
+          "英帝国",
+          "罗斯兀鲁思",
+          "美国"
+        ],
+        "causes": [
+          "一战前同盟格局：中欧同盟 vs 伊比利亚第三共和国、英帝国、罗斯兀鲁思、美国"
+        ],
+        "phases": null,
+        "key_battles": [],
+        "result": "中欧战败，双方两败俱伤；奥地利德意志受更严厉处罚",
+        "consequence": [
+          "奥地利德意志被迫释放占领的波兰地区，北意大利设非军事区，的里雅斯特国际共管",
+          "奥地利德意志君主政体瓦解，建立维也纳德意志共和国，重新划分国内疆界",
+          "法兰克哈布斯堡失去统治地位，建立不完善的法兰克共和国，哈布斯堡贵族仍渗透政府和军队",
+          "罗斯兀鲁思曾以军事手段重新夺取基辅、白罗斯等地区",
+          "不列颠作为协约国成员获胜，胜利固化旧制度（战功增强王权合法性，战时经济扩大国家能力）",
+          "一战不是世界线失败点，而是韧性测试"
+        ],
+        "treaty": "战后不平等条约（德意志共和国二战后取消）",
+        "treaty_id": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "id": "W_WW2",
+        "name_zh": "第二次世界大战（1939—1945）",
+        "name_de": "Zweiter Weltkrieg",
+        "name_en": "World War II",
+        "time": "1939 — 1945",
+        "time_start": "1939",
+        "time_end": "1945",
+        "epoch": "20世纪：一战、二战与战后秩序",
+        "side_a": "中欧协定",
+        "side_a_members": [
+          "维也纳德意志共和国",
+          "法兰克共和国",
+          "低地志愿军团（后期）"
+        ],
+        "side_b": "协约国集团",
+        "side_b_members": [
+          "伊比利亚第三共和国",
+          "英帝国",
+          "罗斯兀鲁思",
+          "美国",
+          "波兰流亡政府"
+        ],
+        "causes": [
+          "不存在现实历史中的意识形态世界大战；主要冲突是德意志共和国+法兰克对抗伊比利亚、英国、罗斯兀鲁思、美国等"
+        ],
+        "phases": null,
+        "key_battles": [],
+        "result": "中欧协定惨胜；亚洲战场论外，本阶段不参与讨论",
+        "consequence": [
+          "德意志共和国取消所有不平等条约，收复波兰，将西斯拉夫人赶去乌克兰-罗斯兀鲁思，建立统一联邦制民主共和国",
+          "法兰克哈布斯堡重新统治，建立法兰克君主立宪共和国，统治奥克以外法兰克地区",
+          "低地与北意大利重新并入德意志，法兰克恢复对勃艮第、洛林控制，未占领奥克",
+          "不列颠战败，王权合法性崩溃，被监督强制民主化",
+          "伊比利亚PNI战后被拆解，PSI成为第一大党",
+          "基辅王国与白罗斯脱离莫斯科国；战后国际秩序承认基辅王国与罗斯兀鲁思是两个不同主权国家",
+          "战后无冷战，多极均势"
+        ],
+        "treaty": "中欧协定框架（非正式条约名）",
+        "treaty_id": null,
+        "status": "已确定",
+        "src": [
+          "S0",
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ]
+      }
+    ]
+  }
+}

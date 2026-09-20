@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>设定集索引（文本版） · 泛德意志的欧洲</title>
+<style>
+:root{
+  --bg:#14110d; --fg:#e8e2d4; --dim:#a89e8a; --accent:#c9a227; --line:#3a332a;
+  --card:#1d1913; --card2:#231e17; --link:#d8b64a; --ok:#7fa650; --warn:#d0913c; --bad:#c25b45;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+     font-family:"Segoe UI","Microsoft YaHei",system-ui,sans-serif;line-height:1.7}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+header{position:sticky;top:0;z-index:20;background:rgba(20,17,13,.97);
+       border-bottom:1px solid var(--line);backdrop-filter:blur(6px);padding:12px 20px}
+.hdr{max-width:1180px;margin:0 auto}
+h1{margin:0;font-size:19px;letter-spacing:.03em}
+h1 .sub{color:var(--dim);font-size:12px;font-weight:400;margin-left:10px;letter-spacing:0}
+nav.crumbs{font-size:12px;color:var(--dim);margin-top:5px}
+nav.crumbs a{color:var(--dim)}
+nav.crumbs a:hover{color:var(--link)}
+main{max-width:1180px;margin:0 auto;padding:18px 20px 70px}
+h2{font-size:17px;border-bottom:1px solid var(--line);padding-bottom:6px;margin:28px 0 12px}
+h3{font-size:15px;margin:20px 0 8px}
+h4{font-size:13.5px;margin:14px 0 6px;color:#cfc6b2}
+p{margin:8px 0}
+ul,ol{margin:8px 0;padding-left:22px}
+li{margin:3px 0}
+code,.mono{font-family:Consolas,"Cascadia Mono",monospace;font-size:12.5px}
+code{background:#0e0c09;border:1px solid var(--line);border-radius:4px;padding:1px 5px;color:var(--accent)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:14px 17px;margin:12px 0}
+.grid{display:grid;gap:10px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+table{border-collapse:collapse;width:100%;font-size:13px;margin:10px 0}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}
+th{background:#0e0c09;color:#cfc6b2;font-weight:600;white-space:nowrap}
+tr:nth-child(even) td{background:#191510}
+.tag{display:inline-block;font-size:11px;padding:1px 8px;border-radius:20px;
+     border:1px solid var(--line);background:#0e0c09;color:var(--dim);margin:1px 3px 1px 0}
+.tag.ok{color:var(--ok);border-color:#3d4d28}
+.tag.warn{color:var(--warn);border-color:#4d3d22}
+.tag.bad{color:var(--bad);border-color:#4d2a22}
+.tag.s5{color:#8fb6d8;border-color:#2a3d4d;background:#0e1419}
+.tag.sstar{color:#c9a2d8;border-color:#432a4d;background:#180e19}
+/* 文献页 */
+.doc{background:#f6f0e2;color:#241d12;border-radius:10px;padding:30px 38px;margin:16px 0;
+     border:1px solid #c9b98f;box-shadow:0 3px 20px #0006;line-height:1.95;
+     font-family:Georgia,"Times New Roman","Songti SC","SimSun",serif;max-width:820px}
+.doc h3{font-size:21px;margin:0 0 4px;color:#3a2c15;letter-spacing:.02em;font-weight:700}
+.doc .dsub{font-size:12.5px;color:#6d5c3a;margin-bottom:14px;border-bottom:1px solid #d6c9a4;padding-bottom:10px}
+.doc h4{font-size:15px;margin:20px 0 6px;color:#5a4318;font-weight:700}
+.doc p{margin:10px 0}
+.doc ol,.doc ul{margin:10px 0 10px 4px;padding-left:24px}
+.doc li{margin:5px 0}
+.doc b{color:#3a2c15}
+/* 正文中的词条交叉引用标记：浅色下划线点线，不打断阅读，不参与链接嵌套 */
+.xr{border-bottom:1px dotted #a08a52;cursor:help}
+.doc .xr{border-bottom-color:#b09a62;color:#3f3016}
+.doc-preamble{font-style:italic;color:#6d5c3a;border-left:3px solid #c9b98f;padding-left:12px;margin-bottom:16px}
+.doc-seal{text-align:right;font-size:13px;color:#7a6841;font-style:italic;margin-top:22px;
+          border-top:1px solid #d6c9a4;padding-top:10px}
+.docmeta{display:grid;grid-template-columns:120px 1fr;gap:6px 14px;font-size:13.5px;margin:12px 0}
+.docmeta dt{color:var(--dim);font-size:12.5px}
+.docmeta dd{margin:0}
+.doclist li{margin:7px 0}
+.kindbadge{font-size:11.5px;padding:2px 9px;border-radius:20px;background:#2a2218;
+           border:1px solid #4a3d22;color:#d8b64a;margin-right:6px}
+.kv{display:grid;grid-template-columns:132px 1fr;gap:5px 12px;font-size:13.5px;margin:10px 0}
+.kv dt{color:var(--dim);font-size:12.5px}
+.kv dd{margin:0}
+.q{position:sticky;top:56px;z-index:15;background:var(--bg);padding:10px 0}
+input[type=search],input[type=text],select{
+  background:#0e0c09;border:1px solid var(--line);color:var(--fg);border-radius:7px;
+  padding:9px 12px;font-size:14px;font-family:inherit}
+input[type=search]{width:100%}
+input:focus,select:focus{outline:none;border-color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.chip{font-size:12px;padding:3px 10px;border-radius:20px;border:1px solid var(--line);
+      background:#0e0c09;color:var(--dim);cursor:pointer;user-select:none}
+.chip:hover{border-color:var(--accent);color:var(--fg)}
+.chip.on{background:var(--accent);color:#14110d;border-color:var(--accent);font-weight:600}
+.item{border:1px solid var(--line);border-radius:9px;background:var(--card);padding:11px 14px;margin-bottom:9px}
+.item h3{margin:0 0 4px;font-size:15px}
+.item .meta{font-size:11.5px;color:var(--dim);margin-bottom:4px}
+.item .sm{font-size:13px;color:#d6cebc}
+mark{background:var(--accent);color:#14110d;border-radius:2px;padding:0 1px}
+.count{color:var(--dim);font-size:12px;margin:10px 0}
+.empty{color:var(--dim);padding:30px 0;text-align:center}
+.rid{font-family:Consolas,monospace;font-size:11px;color:var(--accent);
+     border:1px solid var(--line);border-radius:4px;padding:1px 5px;margin-left:7px}
+footer{max-width:1180px;margin:0 auto;padding:0 20px 40px;color:var(--dim);font-size:11.5px}
+.pill{display:inline-block;min-width:22px;text-align:center}
+.legend{font-size:12px;color:var(--dim)}
+/* 时间轴 */
+.tl-wrap{position:relative;margin:14px 0 0}
+.tl-axis{position:relative;height:34px;border-bottom:2px solid var(--line);margin-bottom:6px}
+.tl-tick{position:absolute;top:0;height:34px;width:1px;background:var(--line)}
+.tl-tick span{position:absolute;top:8px;left:4px;font-size:10.5px;color:var(--dim);white-space:nowrap}
+.tl-lane{position:relative;height:26px;margin:5px 0;background:#191510;border-radius:4px;
+         border:1px solid #2a251d}
+.tl-ev{position:absolute;top:3px;height:19px;border-radius:4px;cursor:pointer;
+       background:#4a3f22;border:1px solid var(--accent);overflow:hidden}
+.tl-ev:hover{background:var(--accent);z-index:6}
+.tl-ev span{font-size:10px;color:#f3ecd8;padding:0 4px;white-space:nowrap;line-height:19px}
+.tl-ev:hover span{color:#14110d}
+.tl-lane-label{position:absolute;left:0;top:3px;height:19px;line-height:19px;font-size:10.5px;
+               color:#a89e8a;transform:translateX(-100%);padding-right:9px;white-space:nowrap;
+               text-align:right;box-sizing:border-box;pointer-events:none}
+.tl-holder{padding-left:138px}
+#tip{position:fixed;z-index:50;max-width:380px;background:var(--card2);border:1px solid var(--accent);
+     border-radius:8px;padding:10px 13px;font-size:12.5px;display:none;box-shadow:0 6px 24px #000a}
+#tip h4{margin:0 0 4px;color:var(--accent);font-size:13.5px}
+.scrub{width:100%;margin:8px 0 4px}
+/* 主页 */
+.hero{padding:54px 20px 36px;text-align:center;
+      background:radial-gradient(ellipse at 50% -10%,#2c2418 0%,#14110d 64%);
+      border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(24px,4.4vw,36px);letter-spacing:.06em;margin:0 0 8px;font-weight:700}
+.hero h1 b{color:var(--accent)}
+.hero .tagline{color:#bdb4a1;font-size:14px;max-width:820px;margin:12px auto 0;line-height:1.9}
+.hero .realms{margin-top:22px;display:flex;gap:9px;justify-content:center;flex-wrap:wrap}
+.realm{font-size:12.5px;padding:5px 14px;border-radius:22px;border:1px solid var(--line);
+       background:#0e0c09;color:#cfc6b2}
+.realm i{font-style:normal;color:var(--accent);font-weight:600}
+.entries{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:24px 0}
+.entry{display:block;border:1px solid var(--line);border-radius:11px;background:var(--card);
+       padding:18px 20px;transition:transform .16s,border-color .16s,box-shadow .16s;
+       position:relative;overflow:hidden}
+.entry:hover{border-color:var(--accent);background:var(--card2);transform:translateY(-2px);
+             text-decoration:none;box-shadow:0 9px 28px #0007}
+.entry .ico{font-size:22px;margin-bottom:8px;display:block}
+.entry h3{margin:0 0 6px;font-size:16px;color:var(--fg)}
+.entry p{margin:0;font-size:12.5px;color:var(--dim);line-height:1.74}
+.entry .n{position:absolute;right:15px;top:14px;font-size:11px;color:var(--accent);
+          border:1px solid var(--line);border-radius:20px;padding:1px 9px;background:#0e0c09}
+.entry.wide{grid-column:span 2}
+@media(max-width:700px){.entry.wide{grid-column:span 1}}
+.stats{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));margin:18px 0}
+.stat{border:1px solid var(--line);border-radius:9px;background:#191510;padding:14px 10px;text-align:center}
+.stat b{display:block;font-size:23px;color:var(--accent);font-weight:700;line-height:1.3}
+.stat span{font-size:11.5px;color:var(--dim)}
+.quote{border-left:3px solid var(--accent);padding:3px 0 3px 17px;margin:22px 0;
+       color:#cfc6b2;font-size:13.5px;line-height:1.88}
+.quote cite{display:block;color:var(--dim);font-size:12px;font-style:normal;margin-top:7px}
+.twocol{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(318px,1fr))}
+.pill-row{display:flex;flex-wrap:wrap;gap:6px;margin:9px 0}
+a.pill{font-size:12px;padding:3px 11px;border-radius:20px;border:1px solid var(--line);
+       background:#0e0c09;color:#cfc6b2;display:inline-block}
+a.pill:hover{border-color:var(--accent);color:var(--fg);text-decoration:none}
+a.pill.gold{border-color:#5a4a22;color:var(--accent)}
+.tl-mini{position:relative;height:158px;margin:14px 0 4px;border:1px solid var(--line);
+         border-radius:9px;background:#191510;overflow:hidden}
+.tl-mini .dot{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--accent);
+              border:1px solid #0e0c09;transform:translate(-50%,-50%);cursor:pointer;
+              transition:width .14s,height .14s,box-shadow .14s}
+.tl-mini .dot:hover{width:15px;height:15px;box-shadow:0 0 0 3px #c9a22744}
+.tl-mini .dot.rel{background:#c25b45}
+.tl-mini .dot.cul{background:#7fa650}
+.tl-mini .dot.pol{background:#8fb6d8}
+.tl-mini .axl{position:absolute;bottom:6px;width:1px;height:8px;background:#3a332a}
+.tl-mini .axt{position:absolute;bottom:17px;font-size:9.5px;color:#6f6656;transform:translateX(-50%)}
+.tl-mini .lgd{position:absolute;right:9px;top:7px;font-size:10px;color:var(--dim)}
+/* 主页迷你时间轴：泳道 + 密度柱 + 锚点 */
+.tlmini-grid{position:absolute;left:0;right:0;top:0;bottom:26px;pointer-events:none}
+.tlmini-line{position:absolute;top:0;bottom:0;width:1px;background:#221e18}
+.tlmini-lane{position:relative;height:44px;background:#1c1813;border-bottom:1px solid #221e18}
+.tlmini-lane span{position:absolute;left:9px;top:6px;font-size:10.5px;color:#7d7462;
+                  letter-spacing:.04em;z-index:3;pointer-events:none}
+.tlmini-bars{position:absolute;left:0;right:0;top:0;bottom:26px;z-index:1}
+.tl-mini .bar{position:absolute;bottom:0;width:8px;border-radius:2px 2px 0 0;
+              opacity:.92;transition:opacity .14s,filter .14s}
+.tl-mini .bar:hover{opacity:1;filter:brightness(1.4)}
+.tl-mini .bar i{position:absolute;top:-13px;left:50%;transform:translateX(-50%);font-size:9px;
+                font-style:normal;color:#cfc6b2}
+.tl-mini .bar.rel{background:linear-gradient(#c25b45,#8e4033)}
+.tl-mini .bar.cul{background:linear-gradient(#7fa650,#5a7a38)}
+.tl-mini .bar.pol{background:linear-gradient(#8fb6d8,#5a7fa3)}
+.tlmini-anchor{position:absolute;bottom:0;height:100%;width:1px;background:#3a332a;
+               transform:translateX(-0.5px);pointer-events:none;z-index:2}
+.tlmini-anchor i{position:absolute;bottom:28px;left:-2px;width:5px;height:5px;border-radius:50%;
+                 background:#c9a227}
+.tlmini-anchor b{position:absolute;bottom:8px;left:0;transform:translateX(-50%);
+                 font-size:9.5px;font-weight:400;color:#8a8170;white-space:nowrap}
+.tlmini-foot{display:flex;justify-content:space-between;font-size:11.5px;color:var(--dim);
+             margin-top:7px}
+/* Hero 分叉图 */
+.fork{display:block;width:100%;max-width:900px;margin:28px auto 0;height:auto}
+.fork .fkl{fill:#c9a227;font-size:12px;font-weight:600}
+.fork .fkt{fill:#e2dbcb;font-size:12.5px}
+.fork .fks{fill:#8f8674;font-size:11px}
+.fork .fkm{fill:#8f8674;font-size:10.5px}
+/* Markdown 转换页 */
+.mdbody{font-size:13.5px;line-height:1.85}
+.mdbody h1{font-size:23px;margin:26px 0 12px;color:var(--accent);font-weight:700}
+.mdbody h2{font-size:18px;margin:30px 0 12px;border-bottom:1px solid var(--line);padding-bottom:7px}
+.mdbody h3{font-size:15.5px;margin:22px 0 9px;color:#e6dfcd}
+.mdbody h4{font-size:14px;margin:16px 0 7px;color:#cfc6b2}
+.mdbody p{margin:9px 0}
+.mdbody ul.mdul,.mdbody ol{margin:9px 0;padding-left:24px}
+.mdbody li{margin:4px 0}
+.mdbody code{background:#0e0c09;border:1px solid var(--line);border-radius:4px;
+             padding:1px 5px;color:var(--accent);font-size:12.5px}
+.mdbody a{color:var(--link)}
+.mdbody blockquote.mdq{border-left:3px solid var(--accent);background:#191510;
+                       margin:12px 0;padding:8px 15px;border-radius:0 7px 7px 0}
+.mdbody blockquote.mdq p{margin:5px 0;color:#cfc6b2}
+.mdbody hr.mdhr{border:none;border-top:1px solid var(--line);margin:26px 0}
+.mdbody .tw{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:8px}
+.mdbody table{margin:0;font-size:12.5px;border-collapse:collapse;width:100%}
+.mdbody th{position:sticky;top:0;background:#14110d;z-index:1}
+.mdbody td,.mdbody th{border:none;border-bottom:1px solid #241f19;border-right:1px solid #241f19;
+                      padding:6px 10px;vertical-align:top}
+.mdbody tr:last-child td{border-bottom:none}
+.mdbody tr:nth-child(even) td{background:#1a1611}
+.mdbody strong{color:#f0e9d8}
+/* 全局顶栏 */
+.topbar{position:sticky;top:0;z-index:30;background:rgba(16,13,10,.97);
+        border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+.topbar-in{max-width:1180px;margin:0 auto;padding:9px 20px;display:flex;align-items:center;
+           gap:14px;flex-wrap:nowrap;min-width:0}
+.brand{font-size:14.5px;font-weight:600;color:var(--accent);letter-spacing:.05em;
+       white-space:nowrap;flex-shrink:0}
+.brand:hover{text-decoration:none;color:#e0bc45}
+.gnav{display:flex;gap:4px;margin-left:auto;flex-shrink:0}
+.gnav-i{font-size:13px;color:var(--dim);padding:5px 12px;border-radius:7px;white-space:nowrap;
+        border:1px solid transparent}
+.gnav-i:hover{color:var(--fg);background:#211c16;text-decoration:none}
+.gnav-i.on{color:#14110d;background:var(--accent);border-color:var(--accent);font-weight:600}
+.gnav-t{display:none;background:#211c16;border:1px solid var(--line);color:var(--fg);
+        border-radius:7px;font-size:15px;padding:3px 10px;cursor:pointer}
+/* 左上角返回导航 */
+.backnav{display:flex;gap:6px;flex-shrink:0}
+.bkn{font-size:12.5px;color:#cfc6b2;background:#211c16;border:1px solid var(--line);
+     border-radius:7px;padding:5px 11px;white-space:nowrap;cursor:pointer;
+     font-family:inherit;line-height:1.35;transition:border-color .14s,color .14s,background .14s}
+.bkn:hover{border-color:var(--accent);color:var(--accent);background:#2a2218;text-decoration:none}
+/* 页脚署名 */
+.madeby{margin:30px 0 0;padding:22px 24px;text-align:center;border-radius:11px;
+        background:linear-gradient(135deg,rgba(201,162,39,.10),rgba(201,162,39,.03) 45%,transparent);
+        border:1px solid #3d3527;font-size:14px;color:#ddd5c3;letter-spacing:.04em}
+.madeby .mk{display:block;font-size:11.5px;color:var(--dim);letter-spacing:.22em;
+            text-transform:uppercase;margin-bottom:7px}
+.madeby b{color:var(--accent);font-weight:700;font-size:16px;letter-spacing:.06em;
+          padding:0 3px}
+.madeby .fl{display:block;margin-top:9px;font-size:11.5px;color:#7d7462;letter-spacing:.02em}
+.footmeta{font-size:11.5px;color:var(--dim);line-height:1.9;margin-top:20px;
+          padding-top:16px;border-top:1px solid var(--line)}
+.footmeta a{color:#a89e8a}
+.footmeta a:hover{color:var(--link)}
+@media(max-width:760px){
+  .backnav{order:3;width:100%}
+  .bkn{flex:1;text-align:center}
+}
+@media(max-width:760px){
+  .topbar-in{flex-wrap:wrap;gap:10px}
+  .gnav-t{display:block;margin-left:auto}
+  .gnav{display:none;width:100%;flex-direction:column;gap:2px}
+  .gnav.open{display:flex}
+  .gnav-i{padding:8px 12px}
+}
+</style>
+
+</head>
+<body>
+<div class="topbar"><div class="topbar-in"><div class="backnav"><a class="bkn" href="../home.html" title="回到主页">⌂ 回到主页</a><button class="bkn" id="bkPrev" type="button" title="返回上一页">← 返回上一页</button></div><a class="brand" href="../home.html">泛德意志的欧洲</a><nav class="gnav"><a class="gnav-i" href="../home.html">主页</a><a class="gnav-i" href="../index.html">索引</a><a class="gnav-i on" href="../wiki/index.html">文献</a><a class="gnav-i" href="../wiki/docs-index.html">文档</a><a class="gnav-i" href="../timeline.html">时间轴</a></nav><button class="gnav-t" id="gnavToggle" aria-label="切换导航">☰</button></div></div>
+
+<header><div class="hdr">
+<h1>🗂 设定集索引（文本版）<span class="sub">文档骨架 → 章节 → 实体 → 主题检索表</span></h1>
+<nav class="crumbs"><a href="../home.html">主页</a> ／ <a href="../index.html">索引</a> ／
+<a href="index.html">文档</a> ／ 对照表与索引</nav></div></header>
+<main>
+<div class="card">
+<span class="kindbadge">对照表与索引</span>
+本页由 <code>docs/index.md</code> 自动转换生成，
+数据源为 <code>tools/kb_data.py</code> 等设定数据层；源 Markdown 保留在 <code>docs/</code> 下。
+<div class="pill-row" style="margin-top:10px"><a class="chip" href="glossary.html">🔤 专有名词中英德对照表</a><a class="chip" href="transliteration.html">📍 地名转写表</a></div>
+</div>
+<div class="card"><div class="legend">本页目录</div><div class="pill-row"><a class="pill" href="#文档清单与章节骨架">文档清单与章节骨架</a><a class="pill" href="#实体索引-按类型">实体索引（按类型）</a><a class="pill" href="#主题检索表-关键词-条目">主题检索表（关键词 → 条目）</a><a class="pill" href="#出处代号">出处代号</a></div></div>
+<div class="mdbody">
+<h1 id="设定集索引">设定集索引</h1>
+<blockquote class="mdq">
+<p>用途：快速检索五份设定集文档中的任意主题。</p>
+<p>结构：文档骨架 → 章节索引 → 实体索引 → 待定/已确定/修正清单。</p>
+<p>交互式检索请打开 <code>docs/index.html</code>。</p>
+</blockquote>
+<h2 id="文档清单与章节骨架">文档清单与章节骨架</h2>
+<h3 id="S0-source-设定集-docx">S0　source/设定集.docx</h3>
+<ul class="mdul">
+<li>- <strong>标题</strong>：泛德意志世界设定总集（纯文本整合版）</li>
+<li>- <strong>职能</strong>：主干：总纲、时间纵轴、横轴指标、语言与地名系统、地图工程、修正与注意</li>
+</ul>
+<ul class="mdul">
+<li>- <strong>一、总纲</strong></li>
+<li>- 世界线总述：13世纪卡佩绝嗣→哈布斯堡入主法兰克→双日耳曼政治体→多极格局</li>
+<li>- <strong>二、时间纵轴</strong> → （一）13世纪：双源发生</li>
+<li>- 卡佩绝嗣、鲁道夫加冕、奥托卡二世、鲁道夫坐稳法兰克</li>
+<li>- <strong>二、时间纵轴</strong> → （二）14世纪：法兰克福条约与双元帝国</li>
+<li>- 哈布斯堡回归帝国、1356法兰克福宪章、双元格局</li>
+<li>- <strong>二、时间纵轴</strong> → （三）15—16世纪：宗教改革与农民战争</li>
+<li>- 普热米斯尔新教化、新教四大派别、南德新教文化、1524—1527农民战争</li>
+<li>- <strong>二、时间纵轴</strong> → （四）17世纪：宗教战争与维也纳和约</li>
+<li>- 起因、阵营、四阶段、1648维也纳和约十二条结果</li>
+<li>- <strong>二、时间纵轴</strong> → （五）18世纪：双王冠融合与伊比利亚大革命</li>
+<li>- 双王冠准融合、1789伊比利亚-奥克大革命、反伊比利亚战争</li>
+<li>- <strong>二、时间纵轴</strong> → （六）19世纪：1848、1866、1871</li>
+<li>- 1848大德意志失败、1866奥法战争、1871罗马加冕</li>
+<li>- <strong>二、时间纵轴</strong> → （七）20世纪：一战、二战与战后秩序</li>
+<li>- 第二次工业革命、一战、二战、两套行政区划</li>
+<li>- <strong>三、横轴指标</strong> → （一）政治与王朝</li>
+<li>- 哈布斯堡、普热米斯尔、瑞士、伊比利亚、英格兰-诺曼底、低地、汉萨</li>
+<li>- <strong>三、横轴指标</strong> → （二）宗教</li>
+<li>- 天主教、路德宗、加尔文宗、胡斯派、阿尔卑斯福音派</li>
+<li>- <strong>三、横轴指标</strong> → （三）语言与正字法</li>
+<li>- 四种语言、统一正字法、泛德意志认同层次</li>
+<li>- <strong>三、横轴指标</strong> → （四）经济与工业</li>
+<li>- 四大工业带、汉萨城市、法兰克经济、第二次工业革命</li>
+<li>- <strong>三、横轴指标</strong> → （五）学术与宗教圣地</li>
+<li>- 德意志/法兰克/瑞士学术圣地、宗教圣地</li>
+<li>- <strong>三、横轴指标</strong> → （六）民族与边缘问题</li>
+<li>- 奥克、克罗地亚-斯洛文尼亚、布列塔尼、波兰西部、北意大利、波西米亚、低地</li>
+<li>- <strong>三、横轴指标</strong> → （七）国际体系</li>
+<li>- 六极均势、泛德意志合作、殖民地、一战二战阵营</li>
+<li>- <strong>三、横轴指标</strong> → （八）人才分布</li>
+<li>- 中欧科学人才、法兰西人才分割、一战知识分子流散、美国定位</li>
+<li>- <strong>四、语言与地名系统</strong></li>
+<li>- 国名与民族、州名、首府、其他城市、河流与山脉、译名原则</li>
+<li>- <strong>五、地图工程</strong></li>
+<li>- 16×12基础矩阵、24张专题、核心必绘48张、统一风格</li>
+<li>- <strong>六、修正与注意</strong></li>
+<li>- 八条关键修正：法语人口、宗教格局、王朝归属、南德文化、美国定位、无冷战、民族构建、正字法</li>
+</ul>
+<h3 id="S1-source-设定集补充-docx">S1　source/设定集补充.docx</h3>
+<ul class="mdul">
+<li>- <strong>标题</strong>：泛德意志世界设定 · 本轮扩充整理稿</li>
+<li>- <strong>职能</strong>：总纲重述与理论核心；亚洲宗教史新扩展；六极文明定位；世界史母表</li>
+</ul>
+<ul class="mdul">
+<li>- <strong>一、世界观总纲</strong></li>
+<li>- 把现实史的“奥地利问题”转移为“法兰克问题”</li>
+<li>- <strong>二、纵轴：世界历史时间线</strong></li>
+<li>- 1270→1960逐节点整理，标注【原设定】【本轮确定】【待定】</li>
+<li>- <strong>二、纵轴</strong> → 亚洲宗教史：新的基本原则</li>
+<li>- 削弱伊斯兰教在亚洲中部东部的统治范围，重划伊斯兰文明东部边界</li>
+<li>- <strong>二、纵轴</strong> → 公元前后—8世纪 / 8—12世纪：西域佛教</li>
+<li>- 西域佛教传统强化、伊斯兰化止步于更西侧</li>
+<li>- <strong>二、纵轴</strong> → 1200—1300：蒙古帝国</li>
+<li>- 蒙古作为连接三大文明的枢纽</li>
+<li>- <strong>二、纵轴</strong> → 蒙古宗教结构</li>
+<li>- 长生天（王权合法性）+ 佛教（知识体系）+ 萨满（基层传统）三层结构</li>
+<li>- <strong>二、纵轴</strong> → 15—17世纪：蒙古佛教化</li>
+<li>- 佛教成为国家文化但未取代长生天与萨满</li>
+<li>- <strong>二、纵轴</strong> → 16—19世纪：俄罗斯进入亚洲</li>
+<li>- 俄罗斯面对草原蒙古、西伯利亚萨满、佛教西域的梯度</li>
+<li>- <strong>二、纵轴</strong> → 俄罗斯的新历史主题 / 中国的新历史角色</li>
+<li>- 欧亚双重身份；中国西向文明轴</li>
+<li>- <strong>二、纵轴</strong> → 1960年前后：新的亚洲文明地图</li>
+<li>- 区域文明/宗教对照表</li>
+<li>- <strong>二、纵轴</strong> → 君士坦丁堡问题</li>
+<li>- 【待进一步确定】保留基督教海峡政治体，海峡是文明边界而非文明墙</li>
+<li>- <strong>二、纵轴</strong> → 法兰克与近东</li>
+<li>- 法兰克东方学传统与文明边界国家定位</li>
+<li>- <strong>三、横轴：六大文明/政治力量</strong></li>
+<li>- 德意志=文明核心、法兰克=文明边界、伊比利亚=秩序挑战者、俄罗斯=欧亚平衡者、英国=海洋平衡者、美国=海外工业强国</li>
+<li>- <strong>四、文明结构</strong></li>
+<li>- 六极结构 + 两条亚洲文明轴</li>
+<li>- <strong>五、最终的纵横时间表</strong></li>
+<li>- 世界史母表：时间 × 德意志/法兰克、伊比利亚、俄罗斯、英国/美国、亚洲</li>
+<li>- <strong>六、最重要的一句话</strong></li>
+<li>- 历史实验：更大的德意志文明仍会输掉一战，但能避免被彻底重构</li>
+</ul>
+<h3 id="S2-source-设定集补充2-docx">S2　source/设定集补充2.docx</h3>
+<ul class="mdul">
+<li>- <strong>标题</strong>：五国行政·政党·大洲划分</li>
+<li>- <strong>职能</strong>：法兰克/德意志/伊比利亚/英国/美国行政与政党体系；四大洲文明划分；🟢🟡状态清单</li>
+</ul>
+<ul class="mdul">
+<li>- <strong>一、总览</strong></li>
+<li>- 四个层次：国家内部行政区划、中央—地方关系、政党政治、超国家/文明地理</li>
+<li>- <strong>二、法兰克：联邦化单一制</strong></li>
+<li>- 国家基本结构、中央与州权划分</li>
+<li>- <strong>三、法兰克行政区划</strong></li>
+<li>- 奥克省特殊建制最终走向废除</li>
+<li>- <strong>四、奥克省1975年前后被取消</strong></li>
+<li>- 奥克正常化政策</li>
+<li>- <strong>五、法兰克州的最终结构</strong></li>
+<li>- 原法兰克本土州 + 原奥克省地区；11 vs 12 数字矛盾</li>
+<li>- <strong>六、两个南方枢纽州</strong></li>
+<li>- 多菲内（格勒诺布尔）、普罗旺斯（马赛）</li>
+<li>- <strong>七—十、法兰克政治发展</strong></li>
+<li>- 否定王权专制→革命逻辑；最早的宪政君主制之一；宪政演化时间线；两个哈布斯堡必须严格区分</li>
+<li>- <strong>十一、法兰克政党政治</strong></li>
+<li>- FVP / FSP / FKP，两大党竞争+小党</li>
+<li>- <strong>十二—十六、德意志</strong></li>
+<li>- 真正的联邦制、联邦州列表、央地关系、多党制、政治文化</li>
+<li>- <strong>十七—二十三、伊比利亚</strong></li>
+<li>- 高度中央集权总统制、历史政治逻辑、大型大区、央地关系、少数民族政策、政党政治</li>
+<li>- <strong>二十四、英国</strong></li>
+<li>- 本阶段不要过度补设定（后由S3全部敲定）</li>
+<li>- <strong>二十五—二十八、美国</strong></li>
+<li>- 共和制进一步“左移”、政党政治、行政区划尚未重新设计</li>
+<li>- <strong>二十九、新增的“大洲划分”</strong></li>
+<li>- 四洲：欧洲、亚洲、新大洲（未命名）、非洲；撒哈拉的文明分界功能</li>
+<li>- <strong>三十、五国政治光谱</strong></li>
+<li>- 五种不同的民主政治模式 + 欧盟作为共同框架</li>
+<li>- <strong>三十一、状态标记</strong></li>
+<li>- 🟢基本敲定清单 / 🟡已提出但细节未定清单</li>
+</ul>
+<h3 id="S3-source-设定集补充3-docx">S3　source/设定集补充3.docx</h3>
+<ul class="mdul">
+<li>- <strong>标题</strong>：设定集3：英国线（盎格鲁-罗曼世界）</li>
+<li>- <strong>职能</strong>：英国完整设定；R1-R7 修订清单；法兰克-不列颠对偶表</li>
+</ul>
+<ul class="mdul">
+<li>- <strong>序：本册的任务</strong></li>
+<li>- 处理S2中列为未定的全部英国条目；核心命题：罗曼世俗高文化转移到不列颠</li>
+<li>- <strong>一、修订清单</strong></li>
+<li>- R1-R7 正式覆盖旧设定</li>
+<li>- <strong>二、核心命题与机制</strong></li>
+<li>- 法兰克问题/英格兰问题的一对镜像；罗曼文化流向英伦的三级因果；为什么是绝对主义而不是议会</li>
+<li>- <strong>三、语言：英语即罗曼化的日耳曼语</strong></li>
+<li>- 双言到合流的五阶段；罗曼化程度梯度</li>
+<li>- <strong>四、王朝：金雀花与蒙福尔</strong></li>
+<li>- 金雀花倾覆、蒙福尔上位、备选王朝名、王权法统</li>
+<li>- <strong>五、政治史年表</strong></li>
+<li>- 盎格鲁-撒克逊到1945转向</li>
+<li>- <strong>六、战前：不列颠王国</strong></li>
+<li>- 政体、中央机构、军政合一三级制、社会与文化</li>
+<li>- <strong>七、1945：战败与被监督的民主化</strong></li>
+<li>- 触发链条、核心特征、两项被强加的改造、过渡形态</li>
+<li>- <strong>八、战后：不列颠联邦共和国</strong></li>
+<li>- 政体与宪法、联邦化分权、政党政治、八个一级联邦单位</li>
+<li>- <strong>九、苏格兰与威尔士</strong></li>
+<li>- 无独立法统；特殊性是语言与文化的</li>
+<li>- <strong>十、爱尔兰</strong></li>
+<li>- 1945年全岛独立共和国，不分治</li>
+<li>- <strong>十一、英联邦与帝国遗产</strong></li>
+<li>- 海洋商业帝国、战后瓦解、语言文化商业共同体</li>
+<li>- <strong>十二、国际定位</strong></li>
+<li>- 海洋平衡者；与伊比利亚/法兰克/德意志的关系</li>
+<li>- <strong>十三、法兰克与不列颠对偶表</strong></li>
+<li>- 十个维度的对偶</li>
+<li>- <strong>十四、状态标记</strong></li>
+<li>- 已敲定 / 待定</li>
+<li>- <strong>十五、六国政治模式总表</strong></li>
+<li>- 德意志、法兰克、伊比利亚、美国、不列颠、瑞士</li>
+</ul>
+<h3 id="S4-source-设定集补充4-docx">S4　source/设定集补充4.docx</h3>
+<ul class="mdul">
+<li>- <strong>标题</strong>：罗斯兀鲁思：蒙古王朝与后基辅罗斯国家传统</li>
+<li>- <strong>职能</strong>：莫斯科国/基辅王国分流；金帐汗国继承线；欧亚文明梯度</li>
+</ul>
+<ul class="mdul">
+<li>- <strong>七、罗斯兀鲁思：蒙古王朝与后基辅罗斯国家传统</strong> → 一、问题的核心</li>
+<li>- 基辅罗斯→莫斯科公国→俄罗斯帝国链条被彻底改变</li>
+<li>- <strong>七、罗斯兀鲁思</strong> → 二、蒙古对东斯拉夫世界的统治更加深入</li>
+<li>- 金帐汗国未迅速伊斯兰化；不只是“占领者”</li>
+<li>- <strong>七、罗斯兀鲁思</strong> → 三、莫斯科王朝的蒙古化</li>
+<li>- 反向融合：不是莫斯科摆脱蒙古，而是成为蒙古政治体系的继承者</li>
+<li>- <strong>七、罗斯兀鲁思</strong> → 四、蒙古王朝最终直接统治莫斯科</li>
+<li>- 联姻、继承、军事合作、贵族融合</li>
+<li>- <strong>七、罗斯兀鲁思</strong> → 五、“金帐汗国灭亡”≠蒙古传统灭亡</li>
+<li>- 国家灭亡 ≠ 文明传统消失</li>
+<li>- <strong>七、罗斯兀鲁思</strong> → 六、国家正统发生变化</li>
+<li>- 古罗斯诸国→蒙古征服→金帐秩序→罗斯兀鲁思</li>
+<li>- <strong>七、罗斯兀鲁思</strong> → 七、莫斯科国的文化结构</li>
+<li>- 东斯拉夫 + 蒙古 + 突厥 + 佛教/萨满 四层</li>
+<li>- <strong>七、罗斯兀鲁思</strong> → 八、与基辅王国的分道扬镳</li>
+<li>- 欧洲道路 vs 蒙古-北亚道路</li>
+<li>- <strong>七、罗斯兀鲁思</strong> → 九、一战：重新夺取基辅王国</li>
+<li>- 试图恢复旧时代的东欧大陆体系</li>
+<li>- <strong>七、罗斯兀鲁思</strong> → 十、二战后基辅王国再次脱离</li>
+<li>- 两次统一、两次分离的历史记忆</li>
+<li>- <strong>七、罗斯兀鲁思</strong> → 十一、白罗斯的地位</li>
+<li>- 缓冲国家；合理方案为与基辅王国组成联邦</li>
+<li>- <strong>七、罗斯兀鲁思</strong> → 十二、与欧洲的关系</li>
+<li>- 罗斯兀鲁思是亚洲北部国家；基辅王国属欧洲东部</li>
+<li>- <strong>七、罗斯兀鲁思</strong> → 十三、与蒙古帝国的关系</li>
+<li>- “蒙古帝国是我们的帝国时代之一”</li>
+<li>- <strong>七、罗斯兀鲁思</strong> → 十四—十五、蒙古文明圈的西向影响 / 欧亚文明梯度</li>
+<li>- 从太平洋延伸到东欧森林地带</li>
+<li>- <strong>七、罗斯兀鲁思</strong> → 十六、最重要的结果</li>
+<li>- 后基辅罗斯国家的国家认同</li>
+</ul>
+<h2 id="实体索引-按类型">实体索引（按类型）</h2>
+<h3 id="COUNTRY-113">COUNTRY（113）</h3>
+<div class="tw"><table>
+<thead><tr><th>名称</th><th>ID</th><th>出处</th></tr></thead><tbody>
+<tr><td>法兰克立宪君主国</td><td><code>C_FRANKEN</code></td><td>S0</td></tr>
+<tr><td>法兰克立宪君主国</td><td><code>C_FRANKEN</code></td><td>S1</td></tr>
+<tr><td>法兰克立宪君主国</td><td><code>C_FRANKEN</code></td><td>S2</td></tr>
+<tr><td>法兰克立宪君主国</td><td><code>C_FRANKEN</code></td><td>S3</td></tr>
+<tr><td>德意志联邦共和国</td><td><code>C_DEUTSCHLAND</code></td><td>S0</td></tr>
+<tr><td>德意志联邦共和国</td><td><code>C_DEUTSCHLAND</code></td><td>S1</td></tr>
+<tr><td>德意志联邦共和国</td><td><code>C_DEUTSCHLAND</code></td><td>S2</td></tr>
+<tr><td>不列颠联邦共和国</td><td><code>C_UK</code></td><td>S0</td></tr>
+<tr><td>不列颠联邦共和国</td><td><code>C_UK</code></td><td>S1</td></tr>
+<tr><td>不列颠联邦共和国</td><td><code>C_UK</code></td><td>S2</td></tr>
+<tr><td>不列颠联邦共和国</td><td><code>C_UK</code></td><td>S3</td></tr>
+<tr><td>伊比利亚共和国（第五共和国后体制）</td><td><code>C_IBERIA</code></td><td>S0</td></tr>
+<tr><td>伊比利亚共和国（第五共和国后体制）</td><td><code>C_IBERIA</code></td><td>S1</td></tr>
+<tr><td>伊比利亚共和国（第五共和国后体制）</td><td><code>C_IBERIA</code></td><td>S2</td></tr>
+<tr><td>罗斯兀鲁思</td><td><code>C_ROS_UHLUS</code></td><td>S1</td></tr>
+<tr><td>罗斯兀鲁思</td><td><code>C_ROS_UHLUS</code></td><td>S4</td></tr>
+<tr><td>基辅王国</td><td><code>C_KIEV</code></td><td>S4</td></tr>
+<tr><td>白罗斯</td><td><code>C_WEISSRUSSLAND</code></td><td>S4</td></tr>
+<tr><td>瑞士永久联邦</td><td><code>C_SWITZERLAND</code></td><td>S0</td></tr>
+<tr><td>瑞士永久联邦</td><td><code>C_SWITZERLAND</code></td><td>S1</td></tr>
+<tr><td>瑞士永久联邦</td><td><code>C_SWITZERLAND</code></td><td>S3</td></tr>
+<tr><td>美利坚合众国</td><td><code>C_USA</code></td><td>S0</td></tr>
+<tr><td>美利坚合众国</td><td><code>C_USA</code></td><td>S1</td></tr>
+<tr><td>美利坚合众国</td><td><code>C_USA</code></td><td>S2</td></tr>
+<tr><td>丹麦-挪威</td><td><code>C_DENMARK_NORWAY</code></td><td>S0</td></tr>
+<tr><td>瑞典</td><td><code>C_SWEDEN</code></td><td>S0</td></tr>
+<tr><td>西班牙-阿拉贡</td><td><code>C_SPAIN_ARAGON</code></td><td>S0</td></tr>
+<tr><td>教皇国</td><td><code>C_PAPAL</code></td><td>S0</td></tr>
+<tr><td>低地联合省</td><td><code>C_LOWLANDS</code></td><td>S0</td></tr>
+<tr><td>低地联合省</td><td><code>C_LOWLANDS</code></td><td>S1</td></tr>
+<tr><td>英格兰-诺曼底</td><td><code>C_ENGLAND_NORMANDY</code></td><td>S0</td></tr>
+<tr><td>英格兰-诺曼底</td><td><code>C_ENGLAND_NORMANDY</code></td><td>S2</td></tr>
+<tr><td>英格兰-诺曼底</td><td><code>C_ENGLAND_NORMANDY</code></td><td>S3</td></tr>
+<tr><td>蒙古帝国</td><td><code>C_MONGOL_EMPIRE</code></td><td>S1</td></tr>
+<tr><td>蒙古帝国</td><td><code>C_MONGOL_EMPIRE</code></td><td>S4</td></tr>
+<tr><td>金帐汗国</td><td><code>C_GOLDEN_HORDE</code></td><td>S4</td></tr>
+<tr><td>中国</td><td><code>C_CHINA</code></td><td>S1</td></tr>
+<tr><td>中国</td><td><code>C_CHINA</code></td><td>S4</td></tr>
+<tr><td>君士坦丁堡（海峡政治体，通称拜占庭）</td><td><code>C_BYZANTIUM</code></td><td>S1</td></tr>
+<tr><td>君士坦丁堡（海峡政治体，通称拜占庭）</td><td><code>C_BYZANTIUM</code></td><td>S4</td></tr>
+<tr><td>东洲（新大洲，正式名称待定）</td><td><code>C_NEW_CONTINENT</code></td><td>S2</td></tr>
+<tr><td>东洲（新大洲，正式名称待定）</td><td><code>C_NEW_CONTINENT</code></td><td>S4</td></tr>
+<tr><td>欧洲（文明大洲）</td><td><code>C_EUROPE_CONTINENT</code></td><td>S2</td></tr>
+<tr><td>欧洲（文明大洲）</td><td><code>C_EUROPE_CONTINENT</code></td><td>S4</td></tr>
+<tr><td>亚洲（文明大洲）</td><td><code>C_ASIA_CONTINENT</code></td><td>S2</td></tr>
+<tr><td>亚洲（文明大洲）</td><td><code>C_ASIA_CONTINENT</code></td><td>S4</td></tr>
+<tr><td>非洲（文明大洲）</td><td><code>C_AFRICA_CONTINENT</code></td><td>S2</td></tr>
+<tr><td>西亚伊斯兰文明空间</td><td><code>C_ASIA_ISLAMIC</code></td><td>S1</td></tr>
+<tr><td>西域佛教文明带</td><td><code>C_WESTERN_REGIONS</code></td><td>S1</td></tr>
+<tr><td>西域佛教文明带</td><td><code>C_WESTERN_REGIONS</code></td><td>S2</td></tr>
+<tr><td>西域佛教文明带</td><td><code>C_WESTERN_REGIONS</code></td><td>S4</td></tr>
+<tr><td>西伯利亚萨满文化区</td><td><code>C_SIBERIA</code></td><td>S1</td></tr>
+<tr><td>奥克王国</td><td><code>C_OCCITAN_KINGDOM</code></td><td>S0</td></tr>
+<tr><td>奥克王国</td><td><code>C_OCCITAN_KINGDOM</code></td><td>S1</td></tr>
+<tr><td>奥克王国</td><td><code>C_OCCITAN_KINGDOM</code></td><td>S2</td></tr>
+<tr><td>伊斯兰世界（区域文明体集合）</td><td><code>C_ISLAMIC_WORLD</code></td><td>S1</td></tr>
+<tr><td>伊斯兰世界（区域文明体集合）</td><td><code>C_ISLAMIC_WORLD</code></td><td>S2</td></tr>
+<tr><td>伊比利亚王国</td><td><code>C_IBERIAN_KINGDOM</code></td><td>S0</td></tr>
+<tr><td>伊比利亚王国</td><td><code>C_IBERIAN_KINGDOM</code></td><td>S2</td></tr>
+<tr><td>科尔多瓦哈里发国</td><td><code>C_CORDOBA</code></td><td>S0</td></tr>
+<tr><td>科尔多瓦哈里发国</td><td><code>C_CORDOBA</code></td><td>S2</td></tr>
+<tr><td>穆瓦希德哈里发国（及穆拉比特）</td><td><code>C_ALMOHAD</code></td><td>S0</td></tr>
+<tr><td>穆瓦希德哈里发国（及穆拉比特）</td><td><code>C_ALMOHAD</code></td><td>S2</td></tr>
+<tr><td>法蒂玛哈里发国（埃及）</td><td><code>C_FATIMID</code></td><td>S1</td></tr>
+<tr><td>法蒂玛哈里发国（埃及）</td><td><code>C_FATIMID</code></td><td>S2</td></tr>
+<tr><td>阿尤布苏丹国（埃及—叙利亚）</td><td><code>C_AYYUBID</code></td><td>S1</td></tr>
+<tr><td>马穆鲁克苏丹国（埃及—叙利亚）</td><td><code>C_MAMLUK</code></td><td>S1</td></tr>
+<tr><td>马穆鲁克苏丹国（埃及—叙利亚）</td><td><code>C_MAMLUK</code></td><td>S4</td></tr>
+<tr><td>阿拔斯哈里发国（两河）</td><td><code>C_ABBASID</code></td><td>S1</td></tr>
+<tr><td>伊朗（伊斯兰什叶派波斯）</td><td><code>C_PERSIA</code></td><td>S1</td></tr>
+<tr><td>奥斯曼帝国（安纳托利亚突厥帝国）</td><td><code>C_ANATOLIAN_TURKS</code></td><td>S1</td></tr>
+<tr><td>马格里布（北非西部）</td><td><code>C_MAGHREB</code></td><td>S0</td></tr>
+<tr><td>马格里布（北非西部）</td><td><code>C_MAGHREB</code></td><td>S2</td></tr>
+<tr><td>埃及地区</td><td><code>C_EGYPT_REGION</code></td><td>S2</td></tr>
+<tr><td>叙利亚地区</td><td><code>C_SYRIA</code></td><td>S1</td></tr>
+<tr><td>阿拉伯—汉志地区</td><td><code>C_ARABIA</code></td><td>S1</td></tr>
+<tr><td>西班牙王国</td><td><code>C_SPAIN</code></td><td>S0</td></tr>
+<tr><td>西班牙王国</td><td><code>C_SPAIN</code></td><td>S2</td></tr>
+<tr><td>阿拉贡王国</td><td><code>C_ARAGON</code></td><td>S0</td></tr>
+<tr><td>阿拉贡王国</td><td><code>C_ARAGON</code></td><td>S2</td></tr>
+<tr><td>伊比利亚第一共和国</td><td><code>C_IBERIA_1REP</code></td><td>S0</td></tr>
+<tr><td>伊比利亚第一共和国</td><td><code>C_IBERIA_1REP</code></td><td>S1</td></tr>
+<tr><td>伊比利亚第一帝国</td><td><code>C_IBERIA_1EMP</code></td><td>S0</td></tr>
+<tr><td>伊比利亚第一帝国</td><td><code>C_IBERIA_1EMP</code></td><td>S1</td></tr>
+<tr><td>伊比利亚第二共和国</td><td><code>C_IBERIA_2REP</code></td><td>S0</td></tr>
+<tr><td>伊比利亚第二共和国</td><td><code>C_IBERIA_2REP</code></td><td>S2</td></tr>
+<tr><td>西法兰克王国</td><td><code>C_WEST_FRANKIA</code></td><td>S0</td></tr>
+<tr><td>西法兰克王国</td><td><code>C_WEST_FRANKIA</code></td><td>S3</td></tr>
+<tr><td>法兰西罗曼王国</td><td><code>C_FRANKISH_ROMANCE</code></td><td>S0</td></tr>
+<tr><td>法兰西罗曼王国</td><td><code>C_FRANKISH_ROMANCE</code></td><td>S1</td></tr>
+<tr><td>法兰西罗曼王国</td><td><code>C_FRANKISH_ROMANCE</code></td><td>S3</td></tr>
+<tr><td>法兰克共和国</td><td><code>C_FRANKEN_REPUBLIC</code></td><td>S0</td></tr>
+<tr><td>法兰克共和国</td><td><code>C_FRANKEN_REPUBLIC</code></td><td>S1</td></tr>
+<tr><td>法兰克共和国</td><td><code>C_FRANKEN_REPUBLIC</code></td><td>S2</td></tr>
+<tr><td>德意志共和国（1918—1945）</td><td><code>C_GERMAN_REPUBLIC</code></td><td>S0</td></tr>
+<tr><td>德意志共和国（1918—1945）</td><td><code>C_GERMAN_REPUBLIC</code></td><td>S1</td></tr>
+<tr><td>德意志共和国（1918—1945）</td><td><code>C_GERMAN_REPUBLIC</code></td><td>S2</td></tr>
+<tr><td>伊比利亚第三共和国（1871—1940）</td><td><code>C_IBERIA_3REP_FULL</code></td><td>S0</td></tr>
+<tr><td>伊比利亚第三共和国（1871—1940）</td><td><code>C_IBERIA_3REP_FULL</code></td><td>S1</td></tr>
+<tr><td>伊比利亚第三共和国（1871—1940）</td><td><code>C_IBERIA_3REP_FULL</code></td><td>S2</td></tr>
+<tr><td>伊比利亚被占领与过渡期（1940—1945）</td><td><code>C_IBERIA_OCCUPIED</code></td><td>S0</td></tr>
+<tr><td>伊比利亚被占领与过渡期（1940—1945）</td><td><code>C_IBERIA_OCCUPIED</code></td><td>S2</td></tr>
+<tr><td>伊比利亚第四共和国（1945—1954）</td><td><code>C_IBERIA_4REP</code></td><td>S2</td></tr>
+<tr><td>伊比利亚第五共和国（1960— ）</td><td><code>C_IBERIA_5REP</code></td><td>S0</td></tr>
+<tr><td>伊比利亚第五共和国（1960— ）</td><td><code>C_IBERIA_5REP</code></td><td>S1</td></tr>
+<tr><td>伊比利亚第五共和国（1960— ）</td><td><code>C_IBERIA_5REP</code></td><td>S2</td></tr>
+<tr><td>伊比利亚第二帝国</td><td><code>C_IBERIA_2EMP_UNION</code></td><td>S0</td></tr>
+<tr><td>西域-波斯（佛教波斯残余）</td><td><code>C_PERSIA_BUDDHIST</code></td><td>S1</td></tr>
+<tr><td>阿拉伯王国</td><td><code>C_ARAB_KINGDOM</code></td><td>S1</td></tr>
+<tr><td>叙利亚共和国</td><td><code>C_SYRIAN_REPUBLIC</code></td><td>S1</td></tr>
+<tr><td>埃及王国</td><td><code>C_EGYPT_KINGDOM</code></td><td>S1</td></tr>
+<tr><td>埃及王国</td><td><code>C_EGYPT_KINGDOM</code></td><td>S2</td></tr>
+<tr><td>两河王国</td><td><code>C_IRAQ_KINGDOM</code></td><td>S1</td></tr>
+</tbody></table></div>
+<h3 id="DYNASTY-33">DYNASTY（33）</h3>
+<div class="tw"><table>
+<thead><tr><th>名称</th><th>ID</th><th>出处</th></tr></thead><tbody>
+<tr><td>哈布斯堡</td><td><code>D_HABSBURG</code></td><td>S0</td></tr>
+<tr><td>哈布斯堡</td><td><code>D_HABSBURG</code></td><td>S1</td></tr>
+<tr><td>哈布斯堡</td><td><code>D_HABSBURG</code></td><td>S2</td></tr>
+<tr><td>普热米斯尔</td><td><code>D_PREMISLID</code></td><td>S0</td></tr>
+<tr><td>普热米斯尔</td><td><code>D_PREMISLID</code></td><td>S1</td></tr>
+<tr><td>普热米斯尔</td><td><code>D_PREMISLID</code></td><td>S2</td></tr>
+<tr><td>卡佩</td><td><code>D_CAPET</code></td><td>S0</td></tr>
+<tr><td>卡佩</td><td><code>D_CAPET</code></td><td>S1</td></tr>
+<tr><td>瓦卢瓦</td><td><code>D_VALOIS</code></td><td>S0</td></tr>
+<tr><td>埃夫勒</td><td><code>D_EVREUX</code></td><td>S0</td></tr>
+<tr><td>勃艮第家族</td><td><code>D_BURGUNDY</code></td><td>S0</td></tr>
+<tr><td>勃艮第家族</td><td><code>D_BURGUNDY</code></td><td>S1</td></tr>
+<tr><td>金雀花</td><td><code>D_PLANTAGENET</code></td><td>S0</td></tr>
+<tr><td>金雀花</td><td><code>D_PLANTAGENET</code></td><td>S2</td></tr>
+<tr><td>金雀花</td><td><code>D_PLANTAGENET</code></td><td>S3</td></tr>
+<tr><td>蒙福尔</td><td><code>D_MOUNTFORT</code></td><td>S3</td></tr>
+<tr><td>蒙古诸王朝</td><td><code>D_MONGOL</code></td><td>S1</td></tr>
+<tr><td>蒙古诸王朝</td><td><code>D_MONGOL</code></td><td>S4</td></tr>
+<tr><td>莫斯科蒙古王朝</td><td><code>D_MOSCOW_MONGOL</code></td><td>S4</td></tr>
+<tr><td>伊比利亚非哈布斯堡王朝</td><td><code>D_IBERIA_DYNASTY</code></td><td>S2</td></tr>
+<tr><td>诺曼-法兰西贵族集团</td><td><code>D_PLANTAGENET_NORMAN</code></td><td>S3</td></tr>
+<tr><td>伍麦叶（西班牙支系）</td><td><code>D_UMAYYAD</code></td><td>S0</td></tr>
+<tr><td>伍麦叶（西班牙支系）</td><td><code>D_UMAYYAD</code></td><td>S2</td></tr>
+<tr><td>穆瓦希德（及穆拉比特）</td><td><code>D_ALMOHAD</code></td><td>S0</td></tr>
+<tr><td>穆瓦希德（及穆拉比特）</td><td><code>D_ALMOHAD</code></td><td>S2</td></tr>
+<tr><td>法蒂玛</td><td><code>D_FATIMID</code></td><td>S1</td></tr>
+<tr><td>阿尤布</td><td><code>D_AYYUBID</code></td><td>S1</td></tr>
+<tr><td>马穆鲁克</td><td><code>D_MAMLUK</code></td><td>S1</td></tr>
+<tr><td>马穆鲁克</td><td><code>D_MAMLUK</code></td><td>S4</td></tr>
+<tr><td>阿拔斯</td><td><code>D_ABBASID</code></td><td>S1</td></tr>
+<tr><td>波斯诸王朝序列</td><td><code>D_PERSIAN_LINE</code></td><td>S1</td></tr>
+<tr><td>安纳托利亚突厥王朝</td><td><code>D_OTTOMAN</code></td><td>S1</td></tr>
+<tr><td>特拉斯塔马拉系（西班牙）</td><td><code>D_TRASTAMARA</code></td><td>S2</td></tr>
+</tbody></table></div>
+<h3 id="PERSON-52">PERSON（52）</h3>
+<div class="tw"><table>
+<thead><tr><th>名称</th><th>ID</th><th>出处</th></tr></thead><tbody>
+<tr><td>鲁道夫</td><td><code>PE_RUDOLF</code></td><td>S0</td></tr>
+<tr><td>鲁道夫</td><td><code>PE_RUDOLF</code></td><td>S1</td></tr>
+<tr><td>鲁道夫之母（卡佩旁系公主）</td><td><code>PE_RUDOLF_MOTHER</code></td><td>S0</td></tr>
+<tr><td>鲁道夫之母（卡佩旁系公主）</td><td><code>PE_RUDOLF_MOTHER</code></td><td>S1</td></tr>
+<tr><td>鲁道夫之妻（勃艮第伯爵之女）</td><td><code>PE_RUDOLF_WIFE</code></td><td>S0</td></tr>
+<tr><td>鲁道夫之妻（勃艮第伯爵之女）</td><td><code>PE_RUDOLF_WIFE</code></td><td>S1</td></tr>
+<tr><td>阿尔布雷希特</td><td><code>PE_ALBRECHT_I</code></td><td>S0</td></tr>
+<tr><td>让娜</td><td><code>PE_JEANNE_CHAMPAGNE</code></td><td>S0</td></tr>
+<tr><td>阿尔布雷希特二世</td><td><code>PE_ALBRECHT_II</code></td><td>S0</td></tr>
+<tr><td>奥托卡二世</td><td><code>PE_OTTOKAR_II</code></td><td>S0</td></tr>
+<tr><td>奥托卡二世</td><td><code>PE_OTTOKAR_II</code></td><td>S1</td></tr>
+<tr><td>瓦卢瓦的查理</td><td><code>PE_CHARLES_VALOIS</code></td><td>S0</td></tr>
+<tr><td>埃夫勒的腓力</td><td><code>PE_PHILIP_EVREUX</code></td><td>S0</td></tr>
+<tr><td>爱德华一世</td><td><code>PE_EDWARD_I</code></td><td>S0</td></tr>
+<tr><td>爱德华一世</td><td><code>PE_EDWARD_I</code></td><td>S3</td></tr>
+<tr><td>阿尔布雷希特二世之女（未具名）</td><td><code>PE_ALBRECHT_II_DAUGHTER</code></td><td>S0</td></tr>
+<tr><td>路易九世</td><td><code>PE_LOUIS_IX</code></td><td>S0</td></tr>
+<tr><td>腓力三世</td><td><code>PE_PHILIP_III</code></td><td>S0</td></tr>
+<tr><td>腓力四世</td><td><code>PE_PHILIP_IV</code></td><td>S0</td></tr>
+<tr><td>马丁·路德</td><td><code>PE_MARTIN_LUTHER</code></td><td>S0</td></tr>
+<tr><td>加尔文</td><td><code>PE_JOHN_CALVIN</code></td><td>S0</td></tr>
+<tr><td>亚历山大·冯·洪堡</td><td><code>PE_ALEXANDER_HUMBOLDT</code></td><td>S0</td></tr>
+<tr><td>爱因斯坦</td><td><code>PE_ALBERT_EINSTEIN</code></td><td>S0</td></tr>
+<tr><td>K. 彼得斯</td><td><code>PE_K_PETERS</code></td><td>S0</td></tr>
+<tr><td>腓力三世之妻（文档未具名）</td><td><code>PE_PHILIP_III_WIFE</code></td><td>S0</td></tr>
+<tr><td>查理、路易（腓力三世之子，文档未具名）</td><td><code>PE_CAPET_SONS</code></td><td>S0</td></tr>
+<tr><td>布列塔尼公爵（1270年继承争夺者，文档未具名）</td><td><code>PE_BRITTANY_DUKE</code></td><td>S0</td></tr>
+<tr><td>诺曼底公爵（1272年决战失败者，文档未具名）</td><td><code>PE_NORMANDY_DUKE</code></td><td>S0</td></tr>
+<tr><td>诺曼底公爵（1272年决战失败者，文档未具名）</td><td><code>PE_NORMANDY_DUKE</code></td><td>S1</td></tr>
+<tr><td>阿尔布雷希特二世之女婿（法兰克贵族推举对象，文档未具名）</td><td><code>PE_ALBRECHT_II_SON_IN_LAW</code></td><td>S0</td></tr>
+<tr><td>勃艮第伯爵（鲁道夫之岳父，文档未具名）</td><td><code>PE_BURGUNDY_COUNT</code></td><td>S0</td></tr>
+<tr><td>勃艮第伯爵（鲁道夫之岳父，文档未具名）</td><td><code>PE_BURGUNDY_COUNT</code></td><td>S1</td></tr>
+<tr><td>雷姆斯大主教（1272年为鲁道夫加冕者，文档未具名）</td><td><code>PE_REIMS_ARCHBISHOP</code></td><td>S0</td></tr>
+<tr><td>雷姆斯大主教（1272年为鲁道夫加冕者，文档未具名）</td><td><code>PE_REIMS_ARCHBISHOP</code></td><td>S1</td></tr>
+<tr><td>约翰娜·冯·阿尔孔</td><td><code>PE_JOHANNA_VON_ARKON</code></td><td>S0</td></tr>
+<tr><td>帝国首相黎塞留</td><td><code>PE_KARDINAL_RICHELIEU</code></td><td>S0</td></tr>
+<tr><td>帝国首相黎塞留</td><td><code>PE_KARDINAL_RICHELIEU</code></td><td>S1</td></tr>
+<tr><td>阿卜杜勒·拉赫曼三世</td><td><code>PE_ABD_AL_RAHMAN_III</code></td><td>S0</td></tr>
+<tr><td>阿卜杜勒·拉赫曼三世</td><td><code>PE_ABD_AL_RAHMAN_III</code></td><td>S2</td></tr>
+<tr><td>阿方索十世</td><td><code>PE_ALFONS_X</code></td><td>S2</td></tr>
+<tr><td>萨拉丁</td><td><code>PE_SALADIN</code></td><td>S1</td></tr>
+<tr><td>拜巴尔斯</td><td><code>PE_BAIBARS</code></td><td>S1</td></tr>
+<tr><td>拜巴尔斯</td><td><code>PE_BAIBARS</code></td><td>S4</td></tr>
+<tr><td>沙阿伊斯玛仪</td><td><code>PE_SCHAH_ISMAIL</code></td><td>S1</td></tr>
+<tr><td>奥斯曼一世</td><td><code>PE_OSMAN_I</code></td><td>S1</td></tr>
+<tr><td>伊莎贝拉·冯·卡斯蒂利亚</td><td><code>PE_ISABELLA_VON_KASTILIEN</code></td><td>S2</td></tr>
+<tr><td>伊比利亚王国开国君主（本轮新增，姓名待定）</td><td><code>PE_IBERIA_KING_FOUNDER</code></td><td>S2</td></tr>
+<tr><td>蒙福尔一世</td><td><code>PE_MOUNTFORT_I</code></td><td>S3</td></tr>
+<tr><td>蒙福尔二世</td><td><code>PE_MOUNTFORT_II</code></td><td>S3</td></tr>
+<tr><td>蒙福尔三世</td><td><code>PE_MOUNTFORT_III</code></td><td>S3</td></tr>
+<tr><td>蒙福尔四世</td><td><code>PE_MOUNTFORT_IV</code></td><td>S3</td></tr>
+<tr><td>蒙福尔五世</td><td><code>PE_MOUNTFORT_V</code></td><td>S3</td></tr>
+</tbody></table></div>
+<h3 id="EVENT-107">EVENT（107）</h3>
+<div class="tw"><table>
+<thead><tr><th>名称</th><th>ID</th><th>出处</th></tr></thead><tbody>
+<tr><td>1270年前后　卡佩绝嗣与法兰克继承危机</td><td><code>E_1270_CAPET</code></td><td>S0</td></tr>
+<tr><td>1270年前后　卡佩绝嗣与法兰克继承危机</td><td><code>E_1270_CAPET</code></td><td>S1</td></tr>
+<tr><td>1272　鲁道夫加冕为“法兰克人的国王”</td><td><code>E_1272_RUDOLF</code></td><td>S0</td></tr>
+<tr><td>1272　鲁道夫加冕为“法兰克人的国王”</td><td><code>E_1272_RUDOLF</code></td><td>S1</td></tr>
+<tr><td>1272后　逆向的诺曼征服：诺曼-法兰西精英退回不列颠</td><td><code>E_1272_NORMAN_EXODUS</code></td><td>S3</td></tr>
+<tr><td>1272后 / 13—15世纪　不列颠绝对主义奠基</td><td><code>E_1272_ABSOLUTISM</code></td><td>S3</td></tr>
+<tr><td>1273 — 1300　奥托卡二世崛起与东西双源形成</td><td><code>E_1273_OTTOKAR</code></td><td>S0</td></tr>
+<tr><td>1273 — 1300　奥托卡二世崛起与东西双源形成</td><td><code>E_1273_OTTOKAR</code></td><td>S1</td></tr>
+<tr><td>1300年前后　东西双源格局定型</td><td><code>E_1300_DUAL_SOURCE</code></td><td>S0</td></tr>
+<tr><td>1300年前后　东西双源格局定型</td><td><code>E_1300_DUAL_SOURCE</code></td><td>S1</td></tr>
+<tr><td>1356　《法兰克福宪章》与双王冠确立</td><td><code>E_1356_CHARTER</code></td><td>S0</td></tr>
+<tr><td>1356　《法兰克福宪章》与双王冠确立</td><td><code>E_1356_CHARTER</code></td><td>S1</td></tr>
+<tr><td>1356　《法兰克福宪章》与双王冠确立</td><td><code>E_1356_CHARTER</code></td><td>S2</td></tr>
+<tr><td>14—15世纪　普热米斯尔的德意志化</td><td><code>E_1400_15C_GERMANISATION</code></td><td>S0</td></tr>
+<tr><td>14—15世纪　普热米斯尔的德意志化</td><td><code>E_1400_15C_GERMANISATION</code></td><td>S1</td></tr>
+<tr><td>14世纪后期　哈布斯堡回归帝国与双元君主国</td><td><code>E_1400_DUAL_EMPIRE</code></td><td>S0</td></tr>
+<tr><td>14世纪后期　哈布斯堡回归帝国与双元君主国</td><td><code>E_1400_DUAL_EMPIRE</code></td><td>S1</td></tr>
+<tr><td>1450—1600 / 16世纪　宗教改革与普热米斯尔新教化</td><td><code>E_1500_REFORMATION</code></td><td>S0</td></tr>
+<tr><td>1450—1600 / 16世纪　宗教改革与普热米斯尔新教化</td><td><code>E_1500_REFORMATION</code></td><td>S1</td></tr>
+<tr><td>1524 — 1527　农民战争</td><td><code>E_1524_PEASANTS</code></td><td>S0</td></tr>
+<tr><td>1524 — 1527　农民战争</td><td><code>E_1524_PEASANTS</code></td><td>S1</td></tr>
+<tr><td>1618 — 1648　三十年宗教战争</td><td><code>E_1618_RELIGION</code></td><td>S0</td></tr>
+<tr><td>1618 — 1648　三十年宗教战争</td><td><code>E_1618_RELIGION</code></td><td>S1</td></tr>
+<tr><td>1648　《维也纳和约》与帝国分权</td><td><code>E_1648_VIENNA</code></td><td>S0</td></tr>
+<tr><td>1648　《维也纳和约》与帝国分权</td><td><code>E_1648_VIENNA</code></td><td>S1</td></tr>
+<tr><td>1648后　1648年维也纳和约后的流亡波次</td><td><code>E_1648_EXILES</code></td><td>S3</td></tr>
+<tr><td>18世纪 / 1700年前后　双王冠的“准融合”</td><td><code>E_1700_DUAL_CROWN</code></td><td>S0</td></tr>
+<tr><td>18世纪 / 1700年前后　双王冠的“准融合”</td><td><code>E_1700_DUAL_CROWN</code></td><td>S1</td></tr>
+<tr><td>1789 — 1815　伊比利亚-奥克大革命</td><td><code>E_1789_REVOLUTION</code></td><td>S0</td></tr>
+<tr><td>1789 — 1815　伊比利亚-奥克大革命</td><td><code>E_1789_REVOLUTION</code></td><td>S1</td></tr>
+<tr><td>1789后　1789年伊比利亚革命后的流亡波次</td><td><code>E_1789_EXILES</code></td><td>S0</td></tr>
+<tr><td>1789后　1789年伊比利亚革命后的流亡波次</td><td><code>E_1789_EXILES</code></td><td>S3</td></tr>
+<tr><td>约1789—1815　金雀花倾覆与蒙福尔家族上位</td><td><code>E_1789_PLANTAGENET_FALL</code></td><td>S3</td></tr>
+<tr><td>1815　反革命时代与旧秩序重建</td><td><code>E_1815_RESTORATION</code></td><td>S0</td></tr>
+<tr><td>1815　反革命时代与旧秩序重建</td><td><code>E_1815_RESTORATION</code></td><td>S1</td></tr>
+<tr><td>1848　1848年革命与大德意志方案失败</td><td><code>E_1848_REVOLUTION</code></td><td>S0</td></tr>
+<tr><td>1848　1848年革命与大德意志方案失败</td><td><code>E_1848_REVOLUTION</code></td><td>S1</td></tr>
+<tr><td>1848　1848年革命与大德意志方案失败</td><td><code>E_1848_REVOLUTION</code></td><td>S2</td></tr>
+<tr><td>1866　1866年奥法战争</td><td><code>E_1866_WAR</code></td><td>S0</td></tr>
+<tr><td>1866　1866年奥法战争</td><td><code>E_1866_WAR</code></td><td>S1</td></tr>
+<tr><td>1871　罗马加冕与德意志帝国成立</td><td><code>E_1871_EMPIRE</code></td><td>S0</td></tr>
+<tr><td>1871　罗马加冕与德意志帝国成立</td><td><code>E_1871_EMPIRE</code></td><td>S1</td></tr>
+<tr><td>1871　罗马加冕与德意志帝国成立</td><td><code>E_1871_EMPIRE</code></td><td>S2</td></tr>
+<tr><td>19世纪后期 — 20世纪　第二次工业革命与三大工业带</td><td><code>E_1900_INDUSTRY</code></td><td>S0</td></tr>
+<tr><td>19世纪后期 — 20世纪　第二次工业革命与三大工业带</td><td><code>E_1900_INDUSTRY</code></td><td>S1</td></tr>
+<tr><td>1914 — 1918　第一次世界大战</td><td><code>E_WW1</code></td><td>S0</td></tr>
+<tr><td>1914 — 1918　第一次世界大战</td><td><code>E_WW1</code></td><td>S1</td></tr>
+<tr><td>1914 — 1918　第一次世界大战</td><td><code>E_WW1</code></td><td>S3</td></tr>
+<tr><td>1914 — 1918　第一次世界大战</td><td><code>E_WW1</code></td><td>S4</td></tr>
+<tr><td>1918　德意志帝国瓦解与法兰克共和化</td><td><code>E_1918_COLLAPSE</code></td><td>S0</td></tr>
+<tr><td>1918　德意志帝国瓦解与法兰克共和化</td><td><code>E_1918_COLLAPSE</code></td><td>S1</td></tr>
+<tr><td>1918后 / 1918—1939　一战后的知识分子流散</td><td><code>E_1918_EXILES</code></td><td>S0</td></tr>
+<tr><td>1918后 / 1918—1939　一战后的知识分子流散</td><td><code>E_1918_EXILES</code></td><td>S1</td></tr>
+<tr><td>1939 — 1945　第二次世界大战</td><td><code>E_1939_WW2</code></td><td>S0</td></tr>
+<tr><td>1939 — 1945　第二次世界大战</td><td><code>E_1939_WW2</code></td><td>S1</td></tr>
+<tr><td>1939 — 1945　第二次世界大战</td><td><code>E_1939_WW2</code></td><td>S3</td></tr>
+<tr><td>1939 — 1945　第二次世界大战</td><td><code>E_1939_WW2</code></td><td>S4</td></tr>
+<tr><td>1945　战后德意志世界恢复与联邦化</td><td><code>E_1945_SETTLEMENT</code></td><td>S0</td></tr>
+<tr><td>1945　战后德意志世界恢复与联邦化</td><td><code>E_1945_SETTLEMENT</code></td><td>S1</td></tr>
+<tr><td>1945　战后德意志世界恢复与联邦化</td><td><code>E_1945_SETTLEMENT</code></td><td>S2</td></tr>
+<tr><td>1945 — 1975　南部奥克省建制与法兰克-奥克问题</td><td><code>E_1945_OCCITAN_ISSUE</code></td><td>S0</td></tr>
+<tr><td>1945 — 1975　南部奥克省建制与法兰克-奥克问题</td><td><code>E_1945_OCCITAN_ISSUE</code></td><td>S1</td></tr>
+<tr><td>1945 — 1975　南部奥克省建制与法兰克-奥克问题</td><td><code>E_1945_OCCITAN_ISSUE</code></td><td>S2</td></tr>
+<tr><td>1972—1978（1975 为关键节点）　奥克省废除与“奥克正常化”（1972—1978）</td><td><code>E_1975_OCCITAN_NORMALISATION</code></td><td>S2</td></tr>
+<tr><td>1945 — 约1955　不列颠战败与被监督的民主化</td><td><code>E_1945_BRITAIN_DEMOCRATISATION</code></td><td>S3</td></tr>
+<tr><td>1945 — 约1955　不列颠战败与被监督的民主化</td><td><code>E_1945_BRITAIN_DEMOCRATISATION</code></td><td>S2</td></tr>
+<tr><td>1945　爱尔兰全岛独立</td><td><code>E_1945_IRELAND</code></td><td>S3</td></tr>
+<tr><td>1945后　基辅王国与白罗斯脱离莫斯科国</td><td><code>E_1945_KIEV</code></td><td>S4</td></tr>
+<tr><td>1960年前后　多极均势与新亚洲文明地图</td><td><code>E_1960_MULTIPOLAR</code></td><td>S0</td></tr>
+<tr><td>1960年前后　多极均势与新亚洲文明地图</td><td><code>E_1960_MULTIPOLAR</code></td><td>S1</td></tr>
+<tr><td>1960年前后　多极均势与新亚洲文明地图</td><td><code>E_1960_MULTIPOLAR</code></td><td>S2</td></tr>
+<tr><td>1960年前后　多极均势与新亚洲文明地图</td><td><code>E_1960_MULTIPOLAR</code></td><td>S4</td></tr>
+<tr><td>1272 — 至今　英-法兰克竞争长期化</td><td><code>E_ANGLO_FRANKISH_RIVALRY</code></td><td>S3</td></tr>
+<tr><td>1200 — 1300及以后　蒙古帝国崛起与文明桥梁</td><td><code>E_1200_MONGOL</code></td><td>S1</td></tr>
+<tr><td>1200 — 1300及以后　蒙古帝国崛起与文明桥梁</td><td><code>E_1200_MONGOL</code></td><td>S4</td></tr>
+<tr><td>公元前后 — 8世纪 / 8—12世纪　西域佛教传统强化与伊斯兰化止步</td><td><code>E_1100_WESTERN_BUDDHISM</code></td><td>S1</td></tr>
+<tr><td>13世纪 — 金帐汗国分裂　金帐汗国未伊斯兰化与蒙古-罗斯制度融合</td><td><code>E_1400_GOLDEN_HORDE</code></td><td>S4</td></tr>
+<tr><td>金帐汗国分裂后　罗斯兀鲁思建立与后基辅罗斯国家传统</td><td><code>E_1500_ROS_UHLUS</code></td><td>S4</td></tr>
+<tr><td>一战期间 / 二战后　基辅王国与罗斯兀鲁思的文明分流</td><td><code>E_1918_KIEV_SPLIT</code></td><td>S4</td></tr>
+<tr><td>1945 — 1960　新亚洲秩序与文明边界线</td><td><code>E_1945_ASIA_ORDER</code></td><td>S1</td></tr>
+<tr><td>1945 — 1960　新亚洲秩序与文明边界线</td><td><code>E_1945_ASIA_ORDER</code></td><td>S4</td></tr>
+<tr><td>929　科尔多瓦自立哈里发</td><td><code>E_0929_CORDOBA</code></td><td>S0</td></tr>
+<tr><td>929　科尔多瓦自立哈里发</td><td><code>E_0929_CORDOBA</code></td><td>S2</td></tr>
+<tr><td>1031　科尔多瓦哈里发国分裂为诸泰法</td><td><code>E_1031_TAIFAS</code></td><td>S0</td></tr>
+<tr><td>1031　科尔多瓦哈里发国分裂为诸泰法</td><td><code>E_1031_TAIFAS</code></td><td>S2</td></tr>
+<tr><td>1212　穆瓦希德在伊比利亚战败</td><td><code>E_1212_LAS_NAVAS</code></td><td>S0</td></tr>
+<tr><td>1212　穆瓦希德在伊比利亚战败</td><td><code>E_1212_LAS_NAVAS</code></td><td>S2</td></tr>
+<tr><td>8—15世纪（决定性阶段1212—1492）　收复失地运动</td><td><code>E_RECONQUISTA</code></td><td>S0</td></tr>
+<tr><td>8—15世纪（决定性阶段1212—1492）　收复失地运动</td><td><code>E_RECONQUISTA</code></td><td>S2</td></tr>
+<tr><td>15—16世纪（推定）　伊比利亚统一与伊比利亚王国建立</td><td><code>E_IBERIAN_UNIFICATION</code></td><td>S2</td></tr>
+<tr><td>16—20世纪（长期过程）　南下北非与马格里布的基督教化、欧洲化</td><td><code>E_MAGHREB_CHRISTIANISATION</code></td><td>S0</td></tr>
+<tr><td>16—20世纪（长期过程）　南下北非与马格里布的基督教化、欧洲化</td><td><code>E_MAGHREB_CHRISTIANISATION</code></td><td>S2</td></tr>
+<tr><td>11—13世纪　十字军东征</td><td><code>E_CRUSADES</code></td><td>S1</td></tr>
+<tr><td>1291　黎凡特沿岸据点失守</td><td><code>E_1291_ACRE</code></td><td>S1</td></tr>
+<tr><td>14世纪以后（长时段）　法兰克东方学传统的形成</td><td><code>E_FRANKISH_ORIENTALISM</code></td><td>S1</td></tr>
+<tr><td>1260　马穆鲁克阻止蒙古西进</td><td><code>E_MAMLUK_MONGOL</code></td><td>S1</td></tr>
+<tr><td>1260　马穆鲁克阻止蒙古西进</td><td><code>E_MAMLUK_MONGOL</code></td><td>S4</td></tr>
+<tr><td>1517　安纳托利亚突厥帝国取代马穆鲁克</td><td><code>E_1517_MAMLUK_END</code></td><td>S1</td></tr>
+<tr><td>16世纪（推定）　波斯确立什叶派国家传统</td><td><code>E_1501_PERSIA_SHIITE</code></td><td>S1</td></tr>
+<tr><td>1871　伊比利亚第二帝国被德意志帝国击败，第三共和国成立</td><td><code>E_1871_IBERIA_2EMP_FALL</code></td><td>S0</td></tr>
+<tr><td>1871　伊比利亚第二帝国被德意志帝国击败，第三共和国成立</td><td><code>E_1871_IBERIA_2EMP_FALL</code></td><td>S1</td></tr>
+<tr><td>1940　伊比利亚第三共和国被法兰克与德意志击败</td><td><code>E_1940_IBERIA_DEFEAT</code></td><td>S0</td></tr>
+<tr><td>1945　伊比利亚第四共和国成立</td><td><code>E_1945_IBERIA_4REP</code></td><td>S2</td></tr>
+<tr><td>1954年前后　非洲殖民地危机与第四共和国覆灭</td><td><code>E_1954_IBERIA_COLONIAL</code></td><td>S2</td></tr>
+<tr><td>1960　伊比利亚第五共和国建立</td><td><code>E_1960_IBERIA_5REP</code></td><td>S0</td></tr>
+<tr><td>1960　伊比利亚第五共和国建立</td><td><code>E_1960_IBERIA_5REP</code></td><td>S1</td></tr>
+<tr><td>1960　伊比利亚第五共和国建立</td><td><code>E_1960_IBERIA_5REP</code></td><td>S2</td></tr>
+</tbody></table></div>
+<h3 id="WAR-29">WAR（29）</h3>
+<div class="tw"><table>
+<thead><tr><th>名称</th><th>ID</th><th>出处</th></tr></thead><tbody>
+<tr><td>法兰克王位继承战争（1270-1272）</td><td><code>W_FRANKISH_SUCCESSION</code></td><td>S0</td></tr>
+<tr><td>法兰克王位继承战争（1270-1272）</td><td><code>W_FRANKISH_SUCCESSION</code></td><td>S1</td></tr>
+<tr><td>法兰克王位继承战争（1270-1272）</td><td><code>W_FRANKISH_SUCCESSION</code></td><td>S3</td></tr>
+<tr><td>农民战争（1524—1527）</td><td><code>W_PEASANT_1524</code></td><td>S0</td></tr>
+<tr><td>农民战争（1524—1527）</td><td><code>W_PEASANT_1524</code></td><td>S1</td></tr>
+<tr><td>宗教战争 / 三十年战争（1618—1648）</td><td><code>W_RELIGION</code></td><td>S0</td></tr>
+<tr><td>宗教战争 / 三十年战争（1618—1648）</td><td><code>W_RELIGION</code></td><td>S1</td></tr>
+<tr><td>伊比利亚大革命与反伊比利亚战争（1789—1815）</td><td><code>W_REV_IBERIA</code></td><td>S0</td></tr>
+<tr><td>伊比利亚大革命与反伊比利亚战争（1789—1815）</td><td><code>W_REV_IBERIA</code></td><td>S1</td></tr>
+<tr><td>伊比利亚大革命与反伊比利亚战争（1789—1815）</td><td><code>W_REV_IBERIA</code></td><td>S2</td></tr>
+<tr><td>伊比利亚大革命与反伊比利亚战争（1789—1815）</td><td><code>W_REV_IBERIA</code></td><td>S3</td></tr>
+<tr><td>1866年奥法战争</td><td><code>W_1866</code></td><td>S0</td></tr>
+<tr><td>1866年奥法战争</td><td><code>W_1866</code></td><td>S1</td></tr>
+<tr><td>第一次世界大战（1914—1918）</td><td><code>W_WW1</code></td><td>S0</td></tr>
+<tr><td>第一次世界大战（1914—1918）</td><td><code>W_WW1</code></td><td>S1</td></tr>
+<tr><td>第一次世界大战（1914—1918）</td><td><code>W_WW1</code></td><td>S2</td></tr>
+<tr><td>第一次世界大战（1914—1918）</td><td><code>W_WW1</code></td><td>S3</td></tr>
+<tr><td>第一次世界大战（1914—1918）</td><td><code>W_WW1</code></td><td>S4</td></tr>
+<tr><td>第二次世界大战（1939—1945）</td><td><code>W_WW2</code></td><td>S0</td></tr>
+<tr><td>第二次世界大战（1939—1945）</td><td><code>W_WW2</code></td><td>S1</td></tr>
+<tr><td>第二次世界大战（1939—1945）</td><td><code>W_WW2</code></td><td>S2</td></tr>
+<tr><td>第二次世界大战（1939—1945）</td><td><code>W_WW2</code></td><td>S3</td></tr>
+<tr><td>第二次世界大战（1939—1945）</td><td><code>W_WW2</code></td><td>S4</td></tr>
+<tr><td>蒙古帝国扩张（1200—1300及以后）</td><td><code>W_MONGOL_EXPANSION</code></td><td>S1</td></tr>
+<tr><td>蒙古帝国扩张（1200—1300及以后）</td><td><code>W_MONGOL_EXPANSION</code></td><td>S4</td></tr>
+<tr><td>不列颠镇压本土自由派（1848）</td><td><code>W_IMMOBI</code></td><td>S3</td></tr>
+<tr><td>收复失地运动与南下北非（8—16世纪）</td><td><code>W_RECONQUISTA</code></td><td>S0</td></tr>
+<tr><td>收复失地运动与南下北非（8—16世纪）</td><td><code>W_RECONQUISTA</code></td><td>S2</td></tr>
+<tr><td>十字军东征（11—13世纪）</td><td><code>W_CRUSADES</code></td><td>S1</td></tr>
+</tbody></table></div>
+<h3 id="TREATY-9">TREATY（9）</h3>
+<div class="tw"><table>
+<thead><tr><th>名称</th><th>ID</th><th>出处</th></tr></thead><tbody>
+<tr><td>《法兰克福宪章》（法兰克福条约）</td><td><code>T_FRANKFURT_1356</code></td><td>S0</td></tr>
+<tr><td>《法兰克福宪章》（法兰克福条约）</td><td><code>T_FRANKFURT_1356</code></td><td>S1</td></tr>
+<tr><td>《法兰克福宪章》（法兰克福条约）</td><td><code>T_FRANKFURT_1356</code></td><td>S2</td></tr>
+<tr><td>《维也纳和约》1648</td><td><code>T_VIENNA_1648</code></td><td>S0</td></tr>
+<tr><td>《维也纳和约》1648</td><td><code>T_VIENNA_1648</code></td><td>S1</td></tr>
+<tr><td>《维也纳和约》1648</td><td><code>T_VIENNA_1648</code></td><td>S3</td></tr>
+<tr><td>《权利宪章》1945/1947</td><td><code>T_RIGHTS_CHARTER</code></td><td>S3</td></tr>
+<tr><td>《十二条款》1524/1525</td><td><code>T_TWELVE_ARTICLES</code></td><td>S0</td></tr>
+<tr><td>《法兰克福条约》宗教条款（即《法兰克福宪章》的宗教模糊性部分）</td><td><code>T_FRANKFURT_CONF</code></td><td>S0</td></tr>
+</tbody></table></div>
+<h3 id="RELIGION-21">RELIGION（21）</h3>
+<div class="tw"><table>
+<thead><tr><th>名称</th><th>ID</th><th>出处</th></tr></thead><tbody>
+<tr><td>天主教</td><td><code>R_CATHOLIC</code></td><td>S0</td></tr>
+<tr><td>天主教</td><td><code>R_CATHOLIC</code></td><td>S1</td></tr>
+<tr><td>北德意志路德宗</td><td><code>R_LUTHERAN</code></td><td>S0</td></tr>
+<tr><td>北德意志路德宗</td><td><code>R_LUTHERAN</code></td><td>S1</td></tr>
+<tr><td>低地-瑞士加尔文宗</td><td><code>R_CALVIN</code></td><td>S0</td></tr>
+<tr><td>低地-瑞士加尔文宗</td><td><code>R_CALVIN</code></td><td>S1</td></tr>
+<tr><td>波西米亚胡斯派-路德宗混合</td><td><code>R_HUSSITE</code></td><td>S0</td></tr>
+<tr><td>波西米亚胡斯派-路德宗混合</td><td><code>R_HUSSITE</code></td><td>S1</td></tr>
+<tr><td>南德意志阿尔卑斯福音派</td><td><code>R_ALPEN</code></td><td>S0</td></tr>
+<tr><td>南德意志阿尔卑斯福音派</td><td><code>R_ALPEN</code></td><td>S1</td></tr>
+<tr><td>王室新教（高教会式）</td><td><code>R_ANGLICAN</code></td><td>S3</td></tr>
+<tr><td>东正教</td><td><code>R_ORTHODOX</code></td><td>S4</td></tr>
+<tr><td>东正教</td><td><code>R_ORTHODOX</code></td><td>S1</td></tr>
+<tr><td>长生天信仰</td><td><code>R_TENGRI</code></td><td>S1</td></tr>
+<tr><td>佛教（西域佛教 / 藏传佛教）</td><td><code>R_BUDDHISM</code></td><td>S1</td></tr>
+<tr><td>佛教（西域佛教 / 藏传佛教）</td><td><code>R_BUDDHISM</code></td><td>S2</td></tr>
+<tr><td>佛教（西域佛教 / 藏传佛教）</td><td><code>R_BUDDHISM</code></td><td>S4</td></tr>
+<tr><td>萨满传统</td><td><code>R_SHAMAN</code></td><td>S1</td></tr>
+<tr><td>伊斯兰教</td><td><code>R_ISLAM</code></td><td>S1</td></tr>
+<tr><td>伊斯兰教</td><td><code>R_ISLAM</code></td><td>S2</td></tr>
+<tr><td>儒家（兼佛教、道教）</td><td><code>R_CONFUCIAN</code></td><td>S1</td></tr>
+</tbody></table></div>
+<h3 id="LANGUAGE-13">LANGUAGE（13）</h3>
+<div class="tw"><table>
+<thead><tr><th>名称</th><th>ID</th><th>出处</th></tr></thead><tbody>
+<tr><td>共同体德语 / 泛德意志标准语 / 帝国德语</td><td><code>L_STANDARD</code></td><td>S0</td></tr>
+<tr><td>法兰克语 / 西法兰克语</td><td><code>L_FRANKISH</code></td><td>S0</td></tr>
+<tr><td>法兰克语 / 西法兰克语</td><td><code>L_FRANKISH</code></td><td>S2</td></tr>
+<tr><td>高地德语</td><td><code>L_HIGHDUTCH</code></td><td>S0</td></tr>
+<tr><td>低地德语（含荷兰语）</td><td><code>L_LOWGERMAN</code></td><td>S0</td></tr>
+<tr><td>伊比利亚-奥克语</td><td><code>L_OCCITAN</code></td><td>S0</td></tr>
+<tr><td>伊比利亚-奥克语</td><td><code>L_OCCITAN</code></td><td>S2</td></tr>
+<tr><td>伊比利亚-奥克语</td><td><code>L_OCCITAN</code></td><td>S3</td></tr>
+<tr><td>英语（及盎格鲁-法兰西语 / Anglois）</td><td><code>L_ENGLISH</code></td><td>S3</td></tr>
+<tr><td>东斯拉夫语</td><td><code>L_EAST_SLAVIC</code></td><td>S4</td></tr>
+<tr><td>拉丁语（教会语）</td><td><code>L_LATIN_CHURCH</code></td><td>S0</td></tr>
+<tr><td>（已废止条目）法语 / 法语人口</td><td><code>L_FRENCH_EXTINCT</code></td><td>S0</td></tr>
+<tr><td>（已废止条目）法语 / 法语人口</td><td><code>L_FRENCH_EXTINCT</code></td><td>S3</td></tr>
+</tbody></table></div>
+<h3 id="PLACE-126">PLACE（126）</h3>
+<div class="tw"><table>
+<thead><tr><th>名称</th><th>ID</th><th>出处</th></tr></thead><tbody>
+<tr><td>帕里斯</td><td><code>P_PARIS</code></td><td>S0</td></tr>
+<tr><td>雷姆斯</td><td><code>P_REIMS</code></td><td>S0</td></tr>
+<tr><td>布吕格</td><td><code>P_BRUEGGE</code></td><td>S0</td></tr>
+<tr><td>鲁安 / 罗多姆</td><td><code>P_RUAN</code></td><td>S0</td></tr>
+<tr><td>卡莱斯</td><td><code>P_KALES</code></td><td>S0</td></tr>
+<tr><td>南滕</td><td><code>P_NANTEN</code></td><td>S0</td></tr>
+<tr><td>梅茨</td><td><code>P_METZ</code></td><td>S0</td></tr>
+<tr><td>迪根 / 迪维翁</td><td><code>P_DIGEN</code></td><td>S0</td></tr>
+<tr><td>奥尔伦</td><td><code>P_ORLEN</code></td><td>S0</td></tr>
+<tr><td>曼斯</td><td><code>P_MANS</code></td><td>S0</td></tr>
+<tr><td>曼斯</td><td><code>P_MANS</code></td><td>S2</td></tr>
+<tr><td>劳格登 / 卢登</td><td><code>P_LAUGDEN</code></td><td>S0</td></tr>
+<tr><td>斯特拉斯堡</td><td><code>P_STRASSBURG</code></td><td>S0</td></tr>
+<tr><td>德哈芬</td><td><code>P_DER_HAFEN</code></td><td>S0</td></tr>
+<tr><td>谢尔堡</td><td><code>P_SCHERBURG</code></td><td>S0</td></tr>
+<tr><td>杜嫩基兴</td><td><code>P_DUENENKIRCHEN</code></td><td>S0</td></tr>
+<tr><td>里瑟尔</td><td><code>P_RYSSEL</code></td><td>S0</td></tr>
+<tr><td>特罗伊 / 特罗伊恩</td><td><code>P_TREU</code></td><td>S0</td></tr>
+<tr><td>比桑茨</td><td><code>P_BISANZ</code></td><td>S0</td></tr>
+<tr><td>格拉茨施塔特</td><td><code>P_GRATZSTADT</code></td><td>S0</td></tr>
+<tr><td>圣斯特凡</td><td><code>P_SANKT_STEFAN</code></td><td>S0</td></tr>
+<tr><td>托洛森</td><td><code>P_THOLOSEN</code></td><td>S0</td></tr>
+<tr><td>马西利恩 / 马塞尔</td><td><code>P_MASSILIEN</code></td><td>S0</td></tr>
+<tr><td>马西利恩 / 马塞尔</td><td><code>P_MASSILIEN</code></td><td>S1</td></tr>
+<tr><td>马西利恩 / 马塞尔</td><td><code>P_MASSILIEN</code></td><td>S2</td></tr>
+<tr><td>蒙斯佩勒</td><td><code>P_MONSPELER</code></td><td>S0</td></tr>
+<tr><td>尼门</td><td><code>P_NIMEN</code></td><td>S0</td></tr>
+<tr><td>阿文根</td><td><code>P_AVINGEN</code></td><td>S0</td></tr>
+<tr><td>法兰克福</td><td><code>P_FRANKFURT</code></td><td>S0</td></tr>
+<tr><td>维也纳</td><td><code>P_VIENNA</code></td><td>S0</td></tr>
+<tr><td>维也纳</td><td><code>P_VIENNA</code></td><td>S1</td></tr>
+<tr><td>罗马</td><td><code>P_ROME</code></td><td>S0</td></tr>
+<tr><td>罗马</td><td><code>P_ROME</code></td><td>S1</td></tr>
+<tr><td>基尔</td><td><code>P_KIEL</code></td><td>S0</td></tr>
+<tr><td>汉堡</td><td><code>P_HAMBURG</code></td><td>S0</td></tr>
+<tr><td>汉诺威</td><td><code>P_HANNOVER</code></td><td>S0</td></tr>
+<tr><td>不来梅</td><td><code>P_BREMEN</code></td><td>S0</td></tr>
+<tr><td>布鲁塞尔</td><td><code>P_BRUESSEL</code></td><td>S0</td></tr>
+<tr><td>阿姆斯特丹</td><td><code>P_AMSTERDAM</code></td><td>S0</td></tr>
+<tr><td>杜塞尔多夫</td><td><code>P_DUESSELDORF</code></td><td>S0</td></tr>
+<tr><td>美因茨</td><td><code>P_MAINZ</code></td><td>S0</td></tr>
+<tr><td>威斯巴登</td><td><code>P_WIESBADEN</code></td><td>S0</td></tr>
+<tr><td>斯图加特</td><td><code>P_STUTTGART</code></td><td>S0</td></tr>
+<tr><td>慕尼黑</td><td><code>P_MUENCHEN</code></td><td>S0</td></tr>
+<tr><td>斯德丁</td><td><code>P_STETTIN</code></td><td>S0</td></tr>
+<tr><td>柏林</td><td><code>P_BERLIN</code></td><td>S0</td></tr>
+<tr><td>马格德堡</td><td><code>P_MAGDEBURG</code></td><td>S0</td></tr>
+<tr><td>埃尔福特</td><td><code>P_ERFURT</code></td><td>S0</td></tr>
+<tr><td>德累斯顿</td><td><code>P_DRESDEN</code></td><td>S0</td></tr>
+<tr><td>布雷斯劳</td><td><code>P_BRESLAU</code></td><td>S0</td></tr>
+<tr><td>波森</td><td><code>P_POSEN</code></td><td>S0</td></tr>
+<tr><td>林茨</td><td><code>P_LINZ</code></td><td>S0</td></tr>
+<tr><td>格拉茨</td><td><code>P_GRAZ</code></td><td>S0</td></tr>
+<tr><td>因斯布鲁克</td><td><code>P_INNSBRUCK</code></td><td>S0</td></tr>
+<tr><td>特伦托</td><td><code>P_TRIENT</code></td><td>S0</td></tr>
+<tr><td>特伦托</td><td><code>P_TRIENT</code></td><td>S2</td></tr>
+<tr><td>米兰</td><td><code>P_MAILAND</code></td><td>S0</td></tr>
+<tr><td>但泽</td><td><code>P_DANZIG</code></td><td>S0</td></tr>
+<tr><td>都灵</td><td><code>P_TURIN</code></td><td>S0</td></tr>
+<tr><td>都灵</td><td><code>P_TURIN</code></td><td>S2</td></tr>
+<tr><td>的里雅斯特</td><td><code>P_TRIEST</code></td><td>S0</td></tr>
+<tr><td>佛罗伦萨</td><td><code>P_FLORENZ</code></td><td>S0</td></tr>
+<tr><td>布拉格</td><td><code>P_PRAG</code></td><td>S0</td></tr>
+<tr><td>萨格勒布</td><td><code>P_ZAGREB</code></td><td>S0</td></tr>
+<tr><td>莱比锡</td><td><code>P_LEIPZIG</code></td><td>S0</td></tr>
+<tr><td>哥廷根</td><td><code>P_GOETTINGEN</code></td><td>S0</td></tr>
+<tr><td>维滕堡</td><td><code>P_WITTENBERG</code></td><td>S0</td></tr>
+<tr><td>苏黎世</td><td><code>P_ZUERICH</code></td><td>S0</td></tr>
+<tr><td>日内瓦</td><td><code>P_GENF</code></td><td>S0</td></tr>
+<tr><td>巴塞尔</td><td><code>P_BASEL</code></td><td>S0</td></tr>
+<tr><td>圣哥达</td><td><code>P_SANKT_GOTTHARD</code></td><td>S0</td></tr>
+<tr><td>布伦纳</td><td><code>P_BRENNER</code></td><td>S0</td></tr>
+<tr><td>伦敦</td><td><code>P_LONDON</code></td><td>S3</td></tr>
+<tr><td>爱丁堡</td><td><code>P_EDINBURGH</code></td><td>S3</td></tr>
+<tr><td>卡迪夫</td><td><code>P_CARDIFF</code></td><td>S3</td></tr>
+<tr><td>约克</td><td><code>P_YORK</code></td><td>S3</td></tr>
+<tr><td>伯明翰</td><td><code>P_BIRMINGHAM</code></td><td>S3</td></tr>
+<tr><td>诺里奇</td><td><code>P_NORWICH</code></td><td>S3</td></tr>
+<tr><td>温切斯特</td><td><code>P_WINCHESTER</code></td><td>S3</td></tr>
+<tr><td>布里斯托尔</td><td><code>P_BRISTOL</code></td><td>S3</td></tr>
+<tr><td>都柏林</td><td><code>P_DUBLIN</code></td><td>S3</td></tr>
+<tr><td>巴塞罗那</td><td><code>P_BARCELONA</code></td><td>S0</td></tr>
+<tr><td>那不勒斯</td><td><code>P_NAPLES</code></td><td>S0</td></tr>
+<tr><td>莫斯科</td><td><code>P_MOSCOW</code></td><td>S4</td></tr>
+<tr><td>基辅</td><td><code>P_KYIV</code></td><td>S4</td></tr>
+<tr><td>君士坦丁堡</td><td><code>P_CONSTANTINOPLE</code></td><td>S1</td></tr>
+<tr><td>敦煌</td><td><code>P_DUNHUANG</code></td><td>S1</td></tr>
+<tr><td>龟兹</td><td><code>P_KUCHA</code></td><td>S1</td></tr>
+<tr><td>于阗</td><td><code>P_KHOTAN</code></td><td>S1</td></tr>
+<tr><td>吐鲁番</td><td><code>P_TURFAN</code></td><td>S1</td></tr>
+<tr><td>塞根 / 塞讷</td><td><code>P_SEGEN</code></td><td>S0</td></tr>
+<tr><td>利格</td><td><code>P_LIGER</code></td><td>S0</td></tr>
+<tr><td>罗登 / 罗讷</td><td><code>P_RODEN</code></td><td>S0</td></tr>
+<tr><td>加伦</td><td><code>P_GARUN</code></td><td>S0</td></tr>
+<tr><td>马恩 / 马特恩</td><td><code>P_MARN</code></td><td>S0</td></tr>
+<tr><td>索内 / 索兴</td><td><code>P_SONE</code></td><td>S0</td></tr>
+<tr><td>马斯</td><td><code>P_MAAS</code></td><td>S0</td></tr>
+<tr><td>斯海尔德</td><td><code>P_SCHELDE</code></td><td>S0</td></tr>
+<tr><td>阿尔卑斯</td><td><code>P_ALPEN</code></td><td>S0</td></tr>
+<tr><td>阿登</td><td><code>P_ARDENNEN</code></td><td>S0</td></tr>
+<tr><td>瓦斯根 / 瓦斯高</td><td><code>P_WASGEN</code></td><td>S0</td></tr>
+<tr><td>中部山地</td><td><code>P_MITTELGEBIRGE</code></td><td>S0</td></tr>
+<tr><td>托莱多</td><td><code>P_TOLEDO</code></td><td>S2</td></tr>
+<tr><td>科尔多瓦</td><td><code>P_CORDOBA</code></td><td>S0</td></tr>
+<tr><td>马拉喀什</td><td><code>P_MARRAKECH</code></td><td>S0</td></tr>
+<tr><td>非斯</td><td><code>P_FEZ</code></td><td>S0</td></tr>
+<tr><td>突尼斯</td><td><code>P_TUNIS</code></td><td>S0</td></tr>
+<tr><td>开罗</td><td><code>P_CAIRO</code></td><td>S1</td></tr>
+<tr><td>大马士革</td><td><code>P_DAMASCUS</code></td><td>S1</td></tr>
+<tr><td>巴格达</td><td><code>P_BAGHDAD</code></td><td>S1</td></tr>
+<tr><td>伊斯法罕</td><td><code>P_ISFAHAN</code></td><td>S1</td></tr>
+<tr><td>麦加</td><td><code>P_MECCA</code></td><td>S1</td></tr>
+<tr><td>麦地那</td><td><code>P_MEDINA</code></td><td>S1</td></tr>
+<tr><td>格拉纳达</td><td><code>P_GRANADA</code></td><td>S0</td></tr>
+<tr><td>布尔萨</td><td><code>P_BURSA</code></td><td>S1</td></tr>
+<tr><td>埃迪尔内</td><td><code>P_EDIRNE</code></td><td>S1</td></tr>
+<tr><td>图卢兹（奥克王国）</td><td><code>P_TOULOUSE_OCC</code></td><td>S0</td></tr>
+<tr><td>萨拉戈萨</td><td><code>P_ZARAGOZA</code></td><td>S0</td></tr>
+<tr><td>伊斯法罕王家清真寺</td><td><code>P_ISFAHAN_MOSQUE</code></td><td>S1</td></tr>
+<tr><td>撒马尔罕佛寺群</td><td><code>P_SAMARKAND_TEMPLE</code></td><td>S1</td></tr>
+<tr><td>莫斯科克里姆林宫</td><td><code>P_KREML</code></td><td>S4</td></tr>
+<tr><td>敦煌石窟群</td><td><code>P_DUNHUANG_CAVES</code></td><td>S1</td></tr>
+<tr><td>龟兹石窟群</td><td><code>P_KUCHA_CAVES</code></td><td>S1</td></tr>
+<tr><td>撒马尔罕</td><td><code>P_SAMARKAND</code></td><td>S1</td></tr>
+<tr><td>布哈拉</td><td><code>P_BUCHARA</code></td><td>S1</td></tr>
+<tr><td>呼罗珊</td><td><code>P_KHORASAN</code></td><td>S1</td></tr>
+</tbody></table></div>
+<h3 id="SUBDIVISION-8">SUBDIVISION（8）</h3>
+<div class="tw"><table>
+<thead><tr><th>名称</th><th>ID</th><th>出处</th></tr></thead><tbody>
+<tr><td>德意志联邦共和国行政区划（31个州/邦）</td><td><code>SB_DEUTSCHLAND</code></td><td>S0</td></tr>
+<tr><td>德意志联邦共和国行政区划（31个州/邦）</td><td><code>SB_DEUTSCHLAND</code></td><td>S2</td></tr>
+<tr><td>法兰克立宪君主国行政区划（11 本土州；1975 年后含奥克五州共 16 州）</td><td><code>SB_FRANKEN</code></td><td>S0</td></tr>
+<tr><td>法兰克立宪君主国行政区划（11 本土州；1975 年后含奥克五州共 16 州）</td><td><code>SB_FRANKEN</code></td><td>S2</td></tr>
+<tr><td>不列颠联邦共和国战后行政区划（八个一级联邦单位）</td><td><code>SB_UK_POSTWAR</code></td><td>S3</td></tr>
+<tr><td>不列颠王国战前行政区划（军政合一三级制）</td><td><code>SB_UK_PREWAR</code></td><td>S3</td></tr>
+<tr><td>伊比利亚大区体系（大型一级行政区）</td><td><code>SB_IBERIA</code></td><td>S2</td></tr>
+<tr><td>爱尔兰共和国行政区划</td><td><code>SB_IRELAND</code></td><td>S3</td></tr>
+</tbody></table></div>
+<h3 id="PARTY-24">PARTY（24）</h3>
+<div class="tw"><table>
+<thead><tr><th>名称</th><th>ID</th><th>出处</th></tr></thead><tbody>
+<tr><td>法兰克人民党</td><td><code>PT_FVP</code></td><td>S2</td></tr>
+<tr><td>法兰克社会民主党</td><td><code>PT_FSP</code></td><td>S2</td></tr>
+<tr><td>法兰克共产党</td><td><code>PT_FKP</code></td><td>S2</td></tr>
+<tr><td>德意志社会民主党</td><td><code>PT_DSP</code></td><td>S2</td></tr>
+<tr><td>德意志自由民主党</td><td><code>PT_FDP_DE</code></td><td>S2</td></tr>
+<tr><td>德意志基督教民主党</td><td><code>PT_CDU</code></td><td>S2</td></tr>
+<tr><td>德意志保守联邦党</td><td><code>PT_KFPD</code></td><td>S2</td></tr>
+<tr><td>德意志人民党</td><td><code>PT_DVP</code></td><td>S2</td></tr>
+<tr><td>绿色与地区主义联盟</td><td><code>PT_GRA</code></td><td>S2</td></tr>
+<tr><td>德意志共产党</td><td><code>PT_KPD</code></td><td>S2</td></tr>
+<tr><td>伊比利亚民族党</td><td><code>PT_PNI</code></td><td>S2</td></tr>
+<tr><td>伊比利亚社会民主党</td><td><code>PT_PSI</code></td><td>S2</td></tr>
+<tr><td>伊比利亚社会民主党</td><td><code>PT_PSI</code></td><td>S3</td></tr>
+<tr><td>伊比利亚自由党</td><td><code>PT_PLI</code></td><td>S2</td></tr>
+<tr><td>伊比利亚共产党</td><td><code>PT_PCI</code></td><td>S2</td></tr>
+<tr><td>不列颠社会民主党</td><td><code>PT_SDP_UK</code></td><td>S3</td></tr>
+<tr><td>自由党</td><td><code>PT_LIBERAL_UK</code></td><td>S3</td></tr>
+<tr><td>国家保守党</td><td><code>PT_NATCON_UK</code></td><td>S3</td></tr>
+<tr><td>激进共和党</td><td><code>PT_RADREP_UK</code></td><td>S3</td></tr>
+<tr><td>不列颠共产党</td><td><code>PT_CPB</code></td><td>S3</td></tr>
+<tr><td>苏格兰、威尔士区域文化党</td><td><code>PT_REGIONAL_UK</code></td><td>S3</td></tr>
+<tr><td>共和党</td><td><code>PT_REPUBLICAN_US</code></td><td>S2</td></tr>
+<tr><td>美国社会民主党（前身为美国社会党）</td><td><code>PT_ASOC</code></td><td>S2</td></tr>
+<tr><td>美国共产党</td><td><code>PT_CPUSA</code></td><td>S2</td></tr>
+</tbody></table></div>
+<h3 id="ORGANIZATION-99">ORGANIZATION（99）</h3>
+<div class="tw"><table>
+<thead><tr><th>名称</th><th>ID</th><th>出处</th></tr></thead><tbody>
+<tr><td>泛德意志语言会议</td><td><code>O_SPRACHKONFERENZ</code></td><td>S0</td></tr>
+<tr><td>维也纳大学</td><td><code>O_VIENNA_UNI</code></td><td>S0</td></tr>
+<tr><td>布拉格卡尔大学</td><td><code>O_PRAG_KARLSUNI</code></td><td>S0</td></tr>
+<tr><td>莱比锡大学</td><td><code>O_LEIPZIG_UNI</code></td><td>S0</td></tr>
+<tr><td>哥廷根大学</td><td><code>O_GOTTINGEN_UNI</code></td><td>S0</td></tr>
+<tr><td>阿姆斯特丹自由大学与尼德兰航运学院</td><td><code>O_AMSTERDAM_VU</code></td><td>S0</td></tr>
+<tr><td>米兰理工大学与伦巴底美学院</td><td><code>O_MAILAND_POLI</code></td><td>S0</td></tr>
+<tr><td>苏黎世联邦理工学院</td><td><code>O_ZURICH_ETH</code></td><td>S0</td></tr>
+<tr><td>帕里斯王家学院</td><td><code>O_PARIS_AKADEMIE</code></td><td>S0</td></tr>
+<tr><td>雷姆斯神学院</td><td><code>O_REIMS_SEMINAR</code></td><td>S0</td></tr>
+<tr><td>劳格登大学</td><td><code>O_LAUGDEN_UNI</code></td><td>S0</td></tr>
+<tr><td>迪根大学</td><td><code>O_DIGEN_UNI</code></td><td>S0</td></tr>
+<tr><td>卡莱斯航海与海军学院</td><td><code>O_KALES_NAVAL</code></td><td>S0</td></tr>
+<tr><td>日内瓦学院</td><td><code>O_GENF_INSTITUT</code></td><td>S0</td></tr>
+<tr><td>巴塞尔大学</td><td><code>O_BASEL_UNI</code></td><td>S0</td></tr>
+<tr><td>苏黎世大学</td><td><code>O_ZURICH_UNI</code></td><td>S0</td></tr>
+<tr><td>自由汉萨城市 / 汉萨贸易金融集团</td><td><code>O_HANSA</code></td><td>S0</td></tr>
+<tr><td>欧盟（欧洲文明洲的共同框架）</td><td><code>O_EU</code></td><td>S2</td></tr>
+<tr><td>国王会同枢密院</td><td><code>O_KING_IN_COUNCIL</code></td><td>S3</td></tr>
+<tr><td>海军部</td><td><code>O_ADMIRALTY</code></td><td>S3</td></tr>
+<tr><td>财政署</td><td><code>O_EXCHEQUER</code></td><td>S3</td></tr>
+<tr><td>枢密院法庭（星室式）</td><td><code>O_STARCHAMBER</code></td><td>S3</td></tr>
+<tr><td>英联邦（The Commonwealth）</td><td><code>O_COMMONWEALTH</code></td><td>S3</td></tr>
+<tr><td>蒂宾根大学</td><td><code>O_TUEBINGEN_UNI</code></td><td>S0</td></tr>
+<tr><td>柏林大学</td><td><code>O_BERLIN_UNI</code></td><td>S0</td></tr>
+<tr><td>维也纳艺术史博物馆</td><td><code>O_KUNSTHIST_MUSEUM</code></td><td>S0</td></tr>
+<tr><td>维也纳艺术史博物馆</td><td><code>O_KUNSTHIST_MUSEUM</code></td><td>S1</td></tr>
+<tr><td>巴伐利亚国家博物馆</td><td><code>O_BAYERN_NAT_MUSEUM</code></td><td>S0</td></tr>
+<tr><td>巴伐利亚国家博物馆</td><td><code>O_BAYERN_NAT_MUSEUM</code></td><td>S1</td></tr>
+<tr><td>维也纳霍夫堡宫</td><td><code>O_HOFBURG</code></td><td>S0</td></tr>
+<tr><td>维也纳霍夫堡宫</td><td><code>O_HOFBURG</code></td><td>S1</td></tr>
+<tr><td>美泉宫</td><td><code>O_SCHOENBRUNN</code></td><td>S0</td></tr>
+<tr><td>美泉宫</td><td><code>O_SCHOENBRUNN</code></td><td>S1</td></tr>
+<tr><td>圣斯特凡大教堂</td><td><code>O_STEPHANSDOM</code></td><td>S0</td></tr>
+<tr><td>圣斯特凡大教堂</td><td><code>O_STEPHANSDOM</code></td><td>S1</td></tr>
+<tr><td>马格德堡大教堂</td><td><code>O_MAGDEBURG_DOM</code></td><td>S0</td></tr>
+<tr><td>阿姆斯特丹新教堂与西教堂</td><td><code>O_AMS_NIEUWEKERK</code></td><td>S0</td></tr>
+<tr><td>帕里斯圣母大教堂</td><td><code>O_NOTRE_DAME_PARIS</code></td><td>S0</td></tr>
+<tr><td>雷姆斯圣母大教堂</td><td><code>O_REIMS_CATHEDRAL</code></td><td>S0</td></tr>
+<tr><td>圣迪奥尼修斯王家修道院</td><td><code>O_ST_DENIS</code></td><td>S0</td></tr>
+<tr><td>沙特尔圣母大教堂</td><td><code>O_CHARTRES</code></td><td>S0</td></tr>
+<tr><td>克吕尼修道院旧址与普利姆修道院</td><td><code>O_CLUNY</code></td><td>S0</td></tr>
+<tr><td>圣维克多修道院</td><td><code>O_ST_VICTOR</code></td><td>S0</td></tr>
+<tr><td>帕里斯王家美术馆（卢浮宫）</td><td><code>O_LOUVRE</code></td><td>S1</td></tr>
+<tr><td>阿文根教皇宫</td><td><code>O_AVIGNON_PALACE</code></td><td>S0</td></tr>
+<tr><td>牛津大学</td><td><code>O_OXFORD</code></td><td>S3</td></tr>
+<tr><td>剑桥大学</td><td><code>O_CAMBRIDGE</code></td><td>S3</td></tr>
+<tr><td>不列颠博物馆</td><td><code>O_BRITISH_MUSEUM</code></td><td>S3</td></tr>
+<tr><td>不列颠国家美术馆</td><td><code>O_NATIONAL_GALLERY_UK</code></td><td>S3</td></tr>
+<tr><td>威斯敏斯特宫廷礼拜堂</td><td><code>O_WESTMINSTER</code></td><td>S3</td></tr>
+<tr><td>白金汉宫</td><td><code>O_BUCKINGHAM</code></td><td>S3</td></tr>
+<tr><td>萨拉曼卡大学</td><td><code>O_SALAMANCA</code></td><td>S2</td></tr>
+<tr><td>伊比利亚王家美术馆（普拉多）</td><td><code>O_PRADO</code></td><td>S0</td></tr>
+<tr><td>伊比利亚王家美术馆（普拉多）</td><td><code>O_PRADO</code></td><td>S2</td></tr>
+<tr><td>埃斯科里亚尔宫</td><td><code>O_ESCORIAL</code></td><td>S0</td></tr>
+<tr><td>埃斯科里亚尔宫</td><td><code>O_ESCORIAL</code></td><td>S2</td></tr>
+<tr><td>托莱多大教堂</td><td><code>O_TOLEDO_CATHEDRAL</code></td><td>S0</td></tr>
+<tr><td>托莱多大教堂</td><td><code>O_TOLEDO_CATHEDRAL</code></td><td>S2</td></tr>
+<tr><td>科尔多瓦大清真寺（后改主教座堂）</td><td><code>O_CORDOBA_MEZQUITA</code></td><td>S0</td></tr>
+<tr><td>科尔多瓦大清真寺（后改主教座堂）</td><td><code>O_CORDOBA_MEZQUITA</code></td><td>S2</td></tr>
+<tr><td>苏黎世大教堂</td><td><code>O_GROSSMUENSTER</code></td><td>S0</td></tr>
+<tr><td>圣哥达山口修道院与山间礼拜堂</td><td><code>O_ST_GOTTHARD_HOSPICE</code></td><td>S0</td></tr>
+<tr><td>爱资哈尔学院</td><td><code>O_AL_AZHAR</code></td><td>S1</td></tr>
+<tr><td>圣索菲亚大教堂</td><td><code>O_HAGIA_SOPHIA</code></td><td>S1</td></tr>
+<tr><td>圣索菲亚大教堂</td><td><code>O_HAGIA_SOPHIA</code></td><td>S4</td></tr>
+<tr><td>伊斯法罕王家清真寺</td><td><code>O_ISFAHAN_MOSQUE</code></td><td>S1</td></tr>
+<tr><td>撒马尔罕佛寺群</td><td><code>O_SAMARKAND_VIHARA</code></td><td>S1</td></tr>
+<tr><td>莫斯科克里姆林宫</td><td><code>O_MOSCOW_KREML</code></td><td>S4</td></tr>
+<tr><td>敦煌石窟群</td><td><code>O_DUNHUANG_CAVES</code></td><td>S1</td></tr>
+<tr><td>龟兹石窟群</td><td><code>O_KUCHA_CAVES</code></td><td>S1</td></tr>
+<tr><td>欧洲学院（欧盟共同高等教育机构）</td><td><code>O_EUROPA_ACADEMY</code></td><td>S2</td></tr>
+<tr><td>法兰克福帝国议会档案馆</td><td><code>O_REICHSARCHIV_FFM</code></td><td>S0</td></tr>
+<tr><td>法兰克福帝国议会档案馆</td><td><code>O_REICHSARCHIV_FFM</code></td><td>S1</td></tr>
+<tr><td>维也纳国家档案馆</td><td><code>O_WIEN_STAATSARCHIV</code></td><td>S0</td></tr>
+<tr><td>维滕堡城堡教堂</td><td><code>O_WITTENBERG_SCHLOSSKIRCHE</code></td><td>S0</td></tr>
+<tr><td>维滕堡城堡教堂</td><td><code>O_WITTENBERG_SCHLOSSKIRCHE</code></td><td>S1</td></tr>
+<tr><td>布拉格伯利恒礼拜堂</td><td><code>O_BETHLEHEM_CHAPEL</code></td><td>S0</td></tr>
+<tr><td>布拉格伯利恒礼拜堂</td><td><code>O_BETHLEHEM_CHAPEL</code></td><td>S1</td></tr>
+<tr><td>德意志联邦国家博物馆（社会史部）</td><td><code>O_NAT_MUSEUM_SOZIALGESCH</code></td><td>S0</td></tr>
+<tr><td>德意志联邦国家博物馆（社会史部）</td><td><code>O_NAT_MUSEUM_SOZIALGESCH</code></td><td>S2</td></tr>
+<tr><td>托莱多王家军械库</td><td><code>O_TOLEDO_ARMORY</code></td><td>S2</td></tr>
+<tr><td>托洛森奥克文化博物馆</td><td><code>O_OCCITAN_MUSEUM</code></td><td>S0</td></tr>
+<tr><td>托洛森奥克文化博物馆</td><td><code>O_OCCITAN_MUSEUM</code></td><td>S1</td></tr>
+<tr><td>布拉格国家技术博物馆</td><td><code>O_PRAG_NAT_TECH</code></td><td>S0</td></tr>
+<tr><td>布拉格国家技术博物馆</td><td><code>O_PRAG_NAT_TECH</code></td><td>S1</td></tr>
+<tr><td>日内瓦圣彼得大教堂</td><td><code>O_GENF_STPETERS</code></td><td>S0</td></tr>
+<tr><td>日内瓦圣彼得大教堂</td><td><code>O_GENF_STPETERS</code></td><td>S1</td></tr>
+<tr><td>布拉格国家美术馆</td><td><code>O_PRAG_NAT_GALLERY</code></td><td>S0</td></tr>
+<tr><td>布拉格国家美术馆</td><td><code>O_PRAG_NAT_GALLERY</code></td><td>S1</td></tr>
+<tr><td>汉堡艺术馆</td><td><code>O_HAMBURG_KUNSTHALLE</code></td><td>S0</td></tr>
+<tr><td>米兰布雷拉美术馆</td><td><code>O_MILAN_GALLERY</code></td><td>S0</td></tr>
+<tr><td>米兰布雷拉美术馆</td><td><code>O_MILAN_GALLERY</code></td><td>S1</td></tr>
+<tr><td>马德里国家考古博物馆</td><td><code>O_MADRID_ARCHAEOLOGICAL</code></td><td>S2</td></tr>
+<tr><td>威尼斯美术学院陈列馆</td><td><code>O_VENICE_ACCADEMIA</code></td><td>S0</td></tr>
+<tr><td>伦敦国家档案馆</td><td><code>O_UK_NAT_ARCHIVE</code></td><td>S3</td></tr>
+<tr><td>莫斯科罗斯兀鲁思国家档案馆</td><td><code>O_ROS_NAT_ARCHIVE</code></td><td>S4</td></tr>
+<tr><td>马拉喀什圣堂</td><td><code>O_MARRAKECH_SHRINE</code></td><td>S0</td></tr>
+<tr><td>马拉喀什圣堂</td><td><code>O_MARRAKECH_SHRINE</code></td><td>S2</td></tr>
+<tr><td>的里雅斯特共管纪念广场</td><td><code>O_TRIEST_MEMORIAL</code></td><td>S0</td></tr>
+</tbody></table></div>
+<h3 id="PENDING-26">PENDING（26）</h3>
+<div class="tw"><table>
+<thead><tr><th>名称</th><th>ID</th><th>出处</th></tr></thead><tbody>
+<tr><td>伊比利亚最终大区数量及边界</td><td>—</td><td>S2</td></tr>
+<tr><td>美国具体州界及行政层级</td><td>—</td><td>S2</td></tr>
+<tr><td>英国现代行政区划</td><td>—</td><td>S2</td></tr>
+<tr><td>英国政治体系</td><td>—</td><td>S2</td></tr>
+<tr><td>美国社会主义党的正式名称/组织历史</td><td>—</td><td>S2</td></tr>
+<tr><td>法兰克各州最终数量</td><td>—</td><td>S2</td></tr>
+<tr><td>奥克正常化法案的确切年份</td><td>—</td><td>S2</td></tr>
+<tr><td>英国具体联邦/单一制结构</td><td>—</td><td>S2</td></tr>
+<tr><td>英国苏格兰、威尔士的最终制度（爱尔兰独立）</td><td>—</td><td>S2</td></tr>
+<tr><td>美国新版州界</td><td>—</td><td>S2</td></tr>
+<tr><td>新设定的大洲正式名称</td><td>—</td><td>S2</td></tr>
+<tr><td>新设定的大洲内部国家行政制度及其历史</td><td>—</td><td>S2</td></tr>
+<tr><td>不列颠监督过渡期确切年限</td><td>—</td><td>S3</td></tr>
+<tr><td>不列颠战后总统职权细节</td><td>—</td><td>S3</td></tr>
+<tr><td>不列颠政教分离的具体安排</td><td>—</td><td>S3</td></tr>
+<tr><td>爱尔兰凯尔特语官方地位、总统与总理职权、与英联邦关系</td><td>—</td><td>S3</td></tr>
+<tr><td>英联邦成员名单与共同防务条款</td><td>—</td><td>S3</td></tr>
+<tr><td>不列颠政党正式英文名称与组织史</td><td>—</td><td>S3</td></tr>
+<tr><td>不列颠一级单位是否最终定为八个</td><td>—</td><td>S3</td></tr>
+<tr><td>战前蒙福尔王朝的完整王室谱系</td><td>—</td><td>S3</td></tr>
+<tr><td>伦敦与帕里斯之间的“罗曼正统之争”（可继续深挖的接口）</td><td>—</td><td>S3</td></tr>
+<tr><td>君士坦丁堡/海峡政治体的具体形态</td><td>—</td><td>S1</td></tr>
+<tr><td>宗教—文明边界线：伊斯兰文明止于哪里、西域佛教覆盖到哪里、蒙古长生天世界向西延伸到哪里、罗斯兀鲁思何时以何方式进入非伊斯兰化的中亚</td><td>—</td><td>S1</td></tr>
+<tr><td>宗教—文明边界线：伊斯兰文明止于哪里、西域佛教覆盖到哪里、蒙古长生天世界向西延伸到哪里、罗斯兀鲁思何时以何方式进入非伊斯兰化的中亚</td><td>—</td><td>S4</td></tr>
+<tr><td>白罗斯是否与基辅王国组成联邦</td><td>—</td><td>S4</td></tr>
+<tr><td>“罗斯兀鲁思/莫斯科国”的正式别名（“俄罗斯”已废弃）</td><td>—</td><td>S4</td></tr>
+</tbody></table></div>
+<h3 id="CONFIRMED-36">CONFIRMED（36）</h3>
+<div class="tw"><table>
+<thead><tr><th>名称</th><th>ID</th><th>出处</th></tr></thead><tbody>
+<tr><td>法兰克联邦化单一制</td><td>—</td><td>S2</td></tr>
+<tr><td>法兰克奥克省1945—1975临时存在、之后废除</td><td>—</td><td>S2</td></tr>
+<tr><td>奥克普通州化</td><td>—</td><td>S2</td></tr>
+<tr><td>多菲内/普罗旺斯作为南方枢纽</td><td>—</td><td>S2</td></tr>
+<tr><td>法兰克早期宪政、内阁制</td><td>—</td><td>S2</td></tr>
+<tr><td>一战废王</td><td>—</td><td>S2</td></tr>
+<tr><td>二战复辟</td><td>—</td><td>S2</td></tr>
+<tr><td>战后哈布斯堡国王完全礼仪化</td><td>—</td><td>S2</td></tr>
+<tr><td>FVP/FSP两大党 + FKP</td><td>—</td><td>S2</td></tr>
+<tr><td>德意志联邦制</td><td>—</td><td>S2</td></tr>
+<tr><td>德意志30余州结构</td><td>—</td><td>S2</td></tr>
+<tr><td>德国多党制</td><td>—</td><td>S2</td></tr>
+<tr><td>伊比利亚高度中央集权</td><td>—</td><td>S2</td></tr>
+<tr><td>伊比利亚总统制</td><td>—</td><td>S2</td></tr>
+<tr><td>伊比利亚大区必须“大而少”</td><td>—</td><td>S2</td></tr>
+<tr><td>北非不具有特殊宪制地位</td><td>—</td><td>S2</td></tr>
+<tr><td>从PNI到PSI大党 + 小党</td><td>—</td><td>S2</td></tr>
+<tr><td>美国社会主义党成为主要政党</td><td>—</td><td>S2</td></tr>
+<tr><td>四大洲文明划分原则</td><td>—</td><td>S2</td></tr>
+<tr><td>英语与盎格鲁语合流为同一语言的高、低语域</td><td>—</td><td>S2</td></tr>
+<tr><td>罗曼化程度梯度</td><td>—</td><td>S2</td></tr>
+<tr><td>金雀花延续至伊比利亚革命前后，蒙福尔家族接替</td><td>—</td><td>S2</td></tr>
+<tr><td>不主张法兰西王冠</td><td>—</td><td>S2</td></tr>
+<tr><td>战前绝对君主制</td><td>—</td><td>S2</td></tr>
+<tr><td>等级会议非立法机关</td><td>—</td><td>S2</td></tr>
+<tr><td>1945年战败后民主化</td><td>—</td><td>S2</td></tr>
+<tr><td>战后为共和国</td><td>—</td><td>S2</td></tr>
+<tr><td>多党制与联邦化分权为被监督强加</td><td>—</td><td>S2</td></tr>
+<tr><td>苏格兰与威尔士无独立法统</td><td>—</td><td>S2</td></tr>
+<tr><td>爱尔兰1945年全岛独立为共和国</td><td>—</td><td>S2</td></tr>
+<tr><td>英联邦存在但规模远小于现实，殖民地战后纷纷独立</td><td>—</td><td>S2</td></tr>
+<tr><td>罗斯兀鲁思为后基辅罗斯国家（蒙古-金帐继承线）</td><td>—</td><td>S2</td></tr>
+<tr><td>金帐汗国未在14世纪伊斯兰化</td><td>—</td><td>S2</td></tr>
+<tr><td>莫斯科王朝蒙古化、蒙古王族直接成为莫斯科统治王朝</td><td>—</td><td>S2</td></tr>
+<tr><td>基辅王国采用自称、继承基辅罗斯传统</td><td>—</td><td>S2</td></tr>
+<tr><td>一战罗斯兀鲁思重新夺取基辅、二战后再次分离</td><td>—</td><td>S2</td></tr>
+</tbody></table></div>
+<h2 id="主题检索表-关键词-条目">主题检索表（关键词 → 条目）</h2>
+<div class="tw"><table>
+<thead><tr><th>关键词</th><th>命中数</th><th>相关条目</th></tr></thead><tbody>
+<tr><td>伊比利亚</td><td>140</td><td>二、时间纵轴｜（五）18世纪：双王冠融合与伊比利亚大革命、三、横轴指标｜（一）政治与王朝、三、横轴：六大文明/政治力量、五、最终的纵横时间表、十七—二十三、伊比利亚、十五、六国政治模式总表、伊比利亚共和国（第五共和国后体制）</td></tr>
+<tr><td>罗斯兀鲁</td><td>55</td><td>七、罗斯兀鲁思：蒙古王朝与后基辅罗斯国家传统｜一、问题的核心、七、罗斯兀鲁思｜二、蒙古对东斯拉夫世界的统治更加深入、七、罗斯兀鲁思｜三、莫斯科王朝的蒙古化、七、罗斯兀鲁思｜四、蒙古王朝最终直接统治莫斯科、七、罗斯兀鲁思｜五、“金帐汗国灭亡”≠蒙古传统灭亡、七、罗斯兀鲁思｜六、国家正统发生变化、七、罗斯兀鲁思｜七、莫斯科国的文化结构</td></tr>
+<tr><td>普热米斯</td><td>37</td><td>三、横轴指标｜（一）政治与王朝、德意志联邦共和国、伊比利亚第一帝国、普热米斯尔</td></tr>
+<tr><td>本世界线</td><td>37</td><td>法兰克立宪君主国、德意志联邦共和国、不列颠联邦共和国</td></tr>
+<tr><td>世纪</td><td>36</td><td>二、时间纵轴｜（一）13世纪：双源发生、二、时间纵轴｜（二）14世纪：法兰克福条约与双元帝国、二、时间纵轴｜（三）15—16世纪：宗教改革与农民战争、二、时间纵轴｜（四）17世纪：宗教战争与维也纳和约、二、时间纵轴｜（五）18世纪：双王冠融合与伊比利亚大革命、二、时间纵轴｜（六）19世纪：1848、1866、1871、二、时间纵轴｜（七）20世纪：一战、二战与战后秩序、二、纵轴｜公元前后—8世纪 / 8—12世纪：西域佛教</td></tr>
+<tr><td>法兰克福</td><td>31</td><td>二、时间纵轴｜（二）14世纪：法兰克福条约与双元帝国、法兰克立宪君主国、阿尔布雷希特二世</td></tr>
+<tr><td>哈布斯堡</td><td>30</td><td>一、总纲、西班牙-阿拉贡、法兰克共和国</td></tr>
+<tr><td>西域佛教</td><td>29</td><td>二、纵轴｜公元前后—8世纪 / 8—12世纪：西域佛教、罗斯兀鲁思、蒙古帝国、东洲（新大洲，正式名称待定）</td></tr>
+<tr><td>法兰克</td><td>28</td><td>三、横轴指标｜（五）学术与宗教圣地、三、横轴：六大文明/政治力量、五、最终的纵横时间表、二、法兰克：联邦化单一制、十二、国际定位、十五、六国政治模式总表、叙利亚地区、瓦卢瓦</td></tr>
+<tr><td>佛教</td><td>24</td><td>二、纵轴｜蒙古宗教结构、七、罗斯兀鲁思｜七、莫斯科国的文化结构、金帐汗国、蒙古诸王朝、1960年前后　多极均势与新亚洲文明地图</td></tr>
+<tr><td>共和国</td><td>20</td><td>伊比利亚共和国（第五共和国后体制）、伊比利亚王国、伊比利亚第一共和国、伊比利亚第三共和国（1871—1940）</td></tr>
+<tr><td>波西米亚</td><td>19</td><td>三、横轴指标｜（六）民族与边缘问题、14—15世纪　普热米斯尔的德意志化、1648　《维也纳和约》与帝国分权、1866　1866年奥法战争、19世纪后期 — 20世纪　第二次工业革命与三大工业带</td></tr>
+<tr><td>北意大利</td><td>17</td><td>三、横轴指标｜（六）民族与边缘问题、1618 — 1648　三十年宗教战争、1648　《维也纳和约》与帝国分权、1848　1848年革命与大德意志方案失败</td></tr>
+<tr><td>安纳托利</td><td>16</td><td>伊斯兰世界（区域文明体集合）、伊朗（伊斯兰什叶派波斯）、奥斯曼帝国（安纳托利亚突厥帝国）、阿拉伯—汉志地区、安纳托利亚突厥王朝</td></tr>
+<tr><td>宪章</td><td>16</td><td>二、时间纵轴｜（二）14世纪：法兰克福条约与双元帝国、法兰克立宪君主国、阿尔布雷希特二世、阿尔布雷希特二世之女（未具名）、阿尔布雷希特二世之女婿（法兰克贵族推举对象，文档未具名）</td></tr>
+<tr><td>法兰克人</td><td>16</td><td>鲁道夫、雷姆斯大主教（1272年为鲁道夫加冕者，文档未具名）、1272　鲁道夫加冕为“法兰克人的国王”</td></tr>
+<tr><td>阿尔卑斯</td><td>16</td><td>三、横轴指标｜（二）宗教、1450—1600 / 16世纪　宗教改革与普热米斯尔新教化、1648　《维也纳和约》与帝国分权、19世纪后期 — 20世纪　第二次工业革命与三大工业带、南德意志阿尔卑斯福音派</td></tr>
+<tr><td>首府</td><td>16</td><td>四、语言与地名系统、布吕格、卡莱斯、奥尔伦、托洛森、马西利恩 / 马塞尔</td></tr>
+<tr><td>传统</td><td>15</td><td>七、罗斯兀鲁思：蒙古王朝与后基辅罗斯国家传统｜一、问题的核心、基辅王国、金帐汗国、帝国首相黎塞留、1200 — 1300及以后　蒙古帝国崛起与文明桥梁</td></tr>
+<tr><td>的国王</td><td>15</td><td>鲁道夫、雷姆斯大主教（1272年为鲁道夫加冕者，文档未具名）、1272　鲁道夫加冕为“法兰克人的国王”</td></tr>
+<tr><td>第五共和</td><td>15</td><td>伊比利亚共和国（第五共和国后体制）、伊比利亚第五共和国（1960— ）</td></tr>
+<tr><td>为准</td><td>14</td><td>奥克省行政地位、英国政体与议会制度、英国战后国体</td></tr>
+<tr><td>第三共和</td><td>14</td><td>伊比利亚第三共和国（1871—1940）、伊比利亚被占领与过渡期（1940—1945）</td></tr>
+<tr><td>世界</td><td>13</td><td>蒙古帝国、中国、1200 — 1300及以后　蒙古帝国崛起与文明桥梁</td></tr>
+<tr><td>南部奥克</td><td>13</td><td>1945 — 1975　南部奥克省建制与法兰克-奥克问题、伊比利亚-奥克语</td></tr>
+<tr><td>州首府</td><td>13</td><td>梅茨、劳格登 / 卢登、蒙斯佩勒、汉诺威、美因茨、马格德堡、布雷斯劳、波森</td></tr>
+<tr><td>年前后</td><td>13</td><td>二、纵轴｜1960年前后：新的亚洲文明地图、西亚伊斯兰文明空间、1270年前后　卡佩绝嗣与法兰克继承危机、1300年前后　东西双源格局定型、18世纪 / 1700年前后　双王冠的“准融合”</td></tr>
+<tr><td>德意志选</td><td>13</td><td>阿尔布雷希特二世、阿尔布雷希特二世之女（未具名）、阿尔布雷希特二世之女婿（法兰克贵族推举对象，文档未具名）、1356　《法兰克福宪章》与双王冠确立</td></tr>
+<tr><td>萨满</td><td>13</td><td>二、纵轴｜蒙古宗教结构、二、纵轴｜16—19世纪：俄罗斯进入亚洲、七、罗斯兀鲁思｜七、莫斯科国的文化结构、蒙古诸王朝、1960年前后　多极均势与新亚洲文明地图</td></tr>
+<tr><td>西域</td><td>13</td><td>中国、东洲（新大洲，正式名称待定）、伊斯兰世界（区域文明体集合）、伊朗（伊斯兰什叶派波斯）、西域-波斯（佛教波斯残余）</td></tr>
+<tr><td>金帐汗国</td><td>13</td><td>七、罗斯兀鲁思｜二、蒙古对东斯拉夫世界的统治更加深入、七、罗斯兀鲁思｜五、“金帐汗国灭亡”≠蒙古传统灭亡、金帐汗国、莫斯科蒙古王朝、13世纪 — 金帐汗国分裂　金帐汗国未伊斯兰化与蒙古-罗斯制度融合、金帐汗国分裂后　罗斯兀鲁思建立与后基辅罗斯国家传统</td></tr>
+<tr><td>阿尔布雷</td><td>13</td><td>阿尔布雷希特、阿尔布雷希特二世、阿尔布雷希特二世之女（未具名）、阿尔布雷希特二世之女婿（法兰克贵族推举对象，文档未具名）、1356　《法兰克福宪章》与双王冠确立</td></tr>
+<tr><td>伊朗</td><td>12</td><td>伊斯兰世界（区域文明体集合）、伊朗（伊斯兰什叶派波斯）、1960年前后　多极均势与新亚洲文明地图</td></tr>
+<tr><td>反伊比利</td><td>12</td><td>二、时间纵轴｜（五）18世纪：双王冠融合与伊比利亚大革命、伊比利亚第一帝国、蒙福尔、伊比利亚大革命与反伊比利亚战争（1789—1815）</td></tr>
+<tr><td>希特二世</td><td>12</td><td>阿尔布雷希特二世、阿尔布雷希特二世之女（未具名）、阿尔布雷希特二世之女婿（法兰克贵族推举对象，文档未具名）、1356　《法兰克福宪章》与双王冠确立</td></tr>
+<tr><td>德意志联</td><td>12</td><td>德意志联邦共和国、1960年前后　多极均势与新亚洲文明地图、德意志联邦共和国行政区划（31个州/邦）</td></tr>
+<tr><td>维也纳和</td><td>12</td><td>二、时间纵轴｜（四）17世纪：宗教战争与维也纳和约、奥克王国、1648　《维也纳和约》与帝国分权、1648后　1648年维也纳和约后的流亡波次、宗教战争 / 三十年战争（1618—1648）</td></tr>
+<tr><td>英格兰</td><td>12</td><td>三、横轴指标｜（一）政治与王朝、英格兰-诺曼底、诺曼底公爵（1272年决战失败者，文档未具名）</td></tr>
+<tr><td>蒙古</td><td>12</td><td>七、罗斯兀鲁思｜七、莫斯科国的文化结构、七、罗斯兀鲁思｜八、与基辅王国的分道扬镳、白罗斯、东洲（新大洲，正式名称待定）、马穆鲁克、1200 — 1300及以后　蒙古帝国崛起与文明桥梁</td></tr>
+<tr><td>蒙古帝国</td><td>12</td><td>二、纵轴｜1200—1300：蒙古帝国、七、罗斯兀鲁思｜十三、与蒙古帝国的关系、蒙古帝国、1200 — 1300及以后　蒙古帝国崛起与文明桥梁、金帐汗国分裂后　罗斯兀鲁思建立与后基辅罗斯国家传统、一战期间 / 二战后　基辅王国与罗斯兀鲁思的文明分流</td></tr>
+<tr><td>中心</td><td>11</td><td>法蒂玛哈里发国（埃及）、法蒂玛、伦敦、非斯、龟兹石窟群、撒马尔罕、爱资哈尔学院</td></tr>
+<tr><td>伊斯兰文</td><td>11</td><td>亚洲（文明大洲）、西亚伊斯兰文明空间、法蒂玛、沙阿伊斯玛仪、1945 — 1960　新亚洲秩序与文明边界线、伊斯兰教</td></tr>
+<tr><td>俄罗斯</td><td>11</td><td>三、横轴：六大文明/政治力量、五、最终的纵横时间表、俄罗斯/莫斯科国的正式名称</td></tr>
+<tr><td>南德意志</td><td>11</td><td>14—15世纪　普热米斯尔的德意志化、1524 — 1527　农民战争、1648　《维也纳和约》与帝国分权、农民战争（1524—1527）</td></tr>
+<tr><td>基辅王国</td><td>11</td><td>七、罗斯兀鲁思｜九、一战：重新夺取基辅王国、七、罗斯兀鲁思｜十二、与欧洲的关系、基辅王国、白罗斯、1945后　基辅王国与白罗斯脱离莫斯科国、一战期间 / 二战后　基辅王国与罗斯兀鲁思的文明分流、乌克兰/基辅王国的正式名称</td></tr>
+<tr><td>奥克大革</td><td>11</td><td>二、时间纵轴｜（五）18世纪：双王冠融合与伊比利亚大革命、伊比利亚共和国（第五共和国后体制）、奥克王国、伊比利亚王国</td></tr>
+<tr><td>形成</td><td>11</td><td>罗斯兀鲁思、西班牙-阿拉贡、亚洲（文明大洲）、西伯利亚萨满文化区、1273 — 1300　奥托卡二世崛起与东西双源形成</td></tr>
+<tr><td>推定</td><td>11</td><td>伊莎贝拉·冯·卡斯蒂利亚、伊比利亚王国开国君主（本轮新增，姓名待定）、15—16世纪（推定）　伊比利亚统一与伊比利亚王国建立、16世纪（推定）　波斯确立什叶派国家传统、托莱多</td></tr>
+<tr><td>穆瓦希德</td><td>11</td><td>穆瓦希德哈里发国（及穆拉比特）、马格里布（北非西部）、穆瓦希德（及穆拉比特）、1031　科尔多瓦哈里发国分裂为诸泰法</td></tr>
+<tr><td>第四共和</td><td>11</td><td>伊比利亚被占领与过渡期（1940—1945）、伊比利亚第四共和国（1945—1954）、伊比利亚第五共和国（1960— ）、1945　伊比利亚第四共和国成立</td></tr>
+<tr><td>纵轴</td><td>11</td><td>二、纵轴：世界历史时间线、二、纵轴｜亚洲宗教史：新的基本原则、二、纵轴｜公元前后—8世纪 / 8—12世纪：西域佛教、二、纵轴｜1200—1300：蒙古帝国、二、纵轴｜蒙古宗教结构、二、纵轴｜15—17世纪：蒙古佛教化、二、纵轴｜16—19世纪：俄罗斯进入亚洲、二、纵轴｜俄罗斯的新历史主题 / 中国的新历史角色</td></tr>
+<tr><td>莫斯科国</td><td>11</td><td>七、罗斯兀鲁思｜七、莫斯科国的文化结构、莫斯科、俄罗斯/莫斯科国的正式名称</td></tr>
+<tr><td>解散</td><td>11</td><td>伊比利亚共和国（第五共和国后体制）、伊比利亚第一共和国、1789 — 1815　伊比利亚-奥克大革命、伊比利亚大革命与反伊比利亚战争（1789—1815）</td></tr>
+<tr><td>逐出大陆</td><td>11</td><td>英格兰-诺曼底、爱德华一世、诺曼底公爵（1272年决战失败者，文档未具名）、1272 — 至今　英-法兰克竞争长期化</td></tr>
+<tr><td>邦共和国</td><td>11</td><td>八、战后：不列颠联邦共和国、德意志联邦共和国、不列颠联邦共和国</td></tr>
+<tr><td>君士坦丁</td><td>10</td><td>二、纵轴｜君士坦丁堡问题、君士坦丁堡（海峡政治体，通称拜占庭）、奥斯曼帝国（安纳托利亚突厥帝国）、1960年前后　多极均势与新亚洲文明地图</td></tr>
+<tr><td>和国</td><td>10</td><td>德意志联邦共和国、德意志共和国（1918—1945）、叙利亚共和国、英国战后国体</td></tr>
+<tr><td>大德意志</td><td>10</td><td>二、时间纵轴｜（六）19世纪：1848、1866、1871、1848　1848年革命与大德意志方案失败</td></tr>
+<tr><td>奥克地区</td><td>10</td><td>奥克王国、1648　《维也纳和约》与帝国分权、1789 — 1815　伊比利亚-奥克大革命、1945 — 1975　南部奥克省建制与法兰克-奥克问题</td></tr>
+<tr><td>奥地利</td><td>10</td><td>奥托卡二世、1273 — 1300　奥托卡二世崛起与东西双源形成、14—15世纪　普热米斯尔的德意志化、1450—1600 / 16世纪　宗教改革与普热米斯尔新教化</td></tr>
+<tr><td>安达卢斯</td><td>10</td><td>科尔多瓦哈里发国、伍麦叶（西班牙支系）、穆瓦希德（及穆拉比特）、1031　科尔多瓦哈里发国分裂为诸泰法</td></tr>
+<tr><td>年伊比利</td><td>10</td><td>伊比利亚共和国（第五共和国后体制）、奥克王国、伊比利亚王国</td></tr>
+<tr><td>总统权力</td><td>10</td><td>伊比利亚第四共和国（1945—1954）、伊比利亚第五共和国（1960— ）、1945　伊比利亚第四共和国成立、1954年前后　非洲殖民地危机与第四共和国覆灭、1960　伊比利亚第五共和国建立</td></tr>
+<tr><td>收复波兰</td><td>10</td><td>德意志共和国（1918—1945）、1939 — 1945　第二次世界大战、1945　战后德意志世界恢复与联邦化</td></tr>
+<tr><td>文档未具</td><td>10</td><td>腓力三世之妻（文档未具名）、查理、路易（腓力三世之子，文档未具名）、布列塔尼公爵（1270年继承争夺者，文档未具名）、诺曼底公爵（1272年决战失败者，文档未具名）、阿尔布雷希特二世之女婿（法兰克贵族推举对象，文档未具名）、勃艮第伯爵（鲁道夫之岳父，文档未具名）</td></tr>
+<tr><td>是伊比利</td><td>10</td><td>西班牙王国、伊比利亚第一帝国、伊比利亚第四共和国（1945—1954）、穆瓦希德（及穆拉比特）、特拉斯塔马拉系（西班牙）</td></tr>
+<tr><td>泛德意志</td><td>10</td><td>三、横轴指标｜（三）语言与正字法、三、横轴指标｜（七）国际体系、德意志联邦共和国、共同体德语 / 泛德意志标准语 / 帝国德语、泛德意志语言会议</td></tr>
+<tr><td>界大战</td><td>10</td><td>第一次世界大战（1914—1918）、第二次世界大战（1939—1945）</td></tr>
+<tr><td>科尔多瓦</td><td>10</td><td>科尔多瓦哈里发国、929　科尔多瓦自立哈里发、1031　科尔多瓦哈里发国分裂为诸泰法、科尔多瓦</td></tr>
+<tr><td>罗马帝国</td><td>10</td><td>伊比利亚共和国（第五共和国后体制）、伊比利亚第一共和国、金雀花</td></tr>
+<tr><td>马穆鲁克</td><td>10</td><td>马穆鲁克苏丹国（埃及—叙利亚）、阿拔斯哈里发国（两河）、埃及地区、阿拉伯—汉志地区、马穆鲁克、1260　马穆鲁克阻止蒙古西进</td></tr>
+<tr><td>举德意志</td><td>9</td><td>阿尔布雷希特二世、阿尔布雷希特二世之女（未具名）、阿尔布雷希特二世之女婿（法兰克贵族推举对象，文档未具名）、1356　《法兰克福宪章》与双王冠确立、《法兰克福宪章》（法兰克福条约）</td></tr>
+<tr><td>伊斯兰化</td><td>9</td><td>二、纵轴｜公元前后—8世纪 / 8—12世纪：西域佛教、蒙古帝国、西域佛教文明带、伊斯兰世界（区域文明体集合）</td></tr>
+<tr><td>低地</td><td>9</td><td>三、横轴指标｜（一）政治与王朝、三、横轴指标｜（六）民族与边缘问题、1848　1848年革命与大德意志方案失败、19世纪后期 — 20世纪　第二次工业革命与三大工业带、低地-瑞士加尔文宗</td></tr>
+<tr><td>侯坚持选</td><td>9</td><td>阿尔布雷希特二世、阿尔布雷希特二世之女（未具名）、阿尔布雷希特二世之女婿（法兰克贵族推举对象，文档未具名）、1356　《法兰克福宪章》与双王冠确立、《法兰克福宪章》（法兰克福条约）</td></tr>
+<tr><td>俱伤</td><td>9</td><td>1914 — 1918　第一次世界大战、第一次世界大战（1914—1918）</td></tr>
+<tr><td>双方两败</td><td>9</td><td>1914 — 1918　第一次世界大战、第一次世界大战（1914—1918）</td></tr>
+<tr><td>地区</td><td>9</td><td>五、法兰克州的最终结构、马格里布（北非西部）、1789 — 1815　伊比利亚-奥克大革命、1945　战后德意志世界恢复与联邦化</td></tr>
+<tr><td>夺取法兰</td><td>9</td><td>英格兰-诺曼底、鲁道夫、1272后　逆向的诺曼征服：诺曼-法兰西精英退回不列颠、法兰克王位继承战争（1270-1272）</td></tr>
+<tr><td>定都帕里</td><td>9</td><td>法兰克立宪君主国、鲁道夫、法兰克王位继承战争（1270-1272）</td></tr>
+<tr><td>德意志</td><td>9</td><td>三、横轴：六大文明/政治力量、五、最终的纵横时间表、十五、六国政治模式总表、基辅王国、1945 — 约1955　不列颠战败与被监督的民主化、一战期间 / 二战后　基辅王国与罗斯兀鲁思的文明分流、《权利宪章》1945/1947</td></tr>
+<tr><td>法兰克贵</td><td>9</td><td>阿尔布雷希特二世、阿尔布雷希特二世之女（未具名）、阿尔布雷希特二世之女婿（法兰克贵族推举对象，文档未具名）、1356　《法兰克福宪章》与双王冠确立、《法兰克福宪章》（法兰克福条约）</td></tr>
+<tr><td>法语人口</td><td>9</td><td>六、修正与注意、（已废止条目）法语 / 法语人口、“法语人口不存在”条款、“法语人口不存在”条款（S3 R1）</td></tr>
+<tr><td>海峡政治</td><td>9</td><td>君士坦丁堡（海峡政治体，通称拜占庭）、安纳托利亚突厥王朝、奥斯曼一世、圣索菲亚大教堂</td></tr>
+<tr><td>热米斯尔</td><td>9</td><td>瑞士永久联邦、1871　伊比利亚第二帝国被德意志帝国击败，第三共和国成立、维也纳霍夫堡宫、美泉宫</td></tr>
+<tr><td>第一次世</td><td>9</td><td>1914 — 1918　第一次世界大战、第一次世界大战（1914—1918）</td></tr>
+<tr><td>第二帝国</td><td>9</td><td>伊比利亚第三共和国（1871—1940）、伊比利亚第二帝国、1871　伊比利亚第二帝国被德意志帝国击败，第三共和国成立</td></tr>
+<tr><td>第二次世</td><td>9</td><td>1939 — 1945　第二次世界大战、第二次世界大战（1939—1945）</td></tr>
+<tr><td>罗曼</td><td>9</td><td>不列颠联邦共和国、蒙福尔、1648后　1648年维也纳和约后的流亡波次、1789后　1789年伊比利亚革命后的流亡波次</td></tr>
+<tr><td>美国</td><td>9</td><td>三、横轴：六大文明/政治力量、五、最终的纵横时间表、十五、六国政治模式总表、1918后 / 1918—1939　一战后的知识分子流散、1960年前后　多极均势与新亚洲文明地图</td></tr>
+<tr><td>西伯利亚</td><td>9</td><td>二、纵轴｜16—19世纪：俄罗斯进入亚洲、白罗斯、西伯利亚萨满文化区、1960年前后　多极均势与新亚洲文明地图</td></tr>
+<tr><td>诸侯为皇</td><td>9</td><td>阿尔布雷希特二世、阿尔布雷希特二世之女（未具名）、阿尔布雷希特二世之女婿（法兰克贵族推举对象，文档未具名）、1356　《法兰克福宪章》与双王冠确立、《法兰克福宪章》（法兰克福条约）</td></tr>
+<tr><td>与议会制</td><td>8</td><td>英国政体与议会制度、英国政体与议会制度（S3 R2）</td></tr>
+<tr><td>兰克王位</td><td>8</td><td>阿尔布雷希特二世、阿尔布雷希特二世之女婿（法兰克贵族推举对象，文档未具名）、1356　《法兰克福宪章》与双王冠确立、《法兰克福宪章》（法兰克福条约）</td></tr>
+<tr><td>北德意志</td><td>8</td><td>1524 — 1527　农民战争、农民战争（1524—1527）、北德意志路德宗、柏林大学、马格德堡大教堂</td></tr>
+<tr><td>哈里发国</td><td>8</td><td>科尔多瓦哈里发国、穆瓦希德哈里发国（及穆拉比特）、阿拔斯哈里发国（两河）、1031　科尔多瓦哈里发国分裂为诸泰法、科尔多瓦</td></tr>
+<tr><td>国家</td><td>8</td><td>七、罗斯兀鲁思｜十一、白罗斯的地位、七、罗斯兀鲁思｜十二、与欧洲的关系、法兰克立宪君主国、伊朗（伊斯兰什叶派波斯）、共同体德语 / 泛德意志标准语 / 帝国德语</td></tr>
+<tr><td>多极均势</td><td>8</td><td>1960年前后　多极均势与新亚洲文明地图</td></tr>
+<tr><td>奥克正常</td><td>8</td><td>1972—1978（1975 为关键节点）　奥克省废除与“奥克正常化”（1972—1978）、法兰克语 / 西法兰克语、伊比利亚-奥克语、奥克正常化法案的确切年份</td></tr>
+<tr><td>奥托卡二</td><td>8</td><td>二、时间纵轴｜（一）13世纪：双源发生、德意志联邦共和国、奥托卡二世、1273 — 1300　奥托卡二世崛起与东西双源形成</td></tr>
+<tr><td>待定</td><td>8</td><td>二、纵轴：世界历史时间线、十四、状态标记、东洲（新大洲，正式名称待定）、君士坦丁堡、法兰克本土州数量、伊比利亚一级行政区方案</td></tr>
+<tr><td>德意志共</td><td>8</td><td>德意志共和国（1918—1945）、1939 — 1945　第二次世界大战、德意志共产党</td></tr>
+<tr><td>撒哈拉以</td><td>8</td><td>欧洲（文明大洲）、亚洲（文明大洲）、非洲（文明大洲）、埃及地区</td></tr>
+<tr><td>收复失地</td><td>8</td><td>穆瓦希德哈里发国（及穆拉比特）、8—15世纪（决定性阶段1212—1492）　收复失地运动、收复失地运动与南下北非（8—16世纪）、科尔多瓦大清真寺（后改主教座堂）</td></tr>
+<tr><td>文化</td><td>8</td><td>二、时间纵轴｜（三）15—16世纪：宗教改革与农民战争、基辅王国、一战期间 / 二战后　基辅王国与罗斯兀鲁思的文明分流、德意志联邦共和国行政区划（31个州/邦）、法兰克立宪君主国行政区划（11 本土州；1975 年后含奥克五州共 16 州）、不列颠联邦共和国战后行政区划（八个一级联邦单位）</td></tr>
+<tr><td>横轴指标</td><td>8</td><td>三、横轴指标｜（一）政治与王朝、三、横轴指标｜（二）宗教、三、横轴指标｜（三）语言与正字法、三、横轴指标｜（四）经济与工业、三、横轴指标｜（五）学术与宗教圣地、三、横轴指标｜（六）民族与边缘问题、三、横轴指标｜（七）国际体系、三、横轴指标｜（八）人才分布</td></tr>
+<tr><td>止步于更</td><td>8</td><td>二、纵轴｜公元前后—8世纪 / 8—12世纪：西域佛教、西亚伊斯兰文明空间、西域佛教文明带、伊斯兰世界（区域文明体集合）、公元前后 — 8世纪 / 8—12世纪　西域佛教传统强化与伊斯兰化止步</td></tr>
+<tr><td>罗马加冕</td><td>8</td><td>二、时间纵轴｜（六）19世纪：1848、1866、1871、奥托卡二世、1273 — 1300　奥托卡二世崛起与东西双源形成、1871　罗马加冕与德意志帝国成立</td></tr>
+<tr><td>英国政体</td><td>8</td><td>英国政体与议会制度、英国政体与议会制度（S3 R2）</td></tr>
+<tr><td>英格兰联</td><td>8</td><td>瓦卢瓦、瓦卢瓦的查理、爱德华一世、诺曼底公爵（1272年决战失败者，文档未具名）、1272　鲁道夫加冕为“法兰克人的国王”</td></tr>
+<tr><td>蒙古长生</td><td>8</td><td>1960年前后　多极均势与新亚洲文明地图、1945 — 1960　新亚洲秩序与文明边界线、宗教—文明边界线：伊斯兰文明止于哪里、西域佛教覆盖到哪里、蒙古长生天世界向西延伸到哪里、罗斯兀鲁思何时以何方式进入非伊斯兰化的中亚</td></tr>
+<tr><td>西侧</td><td>8</td><td>二、纵轴｜公元前后—8世纪 / 8—12世纪：西域佛教、西亚伊斯兰文明空间、西域佛教文明带、伊斯兰世界（区域文明体集合）、公元前后 — 8世纪 / 8—12世纪　西域佛教传统强化与伊斯兰化止步</td></tr>
+<tr><td>西岛和香</td><td>8</td><td>英格兰-诺曼底、鲁道夫、法兰克王位继承战争（1270-1272）</td></tr>
+<tr><td>诺曼底被</td><td>8</td><td>英格兰-诺曼底、诺曼底公爵（1272年决战失败者，文档未具名）、法兰克王位继承战争（1270-1272）</td></tr>
+<tr><td>不列颠</td><td>7</td><td>十五、六国政治模式总表、西法兰克王国、法兰西罗曼王国、1272后　逆向的诺曼征服：诺曼-法兰西精英退回不列颠</td></tr>
+<tr><td>两河</td><td>7</td><td>伊斯兰世界（区域文明体集合）、阿拔斯哈里发国（两河）、1960年前后　多极均势与新亚洲文明地图</td></tr>
+<tr><td>中央集权</td><td>7</td><td>伊比利亚第二共和国、伊比利亚第五共和国（1960— ）、伊比利亚非哈布斯堡王朝、萨拉曼卡大学</td></tr>
+<tr><td>主义</td><td>7</td><td>蒙福尔二世、蒙福尔三世、法兰克人民党、德意志基督教民主党、德意志共产党、不列颠共产党</td></tr>
+<tr><td>主共和国</td><td>7</td><td>德意志共和国（1918—1945）、1939 — 1945　第二次世界大战</td></tr>
+<tr><td>之一</td><td>7</td><td>七—十、法兰克政治发展、七、罗斯兀鲁思｜十三、与蒙古帝国的关系、1960年前后　多极均势与新亚洲文明地图、圣维克多修道院</td></tr>
+<tr><td>亚统一进</td><td>7</td><td>奥克王国、西班牙王国、特拉斯塔马拉系（西班牙）、阿方索十世</td></tr>
+<tr><td>仅有一女</td><td>7</td><td>阿尔布雷希特二世、1356　《法兰克福宪章》与双王冠确立、《法兰克福宪章》（法兰克福条约）</td></tr>
+<tr><td>冕为</td><td>7</td><td>鲁道夫、1272　鲁道夫加冕为“法兰克人的国王”、法兰克王位继承战争（1270-1272）</td></tr>
+<tr><td>利亚王国</td><td>7</td><td>西班牙王国、15—16世纪（推定）　伊比利亚统一与伊比利亚王国建立、收复失地运动与南下北非（8—16世纪）、托莱多大教堂</td></tr>
+<tr><td>勒斯</td><td>7</td><td>伊比利亚共和国（第五共和国后体制）、伊比利亚第一共和国、1789 — 1815　伊比利亚-奥克大革命</td></tr>
+<tr><td>各基督教</td><td>7</td><td>伊比利亚王国、穆瓦希德哈里发国（及穆拉比特）、15—16世纪（推定）　伊比利亚统一与伊比利亚王国建立、收复失地运动与南下北非（8—16世纪）</td></tr>
+<tr><td>命帝国</td><td>7</td><td>伊比利亚共和国（第五共和国后体制）、伊比利亚大革命与反伊比利亚战争（1789—1815）</td></tr>
+<tr><td>哲学</td><td>7</td><td>佛教（西域佛教 / 藏传佛教）、莱比锡、维也纳大学、莱比锡大学、柏林大学</td></tr>
+<tr><td>塔里木盆</td><td>7</td><td>中国、西亚伊斯兰文明空间、西域佛教文明带、公元前后 — 8世纪 / 8—12世纪　西域佛教传统强化与伊斯兰化止步</td></tr>
+<tr><td>婿继承法</td><td>7</td><td>阿尔布雷希特二世、1356　《法兰克福宪章》与双王冠确立、《法兰克福宪章》（法兰克福条约）</td></tr>
+<tr><td>宗教战争</td><td>7</td><td>二、时间纵轴｜（四）17世纪：宗教战争与维也纳和约、帝国首相黎塞留、18世纪 / 1700年前后　双王冠的“准融合”、宗教战争 / 三十年战争（1618—1648）</td></tr>
+<tr><td>帝国</td><td>7</td><td>十一、英联邦与帝国遗产、德意志联邦共和国、莫斯科蒙古王朝、1789 — 1815　伊比利亚-奥克大革命</td></tr>
+<tr><td>年老无嗣</td><td>7</td><td>阿尔布雷希特二世、1356　《法兰克福宪章》与双王冠确立、《法兰克福宪章》（法兰克福条约）</td></tr>
+<tr><td>教皇介入</td><td>7</td><td>阿尔布雷希特二世之女婿（法兰克贵族推举对象，文档未具名）、1356　《法兰克福宪章》与双王冠确立、《法兰克福宪章》（法兰克福条约）</td></tr>
+<tr><td>族要求女</td><td>7</td><td>阿尔布雷希特二世、1356　《法兰克福宪章》与双王冠确立、《法兰克福宪章》（法兰克福条约）</td></tr>
+<tr><td>时间纵轴</td><td>7</td><td>二、时间纵轴｜（一）13世纪：双源发生、二、时间纵轴｜（二）14世纪：法兰克福条约与双元帝国、二、时间纵轴｜（三）15—16世纪：宗教改革与农民战争、二、时间纵轴｜（四）17世纪：宗教战争与维也纳和约、二、时间纵轴｜（五）18世纪：双王冠融合与伊比利亚大革命、二、时间纵轴｜（六）19世纪：1848、1866、1871、二、时间纵轴｜（七）20世纪：一战、二战与战后秩序</td></tr>
+<tr><td>曼王国</td><td>7</td><td>西法兰克王国、法兰西罗曼王国、11—13世纪　十字军东征、14世纪以后（长时段）　法兰克东方学传统的形成</td></tr>
+<tr><td>法兰克哈</td><td>7</td><td>1939 — 1945　第二次世界大战、1945　战后德意志世界恢复与联邦化</td></tr>
+<tr><td>法兰克本</td><td>7</td><td>1945 — 1975　南部奥克省建制与法兰克-奥克问题、法兰克本土州数量、法兰克本土州数量（12 vs 11，认定为统计错误）</td></tr>
+<tr><td>法兰西罗</td><td>7</td><td>西法兰克王国、法兰西罗曼王国、11—13世纪　十字军东征、14世纪以后（长时段）　法兰克东方学传统的形成</td></tr>
+<tr><td>督教王国</td><td>7</td><td>马格里布（北非西部）、伍麦叶（西班牙支系）、伊比利亚王国开国君主（本轮新增，姓名待定）、8—15世纪（决定性阶段1212—1492）　收复失地运动</td></tr>
+<tr><td>继承争夺</td><td>7</td><td>英格兰-诺曼底、卡佩、1270年前后　卡佩绝嗣与法兰克继承危机</td></tr>
+<tr><td>耳曼政治</td><td>7</td><td>法兰克立宪君主国、德意志联邦共和国</td></tr>
+<tr><td>联邦制民</td><td>7</td><td>德意志共和国（1918—1945）、1939 — 1945　第二次世界大战</td></tr>
+<tr><td>行政区划</td><td>7</td><td>一、总览、二十五—二十八、美国、德意志联邦共和国行政区划（31个州/邦）、法兰克立宪君主国行政区划（11 本土州；1975 年后含奥克五州共 16 州）、英国现代行政区划</td></tr>
+<tr><td>迫使神圣</td><td>7</td><td>伊比利亚共和国（第五共和国后体制）、伊比利亚第一共和国、1789 — 1815　伊比利亚-奥克大革命</td></tr>
+<tr><td>鲁道夫之</td><td>7</td><td>鲁道夫之母（卡佩旁系公主）、鲁道夫之妻（勃艮第伯爵之女）、让娜、勃艮第伯爵（鲁道夫之岳父，文档未具名）</td></tr>
+<tr><td>一战战败</td><td>6</td><td>德意志联邦共和国、德意志共和国（1918—1945）</td></tr>
+<tr><td>不列颠联</td><td>6</td><td>八、战后：不列颠联邦共和国、不列颠联邦共和国、不列颠联邦共和国战后行政区划（八个一级联邦单位）</td></tr>
+<tr><td>不存在</td><td>6</td><td>（已废止条目）法语 / 法语人口、“法语人口不存在”条款、“法语人口不存在”条款（S3 R1）</td></tr>
+<tr><td>与叙利亚</td><td>6</td><td>阿尤布苏丹国（埃及—叙利亚）、马穆鲁克苏丹国（埃及—叙利亚）、阿尤布、萨拉丁、1517　安纳托利亚突厥帝国取代马穆鲁克</td></tr>
+<tr><td>世纪后期</td><td>6</td><td>14世纪后期　哈布斯堡回归帝国与双元君主国、19世纪后期 — 20世纪　第二次工业革命与三大工业带</td></tr>
+<tr><td>乌克兰</td><td>6</td><td>1939 — 1945　第二次世界大战、乌克兰/基辅王国的正式名称、乌克兰 → 基辅王国（统一采用自称）</td></tr>
+<tr><td>二战后法</td><td>6</td><td>奥克王国、1945 — 1975　南部奥克省建制与法兰克-奥克问题</td></tr>
+<tr><td>伊斯兰中</td><td>6</td><td>蒙古帝国、1200 — 1300及以后　蒙古帝国崛起与文明桥梁、蒙古帝国扩张（1200—1300及以后）</td></tr>
+<tr><td>儒家</td><td>6</td><td>1960年前后　多极均势与新亚洲文明地图、儒家（兼佛教、道教）</td></tr>
+<tr><td>共和主义</td><td>6</td><td>美利坚合众国、1815　反革命时代与旧秩序重建、日内瓦学院</td></tr>
+<tr><td>农民战争</td><td>6</td><td>二、时间纵轴｜（三）15—16世纪：宗教改革与农民战争、1524 — 1527　农民战争、农民战争（1524—1527）、《十二条款》1524/1525</td></tr>
+<tr><td>国伊比利</td><td>6</td><td>西班牙王国、阿拉贡王国、伊比利亚第一共和国</td></tr>
+<tr><td>圣斯特凡</td><td>6</td><td>圣斯特凡、维也纳、圣斯特凡大教堂</td></tr>
+<tr><td>在罗马加</td><td>6</td><td>伊比利亚第二帝国、1871　罗马加冕与德意志帝国成立、1871　伊比利亚第二帝国被德意志帝国击败，第三共和国成立</td></tr>
+<tr><td>地利德意</td><td>6</td><td>19世纪后期 — 20世纪　第二次工业革命与三大工业带、1914 — 1918　第一次世界大战</td></tr>
+<tr><td>奥克各州</td><td>6</td><td>1945 — 1975　南部奥克省建制与法兰克-奥克问题、奥克省行政地位</td></tr>
+<tr><td>奥克省行</td><td>6</td><td>奥克省行政地位</td></tr>
+<tr><td>宪君主国</td><td>6</td><td>法兰克立宪君主国、法兰克立宪君主国行政区划（11 本土州；1975 年后含奥克五州共 16 州）</td></tr>
+<tr><td>工会</td><td>6</td><td>法兰克社会民主党、德意志社会民主党、伊比利亚社会民主党、不列颠社会民主党、美国社会民主党（前身为美国社会党）</td></tr>
+<tr><td>布列塔尼</td><td>6</td><td>三、横轴指标｜（六）民族与边缘问题、卡佩、布列塔尼公爵（1270年继承争夺者，文档未具名）、1270年前后　卡佩绝嗣与法兰克继承危机</td></tr>
+<tr><td>平等条约</td><td>6</td><td>德意志共和国（1918—1945）、1945　战后德意志世界恢复与联邦化</td></tr>
+<tr><td>年战败后</td><td>6</td><td>穆瓦希德哈里发国（及穆拉比特）、伊比利亚被占领与过渡期（1940—1945）、1945　爱尔兰全岛独立、1945年战败后民主化</td></tr>
+<tr><td>年重建为</td><td>6</td><td>伊比利亚第五共和国（1960— ）、1960　伊比利亚第五共和国建立</td></tr>
+<tr><td>政治体</td><td>6</td><td>一、总纲、阿尤布苏丹国（埃及—叙利亚）、法兰西罗曼王国、阿尤布</td></tr>
+<tr><td>文明地图</td><td>6</td><td>二、纵轴｜1960年前后：新的亚洲文明地图、西亚伊斯兰文明空间、1960年前后　多极均势与新亚洲文明地图</td></tr>
+<tr><td>文明边界</td><td>6</td><td>三、横轴：六大文明/政治力量、1945 — 1960　新亚洲秩序与文明边界线、君士坦丁堡、宗教—文明边界线：伊斯兰文明止于哪里、西域佛教覆盖到哪里、蒙古长生天世界向西延伸到哪里、罗斯兀鲁思何时以何方式进入非伊斯兰化的中亚</td></tr>
+<tr><td>斯兰化</td><td>6</td><td>七、罗斯兀鲁思｜二、蒙古对东斯拉夫世界的统治更加深入、马格里布（北非西部）、蒙古诸王朝、公元前后 — 8世纪 / 8—12世纪　西域佛教传统强化与伊斯兰化止步</td></tr>
+<tr><td>施蒂利亚</td><td>6</td><td>奥托卡二世、1273 — 1300　奥托卡二世崛起与东西双源形成、1450—1600 / 16世纪　宗教改革与普热米斯尔新教化</td></tr>
+<tr><td>比利亚革</td><td>6</td><td>1815　反革命时代与旧秩序重建、伊比利亚大革命与反伊比利亚战争（1789—1815）</td></tr>
+<tr><td>法兰克与</td><td>6</td><td>二、纵轴｜法兰克与近东、十三、法兰克与不列颠对偶表、帝国首相黎塞留、1940　伊比利亚第三共和国被法兰克与德意志击败、阿文根教皇宫</td></tr>
+<tr><td>法兰克共</td><td>6</td><td>法兰克共和国、1918　德意志帝国瓦解与法兰克共和化、法兰克共产党</td></tr>
+<tr><td>法兰克立</td><td>6</td><td>法兰克立宪君主国、法兰克立宪君主国行政区划（11 本土州；1975 年后含奥克五州共 16 州）</td></tr>
+<tr><td>法兰西宫</td><td>6</td><td>不列颠联邦共和国、诺曼-法兰西贵族集团、1272后　逆向的诺曼征服：诺曼-法兰西精英退回不列颠</td></tr>
+<tr><td>王权合法</td><td>6</td><td>二、纵轴｜蒙古宗教结构、蒙福尔四世、1945 — 约1955　不列颠战败与被监督的民主化、《权利宪章》1945/1947、长生天信仰</td></tr>
+<tr><td>的王朝</td><td>6</td><td>金雀花、蒙福尔、阿尤布、1272后　逆向的诺曼征服：诺曼-法兰西精英退回不列颠</td></tr>
+<tr><td>直至</td><td>6</td><td>不列颠联邦共和国、伊比利亚被占领与过渡期（1940—1945）</td></tr>
+<tr><td>社会民主</td><td>6</td><td>法兰克社会民主党、德意志社会民主党、伊比利亚社会民主党</td></tr>
+<tr><td>绝对主义</td><td>6</td><td>二、核心命题与机制、金雀花、蒙福尔一世、蒙福尔四世</td></tr>
+<tr><td>腓力三世</td><td>6</td><td>腓力三世、腓力三世之妻（文档未具名）、查理、路易（腓力三世之子，文档未具名）、1270年前后　卡佩绝嗣与法兰克继承危机</td></tr>
+<tr><td>藏传佛教</td><td>6</td><td>佛教（西域佛教 / 藏传佛教）</td></tr>
+<tr><td>西亚</td><td>6</td><td>亚洲（文明大洲）、伊斯兰世界（区域文明体集合）、1200 — 1300及以后　蒙古帝国崛起与文明桥梁</td></tr>
+<tr><td>过渡期</td><td>6</td><td>伊比利亚被占领与过渡期（1940—1945）、蒙福尔五世、1945 — 约1955　不列颠战败与被监督的民主化、《权利宪章》1945/1947</td></tr>
+<tr><td>那不勒斯</td><td>6</td><td>1871　罗马加冕与德意志帝国成立、1871　伊比利亚第二帝国被德意志帝国击败，第三共和国成立、那不勒斯</td></tr>
+<tr><td>重新加强</td><td>6</td><td>伊比利亚第五共和国（1960— ）、1960　伊比利亚第五共和国建立</td></tr>
+<tr><td>金帐体系</td><td>6</td><td>罗斯兀鲁思、马穆鲁克、拜巴尔斯</td></tr>
+<tr><td>阿姆斯特</td><td>6</td><td>阿姆斯特丹、德意志联邦共和国行政区划（31个州/邦）、阿姆斯特丹自由大学与尼德兰航运学院、阿姆斯特丹新教堂与西教堂</td></tr>
+<tr><td>鲁道夫</td><td>6</td><td>鲁道夫、爱德华一世、勃艮第伯爵（鲁道夫之岳父，文档未具名）</td></tr>
+<tr><td>三十年宗</td><td>5</td><td>1618 — 1648　三十年宗教战争、《维也纳和约》1648</td></tr>
+<tr><td>不列颠战</td><td>5</td><td>1945 — 约1955　不列颠战败与被监督的民主化、不列颠战前地方官制名称、不列颠战后总统职权细节</td></tr>
+<tr><td>与德意志</td><td>5</td><td>帝国首相黎塞留、1871　罗马加冕与德意志帝国成立</td></tr>
+<tr><td>世纪宗教</td><td>5</td><td>普热米斯尔、1450—1600 / 16世纪　宗教改革与普热米斯尔新教化</td></tr>
+<tr><td>世纪近东</td><td>5</td><td>阿拉伯王国、叙利亚共和国、埃及王国、两河王国</td></tr>
+<tr><td>东洲</td><td>5</td><td>东洲（新大洲，正式名称待定）、新大洲命名、新设定的大洲正式名称</td></tr>
+</tbody></table></div>
+<hr class="mdhr">
+<h2 id="出处代号">出处代号</h2>
+<ul class="mdul">
+<li>- <strong>S0</strong> = <code>source/设定集.docx</code>（泛德意志世界设定总集（纯文本整合版））</li>
+<li>- <strong>S1</strong> = <code>source/设定集补充.docx</code>（泛德意志世界设定 · 本轮扩充整理稿）</li>
+<li>- <strong>S2</strong> = <code>source/设定集补充2.docx</code>（五国行政·政党·大洲划分）</li>
+<li>- <strong>S3</strong> = <code>source/设定集补充3.docx</code>（设定集3：英国线（盎格鲁-罗曼世界））</li>
+<li>- <strong>S4</strong> = <code>source/设定集补充4.docx</code>（罗斯兀鲁思：蒙古王朝与后基辅罗斯国家传统）</li>
+</ul>
+</div>
+</main>
+
+<footer>
+<div class="madeby"><span class="mk">Created with</span>本页面由 <b>DeepSeek Harness</b> 创作<span class="fl">设定集解析 · 知识图谱构建 · 一致性审计 · 站点生成，全流程由 DeepSeek Harness 完成</span></div><div class="footmeta">出处代号：<a href="../index.html#sources">S0</a> 设定集.docx ｜ S1 设定集补充.docx ｜ S2 设定集补充2.docx ｜ S3 设定集补充3.docx ｜ S4 设定集补充4.docx ｜ <b>S5</b> 整合层（S0–S4 去重合并 + 用户裁定）｜ <b>S*</b> 仿真文献层（基于设定生成，不新增设定）<br><a href="../home.html">主页</a> ／ <a href="../index.html">设定集索引</a> ／ <a href="../wiki/index.html">历史文献</a> ／ <a href="../wiki/docs-index.html">文档中心</a> ／ <a href="../timeline.html">交互式时间轴</a></div>
+</footer>
+<script>(function(){var b=document.getElementById('gnavToggle'),n=document.querySelector('.gnav');if(b&&n){b.onclick=function(){n.classList.toggle('open')};}var p=document.getElementById('bkPrev');if(p){p.onclick=function(){if(history.length>1){history.back();}else{location.href='../home.html';}};}}())</script>
+
+</body>
+</html>

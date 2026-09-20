@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>历史物品留存 · 分类清单 · 泛德意志的欧洲</title>
+<style>
+:root{
+  --bg:#14110d; --fg:#e8e2d4; --dim:#a89e8a; --accent:#c9a227; --line:#3a332a;
+  --card:#1d1913; --card2:#231e17; --link:#d8b64a; --ok:#7fa650; --warn:#d0913c; --bad:#c25b45;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+     font-family:"Segoe UI","Microsoft YaHei",system-ui,sans-serif;line-height:1.7}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+header{position:sticky;top:0;z-index:20;background:rgba(20,17,13,.97);
+       border-bottom:1px solid var(--line);backdrop-filter:blur(6px);padding:12px 20px}
+.hdr{max-width:1180px;margin:0 auto}
+h1{margin:0;font-size:19px;letter-spacing:.03em}
+h1 .sub{color:var(--dim);font-size:12px;font-weight:400;margin-left:10px;letter-spacing:0}
+nav.crumbs{font-size:12px;color:var(--dim);margin-top:5px}
+nav.crumbs a{color:var(--dim)}
+nav.crumbs a:hover{color:var(--link)}
+main{max-width:1180px;margin:0 auto;padding:18px 20px 70px}
+h2{font-size:17px;border-bottom:1px solid var(--line);padding-bottom:6px;margin:28px 0 12px}
+h3{font-size:15px;margin:20px 0 8px}
+h4{font-size:13.5px;margin:14px 0 6px;color:#cfc6b2}
+p{margin:8px 0}
+ul,ol{margin:8px 0;padding-left:22px}
+li{margin:3px 0}
+code,.mono{font-family:Consolas,"Cascadia Mono",monospace;font-size:12.5px}
+code{background:#0e0c09;border:1px solid var(--line);border-radius:4px;padding:1px 5px;color:var(--accent)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:14px 17px;margin:12px 0}
+.grid{display:grid;gap:10px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+table{border-collapse:collapse;width:100%;font-size:13px;margin:10px 0}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}
+th{background:#0e0c09;color:#cfc6b2;font-weight:600;white-space:nowrap}
+tr:nth-child(even) td{background:#191510}
+.tag{display:inline-block;font-size:11px;padding:1px 8px;border-radius:20px;
+     border:1px solid var(--line);background:#0e0c09;color:var(--dim);margin:1px 3px 1px 0}
+.tag.ok{color:var(--ok);border-color:#3d4d28}
+.tag.warn{color:var(--warn);border-color:#4d3d22}
+.tag.bad{color:var(--bad);border-color:#4d2a22}
+.tag.s5{color:#8fb6d8;border-color:#2a3d4d;background:#0e1419}
+.tag.sstar{color:#c9a2d8;border-color:#432a4d;background:#180e19}
+/* 文献页 */
+.doc{background:#f6f0e2;color:#241d12;border-radius:10px;padding:30px 38px;margin:16px 0;
+     border:1px solid #c9b98f;box-shadow:0 3px 20px #0006;line-height:1.95;
+     font-family:Georgia,"Times New Roman","Songti SC","SimSun",serif;max-width:820px}
+.doc h3{font-size:21px;margin:0 0 4px;color:#3a2c15;letter-spacing:.02em;font-weight:700}
+.doc .dsub{font-size:12.5px;color:#6d5c3a;margin-bottom:14px;border-bottom:1px solid #d6c9a4;padding-bottom:10px}
+.doc h4{font-size:15px;margin:20px 0 6px;color:#5a4318;font-weight:700}
+.doc p{margin:10px 0}
+.doc ol,.doc ul{margin:10px 0 10px 4px;padding-left:24px}
+.doc li{margin:5px 0}
+.doc b{color:#3a2c15}
+/* 正文中的词条交叉引用标记：浅色下划线点线，不打断阅读，不参与链接嵌套 */
+.xr{border-bottom:1px dotted #a08a52;cursor:help}
+.doc .xr{border-bottom-color:#b09a62;color:#3f3016}
+.doc-preamble{font-style:italic;color:#6d5c3a;border-left:3px solid #c9b98f;padding-left:12px;margin-bottom:16px}
+.doc-seal{text-align:right;font-size:13px;color:#7a6841;font-style:italic;margin-top:22px;
+          border-top:1px solid #d6c9a4;padding-top:10px}
+.docmeta{display:grid;grid-template-columns:120px 1fr;gap:6px 14px;font-size:13.5px;margin:12px 0}
+.docmeta dt{color:var(--dim);font-size:12.5px}
+.docmeta dd{margin:0}
+.doclist li{margin:7px 0}
+.kindbadge{font-size:11.5px;padding:2px 9px;border-radius:20px;background:#2a2218;
+           border:1px solid #4a3d22;color:#d8b64a;margin-right:6px}
+.kv{display:grid;grid-template-columns:132px 1fr;gap:5px 12px;font-size:13.5px;margin:10px 0}
+.kv dt{color:var(--dim);font-size:12.5px}
+.kv dd{margin:0}
+.q{position:sticky;top:56px;z-index:15;background:var(--bg);padding:10px 0}
+input[type=search],input[type=text],select{
+  background:#0e0c09;border:1px solid var(--line);color:var(--fg);border-radius:7px;
+  padding:9px 12px;font-size:14px;font-family:inherit}
+input[type=search]{width:100%}
+input:focus,select:focus{outline:none;border-color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.chip{font-size:12px;padding:3px 10px;border-radius:20px;border:1px solid var(--line);
+      background:#0e0c09;color:var(--dim);cursor:pointer;user-select:none}
+.chip:hover{border-color:var(--accent);color:var(--fg)}
+.chip.on{background:var(--accent);color:#14110d;border-color:var(--accent);font-weight:600}
+.item{border:1px solid var(--line);border-radius:9px;background:var(--card);padding:11px 14px;margin-bottom:9px}
+.item h3{margin:0 0 4px;font-size:15px}
+.item .meta{font-size:11.5px;color:var(--dim);margin-bottom:4px}
+.item .sm{font-size:13px;color:#d6cebc}
+mark{background:var(--accent);color:#14110d;border-radius:2px;padding:0 1px}
+.count{color:var(--dim);font-size:12px;margin:10px 0}
+.empty{color:var(--dim);padding:30px 0;text-align:center}
+.rid{font-family:Consolas,monospace;font-size:11px;color:var(--accent);
+     border:1px solid var(--line);border-radius:4px;padding:1px 5px;margin-left:7px}
+footer{max-width:1180px;margin:0 auto;padding:0 20px 40px;color:var(--dim);font-size:11.5px}
+.pill{display:inline-block;min-width:22px;text-align:center}
+.legend{font-size:12px;color:var(--dim)}
+/* 时间轴 */
+.tl-wrap{position:relative;margin:14px 0 0}
+.tl-axis{position:relative;height:34px;border-bottom:2px solid var(--line);margin-bottom:6px}
+.tl-tick{position:absolute;top:0;height:34px;width:1px;background:var(--line)}
+.tl-tick span{position:absolute;top:8px;left:4px;font-size:10.5px;color:var(--dim);white-space:nowrap}
+.tl-lane{position:relative;height:26px;margin:5px 0;background:#191510;border-radius:4px;
+         border:1px solid #2a251d}
+.tl-ev{position:absolute;top:3px;height:19px;border-radius:4px;cursor:pointer;
+       background:#4a3f22;border:1px solid var(--accent);overflow:hidden}
+.tl-ev:hover{background:var(--accent);z-index:6}
+.tl-ev span{font-size:10px;color:#f3ecd8;padding:0 4px;white-space:nowrap;line-height:19px}
+.tl-ev:hover span{color:#14110d}
+.tl-lane-label{position:absolute;left:0;top:3px;height:19px;line-height:19px;font-size:10.5px;
+               color:#a89e8a;transform:translateX(-100%);padding-right:9px;white-space:nowrap;
+               text-align:right;box-sizing:border-box;pointer-events:none}
+.tl-holder{padding-left:138px}
+#tip{position:fixed;z-index:50;max-width:380px;background:var(--card2);border:1px solid var(--accent);
+     border-radius:8px;padding:10px 13px;font-size:12.5px;display:none;box-shadow:0 6px 24px #000a}
+#tip h4{margin:0 0 4px;color:var(--accent);font-size:13.5px}
+.scrub{width:100%;margin:8px 0 4px}
+/* 主页 */
+.hero{padding:54px 20px 36px;text-align:center;
+      background:radial-gradient(ellipse at 50% -10%,#2c2418 0%,#14110d 64%);
+      border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(24px,4.4vw,36px);letter-spacing:.06em;margin:0 0 8px;font-weight:700}
+.hero h1 b{color:var(--accent)}
+.hero .tagline{color:#bdb4a1;font-size:14px;max-width:820px;margin:12px auto 0;line-height:1.9}
+.hero .realms{margin-top:22px;display:flex;gap:9px;justify-content:center;flex-wrap:wrap}
+.realm{font-size:12.5px;padding:5px 14px;border-radius:22px;border:1px solid var(--line);
+       background:#0e0c09;color:#cfc6b2}
+.realm i{font-style:normal;color:var(--accent);font-weight:600}
+.entries{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:24px 0}
+.entry{display:block;border:1px solid var(--line);border-radius:11px;background:var(--card);
+       padding:18px 20px;transition:transform .16s,border-color .16s,box-shadow .16s;
+       position:relative;overflow:hidden}
+.entry:hover{border-color:var(--accent);background:var(--card2);transform:translateY(-2px);
+             text-decoration:none;box-shadow:0 9px 28px #0007}
+.entry .ico{font-size:22px;margin-bottom:8px;display:block}
+.entry h3{margin:0 0 6px;font-size:16px;color:var(--fg)}
+.entry p{margin:0;font-size:12.5px;color:var(--dim);line-height:1.74}
+.entry .n{position:absolute;right:15px;top:14px;font-size:11px;color:var(--accent);
+          border:1px solid var(--line);border-radius:20px;padding:1px 9px;background:#0e0c09}
+.entry.wide{grid-column:span 2}
+@media(max-width:700px){.entry.wide{grid-column:span 1}}
+.stats{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));margin:18px 0}
+.stat{border:1px solid var(--line);border-radius:9px;background:#191510;padding:14px 10px;text-align:center}
+.stat b{display:block;font-size:23px;color:var(--accent);font-weight:700;line-height:1.3}
+.stat span{font-size:11.5px;color:var(--dim)}
+.quote{border-left:3px solid var(--accent);padding:3px 0 3px 17px;margin:22px 0;
+       color:#cfc6b2;font-size:13.5px;line-height:1.88}
+.quote cite{display:block;color:var(--dim);font-size:12px;font-style:normal;margin-top:7px}
+.twocol{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(318px,1fr))}
+.pill-row{display:flex;flex-wrap:wrap;gap:6px;margin:9px 0}
+a.pill{font-size:12px;padding:3px 11px;border-radius:20px;border:1px solid var(--line);
+       background:#0e0c09;color:#cfc6b2;display:inline-block}
+a.pill:hover{border-color:var(--accent);color:var(--fg);text-decoration:none}
+a.pill.gold{border-color:#5a4a22;color:var(--accent)}
+.tl-mini{position:relative;height:158px;margin:14px 0 4px;border:1px solid var(--line);
+         border-radius:9px;background:#191510;overflow:hidden}
+.tl-mini .dot{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--accent);
+              border:1px solid #0e0c09;transform:translate(-50%,-50%);cursor:pointer;
+              transition:width .14s,height .14s,box-shadow .14s}
+.tl-mini .dot:hover{width:15px;height:15px;box-shadow:0 0 0 3px #c9a22744}
+.tl-mini .dot.rel{background:#c25b45}
+.tl-mini .dot.cul{background:#7fa650}
+.tl-mini .dot.pol{background:#8fb6d8}
+.tl-mini .axl{position:absolute;bottom:6px;width:1px;height:8px;background:#3a332a}
+.tl-mini .axt{position:absolute;bottom:17px;font-size:9.5px;color:#6f6656;transform:translateX(-50%)}
+.tl-mini .lgd{position:absolute;right:9px;top:7px;font-size:10px;color:var(--dim)}
+/* 主页迷你时间轴：泳道 + 密度柱 + 锚点 */
+.tlmini-grid{position:absolute;left:0;right:0;top:0;bottom:26px;pointer-events:none}
+.tlmini-line{position:absolute;top:0;bottom:0;width:1px;background:#221e18}
+.tlmini-lane{position:relative;height:44px;background:#1c1813;border-bottom:1px solid #221e18}
+.tlmini-lane span{position:absolute;left:9px;top:6px;font-size:10.5px;color:#7d7462;
+                  letter-spacing:.04em;z-index:3;pointer-events:none}
+.tlmini-bars{position:absolute;left:0;right:0;top:0;bottom:26px;z-index:1}
+.tl-mini .bar{position:absolute;bottom:0;width:8px;border-radius:2px 2px 0 0;
+              opacity:.92;transition:opacity .14s,filter .14s}
+.tl-mini .bar:hover{opacity:1;filter:brightness(1.4)}
+.tl-mini .bar i{position:absolute;top:-13px;left:50%;transform:translateX(-50%);font-size:9px;
+                font-style:normal;color:#cfc6b2}
+.tl-mini .bar.rel{background:linear-gradient(#c25b45,#8e4033)}
+.tl-mini .bar.cul{background:linear-gradient(#7fa650,#5a7a38)}
+.tl-mini .bar.pol{background:linear-gradient(#8fb6d8,#5a7fa3)}
+.tlmini-anchor{position:absolute;bottom:0;height:100%;width:1px;background:#3a332a;
+               transform:translateX(-0.5px);pointer-events:none;z-index:2}
+.tlmini-anchor i{position:absolute;bottom:28px;left:-2px;width:5px;height:5px;border-radius:50%;
+                 background:#c9a227}
+.tlmini-anchor b{position:absolute;bottom:8px;left:0;transform:translateX(-50%);
+                 font-size:9.5px;font-weight:400;color:#8a8170;white-space:nowrap}
+.tlmini-foot{display:flex;justify-content:space-between;font-size:11.5px;color:var(--dim);
+             margin-top:7px}
+/* Hero 分叉图 */
+.fork{display:block;width:100%;max-width:900px;margin:28px auto 0;height:auto}
+.fork .fkl{fill:#c9a227;font-size:12px;font-weight:600}
+.fork .fkt{fill:#e2dbcb;font-size:12.5px}
+.fork .fks{fill:#8f8674;font-size:11px}
+.fork .fkm{fill:#8f8674;font-size:10.5px}
+/* Markdown 转换页 */
+.mdbody{font-size:13.5px;line-height:1.85}
+.mdbody h1{font-size:23px;margin:26px 0 12px;color:var(--accent);font-weight:700}
+.mdbody h2{font-size:18px;margin:30px 0 12px;border-bottom:1px solid var(--line);padding-bottom:7px}
+.mdbody h3{font-size:15.5px;margin:22px 0 9px;color:#e6dfcd}
+.mdbody h4{font-size:14px;margin:16px 0 7px;color:#cfc6b2}
+.mdbody p{margin:9px 0}
+.mdbody ul.mdul,.mdbody ol{margin:9px 0;padding-left:24px}
+.mdbody li{margin:4px 0}
+.mdbody code{background:#0e0c09;border:1px solid var(--line);border-radius:4px;
+             padding:1px 5px;color:var(--accent);font-size:12.5px}
+.mdbody a{color:var(--link)}
+.mdbody blockquote.mdq{border-left:3px solid var(--accent);background:#191510;
+                       margin:12px 0;padding:8px 15px;border-radius:0 7px 7px 0}
+.mdbody blockquote.mdq p{margin:5px 0;color:#cfc6b2}
+.mdbody hr.mdhr{border:none;border-top:1px solid var(--line);margin:26px 0}
+.mdbody .tw{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:8px}
+.mdbody table{margin:0;font-size:12.5px;border-collapse:collapse;width:100%}
+.mdbody th{position:sticky;top:0;background:#14110d;z-index:1}
+.mdbody td,.mdbody th{border:none;border-bottom:1px solid #241f19;border-right:1px solid #241f19;
+                      padding:6px 10px;vertical-align:top}
+.mdbody tr:last-child td{border-bottom:none}
+.mdbody tr:nth-child(even) td{background:#1a1611}
+.mdbody strong{color:#f0e9d8}
+/* 全局顶栏 */
+.topbar{position:sticky;top:0;z-index:30;background:rgba(16,13,10,.97);
+        border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+.topbar-in{max-width:1180px;margin:0 auto;padding:9px 20px;display:flex;align-items:center;
+           gap:14px;flex-wrap:nowrap;min-width:0}
+.brand{font-size:14.5px;font-weight:600;color:var(--accent);letter-spacing:.05em;
+       white-space:nowrap;flex-shrink:0}
+.brand:hover{text-decoration:none;color:#e0bc45}
+.gnav{display:flex;gap:4px;margin-left:auto;flex-shrink:0}
+.gnav-i{font-size:13px;color:var(--dim);padding:5px 12px;border-radius:7px;white-space:nowrap;
+        border:1px solid transparent}
+.gnav-i:hover{color:var(--fg);background:#211c16;text-decoration:none}
+.gnav-i.on{color:#14110d;background:var(--accent);border-color:var(--accent);font-weight:600}
+.gnav-t{display:none;background:#211c16;border:1px solid var(--line);color:var(--fg);
+        border-radius:7px;font-size:15px;padding:3px 10px;cursor:pointer}
+/* 左上角返回导航 */
+.backnav{display:flex;gap:6px;flex-shrink:0}
+.bkn{font-size:12.5px;color:#cfc6b2;background:#211c16;border:1px solid var(--line);
+     border-radius:7px;padding:5px 11px;white-space:nowrap;cursor:pointer;
+     font-family:inherit;line-height:1.35;transition:border-color .14s,color .14s,background .14s}
+.bkn:hover{border-color:var(--accent);color:var(--accent);background:#2a2218;text-decoration:none}
+/* 页脚署名 */
+.madeby{margin:30px 0 0;padding:22px 24px;text-align:center;border-radius:11px;
+        background:linear-gradient(135deg,rgba(201,162,39,.10),rgba(201,162,39,.03) 45%,transparent);
+        border:1px solid #3d3527;font-size:14px;color:#ddd5c3;letter-spacing:.04em}
+.madeby .mk{display:block;font-size:11.5px;color:var(--dim);letter-spacing:.22em;
+            text-transform:uppercase;margin-bottom:7px}
+.madeby b{color:var(--accent);font-weight:700;font-size:16px;letter-spacing:.06em;
+          padding:0 3px}
+.madeby .fl{display:block;margin-top:9px;font-size:11.5px;color:#7d7462;letter-spacing:.02em}
+.footmeta{font-size:11.5px;color:var(--dim);line-height:1.9;margin-top:20px;
+          padding-top:16px;border-top:1px solid var(--line)}
+.footmeta a{color:#a89e8a}
+.footmeta a:hover{color:var(--link)}
+@media(max-width:760px){
+  .backnav{order:3;width:100%}
+  .bkn{flex:1;text-align:center}
+}
+@media(max-width:760px){
+  .topbar-in{flex-wrap:wrap;gap:10px}
+  .gnav-t{display:block;margin-left:auto}
+  .gnav{display:none;width:100%;flex-direction:column;gap:2px}
+  .gnav.open{display:flex}
+  .gnav-i{padding:8px 12px}
+}
+</style>
+
+</head>
+<body>
+<div class="topbar"><div class="topbar-in"><div class="backnav"><a class="bkn" href="../home.html" title="回到主页">⌂ 回到主页</a><button class="bkn" id="bkPrev" type="button" title="返回上一页">← 返回上一页</button></div><a class="brand" href="../home.html">泛德意志的欧洲</a><nav class="gnav"><a class="gnav-i" href="../home.html">主页</a><a class="gnav-i on" href="../index.html">索引</a><a class="gnav-i" href="../wiki/index.html">文献</a><a class="gnav-i" href="../wiki/docs-index.html">文档</a><a class="gnav-i" href="../timeline.html">时间轴</a></nav><button class="gnav-t" id="gnavToggle" aria-label="切换导航">☰</button></div></div>
+
+<header><div class="hdr">
+<h1>🏺 历史物品留存<span class="sub">共 25 条</span></h1>
+<nav class="crumbs"><a href="../home.html">主页</a> ／ <a href="../index.html">索引</a> ／
+<a href="docs-index.html">文档</a> ／ 分类清单</nav></div></header>
+<main>
+<div class="card">
+<span class="kindbadge">分类型清单</span>加冕礼器、文书正本、宗教法器、旗舰徽记、工业遗产、科学仪器与战争遗物。
+<div class="pill-row" style="margin-top:10px"><a class="chip" href="list-countries.html">🏛 国家与政治实体</a><a class="chip" href="list-dynasties.html">👑 王朝与家族</a><a class="chip" href="list-people.html">🧑 人物</a><a class="chip" href="list-events.html">📜 事件</a><a class="chip" href="list-wars.html">⚔ 战争</a><a class="chip" href="list-treaties.html">📃 条约与宪章</a><a class="chip" href="list-religions.html">✝ 宗教</a><a class="chip" href="list-languages.html">🔤 语言</a><a class="chip" href="list-places.html">📍 地点</a><a class="chip" href="list-subdivisions.html">🗺 行政区划</a><a class="chip" href="list-parties.html">🗳 政党</a><a class="chip" href="list-organizations.html">🎓 机构与学校</a><a class="chip on" href="list-artifacts.html">🏺 历史物品留存</a></div>
+<div style="margin-top:8px"><a href="../index.html#artifacts">→ 在设定集索引中检索本类</a></div>
+</div>
+<div class="entries">
+<a class="entry" href="ar-standard-german-sample.html"><h3>《共同体德语正字法》标准字样本</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>泛德意志语言会议颁行的标准字样本，列示统一正字法的五条原则（词源优先、跨方言折中、词汇层融合、语法保守、拼写标注发音）与示范词条，如「machen/maken 统一为 machen」「Nation → Volkheit」「Religion → Glaubenslehre」。样本由德意志各州教育部长、…</p></a><a class="entry" href="ar-twelve-articles.html"><h3>《十二条款》农民战争传单</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>农民战争期间起义者纲领的印刷传单，要求自由选举牧师、废除农奴制、恢复公地权利、降低赋税劳役、限制贵族司法权、宗教自由；南德意志版本另增「保留教堂艺术与音乐、农民子弟受教育、建立农民自治社区」三项。传单在德意志、莱茵兰、波西米亚与北意大利广泛翻印。</p></a><a class="entry" href="ar-imperial-seal-1356.html"><h3>《法兰克福宪章》御玺</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>1356 年《法兰克福宪章》正本所钤之玺，连同七位选侯之印与教皇使节之印。该宪章确立双重王冠不可分割、选举与继承双轨制与三重加冕，本玺即这套制度矛盾的法律凭证。宪章正本与玺印现存法兰克福帝国议会档案馆，是帝国议会开会时的礼仪性展示物。</p></a><a class="entry" href="ar-vienna-treaty-original.html"><h3>《维也纳和约》正本</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>1648 年结束三十年宗教战争的条约正本，拉丁文本，附高地德语、法兰克语、低地德语与伊比利亚-奥克语四种副本。正本列九条：宗教自选、低地独立、瑞士中立确认、波西米亚恢复胡斯派-路德宗混合教会、阿尔卑斯福音派获承认、北意大利归属、奥克占领后撤、西里西亚与摩拉维亚归普热米斯尔、帝国进一步分权。</p></a><a class="entry" href="ar-magna-carta-mortua-doc.html"><h3>《贵族宪章废止令》原件</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>不列颠国王会同枢密院废止 1215 年式贵族宪章的文书。签署该宪章的男爵正是主张大陆路线而失败的一派。此后等级会议自 14 世纪后基本停开，此令成为<strong>死掉的先例</strong>，直到 1945 年战败后被民主派重新挖掘为宪法传统的起点，并与《权利宪章》并列展出。</p></a><a class="entry" href="ar-seven-electors-staff.html"><h3>七选侯权杖</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>七位选侯各持一杖：美因茨、科隆、特里尔三大主教，以及波西米亚国王、莱茵普法尔茨伯爵、萨克森公爵、勃兰登堡藩侯。德意志国王由七侯于法兰克福选举，选举时七杖并列，杖身刻有各家的纹章与「法兰克福宪章」条文首句。</p></a><a class="entry" href="ar-rights-charter.html"><h3>不列颠《权利宪章》1945/1947 正本</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>不列颠战败后被监督民主化的产物：成文宪法，确立人民主权与司法独立，下议院普选为政府来源，上议院仅保留延搁权，新设宪法法院，废除枢密院法庭与出版审查，实行政教分离。正本陈列于原枢密院法庭（星室式法庭）旧址——该法庭恰于 1945 年被废除。</p></a><a class="entry" href="ar-calvin-pulpit.html"><h3>加尔文讲坛（日内瓦圣彼得大教堂）</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>加尔文在日内瓦布道所用讲坛，改革宗传统的核心实物。讲坛位于堂内视觉中心，而祭坛被移于侧位——这一空间安排本身即改革宗神学的表述：圣言高于圣事。日内瓦学院以此坛为国际改革宗神学教育的象征。</p></a><a class="entry" href="ar-double-crown-banner.html"><h3>双王冠旗</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>法兰克王冠与德意志王冠并置于一旗的帝国旗，1356 年《法兰克福宪章》后启用，1871 年双王冠分离后废止。旗面左半为哈布斯堡法兰克的深蓝底金鹰，右半为普热米斯尔的酒红底银狮，中缝以帝国之鹰统摄二者。帝国议会开幕时悬于会场正中，是「同一皇帝、两个政治民族」这一制度矛盾的视觉化。</p></a><a class="entry" href="ar-gottingen-sextant.html"><h3>哥廷根天文台六分仪</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>哥廷根大学天文台使用的大型六分仪。哥廷根大学以数学、天文学、实验物理、东方学与统计学著称，此仪即其天文传统的实物。一战后的知识分子流散中，哥廷根的学者多留在中欧参与重建，该天文台的观测序列因此未中断——这与迁往美国、瑞士的学者形成对照。</p></a><a class="entry" href="ar-stephan-crown.html"><h3>圣斯特凡王冠（波西米亚—奥地利王冠）</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>普热米斯尔家族的加冕王冠，波西米亚—奥地利王统的象征。1871 年罗马加冕成立德意志帝国后，它成为帝国皇权在行政首都的实体依托——行政在维也纳，圣事在罗马，而这顶王冠居于两者之间。1918 年王朝结束后移交共和国，现为联邦国家博物馆的首要藏品。</p></a><a class="entry" href="ar-occitan-cross.html"><h3>奥克十字旗</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>奥克语地区的传统徽记，十二尖十字。1789 年伊比利亚-奥克大革命时被起义者用作旗帜；1945 年法兰克设南部奥克省后一度被禁，1972—1978 年奥克正常化后恢复为<strong>文化标志</strong>（非政治标志），现于州级文化机构与双语学校悬挂。其法律地位的变化，本身即法兰克奥克政策「先控制、再正常化」的实物记录…</p></a><a class="entry" href="ar-bohemia-dynamo.html"><h3>布拉格首台工业发电机</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>多瑙河-波西米亚工业带的首批发电设备之一，标志该工业带以「电气、汽车、军火」为核心的产业特征。此机与维也纳、布雷斯劳的同类设备同属一个技术谱系，是德意志世界「不是单一工业核心、而是多个历史工业区叠加」的实物证据——也正是这一结构使中欧在输掉一战后仍能恢复。</p></a><a class="entry" href="ar-reconquista-key.html"><h3>格拉纳达城门钥匙</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>收复失地运动终局时，安达卢斯最后据点格拉纳达的城门钥匙。此物象征伊比利亚各基督教王国完成半岛统一，并由此转向南下北非、驱逐穆斯林、长期基督教化与欧洲化马格里布。在伊比利亚的政治象征体系中，它与「共同基督教/伊比利亚身份」直接绑定——而这正是该国「中央集权从未真正逆转」的合法性来源。</p></a><a class="entry" href="ar-hansa-guilder.html"><h3>汉萨三城联合印记</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>汉堡、不来梅、阿姆斯特丹三城的联合印记，用于共同签署贸易协定与担保跨城债务。三城在德意志联邦中均为<strong>城市州</strong>，保留商业自治传统。此印按 1356 年《法兰克福宪章》授予自由汉萨城市的议会代表权而立，是「城市自治进入帝国制度」的实物凭证。</p></a><a class="entry" href="ar-triest-anchor.html"><h3>的里雅斯特共管锚</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>一战战败后，奥地利德意志被迫接受的里雅斯特国际共管；此锚为共管体制建立时的纪念物，锚身刻有共管四方的标记与年份。它是德意志世界一战战败的直接物证——而这正是 S1 所论的「韧性测试」：失去领土与国家形式，但维也纳、布拉格、米兰、阿姆斯特丹的学院与工厂仍在。</p></a><a class="entry" href="ar-milan-loom.html"><h3>米兰精密织机（波河-阿尔卑斯工业带）</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>波河-阿尔卑斯工业带（伦巴底、皮埃蒙特、威尼托）的代表性设备，体现该带「纺织、金融、精密仪器」的产业特征。机身上的雕饰并非装饰多余，而是该带「机械美学」传统的体现——米兰理工大学与伦巴底美学院共设的工业设计课程以此机为教学范本。</p></a><a class="entry" href="ar-wittenberg-door.html"><h3>维滕堡城堡教堂大门（九十五条论纲之门）</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>马丁·路德张贴《九十五条论纲》之门，新教母教会的标志性实物。原门于战火中损毁后，以青铜重铸，门面铸有论纲拉丁原文。每年宗教改革纪念日，全德意志福音教会会议在此门前列队。</p></a><a class="entry" href="ar-hussite-chalice.html"><h3>胡斯派圣杯</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>波西米亚胡斯派的核心法器。胡斯派坚持平信徒领圣餐（杯与饼同领），圣杯因之成为该派标志。此杯为胡斯派传统中最受尊崇的一件，16 世纪胡斯派与路德宗融合后仍保留圣杯传统，普热米斯尔家族以教会保护者身份保管之。</p></a><a class="entry" href="ar-normandy-shield.html"><h3>诺曼底公爵之盾（1272 年决战遗物）</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>1272 年决战中诺曼底公爵所遗之盾。此役中鲁道夫击败诺曼底公爵，夺取法兰西岛与香槟，英格兰-诺曼底被逐出大陆。盾面凹陷处即当日所受重击。此物与「鲁道夫加冕诏书」并列陈列，构成法兰克建国的双件套——加冕的合法性，与被逐者的失败。</p></a><a class="entry" href="ar-golden-horde-yarlik.html"><h3>金帐汗国册封诏书（雅尔里克）</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>金帐汗国册封莫斯科大公的诏书（雅尔里克），以蒙古文与察合台文书写，附东斯拉夫语译本。此件是罗斯兀鲁思国家正统的核心物证：该国自认历史序列为「古罗斯诸国 → 蒙古征服 → 金帐秩序 → 罗斯兀鲁思」，并视金帐汗国为自己的前身王朝，而非外国占领政权。诏书上敕封者之印与莫斯科大公之印并列——这一并列本身即…</p></a><a class="entry" href="ar-alpine-eagle-standard.html"><h3>阿尔卑斯福音派军旗</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>三十年宗教战争期间南德意志新教军队的军旗。旗面以酒红为地，绣银狮与圣经经文，四角饰以啤酒花与葡萄藤纹——这正是「阿尔卑斯福音派」的神学表态：喜乐与丰饶亦属恩典。北德意志路德宗的军旗则是纯黑底白十字，无任何装饰。两面旗并列展出，直观呈现南德与北德新教的文化分野。</p></a><a class="entry" href="ar-alpine-altar.html"><h3>阿尔卑斯福音派巴洛克祭坛（圣斯特凡）</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>圣斯特凡大教堂改为新教主教座堂后<strong>保留</strong>的巴洛克祭坛。它是「阿尔卑斯福音派」神学立场的物证：该派认为美、音乐与食馔皆是上帝创造之恩典，故不弃教堂艺术。祭坛旁的镀金讲坛与管风琴同属此列。此物与新教母教会维滕堡的素朴风格形成鲜明对照。</p></a><a class="entry" href="ar-reims-ampulla.html"><h3>雷姆斯圣油瓶</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>法兰克国王加冕所用的圣油容器，存于雷姆斯圣母大教堂。按 1356 年《法兰克福宪章》所定，法兰克国王须由雷姆斯大主教在雷姆斯加冕，此瓶即该仪式的核心法器。它是法兰克王权合法性最古老的实物凭证，也是「天主教法兰克民族意识」的象征物。</p></a><a class="entry" href="ar-maghreb-bell.html"><h3>马格里布基督教化纪念钟</h3><div style="margin:4px 0 6px"><span class="tag ok">已确定</span></div><p>伊比利亚南下北非、驱逐穆斯林之后，在马格里布铸造的纪念钟。钟身铭文记伊比利亚对北非西部的长期统治与基督教化。此物是 S2「北非西部与半岛同属一个国家行政体系、无特殊宪制地位」这一设定的实物记录——它不是殖民地的纪念物，而是<strong>本土</strong>的纪念物。</p></a>
+</div>
+</main>
+
+<footer>
+<div class="madeby"><span class="mk">Created with</span>本页面由 <b>DeepSeek Harness</b> 创作<span class="fl">设定集解析 · 知识图谱构建 · 一致性审计 · 站点生成，全流程由 DeepSeek Harness 完成</span></div><div class="footmeta">出处代号：<a href="../index.html#sources">S0</a> 设定集.docx ｜ S1 设定集补充.docx ｜ S2 设定集补充2.docx ｜ S3 设定集补充3.docx ｜ S4 设定集补充4.docx ｜ <b>S5</b> 整合层（S0–S4 去重合并 + 用户裁定）｜ <b>S*</b> 仿真文献层（基于设定生成，不新增设定）<br><a href="../home.html">主页</a> ／ <a href="../index.html">设定集索引</a> ／ <a href="../wiki/index.html">历史文献</a> ／ <a href="../wiki/docs-index.html">文档中心</a> ／ <a href="../timeline.html">交互式时间轴</a></div>
+</footer>
+<script>(function(){var b=document.getElementById('gnavToggle'),n=document.querySelector('.gnav');if(b&&n){b.onclick=function(){n.classList.toggle('open')};}var p=document.getElementById('bkPrev');if(p){p.onclick=function(){if(history.length>1){history.back();}else{location.href='../home.html';}};}}())</script>
+
+</body>
+</html>
